@@ -2,7 +2,7 @@
 
 export default function Creators() {
     return(
-        <div class="aboutUsPage">
+        <div className="aboutUsPage">
             <h1>
                 Nathan Harris is chillin'
             </h1>

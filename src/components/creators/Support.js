@@ -2,7 +2,7 @@
 
 export default function Support() {
     return(
-        <div class="supportPage">
+        <div className="supportPage">
             <h1>
                 Support us on <a href="https://www.patreon.com/">Patreon</a>!
             </h1>
