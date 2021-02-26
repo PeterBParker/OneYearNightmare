@@ -4,9 +4,16 @@ import Creators from './creators/Creators';
 import Support from './creators/Support';
 import Home from './Home';
 
+// To add page:
+//  1. Update MOST_RECENT_PAGE
+//  2. Update MOST_RECENT_SEASON (if necessary)
+//  3. Add to ComicPageAPI 'pages' object
+
+
 const MOST_RECENT_PAGE = '1';
-const MOST_RECENT_SEASON = 'prologue';
-export const COMIC_VIEWER_DEFAULT_PATH = `/read/${MOST_RECENT_SEASON}/${MOST_RECENT_PAGE}`;
+const CURRENT_CHAPTER = 'Chapter One';
+const CURRENT_SEASON = 'Prologue';
+export const COMIC_VIEWER_DEFAULT_PATH = `/read/${CURRENT_SEASON}/${CURRENT_CHAPTER}/${MOST_RECENT_PAGE}`;
 
 export default function Main() {
     return(
