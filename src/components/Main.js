@@ -13,6 +13,8 @@ import Home from './Home';
 const MOST_RECENT_PAGE = '1';
 const CURRENT_CHAPTER = 'Chapter One';
 const CURRENT_SEASON = 'Prologue';
+export const BASE_PATH = '/OneYearNightmarePages/';
+
 export const COMIC_VIEWER_DEFAULT_PATH = `/read/${CURRENT_SEASON}/${CURRENT_CHAPTER}/${MOST_RECENT_PAGE}`;
 
 export default function Main() {
