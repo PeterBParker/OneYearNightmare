@@ -60,7 +60,6 @@ const ComicPageAPI = {
     },
     getAdjacentPagePath(pageNum, chapterName, seasonName, isNext) {
         const chapterInfo = this.getChapterInfo(chapterName, seasonName);
-        console.log("this si the pageNum", pageNum)
         const pageInfo = this.getAdjacentPageInfo(pageNum, chapterInfo.chapterObj, seasonName, isNext);
         if(pageInfo) {
             return {"season" : pageInfo.seasonObj.seasonName, "chapter": pageInfo.chapterObj.chapterName, "page": pageInfo.pageObj.page};
@@ -176,7 +175,8 @@ const ComicPageAPI = {
     },
     getLastSeasonNum: function () {
         let lastSeasonNum = -1;
-        for (var season in this.seasons) {
+        for (var seasonIndex in this.seasons) {
+            let season = this.seasons[seasonIndex];
             if (season.order > lastSeasonNum) {
                 lastSeasonNum = season.order;
             }
@@ -185,7 +185,8 @@ const ComicPageAPI = {
     },
     getLastPageInChapter: function (chapterObj) {
         var lastPageNum = -1;
-        for (var page in chapterObj.pages) {
+        for (var pageIndex in chapterObj.pages) {
+            let page = chapterObj.pages[pageIndex];
             if (page.pageNum != null && page.pageNum > lastPageNum) {
                 lastPageNum = page.pageNum;
             }
