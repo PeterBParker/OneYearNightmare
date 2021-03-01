@@ -5,9 +5,11 @@ import {useParams} from 'react-router-dom';
 
 export default function NextButton() {
     const params = useParams();
-    console.log("this is params", params);
-    const pageInfo = ComicPageAPI.getNextPage(parseInt(params.pageNum, 10), params.chapter, params.season);
-    console.log("This is the pageInfo: ", pageInfo);
+    const pageNum = ComicPageAPI.getPageNum(params.pageFilename, params.chapterName, params.seasonName);
+    let pageInfo = {}
+    if(pageNum) {
+        pageInfo = ComicPageAPI.getNextPage(pageNum, params.chapterName, params.seasonName);
+    }
     if(pageInfo) {
         const pageFilePath = '/read/' + pageInfo.season + '/' + pageInfo.chapter + '/' + pageInfo.page;
         return(

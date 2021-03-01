@@ -13,7 +13,7 @@ export default function ComicRouter(props) {
                 <Route exact path="/read">
                     <Redirect to={COMIC_VIEWER_DEFAULT_PATH} /> 
                 </Route>
-                <Route path="/read/:season/:chapter/:pageNum" component={ComicViewer}/>
+                <Route path="/read/:seasonName/:chapterName/:pageFilename" component={ComicViewer}/>
             </Switch>
         </div>
     );

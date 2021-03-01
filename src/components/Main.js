@@ -10,7 +10,7 @@ import Home from './Home';
 //  3. Add to ComicPageAPI 'pages' object
 
 
-const MOST_RECENT_PAGE = '1';
+const MOST_RECENT_PAGE = '1.jpeg';
 const CURRENT_CHAPTER = 'Chapter One';
 const CURRENT_SEASON = 'Prologue';
 export const BASE_PATH = '/OneYearNightmarePages/';

@@ -5,17 +5,20 @@ import {useParams} from 'react-router-dom';
 
 export default function BackButton() {
     const params = useParams();
-    console.log("this is params", params);
-    const pageInfo = ComicPageAPI.getPrevPage(parseInt(params.pageNum, 10), params.chapter, params.season);
-    console.log("This is the pageInfo: ", pageInfo);
+    const pageNum = ComicPageAPI.getPageNum(params.pageFilename, params.chapterName, params.seasonName);
+    var pageInfo = {};
+    if(pageNum) {
+        pageInfo = ComicPageAPI.getPrevPage(pageNum, params.chapterName, params.seasonName);
+    }
+    
     if(pageInfo) {
         const pageFilePath = '/read/' + pageInfo.season + '/' + pageInfo.chapter + '/' + pageInfo.page;
         return(
-            <div className="nextButton"><Link to={pageFilePath}>Back</Link></div>
+            <div className="backButton"><Link to={pageFilePath}>Back</Link></div>
         );
     } else {
         return(
-            <div className="nextButton"></div>
+            <div className="backButton"></div>
         )
     }
     

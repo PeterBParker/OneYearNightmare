@@ -6,9 +6,12 @@ import {BASE_PATH} from '../Main';
 
 export default function ComicViewer(props) {
     const params = useParams();
-    let pageNum = parseInt(params.pageNum);
     // TODO Look into if additional sanitization is needed
-    const pageInfo = ComicPageAPI.getPage(parseInt(params.pageNum), params.chapter, params.season);
+    const pageNum = ComicPageAPI.getPageNum(params.pageFilename, params.chapterName, params.seasonName);
+    var pageInfo = {}
+    if(pageNum) {
+        pageInfo = ComicPageAPI.getPage(pageNum, params.chapterName, params.seasonName);
+    }
     
     if (pageInfo == null) {
         return (

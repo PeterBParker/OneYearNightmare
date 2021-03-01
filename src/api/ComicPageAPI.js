@@ -44,36 +44,37 @@ const ComicPageAPI = {
             ]
         },
     ],
-    getPage: function (id, chapterName, seasonName) {
-        const releventObjs = this.getRelValidObjs(id, chapterName, seasonName);
+    getPage: function (pageNum, chapterName, seasonName) {
+        const releventObjs = this.getRelValidObjs(pageNum, chapterName, seasonName);
         if (releventObjs) {
-            return { "season": releventObjs.seasonObj.folderName, "chapter": releventObjs.chapterObj.folderName, "page": releventObjs.pageObj.filename };
+            return { "season": releventObjs.seasonObj.folderName, "chapter": releventObjs.chapterObj.folderName, "page": releventObjs.pageObj.filename};
         }
         return null;
     },
-    getPrevPage: function (id, chapterName, seasonName) {
-        return this.getAdjacentPagePath(id, chapterName, seasonName, false);
+    getPrevPage: function (pageNum, chapterName, seasonName) {
+        // FOR SOME REASON THIS FUNCTION TURNS MY FALSE INTO TRUE WHY???
+        return this.getAdjacentPagePath(pageNum, chapterName, seasonName, false);
     },
-    getNextPage(id, chapterName, seasonName) {
-        return this.getAdjacentPagePath(id, chapterName, seasonName, true);
+    getNextPage(pageNum, chapterName, seasonName) {
+        return this.getAdjacentPagePath(pageNum, chapterName, seasonName, true);
     },
-    getAdjacentPagePath(id, chapterName, seasonName, isNext) {
+    getAdjacentPagePath(pageNum, chapterName, seasonName, isNext) {
         const chapterInfo = this.getChapterInfo(chapterName, seasonName);
-        const pageInfo = this.getAdjacentPageInfo(id, chapterInfo.chapterObj, seasonName, isNext);
+        console.log("this si the pageNum", pageNum)
+        const pageInfo = this.getAdjacentPageInfo(pageNum, chapterInfo.chapterObj, seasonName, isNext);
         if(pageInfo) {
             return {"season" : pageInfo.seasonObj.seasonName, "chapter": pageInfo.chapterObj.chapterName, "page": pageInfo.pageObj.page};
         } else {
             return null;
-        }
-        
+        }     
     },
     getAdjacentPageInfo: function (id, chapterObj, seasonName, isNext) {
         var nextPageNum = id + 1;
         if (!isNext) {
             nextPageNum = id - 1;
         }
+        console.log("this is the npn", nextPageNum);
         const pageAddressObj = this.getPage(nextPageNum, chapterObj.chapterName, seasonName);    
-          
         if (pageAddressObj) {
             //The page exists and we return an object specifying its address
             return {"seasonObj": this.getSeason(this.seasons, seasonName), "chapterObj": chapterObj, "pageObj": pageAddressObj};
@@ -83,7 +84,6 @@ const ComicPageAPI = {
             try {
                 // !!! TODO FIX THIS FUNCTION CALL !!!
                 const chapterAndItsSeason = this.getAdjacentChapter(seasonName, chapterObj.chapterName, isNext);
-
                 const targetChapterObj = chapterAndItsSeason.chapterObj;
                 const targetSeasonObj = chapterAndItsSeason.seasonObj;
                 if (targetChapterObj) {
@@ -113,13 +113,14 @@ const ComicPageAPI = {
     },
     getAdjacentChapter: function (seasonName, chapterName, isNext) {
         let chapters = this.getChaptersInSeason(seasonName);
+        
         let currChapterOrder = this.getChapterOrder(chapters, chapterName);
         let targetChapterOrder = currChapterOrder - 1;
         if (isNext) {
             targetChapterOrder = currChapterOrder + 1;
         }
-        let targetChapter = this.getChapter(chapters, targetChapterOrder, seasonName);
-        if (targetChapter == null) {
+        var targetChapterObj = this.getChapter(chapters, targetChapterOrder, seasonName);
+        if (targetChapterObj == null) {
             //we are crossing between seasons. We need to get the previous or next season depending on isNext
             let currSeasonOrder = this.getSeasonOrder(seasonName);
             let targetSeasonOrder = -1;
@@ -135,7 +136,6 @@ const ComicPageAPI = {
                 // if not isNext
                 try {
                     let targetSeasonObj = this.getSeasonNameFromOrder(targetSeasonOrder);
-                    let targetChapterObj = {};
                     if (isNext) {
                         targetChapterObj = this.getFirstChapterInSeason(targetSeasonObj.seasonName);
                     } else {
@@ -149,6 +149,8 @@ const ComicPageAPI = {
 
             }
 
+        } else {
+            return {"chapterObj": targetChapterObj, "seasonObj": this.getSeason(this.seasons, seasonName)}
         }
     },
     getSeasonNameFromOrder: function (seasonOrder) {
@@ -159,6 +161,7 @@ const ComicPageAPI = {
         let seasonObj = this.seasons.find(isSeason);
         if (seasonObj == null) {
             //throw error. something is wrong.
+            throw("Invalid season data")
         }
         return seasonObj.seasonName;
     },
@@ -194,6 +197,7 @@ const ComicPageAPI = {
         let seasonObj = this.seasons.find(isSeason);
         if (seasonObj == null) {
             //return error about invalid seasonName
+            throw("Invalid season data regarding season: ", seasonName);
         }
         return seasonObj.chapters;
     },
@@ -252,10 +256,13 @@ const ComicPageAPI = {
 
         let validObjs = {}
         const seasonObj = this.getSeason(this.seasons, seasonName);
+        
         if (seasonObj) {
             validObjs.seasonObj = seasonObj;
             const chapterOrder = this.getChapterOrder(seasonObj.chapters, chapterName);
+            
             const chapterObj = this.getChapter(seasonObj.chapters, chapterOrder, seasonName);
+            
             if (chapterObj) {
                 validObjs.chapterObj = chapterObj;
                 const pageObj = this.findPage(chapterObj, id);
@@ -266,6 +273,47 @@ const ComicPageAPI = {
             }
         }
         return null;
+    },
+    getPageNum: function (pageFilename, chapterName, seasonName) {
+        if(this.isPageFilenameValid(pageFilename)) {
+            let seasonObj = this.getSeason(this.seasons, seasonName);
+            let chapterObj = this.getChapter(seasonObj.chapters, this.getChapterOrder(seasonObj.chapters, chapterName), seasonName);
+            const isPage = p => p.filename == pageFilename;
+            const pageObj =  chapterObj.pages.find(isPage);
+            if(pageObj == null) {
+                return null
+            }
+            return pageObj.pageNum;
+        } else {
+            // invalid url. Get the Comic Viewer to render "No Page Found"
+            return null;
+        }
+        
+    },
+    isPageFilenameValid: function (pageFilename) {
+        //
+        const pages = this.getAllPages();
+        const matchingPage = p => p.filename == pageFilename;
+        if(pages.find(matchingPage)) {
+            return true;
+        } else {
+            return false;
+        }
+    },
+    getAllPages: function() {
+        let pages = [];
+        try {
+            for(var seasonIndex in this.seasons) {
+                const chapters = this.getChaptersInSeason(this.seasons[seasonIndex].seasonName);
+                for(var chapterIndex in chapters) {
+                    chapters[chapterIndex].pages.forEach(p => pages.push(p));
+                }
+            }
+        }
+        catch(err) {
+            throw(err);
+        }
+        return pages;        
     },
     findPage: function (chapterObj, pageNum) {
         {/* Given a chapter object and page number, this function will 
