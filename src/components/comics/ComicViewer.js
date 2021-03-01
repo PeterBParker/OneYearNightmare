@@ -29,7 +29,7 @@ export default function ComicViewer(props) {
                 <img src={process.env.PUBLIC_URL + pageFilePath} alt="test" />
             </div>
             <div className="comicNavButtons">
-                <BackButton /> 
+                <BackButton />
                 <NextButton />
             </div>
 

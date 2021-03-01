@@ -72,7 +72,6 @@ const ComicPageAPI = {
         if (!isNext) {
             nextPageNum = id - 1;
         }
-        console.log("this is the npn", nextPageNum);
         const pageAddressObj = this.getPage(nextPageNum, chapterObj.chapterName, seasonName);    
         if (pageAddressObj) {
             //The page exists and we return an object specifying its address
@@ -81,7 +80,6 @@ const ComicPageAPI = {
             //Get an adjacent chapter, and if isNext then return the first page in 
             //that chapter and if not isNext return the last page in that chapter
             try {
-                // !!! TODO FIX THIS FUNCTION CALL !!!
                 const chapterAndItsSeason = this.getAdjacentChapter(seasonName, chapterObj.chapterName, isNext);
                 const targetChapterObj = chapterAndItsSeason.chapterObj;
                 const targetSeasonObj = chapterAndItsSeason.seasonObj;
@@ -90,10 +88,10 @@ const ComicPageAPI = {
                     // else they are going back and we will return the last page of the chapter.
                     let targetPage = {};
                     if (isNext) {
-                        targetPage = this.getPage(1, targetChapterObj.chapterName, seasonName);
+                        targetPage = this.getPage(1, targetChapterObj.chapterName, targetSeasonObj.seasonName);
                     } else {
                         let lastPageInChapter = this.getLastPageInChapter(targetChapterObj);
-                        targetPage = this.getPage(lastPageInChapter, targetChapterObj.chapterName, seasonName);
+                        targetPage = this.getPage(lastPageInChapter, targetChapterObj.chapterName, targetSeasonObj.seasonName);
                     }
                     if (targetPage) {
                         return {"pageObj": targetPage, "chapterObj": targetChapterObj, "seasonObj": targetSeasonObj};
@@ -111,8 +109,17 @@ const ComicPageAPI = {
         }
     },
     getAdjacentChapter: function (seasonName, chapterName, isNext) {
-        let chapters = this.getChaptersInSeason(seasonName);
+        {/* This function returns an object with a chapter object and season object of the 
+            immediately next chapter or previous chapter as if it were a book. 
+            
+            Parameters:
+            seasonName - a string of the season's name of the chapter we want to find an adjacency to
+            chapterName - a string of the chapter's name we want to find an adjacent chapter to
+            isNext - a boolean that when true means we are looking for the next chapter and when false means
+                    we are looking for the previous chapter.
         
+        */}
+        let chapters = this.getChaptersInSeason(seasonName);
         let currChapterOrder = this.getChapterOrder(chapters, chapterName);
         let targetChapterOrder = currChapterOrder - 1;
         if (isNext) {
@@ -134,20 +141,20 @@ const ComicPageAPI = {
                 // If it is a valid season, then we want to get the first chapter if isNext and the last chapter
                 // if not isNext
                 try {
-                    let targetSeasonObj = this.getSeasonNameFromOrder(targetSeasonOrder);
+                    let targetSeasonName = this.getSeasonNameFromOrder(targetSeasonOrder);
+                    let targetSeasonObj = this.getSeason(this.seasons, targetSeasonName);
                     if (isNext) {
-                        targetChapterObj = this.getFirstChapterInSeason(targetSeasonObj.seasonName);
+                        targetChapterObj = this.getFirstChapterInSeason(targetSeasonName);
                     } else {
-                        targetChapterObj = this.getLastChapterInSeason(targetSeasonObj.seasonName);
+                        targetChapterObj = this.getLastChapterInSeason(targetSeasonName);
                     }
                     return {"chapterObj": targetChapterObj, "seasonObj": targetSeasonObj};
                 }
                 catch (err) {
                     //handle error
+                    console.log(err);
                 }
-
             }
-
         } else {
             return {"chapterObj": targetChapterObj, "seasonObj": this.getSeason(this.seasons, seasonName)}
         }
@@ -170,7 +177,13 @@ const ComicPageAPI = {
     },
     getLastChapterInSeason: function (seasonName) {
         let seasonObj = this.getSeason(this.seasons, seasonName);
-        let lastChapNum = this.getLastChapterInSeason(seasonName);
+        let lastChapNum = -1;
+        for(let chapterIndex in seasonObj.chapters) {
+            let chapter = seasonObj.chapters[chapterIndex];
+            if(chapter.order > lastChapNum) {
+                lastChapNum = chapter.order;
+            }
+        }
         return this.getChapter(seasonObj.chapters, lastChapNum, seasonName);
     },
     getLastSeasonNum: function () {
@@ -243,7 +256,8 @@ const ComicPageAPI = {
     },
     getSeasonOrder: function (seasonName) {
         const isSeason = p => p.seasonName == seasonName;
-        return this.seasons.find(isSeason);
+        let season = this.seasons.find(isSeason);
+        return season.order;
     },
     getRelValidObjs: function (id, chapterName, seasonName) {
         {/* This function checks if the page address is valid, and if so
