@@ -13,7 +13,9 @@ import Home from './Home';
 const MOST_RECENT_PAGE = '1.jpeg';
 const CURRENT_CHAPTER = 'Chapter One';
 const CURRENT_SEASON = 'Prologue';
+export const DOMAIN = 'https://oneyearnightmarefirstsite.web.app';
 export const BASE_PATH = '/OneYearNightmarePages/';
+
 
 export const COMIC_VIEWER_DEFAULT_PATH = `/read/${CURRENT_SEASON}/${CURRENT_CHAPTER}/${MOST_RECENT_PAGE}`;
 

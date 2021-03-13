@@ -11,6 +11,9 @@
 # production
 /build
 
+# images
+/public/OneYearNightmarePages
+
 # misc
 .DS_Store
 .env.local
