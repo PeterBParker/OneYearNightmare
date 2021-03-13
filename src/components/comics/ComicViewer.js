@@ -5,7 +5,7 @@ import {useParams} from 'react-router-dom';
 import {BASE_PATH} from '../Main';
 
 export default function ComicViewer() {
-    let unknownRequestContent = <div> <div className="text-gray-900 leading-tight">No page found. :(</div></div>;
+    let unknownRequestContent = <div> <div className="text-3xl our-red">No page found. :(</div></div>;
     const params = useParams();
 
     console.log("This is the seasonName", params)
