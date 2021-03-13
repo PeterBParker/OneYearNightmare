@@ -1,49 +1,9 @@
-// TODO Look into loading this object from a JSON file. This would hypothetically allow me to write
+// TODO This would hypothetically allow me to write
 // a dashboard/script to add pages for us automatically. I could also automate Main.js's COMIC_VIEWER_DEFAULT_PATH
 // by grabbing the latest season/latest chapter/latest page
+import pagesData from './data/pagesData.json';
+
 const ComicPageAPI = {
-    seasons: [
-        {
-            seasonName: "Prologue",
-            folderName: "prologue",
-            order: 1,
-            chapters: [
-                {
-                    chapterName: "Chapter One",
-                    folderName: "chapter1",
-                    order: 1,
-                    pages: [
-                        { pageNum: 1, filename: "1.jpeg" },
-                        { pageNum: 2, filename: "2.jpg" },
-                    ]
-                },
-                {
-                    chapterName: "Chapter Two",
-                    folderName: "chapter2",
-                    order: 2,
-                    pages: [
-                        { pageNum: 1, filename: "3.jpg" },
-                        { pageNum: 2, filename: "4.jpg" }
-                    ]
-                }
-            ]
-        },
-        {
-            seasonName: "Spring",
-            folderName: "spring",
-            order: 2,
-            chapters: [
-                {
-                    chapterName: "Chapter One",
-                    folderName: "chapter1",
-                    order: 1,
-                    pages: [
-                        { pageNum: 1, filename: "5.jpg" }
-                    ]
-                },
-            ]
-        },
-    ],
     getPage: function (pageNum, chapterName, seasonName) {
         const releventObjs = this.getRelValidObjs(pageNum, chapterName, seasonName);
         if (releventObjs) {
@@ -52,7 +12,6 @@ const ComicPageAPI = {
         return null;
     },
     getPrevPage: function (pageNum, chapterName, seasonName) {
-        // FOR SOME REASON THIS FUNCTION TURNS MY FALSE INTO TRUE WHY???
         return this.getAdjacentPagePath(pageNum, chapterName, seasonName, false);
     },
     getNextPage(pageNum, chapterName, seasonName) {
@@ -75,7 +34,8 @@ const ComicPageAPI = {
         const pageAddressObj = this.getPage(nextPageNum, chapterObj.chapterName, seasonName);    
         if (pageAddressObj) {
             //The page exists and we return an object specifying its address
-            return {"seasonObj": this.getSeason(this.seasons, seasonName), "chapterObj": chapterObj, "pageObj": pageAddressObj};
+            let seasons = this.getSeasons();
+            return {"seasonObj": this.getSeason(seasons, seasonName), "chapterObj": chapterObj, "pageObj": pageAddressObj};
         } else {
             //Get an adjacent chapter, and if isNext then return the first page in 
             //that chapter and if not isNext return the last page in that chapter
@@ -142,7 +102,8 @@ const ComicPageAPI = {
                 // if not isNext
                 try {
                     let targetSeasonName = this.getSeasonNameFromOrder(targetSeasonOrder);
-                    let targetSeasonObj = this.getSeason(this.seasons, targetSeasonName);
+                    let seasons = this.getSeasons();
+                    let targetSeasonObj = this.getSeason(seasons, targetSeasonName);
                     if (isNext) {
                         targetChapterObj = this.getFirstChapterInSeason(targetSeasonName);
                     } else {
@@ -156,7 +117,8 @@ const ComicPageAPI = {
                 }
             }
         } else {
-            return {"chapterObj": targetChapterObj, "seasonObj": this.getSeason(this.seasons, seasonName)}
+            let seasons = this.getSeasons();
+            return {"chapterObj": targetChapterObj, "seasonObj": this.getSeason(seasons, seasonName)}
         }
     },
     getSeasonNameFromOrder: function (seasonOrder) {
@@ -164,7 +126,8 @@ const ComicPageAPI = {
             return null;
         }
         const isSeason = p => p.order === seasonOrder;
-        let seasonObj = this.seasons.find(isSeason);
+        let seasons = this.getSeasons();
+        let seasonObj = seasons.find(isSeason);
         if (seasonObj == null) {
             //throw error. something is wrong.
             throw("Invalid season data")
@@ -172,11 +135,13 @@ const ComicPageAPI = {
         return seasonObj.seasonName;
     },
     getFirstChapterInSeason: function (seasonName) {
-        let seasonObj = this.getSeason(this.seasons, seasonName);
+        let seasons = this.getSeasons();
+        let seasonObj = this.getSeason(seasons, seasonName);
         return this.getChapter(seasonObj.chapters, 1, seasonName);
     },
     getLastChapterInSeason: function (seasonName) {
-        let seasonObj = this.getSeason(this.seasons, seasonName);
+        let seasons = this.getSeasons();
+        let seasonObj = this.getSeason(seasons, seasonName);
         let lastChapNum = -1;
         for(let chapterIndex in seasonObj.chapters) {
             let chapter = seasonObj.chapters[chapterIndex];
@@ -188,8 +153,9 @@ const ComicPageAPI = {
     },
     getLastSeasonNum: function () {
         let lastSeasonNum = -1;
-        for (var seasonIndex in this.seasons) {
-            let season = this.seasons[seasonIndex];
+        let seasons = this.getSeasons();
+        for (var seasonIndex in seasons) {
+            let season = seasons[seasonIndex];
             if (season.order > lastSeasonNum) {
                 lastSeasonNum = season.order;
             }
@@ -208,7 +174,8 @@ const ComicPageAPI = {
     },
     getChaptersInSeason: function (seasonName) {
         const isSeason = p => p.seasonName == seasonName;
-        let seasonObj = this.seasons.find(isSeason);
+        let seasons = this.getSeasons();
+        let seasonObj = seasons.find(isSeason);
         if (seasonObj == null) {
             //return error about invalid seasonName
             throw("Invalid season data regarding season: ", seasonName);
@@ -222,7 +189,8 @@ const ComicPageAPI = {
             chapterOrder - an integer that represents the current chapter's order in the story
             chapters - a list of chapter objects 
          */}
-        let seasonObj = this.getSeason(this.seasons, seasonName);
+        let seasons = this.getSeasons();
+        let seasonObj = this.getSeason(seasons, seasonName);
         if (seasonObj == null) {
             //throw error about invalid seasonName
         }
@@ -256,7 +224,8 @@ const ComicPageAPI = {
     },
     getSeasonOrder: function (seasonName) {
         const isSeason = p => p.seasonName == seasonName;
-        let season = this.seasons.find(isSeason);
+        let seasons = this.getSeasons();
+        let season = seasons.find(isSeason);
         return season.order;
     },
     getRelValidObjs: function (id, chapterName, seasonName) {
@@ -270,7 +239,8 @@ const ComicPageAPI = {
         */}
 
         let validObjs = {}
-        const seasonObj = this.getSeason(this.seasons, seasonName);
+        let seasons = this.getSeasons();
+        const seasonObj = this.getSeason(seasons, seasonName);
         
         if (seasonObj) {
             validObjs.seasonObj = seasonObj;
@@ -291,7 +261,8 @@ const ComicPageAPI = {
     },
     getPageNum: function (pageFilename, chapterName, seasonName) {
         if(this.isPageFilenameValid(pageFilename)) {
-            let seasonObj = this.getSeason(this.seasons, seasonName);
+            let seasons = this.getSeasons();
+            let seasonObj = this.getSeason(seasons, seasonName);
             if(seasonObj == null) {
                 return null;
             }
@@ -324,8 +295,9 @@ const ComicPageAPI = {
     getAllPages: function() {
         let pages = [];
         try {
-            for(var seasonIndex in this.seasons) {
-                const chapters = this.getChaptersInSeason(this.seasons[seasonIndex].seasonName);
+            let seasons = this.getSeasons();
+            for(var seasonIndex in seasons) {
+                const chapters = this.getChaptersInSeason(seasons[seasonIndex].seasonName);
                 for(var chapterIndex in chapters) {
                     chapters[chapterIndex].pages.forEach(p => pages.push(p));
                 }
@@ -335,6 +307,9 @@ const ComicPageAPI = {
             throw(err);
         }
         return pages;        
+    },
+    getSeasons: function() {
+        return pagesData.seasons;
     },
     findPage: function (chapterObj, pageNum) {
         {/* Given a chapter object and page number, this function will 

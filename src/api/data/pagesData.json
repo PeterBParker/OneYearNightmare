@@ -1,0 +1,44 @@
+{
+    "seasons": [
+        {
+            "seasonName": "Prologue",
+            "folderName": "prologue",
+            "order": 1,
+            "chapters": [
+                {
+                    "chapterName": "Chapter One",
+                    "folderName": "chapter1",
+                    "order": 1,
+                    "pages": [
+                        { "pageNum": 1, "filename": "1.jpeg" },
+                        { "pageNum": 2, "filename": "2.jpg" }
+                    ]
+                },
+                {
+                    "chapterName": "Chapter Two",
+                    "folderName": "chapter2",
+                    "order": 2,
+                    "pages": [
+                        { "pageNum": 1, "filename": "3.jpg" },
+                        { "pageNum": 2, "filename": "4.jpg" }
+                    ]
+                }
+            ]
+        },
+        {
+            "seasonName": "Spring",
+            "folderName": "spring",
+            "order": 2,
+            "chapters": [
+                {
+                    "chapterName": "Chapter One",
+                    "folderName": "chapter1",
+                    "order": 1,
+                    "pages": [
+                        { "pageNum": 1, "filename": "5.jpg" }
+                    ]
+                }
+            ]
+        }
+    ]
+}
