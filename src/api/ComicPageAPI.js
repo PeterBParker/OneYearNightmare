@@ -292,11 +292,17 @@ const ComicPageAPI = {
     getPageNum: function (pageFilename, chapterName, seasonName) {
         if(this.isPageFilenameValid(pageFilename)) {
             let seasonObj = this.getSeason(this.seasons, seasonName);
+            if(seasonObj == null) {
+                return null;
+            }
             let chapterObj = this.getChapter(seasonObj.chapters, this.getChapterOrder(seasonObj.chapters, chapterName), seasonName);
+            if(chapterObj == null) {
+                return null;
+            }
             const isPage = p => p.filename == pageFilename;
             const pageObj =  chapterObj.pages.find(isPage);
             if(pageObj == null) {
-                return null
+                return null;
             }
             return pageObj.pageNum;
         } else {
@@ -342,6 +348,17 @@ const ComicPageAPI = {
             return true;
         }
         return false;
+    },
+    validateParams(pageFilename, chapterName, seasonName) {
+        let isValid=false;
+        //Regular Expression for alphanumeric characters, dashes, periods, and spaces.
+        //This is a whitelist of legitmate characters to expect coming in.
+        
+        const regex = new RegExp('^[\\w\-_ .]+$');
+        if(regex.test(pageFilename) && regex.test(chapterName) && regex.test(seasonName)) {
+            isValid=true;
+        }
+        return isValid;
     }
 
 }
