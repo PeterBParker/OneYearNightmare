@@ -119,6 +119,15 @@ const ComicPageAPI = {
     },
     getSeasons: function () {
         return pagesData.seasons;
+    },
+    getMessageData: function(id) {
+        let relObjs = this.getRelValidObjs(id);
+        if(!relObjs) {
+            return null;
+        }
+        return(
+            {"message": relObjs.pageObj.message, "title": relObjs.pageObj.title, "time": relObjs.pageObj.time}
+        )
     }
 }
 

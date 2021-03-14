@@ -1,6 +1,7 @@
 import ComicPageAPI from '../../api/ComicPageAPI';
 import BackButton from './navigation/BackButton';
 import NextButton from './navigation/NextButton';
+import MessageBox from './MessageBox';
 import { 
     useParams, 
     Link
@@ -27,14 +28,15 @@ import {
 export default function ComicViewer(props) {
     let unknownRequestContent = <div> <div className="text-3xl our-red">No page found. :(</div> <div>Check out our latest page!</div><div><Link className="p-4 border-2 rounded hover:bg-purple-700 hover:gray-50" to={COMIC_VIEWER_DEFAULT_PATH}>>></Link></div></div>;
     const params = useParams();
-    
+    const pageId = parseInt(params.pageId, 10);
+
     // Checks the id in the url is a valid page
-    let isValidId = ComicPageAPI.validatePageId(params.pageId);
+    let isValidId = ComicPageAPI.validatePageId(pageId);
     if(!isValidId) {
         return (unknownRequestContent);
     }
 
-    var pageInfo  = ComicPageAPI.getPage(params.pageId);
+    var pageInfo  = ComicPageAPI.getPage(pageId);
 
     if(!pageInfo) {
         return (unknownRequestContent);
@@ -42,7 +44,7 @@ export default function ComicViewer(props) {
 
     const pageImageUrl = process.env.PUBLIC_URL + BASE_PATH + pageInfo.seasonPath + '/' + pageInfo.chapterPath + '/' + pageInfo.pagePath;
 
-    let title = "Sick Plot Twist";
+    let title = "One Year Nightmare Page " + pageId;
     const shareImageUrl = DOMAIN + pageImageUrl;
     const sharePageUrl = DOMAIN + "/read/" + params.pageId;
     // TODO 6/10 Before deploying, implement these security measures: https://stackoverflow.com/questions/21110130/protect-image-download/21110248
@@ -52,8 +54,8 @@ export default function ComicViewer(props) {
                 <img src={pageImageUrl}  alt="test" />
             </div>
             <div className="comicNavButtons">
-                <BackButton />
-                <NextButton />
+                <BackButton pageId={pageId}/>
+                <NextButton pageId={pageId}/>
             </div>
             <div className="socialShareContainer">
                 <div className="facebookShareContainer">
@@ -82,6 +84,7 @@ export default function ComicViewer(props) {
                     </EmailShareButton>
                 </div>
             </div>
+            <MessageBox pageId={pageId}/>
 
         </div>
 
