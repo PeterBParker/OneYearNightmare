@@ -3,10 +3,9 @@ import {Link} from 'react-router-dom';
 import {BASE_PATH} from '../../Main';
 import {useParams} from 'react-router-dom';
 
-export default function NextButton() {
-    const params = useParams();
+export default function NextButton(props) {
     const emptyDiv = <div className="nextButton"></div>;
-    const nextPageId = parseInt(params.pageId, 10)+1;
+    const nextPageId = props.pageId+1;
 
     let isValidId = ComicPageAPI.validatePageId(nextPageId);
     if(!isValidId) {

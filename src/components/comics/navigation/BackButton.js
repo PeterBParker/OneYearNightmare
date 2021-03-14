@@ -3,10 +3,9 @@ import {Link} from 'react-router-dom';
 import {BASE_PATH} from '../../Main';
 import {useParams} from 'react-router-dom';
 
-export default function BackButton() {
-    const params = useParams();
+export default function BackButton(props) {
     const emptyDiv = <div className="backButton"></div>;
-    const backPageId = parseInt(params.pageId, 10)-1;
+    const backPageId = props.pageId-1;
 
     let isValidId = ComicPageAPI.validatePageId(backPageId);
     if(!isValidId) {
