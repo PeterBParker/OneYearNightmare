@@ -5,20 +5,23 @@ import {useParams} from 'react-router-dom';
 
 export default function NextButton() {
     const params = useParams();
-    const pageNum = ComicPageAPI.getPageNum(params.pageFilename, params.chapterName, params.seasonName);
-    let pageInfo = {}
-    if(pageNum) {
-        pageInfo = ComicPageAPI.getNextPage(pageNum, params.chapterName, params.seasonName);
+    const emptyDiv = <div className="nextButton"></div>;
+    const nextPageId = parseInt(params.pageId, 10)+1;
+
+    let isValidId = ComicPageAPI.validatePageId(nextPageId);
+    if(!isValidId) {
+        return emptyDiv;
     }
+
+    const pageInfo = ComicPageAPI.getPage(nextPageId);
+
     if(pageInfo) {
-        const pageFilePath = '/read/' + pageInfo.season + '/' + pageInfo.chapter + '/' + pageInfo.page;
+        const pageFilePath = '/read/' + nextPageId;
         return(
             <div className="nextButton"><Link to={pageFilePath}>Next</Link></div>
         );
     } else {
-        return(
-            <div className="nextButton"></div>
-        )
+        return(emptyDiv);
     }
     
 }

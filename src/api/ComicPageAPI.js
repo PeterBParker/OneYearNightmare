@@ -4,16 +4,13 @@
 import pagesData from './data/pagesData.json';
 
 const ComicPageAPI = {
-    getPage: function (pageNum, chapterName, seasonName) {
-        const releventObjs = this.getRelValidObjs(pageNum, chapterName, seasonName);
+    getPage: function (pageId) {
+        const releventObjs = this.getRelValidObjs(pageId);
         if (releventObjs) {
             return {
                 "seasonPath": releventObjs.seasonObj.folderName,
                 "chapterPath": releventObjs.chapterObj.folderName,
                 "pagePath": releventObjs.pageObj.filename,
-                "seasonUrl": releventObjs.seasonObj.seasonName,
-                "chapterUrl": releventObjs.chapterObj.chapterName,
-                "pageUrl": releventObjs.pageObj.filename
             };
         }
         return null;
@@ -28,7 +25,7 @@ const ComicPageAPI = {
         const chapterInfo = this.getChapterInfo(chapterName, seasonName);
         const pageInfo = this.getAdjacentPageInfo(pageNum, chapterInfo.chapterObj, seasonName, isNext);
         if (pageInfo) {
-            return { "season": pageInfo.seasonObj.seasonName, "chapter": pageInfo.chapterObj.chapterName, "page": pageInfo.pageObj.pageUrl};
+            return { "season": pageInfo.seasonObj.seasonName, "chapter": pageInfo.chapterObj.chapterName, "page": pageInfo.pageObj.pageUrl };
         } else {
             return null;
         }
@@ -235,7 +232,7 @@ const ComicPageAPI = {
         let season = seasons.find(isSeason);
         return season.order;
     },
-    getRelValidObjs: function (id, chapterName, seasonName) {
+    getRelValidObjs: function (id) {
         {/* This function checks if the page address is valid, and if so
             it returns the relevent Season object, Chapter object, and Page object.
 
@@ -244,28 +241,58 @@ const ComicPageAPI = {
             chapter - A string of the chapter name
             season - A string of the season name        
         */}
+        if (!this.validatePageId(id)) {
+            return null;
+        }
 
         let validObjs = {}
         let seasons = this.getSeasons();
-        const seasonObj = this.getSeason(seasons, seasonName);
+        let pageCount = 0;
 
-        if (seasonObj) {
-            validObjs.seasonObj = seasonObj;
-            const chapterOrder = this.getChapterOrder(seasonObj.chapters, chapterName);
+        for (let seasonIndex in seasons) {
+            let season = seasons[seasonIndex];
 
-            const chapterObj = this.getChapter(seasonObj.chapters, chapterOrder, seasonName);
+            // Checks if the page we're looking for is within the block of the season
+            if (id > pageCount && id <= pageCount + season.numOfPages) {
+                validObjs.seasonObj = season;
+                let chapters = this.getChaptersInSeason(season.seasonName);
 
-            if (chapterObj) {
-                validObjs.chapterObj = chapterObj;
-                const pageObj = this.findPage(chapterObj, id);
-                if (pageObj) {
-                    validObjs.pageObj = pageObj;
-                    return validObjs;
+                for (let chapterIndex in chapters) {
+                    let chapter = chapters[chapterIndex];
+
+                    //Checks if the page we're looking for is within the block of the chapter
+                    if (id > pageCount && id <= pageCount + chapter.numOfPages) {
+                        validObjs.chapterObj = chapter;
+                        let pages = chapter.pages;
+                        for (let pageIndex in pages) {
+                            let page = pages[pageIndex];
+                            if (page.id == id) {
+                                validObjs.pageObj = page
+                                return validObjs;
+                            }
+                        }
+                    } else {
+                        pageCount += chapter.numOfPages;
+                    }
                 }
+            } else {
+                pageCount += season.numOfPages;
             }
         }
         return null;
     },
+    validatePageId: function (id) {
+        let pageCount = this.getTotalPageCount();
+        if (id > 0 && id <= pageCount) {
+            return true;
+        } else {
+            return false;
+        }
+    },
+    getTotalPageCount: function () {
+        return pagesData.pageCount;
+    },
+    //TODO DELETE THIS
     getPageNum: function (pageFilename, chapterName, seasonName) {
         if (this.isPageFilenameValid(pageFilename)) {
             let seasons = this.getSeasons();

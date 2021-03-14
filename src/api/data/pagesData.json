@@ -1,26 +1,30 @@
 {
+    "pageCount": 5,
     "seasons": [
         {
             "seasonName": "Prologue",
             "folderName": "prologue",
             "order": 1,
+            "numOfPages": 4,
             "chapters": [
                 {
                     "chapterName": "Chapter One",
                     "folderName": "chapter1",
+                    "numOfPages": 2,
                     "order": 1,
                     "pages": [
-                        { "pageNum": 1, "filename": "1.jpeg" },
-                        { "pageNum": 2, "filename": "2.jpg" }
+                        { "pageNum": 1, "filename": "1.jpeg", "title": "Looking for blood", "message": "Long awaited, this is the first installment in the novel!", "id": 1},
+                        { "pageNum": 2, "filename": "2.jpg", "id": 2, "title": "Looking for water", "message": "Long awaited, this is the second installment in the novel!"}
                     ]
                 },
                 {
                     "chapterName": "Chapter Two",
                     "folderName": "chapter2",
                     "order": 2,
+                    "numOfPages": 2,
                     "pages": [
-                        { "pageNum": 1, "filename": "3.jpg" },
-                        { "pageNum": 2, "filename": "4.jpg" }
+                        { "pageNum": 1, "filename": "3.jpg", "id": 3, "title": "Looking for earth", "message": "Long awaited, this is the third installment in the novel!"},
+                        { "pageNum": 2, "filename": "4.jpg", "id": 4, "title": "Looking for fire", "message": "Long awaited, this is the fourth installment in the novel!"}
                     ]
                 }
             ]
@@ -29,13 +33,15 @@
             "seasonName": "Spring",
             "folderName": "spring",
             "order": 2,
+            "numOfPages": 1,
             "chapters": [
                 {
                     "chapterName": "Chapter One",
                     "folderName": "chapter1",
                     "order": 1,
+                    "numOfPages": 1,
                     "pages": [
-                        { "pageNum": 1, "filename": "5.jpg" }
+                        { "pageNum": 1, "filename": "5.jpg", "id":5, "title": "Looking for wind", "message": "Long awaited, this is the fifth installment in the novel!"}
                     ]
                 }
             ]
