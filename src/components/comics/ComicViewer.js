@@ -42,7 +42,7 @@ export default function ComicViewer(props) {
         return (unknownRequestContent);
     }
 
-    const pageImageUrl = process.env.PUBLIC_URL + BASE_PATH + pageInfo.seasonPath + '/' + pageInfo.chapterPath + '/' + pageInfo.pagePath;
+    const pageImageUrl = encodeURI(process.env.PUBLIC_URL + BASE_PATH + pageInfo.seasonPath + '/' + pageInfo.chapterPath + '/' + pageInfo.pagePath);
 
     let title = "One Year Nightmare Page " + pageId;
     const shareImageUrl = DOMAIN + pageImageUrl;
