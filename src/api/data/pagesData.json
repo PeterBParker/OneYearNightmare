@@ -1,10 +1,12 @@
 {
     "pageCount": 5,
+    "seasonCount": 2,
     "seasons": [
         {
             "seasonName": "Prologue",
             "folderName": "prologue",
             "id": 1,
+            "numOfChapters": 2,
             "numOfPages": 4,
             "chapters": [
                 {
@@ -19,7 +21,7 @@
                 },
                 {
                     "chapterName": "Chapter Two",
-                    "folderName": "chapter2",
+                    "folderName": "chapter 2",
                     "id": 2,
                     "numOfPages": 2,
                     "pages": [
@@ -34,11 +36,12 @@
             "folderName": "spring",
             "id": 2,
             "numOfPages": 1,
+            "numOfChapters": 1,
             "chapters": [
                 {
                     "chapterName": "Chapter One",
                     "folderName": "chapter1",
-                    "id": 3,
+                    "id": 1,
                     "numOfPages": 1,
                     "pages": [
                         { "pageNum": 1, "filename": "5.jpg", "id":5, "title": "Looking for wind", "message": "Long awaited, this is the fifth installment in the novel!", "time": "June 20th, 2007"}
