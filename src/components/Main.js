@@ -3,6 +3,7 @@ import ComicRouter from './comics/ComicRouter';
 import Creators from './creators/Creators';
 import Support from './creators/Support';
 import Home from './Home';
+import pageData from '../api/data/pagesData.json';
 
 // To add page:
 //  1. Update MOST_RECENT_PAGE
@@ -10,7 +11,7 @@ import Home from './Home';
 //  3. Add to ComicPageAPI 'pages' object
 
 
-const MOST_RECENT_PAGE_ID = '5';
+const MOST_RECENT_PAGE_ID = pageData.pageCount;
 export const DOMAIN = 'https://oneyearnightmarefirstsite.web.app';
 export const BASE_PATH = '/OneYearNightmarePages/';
 
