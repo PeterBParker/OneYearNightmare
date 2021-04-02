@@ -1,6 +1,6 @@
 {
-    "pageCount": 5,
-    "seasonCount": 2,
+    "pageCount": 8,
+    "seasonCount": 3,
     "seasons": [
         {
             "seasonName": "Prologue",
@@ -15,18 +15,46 @@
                     "numOfPages": 2,
                     "id": 1,
                     "pages": [
-                        { "pageNum": 1, "filename": "1.jpeg", "title": "Looking for blood", "message": "Long awaited, this is the first installment in the novel!", "id": 1, "time": "June 8th, 2007"},
-                        { "pageNum": 2, "filename": "2.jpg", "id": 2, "title": "Looking for water", "message": "Long awaited, this is the second installment in the novel!", "time": "June 10th, 2007"}
+                        {
+                            "pageNum": 1,
+                            "filename": "1.jpeg",
+                            "title": "Looking for blood",
+                            "message": "Long awaited, this is the first installment in the novel!",
+                            "id": 1,
+                            "datetime": "June 8th, 2007"
+                        },
+                        {
+                            "pageNum": 2,
+                            "filename": "2.jpg",
+                            "id": 2,
+                            "title": "Looking for water",
+                            "message": "Long awaited, this is the second installment in the novel!",
+                            "datetime": "June 10th, 2007"
+                        }
                     ]
                 },
                 {
                     "chapterName": "Chapter Two",
-                    "folderName": "chapter 2",
+                    "folderName": "chapter2",
                     "id": 2,
                     "numOfPages": 2,
                     "pages": [
-                        { "pageNum": 1, "filename": "3.jpg", "id": 3, "title": "Looking for earth", "message": "Long awaited, this is the third installment in the novel!", "time": "June 13th, 2007"},
-                        { "pageNum": 2, "filename": "4.jpg", "id": 4, "title": "Looking for fire", "message": "Long awaited, this is the fourth installment in the novel!", "time": "June 18th, 2007"}
+                        {
+                            "pageNum": 1,
+                            "filename": "3.jpg",
+                            "id": 3,
+                            "title": "Looking for earth",
+                            "message": "Long awaited, this is the third installment in the novel!",
+                            "datetime": "June 13th, 2007"
+                        },
+                        {
+                            "pageNum": 2,
+                            "filename": "4.jpg",
+                            "id": 4,
+                            "title": "Looking for fire",
+                            "message": "Long awaited, this is the fourth installment in the novel!",
+                            "datetime": "June 18th, 2007"
+                        }
                     ]
                 }
             ]
@@ -35,16 +63,64 @@
             "seasonName": "Spring",
             "folderName": "spring",
             "id": 2,
-            "numOfPages": 1,
+            "numOfPages": 2,
             "numOfChapters": 1,
             "chapters": [
                 {
                     "chapterName": "Chapter One",
                     "folderName": "chapter1",
                     "id": 1,
-                    "numOfPages": 1,
+                    "numOfPages": 2,
                     "pages": [
-                        { "pageNum": 1, "filename": "5.jpg", "id":5, "title": "Looking for wind", "message": "Long awaited, this is the fifth installment in the novel!", "time": "June 20th, 2007"}
+                        {
+                            "pageNum": 1,
+                            "filename": "5.jpg",
+                            "id": 5,
+                            "title": "Looking for wind",
+                            "message": "Long awaited, this is the fifth installment in the novel!",
+                            "datetime": "June 20th, 2007"
+                        },
+                        {
+                            "pageNum": 2,
+                            "filename": "etsy.jpg",
+                            "title": "Test-a-rope",
+                            "message": "Jumping for testing joy",
+                            "datetime": "2021-04-01 18:01:30",
+                            "id": 6
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "seasonName": "Summer",
+            "folderName": "summer",
+            "numOfPages": 2,
+            "numOfChapters": 1,
+            "id": 3,
+            "chapters": [
+                {
+                    "chapterName": "Chapter One",
+                    "folderName": "chapter1",
+                    "numOfPages": 2,
+                    "id": 1,
+                    "pages": [
+                        {
+                            "pageNum": 1,
+                            "filename": "blood.png",
+                            "title": "Test",
+                            "message": "gotta workout soon",
+                            "datetime": "2021-04-01 18:10:03",
+                            "id": 7
+                        },
+                        {
+                            "pageNum": 2,
+                            "filename": "mo.jpg",
+                            "title": "Test with Baeboo",
+                            "message": "This is suuuuuuper cool",
+                            "datetime": "2021-04-01 18:13:55",
+                            "id": 8
+                        }
                     ]
                 }
             ]
