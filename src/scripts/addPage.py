@@ -1,6 +1,8 @@
+import datetime
 import json
-import sys
+import ntpath
 import os
+import sys
 
 from shutil import copyfile
 from num2words import num2words
@@ -24,9 +26,42 @@ def addChapter(seasonName, chapterName, folderName, numOfPages, id, pages):
         "pages": pages
     }
     writeChapterAppend(chapterObj, seasonName)
+    season = getSeason(seasonName)
+    makeDirectory(_DIR_PREFIX + season["folderName"] + "/" + folderName)
 
 def addFirstChapter(seasonName):
     addChapter(seasonName=seasonName, chapterName="Chapter One", folderName="chapter1", numOfPages=0, id=1, pages=[])
+
+def addNewPage(seasonName, chapterName, title, message, filepath):
+    # time, id, and pageNum are generated off of existing values
+    data = getData(_WORKING_DATA_FILENAME, 'r')
+    chapter = getChapterInSeason(seasonName, chapterName)
+    pageNum = chapter["numOfPages"] + 1
+    identifier = data["pageCount"] + 1
+    time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
+    # Copy image and truncate filename
+    filename = pathLeaf(filepath)
+    season = getSeason(seasonName)
+    destFilepath = _DIR_PREFIX + season["folderName"] + "/" + chapter["folderName"] + "/" + filename
+    copyfile(filepath, destFilepath)
+
+    newPage = {
+        "pageNum": pageNum,
+        "filename": filename,
+        "title": title,
+        "message": message,
+        "datetime": time,
+        "id": identifier
+    }
+
+    writeIncrementChapterPageCount(season["id"], chapter["id"])
+    writeIncrementSeasonPageCount(season["id"])
+    writeIncrementBookPageCount()
+
+    writePageAppend(season["id"], chapter["id"], newPage)
+
+    return True
 
 def appendSeason():
     newSeasonName = enterSeasonName()
@@ -79,6 +114,14 @@ def getData(filename, r_or_w):
         data = json.load(dataFile)
     return data
 
+def getChapterInSeason(seasonName, chapterName):
+    data = getData(_WORKING_DATA_FILENAME, 'r')
+    seasonObj = getSeason(seasonName)
+    for chapter in seasonObj["chapters"]:
+        if(chapter["chapterName"] == chapterName):
+            return chapter
+    return None
+
 def getLastChapterNameInSeason(seasonName):
     data = getData(_WORKING_DATA_FILENAME, 'r')
     seasonObj = getSeason(seasonName)
@@ -89,12 +132,12 @@ def getLastChapterNameInSeason(seasonName):
 def getLatestSeason():
     data = getData(_WORKING_DATA_FILENAME, 'r')
     latestSeason = max(data["seasons"], key=lambda x: x["id"])
-    if latestSeason is None:
-        raise Exception("No latest season.")
     return latestSeason
 
 def getLatestSeasonName():
     latestSeason = getLatestSeason()
+    if latestSeason is None:
+        return None
     return latestSeason["seasonName"]
 
 def getSeason(seasonName):
@@ -118,7 +161,11 @@ def getTargetSeason():
     targetSeason = None
     while True:
         latestSeasonName = getLatestSeasonName()
-        sys.stdout.write("Please select an option:\n1) Append to " + latestSeasonName + "\n2) Add a new season\n")
+        if latestSeasonName is None:
+            print("\nNo seasons found. Please create a season.\n")
+            targetSeason = appendSeason()
+            continue
+        print("\nPlease select an option:\n1) Append to " + latestSeasonName + "\n2) Add a new season\n")
         selection = input("> ")
         if (selection == "1"):
             targetSeason = latestSeasonName
@@ -126,20 +173,20 @@ def getTargetSeason():
         elif selection == "2":
             targetSeason = appendSeason()
         else:
-            sys.stdout.write("I don't recognize that option. Try again.\n")
+            print("\nI don't recognize that option. Try again.\n")
     return (targetSeason)
 
 def enterSeasonName():
     decidingOnSeasonName = True
     newSeasonName = None
     while(decidingOnSeasonName):
-        sys.stdout.write("Adding a Season! Please enter the name of the new season:\n")
+        print("\nAdding a Season! Please enter the name of the new season:\n")
         newSeasonName = input("Enter New Season Name > ")
         if(doesSeasonExist(newSeasonName)):
-            sys.stdout.write("Season already exists! Please add a different season.\n")
+            print("Season already exists! Please add a different season.\n")
             continue
-        sys.stdout.write("Confirm you want to add the season, " + newSeasonName +'\n')
-        confirmation = input(" y for yes / n for no > ")
+        print("\nConfirm you want to add the season, " + newSeasonName +'\n')
+        confirmation = input("y/n > ")
         if confirmation == "y":
             decidingOnSeasonName = False
     return newSeasonName
@@ -147,7 +194,7 @@ def enterSeasonName():
 def enterNewOrExistingChapter(seasonName):
     while True:
         lastChapterName = getLastChapterNameInSeason(seasonName)
-        sys.stdout.write("Please select an option:\n1) Append to " + seasonName + ", " + lastChapterName + "\n2) Create a new chapter?\n")
+        print("\nPlease select an option:\n1) Append to " + seasonName + ", " + lastChapterName + "\n2) Create a new chapter?\n")
         appendOrCreate = input("> ")
         if (appendOrCreate == "1"):
             break
@@ -157,8 +204,31 @@ def enterNewOrExistingChapter(seasonName):
     return lastChapterName
 
 def enterPageData(seasonName, chapterName):
-    # TODO Write this
-    print("Almost there!")
+    #user needs to input filename, message, and title
+    title = None
+    message = None
+    filepath = None
+    while True:
+        print("\nPlease type the title for this page:\n")
+        title = input("> ")
+        print("\nPlease type the message for this page:\n")
+        message = input("> ")
+        while True:
+            print("\nPlease type the absolute filepath for this page:\n")
+            filepath = input("> ")
+            if(os.path.exists(filepath)):
+                break
+            else:
+                print("\nThat filepath cannot be found. Check your file extensions, path, and try again.")
+        print("\nConfirm you want to add a page with these details:\n\
+                            - Append to the end of " + seasonName + ", " + chapterName + "\n\
+                            - Title: " + title + "\n\
+                            - Filepath: " + filepath + "\n\
+                            - Message: " + message + "\n")
+        redo = input("y/n > ")
+        if(redo == "y"):
+            break
+    return title, message, filepath
 
 def makeDirectory(dirpath):
     if not os.path.exists(dirpath):
@@ -167,6 +237,10 @@ def makeDirectory(dirpath):
         # Check if the directory is empty or not. We don't want to overwrite data.
         if len(os.listdir(dirpath)) != 0:
             raise Exception("Directory already exists")
+
+def pathLeaf(path):
+    head, tail = ntpath.split(path)
+    return tail or ntpath.basename(head)
 
 def safeCopyFile(filename, dest):
     if os.path.exists(filename):
@@ -188,9 +262,19 @@ def writeChapterAppend(chapterObj, seasonName):
 
     writeToFile(data, _WORKING_DATA_FILENAME)
 
+def writeIncrementBookPageCount():
+    data = getData(_WORKING_DATA_FILENAME, 'r')
+    data["pageCount"] += 1
+    writeToFile(data, _WORKING_DATA_FILENAME)
+
 def writeIncrementSeasonCount():
     data = getData(_WORKING_DATA_FILENAME, 'r')
     data["seasonCount"] += 1
+    writeToFile(data, _WORKING_DATA_FILENAME)
+
+def writeIncrementChapterPageCount(seasonId, chapterId):
+    data = getData(_WORKING_DATA_FILENAME, 'r')
+    data["seasons"][seasonId-1]["chapters"][chapterId-1]["numOfPages"] += 1
     writeToFile(data, _WORKING_DATA_FILENAME)
 
 def writeNewSeasonOverwrite(seasonObj, seasonIndex):
@@ -201,6 +285,16 @@ def writeNewSeasonOverwrite(seasonObj, seasonIndex):
 def writeNewSeasonAppend(seasonObj):
     data = getData(_WORKING_DATA_FILENAME, 'r')
     data["seasons"].append(seasonObj)
+    writeToFile(data, _WORKING_DATA_FILENAME)
+
+def writePageAppend(seasonId, chapterId, newPage):
+    data = getData(_WORKING_DATA_FILENAME, 'r')
+    data["seasons"][seasonId-1]["chapters"][chapterId-1]["pages"].append(newPage)
+    writeToFile(data, _WORKING_DATA_FILENAME)
+
+def writeIncrementSeasonPageCount(seasonId):
+    data = getData(_WORKING_DATA_FILENAME, 'r')
+    data["seasons"][seasonId-1]["numOfPages"] += 1
     writeToFile(data, _WORKING_DATA_FILENAME)
 
 def writeToFile(data, filename):
@@ -216,7 +310,7 @@ if __name__ == "__main__":
         # Make a copy of the data file to make intermediate changes to
         workingDataFileName = safeCopyFile(_DATA_FILENAME, _WORKING_DATA_FILENAME)
 
-        sys.stdout.write("Welcome to the Page Appender! I will append a page to the end of a specifed chapter.\n")
+        print("Welcome to the Page Appender! I will append a page to the end of a specifed chapter.\n")
         
         # Get Season Name to add the page to
         seasonName = getTargetSeason()
@@ -225,6 +319,15 @@ if __name__ == "__main__":
         chapterName = getTargetChapter(seasonName)
 
         # Get Page Data
-        pageData = enterPageData(seasonName, chapterName)
+        title, message, filepath = enterPageData(seasonName, chapterName)
+
+        print("Adding page...")
+        isSuccess = addNewPage(seasonName, chapterName, title, message, filepath)
+        if(isSuccess):
+            print("Page successfully added!")
+        
+        # Overwrite data file with temp file
+        copyfile(_WORKING_DATA_FILENAME, _DATA_FILENAME)
+        print("Exiting...")        
     finally:
         os.remove(workingDataFileName)

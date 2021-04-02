@@ -1,6 +1,3 @@
-// TODO This would hypothetically allow me to write
-// a dashboard/script to add pages for us automatically. I could also automate Main.js's COMIC_VIEWER_DEFAULT_PATH
-// by grabbing the latest season/latest chapter/latest page
 import pagesData from './data/pagesData.json';
 
 const ComicPageAPI = {
@@ -50,6 +47,7 @@ const ComicPageAPI = {
             chapter - A string of the chapter name
             season - A string of the season name        
         */}
+
         if (!this.validatePageId(id)) {
             return null;
         }
@@ -60,15 +58,12 @@ const ComicPageAPI = {
 
         for (let seasonIndex in seasons) {
             let season = seasons[seasonIndex];
-
             // Checks if the page we're looking for is within the block of the season
             if (id > pageCount && id <= pageCount + season.numOfPages) {
                 validObjs.seasonObj = season;
                 let chapters = this.getChaptersInSeason(season.seasonName);
-
                 for (let chapterIndex in chapters) {
                     let chapter = chapters[chapterIndex];
-
                     //Checks if the page we're looking for is within the block of the chapter
                     if (id > pageCount && id <= pageCount + chapter.numOfPages) {
                         validObjs.chapterObj = chapter;
