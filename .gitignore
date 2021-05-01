@@ -12,7 +12,8 @@
 /build
 
 # images
-/public/OneYearNightmarePages
+/public/MnMPages
+/src/assets
 
 # misc
 .DS_Store
