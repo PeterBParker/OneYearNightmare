@@ -29,3 +29,6 @@ yarn-error.log*
 *-temp.json
 
 src/styling/tailwind.output.css
+
+*.pyc
+*.cache

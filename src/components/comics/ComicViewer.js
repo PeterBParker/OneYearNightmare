@@ -1,7 +1,7 @@
 import ComicPageAPI from '../../api/ComicPageAPI';
 import BackButton from './navigation/BackButton';
 import NextButton from './navigation/NextButton';
-import MessageBox from './MessageBox';
+import PageDetailsCard from './PageDetailsCard';
 import { 
     useParams, 
     Link
@@ -37,13 +37,11 @@ export default function ComicViewer(props) {
     }
 
     var pageInfo  = ComicPageAPI.getPage(pageId);
-
     if(!pageInfo) {
         return (unknownRequestContent);
     }
 
     const pageImageUrl = encodeURI(process.env.PUBLIC_URL + BASE_PATH + pageInfo.seasonPath + '/' + pageInfo.chapterPath + '/' + pageInfo.pagePath);
-
     let title = "One Year Nightmare Page " + pageId;
     const shareImageUrl = DOMAIN + pageImageUrl;
     const sharePageUrl = DOMAIN + "/read/" + params.pageId;
@@ -84,7 +82,7 @@ export default function ComicViewer(props) {
                     </EmailShareButton>
                 </div>
             </div>
-            <MessageBox pageId={pageId}/>
+            <PageDetailsCard pageId={pageId}/>
 
         </div>
 

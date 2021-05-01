@@ -1,7 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-.our-red {
-    color: black;
-    font-weight: 400;
+.icon {
+    width: 33px;
 }

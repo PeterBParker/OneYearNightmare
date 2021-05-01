@@ -1,5 +1,5 @@
 {
-    "pageCount": 12,
+    "pageCount": 8,
     "seasonCount": 3,
     "seasons": [
         {
@@ -95,14 +95,14 @@
         {
             "seasonName": "Summer",
             "folderName": "summer",
-            "numOfPages": 6,
-            "numOfChapters": 2,
+            "numOfPages": 2,
+            "numOfChapters": 1,
             "id": 3,
             "chapters": [
                 {
                     "chapterName": "Chapter One",
                     "folderName": "chapter1",
-                    "numOfPages": 4,
+                    "numOfPages": 2,
                     "id": 1,
                     "pages": [
                         {
@@ -120,46 +120,6 @@
                             "message": "This is suuuuuuper cool",
                             "datetime": "2021-04-01 18:13:55",
                             "id": 8
-                        },
-                        {
-                            "pageNum": 3,
-                            "filename": "pn1.png",
-                            "title": "Paranatural Heist",
-                            "message": "Hey folks! This is the RayEl couple, and we weren't feeling quite up to actually MAKING a page this week, so for testing purposes we decided to steal a page from one of our favorite webcomics, Paranatural. If you haven't heard of this comic, you should DEFFO (as in, definitely-o) check it out because it is one of the most genuinely funny and colorful webcomics either of us have experienced in our many years of bumming on the web. Hopefully next week we'll get an actual page up for you all!",
-                            "datetime": "2021-04-29 18:50:36",
-                            "id": 9
-                        },
-                        {
-                            "pageNum": 4,
-                            "filename": "pn2.png",
-                            "title": "Oops! Paranatural Again!",
-                            "message": "Sry frnds.",
-                            "datetime": "2021-04-29 18:51:23",
-                            "id": 10
-                        }
-                    ]
-                },
-                {
-                    "chapterName": "Chapter Two",
-                    "folderName": "chapter2",
-                    "numOfPages": 2,
-                    "id": 2,
-                    "pages": [
-                        {
-                            "pageNum": 1,
-                            "filename": "pn2.png",
-                            "title": "Oops! It happened again! We don't know how or why, but here we are!",
-                            "message": "Sry",
-                            "datetime": "2021-04-29 18:52:36",
-                            "id": 11
-                        },
-                        {
-                            "pageNum": 2,
-                            "filename": "pn3.png",
-                            "title": "LAST TIME (promise)",
-                            "message": "Hey all! Sorry about the last few weeks. This should be the last time for realz.",
-                            "datetime": "2021-04-29 18:53:22",
-                            "id": 12
                         }
                     ]
                 }

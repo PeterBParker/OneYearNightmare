@@ -12,6 +12,13 @@ const ComicPageAPI = {
         }
         return null;
     },
+    getPageObj: function(pageId) {
+        const releventObjs = this.getRelValidObjs(pageId);
+        if(releventObjs) {
+            return releventObjs.pageObj
+        }
+        return null;
+    },
     getChaptersInSeason: function (seasonName) {
         const isSeason = p => p.seasonName == seasonName;
         let seasons = this.getSeasons();
@@ -31,6 +38,13 @@ const ComicPageAPI = {
         */}
         const isSeason = p => p.seasonName == seasonName;
         return seasons.find(isSeason);
+    },
+    getSeasonNum: function (pageId) {
+        const relObjs = this.getRelValidObjs(pageId);
+        if(relObjs) {
+            return relObjs.seasonObj.id;
+        }
+        return null;
     },
     getSeasonOrder: function (seasonName) {
         const isSeason = p => p.seasonName == seasonName;

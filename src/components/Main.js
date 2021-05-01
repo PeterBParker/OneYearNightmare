@@ -13,7 +13,8 @@ import pageData from '../api/data/pagesData.json';
 
 const MOST_RECENT_PAGE_ID = pageData.pageCount;
 export const DOMAIN = 'https://oneyearnightmarefirstsite.web.app';
-export const BASE_PATH = '/OneYearNightmarePages/';
+export const BASE_PATH = '/MnMPages/';
+export const JOINT_SIG = 'Mo and Nate';
 
 
 export const COMIC_VIEWER_DEFAULT_PATH = `/read/${MOST_RECENT_PAGE_ID}`;
