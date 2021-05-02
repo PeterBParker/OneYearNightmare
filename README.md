@@ -1,3 +1,3 @@
 # TODO
 
-Finish styling the JointSignature
+- Build and Style Footer
