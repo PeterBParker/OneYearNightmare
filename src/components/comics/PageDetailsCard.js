@@ -31,7 +31,9 @@ export default function PageDetailsCard(props) {
                     <JointSignature/>
                 </div>
                 <div className="date float-right leading-8">
-                    <BodyText text={String(date.getMonth())+"."+String(date.getDate())+"."+String(date.getFullYear())} />
+                    <div className="font-body font-regular text-base text-gray-light leading-8"> 
+                        {String(date.getMonth())+"."+String(date.getDate())+"."+String(date.getFullYear())}
+                    </div>
                 </div>
             </div>
         </div>
