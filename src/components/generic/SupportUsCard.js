@@ -18,7 +18,7 @@ export default function SupportUsCard() {
                     <BodyText text="Thank you for reading our comic! This is what we love to do and 
                         sharing that with you is a dream. Check out some ways you can help out below." />
                 </div>
-                <div className="tipJarIllo float-right absolute left-60 bottom-10">
+                <div className="tipJarIllo float-right absolute right-4 -top-12">
                     <a href="https://www.buymeacoffee.com/rayell"><img src={tipjarSvg} width={115} /></a>
                 </div>
             </div>
