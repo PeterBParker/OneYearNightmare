@@ -15,27 +15,23 @@ export default function Footer() {
                     <img src={logo} width="220" className="mx-auto"/>
                 </div>
                 <hr className="border-mocha-light"/>
-                <div className="links pt-3 px-2 flex flex-row w-full">
-                    <div className="discordCallContainer flex flex-col content-between w-2/6 items-end">
-                        <div className="discordCall text-mocha-light text-sm text-left">
+                <div className="links pt-3 px-2 footerMobileGrid w-full">
+                        <div className="discordCall text-mocha-light text-sm text-left discordTextGrid">
                             <p>Join the fun on our Discord!</p>
                         </div>
-                        <div className="discordIcons self-end ">
+                        <div className="discordIcons self-start discordLinkContainerGrid">
                             <img src={discordIcons} width="120" />
                         </div>
-                    </div>
-                    <div className="websiteLinkContainer flex flex-wrap flex-col w-2/6 text-lg text-green">
-                        <div className="mb-1 align-baseline">
+                        <div className="readLinkGrid text-green text-lg">
                             <Link to={'/read/'}>read</Link>
                         </div>
-                        <div className="mb-1">
+                        <div className="aboutLinkGrid text-green text-lg">
                             <Link to={'/creatives'}>about</Link>
                         </div>
-                        <span className="align-baseline">
+                        <span className="supportLinkGrid text-green text-lg">
                             <Link to={'/support'}>support</Link>
                         </span>
-                    </div>
-                    <div className="socialMediaLinks grid grid-cols-2 grid-rows-2 w-2/6">
+                    <div className="socialMediaLinks socialMediaFooterGrid grid grid-cols-2 grid-rows-2">
                         <div className="facebookIcon justify-start self-end">
                             <a href=""><img src={facebookIcon} width={32} className="ml-auto mr-1 "/></a>
                         </div>
