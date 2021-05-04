@@ -1,6 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 .icon {
     width: 33px;
+}
+.cls-1 {
+    fill:#998f7e;
 }
