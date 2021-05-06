@@ -5,9 +5,6 @@ import ComicViewer from './ComicViewer';
 export default function ComicRouter(props) {
     return (
         <div className="comicViewerPage">
-            <h1>
-                Read Here!
-            </h1>
             <Switch>
                 {/*Look up how to do pattern matching so you don't have to do exact path*/}
                 <Route exact path="/read">
