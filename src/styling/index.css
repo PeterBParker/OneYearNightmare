@@ -98,3 +98,49 @@
     grid-row-end: 3;
     padding-bottom: 10px;
 }
+
+.mobileMenuOverlay {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: -100%;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0, 0.9);
+    overflow-x: hidden;
+    transition: 0.5s;
+}
+
+.mobileMenuContainer {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 20% 60% 20%;
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+.mobileMenuExitContainer {
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+.mobileMenuExitButton {
+    position: relative;
+    top: 1rem;
+    right: 1rem;
+}
+.mobileMenuLinks {
+    grid-row-start: 2;
+    grid-row-end: 3;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 20% 60% 20%;
+}
+.mobileMenuLinksSpacer {
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+.mobileMenuFooterImage {
+    grid-row-start: 3;
+    grid-row-end: 4;
+}
