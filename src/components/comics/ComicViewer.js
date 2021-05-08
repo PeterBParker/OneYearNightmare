@@ -1,6 +1,5 @@
 import ComicPageAPI from '../../api/ComicPageAPI';
-import BackButton from './navigation/BackButton';
-import NextButton from './navigation/NextButton';
+import MobileNavBar from './navigation/MobileNavBar';
 import PageDetailsCard from './PageDetailsCard';
 import SupportUsCard from '../generic/SupportUsCard';
 import {
@@ -56,10 +55,7 @@ export default function ComicViewer(props) {
             <div className="comicImage">
                 <img src={pageImageUrl} alt="test" />
             </div>
-            <div className="comicNavButtons">
-                <BackButton pageId={pageId} />
-                <NextButton pageId={pageId} />
-            </div>
+            <MobileNavBar pageId={pageId} />
             <div className="socialShareContainer my-3">
                 <div className="text-center text-mocha-light font-body font-semibold">
                     <div>share this comic:</div>

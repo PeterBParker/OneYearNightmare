@@ -1,15 +1,15 @@
 import ComicPageAPI from '../../../api/ComicPageAPI';
 import {Link} from 'react-router-dom';
-import {BASE_PATH} from '../../Main';
-import {useParams} from 'react-router-dom';
+import activeBackIcon from '../../../assets/Website Assets - Phase 1/SVG/NAVBAR-previous.svg';
+import disabledBackIcon from '../../../assets/Website Assets - Phase 1/SVG/NAVBAR-previous-disabled.svg';
 
 export default function BackButton(props) {
-    const emptyDiv = <div className="backButton"></div>;
+    const disabledButton = <div className="navButton"><img src={disabledBackIcon} width={30}/></div>;
     const backPageId = props.pageId-1;
 
     let isValidId = ComicPageAPI.validatePageId(backPageId);
     if(!isValidId) {
-        return emptyDiv;
+        return disabledButton;
     }
 
     let pageInfo = ComicPageAPI.getPage(backPageId);
@@ -17,11 +17,11 @@ export default function BackButton(props) {
     if(pageInfo) {
         const pageFilePath = '/read/' + backPageId;
         return(
-            <div className="backButton"><Link to={pageFilePath}>Back</Link></div>
+            <div className="navButton"><Link to={pageFilePath}><img src={activeBackIcon} width={30}/></Link></div>
         );
     } else {
         return(
-            <div className="backButton"></div>
+            disabledButton
         )
     }
     

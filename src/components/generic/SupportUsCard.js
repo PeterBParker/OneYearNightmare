@@ -5,7 +5,6 @@ import patreonSvg from '../../assets/Website Assets - Phase 1/SVG/FILLER-icon.sv
 import bmacSvg from '../../assets/Website Assets - Phase 1/SVG/FILLER-icon.svg';
 
 export default function SupportUsCard() {
-    console.log("Imported SupportUs")
     return (
         <div className="supportUsContainer mb-6">
             <div className="title py-6 px-6 bg-eggshell text-left">

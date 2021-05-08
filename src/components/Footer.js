@@ -33,7 +33,7 @@ export default function Footer() {
                         </span>
                     <div className="socialMediaLinks socialMediaFooterGrid grid grid-cols-2 grid-rows-2">
                         <div className="facebookIcon justify-start self-end">
-                            <a href=""><img src={facebookIcon} width={32} className="ml-auto mr-1 "/></a>
+                            <a href="https://www.facebook.com/MoRayneArt/"><img src={facebookIcon} width={32} className="ml-auto mr-1 "/></a>
                         </div>
                         <div className="twitterIcon justify-content-center self-end">
                             <a href=""><img src={twitterIcon} width={32} className="mr-auto ml-1"/></a>
