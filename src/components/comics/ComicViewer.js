@@ -2,6 +2,7 @@ import ComicPageAPI from '../../api/ComicPageAPI';
 import MobileNavBar from './navigation/MobileNavBar';
 import PageDetailsCard from './PageDetailsCard';
 import SupportUsCard from '../generic/SupportUsCard';
+import Header from '../Header';
 import {
     useParams,
     Link
@@ -52,6 +53,7 @@ export default function ComicViewer(props) {
     // TODO 6/10 Before deploying, implement these security measures: https://stackoverflow.com/questions/21110130/protect-image-download/21110248
     return (
         <div>
+            <Header defaultBg={false}/>
             <div className="comicImage">
                 <img src={pageImageUrl} alt="test" />
             </div>

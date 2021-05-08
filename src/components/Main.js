@@ -1,15 +1,9 @@
 import {Switch, Route} from 'react-router-dom';
 import ComicRouter from './comics/ComicRouter';
-import Creators from './creators/Creators';
+import Creators from './creators/about/Creators';
 import Support from './creators/Support';
 import Home from './Home';
 import pageData from '../api/data/pagesData.json';
-
-// To add page:
-//  1. Update MOST_RECENT_PAGE
-//  2. Update MOST_RECENT_SEASON (if necessary)
-//  3. Add to ComicPageAPI 'pages' object
-
 
 const MOST_RECENT_PAGE_ID = pageData.pageCount;
 export const DOMAIN = 'https://oneyearnightmarefirstsite.web.app';

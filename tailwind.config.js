@@ -37,6 +37,9 @@ module.exports = {
             },
             eggshell: {
                 DEFAULT: '#f4f1ed',
+            },
+            white: {
+                DEFAULT: "#fff"
             }
         },
         variants: {},
