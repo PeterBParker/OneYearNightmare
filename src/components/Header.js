@@ -1,9 +1,6 @@
 import { useState} from 'react';
-import { Link } from 'react-router-dom';
 import logo from '../assets/Website Assets - Phase 1/SVG/LOGO-header.svg';
 import menuIcon from '../assets/Website Assets - Phase 1/SVG/MOBILE-sandwhich-menu.svg';
-import background from '../assets/Website Assets - Phase 1/SVG/MOBILE-header.svg';
-import background2 from '../assets/Website Assets - Phase 1/SVG/MOBILE-header-negative.svg';
 import ComicPageAPI from '../api/ComicPageAPI';
 import pageData from '../api/data/pagesData.json';
 import MobileMenu from './generic/menus/MobileMenu';
@@ -21,12 +18,10 @@ export default function Header(props) {
         }
     }
 
-    const backgroundImg = props.defaultBg ? background2 : background;
-
     return (
         <div>
             <MobileMenu showMenu={showMenu} onMenuChange={toggleMenu}/> 
-            <div className={`headerGrid w-full pt-3 ${props.defaultBg ? "bg-cream-dark": "bg-white" }`}>
+            <div className={`headerGrid w-full pt-3 ${props.defaultBg ? "bg-cream-light": "bg-white" }`}>
                 <div className="volDisplayMobile text-mocha-dark font-medium text-left ml-6 self-start">
                     <div className="volTextContainer flex flex-row w-full pt-3">
                         <div className="volText headerVolNum">

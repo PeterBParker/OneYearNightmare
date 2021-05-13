@@ -20,7 +20,7 @@ export default function MobileMenu(props) {
                         <button onClick={props.onMenuChange} className="mobileMenuExitButton"><img src={exitButton} width={32} /></button>
                     </div>
                 </div>
-                <div className="mobileMenuLinks text-green font-montserrat text-3xl">
+                <div className="mobileMenuLinks text-green font-header text-3xl">
                     <div className="mobileMenuLinksSpacer grid grid-rows-3 grid-cols-1">
                         <div className="comicViewerNavLink">
                             <Link to={COMIC_VIEWER_DEFAULT_PATH} onClick={props.onMenuChange}>read</Link>
