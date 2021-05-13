@@ -163,3 +163,57 @@
     grid-column-start: 5;
     grid-column-end: 6;
 }
+
+.aboutTheComicContainer {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto auto ;
+}
+.aboutTheComicText {
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+.readButton {
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+.profileCardContainer {
+    grid-template-rows: 60% 40%;
+    grid-template-columns: 100%;
+}
+.profileCardHeader {
+    grid-row-start: 1;
+    grid-row-end: 2;
+    display: grid;
+    grid-template-rows: 33% 33% 33%;
+    grid-template-columns: 45% 55%;
+}
+.profileCardIcon {
+    grid-row-start: 1;
+    grid-row-end: 4;
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+.profileLinkIcons {
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+.profileNameHeader {
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+.profileRolesHeader {
+    grid-row-start: 3;
+    grid-row-end: 4;
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+.profileCardBody {
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
