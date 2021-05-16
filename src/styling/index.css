@@ -217,3 +217,16 @@
     grid-row-start: 2;
     grid-row-end: 3;
 }
+
+.iconCardHeader {
+    background: linear-gradient(180deg, #f4f1ed 50%, #fff 50%);
+}
+.clearfix::after { 
+    content: " ";
+    display: block; 
+    height: 0; 
+    clear: both;
+ }
+ .iconCardContainer {
+     border-top: 1px solid #998f7e;
+ }

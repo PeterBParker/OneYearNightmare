@@ -1,8 +1,8 @@
 import Title from './Title';
 import BodyText from './BodyText';
 import tipjarSvg from '../../assets/Website Assets - Phase 1/SVG/ILLO-tipjar.svg';
-import patreonSvg from '../../assets/Website Assets - Phase 1/SVG/FILLER-icon.svg';
-import bmacSvg from '../../assets/Website Assets - Phase 1/SVG/FILLER-icon.svg';
+import patreonSvg from '../../assets/Website Assets - Phase 1/SVG/icons8-patreon.svg';
+import bmacSvg from '../../assets/Website Assets - Phase 1/PNG/taco.png';
 
 export default function SupportUsCard() {
     return (

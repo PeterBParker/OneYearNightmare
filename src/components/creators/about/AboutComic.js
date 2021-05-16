@@ -16,8 +16,8 @@ export default function AboutComic(props) {
                 <div className="aboutTheComicText">
                     <TextCard header="About the Comic" content={comicText} />
                 </div>
-                <div className="readButtonContainer justify-contents-start mb-12">
-                    <div className="readButton font-body font-medium text-xl bg-cream-light rounded-xl px-2 py-2 ml-8 mr-28">
+                <div className="readButtonContainer justify-contents-start clearfix mb-12">
+                    <div className="readButton font-body font-medium text-xl bg-cream-light rounded-xl px-4 py-2 float-left ml-8">
                         <Link to='/read'>START READING →</Link>
                     </div>
                 </div>
