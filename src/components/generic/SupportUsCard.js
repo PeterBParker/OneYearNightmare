@@ -23,7 +23,7 @@ export default function SupportUsCard() {
             </div>
             <div className="iconList flex flex-row px-6">
                 <div className="patreonLink mr-2">
-                    <a href="www.patreon.com"><img src={patreonSvg} width={32}/></a>
+                    <a href="https://www.patreon.com/"><img src={patreonSvg} width={32}/></a>
                 </div>
                 <div className="bmacLink mr-2">
                     <a href="https://www.buymeacoffee.com/rayell"><img src={bmacSvg} width={32}/></a>
