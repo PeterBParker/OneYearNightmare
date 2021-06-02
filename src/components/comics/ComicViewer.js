@@ -28,9 +28,12 @@ import fbSvg from '../../assets/Website Assets - Phase 1/SVG/SM-fb.svg';
 import twitterSvg from '../../assets/Website Assets - Phase 1/SVG/SM-twitter.svg';
 import tumblrSvg from '../../assets/Website Assets - Phase 1/SVG/SM-tumblr.svg';
 import pinterestSvg from '../../assets/Website Assets - Phase 1/SVG/SM-pinterest.svg';
-
+import { useMediaQuery } from 'react-responsive';
+import querySizes from '../../styling/breakpoints.json';
 
 export default function ComicViewer(props) {
+    const isTabletOrDesktop = useMediaQuery({query: querySizes['md']});
+
     let unknownRequestContent = <div> <div className="text-3xl our-red">No page found. :(</div> <div>Check out our latest page!</div><div><Link className="p-4 border-2 rounded hover:bg-purple-700 hover:gray-50" to={COMIC_VIEWER_DEFAULT_PATH}>>></Link></div></div>;
     const params = useParams();
     const pageId = parseInt(params.pageId, 10);
@@ -54,8 +57,8 @@ export default function ComicViewer(props) {
     return (
         <div>
             <Header defaultBg={false}/>
-            <div className="comicImage">
-                <img src={pageImageUrl} alt="test" />
+            <div className="comicImage bg-cream-dark">
+                <img src={pageImageUrl} alt="test" className="ml-auto mr-auto"/>
             </div>
             <MobileNavBar pageId={pageId} />
             <div className="socialShareContainer my-3">

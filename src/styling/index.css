@@ -58,6 +58,11 @@
     grid-row-end: 4;
 }
 
+.desktopFooterWrapper {
+    min-height: 180px;
+    max-height: 208px;
+}
+
 .headerGrid {
     display: grid;
     grid-template-columns: 1fr auto 1fr;
@@ -229,4 +234,12 @@
  }
  .iconCardContainer {
      border-top: 1px solid #998f7e;
+ }
+
+ .footerVertLine {
+     border-left: 1px solid #998f7e;
+     height: 100%;
+ }
+ .desktopFooterLinksAndLogo {
+     height: 132px;
  }
