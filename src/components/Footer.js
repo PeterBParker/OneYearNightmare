@@ -1,5 +1,5 @@
-import MobileFooter from './Footers/MobileFooter';
-import DesktopFooter from './Footers/DesktopFooter';
+import MobileFooter from './footers/MobileFooter';
+import DesktopFooter from './footers/DesktopFooter';
 
 import { useMediaQuery } from 'react-responsive';
 import querySizes from '.././styling/breakpoints.json';

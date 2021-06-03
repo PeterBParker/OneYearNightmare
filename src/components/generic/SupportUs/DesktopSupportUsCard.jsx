@@ -1,0 +1,32 @@
+import Title from '../Title';
+import BodyText from '../BodyText';
+import tipjarSvg from '../../../assets/Website Assets - Phase 1/SVG/ILLO-tipjar.svg';
+import patreonSvg from '../../../assets/Website Assets - Phase 1/SVG/icons8-patreon.svg';
+import bmacSvg from '../../../assets/Website Assets - Phase 1/PNG/taco.png';
+
+export default function DesktopSupportUsCard() {
+    return (
+        <div className="desktopSupportUsContainer supportUsContainer mb-6">
+            <div className="supportUsTitle py-6 px-6 bg-eggshell text-left">
+                <Title text="Support the Comic //" />
+            </div>
+            <div className="supportUsBody px-6 py-6 inline-block relative">
+                <div className="text-left float-left">
+                    <BodyText text="Thank you for reading our comic! This is what we love to do and 
+                        sharing that with you is a dream. Check out some ways you can help out below." />
+                </div>
+            </div>
+            <div className="tipJarIllo supportUsTipJar self-center">
+                    <a href="https://www.buymeacoffee.com/rayell"><img src={tipjarSvg} width={115} /></a>
+            </div>
+            <div className="iconList supportUsCardLinks flex flex-row px-6 pb-4">
+                <div className="patreonLink mr-2">
+                    <a href="https://www.patreon.com/"><img src={patreonSvg} width={32}/></a>
+                </div>
+                <div className="bmacLink mr-2">
+                    <a href="https://www.buymeacoffee.com/rayell"><img src={bmacSvg} width={32}/></a>
+                </div>
+            </div>
+        </div>
+    )
+}

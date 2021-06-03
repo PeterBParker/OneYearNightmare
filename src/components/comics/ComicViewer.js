@@ -1,7 +1,7 @@
 import ComicPageAPI from '../../api/ComicPageAPI';
 import MobileNavBar from './navigation/MobileNavBar';
-import PageDetailsCard from './PageDetailsCard';
-import SupportUsCard from '../generic/SupportUsCard';
+import DesktopReadPageCards from './ReadPageCards/DesktopReadPageCards';
+import MobileReadPageCards from './ReadPageCards/MobileReadPageCards';
 import Header from '../Header';
 import {
     useParams,
@@ -32,7 +32,7 @@ import { useMediaQuery } from 'react-responsive';
 import querySizes from '../../styling/breakpoints.json';
 
 export default function ComicViewer(props) {
-    const isTabletOrDesktop = useMediaQuery({query: querySizes['md']});
+    const isDesktop = useMediaQuery({query: querySizes['lg']});
 
     let unknownRequestContent = <div> <div className="text-3xl our-red">No page found. :(</div> <div>Check out our latest page!</div><div><Link className="p-4 border-2 rounded hover:bg-purple-700 hover:gray-50" to={COMIC_VIEWER_DEFAULT_PATH}>>></Link></div></div>;
     const params = useParams();
@@ -93,9 +93,7 @@ export default function ComicViewer(props) {
                     </div>
                 </div>
             </div>
-
-            <PageDetailsCard pageId={pageId} />
-            <SupportUsCard />
+            {isDesktop ? <DesktopReadPageCards pageId={pageId} /> : <MobileReadPageCards pageId={pageId} />}
         </div>
 
     );
