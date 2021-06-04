@@ -65,28 +65,28 @@ export default function ComicViewer(props) {
                 <div className="text-center text-mocha-light font-body font-semibold">
                     <div>share this comic:</div>
                 </div>
-                <div className="socialShareButtonContainer flex flex-row w-full px-4 mt-3">
-                    <div className="facebookShareContainer flex-grow">
+                <div className="socialShareButtonContainer flex flex-row justify-center w-full px-4 mt-3">
+                    <div className="facebookShareContainer flex-grow-0 mx-3">
                         <FacebookShareButton url={sharePageUrl} quote={title} >
                             <img src={fbSvg} width={32} />
                         </FacebookShareButton>
                     </div>
-                    <div className="twitterShareContainer flex-grow">
+                    <div className="twitterShareContainer flex-grow-0 mx-3">
                         <TwitterShareButton url={sharePageUrl} title={title}>
                             <img src={twitterSvg} width={32} />
                         </TwitterShareButton>
                     </div>
-                    <div className="tumblrShareContainer flex-grow">
+                    <div className="tumblrShareContainer flex-grow-0 mx-3">
                         <TumblrShareButton url={sharePageUrl} title={title}>
                             <img src={tumblrSvg} width={32} />
                         </TumblrShareButton>
                     </div>
-                    <div className="pinterestShareContainer flex-grow">
+                    <div className="pinterestShareContainer flex-grow-0 mx-3">
                         <PinterestShareButton url={sharePageUrl} media={shareImageUrl}>
                             <img src={pinterestSvg} width={32} />
                         </PinterestShareButton>
                     </div>
-                    <div className="emailShareContainer flex-grow">
+                    <div className="emailShareContainer flex-grow-0 mx-3">
                         <EmailShareButton url={sharePageUrl} subject={title} body="body">
                             <EmailIcon size={32} round />
                         </EmailShareButton>

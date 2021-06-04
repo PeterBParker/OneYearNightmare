@@ -18,7 +18,7 @@ export default function MobileSupportUsCard() {
                         sharing that with you is a dream. Check out some ways you can help out below." />
                 </div>
             </div>
-            <div className="tipJarIllo supportUsTipJar self-center pr-4">
+            <div className="tipJarIllo supportUsTipJar self-center justify-self-center pr-4">
                     <a href="https://www.buymeacoffee.com/rayell"><img src={tipjarSvg} width={115} /></a>
             </div>
             <div className="iconList supportUsCardLinks flex flex-row px-6 self-end">
