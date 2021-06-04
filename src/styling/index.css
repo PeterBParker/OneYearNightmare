@@ -306,11 +306,14 @@
     border-color: #998f7e;
     border-width: 2px 2px 2px 1px;
     height:100%;
-}
-.supportUsContainer {
     display: grid;
     grid-template-columns: 70% 30%;
-    grid-template-rows: 30% 50% 20%;
+    grid-template-rows: 20% 60% 20%;
+}
+.mobileSupportUsContainer {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    grid-template-rows: 40% 45% 15%;
 }
 .supportUsTitle {
     grid-column-start: 1;

@@ -22,8 +22,8 @@ export default function DesktopPageDetailsCard(props) {
                     <Title text={title} />
                 </div>
             </div>
-            <div className="desktopPageDetailsMessage text-base p-8">
-                <div className="text-left">
+            <div className="desktopPageDetailsMessage px-8 py-4">
+                <div className="text-left text-lg">
                     <BodyText text={page.message} />
                 </div>
             </div>
