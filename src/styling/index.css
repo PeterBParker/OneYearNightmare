@@ -308,12 +308,12 @@
     height:100%;
     display: grid;
     grid-template-columns: 70% 30%;
-    grid-template-rows: 20% 60% 20%;
+    grid-template-rows: 5em 60% 20%;
 }
 .mobileSupportUsContainer {
     display: grid;
     grid-template-columns: 70% 30%;
-    grid-template-rows: 40% 45% 15%;
+    grid-template-rows: 7em 50% 15%;
 }
 .supportUsTitle {
     grid-column-start: 1;
