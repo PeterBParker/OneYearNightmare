@@ -138,28 +138,28 @@
     grid-row-end: 4;
 }
 
-.mobileNavBarContainer {
+.navButtonsContainer {
     display: grid;
     grid-template-columns: 20% 20% 20% 20% 20%;
     grid-template-rows: 100%;
 }
-.firstPageButtonMobile {
+.firstPageButton {
     grid-column-start: 1;
     grid-column-end: 2;
 }
-.prevPageButtonMobile {
+.prevPageButton {
     grid-column-start: 2;
     grid-column-end: 3;
 }
-.mysteryButtonMobile {
+.mysteryButton {
     grid-column-start: 3;
     grid-column-end: 4;
 }
-.nextButtonMobile {
+.nextButton {
     grid-column-start: 4;
     grid-column-end: 5;
 }
-.lastPageButtonMobile {
+.lastPageButton {
     grid-column-start: 5;
     grid-column-end: 6;
 }
@@ -338,4 +338,33 @@
     grid-column-end: 3;
     grid-row-start: 1;
     grid-row-end: 4;
+}
+
+.desktopNavBarContainer {
+    position: -webkit-sticky;
+    position: sticky;
+    bottom:0;
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-template-rows: 100%;
+}
+.desktopNavLogo {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    margin-bottom: -1em;
+}
+.desktopNavButtons {
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+.desktopNavLinks {
+    grid-column-start: 3;
+    grid-column-end: 4;
+}
+.desktopNavLink:hover {
+    color: #a1a14c;
+    cursor: pointer;
+    border: solid #a1a14c;
+    border-width: 0px 0px 2px 0px;
+    margin-bottom: -2px;
 }

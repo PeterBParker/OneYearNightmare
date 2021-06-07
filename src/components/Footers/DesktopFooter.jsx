@@ -14,7 +14,7 @@ export default function DesktopFooter() {
 
     return (
         <div className="desktopFooterWrapper bg-grey-light">
-            <div className="desktopFooterLinksAndLogo py-6 px-12 items-center">
+            <div className="desktopFooterLinksAndLogo py-6 px-8 items-center">
 
                 <div className="desktopFooterLogo">
                     <span className="centerVertImageHelper"></span><img src={logo} width="375" className="mr-auto" />
@@ -48,13 +48,13 @@ export default function DesktopFooter() {
 
                     <div className="desktopFooterSocialMediaLinks flex flex-row items-center ml-6">
                         <div className="text-xl font-body text-mocha-light mr-6">Follow us:</div>
-                        <div className="facebookIcon mr-4 flex-shrink-0 ">
+                        <div className="facebookIcon mr-4 flex-shrink-0 footerNavLink">
                             <a href="https://www.facebook.com/MoRayneArt/"><img src={facebookIcon} width={32} className=" " /></a>
                         </div>
-                        <div className="twitterIcon mr-4 flex-shrink-0 ">
+                        <div className="twitterIcon mr-4 flex-shrink-0 footerNavLink">
                             <a href=""><img src={twitterIcon} width={32} /></a>
                         </div>
-                        <div className="instagramIcon mr-4 flex-shrink-0 ">
+                        <div className="instagramIcon mr-4 flex-shrink-0 footerNavLink">
                             <a href="https://www.instagram.com/mo.rayne.art/"><img src={instagramIcon} width={32} /></a>
                         </div>
                     </div>

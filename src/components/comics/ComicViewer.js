@@ -1,5 +1,6 @@
 import ComicPageAPI from '../../api/ComicPageAPI';
 import MobileNavBar from './navigation/MobileNavBar';
+import DesktopNavBar from './navigation/desktop/DesktopNavBar';
 import DesktopReadPageCards from './ReadPageCards/DesktopReadPageCards';
 import MobileReadPageCards from './ReadPageCards/MobileReadPageCards';
 import Header from '../Header';
@@ -60,7 +61,9 @@ export default function ComicViewer(props) {
             <div className="comicImage bg-cream-dark">
                 <img src={pageImageUrl} alt="test" className="ml-auto mr-auto"/>
             </div>
-            <MobileNavBar pageId={pageId} />
+
+            {isDesktop ? <DesktopNavBar pageId={pageId} /> : <MobileNavBar pageId={pageId} />}
+
             <div className="socialShareContainer my-3">
                 <div className="text-center text-mocha-light font-body font-semibold">
                     <div>share this comic:</div>
