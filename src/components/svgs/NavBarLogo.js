@@ -2,7 +2,7 @@ export default function NavBarLogo(props) {
     return(
         <svg 
             xmlns="http://www.w3.org/2000/svg" 
-            viewBox={`0 0 ${311.35*1.4} ${34.13*1.4}`}>
+            viewBox={`0 0 311.35 34.13`}>
             <defs>
                 <style>{`.cls-2{fill:${props.color}}`}</style>
             </defs>

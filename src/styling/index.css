@@ -351,7 +351,6 @@
 .desktopNavLogo {
     grid-column-start: 1;
     grid-column-end: 2;
-    margin-bottom: -1em;
 }
 .desktopNavButtons {
     grid-column-start: 2;
