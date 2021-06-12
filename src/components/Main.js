@@ -15,7 +15,7 @@ export const COMIC_VIEWER_DEFAULT_PATH = `/read/${MOST_RECENT_PAGE_ID}`;
 
 export default function Main() {
     return(
-        <div>
+        <div className="main">
             <Switch>
                 {/* Replace this first route with a redirect to read*/}
                 <Route exact path='/' component={Home} />

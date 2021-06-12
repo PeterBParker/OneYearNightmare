@@ -1,4 +1,4 @@
-import Header from '../Header';
+import Header from '../header/Header';
 import IconCard from '../generic/IconCard';
 
 import patreonIcon from '../../assets/Website Assets - Phase 1/SVG/FILLER-profile.svg';

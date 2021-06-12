@@ -1,4 +1,4 @@
-import Header from '../../Header';
+import Header from '../../header/Header';
 import AboutComic from './AboutComic';
 
 export default function Creators() {

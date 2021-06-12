@@ -3,7 +3,7 @@ import MobileNavBar from './navigation/MobileNavBar';
 import DesktopNavBar from './navigation/desktop/DesktopNavBar';
 import DesktopReadPageCards from './ReadPageCards/DesktopReadPageCards';
 import MobileReadPageCards from './ReadPageCards/MobileReadPageCards';
-import Header from '../Header';
+import Header from '../header/Header';
 import {
     useParams,
     Link
@@ -58,7 +58,7 @@ export default function ComicViewer(props) {
     return (
         <div>
             <Header defaultBg={false}/>
-            <div className="comicImage bg-cream-dark">
+            <div className={`${isDesktop ? "desktopComicPageContainer " : "mobileComicPageContainer bg-cream-dark"}`}>
                 <img src={pageImageUrl} alt="test" className="ml-auto mr-auto"/>
             </div>
 
