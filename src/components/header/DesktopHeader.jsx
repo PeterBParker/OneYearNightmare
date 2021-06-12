@@ -15,11 +15,11 @@ export default function DesktopHeader(props) {
                     </div>
 
                 </div>
-                <div className="headerContentDesktop items-center">
-                    <div className={`publishDaysDesktop text-mocha-dark self-center font-medium justify-self-end mr-3 text-xl`}>
+                <div className="headerContentDesktop flex flex-row items-center justify-center ">
+                    <div className={`publishDaysDesktop text-mocha-dark self-center font-medium justify-self-end mr-3 text-xl flex-shrink-0`}>
                         <p>mon | thur</p>
                     </div>
-                    <div className="headerLogoDesktop justify-self-center self-start p-7">
+                    <div className="headerLogoDesktop justify-self-center self-start p-7 flex-shrink">
                         <img className="headerLogoImageDesktop" src={logo} width="300px" height="auto"/>
                     </div>
                     <div className="volDisplayDesktop text-mocha-dark font-medium text-left ml-6 self-center justify-self-start">
@@ -27,7 +27,7 @@ export default function DesktopHeader(props) {
                             <div className="volText headerVolNumDesktop text-xl">
                                 volume
                         </div>
-                            <div className="volNumContainer ml-2 ">
+                            <div className="volNumContainer ml-2 flex-shrink-0">
                                 <svg width="32px" height="32px">
                                     <g>
                                         <circle cx="14" cy="14" r="13" strokeWidth="2" stroke="#998f7e" fillOpacity="0%"></circle>
