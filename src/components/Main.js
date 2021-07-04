@@ -1,7 +1,7 @@
 import {Switch, Route} from 'react-router-dom';
 import ComicRouter from './comics/ComicRouter';
 import Creators from './creators/about/Creators';
-import Support from './creators/Support';
+import Support from './creators/supportUsCards/Support';
 import Home from './Home';
 import pageData from '../api/data/pagesData.json';
 

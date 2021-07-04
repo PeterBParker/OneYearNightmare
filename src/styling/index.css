@@ -258,7 +258,7 @@
     height: 0; 
     clear: both;
  }
-.iconCardContainer {
+.mobileIconCardContainer {
      border-top: 1px solid #998f7e;
 }
 
@@ -402,3 +402,34 @@
 .desktopComicPageContainer {
     background-image: url(../assets/Website\ Assets\ -\ Phase\ 1/SVG_min/BACKGROUND-read.svg);
 }
+
+.supportCards {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: row;
+    width: 70%;
+    min-width: 300px;
+    border: solid #998f7e;
+    border-width: 2px;
+}
+.childSupportCard {
+    flex-basis: 50%;
+}
+.patreonSupportCard {
+    border: solid #f4f1ed;
+    border-width: 0px 1px 0px 0px;
+}
+.buyusacoffeeSupportCard {
+    border: solid #f4f1ed;
+    border-width: 0px 0px 0px 1px;
+}
+.desktopIconCardContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.iconCardButton {
+    justify-self: flex-end;
+}
+
