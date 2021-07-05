@@ -10,7 +10,7 @@ import instagramIcon from '../../../../assets/Website Assets - Phase 1/SVG/icons
 export default function DesktopAboutCreators() {
 
     return (
-        <div className="desktopAboutCreatorsContainer mx-auto my-12" >
+        <div className="desktopAboutCreatorsContainer mx-auto mb-24" >
             <CardHeader text="About the Creators" isDesktop={true} />
             <div className="desktopAboutCreatorsProfiles">
                 <div className="lightBorder rightBorder">
