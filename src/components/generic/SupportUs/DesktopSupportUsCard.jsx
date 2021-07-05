@@ -3,10 +3,19 @@ import BodyText from '../BodyText';
 import tipjarSvg from '../../../assets/Website Assets - Phase 1/SVG/ILLO-tipjar.svg';
 import patreonSvg from '../../../assets/Website Assets - Phase 1/SVG/icons8-patreon.svg';
 import bmacSvg from '../../../assets/Website Assets - Phase 1/PNG/taco.png';
+import { useMediaQuery } from 'react-responsive';
+import querySizes from '../../../styling/breakpoints.json';
 
 export default function DesktopSupportUsCard() {
+    const bigEnough = useMediaQuery({query: querySizes['xl']});
+    let tipJar = ''
+    if (bigEnough) {
+        tipJar = <div className="tipJarIllo supportUsTipJar self-end pb-10 pr-4">
+            <a href="https://www.buymeacoffee.com/rayell"><img src={tipjarSvg} width={140} /></a>
+            </div>
+    }
     return (
-        <div className="desktopSupportUsContainer supportUsContainer mb-6">
+        <div className={` ${bigEnough? 'supportUsBigEnoughContainer' : 'supportUsTooSmallContainer'} desktopSupportUsContainer supportUsContainer mb-6`}>
             <div className="supportUsTitle py-4 px-8 bg-eggshell text-left flex flex-row items-center">
                 <Title text="Support the Comic //" />
             </div>
@@ -16,9 +25,7 @@ export default function DesktopSupportUsCard() {
                         sharing that with you is a dream. Check out some ways you can help out below." />
                 </div>
             </div>
-            <div className="tipJarIllo supportUsTipJar self-start pt-10 pr-4">
-                    <a href="https://www.buymeacoffee.com/rayell"><img src={tipjarSvg} width={160} /></a>
-            </div>
+            {tipJar}
             <div className="iconList supportUsCardLinks flex flex-row px-6 pb-4">
                 <div className="patreonLink mr-2">
                     <a href="https://www.patreon.com/"><img src={patreonSvg} width={50}/></a>
