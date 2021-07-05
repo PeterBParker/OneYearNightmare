@@ -13,24 +13,9 @@ import {
     COMIC_VIEWER_DEFAULT_PATH,
     DOMAIN
 } from '../Main';
-import {
-    FacebookShareButton,
-    TwitterShareButton,
-    TumblrShareButton,
-    PinterestShareButton,
-    EmailShareButton,
-    FacebookIcon,
-    TwitterIcon,
-    PinterestIcon,
-    TumblrIcon,
-    EmailIcon,
-} from "react-share";
-import fbSvg from '../../assets/Website Assets - Phase 1/SVG/SM-fb.svg';
-import twitterSvg from '../../assets/Website Assets - Phase 1/SVG/SM-twitter.svg';
-import tumblrSvg from '../../assets/Website Assets - Phase 1/SVG/SM-tumblr.svg';
-import pinterestSvg from '../../assets/Website Assets - Phase 1/SVG/SM-pinterest.svg';
 import { useMediaQuery } from 'react-responsive';
 import querySizes from '../../styling/breakpoints.json';
+import SocialMediaShareButtons from './SocialMediaShareButtons';
 
 export default function ComicViewer(props) {
     const isDesktop = useMediaQuery({query: querySizes['lg']});
@@ -68,33 +53,7 @@ export default function ComicViewer(props) {
                 <div className="text-center text-mocha-light font-body font-semibold">
                     <div>share this comic:</div>
                 </div>
-                <div className="socialShareButtonContainer flex flex-row justify-center w-full px-4 mt-3">
-                    <div className="facebookShareContainer flex-grow-0 mx-3">
-                        <FacebookShareButton url={sharePageUrl} quote={title} >
-                            <img src={fbSvg} width={32} />
-                        </FacebookShareButton>
-                    </div>
-                    <div className="twitterShareContainer flex-grow-0 mx-3">
-                        <TwitterShareButton url={sharePageUrl} title={title}>
-                            <img src={twitterSvg} width={32} />
-                        </TwitterShareButton>
-                    </div>
-                    <div className="tumblrShareContainer flex-grow-0 mx-3">
-                        <TumblrShareButton url={sharePageUrl} title={title}>
-                            <img src={tumblrSvg} width={32} />
-                        </TumblrShareButton>
-                    </div>
-                    <div className="pinterestShareContainer flex-grow-0 mx-3">
-                        <PinterestShareButton url={sharePageUrl} media={shareImageUrl}>
-                            <img src={pinterestSvg} width={32} />
-                        </PinterestShareButton>
-                    </div>
-                    <div className="emailShareContainer flex-grow-0 mx-3">
-                        <EmailShareButton url={sharePageUrl} subject={title} body="body">
-                            <EmailIcon size={32} round />
-                        </EmailShareButton>
-                    </div>
-                </div>
+                <SocialMediaShareButtons sharePageUrl={sharePageUrl} shareImageUrl={shareImageUrl} title={title} />
             </div>
             {isDesktop ? <DesktopReadPageCards pageId={pageId} /> : <MobileReadPageCards pageId={pageId} />}
         </div>
