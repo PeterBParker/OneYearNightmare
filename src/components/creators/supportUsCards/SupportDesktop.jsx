@@ -23,7 +23,7 @@ export default function SupportDesktop() {
         <div className="supportPage">
             <Header defaultBg={true}/>
             <SimpleNavBar />
-            <div className="supportCards mt-8 mb-12">
+            <div className="supportCards mt-8 mb-24">
                 <div className="childSupportCard patreonSupportCard" id="patreonSupportCard">
                     <IconCard icon={patreonIcon} title="Patreon" body={patreonBody} link="https://www.patreon.com/" linkText="join the gang" isDesktop={true}/>
                 </div>
