@@ -1,8 +1,11 @@
 import logo from '../../assets/Website Assets - Phase 1/SVG/LOGO-header.svg';
+import { Link } from 'react-router-dom';
 import ComicPageAPI from '../../api/ComicPageAPI';
 import pageData from '../../api/data/pagesData.json';
 import MobileHeaderBackground from '../svgs/MobileHeaderBackground';
 import HamburgerMenu from './HamburgerMenu';
+
+import {COMIC_VIEWER_DEFAULT_PATH} from '../Main';
 
 export default function MobileHeader(props) {
     let volNum = ComicPageAPI.getSeasonNum(pageData.pageCount);
@@ -28,7 +31,7 @@ export default function MobileHeader(props) {
                     
                 </div>
                 <div className="headerLogoMobile justify-self-center self-start">
-                    <img src={logo} width="170" />
+                    <Link to={COMIC_VIEWER_DEFAULT_PATH}><img src={logo} width="170" /></Link>
                 </div>
                 <HamburgerMenu />
                 <div className={`publishDaysMobile text-mocha-dark self-end font-medium h-full ${props.defaultBg ? "bg-white" : "bg-cream-dark"}`}>

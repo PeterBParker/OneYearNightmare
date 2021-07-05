@@ -1,5 +1,7 @@
 import Header from '../../header/Header';
 import IconCard from '../../generic/IconCard';
+import DesktopNavBar from '../../comics/navigation/desktop/DesktopNavBar';
+import SimpleNavBar from '../../comics/navigation/desktop/SimpleNavBar';
 
 import patreonIcon from '../../../assets/Website Assets - Phase 1/SVG/FILLER-profile.svg';
 import buyUsACoffeeIcon from '../../../assets/Website Assets - Phase 1/SVG/FILLER-profile.svg';
@@ -20,6 +22,7 @@ export default function SupportDesktop() {
     return(
         <div className="supportPage">
             <Header defaultBg={true}/>
+            <SimpleNavBar />
             <div className="supportCards mt-8 mb-12">
                 <div className="childSupportCard patreonSupportCard" id="patreonSupportCard">
                     <IconCard icon={patreonIcon} title="Patreon" body={patreonBody} link="https://www.patreon.com/" linkText="join the gang" isDesktop={true}/>

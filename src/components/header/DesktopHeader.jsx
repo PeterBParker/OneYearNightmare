@@ -1,7 +1,10 @@
 import logo from '../../assets/Website Assets - Phase 1/SVG/LOGO-header.svg';
+import { Link } from 'react-router-dom';
 import ComicPageAPI from '../../api/ComicPageAPI';
 import pageData from '../../api/data/pagesData.json';
 import MobileHeaderBackground from '../svgs/MobileHeaderBackground';
+
+import {COMIC_VIEWER_DEFAULT_PATH} from '../Main';
 
 export default function DesktopHeader(props) {
     let volNum = ComicPageAPI.getSeasonNum(pageData.pageCount);
@@ -16,15 +19,15 @@ export default function DesktopHeader(props) {
 
                 </div>
                 <div className="headerContentDesktop flex flex-row items-center justify-center ">
-                    <div className={`publishDaysDesktop text-mocha-dark self-center font-medium justify-self-end mr-3 text-xl flex-shrink-0`}>
+                    <div className={`publishDaysDesktop text-mocha-dark self-center font-medium justify-self-end mr-3 text-2xl flex-shrink-0`}>
                         <p>mon | thur</p>
                     </div>
                     <div className="headerLogoDesktop justify-self-center self-start p-7 flex-shrink">
-                        <img className="headerLogoImageDesktop" src={logo} width="300px" height="auto"/>
+                        <Link to={COMIC_VIEWER_DEFAULT_PATH}><img className="headerLogoImageDesktop" src={logo} width="300px" height="auto"/></Link>
                     </div>
                     <div className="volDisplayDesktop text-mocha-dark font-medium text-left ml-6 self-center justify-self-start">
                         <div className="volTextContainer flex flex-row w-full">
-                            <div className="volText headerVolNumDesktop text-xl">
+                            <div className="volText headerVolNumDesktop text-2xl">
                                 volume
                         </div>
                             <div className="volNumContainer ml-2 flex-shrink-0">
