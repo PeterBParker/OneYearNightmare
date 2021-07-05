@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
-import TextCard from '../../generic/TextCard';
-import AboutCreators from './AboutCreators'
+import TextCard from '../../../generic/TextCard';
+import MobileAboutCreators from './MobileAboutCreators'
 
-export default function AboutComic(props) {
+export default function MobileAboutComic(props) {
     let comicText = "This is a note from the creator. Of things yet\
     unsaid. And things to be discovered. Really\
     just things to speak and understand of the\
@@ -14,7 +14,7 @@ export default function AboutComic(props) {
         <div>
             <div className="aboutTheComicContainer grid">
                 <div className="aboutTheComicText">
-                    <TextCard header="About the Comic" content={comicText} />
+                    <TextCard header="About the Comic" content={comicText} isDesktop={false}/>
                 </div>
                 <div className="readButtonContainer justify-contents-start clearfix mb-12">
                     <div className="readButton font-body font-medium text-xl bg-cream-light rounded-xl px-4 py-2 float-left ml-8">
@@ -22,7 +22,7 @@ export default function AboutComic(props) {
                     </div>
                 </div>
             </div>
-            <AboutCreators />
+            <MobileAboutCreators />
         </div>
 
     )

@@ -1,10 +1,11 @@
 import CardHeader from './CardHeader';
+import TextBody from './TextBody';
 
 export default function TextCard(props) {
     return(
         <div className="textCard">
-            <CardHeader text={props.header} />
-            <div className="bodyText font-body text-grey-light my-6 mx-8 text-left font-normal">{props.content}</div>
+            <CardHeader text={props.header} isDesktop={props.isDesktop}/>
+            <TextBody content={props.content} isDesktop={props.isDesktop}/>
         </div>
     )
 }

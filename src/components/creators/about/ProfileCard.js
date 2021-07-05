@@ -11,10 +11,10 @@ export default function ProfileCard(props) {
     return(
         <div>
             <hr className="border-eggshell border-2"/>
-            <div className="profileCardContainer pt-5 pb-8 px-6">
+            <div className={`profileCardContainer pt-5 pb-8 ${props.isDesktop ? 'px-8' : 'px-6'}`}>
             
-            <div className="profileCardHeader mb-3">
-                <div className="profileCardIcon justify-self-center">
+            <div className={`${props.isDesktop ? 'mb-6 desktopProfileCardHeader mt-2' : 'mb-3 profileCardHeader'}`}>
+                <div className={`${props.isDesktop ? 'justify-self-left' : 'justify-self-center'} profileCardIcon`}>
                     <img src={props.pic} width={110} />
                 </div>
                 <div className="profileLinkIcons flex flex-row space-x-2">
@@ -28,7 +28,7 @@ export default function ProfileCard(props) {
                     <p className="inline">{props.role1}</p> <p className="inline text-mocha-light">|</p> <p className="inline">{props.role2}</p>
                 </div>
             </div>
-            <div className="profileCardBody text-left">
+            <div className={`${props.isDesktop ? 'text-lg' : ''} profileCardBody text-left`}>
                 <BodyText text={bodyText} />
             </div>
         </div>
