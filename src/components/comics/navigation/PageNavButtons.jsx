@@ -6,7 +6,7 @@ import LastPageButton from './LastPageButton';
 export default function PageNavButtons(props) {
 
     return (
-        <div className="navButtonsContainer flex flex-row bg-cream-light py-3">
+        <div className="navButtonsContainer flex flex-row py-3">
             <div className="firstPageButton justify-self-end self-center">
                 <FirstPageButton pageId={props.pageId}/>
             </div>

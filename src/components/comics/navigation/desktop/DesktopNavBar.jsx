@@ -10,15 +10,9 @@ export default function DesktopNavBar(props) {
         middleButtons = ''
     }
     return (
-        <div className="desktopNavBarContainer flex flex-row justify-between bg-cream-light px-8 items-center">
-            <div className="desktopNavLogo">
-                <img src={logo} width='275px' />
-            </div>
+        <div className="desktopNavBarContainer flex flex-row justify-between bg-white px-8 items-center mx-auto">
             <div className="desktopNavButtons">
                 {middleButtons}
-            </div>
-            <div className="desktopNavLinks text-2xl font-body font-medium mx-6 flex flex-row justify-end">
-                <NavBarLinks />
             </div>
         </div>
     );

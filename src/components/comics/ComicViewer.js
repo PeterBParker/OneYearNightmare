@@ -15,7 +15,8 @@ import {
 } from '../Main';
 import { useMediaQuery } from 'react-responsive';
 import querySizes from '../../styling/breakpoints.json';
-import SocialMediaShareButtons from './SocialMediaShareButtons';
+import HorizontalShare from './HorizontalShare';
+import SimpleNavBar from '../comics/navigation/desktop/SimpleNavBar';
 
 export default function ComicViewer(props) {
     const isDesktop = useMediaQuery({query: querySizes['lg']});
@@ -41,20 +42,15 @@ export default function ComicViewer(props) {
     const sharePageUrl = DOMAIN + "/read/" + params.pageId;
     // TODO 6/10 Before deploying, implement these security measures: https://stackoverflow.com/questions/21110130/protect-image-download/21110248
     return (
-        <div>
+        <div className="comicViewerDesktop pb-24">
             <Header defaultBg={false}/>
+            <SimpleNavBar />
             <div className={`${isDesktop ? "desktopComicPageContainer " : "mobileComicPageContainer bg-cream-dark"}`}>
                 <img src={pageImageUrl} alt="test" className="ml-auto mr-auto"/>
             </div>
 
             {isDesktop ? <DesktopNavBar pageId={pageId} /> : <MobileNavBar pageId={pageId} />}
-
-            <div className="socialShareContainer my-3">
-                <div className="text-center text-mocha-light font-body font-semibold">
-                    <div>share this comic:</div>
-                </div>
-                <SocialMediaShareButtons sharePageUrl={sharePageUrl} shareImageUrl={shareImageUrl} title={title} />
-            </div>
+            {isDesktop ? '' : <HorizontalShare sharePageUrl={sharePageUrl} shareImageUrl={shareImageUrl} title={title} />}
             {isDesktop ? <DesktopReadPageCards pageId={pageId} /> : <MobileReadPageCards pageId={pageId} />}
         </div>
 
