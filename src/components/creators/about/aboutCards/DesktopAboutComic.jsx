@@ -4,7 +4,7 @@ import CardHeader from '../../../generic/CardHeader';
 import DesktopAboutCreators from './DesktopAboutCreators'
 import SimpleNavBar from '../../../comics/navigation/desktop/SimpleNavBar';
 
-import aboutComicCardImage from '../../../../assets/Website Assets - Phase 1/SVG_min/ILLO-tree.svg';
+import aboutComicCardImage from '../../../../assets/Phase2-Assets1/images/Asset\ 33.png';
 
 export default function DesktopAboutComic(props) {
     let comicText = "This is a note from the creator. Of things yet\

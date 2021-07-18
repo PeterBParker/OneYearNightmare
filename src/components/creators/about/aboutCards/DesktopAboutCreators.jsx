@@ -1,11 +1,11 @@
 import ProfileCard from '../ProfileCard';
 import CardHeader from '../../../generic/CardHeader';
-import nathanProfileIcon from '../../../../assets/Website Assets - Phase 1/SVG/FILLER-profile.svg';
-import morghanProfileIcon from '../../../../assets/Website Assets - Phase 1/SVG/FILLER-profile.svg';
-import githubIcon from '../../../../assets/Website Assets - Phase 1/SVG/icons8-github.svg';
-import linkedinIcon from '../../../../assets/Website Assets - Phase 1/SVG/icons8-linkedin.svg';
-import facebookIcon from '../../../../assets/Website Assets - Phase 1/SVG/icons8-facebook.svg';
-import instagramIcon from '../../../../assets/Website Assets - Phase 1/SVG/icons8-instagram.svg';
+import nathanProfileIcon from '../../../../assets/Phase2-Assets1/images/profile-pic-N3.jpg';
+import morghanProfileIcon from '../../../../assets/Phase2-Assets1/images/profile-pic-M3.jpg';
+import githubIcon from '../../../../assets/Phase2-Assets1/images/dark-cat.png';
+import linkedinIcon from '../../../../assets/Phase2-Assets1/images/dark-twitter.png';
+import facebookIcon from '../../../../assets/Phase2-Assets1/images/dark-fb.png';
+import instagramIcon from '../../../../assets/Phase2-Assets1/images/dark-IG.png';
 
 export default function DesktopAboutCreators() {
 
