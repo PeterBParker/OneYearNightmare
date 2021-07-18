@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import Header from '../../../header/Header';
 import TextBody from '../../../generic/TextBody';
 import CardHeader from '../../../generic/CardHeader';
 import DesktopAboutCreators from './DesktopAboutCreators'
@@ -15,13 +16,14 @@ export default function DesktopAboutComic(props) {
     Braces and dancing and a brain in a jar. This is\
     more text for the mind dead."
     return (
-        <div>
+        <div className="desktopDefaultBg">
+            <Header defaultBg={true}/>
             <SimpleNavBar />
             <div className="desktopAboutTheComicContainer grid mx-auto mt-4 mb-12">
                 <div className="aboutTheComicText">
                     <CardHeader text="About the Comic" isDesktop={true} />
                 </div>
-                <div className="textAndImageCard">
+                <div className="textAndImageCard bg-white">
                     <div className="textAndImageCardText">
                         <TextBody content={comicText} isDesktop={true} />
                         <div className="readButtonContainer justify-contents-start clearfix mb-12">

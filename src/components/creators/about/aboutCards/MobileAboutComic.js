@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import Header from '../../../header/Header';
 import TextCard from '../../../generic/TextCard';
 import MobileAboutCreators from './MobileAboutCreators'
 
@@ -12,6 +13,7 @@ export default function MobileAboutComic(props) {
     more text for the mind dead."
     return (
         <div>
+            <Header defaultBg={true}/>
             <div className="aboutTheComicContainer grid">
                 <div className="aboutTheComicText">
                     <TextCard header="About the Comic" content={comicText} isDesktop={false}/>

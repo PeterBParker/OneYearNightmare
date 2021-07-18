@@ -424,13 +424,28 @@
 
 .desktopComicPageContainer {
     display: grid;
-    grid-template-columns: auto ;
+    grid-template-columns: 1fr 829px 1fr;
+    grid-template-rows: 100%;
 }
 .comicViewerDesktop {
     background-image: url(../assets/Phase2-Assets2/SVG/background-img.svg);
     background-repeat: repeat-x;
     background-position: center;
     background-attachment: fixed;
+}
+.comicPage {
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+.comicViewerVertShare {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    max-width: 128px;
+}
+.vertShare {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 2em;
 }
 
 .supportCards {
@@ -496,12 +511,9 @@
 .leftBorder {
     border-width: 0px 0px 0px 1px;
 }
-
-.backgroundReverse {
-    z-index: -1;
-    position: absolute;
-    top: 0px;
-}
-.supportPageDesktop {
-    position: relative;
+.desktopDefaultBg {
+    background-image: url(../assets/Phase2-Assets2/SVG/background-img-reverse.svg);
+    background-repeat: repeat-x;
+    background-position: center;
+    background-attachment: fixed;    
 }

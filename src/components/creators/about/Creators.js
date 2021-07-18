@@ -8,10 +8,6 @@ import querySizes from '../../../styling/breakpoints.json';
 export default function Creators() {
     const isDesktop = useMediaQuery({query: querySizes['lg']});
     return(
-        <div className="aboutUsPage">
-            <Header defaultBg={true}/>
-            {isDesktop?<DesktopAboutComic />:<MobileAboutComic />}
-
-        </div>
+        isDesktop?<DesktopAboutComic />:<MobileAboutComic />
     );
 }

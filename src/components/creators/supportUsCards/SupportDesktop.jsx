@@ -1,6 +1,5 @@
 import Header from '../../header/Header';
 import IconCard from '../../generic/IconCard';
-import DesktopNavBar from '../../comics/navigation/desktop/DesktopNavBar';
 import SimpleNavBar from '../../comics/navigation/desktop/SimpleNavBar';
 
 import patreonIcon from '../../../assets/Website Assets - Phase 1/SVG/FILLER-profile.svg';
@@ -20,14 +19,14 @@ export default function SupportDesktop() {
     treasured!"
 
     return(
-        <div className="supportPage">
+        <div className="desktopDefaultBg pb-24">
             <Header defaultBg={true}/>
             <SimpleNavBar />
-            <div className="supportCards mt-8 mb-24">
-                <div className="childSupportCard patreonSupportCard" id="patreonSupportCard">
+            <div className="supportCards mt-8">
+                <div className="childSupportCard patreonSupportCard bg-white" id="patreonSupportCard">
                     <IconCard icon={patreonIcon} title="Patreon" body={patreonBody} link="https://www.patreon.com/" linkText="join the gang" isDesktop={true}/>
                 </div>
-                <div className="childSupportCard buyusacoffeeSupportCard" id="buyusacoffeeSupportCard">
+                <div className="childSupportCard buyusacoffeeSupportCard bg-white" id="buyusacoffeeSupportCard">
                     <IconCard icon={buyUsACoffeeIcon} title="Buy Us a Coffee" body={buyusacoffeeBody} link="https://www.buymeacoffee.com/rayell" linkText="feed us, pls" isDesktop={true}/>
                 </div>  
             </div>

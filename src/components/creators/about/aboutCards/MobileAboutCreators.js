@@ -1,7 +1,7 @@
 import ProfileCard from '../ProfileCard';
 import CardHeader from '../../../generic/CardHeader';
-import nathanProfileIcon from '../../../../assets/Website Assets - Phase 1/SVG/FILLER-profile.svg';
-import morghanProfileIcon from '../../../../assets/Website Assets - Phase 1/SVG/FILLER-profile.svg';
+import nathanProfileIcon from '../../../../assets/Phase2-Assets1/images/profile-pic-N3.jpg';
+import morghanProfileIcon from '../../../../assets/Phase2-Assets1/images/profile-pic-M3.jpg';
 import githubIcon from '../../../../assets/Website Assets - Phase 1/SVG/icons8-github.svg';
 import linkedinIcon from '../../../../assets/Website Assets - Phase 1/SVG/icons8-linkedin.svg';
 import facebookIcon from '../../../../assets/Website Assets - Phase 1/SVG/icons8-facebook.svg';

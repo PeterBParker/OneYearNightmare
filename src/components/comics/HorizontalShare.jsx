@@ -6,7 +6,7 @@ export default function HorizontalShare(props) {
                 <div className="text-center text-mocha-light font-body font-semibold">
                     <div>share this comic:</div>
                 </div>
-                <SocialMediaShareButtons sharePageUrl={props.sharePageUrl} shareImageUrl={props.shareImageUrl} title={props.title} />
+                <SocialMediaShareButtons sharePageUrl={props.sharePageUrl} shareImageUrl={props.shareImageUrl} title={props.title} isVert={false}/>
         </div>
     )
 }

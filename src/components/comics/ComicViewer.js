@@ -1,8 +1,10 @@
 import ComicPageAPI from '../../api/ComicPageAPI';
 import MobileNavBar from './navigation/MobileNavBar';
 import DesktopNavBar from './navigation/desktop/DesktopNavBar';
-import DesktopReadPageCards from './ReadPageCards/DesktopReadPageCards';
-import MobileReadPageCards from './ReadPageCards/MobileReadPageCards';
+import DesktopReadPageCards from './ComicViewerCards/DesktopReadPageCards';
+import MobileReadPageCards from './ComicViewerCards/MobileReadPageCards';
+import DesktopPageView from './ComicViewerCards/DesktopPageView';
+import MobilePageView from './ComicViewerCards/MobilePageView';
 import Header from '../header/Header';
 import {
     useParams,
@@ -41,13 +43,13 @@ export default function ComicViewer(props) {
     const shareImageUrl = DOMAIN + pageImageUrl;
     const sharePageUrl = DOMAIN + "/read/" + params.pageId;
     // TODO 6/10 Before deploying, implement these security measures: https://stackoverflow.com/questions/21110130/protect-image-download/21110248
+
+    
     return (
-        <div className="comicViewerDesktop pb-24">
+        <div className={`${isDesktop ? "comicViewerDesktop" : ''} pb-24`}>
             <Header defaultBg={false}/>
-            <SimpleNavBar />
-            <div className={`${isDesktop ? "desktopComicPageContainer " : "mobileComicPageContainer bg-cream-dark"}`}>
-                <img src={pageImageUrl} alt="test" className="ml-auto mr-auto"/>
-            </div>
+            {isDesktop ? <SimpleNavBar /> : ''}
+            {isDesktop ? <DesktopPageView pageImageUrl={pageImageUrl} /> : <MobilePageView pageImageUrl={pageImageUrl} />}
 
             {isDesktop ? <DesktopNavBar pageId={pageId} /> : <MobileNavBar pageId={pageId} />}
             {isDesktop ? '' : <HorizontalShare sharePageUrl={sharePageUrl} shareImageUrl={shareImageUrl} title={title} />}
