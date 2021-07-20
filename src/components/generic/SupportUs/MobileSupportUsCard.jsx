@@ -1,10 +1,9 @@
 import Title from '../Title';
 import BodyText from '../BodyText';
-import tipjarSvg from '../../../assets/Website Assets - Phase 1/SVG/ILLO-tipjar.svg';
 import patreonSvg from '../../../assets/Website Assets - Phase 1/SVG/icons8-patreon.svg';
 import bmacSvg from '../../../assets/Website Assets - Phase 1/PNG/taco.png';
 
-export default function MobileSupportUsCard() {
+export default function MobileSupportUsCard(props) {
     return (
         <div className="mobileSupportUsContainer mb-6">
             <div className="supportUsTitle py-6 px-6 bg-eggshell text-left">
@@ -14,12 +13,11 @@ export default function MobileSupportUsCard() {
             </div>
             <div className="supportUsBody px-6 py-6 inline-block relative grid">
                 <div className="text-left self-center">
-                    <BodyText text="Thank you for reading our comic! This is what we love to do and 
-                        sharing that with you is a dream. Check out some ways you can help out below." />
+                    <BodyText text={props.supportUsText} />
                 </div>
             </div>
-            <div className="tipJarIllo supportUsTipJar self-center justify-self-center pr-4">
-                    <a href="https://www.buymeacoffee.com/rayell"><img src={tipjarSvg} width={115} /></a>
+            <div className="tipJarIllo supportUsTipJar self-center justify-self-end">
+                    <a href="https://www.buymeacoffee.com/rayell"><img src={props.supportImage} width={115} /></a>
             </div>
             <div className="iconList supportUsCardLinks flex flex-row px-6 self-end">
                 <div className="patreonLink mr-2">

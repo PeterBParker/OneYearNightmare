@@ -5,16 +5,9 @@ import CardHeader from '../../../generic/CardHeader';
 import DesktopAboutCreators from './DesktopAboutCreators'
 import SimpleNavBar from '../../../comics/navigation/desktop/SimpleNavBar';
 
-import aboutComicCardImage from '../../../../assets/Phase2-Assets1/images/Asset\ 33.png';
+import aboutComicCardImage from '../../../../assets/Phase3-Assets1/1x/SkullBird-white-edge-CROPPED.png';
 
 export default function DesktopAboutComic(props) {
-    let comicText = "This is a note from the creator. Of things yet\
-    unsaid. And things to be discovered. Really\
-    just things to speak and understand of the\
-    bandanna that kicks feelings. It’s hard to be\
-    cool when you wear a blue sweater with stars.\
-    Braces and dancing and a brain in a jar. This is\
-    more text for the mind dead."
     return (
         <div className="desktopDefaultBg">
             <Header defaultBg={true}/>
@@ -25,19 +18,19 @@ export default function DesktopAboutComic(props) {
                 </div>
                 <div className="textAndImageCard bg-white">
                     <div className="textAndImageCardText">
-                        <TextBody content={comicText} isDesktop={true} />
+                        <TextBody content={props.comicText} isDesktop={true} />
                         <div className="readButtonContainer justify-contents-start clearfix mb-12">
                             <div className="readButton font-body font-medium text-xl bg-cream-light rounded-xl px-4 py-2 float-left ml-8">
                                 <Link to='/read'>START READING →</Link>
                             </div>
                         </div>
                     </div>
-                    <div className="textAndImageCardImage w-full self-center">
+                    <div className="textAndImageCardImage w-full self-center birdMonsterImage">
                         <img className="mx-auto" src={aboutComicCardImage} width={"100%"} />
                     </div>
                 </div>
             </div>
-            <DesktopAboutCreators />
+            <DesktopAboutCreators {...props}/>
         </div>
 
     )

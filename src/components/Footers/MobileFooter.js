@@ -1,10 +1,8 @@
-import InstagramTag from '../generic/InstagramTag';
-import BuyMeACoffeeTag from '../generic/BuyMeACoffeeTag';
 import logo from '../../assets/Website Assets - Phase 1/SVG/LOGO-footer.svg'
 import discordIcons from '../../assets/Website Assets - Phase 1/SVG/FOOTER-patreon-discord.svg';
-import facebookIcon from '../../assets/Website Assets - Phase 1/SVG/FOOTER-fb.svg';
-import instagramIcon from '../../assets/Website Assets - Phase 1/SVG/FOOTER-instagram.svg';
-import twitterIcon from '../../assets/Website Assets - Phase 1/SVG/FOOTER-twitter.svg';
+import facebookIcon from '../../assets/Phase3-Assets1/1x/32x-footer-FB.png';
+import instagramIcon from '../../assets/Phase3-Assets1/1x/32x-footer-IG.png';
+import twitterIcon from '../../assets/Phase3-Assets1/1x/32x-footer-twitter.png';
 import {Link} from 'react-router-dom';
 
 import { useMediaQuery } from 'react-responsive';

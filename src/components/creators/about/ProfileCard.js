@@ -2,11 +2,6 @@ import BodyText from '../../generic/BodyText';
 import IconLink from '../../generic/IconLink';
 
 export default function ProfileCard(props) {
-    let bodyText="This is a note from the creator. Of things yet\
-    unsaid. And things to be discovered. Really\
-    just things to speak and understand of the\
-    bandanna that kicks feelings. It’s hard to be\
-    cool when you wear a blue sweater with stars."
 
     return(
         <div>
@@ -29,7 +24,7 @@ export default function ProfileCard(props) {
                 </div>
             </div>
             <div className={`${props.isDesktop ? 'text-lg' : ''} profileCardBody text-left`}>
-                <BodyText text={bodyText} />
+                <BodyText text={props.content} />
             </div>
         </div>
         </div>

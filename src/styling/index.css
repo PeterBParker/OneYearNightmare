@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.html {
+    scroll-behavior: smooth;
+}
+
 .icon {
     width: 33px;
 }
@@ -331,6 +335,11 @@
     grid-column-start: 2;
     grid-column-end: 3;
 }
+.signatureAndTime {
+    display: grid;
+    grid-template-rows: 100%;
+    grid-template-columns: 60% 40%;
+}
 
 .desktopReadPageCardsWrapper {
     display: grid;
@@ -392,6 +401,11 @@
     grid-row-start: 1;
     grid-row-end: 4;
 }
+.textAndImageCardText {
+    margin-right: -5rem !important;
+    position: relative;
+    z-index: 1;
+}
 
 .desktopNavBarContainer {
     position: -webkit-sticky;
@@ -446,6 +460,7 @@
     position: -webkit-sticky;
     position: sticky;
     top: 2em;
+    transition: all 0.5s 0s;
 }
 
 .supportCards {

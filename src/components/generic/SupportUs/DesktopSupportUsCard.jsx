@@ -1,17 +1,17 @@
 import Title from '../Title';
 import BodyText from '../BodyText';
-import tipjarSvg from '../../../assets/Website Assets - Phase 1/SVG/ILLO-tipjar.svg';
+import supportImageSrc from '../../../assets/Icecream.png';
 import patreonSvg from '../../../assets/Website Assets - Phase 1/SVG/icons8-patreon.svg';
-import bmacSvg from '../../../assets/Website Assets - Phase 1/PNG/taco.png';
+import bmacSvg from '../../../assets/iceCreamEmoji.png';
 import { useMediaQuery } from 'react-responsive';
 import querySizes from '../../../styling/breakpoints.json';
 
-export default function DesktopSupportUsCard() {
+export default function DesktopSupportUsCard(props) {
     const bigEnough = useMediaQuery({query: querySizes['xl']});
-    let tipJar = ''
+    let supportImageContainer = ''
     if (bigEnough) {
-        tipJar = <div className="tipJarIllo supportUsTipJar self-end pb-10 pr-4">
-            <a href="https://www.buymeacoffee.com/rayell"><img src={tipjarSvg} width={140} /></a>
+        supportImageContainer = <div className="tipJarIllo supportUsTipJar self-end pb-20">
+            <a href="https://www.buymeacoffee.com/rayell"><img src={props.supportImage} width={"100%"} /></a>
             </div>
     }
     return (
@@ -21,11 +21,10 @@ export default function DesktopSupportUsCard() {
             </div>
             <div className="supportUsBody px-8 py-4 inline-block relative flex">
                 <div className="text-left float-left text-lg">
-                    <BodyText text="Thank you for reading our comic! This is what we love to do and 
-                        sharing that with you is a dream. Check out some ways you can help out below." />
+                    <BodyText text={props.supportUsText} />
                 </div>
             </div>
-            {tipJar}
+            {supportImageContainer}
             <div className="iconList supportUsCardLinks flex flex-row px-6 pb-4">
                 <div className="patreonLink mr-2">
                     <a href="https://www.patreon.com/"><img src={patreonSvg} width={50}/></a>

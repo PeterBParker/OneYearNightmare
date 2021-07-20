@@ -1,14 +1,12 @@
 import logo from '../../assets/Website Assets - Phase 1/SVG/LOGO-footer.svg'
 import discordIcons from '../../assets/Website Assets - Phase 1/SVG/FOOTER-patreon-discord.svg';
-import facebookIcon from '../../assets/Website Assets - Phase 1/SVG/FOOTER-fb.svg';
-import instagramIcon from '../../assets/Website Assets - Phase 1/SVG/FOOTER-instagram.svg';
-import twitterIcon from '../../assets/Website Assets - Phase 1/SVG/FOOTER-twitter.svg';
+
 import { Link } from 'react-router-dom';
 
 import { useMediaQuery } from 'react-responsive';
 import querySizes from '../../styling/breakpoints.json';
 
-export default function DesktopFooter() {
+export default function DesktopFooter(props) {
     const isExtraWide = useMediaQuery({ query: querySizes['xl'] });
     const xlDiscordText = <p>Join the fun on<br /> our Discord!</p>
 
@@ -49,13 +47,13 @@ export default function DesktopFooter() {
                     <div className="desktopFooterSocialMediaLinks flex flex-row items-center ml-6">
                         <div className="text-xl font-body text-mocha-light mr-6">Follow us:</div>
                         <div className="facebookIcon mr-4 flex-shrink-0 footerNavLink">
-                            <a href="https://www.facebook.com/MoRayneArt/"><img src={facebookIcon} width={32} className=" " /></a>
+                            <a href="https://www.facebook.com/MoRayneArt/"><img src={props.facebookIcon} width={32} className=" " /></a>
                         </div>
                         <div className="twitterIcon mr-4 flex-shrink-0 footerNavLink">
-                            <a href=""><img src={twitterIcon} width={32} /></a>
+                            <a href=""><img src={props.twitterIcon} width={32} /></a>
                         </div>
                         <div className="instagramIcon mr-4 flex-shrink-0 footerNavLink">
-                            <a href="https://www.instagram.com/mo.rayne.art/"><img src={instagramIcon} width={32} /></a>
+                            <a href="https://www.instagram.com/mo.rayne.art/"><img src={props.instagramIcon} width={32} /></a>
                         </div>
                     </div>
                 </div>

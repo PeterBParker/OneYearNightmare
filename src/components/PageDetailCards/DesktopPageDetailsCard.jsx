@@ -33,7 +33,7 @@ export default function DesktopPageDetailsCard(props) {
                     <JointSignature />
                 </div>
                 <div className="desktopPageDetailsTime self-center">
-                    <div className="date float-right leading-8">
+                    <div className="date float-right leading-8 self-center">
                         <div className="font-body font-regular text-xl text-gray-light leading-8">
                             {String(date.getMonth()) + "." + String(date.getDate()) + "." + String(date.getFullYear())}
                         </div>

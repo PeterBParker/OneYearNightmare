@@ -1,5 +1,5 @@
 import {JOINT_SIG} from '../Main';
-import icon from '../../assets/Website Assets - Phase 1/SVG/FILLER-icon.svg'
+import icon from '../../assets/Phase3-Assets1/1x/32x-profile-M.png';
 import { useMediaQuery } from 'react-responsive';
 import querySizes from '../../styling/breakpoints.json';
 
