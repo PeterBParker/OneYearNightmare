@@ -4,14 +4,14 @@ import TextBody from '../../../generic/TextBody';
 import CardHeader from '../../../generic/CardHeader';
 import DesktopAboutCreators from './DesktopAboutCreators'
 import SimpleNavBar from '../../../comics/navigation/desktop/SimpleNavBar';
-
+import Pages from '../../../comics/navigation/desktop/Pages';
 import aboutComicCardImage from '../../../../assets/Phase3-Assets1/1x/SkullBird-white-edge-CROPPED.png';
 
 export default function DesktopAboutComic(props) {
     return (
         <div className="desktopDefaultBg">
             <Header defaultBg={true}/>
-            <SimpleNavBar />
+            <SimpleNavBar page={Pages.ABOUT}/>
             <div className="desktopAboutTheComicContainer grid mx-auto mt-4 mb-12">
                 <div className="aboutTheComicText">
                     <CardHeader text="About the Comic" isDesktop={true} />

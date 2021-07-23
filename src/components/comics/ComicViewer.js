@@ -15,6 +15,7 @@ import {
     COMIC_VIEWER_DEFAULT_PATH,
     DOMAIN
 } from '../Main';
+import Pages from './navigation/desktop/Pages';
 import { useMediaQuery } from 'react-responsive';
 import querySizes from '../../styling/breakpoints.json';
 import HorizontalShare from './HorizontalShare';
@@ -48,7 +49,7 @@ export default function ComicViewer(props) {
     return (
         <div className={`${isDesktop ? "comicViewerDesktop" : ''} pb-24`}>
             <Header defaultBg={false}/>
-            {isDesktop ? <SimpleNavBar /> : ''}
+            {isDesktop ? <SimpleNavBar page={Pages.READ}/> : ''}
             {isDesktop ? <DesktopPageView pageImageUrl={pageImageUrl} /> : <MobilePageView pageImageUrl={pageImageUrl} />}
 
             {isDesktop ? <DesktopNavBar pageId={pageId} /> : <MobileNavBar pageId={pageId} />}
