@@ -12,10 +12,10 @@ export default function MobileHeader(props) {
 
     return (
         <div>
-            <div className={`headerGrid w-full pt-3 ${props.defaultBg ? "bg-cream-light": "bg-white" }`}>
+            <div className={`headerGrid w-full pt-3 pb-6 ${props.defaultBg ? "bg-cream-light": "bg-white"} ${props.defaultBg ? "lightHeaderBg" : "darkHeaderBg"} headerBg mobileHeaderBg`}>
                 <div className="volDisplayMobile text-mocha-dark font-medium text-left ml-6 self-start">
                     <div className="volTextContainer flex flex-row w-full pt-3">
-                        <div className="volText headerVolNum">
+                        <div className="volText headerVolNum headerVolMobile">
                             vol
                         </div>
                         <div className="volNumContainer ml-2">
@@ -34,16 +34,11 @@ export default function MobileHeader(props) {
                     <Link to={COMIC_VIEWER_DEFAULT_PATH}><img src={logo} width="170" /></Link>
                 </div>
                 <HamburgerMenu />
-                <div className={`publishDaysMobile text-mocha-dark self-end font-medium h-full ${props.defaultBg ? "bg-white" : "bg-cream-dark"}`}>
+                
+            </div>
+            <div className={`publishDaysMobile text-mocha-dark self-end font-medium h-full ${props.defaultBg ? "bg-white" : "bg-cream-dark"}`}>
                     <p>mon | thur</p>
                 </div>
-                <div className="farmHeaderBackground grid pt-10">
-                    <div className="self-end">
-                        <MobileHeaderBackground color={`${props.defaultBg ? "#fff" : "#e0dcd1"}`} />
-                    </div>
-                    
-                </div>
-            </div>
         </div>
     );
 }

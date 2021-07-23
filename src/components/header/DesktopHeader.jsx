@@ -12,7 +12,7 @@ export default function DesktopHeader(props) {
     return (
         <div>
 
-            <div className={`headerGridDesktop items-center w-full`}>
+            <div className={`${props.defaultBg ? "bg-cream-light": "bg-white"} ${props.defaultBg ? "lightHeaderBg" : "darkHeaderBg"} headerBg desktopHeaderBg headerGridDesktop items-center w-full`}>
                 <div className="headerContentDesktop flex flex-row items-center justify-center ">
                     <div className={`publishDaysDesktop text-mocha-dark self-center font-medium justify-self-end mr-6 text-xl flex-shrink-0`}>
                         <p className="publishDaysTextDesktop">mon | thur</p>
@@ -35,7 +35,6 @@ export default function DesktopHeader(props) {
                             </div>
 
                         </div>
-
                     </div>
                 </div>
             </div>

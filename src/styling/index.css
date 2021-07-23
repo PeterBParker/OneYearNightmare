@@ -19,14 +19,11 @@
     font-size: 1rem;
     color: #998f7e;
 }
-.headerVolNum {
-    font-family: Montserrat;
-    font-weight: 600;
-    color: #998f7e;
+.headerVolMobile {
+    margin-top: 5px;
 }
 .headerLogoImageDesktop {
     min-width: 175px;
-
 }
 
 .footerMobileGrid {
@@ -455,8 +452,8 @@
 .comicViewerDesktop {
     background-image: url(../assets/Phase2-Assets2/SVG/background-img.svg);
     background-repeat: repeat-x;
-    background-position: center;
-    background-attachment: fixed;
+    background-position: top;
+    background-size: 1024px;
 }
 .comicPage {
     grid-column-start: 2;
@@ -551,4 +548,21 @@
 }
 .volNumContainer {
     margin-top: 4px;
+}
+.lightHeaderBg {
+    background-image: url('../assets/Website\ Assets\ -\ Phase\ 1/SVG_min/MOBILE-header-light.svg');
+}
+.darkHeaderBg {
+    background-image: url('../assets/Website\ Assets\ -\ Phase\ 1/SVG_min/MOBILE-header-dark.svg');
+}
+.headerBg {
+    background-repeat: repeat-x;
+    background-position: bottom;
+    background-size: 375px;
+}
+.desktopHeaderBg {
+    background-size: 1024px;
+}
+.mobileHeaderBg {
+    background-size: 325px;
 }
