@@ -17,7 +17,7 @@ export default function DesktopSupportUsCard(props) {
     return (
         <div className={` ${bigEnough? 'supportUsBigEnoughContainer' : 'supportUsTooSmallContainer'} desktopSupportUsContainer supportUsContainer mb-6`}>
             <div className="supportUsTitle py-4 px-8 bg-eggshell text-left flex flex-row items-center">
-                <Title text="Support the Comic //" />
+                <Title text="Support Us //" />
             </div>
             <div className="supportUsBody px-8 py-4 inline-block relative flex">
                 <div className="text-left float-left text-lg">

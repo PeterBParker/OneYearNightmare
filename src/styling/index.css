@@ -306,7 +306,7 @@
 .desktopPageDetailsContainer {
     display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: 20% 60% 20%;
+    grid-template-rows: 5em 1fr 5em;
     height: 100%;
     border: solid;
     border-color: #998f7e;
@@ -364,7 +364,7 @@
     border-width: 2px 2px 2px 1px;
     height:100%;
     display: grid;
-    grid-template-rows: 5em 60% 20%;
+    grid-template-rows: 5em 1fr 5em;
 }
 .supportUsTooSmallContainer {
     grid-template-columns: 100%;
@@ -428,10 +428,21 @@
     grid-column-start: 3;
     grid-column-end: 4;
 }
-.desktopNavLink:hover {
+.desktopNavLink {
+    font-size: 1.4rem;
+}
+.desktopNavLinkSelected {
+    font-size: 1.4rem;
     color: #a1a14c;
-    cursor: pointer;
     border: solid #a1a14c;
+    border-width: 0px 0px 2px 0px;
+    margin-bottom: -2px;
+}
+.desktopNavLink:hover {
+    font-size: 1.4rem;
+    color: #393d36;
+    cursor: pointer;
+    border: solid #393d36;
     border-width: 0px 0px 2px 0px;
     margin-bottom: -2px;
 }
@@ -499,6 +510,12 @@
     border: solid #998f7e;
     border-width: 1px;
 }
+.aboutComicMobileBg {
+    background-image: url('../assets/Phase3-Assets1/1x/SkullBird-white-edge-CROPPED.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position:right;
+}
 .textAndImageCardText {
     grid-column-start: 1;
     grid-column-end: 2;
@@ -526,9 +543,12 @@
 .leftBorder {
     border-width: 0px 0px 0px 1px;
 }
-.desktopDefaultBg {
-    background-image: url(../assets/Phase2-Assets2/SVG/background-img-reverse.svg);
-    background-repeat: repeat-x;
-    background-position: center;
-    background-attachment: fixed;    
+.publishDaysTextDesktop {
+    padding-bottom: 5px;
+}
+.headerVolNumDesktop {
+    margin-top: 2px;
+}
+.volNumContainer {
+    margin-top: 4px;
 }

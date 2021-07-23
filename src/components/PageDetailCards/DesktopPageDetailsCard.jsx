@@ -17,6 +17,7 @@ export default function DesktopPageDetailsCard(props) {
 
     return (
         <div className="desktopPageDetailsContainer">
+            {/* TODO: Remove display: grid from this parent container */}
             <div className="desktopPageDetailsTitle">
                 <div className="text-left p-8">
                     <Title text={title} />
