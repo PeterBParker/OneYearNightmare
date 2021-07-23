@@ -1,4 +1,5 @@
 import pagesData from './data/pagesData.json';
+import users from './data/users.json';
 
 const ComicPageAPI = {
     getPage: function (pageId) {
@@ -137,6 +138,14 @@ const ComicPageAPI = {
         return(
             {"message": relObjs.pageObj.message, "title": relObjs.pageObj.title, "time": relObjs.pageObj.time}
         )
+    },
+    getAdminDisplayName: function(userId) {
+        for (let user in users.admins) {
+            if (users.admins[user].id == userId) {
+                return users.admins[user].displayName;
+            }
+        }
+        return "Mo and Nate"
     }
 }
 

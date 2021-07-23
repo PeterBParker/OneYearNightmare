@@ -13,9 +13,10 @@ from num2words import num2words
 # TODO:         Delete folders if the program crashes? idk.
 
 _DATA_FILENAME = "../api/data/pagesData.json"
+_USERS_FILENAME = "../api/data/users.json"
 _WORKING_DATA_FILENAME = "../api/data/pagesData-temp.json"
 _BACKUP_FILENAME = "../api/data/pagesData-backup.json"
-_DIR_PREFIX = '../../public/OneYearNightmarePages/'
+_DIR_PREFIX = '../../public/MnMPages/'
 
 def addChapter(seasonName, chapterName, folderName, numOfPages, id, pages):
     chapterObj = {
@@ -32,7 +33,7 @@ def addChapter(seasonName, chapterName, folderName, numOfPages, id, pages):
 def addFirstChapter(seasonName):
     addChapter(seasonName=seasonName, chapterName="Chapter One", folderName="chapter1", numOfPages=0, id=1, pages=[])
 
-def addNewPage(seasonName, chapterName, title, message, filepath):
+def addNewPage(seasonName, chapterName, title, message, filepath, user):
     # time, id, and pageNum are generated off of existing values
     data = getData(_WORKING_DATA_FILENAME, 'r')
     chapter = getChapterInSeason(seasonName, chapterName)
@@ -52,7 +53,8 @@ def addNewPage(seasonName, chapterName, title, message, filepath):
         "title": title,
         "message": message,
         "datetime": time,
-        "id": identifier
+        "id": identifier,
+        "user": user,
     }
 
     writeIncrementChapterPageCount(season["id"], chapter["id"])
@@ -175,6 +177,29 @@ def getTargetSeason():
         else:
             print("\nI don't recognize that option. Try again.\n")
     return (targetSeason)
+
+def getUser():
+    userData = getData(_USERS_FILENAME, "r")
+    usernames = []
+    for person in userData["admins"]:
+        usernames.append(person["id"])
+    user = None
+    while True:
+        # Ask for user
+        print("Who is adding this page?")
+        print("Legal values are: ")
+        for name in usernames:
+            print(name)
+
+        # Get input
+        user = input("> ")
+
+        # Validate it matches one of the users allowed
+        if user in usernames:
+            return user
+        else:
+            print("That id doesn't match any known user :(")
+            continue
 
 def enterSeasonName():
     decidingOnSeasonName = True
@@ -311,6 +336,8 @@ if __name__ == "__main__":
         workingDataFileName = safeCopyFile(_DATA_FILENAME, _WORKING_DATA_FILENAME)
 
         print("Welcome to the Page Appender! I will append a page to the end of a specifed chapter.\n")
+
+        user = getUser()
         
         # Get Season Name to add the page to
         seasonName = getTargetSeason()
@@ -322,7 +349,7 @@ if __name__ == "__main__":
         title, message, filepath = enterPageData(seasonName, chapterName)
 
         print("Adding page...")
-        isSuccess = addNewPage(seasonName, chapterName, title, message, filepath)
+        isSuccess = addNewPage(seasonName, chapterName, title, message, filepath, user)
         if(isSuccess):
             print("Page successfully added!")
         

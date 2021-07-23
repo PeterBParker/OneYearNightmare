@@ -1,4 +1,3 @@
-import ComicPageAPI from '../../api/ComicPageAPI';
 import {
     Link
 } from 'react-router-dom';
@@ -9,34 +8,27 @@ import { stringify } from 'postcss';
 
 
 export default function DesktopPageDetailsCard(props) {
-    let page = ComicPageAPI.getPageObj(props.pageId)
-    let date = new Date(page.datetime)
-    let volNum = String(ComicPageAPI.getSeasonNum(props.pageId)).padStart(2, '0');
-    let pageNum = String(page.pageNum).padStart(2, '0');
-    let title = "Vol " + volNum + " // Pg " + pageNum;
-
     return (
         <div className="desktopPageDetailsContainer">
-            {/* TODO: Remove display: grid from this parent container */}
             <div className="desktopPageDetailsTitle">
                 <div className="text-left p-8">
-                    <Title text={title} />
+                    <Title text={props.title} />
                 </div>
             </div>
             <div className="desktopPageDetailsMessage px-8 py-4">
                 <div className="text-left text-lg">
-                    <BodyText text={page.message} />
+                    <BodyText text={props.page.message} />
                 </div>
             </div>
 
             <div className="desktopPageDetailsSigAndTime px-8 py-4 border-t-2 border-mocha-dark">
                 <div className="desktopPageDetailsSignature">
-                    <JointSignature />
+                    <JointSignature userId={props.page.user}/>
                 </div>
                 <div className="desktopPageDetailsTime self-center">
                     <div className="date float-right leading-8 self-center">
                         <div className="font-body font-regular text-xl text-gray-light leading-8">
-                            {String(date.getMonth()) + "." + String(date.getDate()) + "." + String(date.getFullYear())}
+                            {String(props.date.getMonth()) + "." + String(props.date.getDate()) + "." + String(props.date.getFullYear())}
                         </div>
                     </div>
                 </div>

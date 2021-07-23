@@ -6,7 +6,7 @@ _DATA_FILENAME = "../api/data/pagesData.json"
 if __name__ == "__main__":
     print("Are you sure you want to reset the database? This action is irreversible.\n")
     answer = input("absolutely / no > ")
-    if answer = "absolutely":
+    if answer == "absolutely":
         newBook = {
             "pageCount": 0,
             "seasonCount": 0,
