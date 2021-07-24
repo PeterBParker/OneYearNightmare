@@ -1,10 +1,6 @@
-import {
-    Link
-} from 'react-router-dom';
 import Title from '../generic/Title';
 import BodyText from '../generic/BodyText';
 import JointSignature from '../generic/JointSignature';
-import { stringify } from 'postcss';
 
 
 export default function DesktopPageDetailsCard(props) {

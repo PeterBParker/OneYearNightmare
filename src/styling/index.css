@@ -170,7 +170,12 @@
     grid-row-end: 4;
 }
 
-.navButtonsContainer {
+.mobileNavButtonsContainer {
+    display: grid;
+    grid-template-columns: 17.5% 17.5% 30% 17.5% 17.5%;
+    grid-template-rows: 100%;
+}
+.desktopNavButtonsContainer {
     display: grid;
     grid-template-columns: 20% 20% 20% 20% 20%;
     grid-template-rows: 100%;
