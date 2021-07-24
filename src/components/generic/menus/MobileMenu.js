@@ -2,7 +2,6 @@ import footerImage from '../../../assets/Website Assets - Phase 1/SVG/MOBILE-men
 import exitButton from '../../../assets/Website Assets - Phase 1/SVG/MOBILE-x.svg';
 import { Link } from 'react-router-dom';
 import React, { useRef } from 'react';
-import { COMIC_VIEWER_DEFAULT_PATH } from '../../Main';
 
 export default function MobileMenu(props) {
     let mobileMenu = useRef(null);
@@ -23,7 +22,7 @@ export default function MobileMenu(props) {
                 <div className="mobileMenuLinks text-green font-header text-3xl">
                     <div className="mobileMenuLinksSpacer grid grid-rows-3 grid-cols-1">
                         <div className="comicViewerNavLink">
-                            <Link to={COMIC_VIEWER_DEFAULT_PATH} onClick={props.onMenuChange}>read</Link>
+                            <Link to={'/read'} onClick={props.onMenuChange}>read</Link>
                         </div>
                         <div className="creatorsNavLink">
                             <Link to='/creatives' onClick={props.onMenuChange}>about us</Link>
