@@ -9,13 +9,16 @@ import { useState } from 'react';
 export default function DesktopNavBar(props) {
     const [cookies, setCookie, removeCookie] = useCookies(['mxmBookmarkedPage'])
     const [bookmarkIcon, setBookmarkIcon] = useState(bookmarkOutline);
+    const [bookmarked, setIfBookmarked] = useState(false);
 
     useEffect(() => {
         if (props.pageId.toString() == cookies.mxmBookmarkedPage) {
             console.log(cookies.mxmBookmarkedPage)
             setBookmarkIcon(bookmarkFilled);
+            setIfBookmarked(true);
         } else {
             setBookmarkIcon(bookmarkOutline);
+            setIfBookmarked(false);
         }
     }, [cookies.mxmBookmarkedPage, props.pageId]);
 
@@ -32,7 +35,7 @@ export default function DesktopNavBar(props) {
             <div className="desktopNavButtons self-center">
                 {middleButtons}
             </div>
-            <div className="bookmarkButton self-center ml-auto" onClick={() => setCookie('mxmBookmarkedPage', props.pageId.toString(), {path: '/'})}>
+            <div className={`${bookmarked ? 'bookmarkFilled' : 'bookmarkEmpty'} bookmarkButton self-center ml-auto`} onClick={() => setCookie('mxmBookmarkedPage', props.pageId.toString(), {path: '/'})}>
                 <img src={bookmarkIcon} width={50} />
             </div>
         </div>

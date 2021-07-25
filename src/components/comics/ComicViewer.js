@@ -24,19 +24,28 @@ import SimpleNavBar from '../comics/navigation/desktop/SimpleNavBar';
 export default function ComicViewer(props) {
     const isDesktop = useMediaQuery({query: querySizes['lg']});
 
-    let unknownRequestContent = <div> <div className="text-3xl our-red">No page found. :(</div> <div>Check out our latest page!</div><div><Link className="p-4 border-2 rounded hover:bg-purple-700 hover:gray-50" to={COMIC_VIEWER_DEFAULT_PATH}>>></Link></div></div>;
+    let unknownRequestContent = <div className="invalidComicPage"> <div className="text-3xl our-red ">No page found. :(</div> <div>Check out our latest page!</div><div className="mt-10"><Link className="p-4 border-2 rounded hover:bg-purple-700 hover:gray-50" to={COMIC_VIEWER_DEFAULT_PATH}>>></Link></div></div>;
     const params = useParams();
     const pageId = parseInt(params.pageId, 10);
 
     // Checks the id in the url is a valid page
     let isValidId = ComicPageAPI.validatePageId(pageId);
     if (!isValidId) {
-        return (unknownRequestContent);
+        return (<div className={`${isDesktop ? "comicViewerDesktop" : ''} pb-24`}>
+        <Header defaultBg={false}/>
+        {isDesktop ? <SimpleNavBar page={Pages.READ}/> : ''}
+        {unknownRequestContent}
+        
+        </div>);
     }
 
     var pageInfo = ComicPageAPI.getPage(pageId);
     if (!pageInfo) {
-        return (unknownRequestContent);
+        return (<div className={`${isDesktop ? "comicViewerDesktop" : ''} pb-24`}>
+        <Header defaultBg={false}/>
+        {isDesktop ? <SimpleNavBar page={Pages.READ}/> : ''}
+        {unknownRequestContent}
+        </div>);
     }
 
     const pageImageUrl = encodeURI(process.env.PUBLIC_URL + BASE_PATH + pageInfo.seasonPath + '/' + pageInfo.chapterPath + '/' + pageInfo.pagePath);
