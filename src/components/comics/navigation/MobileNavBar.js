@@ -3,8 +3,8 @@ import {useCookies} from 'react-cookie';
 import {useState} from 'react';
 import { useEffect } from 'react';
 
-import bookmarkOutline from '../../../assets/Phase3-Assets1/1x/bookmark_border.svg';
-import bookmarkFilled from '../../../assets/Phase3-Assets1/1x/bookmark_filled.svg';
+import bookmarkOutline from '../../../assets/bookies/bookies/bookie-short-line-40px.png';
+import bookmarkFilled from '../../../assets/bookies/bookies/bookie-short-fill-40px.png';
 
 export default function MobileNavBar(props) {
     const [cookies, setCookie, removeCookie] = useCookies(['mxmBookmarkedPage'])

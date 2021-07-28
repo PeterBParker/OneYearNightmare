@@ -1,7 +1,7 @@
 import ComicPageAPI from '../../../api/ComicPageAPI';
 import {Link} from 'react-router-dom';
-import activeLastIcon from '../../../assets/Website Assets - Phase 1/SVG/NAVBAR-most-recent.svg';
-import disabledLastIcon from '../../../assets/Website Assets - Phase 1/SVG/NAVBAR-most-recent-disabled.svg';
+import activeLastIcon from '../../../assets/FINAL-ASSETS-072821/final assets/right-skip-30px.png';
+import disabledLastIcon from '../../../assets/FINAL-ASSETS-072821/final assets/right-skip-light-30px.png';
 
 export default function LastPageButton(props) {
     const disabledButton = <div className="navButton"><img src={disabledLastIcon} width={30}/></div>;

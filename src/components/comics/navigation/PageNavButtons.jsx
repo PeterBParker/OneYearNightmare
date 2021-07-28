@@ -8,7 +8,7 @@ export default function PageNavButtons(props) {
     let middleButton = null
     if (props.isMobile) {
         middleButton =  <div className="bookmarkButton justify-self-center self-center" onClick={() => props.setBookmark('mxmBookmarkedPage', props.pageId.toString(), {path: '/'})}>
-                            <img src={props.bookmarkIcon} width={50} />
+                            <img src={props.bookmarkIcon} width={40} />
                         </div>
     }
     return (

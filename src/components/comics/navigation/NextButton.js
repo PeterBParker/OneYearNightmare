@@ -1,7 +1,7 @@
 import ComicPageAPI from '../../../api/ComicPageAPI';
 import {Link} from 'react-router-dom';
-import activeNextIcon from '../../../assets/Website Assets - Phase 1/SVG/NAVBAR-next.svg';
-import disabledNextIcon from '../../../assets/Website Assets - Phase 1/SVG/NAVBAR-next-disabled.svg';
+import activeNextIcon from '../../../assets/FINAL-ASSETS-072821/final assets/right-arrow-30px.png';
+import disabledNextIcon from '../../../assets/FINAL-ASSETS-072821/final assets/right-arrow-light-30px.png';
 
 export default function NextButton(props) {
     const disabledButton = <div className="navButton"><img src={disabledNextIcon} width={30} /></div>;

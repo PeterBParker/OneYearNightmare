@@ -1,7 +1,7 @@
 import ComicPageAPI from '../../../api/ComicPageAPI';
 import {Link} from 'react-router-dom';
-import activeFirstIcon from '../../../assets/Website Assets - Phase 1/SVG/NAVBAR-first.svg';
-import disabledFirstIcon from '../../../assets/Website Assets - Phase 1/SVG/NAVBAR-first-disabled.svg';
+import activeFirstIcon from '../../../assets/FINAL-ASSETS-072821/final assets/left-skip-30px.png';
+import disabledFirstIcon from '../../../assets/FINAL-ASSETS-072821/final assets/left-skip-light-30px.png';
 
 export default function FirstPageButton(props) {
     const disabledButton = <div className="navButton"><img src={disabledFirstIcon} width={30}/></div>;

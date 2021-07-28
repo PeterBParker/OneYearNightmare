@@ -1,8 +1,5 @@
 import Title from '../Title';
 import BodyText from '../BodyText';
-import supportImageSrc from '../../../assets/Icecream.png';
-import patreonSvg from '../../../assets/Website Assets - Phase 1/SVG/icons8-patreon.svg';
-import bmacSvg from '../../../assets/iceCreamEmoji.png';
 import { useMediaQuery } from 'react-responsive';
 import querySizes from '../../../styling/breakpoints.json';
 
@@ -25,12 +22,12 @@ export default function DesktopSupportUsCard(props) {
                 </div>
             </div>
             {supportImageContainer}
-            <div className="iconList supportUsCardLinks flex flex-row px-6 pb-4">
-                <div className="patreonLink mr-2">
-                    <a href="https://www.patreon.com/"><img src={patreonSvg} width={50}/></a>
+            <div className="iconList supportUsCardLinks flex flex-row px-6 pb-4 items-end">
+                <div className="patreonLink mr-4">
+                    <a href="https://www.patreon.com/"><img src={props.patreonIcon} onMouseOver={() => props.changePatreon(props.patreonActive)} onMouseLeave={() => props.changePatreon(props.patreonInactive)} width={50}/></a>
                 </div>
                 <div className="bmacLink mr-2">
-                    <a href="https://www.buymeacoffee.com/rayell"><img src={bmacSvg} width={50}/></a>
+                    <a href="https://www.buymeacoffee.com/rayell"><img src={props.tipIcon} onMouseOver={() => props.changeTip(props.tipActive)} onMouseLeave={() => props.changeTip(props.tipInactive)} width={50}/></a>
                 </div>
             </div>
         </div>

@@ -19,12 +19,12 @@ export default function MobileSupportUsCard(props) {
             <div className="tipJarIllo supportUsTipJar self-center justify-self-end">
                     <a href="https://www.buymeacoffee.com/rayell"><img src={props.supportImage} width={115} /></a>
             </div>
-            <div className="iconList supportUsCardLinks flex flex-row px-6 self-end">
-                <div className="patreonLink mr-2">
-                    <a href="https://www.patreon.com/"><img src={patreonSvg} width={32}/></a>
+            <div className="iconList supportUsCardLinks flex flex-row px-6 self-end pt-4">
+                <div className="patreonLink mr-4">
+                    <a href="https://www.patreon.com/"><img src={props.patreonIcon} onMouseOver={() => props.changePatreon(props.patreonActive)} onMouseLeave={() => props.changePatreon(props.patreonInactive)} width={50}/></a>
                 </div>
                 <div className="bmacLink mr-2">
-                    <a href="https://www.buymeacoffee.com/rayell"><img src={bmacSvg} width={32}/></a>
+                    <a href="https://www.buymeacoffee.com/rayell"><img src={props.tipIcon} onMouseOver={() => props.changeTip(props.tipActive)} onMouseLeave={() => props.changeTip(props.tipInactive)} width={50}/></a>
                 </div>
             </div>
         </div>

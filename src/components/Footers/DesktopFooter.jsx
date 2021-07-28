@@ -1,5 +1,5 @@
 import logo from '../../assets/Website Assets - Phase 1/SVG/LOGO-footer.svg'
-import discordIcons from '../../assets/Website Assets - Phase 1/SVG/FOOTER-patreon-discord.svg';
+import discordIcons from '../../assets/New-Icons_New-Nav/2x/discord_illo_1.png';
 
 import { Link } from 'react-router-dom';
 
@@ -24,7 +24,9 @@ export default function DesktopFooter(props) {
                             {isExtraWide ? xlDiscordText : ""}
                         </div>
                         <div className="discordIcons ml-6 ">
-                            <img src={discordIcons} width="120" />
+                            <a href="https://discord.gg/47DQVUnbD6">
+                                <img src={discordIcons} width="150" />
+                            </a>
                         </div>
                     </div>
 
@@ -47,13 +49,25 @@ export default function DesktopFooter(props) {
                     <div className="desktopFooterSocialMediaLinks flex flex-row items-center ml-6">
                         <div className="text-xl font-body text-mocha-light mr-6">Follow us:</div>
                         <div className="facebookIcon mr-4 flex-shrink-0 footerNavLink">
-                            <a href="https://www.facebook.com/MoRayneArt/"><img src={props.facebookIcon} width={32} className=" " /></a>
+                            <a href="https://www.facebook.com/MoRayneArt/">
+                                <img src={props.facebookIcon} width={50} 
+                                    onMouseOver={() => props.changeIcon('fb', props.facebookActive)} 
+                                    onMouseLeave={() => props.changeIcon('fb', props.facebookInactive)} />
+                            </a>
                         </div>
                         <div className="twitterIcon mr-4 flex-shrink-0 footerNavLink">
-                            <a href=""><img src={props.twitterIcon} width={32} /></a>
+                            <a href="">
+                                <img src={props.twitterIcon} width={50} 
+                                    onMouseOver={() => props.changeIcon('twitter', props.twitterActive)} 
+                                    onMouseLeave={() => props.changeIcon('twitter', props.twitterInactive)}/>
+                            </a>
                         </div>
                         <div className="instagramIcon mr-4 flex-shrink-0 footerNavLink">
-                            <a href="https://www.instagram.com/mo.rayne.art/"><img src={props.instagramIcon} width={32} /></a>
+                            <a href="https://www.instagram.com/mo.rayne.art/">
+                                <img src={props.instagramIcon} width={50} 
+                                    onMouseOver={() => props.changeIcon('insta', props.instagramActive)} 
+                                    onMouseLeave={() => props.changeIcon('insta', props.instagramInactive)}/>
+                            </a>
                         </div>
                     </div>
                 </div>

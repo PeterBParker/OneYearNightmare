@@ -24,7 +24,13 @@ import SimpleNavBar from '../comics/navigation/desktop/SimpleNavBar';
 export default function ComicViewer(props) {
     const isDesktop = useMediaQuery({query: querySizes['lg']});
 
-    let unknownRequestContent = <div className="invalidComicPage"> <div className="text-3xl our-red ">No page found. :(</div> <div>Check out our latest page!</div><div className="mt-10"><Link className="p-4 border-2 rounded hover:bg-purple-700 hover:gray-50" to={COMIC_VIEWER_DEFAULT_PATH}>>></Link></div></div>;
+    let unknownRequestContent = <div className="invalidComicPage"> 
+                                    <div className="text-3xl our-red ">No page found. :(</div> 
+                                    <div>Check out our latest page!</div>
+                                    <div className="mt-10">
+                                        <Link className="p-4 border-2 rounded hover:bg-purple-700 hover:gray-50" to={COMIC_VIEWER_DEFAULT_PATH}>>></Link>
+                                    </div>
+                                </div>;
     const params = useParams();
     const pageId = parseInt(params.pageId, 10);
 
@@ -53,10 +59,9 @@ export default function ComicViewer(props) {
     const shareImageUrl = DOMAIN + pageImageUrl;
     const sharePageUrl = DOMAIN + "/read/" + params.pageId;
     // TODO 6/10 Before deploying, implement these security measures: https://stackoverflow.com/questions/21110130/protect-image-download/21110248
-
-    
+   
     return (
-        <div className={`${isDesktop ? "comicViewerDesktop" : ''} pb-24`}>
+        <div className={`${isDesktop ? "comicViewerDesktop desktopBg pb-24" : 'pb-16'}`}>
             <Header defaultBg={false}/>
             {isDesktop ? <SimpleNavBar page={Pages.READ}/> : ''}
             {isDesktop ? <DesktopPageView pageImageUrl={pageImageUrl} /> : <MobilePageView pageImageUrl={pageImageUrl} />}

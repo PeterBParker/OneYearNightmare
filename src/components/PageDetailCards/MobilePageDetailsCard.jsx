@@ -18,7 +18,7 @@ export default function MobilePageDetailsCard(props) {
             </div>
             <div className="signatureAndTime inline-block w-full">
                 <div className="sig float-left">
-                    <JointSignature/>
+                    <JointSignature userId={props.page.user}/>
                 </div>
                 <div className="date float-right leading-8">
                     <div className="font-body font-regular text-base text-gray-light leading-8"> 

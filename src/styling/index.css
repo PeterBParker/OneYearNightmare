@@ -25,7 +25,9 @@
 .headerLogoImageDesktop {
     min-width: 175px;
 }
-
+.desktopDefaultBg {
+    background-image: url(../assets/FINAL-ASSETS-072821/final\ assets/background2-tiling.jpg);
+}
 .footerMobileGrid {
     display: grid;
     grid-template-columns: 33% 33% 33%;
@@ -460,10 +462,12 @@
     grid-template-rows: 100%;
 }
 .comicViewerDesktop {
-    background-image: url(../assets/Phase2-Assets2/SVG/background-img.svg);
+    background-image: url(../assets/FINAL-ASSETS-072821/final\ assets/background-tiling.jpg);
+}
+.desktopBg {
     background-repeat: repeat-x;
     background-position: top;
-    background-size: 1024px;
+    background-size: 2030px;
 }
 .comicPage {
     grid-column-start: 2;

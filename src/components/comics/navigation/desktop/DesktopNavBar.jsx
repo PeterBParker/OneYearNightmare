@@ -2,8 +2,8 @@ import PageNavButtons from '../PageNavButtons';
 import { useCookies } from 'react-cookie';
 import { useEffect } from 'react';
 
-import bookmarkOutline from '../../../../assets/Phase3-Assets1/1x/bookmark_border.svg';
-import bookmarkFilled from '../../../../assets/Phase3-Assets1/1x/bookmark_filled.svg';
+import bookmarkOutline from '../../../../assets/bookies/bookies/bookie-short-line-40px.png';
+import bookmarkFilled from '../../../../assets/bookies/bookies/bookie-short-fill-40px.png';
 import { useState } from 'react';
 
 export default function DesktopNavBar(props) {
@@ -35,8 +35,8 @@ export default function DesktopNavBar(props) {
             <div className="desktopNavButtons self-center">
                 {middleButtons}
             </div>
-            <div className={`${bookmarked ? 'bookmarkFilled' : 'bookmarkEmpty'} bookmarkButton self-center ml-auto`} onClick={() => setCookie('mxmBookmarkedPage', props.pageId.toString(), {path: '/'})}>
-                <img src={bookmarkIcon} width={50} />
+            <div className={`${bookmarked ? 'bookmarkFilled' : 'bookmarkEmpty'} bookmarkButton self-center ml-auto my-4 mr-4`} onClick={() => setCookie('mxmBookmarkedPage', props.pageId.toString(), {path: '/'})}>
+                <img src={bookmarkIcon} width={40} />
             </div>
         </div>
     );

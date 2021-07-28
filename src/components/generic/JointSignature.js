@@ -1,6 +1,6 @@
 import ComicPageAPI from '../../api/ComicPageAPI';
-import moIcon from '../../assets/Phase3-Assets1/1x/32x-profile-M.png';
-import nathanIcon from '../../assets/Phase3-Assets1/1x/32x-profile-N.png';
+import moIcon from '../../assets/Phase4-Assets1/2x/profile-M-50px.png';
+import nathanIcon from '../../assets/Phase4-Assets1/2x/profile-N-50px.png';
 import { useMediaQuery } from 'react-responsive';
 import querySizes from '../../styling/breakpoints.json';
 
