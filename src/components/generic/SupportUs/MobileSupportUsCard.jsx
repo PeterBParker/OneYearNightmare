@@ -17,14 +17,17 @@ export default function MobileSupportUsCard(props) {
                 </div>
             </div>
             <div className="tipJarIllo supportUsTipJar self-center justify-self-end">
-                    <a href="https://www.buymeacoffee.com/rayell"><img src={props.supportImage} width={115} /></a>
+                    <a href="https://www.buymeacoffee.com/nate_and_mo"><img src={props.supportImage} width={115} /></a>
             </div>
             <div className="iconList supportUsCardLinks flex flex-row px-6 self-end pt-4">
                 <div className="patreonLink mr-4">
-                    <a href="https://www.patreon.com/"><img src={props.patreonIcon} onMouseOver={() => props.changePatreon(props.patreonActive)} onMouseLeave={() => props.changePatreon(props.patreonInactive)} width={50}/></a>
+                    <a href="https://www.patreon.com/nate_and_mo"><img src={props.patreonIcon} width={50}/></a>
                 </div>
-                <div className="bmacLink mr-2">
-                    <a href="https://www.buymeacoffee.com/rayell"><img src={props.tipIcon} onMouseOver={() => props.changeTip(props.tipActive)} onMouseLeave={() => props.changeTip(props.tipInactive)} width={50}/></a>
+                <div className="bmacLink mr-4">
+                    <a href="https://www.buymeacoffee.com/nate_and_mo"><img src={props.tipIcon} width={50}/></a>
+                </div>
+                <div className="discordLink">
+                    <a href="https://discord.gg/47DQVUnbD6"><img src={props.discordIcon} width={50}/></a>
                 </div>
             </div>
         </div>

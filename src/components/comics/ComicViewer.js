@@ -20,9 +20,13 @@ import { useMediaQuery } from 'react-responsive';
 import querySizes from '../../styling/breakpoints.json';
 import HorizontalShare from './HorizontalShare';
 import SimpleNavBar from '../comics/navigation/desktop/SimpleNavBar';
+import { useRef } from 'react';
 
 export default function ComicViewer(props) {
     const isDesktop = useMediaQuery({query: querySizes['lg']});
+    const topOfPageRef = useRef(null);
+
+    const scrollToTopOfPage = () => topOfPageRef.current.scrollIntoView({behavior: 'smooth'});
 
     let unknownRequestContent = <div className="invalidComicPage"> 
                                     <div className="text-3xl our-red ">No page found. :(</div> 
@@ -64,9 +68,9 @@ export default function ComicViewer(props) {
         <div className={`${isDesktop ? "comicViewerDesktop desktopBg pb-24" : 'pb-16'}`}>
             <Header defaultBg={false}/>
             {isDesktop ? <SimpleNavBar page={Pages.READ}/> : ''}
-            {isDesktop ? <DesktopPageView pageImageUrl={pageImageUrl} /> : <MobilePageView pageImageUrl={pageImageUrl} />}
+            {isDesktop ? <DesktopPageView pageImageUrl={pageImageUrl} sharePageUrl={sharePageUrl} title={title} topOfPageRef={topOfPageRef}/> : <MobilePageView pageImageUrl={pageImageUrl} topOfPageRef={topOfPageRef}/>}
 
-            {isDesktop ? <DesktopNavBar pageId={pageId} /> : <MobileNavBar pageId={pageId} />}
+            {isDesktop ? <DesktopNavBar pageId={pageId} scrollToTopOfPage={scrollToTopOfPage}/> : <MobileNavBar pageId={pageId} scrollToTopOfPage={scrollToTopOfPage}/>}
             {isDesktop ? '' : <HorizontalShare sharePageUrl={sharePageUrl} shareImageUrl={shareImageUrl} title={title} />}
             {isDesktop ? <DesktopReadPageCards pageId={pageId} /> : <MobileReadPageCards pageId={pageId} />}
         </div>

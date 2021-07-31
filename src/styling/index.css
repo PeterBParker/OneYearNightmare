@@ -26,23 +26,17 @@
     min-width: 175px;
 }
 .desktopDefaultBg {
-    background-image: url(../assets/FINAL-ASSETS-072821/final\ assets/background2-tiling.jpg);
+    background-image: url(../assets/Background-negative-EDIT-2024px.jpg);
 }
 .footerMobileGrid {
     display: grid;
     grid-template-columns: 33% 33% 33%;
     grid-template-rows: auto auto auto;
 }
-.discordTextGrid {
-    grid-column-start: 1;
-    grid-column-end: 2;
-    grid-row-start: 1;
-    grid-row-end: 3;
-}
 .discordLinkContainerGrid {
     grid-column-start: 1;
     grid-column-end: 2;
-    grid-row-start: 3;
+    grid-row-start: 1;
     grid-row-end: 4;
 }
 .readLinkGrid {
@@ -353,6 +347,7 @@
 .desktopReadPageCardsWrapper {
     display: grid;
     grid-template-columns: 50% 50%;
+    grid-template-rows: auto auto;
     width: 70%;
     max-width: 1100px;
     margin-left: auto;
@@ -361,12 +356,31 @@
 .desktopReadPageCardsDetails {
     grid-column-start: 1;
     grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
 }
 .desktopReadPageCardsSupport {
     grid-column-start: 2;
     grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
 }
+.desktopReadPageDiscordBanner {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
 
+    border: solid;
+    border-color: #998f7e;
+    border-width: 2px;
+
+    display: flex;
+    flex-direction: row;
+}
+.desktopReadPageDiscordBannerText {
+    margin-left: 170px;
+}
 .desktopSupportUsContainer {
     border: solid;
     border-color: #998f7e;
@@ -384,7 +398,7 @@
 .mobileSupportUsContainer {
     display: grid;
     grid-template-columns: 70% 30%;
-    grid-template-rows: 7em 50% 15%;
+    grid-template-rows: 7em 1fr 60px;
 }
 .supportUsTitle {
     grid-column-start: 1;
@@ -462,7 +476,7 @@
     grid-template-rows: 100%;
 }
 .comicViewerDesktop {
-    background-image: url(../assets/FINAL-ASSETS-072821/final\ assets/background-tiling.jpg);
+    background-image: url(../assets/Background-light-EDIT-2024px.jpg);
 }
 .desktopBg {
     background-repeat: repeat-x;
@@ -564,19 +578,21 @@
     margin-top: 4px;
 }
 .lightHeaderBg {
-    background-image: url('../assets/Website\ Assets\ -\ Phase\ 1/SVG_min/MOBILE-header-light.svg');
+    background-image: url('../assets/MOBILE-Background-negative-EDIT-770px.png');
 }
 .darkHeaderBg {
-    background-image: url('../assets/Website\ Assets\ -\ Phase\ 1/SVG_min/MOBILE-header-dark.svg');
+    background-image: url('../assets/MOBILE-Background-EDIT-770px.png');
 }
 .headerBg {
     background-repeat: repeat-x;
     background-position: bottom;
-    background-size: 375px;
 }
 .desktopHeaderBg {
     background-size: 1024px;
 }
 .mobileHeaderBg {
-    background-size: 325px;
+    background-size: 770px;
+}
+.readPageDiscordBannerImage {
+    position: absolute;
 }

@@ -8,7 +8,7 @@ export default function DesktopSupportUsCard(props) {
     let supportImageContainer = ''
     if (bigEnough) {
         supportImageContainer = <div className="tipJarIllo supportUsTipJar self-end pb-20">
-            <a href="https://www.buymeacoffee.com/rayell"><img src={props.supportImage} width={"100%"} /></a>
+            <a href="https://www.buymeacoffee.com/nate_and_mo"><img src={props.supportImage} width={"100%"} /></a>
             </div>
     }
     return (
@@ -24,10 +24,10 @@ export default function DesktopSupportUsCard(props) {
             {supportImageContainer}
             <div className="iconList supportUsCardLinks flex flex-row px-6 pb-4 items-end">
                 <div className="patreonLink mr-4">
-                    <a href="https://www.patreon.com/"><img src={props.patreonIcon} onMouseOver={() => props.changePatreon(props.patreonActive)} onMouseLeave={() => props.changePatreon(props.patreonInactive)} width={50}/></a>
+                    <a href="https://www.patreon.com/nate_and_mo"><img src={props.patreonIcon} onMouseOver={() => props.changePatreon(props.patreonActive)} onMouseLeave={() => props.changePatreon(props.patreonInactive)} width={50}/></a>
                 </div>
                 <div className="bmacLink mr-2">
-                    <a href="https://www.buymeacoffee.com/rayell"><img src={props.tipIcon} onMouseOver={() => props.changeTip(props.tipActive)} onMouseLeave={() => props.changeTip(props.tipInactive)} width={50}/></a>
+                    <a href="https://www.buymeacoffee.com/nate_and_mo"><img src={props.tipIcon} onMouseOver={() => props.changeTip(props.tipActive)} onMouseLeave={() => props.changeTip(props.tipInactive)} width={50}/></a>
                 </div>
             </div>
         </div>

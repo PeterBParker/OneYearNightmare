@@ -9,8 +9,8 @@ export default function SupportMobile(props) {
     return(
         <div className="supportPage">
             <Header defaultBg={true}/>
-            <IconCard icon={patreonIcon} title="Patreon" body={props.patreonBody} link="https://www.patreon.com/" linkText="join the gang" isDesktop={false}/>
-            <IconCard icon={custardIcon} title="Buy Us a Custard" body={props.buyusacoffeeBody} link="https://www.buymeacoffee.com/rayell" linkText="feed us, pls" isDesktop={false} />
+            <IconCard icon={patreonIcon} title="Patreon" body={props.patreonBody} link="https://www.patreon.com/nate_and_mo" linkText="join the gang" isDesktop={false}/>
+            <IconCard icon={custardIcon} title="Buy Us a Custard" body={props.buyusacoffeeBody} link="https://www.buymeacoffee.com/nate_and_mo" linkText="feed us, pls" isDesktop={false} />
         </div>
     );
 }

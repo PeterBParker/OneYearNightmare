@@ -13,10 +13,10 @@ export default function SupportDesktop(props) {
             <SimpleNavBar page={Pages.SUPPORT}/>
             <div className="supportCards mt-8">
                 <div className="childSupportCard patreonSupportCard bg-white" id="patreonSupportCard">
-                    <IconCard icon={patreonIcon} title="Patreon" body={props.patreonBody} link="https://www.patreon.com/" linkText="join the gang" isDesktop={true}/>
+                    <IconCard icon={patreonIcon} title="Patreon" body={props.patreonBody} link="https://www.patreon.com/nate_and_mo" linkText="join the gang" isDesktop={true}/>
                 </div>
                 <div className="childSupportCard buyusacoffeeSupportCard bg-white" id="buyusacoffeeSupportCard">
-                    <IconCard icon={custardIcon} title="Buy Us a Custard" body={props.buyusacoffeeBody} link="https://www.buymeacoffee.com/rayell" linkText="feed us, pls" isDesktop={true}/>
+                    <IconCard icon={custardIcon} title="Buy Us a Custard" body={props.buyusacoffeeBody} link="https://www.buymeacoffee.com/nate_and_mo" linkText="feed us, pls" isDesktop={true}/>
                 </div>  
             </div>
         </div>

@@ -13,7 +13,6 @@ export default function DesktopNavBar(props) {
 
     useEffect(() => {
         if (props.pageId.toString() == cookies.mxmBookmarkedPage) {
-            console.log(cookies.mxmBookmarkedPage)
             setBookmarkIcon(bookmarkFilled);
             setIfBookmarked(true);
         } else {
@@ -24,7 +23,7 @@ export default function DesktopNavBar(props) {
 
     let middleButtons = null
     if (props.pageId) {
-        middleButtons = <PageNavButtons pageId={props.pageId} isMobile={false} />
+        middleButtons = <PageNavButtons pageId={props.pageId} isMobile={false} scrollToTopOfPage={props.scrollToTopOfPage}/>
         
     } else {
         middleButtons = ''

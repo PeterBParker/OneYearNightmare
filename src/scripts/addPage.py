@@ -133,6 +133,8 @@ def getLastChapterNameInSeason(seasonName):
 
 def getLatestSeason():
     data = getData(_WORKING_DATA_FILENAME, 'r')
+    if len(data["seasons"]) == 0:
+        return None
     latestSeason = max(data["seasons"], key=lambda x: x["id"])
     return latestSeason
 

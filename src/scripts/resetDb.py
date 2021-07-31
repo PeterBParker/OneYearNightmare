@@ -13,5 +13,4 @@ if __name__ == "__main__":
             "seasons": []
         }
         with open(_DATA_FILENAME, 'w', encoding='utf-8') as f:
-            json.dump(newBook, fensure_ascii=False, indent=4)
-            json.truncate()
+            json.dump(newBook, f, ensure_ascii=False, indent=4)

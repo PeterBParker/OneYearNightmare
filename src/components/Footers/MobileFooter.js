@@ -1,5 +1,5 @@
 import logo from '../../assets/Website Assets - Phase 1/SVG/LOGO-footer.svg'
-import discordIcons from '../../assets/Website Assets - Phase 1/SVG/FOOTER-patreon-discord.svg';
+import discordIcons from '../../assets/FINAL-ASSETS-072821/final assets/discord-banner-illo.png';
 import facebookIcon from '../../assets/Phase3-Assets1/1x/32x-footer-FB.png';
 import instagramIcon from '../../assets/Phase3-Assets1/1x/32x-footer-IG.png';
 import twitterIcon from '../../assets/Phase3-Assets1/1x/32x-footer-twitter.png';
@@ -18,11 +18,10 @@ export default function MobileFooter() {
                 </div>
                 <hr className="border-mocha-light"/>
                 <div className="links pt-3 px-2 footerMobileGrid w-full">
-                        <div className="discordCall font-body text-mocha-light text-sm text-left discordTextGrid">
-                            <p>Join the fun on our Discord!</p>
-                        </div>
-                        <div className="discordIcons self-start discordLinkContainerGrid">
-                            <img src={discordIcons} width="120" />
+                        <div className="discordIcons self-center discordLinkContainerGrid">
+                            <a href="https://discord.gg/47DQVUnbD6">
+                                <img src={discordIcons} width="110" />
+                            </a>
                         </div>
                         <div className="readLinkGrid text-green text-lg">
                             <Link to={'/read/'}>read</Link>
@@ -35,12 +34,12 @@ export default function MobileFooter() {
                         </span>
                     <div className="socialMediaLinks socialMediaFooterGrid grid grid-cols-2 grid-rows-2">
                         <div className="facebookIcon justify-start self-end">
-                            <a href="https://www.facebook.com/MoRayneArt/">
+                            <a href="https://www.facebook.com/thatmidwesternmonstercomic/">
                                 <img src={facebookIcon} width={32} className="ml-auto mr-1 "/>
                             </a>
                         </div>
                         <div className="twitterIcon justify-content-center self-end">
-                            <a href=""><img src={twitterIcon} width={32} className="mr-auto ml-1"/></a>
+                            <a href="https://twitter.com/monxmyr"><img src={twitterIcon} width={32} className="mr-auto ml-1"/></a>
                         </div>
                         <div className="instagramIcon col-span-2 justify-self-center mt-1">
                             <a href="https://www.instagram.com/mo.rayne.art/"><img src={instagramIcon} width={32} className="mx-auto"/></a>

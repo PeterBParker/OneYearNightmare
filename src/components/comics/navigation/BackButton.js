@@ -17,7 +17,7 @@ export default function BackButton(props) {
     if(pageInfo) {
         const pageFilePath = '/read/' + backPageId;
         return(
-            <div className="navButton"><Link to={pageFilePath}><img src={activeBackIcon} width={30}/></Link></div>
+            <div className="navButton" onClick={props.scrollToTopOfPage}><Link to={pageFilePath}><img src={activeBackIcon} width={30}/></Link></div>
         );
     } else {
         return(

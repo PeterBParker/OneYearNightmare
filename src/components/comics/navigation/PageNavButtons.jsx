@@ -14,17 +14,17 @@ export default function PageNavButtons(props) {
     return (
         <div className={`${props.isMobile ? 'mobileNavButtonsContainer' : 'desktopNavButtonsContainer'} py-3`}>
             <div className="firstPageButton justify-self-end self-center">
-                <FirstPageButton pageId={props.pageId}/>
+                <FirstPageButton pageId={props.pageId} scrollToTopOfPage={props.scrollToTopOfPage}/>
             </div>
             <div className="prevPageButton justify-self-end self-center">
-                <BackButton pageId={props.pageId} />
+                <BackButton pageId={props.pageId} scrollToTopOfPage={props.scrollToTopOfPage}/>
             </div>
             {middleButton}
             <div className="nextButton justify-self-start self-center">
-                <NextButton pageId={props.pageId} />
+                <NextButton pageId={props.pageId} scrollToTopOfPage={props.scrollToTopOfPage}/>
             </div>
             <div className="lastPageButton justify-self-start self-center">
-                <LastPageButton pageId={props.pageId}/>
+                <LastPageButton pageId={props.pageId} scrollToTopOfPage={props.scrollToTopOfPage}/>
             </div>
         </div>
     );

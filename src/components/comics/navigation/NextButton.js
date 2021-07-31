@@ -16,7 +16,7 @@ export default function NextButton(props) {
     if(pageInfo) {
         const pageFilePath = '/read/' + nextPageId;
         return(
-            <div className="navButton"><Link to={pageFilePath}><img src={activeNextIcon} width={30}/></Link></div>
+            <div className="navButton" onClick={props.scrollToTopOfPage}><Link to={pageFilePath}><img src={activeNextIcon} width={30}/></Link></div>
         );
     } else {
         return(

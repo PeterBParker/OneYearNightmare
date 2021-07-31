@@ -16,7 +16,7 @@ export default function Support(props) {
             </div>
             <div className="iconCardButton clearfix px-6 pt-5 pb-10">
                 <div>
-                    <a className={`bg-cream-light py-2 px-4 float-left font-medium font-header rounded-lg ${props.isDesktop ? 'text-2xl' : 'text-xl'}`} href={props.link}>{props.linkText.toUpperCase()} →</a>
+                    <a className={`transition duration-500 ease-in-out bg-cream-dark hover:bg-eggshell bg-cream-light py-2 px-4 float-left font-medium font-header rounded-lg ${props.isDesktop ? 'text-2xl' : 'text-xl'}`} href={props.link}>{props.linkText.toUpperCase()} →</a>
                 </div>
             </div>
         </div>

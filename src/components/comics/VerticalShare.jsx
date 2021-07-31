@@ -5,7 +5,7 @@ export default function VerticalShare(props) {
     return (
         <div className="vertShare flex flex-col self-start">
             <img src={monsterCat} width={128} className="self-center"/>
-            <SocialMediaShareButtons isVert={true} />
+            <SocialMediaShareButtons isVert={true} sharePageUrl={props.sharePageUrl} title={props.title}/>
             <img src={share} width={90} className="self-center"/>
         </div>
         

@@ -9,6 +9,7 @@ import patreon50 from '../../../assets/Phase4-Assets1/2x/NEW_ICONS/fill-patreon-
 import patreon50color from '../../../assets/Phase4-Assets1/2x/NEW_ICONS/color-fill-patreon-50px.png'
 import tip50 from '../../../assets/Phase4-Assets1/2x/NEW_ICONS/fill-custard-50px.png'
 import tip50color from '../../../assets/Phase4-Assets1/2x/NEW_ICONS/color-fill-custard-50px.png'
+import discordIcon from '../../../assets/Phase4-Assets1/2x/NEW_ICONS/fill-discord-50px.png'
 import { useState } from 'react';
 
 export default function SupportUsCard() {
@@ -23,7 +24,7 @@ export default function SupportUsCard() {
     }
 
     const isDesktop = useMediaQuery({query: querySizes['lg']});
-    let supportUsText = "Thank you for reading our comic! It costs about $5 a month to host, and we don't advertise, so consider buying us a frozen custard or supporting us monthly over on Patreon!"
+    let supportUsText = <>"Thank you for reading our comic! It costs about $5 a month to host, and we don't advertise, so consider buying us a frozen custard, supporting us monthly over on Patreon, or even joining our <p className="font-medium italic inline">free</p> discord server to be notified when the next page drops!"</>
     return (
         isDesktop ? 
             <DesktopSupportUsCard supportUsText={supportUsText} supportImage={supportImage} 
@@ -34,6 +35,7 @@ export default function SupportUsCard() {
             <MobileSupportUsCard supportUsText={supportUsText} supportImage={supportImage} 
                 patreonIcon={patreonIcon} patreonActive={patreon50color} patreonInactive={patreon50} 
                 tipIcon={tipIcon} tipActive={tip50color} tipInactive={tip50}
-                changePatreon={handlePatreonIcon} changeTip={handleTipIcon}/>
+                changePatreon={handlePatreonIcon} changeTip={handleTipIcon}
+                discordIcon={discordIcon}/>
     )
 }

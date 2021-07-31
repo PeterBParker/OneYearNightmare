@@ -49,14 +49,14 @@ export default function DesktopFooter(props) {
                     <div className="desktopFooterSocialMediaLinks flex flex-row items-center ml-6">
                         <div className="text-xl font-body text-mocha-light mr-6">Follow us:</div>
                         <div className="facebookIcon mr-4 flex-shrink-0 footerNavLink">
-                            <a href="https://www.facebook.com/MoRayneArt/">
+                            <a href="https://www.facebook.com/thatmidwesternmonstercomic/">
                                 <img src={props.facebookIcon} width={50} 
                                     onMouseOver={() => props.changeIcon('fb', props.facebookActive)} 
                                     onMouseLeave={() => props.changeIcon('fb', props.facebookInactive)} />
                             </a>
                         </div>
                         <div className="twitterIcon mr-4 flex-shrink-0 footerNavLink">
-                            <a href="">
+                            <a href="https://twitter.com/monxmyr">
                                 <img src={props.twitterIcon} width={50} 
                                     onMouseOver={() => props.changeIcon('twitter', props.twitterActive)} 
                                     onMouseLeave={() => props.changeIcon('twitter', props.twitterInactive)}/>

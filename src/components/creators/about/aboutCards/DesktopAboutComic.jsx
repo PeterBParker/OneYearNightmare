@@ -20,7 +20,7 @@ export default function DesktopAboutComic(props) {
                     <div className="textAndImageCardText">
                         <TextBody content={props.comicText} isDesktop={true} />
                         <div className="readButtonContainer justify-contents-start clearfix mb-12">
-                            <div className="readButton font-body font-medium text-xl bg-cream-light rounded-xl px-4 py-2 float-left ml-8">
+                            <div className="readButton transition duration-500 ease-in-out bg-cream-dark hover:bg-eggshell font-body font-medium text-xl bg-cream-light rounded-xl px-4 py-2 float-left ml-8">
                                 <Link to='/read'>START READING →</Link>
                             </div>
                         </div>

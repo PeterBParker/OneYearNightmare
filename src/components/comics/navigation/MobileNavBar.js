@@ -12,7 +12,6 @@ export default function MobileNavBar(props) {
 
     useEffect(() => {
         if (props.pageId.toString() == cookies.mxmBookmarkedPage) {
-            console.log(cookies.mxmBookmarkedPage)
             setBookmarkIcon(bookmarkFilled);
         } else {
             setBookmarkIcon(bookmarkOutline);
@@ -20,6 +19,6 @@ export default function MobileNavBar(props) {
     }, [cookies.mxmBookmarkedPage, props.pageId]);
 
     return (
-        <PageNavButtons pageId={props.pageId} isMobile={true} bookmarkIcon={bookmarkIcon} setBookmark={setCookie}/>
+        <PageNavButtons pageId={props.pageId} isMobile={true} bookmarkIcon={bookmarkIcon} setBookmark={setCookie} scrollToTopOfPage={props.scrollToTopOfPage}/>
     );
 }
