@@ -6,12 +6,12 @@ import Home from './Home';
 import pageData from '../api/data/pagesData.json';
 
 const MOST_RECENT_PAGE_ID = pageData.pageCount;
-export const DOMAIN = 'https://oneyearnightmarefirstsite.web.app';
+export const DOMAIN = 'https://monstersandmyriads.com';
 export const BASE_PATH = '/MnMPages/';
 export const JOINT_SIG = 'Mo and Nate';
 
 
-export const COMIC_VIEWER_DEFAULT_PATH = `/read/${MOST_RECENT_PAGE_ID}`;
+export const COMIC_VIEWER_DEFAULT_PATH = `/read`;
 
 export default function Main() {
     return(

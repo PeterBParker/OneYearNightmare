@@ -24,7 +24,7 @@ export default function SupportUsCard() {
     }
 
     const isDesktop = useMediaQuery({query: querySizes['lg']});
-    let supportUsText = <>"Thank you for reading our comic! It costs about $5 a month to host, and we don't advertise, so consider buying us a frozen custard, supporting us monthly over on Patreon, or even joining our <p className="font-medium italic inline">free</p> discord server to be notified when the next page drops!"</>
+    let supportUsText = <>Thank you for reading our comic! It costs about $5 a month to host, and we don't advertise, so consider buying us a frozen custard, supporting us monthly over on Patreon, or even joining our <p className="font-medium italic inline">free</p> discord server to be notified when the next page drops!</>
     return (
         isDesktop ? 
             <DesktopSupportUsCard supportUsText={supportUsText} supportImage={supportImage} 

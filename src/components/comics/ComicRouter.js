@@ -14,6 +14,7 @@ export default function ComicRouter(props) {
     } else {
         bookmarkedPageUrl = bookmarkedPageUrl.concat(cookies.mxmBookmarkedPage);
     }
+    console.log(bookmarkedPageUrl)
     return (
         <div className="comicViewerPage">
             <Switch>
