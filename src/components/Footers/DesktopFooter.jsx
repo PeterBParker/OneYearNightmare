@@ -63,7 +63,7 @@ export default function DesktopFooter(props) {
                             </a>
                         </div>
                         <div className="instagramIcon mr-4 flex-shrink-0 footerNavLink">
-                            <a href="https://www.instagram.com/mo.rayne.art/">
+                            <a href="https://www.instagram.com/monxmyr/">
                                 <img src={props.instagramIcon} width={50} 
                                     onMouseOver={() => props.changeIcon('insta', props.instagramActive)} 
                                     onMouseLeave={() => props.changeIcon('insta', props.instagramInactive)}/>

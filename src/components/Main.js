@@ -11,7 +11,7 @@ export const BASE_PATH = '/MnMPages/';
 export const JOINT_SIG = 'Mo and Nate';
 
 
-export const COMIC_VIEWER_DEFAULT_PATH = `/read`;
+export const COMIC_VIEWER_DEFAULT_PATH = `/read/1`;
 
 export default function Main() {
     return(

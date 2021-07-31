@@ -42,7 +42,7 @@ export default function MobileFooter() {
                             <a href="https://twitter.com/monxmyr"><img src={twitterIcon} width={32} className="mr-auto ml-1"/></a>
                         </div>
                         <div className="instagramIcon col-span-2 justify-self-center mt-1">
-                            <a href="https://www.instagram.com/mo.rayne.art/"><img src={instagramIcon} width={32} className="mx-auto"/></a>
+                            <a href="https://www.instagram.com/monxmyr/"><img src={instagramIcon} width={32} className="mx-auto"/></a>
                         </div>
                     </div>
                 </div>

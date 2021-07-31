@@ -1,5 +1,7 @@
 # TODO
 
+- Add loading icon for images
+- Fix dates
 - Add cookie analytics
     * Connect to Firestore
     * Write functions to grab info from cookies and store in database
