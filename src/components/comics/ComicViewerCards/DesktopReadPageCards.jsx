@@ -17,7 +17,7 @@ export default function DesktopReadPageCards(props) {
             <div className="desktopReadPageDiscordBanner mt-6 justify-between py-6 items-center">
                 <div className="desktopReadPageDiscordBannerText text-left ">
                     <div className="font-bold text-2xl">
-                        {"Monsters & Myriads Discord!"}
+                        {"Get Notified of New Pages!"}
                     </div>
                     <div className="text-lg">
                         {"new page notifications | comment & hang"}

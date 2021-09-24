@@ -13,8 +13,8 @@ import querySizes from '../../../styling/breakpoints.json';
 
 export default function Creators() {
     const isDesktop = useMediaQuery({query: querySizes['lg']});
-    let nathanAbout = "I love all things made from a marinade of mystery, a couple cups of comedy, and a quick whisk of wonder. I do backend python development during the day, and dream up stories by night. My favorite authors include Neil Gaiman, G.K. Chesterton, and Terry Prachett, and the Paranatural webcomic sparked the dream to write a webcomic of my own."
-    let morghanAbout = "I like to draw."
+    let nathanAbout = "I love all things made from a marinade of mystery, a couple cups of comedy, and a quick whisk of wonder. I do backend python development during the day, dream up stories by night, and in the evenings in-between I work on the this website. My favorite authors include Neil Gaiman, G.K. Chesterton, and Terry Prachett, and the Paranatural webcomic sparked the dream to write a webcomic of my own."
+    let morghanAbout = "I like to draw. :)"
     let comicText = "Monsters and Myriads is a midwestern exploration into the spooky fantastic that haunts closed arcades, moon-frosted cornfields, and shadowed school hallways. Inspired by stories like Stranger Things, Gravity Falls, and Coraline, a group of incongruous highschoolers band together to uncover a gothic conspiracy that threatens to unravel their school, town, and world."
 
     let nathanLink1 = "https://twitter.com/harrihaven2"

@@ -17,6 +17,6 @@ export default function PageDetailsCard(props) {
         isDesktop ? 
             <DesktopPageDetailsCard page={page} date={date} title={title} /> 
         : 
-            <MobilePageDetailsCard page={page} date={date} title={title} />
+            <MobilePageDetailsCard page={page} date={page.datetime} title={title} />
     )
 }

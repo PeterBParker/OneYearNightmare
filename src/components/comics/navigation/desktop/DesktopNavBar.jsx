@@ -21,6 +21,12 @@ export default function DesktopNavBar(props) {
         }
     }, [cookies.mxmBookmarkedPage, props.pageId]);
 
+    function addYearToToday() {
+        let d = new Date();
+        let y = d.getFullYear();
+        return new Date(d.setFullYear(y+1));
+    }
+
     let middleButtons = null
     if (props.pageId) {
         middleButtons = <PageNavButtons pageId={props.pageId} isMobile={false} scrollToTopOfPage={props.scrollToTopOfPage}/>
@@ -34,7 +40,7 @@ export default function DesktopNavBar(props) {
             <div className="desktopNavButtons self-center">
                 {middleButtons}
             </div>
-            <div className={`${bookmarked ? 'bookmarkFilled' : 'bookmarkEmpty'} bookmarkButton self-center ml-auto my-4 mr-4`} onClick={() => setCookie('mxmBookmarkedPage', props.pageId.toString(), {path: '/'})}>
+            <div className={`${bookmarked ? 'bookmarkFilled' : 'bookmarkEmpty'} bookmarkButton self-center ml-auto my-4 mr-4`} onClick={() => setCookie('mxmBookmarkedPage', props.pageId.toString(), {path: '/', expires: addYearToToday()})}>
                 <img src={bookmarkIcon} width={40} />
             </div>
         </div>

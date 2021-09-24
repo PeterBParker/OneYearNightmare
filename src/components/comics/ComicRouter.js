@@ -4,15 +4,15 @@ import ComicViewer from './ComicViewer';
 import { useCookies } from 'react-cookie';
 
 export default function ComicRouter(props) {
-    const [cookies, setCookie, removeCookie] = useCookies(['mxmBookmarkedPage'])
+    const [cookies, setCookie] = useCookies(['mxmBookmarkedPage'])
 
     let bookmarkedPageUrl = '/read/';
-    if (cookies.mxmBookmarkedPage == null) {
-        // If there is no cookie, we send the reader to the first page
-        setCookie('mxmBookmarkedPage', '1', {path: '/'})
+    if (cookies.mxmBookmarkedPage) { 
         bookmarkedPageUrl = bookmarkedPageUrl.concat(cookies.mxmBookmarkedPage);
     } else {
-        bookmarkedPageUrl = bookmarkedPageUrl.concat(cookies.mxmBookmarkedPage);
+        // If there is no cookie, we send the reader to the first page
+        setCookie('mxmBookmarkedPage', '1', {path: '/'})
+        bookmarkedPageUrl = bookmarkedPageUrl.concat('1');
     }
     return (
         <div className="comicViewerPage">

@@ -3,6 +3,14 @@ import BodyText from '../generic/BodyText';
 import JointSignature from '../generic/JointSignature';
 
 export default function MobilePageDetailsCard(props) {
+    
+    function convertDateForIos(date) {
+        var arr = date.split(/[- :]/);
+        date = new Date(arr[0], arr[1]-1, arr[2], arr[3], arr[4], arr[5]);
+        return date;
+    }
+
+    let d = convertDateForIos(props.date);
 
     return (
         <div className="w-full border-t border-b border-mocha-dark py-6 px-6">
@@ -22,7 +30,7 @@ export default function MobilePageDetailsCard(props) {
                 </div>
                 <div className="date float-right leading-8">
                     <div className="font-body font-regular text-base text-gray-light leading-8"> 
-                        {String(props.date.getMonth())+"."+String(props.date.getDate())+"."+String(props.date.getFullYear())}
+                        {String(d.getMonth()+1)+"."+String(d.getDate())+"."+String(d.getFullYear())}
                     </div>
                 </div>
             </div>

@@ -24,7 +24,7 @@ export default function DesktopPageDetailsCard(props) {
                 <div className="desktopPageDetailsTime self-center">
                     <div className="date float-right leading-8 self-center">
                         <div className="font-body font-regular text-xl text-gray-light leading-8">
-                            {String(props.date.getMonth()) + "." + String(props.date.getDate()) + "." + String(props.date.getFullYear())}
+                            {String(props.date.getMonth()+1) + "." + String(props.date.getDate()) + "." + String(props.date.getFullYear())}
                         </div>
                     </div>
                 </div>

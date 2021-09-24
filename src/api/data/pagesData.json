@@ -1,18 +1,18 @@
 {
-    "pageCount": 8,
-    "seasonCount": 1,
+    "pageCount": 24,
+    "seasonCount": 2,
     "seasons": [
         {
             "seasonName": "Prologue",
             "folderName": "prologue",
-            "numOfPages": 8,
+            "numOfPages": 18,
             "numOfChapters": 1,
             "id": 1,
             "chapters": [
                 {
                     "chapterName": "Chapter One",
                     "folderName": "chapter1",
-                    "numOfPages": 8,
+                    "numOfPages": 18,
                     "id": 1,
                     "pages": [
                         {
@@ -86,6 +86,167 @@
                             "datetime": "2021-07-29 23:24:29",
                             "id": 8,
                             "user": "N1995"
+                        },
+                        {
+                            "pageNum": 9,
+                            "filename": "Pg8-Monsters-x-Myriads.jpg",
+                            "title": "Crazy Lady Looking at the Sunset",
+                            "message": "Sometimes you just need to take a sec to watch the sun set. 🌞 You've been butchering monsters all day, you deserve it.",
+                            "datetime": "2021-08-02 11:35:22",
+                            "id": 9,
+                            "user": "M1998"
+                        },
+                        {
+                            "pageNum": 10,
+                            "filename": "Pg9-Monsters-x-Myriads.jpg",
+                            "title": "Where's Garrison?",
+                            "message": "Ever have a friend who always says the wrong thing?  Yeah, me too. Definitely a friend and not personally relatable at all. *sweats nervously* (⊙_⊙;)",
+                            "datetime": "2021-08-05 06:47:55",
+                            "id": 10,
+                            "user": "N1995"
+                        },
+                        {
+                            "pageNum": 11,
+                            "filename": "Pg10-Monsters-x-Myriads.jpg",
+                            "title": "Meanwhile back at the ranch",
+                            "message": "I bet Chief Garrison's the type of guy to spend less than 10 minutes in the shower normally, but scrubbing blood stains can really push up that monthly water bill. 💸",
+                            "datetime": "2021-08-08 20:05:30",
+                            "id": 11,
+                            "user": "N1995"
+                        },
+                        {
+                            "pageNum": 12,
+                            "filename": "Pg11-Monsters-x-Myriads.jpg",
+                            "title": "Entering Garrison House",
+                            "message": "Who tha heck are these boys?",
+                            "datetime": "2021-08-12 10:52:28",
+                            "id": 12,
+                            "user": "N1995"
+                        },
+                        {
+                            "pageNum": 13,
+                            "filename": "Pg12-Monsters-x-Myriads.jpg",
+                            "title": "Entering the Garrison",
+                            "message": "There's something tragically poetic about striking out on a relationship at a baseball game...",
+                            "datetime": "2021-08-16 09:09:09",
+                            "id": 13,
+                            "user": "N1995"
+                        },
+                        {
+                            "pageNum": 14,
+                            "filename": "Pg13-Monsters-x-Myriads.jpg",
+                            "title": "Chuck flexes and Sam has Dino Nuggets",
+                            "message": "When there are no premade munchies in the fridge and you gotta improvise.",
+                            "datetime": "2021-08-19 10:42:13",
+                            "id": 14,
+                            "user": "M1998"
+                        },
+                        {
+                            "pageNum": 15,
+                            "filename": "Pg14-Monsters-x-Myriads.jpg",
+                            "title": "Graduation Present",
+                            "message": "Snacks be snacks whether they're frozen dino nuggets or spooky sounds outside the window. Wait, what? w(ﾟДﾟ)w",
+                            "datetime": "2021-08-23 17:21:30",
+                            "id": 15,
+                            "user": "N1995"
+                        },
+                        {
+                            "pageNum": 16,
+                            "filename": "Pg15-Monsters-x-Myriads.jpg",
+                            "title": "Forgot My Shoes",
+                            "message": "Forgot my wallet-I mean, my sneakers. Aw shucks. Bumming, dude. Maybe next time. ¯\\_(ツ)_//¯",
+                            "datetime": "2021-08-26 21:20:28",
+                            "id": 16,
+                            "user": "N1995"
+                        },
+                        {
+                            "pageNum": 17,
+                            "filename": "Pg16-Monsters-x-Myriads.jpg",
+                            "title": "What could go wrong?",
+                            "message": "Only good things happen after someone says, \"What's the worst that could happen?\" ",
+                            "datetime": "2021-08-30 08:55:00",
+                            "id": 17,
+                            "user": "N1995"
+                        },
+                        {
+                            "pageNum": 18,
+                            "filename": "Pg17-Monsters-x-Myriads.jpg",
+                            "title": "Boys biking off to certain doom",
+                            "message": "Yeah, I'm with Sam. This fog is trippin' ...but I'm sure it's fine.",
+                            "datetime": "2021-09-02 12:53:56",
+                            "id": 18,
+                            "user": "M1998"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "seasonName": "First Blood",
+            "folderName": "first blood",
+            "numOfPages": 6,
+            "numOfChapters": 1,
+            "id": 2,
+            "chapters": [
+                {
+                    "chapterName": "Chapter One",
+                    "folderName": "chapter1",
+                    "numOfPages": 6,
+                    "id": 1,
+                    "pages": [
+                        {
+                            "pageNum": 1,
+                            "filename": "Season_1_First_Blood.jpg",
+                            "title": "First Blood Title Page",
+                            "message": "It's here! Hang on to your couch, office chair, or whatever seat you're reading from! We're about to officially get started... (づ￣ 3￣)づ",
+                            "datetime": "2021-09-06 15:14:10",
+                            "id": 19,
+                            "user": "N1995"
+                        },
+                        {
+                            "pageNum": 2,
+                            "filename": "Vol1-Pg1-Monsters-x-Myriads.jpg",
+                            "title": "Rose finds drugs?",
+                            "message": "Season 1 starting off with a happy dance! What do you think is in the bottle??? Comment your guess in our discord chat!",
+                            "datetime": "2021-09-09 11:50:23",
+                            "id": 20,
+                            "user": "M1998"
+                        },
+                        {
+                            "pageNum": 3,
+                            "filename": "Vol1-Pg2-Monsters-x-Myriads.jpg",
+                            "title": "Rose escapes her mother's room",
+                            "message": "From butchering beasts in high heels to jumping out of windows in flip flops...we need to get these girls some sneakers!",
+                            "datetime": "2021-09-13 14:09:28",
+                            "id": 21,
+                            "user": "M1998"
+                        },
+                        {
+                            "pageNum": 4,
+                            "filename": "Vol1-Pg3-Monsters-x-Myriads.jpg",
+                            "title": "Donny discovers Rose's escape measures",
+                            "message": "Don't know what Jean usually listens to on her ipod, but it's \"ffmmping!\"",
+                            "datetime": "2021-09-16 14:05:25",
+                            "id": 22,
+                            "user": "M1998"
+                        },
+                        {
+                            "pageNum": 5,
+                            "filename": "Vol1-Pg4-Monsters-x-Myriads.jpg",
+                            "title": "Rose embarrasses herself in front of cats",
+                            "message": "Them cats know a good purple manicure when they see it. ",
+                            "datetime": "2021-09-20 14:52:44",
+                            "id": 23,
+                            "user": "M1998"
+                        },
+                        {
+                            "pageNum": 6,
+                            "filename": "Vol1-Pg5-Monsters-x-Myriads.jpg",
+                            "title": "Who is the Penguin man?",
+                            "message": "New page and lots of new faces! But the most important face of all...this elusive Mr. Freezy Cee...",
+                            "datetime": "2021-09-23 15:58:07",
+                            "id": 24,
+                            "user": "M1998"
                         }
                     ]
                 }

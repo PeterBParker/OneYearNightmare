@@ -5,9 +5,15 @@ import LastPageButton from './LastPageButton';
 
 export default function PageNavButtons(props) {
 
+    function addYearToToday() {
+        let d = new Date();
+        let y = d.getFullYear();
+        return new Date(d.setFullYear(y+1));
+    }
+
     let middleButton = null
     if (props.isMobile) {
-        middleButton =  <div className="bookmarkButton justify-self-center self-center" onClick={() => props.setBookmark('mxmBookmarkedPage', props.pageId.toString(), {path: '/'})}>
+        middleButton =  <div className="bookmarkButton justify-self-center self-center" onClick={() => props.setBookmark('mxmBookmarkedPage', props.pageId.toString(), {path: '/', expires: addYearToToday()})}>
                             <img src={props.bookmarkIcon} width={40} />
                         </div>
     }
