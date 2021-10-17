@@ -11,6 +11,10 @@
 # production
 /build
 
+# images
+/public/MnMPages
+/src/assets
+
 # misc
 .DS_Store
 .env.local
@@ -22,4 +26,10 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+*-backup.json
+*-temp.json
+
 src/styling/tailwind.output.css
+
+*.pyc
+*.cache

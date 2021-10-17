@@ -1,25 +1,21 @@
 import {Switch, Route} from 'react-router-dom';
 import ComicRouter from './comics/ComicRouter';
-import Creators from './creators/Creators';
-import Support from './creators/Support';
+import Creators from './creators/about/Creators';
+import Support from './creators/supportUsCards/Support';
 import Home from './Home';
+import pageData from '../api/data/pagesData.json';
 
-// To add page:
-//  1. Update MOST_RECENT_PAGE
-//  2. Update MOST_RECENT_SEASON (if necessary)
-//  3. Add to ComicPageAPI 'pages' object
+const MOST_RECENT_PAGE_ID = pageData.pageCount;
+export const DOMAIN = 'https://monstersandmyriads.com';
+export const BASE_PATH = '/MnMPages/';
+export const JOINT_SIG = 'Mo and Nate';
 
 
-const MOST_RECENT_PAGE = '1.jpeg';
-const CURRENT_CHAPTER = 'Chapter One';
-const CURRENT_SEASON = 'Prologue';
-export const BASE_PATH = '/OneYearNightmarePages/';
-
-export const COMIC_VIEWER_DEFAULT_PATH = `/read/${CURRENT_SEASON}/${CURRENT_CHAPTER}/${MOST_RECENT_PAGE}`;
+export const COMIC_VIEWER_DEFAULT_PATH = `/read/1`;
 
 export default function Main() {
     return(
-        <div>
+        <div className="main">
             <Switch>
                 {/* Replace this first route with a redirect to read*/}
                 <Route exact path='/' component={Home} />
