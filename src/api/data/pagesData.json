@@ -1,5 +1,5 @@
 {
-    "pageCount": 24,
+    "pageCount": 29,
     "seasonCount": 2,
     "seasons": [
         {
@@ -184,14 +184,14 @@
         {
             "seasonName": "First Blood",
             "folderName": "first blood",
-            "numOfPages": 6,
+            "numOfPages": 11,
             "numOfChapters": 1,
             "id": 2,
             "chapters": [
                 {
                     "chapterName": "Chapter One",
                     "folderName": "chapter1",
-                    "numOfPages": 6,
+                    "numOfPages": 11,
                     "id": 1,
                     "pages": [
                         {
@@ -246,6 +246,51 @@
                             "message": "New page and lots of new faces! But the most important face of all...this elusive Mr. Freezy Cee...",
                             "datetime": "2021-09-23 15:58:07",
                             "id": 24,
+                            "user": "M1998"
+                        },
+                        {
+                            "pageNum": 7,
+                            "filename": "Vol1-Pg6-Monsters-x-Myriads.jpg",
+                            "title": "Zylo is seeing things, and those things have a lot of teeth",
+                            "message": "I could have sworn she had less teeth in the last pannel.",
+                            "datetime": "2021-09-27 11:33:25",
+                            "id": 25,
+                            "user": "M1998"
+                        },
+                        {
+                            "pageNum": 8,
+                            "filename": "Vol1-Pg7-Monsters-x-Myriads.jpg",
+                            "title": "He DEFINITELY likes me...",
+                            "message": "You may have wondered if penguin boy has flippers for hands or if it's just part of his costume. Well now you know, you're welcome.",
+                            "datetime": "2021-09-30 10:12:11",
+                            "id": 26,
+                            "user": "M1998"
+                        },
+                        {
+                            "pageNum": 9,
+                            "filename": "Vol1-Pg8-Monsters-x-Myriads.jpg",
+                            "title": "Rose coming in hot",
+                            "message": "Poor Mr. \"Definitely Not Mr. Freezy Cee\" can't catch a break.",
+                            "datetime": "2021-10-04 16:20:14",
+                            "id": 27,
+                            "user": "M1998"
+                        },
+                        {
+                            "pageNum": 10,
+                            "filename": "Vol1-Pg9-Monsters-x-Myriads.jpg",
+                            "title": "Rose and Casper Collision",
+                            "message": "And that, kids, was how I met your mother. Hahaha just kidding...unless...",
+                            "datetime": "2021-10-07 16:24:10",
+                            "id": 28,
+                            "user": "M1998"
+                        },
+                        {
+                            "pageNum": 11,
+                            "filename": "Vol1-Pg10-Monsters-x-Myriads.jpg",
+                            "title": "Oh nononono Rose got God Blood on her blood",
+                            "message": "Oh nononono, Rose got \"God Blood\" on her blood. I'm sure everything's fine.",
+                            "datetime": "2021-10-11 12:46:29",
+                            "id": 29,
                             "user": "M1998"
                         }
                     ]
