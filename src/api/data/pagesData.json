@@ -1,5 +1,6 @@
 {
-    "pageCount": 29,
+    "maxDisplayPage": 46,
+    "pageCount": 46,
     "seasonCount": 2,
     "seasons": [
         {
@@ -184,14 +185,14 @@
         {
             "seasonName": "First Blood",
             "folderName": "first blood",
-            "numOfPages": 11,
-            "numOfChapters": 1,
+            "numOfPages": 29,
+            "numOfChapters": 2,
             "id": 2,
             "chapters": [
                 {
                     "chapterName": "Chapter One",
                     "folderName": "chapter1",
-                    "numOfPages": 11,
+                    "numOfPages": 26,
                     "id": 1,
                     "pages": [
                         {
@@ -291,6 +292,167 @@
                             "message": "Oh nononono, Rose got \"God Blood\" on her blood. I'm sure everything's fine.",
                             "datetime": "2021-10-11 12:46:29",
                             "id": 29,
+                            "user": "M1998"
+                        },
+                        {
+                            "pageNum": 12,
+                            "filename": "Rubber_Man.jpg",
+                            "title": "He's Bouncy like Rubber, BOING!",
+                            "message": "It's okay dude, we know what One Piece is and WE think you're cool.",
+                            "datetime": "2021-10-18 16:43:17",
+                            "id": 30,
+                            "user": "M1998"
+                        },
+                        {
+                            "pageNum": 13,
+                            "filename": "Vol1-Pg12-Monsters-x-Myriads.jpg",
+                            "title": "Blush Overload and Jealous Rage",
+                            "message": "Someone may be jealous... but jury is still out on that.",
+                            "datetime": "2021-10-25 14:28:32",
+                            "id": 31,
+                            "user": "M1998"
+                        },
+                        {
+                            "pageNum": 14,
+                            "filename": "Vol1-Pg13-Monsters-x-Myriads.jpg",
+                            "title": "A hero is needed, and Casper will have to do",
+                            "message": "When that rando kid thinks they are the main character.",
+                            "datetime": "2021-10-28 14:40:51",
+                            "id": 32,
+                            "user": "M1998"
+                        },
+                        {
+                            "pageNum": 15,
+                            "filename": "Moved_To_Wisconsin.jpg",
+                            "title": "We Moved to Wisconsin",
+                            "message": "Hey guys! So you may have heard we were buying a house. The house is no more! In the mean time, we are setting up camp in Wisconsin (the home of the Monsters and Myriads comic ironically). We're just now getting settled in and figuring out our future adventures. So no new page today, however, pages will continue this Thursday (November 4th). Also, Happy Belated Halloween, you spooky hooligans!",
+                            "datetime": "2021-11-01 15:35:23",
+                            "id": 33,
+                            "user": "M1998"
+                        },
+                        {
+                            "pageNum": 16,
+                            "filename": "Vol1-Pg14-Monsters-x-Myriads.jpg",
+                            "title": "Your....Vanilla Cones",
+                            "message": "I don't know which part made me happier to draw, the icecream on the kitty's nose, or Casper vrooooming off into the sunset. Or maybe the phantom newcomer in the depths of the Freezy Cee's custard shack...",
+                            "datetime": "2021-11-04 12:32:38",
+                            "id": 34,
+                            "user": "M1998"
+                        },
+                        {
+                            "pageNum": 17,
+                            "filename": "Vol1-Pg15-Monsters-x-Myriads.jpg",
+                            "title": "Here enters the Elusive Mr. Freezy Cee",
+                            "message": "The man, the myth, the legend, Mr. Freezy Cee!! Dropping some hot takes and hard facts. Posting from Colorado Springs this morning (my concept of time has been severely crippled between moving from Ohio to Wisconsin to Colorado, during a daylight savings no less 🙀).",
+                            "datetime": "2021-11-08 11:41:04",
+                            "id": 35,
+                            "user": "M1998"
+                        },
+                        {
+                            "pageNum": 18,
+                            "filename": "Vol1-Pg16-Monsters-x-Myriads.jpg",
+                            "title": "Mr Freezy Cee on the philosophy of penguin pajamas",
+                            "message": "This just in: Mr. Freezy Cee on the philosophy of penguin pajamas.",
+                            "datetime": "2021-11-11 11:55:09",
+                            "id": 36,
+                            "user": "M1998"
+                        },
+                        {
+                            "pageNum": 19,
+                            "filename": "Vol1-Pg17-Monsters-x-Myriads.jpg",
+                            "title": "Just about anything can make you interesting",
+                            "message": "Zylo \"unmasked\", not a penguin after all.",
+                            "datetime": "2021-11-15 14:55:54",
+                            "id": 37,
+                            "user": "M1998"
+                        },
+                        {
+                            "pageNum": 20,
+                            "filename": "Vol1-Pg18-Monsters-x-Myriads.jpg",
+                            "title": "Hacker Chick and her Nut Cracker immerges",
+                            "message": "Little known hallmark film coming out this season...Hacker and the NuT Cracker. Buy your tickets today!",
+                            "datetime": "2021-11-18 15:34:14",
+                            "id": 38,
+                            "user": "M1998"
+                        },
+                        {
+                            "pageNum": 21,
+                            "filename": "Vol1-Pg19-Monsters-x-Myriads.jpg",
+                            "title": "I'm sure your deserted little twin brothers are fine...",
+                            "message": "I'm sure your deserted little twin brothers are fine, Casper. I mean, they had icecream and an absurd lack of supervision to keep them company.",
+                            "datetime": "2021-11-22 12:52:25",
+                            "id": 39,
+                            "user": "M1998"
+                        },
+                        {
+                            "pageNum": 22,
+                            "filename": "Vol1-Pg20-Monsters-x-Myriads.jpg",
+                            "title": "Rose may be tripping afterall",
+                            "message": "Well Rose is certainly tripping on something.",
+                            "datetime": "2021-11-29 16:13:07",
+                            "id": 40,
+                            "user": "M1998"
+                        },
+                        {
+                            "pageNum": 23,
+                            "filename": "Vol1-Pg21-Monsters-x-Myriads.jpg",
+                            "title": "Maybe we're both high?",
+                            "message": "Have I been playing too much Pikmin Bloom, or does Quill's ghost need a name? I'm leaning towards Reginald but I am open to suggestions.",
+                            "datetime": "2021-12-02 09:49:21",
+                            "id": 41,
+                            "user": "M1998"
+                        },
+                        {
+                            "pageNum": 24,
+                            "filename": "Vol1-Pg22-Monsters-x-Myriads.jpg",
+                            "title": "Uncle Dan finds the kiddos with a broken window",
+                            "message": "All things considered, both Uncle Dan and Rose are taking it all rather well. (⊙_⊙;)",
+                            "datetime": "2021-12-06 15:49:41",
+                            "id": 42,
+                            "user": "M1998"
+                        },
+                        {
+                            "pageNum": 25,
+                            "filename": "Vol1-Pg23-Monsters-x-Myriads.jpg",
+                            "title": "Uncle Dan to the rescue",
+                            "message": "Typical.",
+                            "datetime": "2021-12-09 12:21:46",
+                            "id": 43,
+                            "user": "M1998"
+                        },
+                        {
+                            "pageNum": 26,
+                            "filename": "Vol1-Pg24-Monsters-x-Myriads.jpg",
+                            "title": "Rose isn't crazy, and Quill is gonna help her",
+                            "message": "I didn't grow up with cousins my age, but I imagine this is how general cousinly bickering would go.",
+                            "datetime": "2021-12-13 14:41:40",
+                            "id": 44,
+                            "user": "M1998"
+                        }
+                    ]
+                },
+                {
+                    "chapterName": "Chapter Two",
+                    "folderName": "chapter2",
+                    "numOfPages": 3,
+                    "id": 2,
+                    "pages": [
+                        {
+                            "pageNum": 1,
+                            "filename": "Chap-02b.jpg",
+                            "title": "Chapter 2 Killing Time in Detention",
+                            "message": "Woot woot!! Heading into the next chapter! Thank you all for checking out our comic up til this point! This marks the start of the Monsters & Myriads holiday hiatus where we the creators will be making some fun edits to be revealed this coming January. In the meantime, check out our Discord to join in the conversation and share your ideas/theories. We love to hear from you guys! Merry Christmas all and see you in the new year! 🎄⛄",
+                            "datetime": "2021-12-16 15:09:27",
+                            "id": 45,
+                            "user": "M1998"
+                        },
+                        {
+                            "pageNum": 2,
+                            "filename": "Holidays2022.jpg",
+                            "title": "Holiday Hiatus 2022",
+                            "message": "Hey guys! I hope your holidays were warm and filled with great memories! Over the last few weeks, we've discussed our vision for this comic at length and have finally decided to *drum roll please* remake the prologue for Monsters & Myriads!! 🥳🥂 The one we have now served its purpose in teaching us a lot of lessons about making comics, but over the next few weeks, we intend to breathe new life into the beginning of our novel, setting more clear expections and setting for the story. We will restart our posting schedule the last monday of the month, January 31.",
+                            "datetime": "2022-01-03 20:47:44",
+                            "id": 46,
                             "user": "M1998"
                         }
                     ]

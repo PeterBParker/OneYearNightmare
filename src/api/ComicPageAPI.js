@@ -101,7 +101,7 @@ const ComicPageAPI = {
         return null;
     },
     validatePageId: function (id) {
-        let pageCount = this.getTotalPageCount();
+        let pageCount = this.getMaxDisplayPage();
         if (id > 0 && id <= pageCount) {
             return true;
         } else {
@@ -110,6 +110,9 @@ const ComicPageAPI = {
     },
     getTotalPageCount: function () {
         return pagesData.pageCount;
+    },
+    getMaxDisplayPage: function () {
+        return pagesData.maxDisplayPage;
     },
     getAllPages: function () {
         let pages = [];
