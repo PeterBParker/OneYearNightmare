@@ -60,6 +60,7 @@ def addNewPage(seasonName, chapterName, title, message, filepath, user):
     writeIncrementChapterPageCount(season["id"], chapter["id"])
     writeIncrementSeasonPageCount(season["id"])
     writeIncrementBookPageCount()
+    writeIncrementMaxDisplayPageCount()
 
     writePageAppend(season["id"], chapter["id"], newPage)
 
@@ -75,6 +76,7 @@ def appendSeason():
         raise Exception("Season directory already exists for specified season.")
     seasonObj["folderName"] = newSeasonName.lower()
     seasonObj["numOfPages"] = 0
+    seasonObj["maxDisplayPage"] = 0
     seasonObj["numOfChapters"] = 0
     data = getData(_WORKING_DATA_FILENAME, 'r')
     seasonObj["id"] = data["seasonCount"] + 1
@@ -292,6 +294,11 @@ def writeChapterAppend(chapterObj, seasonName):
 def writeIncrementBookPageCount():
     data = getData(_WORKING_DATA_FILENAME, 'r')
     data["pageCount"] += 1
+    writeToFile(data, _WORKING_DATA_FILENAME)
+
+def writeIncrementMaxDisplayPageCount():
+    data = getData(_WORKING_DATA_FILENAME, 'r')
+    data["maxDisplayPage"] += 1
     writeToFile(data, _WORKING_DATA_FILENAME)
 
 def writeIncrementSeasonCount():

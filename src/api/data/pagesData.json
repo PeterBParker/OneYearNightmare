@@ -1,4 +1,5 @@
 {
+    "maxDisplayPage": 46,
     "pageCount": 46,
     "seasonCount": 2,
     "seasons": [
@@ -184,7 +185,7 @@
         {
             "seasonName": "First Blood",
             "folderName": "first blood",
-            "numOfPages": 28,
+            "numOfPages": 29,
             "numOfChapters": 2,
             "id": 2,
             "chapters": [
@@ -433,7 +434,7 @@
                 {
                     "chapterName": "Chapter Two",
                     "folderName": "chapter2",
-                    "numOfPages": 2,
+                    "numOfPages": 3,
                     "id": 2,
                     "pages": [
                         {
