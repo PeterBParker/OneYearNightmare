@@ -2,14 +2,11 @@ import datetime
 import json
 import ntpath
 import os
-import sys
 
 from shutil import copyfile
 from num2words import num2words
 
 # Future TODO: Rewrite this in javascript and use the data API instead of declaring new functions.
-# Future TODO: Instead of passing around the data object, open up a temp file and modify the temp.
-#               Add a function called "getData" and eliminate passing it around through functions to save memory
 # TODO:         Delete folders if the program crashes? idk.
 
 _DATA_FILENAME = "../api/data/pagesData.json"

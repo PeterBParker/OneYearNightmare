@@ -23,11 +23,11 @@ export default function Footer() {
     let [twitterIcon, setTwitterIcon] = useState(twitterInactive);
     
     function changeIcon(platform, newIcon) {
-        if (platform == "fb") {
+        if (platform === "fb") {
             setFacebookIcon(newIcon);
-        } else if (platform == 'insta') {
+        } else if (platform === 'insta') {
             setInstagramIcon(newIcon);
-        } else if (platform == 'twitter') {
+        } else if (platform === 'twitter') {
             setTwitterIcon(newIcon);
         }
     }
