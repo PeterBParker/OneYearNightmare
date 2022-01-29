@@ -1,4 +1,3 @@
-import { PreviousMap } from "postcss"
 
 export default function Support(props) {
     return (
