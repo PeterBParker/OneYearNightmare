@@ -1,5 +1,4 @@
 import {Switch, Route, Redirect} from 'react-router-dom';
-import { COMIC_VIEWER_DEFAULT_PATH } from '../Main';
 import ComicViewer from './ComicViewer';
 import { useCookies } from 'react-cookie';
 

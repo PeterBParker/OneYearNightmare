@@ -7,11 +7,11 @@ import bookmarkOutline from '../../../assets/bookies/bookies/bookie-short-line-4
 import bookmarkFilled from '../../../assets/bookies/bookies/bookie-short-fill-40px.png';
 
 export default function MobileNavBar(props) {
-    const [cookies, setCookie, removeCookie] = useCookies(['mxmBookmarkedPage'])
+    const [cookies, setCookie] = useCookies(['mxmBookmarkedPage'])
     const [bookmarkIcon, setBookmarkIcon] = useState(bookmarkOutline);
 
     useEffect(() => {
-        if (props.pageId.toString() == cookies.mxmBookmarkedPage) {
+        if (props.pageId.toString() === cookies.mxmBookmarkedPage) {
             setBookmarkIcon(bookmarkFilled);
         } else {
             setBookmarkIcon(bookmarkOutline);

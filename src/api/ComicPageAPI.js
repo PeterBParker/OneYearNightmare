@@ -21,7 +21,7 @@ const ComicPageAPI = {
         return null;
     },
     getChaptersInSeason: function (seasonName) {
-        const isSeason = p => p.seasonName == seasonName;
+        const isSeason = p => p.seasonName === seasonName;
         let seasons = this.getSeasons();
         let seasonObj = seasons.find(isSeason);
         if (seasonObj == null) {
@@ -31,13 +31,13 @@ const ComicPageAPI = {
         return seasonObj.chapters;
     },
     getSeason: function (seasons, seasonName) {
-        {/* This function gets a season object
+        /* This function gets a season object
         
             Parameters:
             seasons - an array of season objects
             seasonName - a string of the season name
-        */}
-        const isSeason = p => p.seasonName == seasonName;
+        */
+        const isSeason = p => p.seasonName === seasonName;
         return seasons.find(isSeason);
     },
     getSeasonNum: function (pageId) {
@@ -48,20 +48,20 @@ const ComicPageAPI = {
         return null;
     },
     getSeasonOrder: function (seasonName) {
-        const isSeason = p => p.seasonName == seasonName;
+        const isSeason = p => p.seasonName === seasonName;
         let seasons = this.getSeasons();
         let season = seasons.find(isSeason);
         return season.order;
     },
     getRelValidObjs: function (id) {
-        {/* This function checks if the page address is valid, and if so
+        /* This function checks if the page address is valid, and if so
             it returns the relevent Season object, Chapter object, and Page object.
 
             Parameters:
             id - And integer of the page number 
             chapter - A string of the chapter name
             season - A string of the season name        
-        */}
+        */
 
         if (!this.validatePageId(id)) {
             return null;
@@ -85,7 +85,7 @@ const ComicPageAPI = {
                         let pages = chapter.pages;
                         for (let pageIndex in pages) {
                             let page = pages[pageIndex];
-                            if (page.id == id) {
+                            if (page.id === id) {
                                 validObjs.pageObj = page
                                 return validObjs;
                             }
@@ -144,7 +144,7 @@ const ComicPageAPI = {
     },
     getAdminDisplayName: function(userId) {
         for (let user in users.admins) {
-            if (users.admins[user].id == userId) {
+            if (users.admins[user].id === userId) {
                 return users.admins[user].displayName;
             }
         }

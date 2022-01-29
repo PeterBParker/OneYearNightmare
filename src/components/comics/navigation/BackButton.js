@@ -4,7 +4,7 @@ import activeBackIcon from '../../../assets/FINAL-ASSETS-072821/final assets/lef
 import disabledBackIcon from '../../../assets/FINAL-ASSETS-072821/final assets/left-arrow-light-30px.png';
 
 export default function BackButton(props) {
-    const disabledButton = <div className="navButton"><img src={disabledBackIcon} width={30}/></div>;
+    const disabledButton = <div className="navButton"><img src={disabledBackIcon} width={30} alt="disabled navigation back page button"/></div>;
     const backPageId = props.pageId-1;
 
     let isValidId = ComicPageAPI.validatePageId(backPageId);
@@ -17,7 +17,7 @@ export default function BackButton(props) {
     if(pageInfo) {
         const pageFilePath = '/read/' + backPageId;
         return(
-            <div className="navButton" onClick={props.scrollToTopOfPage}><Link to={pageFilePath}><img src={activeBackIcon} width={30}/></Link></div>
+            <div className="navButton" onClick={props.scrollToTopOfPage}><Link to={pageFilePath}><img src={activeBackIcon} width={30} alt="enabled navigation back page button"/></Link></div>
         );
     } else {
         return(

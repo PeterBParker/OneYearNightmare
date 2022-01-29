@@ -4,11 +4,11 @@ import activeLastIcon from '../../../assets/FINAL-ASSETS-072821/final assets/rig
 import disabledLastIcon from '../../../assets/FINAL-ASSETS-072821/final assets/right-skip-light-30px.png';
 
 export default function LastPageButton(props) {
-    const disabledButton = <div className="navButton"><img src={disabledLastIcon} width={30}/></div>;
+    const disabledButton = <div className="navButton"><img src={disabledLastIcon} width={30} alt="disabled navigation last page button"/></div>;
     const lastPageId = ComicPageAPI.getTotalPageCount();
 
     let isValidId = ComicPageAPI.validatePageId(lastPageId);
-    if(!isValidId || props.pageId == lastPageId) {
+    if(!isValidId || props.pageId === lastPageId) {
         return disabledButton;
     }
 
@@ -17,7 +17,7 @@ export default function LastPageButton(props) {
     if(pageInfo) {
         const pageFilePath = '/read/' + lastPageId;
         return(
-            <div className="navButton" onClick={props.scrollToTopOfPage}><Link to={pageFilePath}><img src={activeLastIcon} width={30}/></Link></div>
+            <div className="navButton" onClick={props.scrollToTopOfPage}><Link to={pageFilePath}><img src={activeLastIcon} width={30} alt="enabled navigation last page button"/></Link></div>
         );
     } else {
         return(

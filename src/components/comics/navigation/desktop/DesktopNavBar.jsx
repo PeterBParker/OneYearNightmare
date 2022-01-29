@@ -12,7 +12,7 @@ export default function DesktopNavBar(props) {
     const [bookmarked, setIfBookmarked] = useState(false);
 
     useEffect(() => {
-        if (props.pageId.toString() == cookies.mxmBookmarkedPage) {
+        if (props.pageId.toString() === cookies.mxmBookmarkedPage) {
             setBookmarkIcon(bookmarkFilled);
             setIfBookmarked(true);
         } else {
@@ -41,7 +41,7 @@ export default function DesktopNavBar(props) {
                 {middleButtons}
             </div>
             <div className={`${bookmarked ? 'bookmarkFilled' : 'bookmarkEmpty'} bookmarkButton self-center ml-auto my-4 mr-4`} onClick={() => setCookie('mxmBookmarkedPage', props.pageId.toString(), {path: '/', expires: addYearToToday()})}>
-                <img src={bookmarkIcon} width={40} />
+                <img src={bookmarkIcon} width={40} alt="bookmark button"/>
             </div>
         </div>
     );

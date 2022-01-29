@@ -4,11 +4,11 @@ import activeFirstIcon from '../../../assets/FINAL-ASSETS-072821/final assets/le
 import disabledFirstIcon from '../../../assets/FINAL-ASSETS-072821/final assets/left-skip-light-30px.png';
 
 export default function FirstPageButton(props) {
-    const disabledButton = <div className="navButton"><img src={disabledFirstIcon} width={30}/></div>;
+    const disabledButton = <div className="navButton"><img src={disabledFirstIcon} width={30} alt="disabled navigation first page button"/></div>;
     const firstPageId = 1;
 
     let isValidId = ComicPageAPI.validatePageId(firstPageId);
-    if(!isValidId || props.pageId==firstPageId) {
+    if(!isValidId || props.pageId===firstPageId) {
         return disabledButton;
     }
 
@@ -17,7 +17,7 @@ export default function FirstPageButton(props) {
     if(pageInfo) {
         const pageFilePath = '/read/' + firstPageId;
         return(
-            <div className="navButton" onClick={props.scrollToTopOfPage}><Link to={pageFilePath}><img src={activeFirstIcon} width={30}/></Link></div>
+            <div className="navButton" onClick={props.scrollToTopOfPage}><Link to={pageFilePath}><img src={activeFirstIcon} width={30} alt="enabled navigation first page button"/></Link></div>
         );
     } else {
         return(

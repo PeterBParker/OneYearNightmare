@@ -4,7 +4,7 @@ import activeNextIcon from '../../../assets/FINAL-ASSETS-072821/final assets/rig
 import disabledNextIcon from '../../../assets/FINAL-ASSETS-072821/final assets/right-arrow-light-30px.png';
 
 export default function NextButton(props) {
-    const disabledButton = <div className="navButton"><img src={disabledNextIcon} width={30} /></div>;
+    const disabledButton = <div className="navButton"><img src={disabledNextIcon} width={30} alt="disabled navigation next page button"/></div>;
     const nextPageId = props.pageId+1;
 
     let isValidId = ComicPageAPI.validatePageId(nextPageId);
@@ -16,7 +16,7 @@ export default function NextButton(props) {
     if(pageInfo) {
         const pageFilePath = '/read/' + nextPageId;
         return(
-            <div className="navButton" onClick={props.scrollToTopOfPage}><Link to={pageFilePath}><img src={activeNextIcon} width={30}/></Link></div>
+            <div className="navButton" onClick={props.scrollToTopOfPage}><Link to={pageFilePath}><img src={activeNextIcon} width={30} alt="enabled navigation next page button"/></Link></div>
         );
     } else {
         return(

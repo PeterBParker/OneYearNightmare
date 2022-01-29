@@ -26,7 +26,11 @@ export default function ComicViewer(props) {
     const isDesktop = useMediaQuery({query: querySizes['lg']});
     const topOfPageRef = useRef(null);
 
-    const scrollToTopOfPage = () => topOfPageRef.current.scrollIntoView({behavior: 'smooth'});
+    const scrollToTopOfPage = () => {
+        let element = document.getElementById("gracefulComicPage");
+        element.classList.add("shimmerMask");
+        topOfPageRef.current.scrollIntoView({behavior: 'smooth'});
+    }
 
     let unknownRequestContent = <div className="invalidComicPage"> 
                                     <div className="text-3xl our-red ">No page found. :(</div> 
@@ -69,7 +73,6 @@ export default function ComicViewer(props) {
             <Header defaultBg={false}/>
             {isDesktop ? <SimpleNavBar page={Pages.READ}/> : ''}
             {isDesktop ? <DesktopPageView pageImageUrl={pageImageUrl} sharePageUrl={sharePageUrl} title={title} topOfPageRef={topOfPageRef}/> : <MobilePageView pageImageUrl={pageImageUrl} topOfPageRef={topOfPageRef}/>}
-
             {isDesktop ? <DesktopNavBar pageId={pageId} scrollToTopOfPage={scrollToTopOfPage}/> : <MobileNavBar pageId={pageId} scrollToTopOfPage={scrollToTopOfPage}/>}
             {isDesktop ? '' : <HorizontalShare sharePageUrl={sharePageUrl} shareImageUrl={shareImageUrl} title={title} />}
             {isDesktop ? <DesktopReadPageCards pageId={pageId} /> : <MobileReadPageCards pageId={pageId} />}
