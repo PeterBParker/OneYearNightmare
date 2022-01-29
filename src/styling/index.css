@@ -596,19 +596,46 @@
 .readPageDiscordBannerImage {
     position: absolute;
 }
-.loadingComicImage {
-    height: 1242px;
-    width: 828px;
-    background: #f6f7f8;
-    background-image: linear-gradient(to right, #f6f7f8 0%, #edeef1 20%, #f6f7f8 40%, #f6f7f8 100%);
+
+.loadingComicPage {
+    width: 800px;
+    height: 1000px;
+}
+
+.shimmer {
+    background: #E4E0D4;
+    background-image: linear-gradient(to right, #E4E0D4 0%, #e0dbcb 20%, #E4E0D4 40%, #E4E0D4 100%);
     background-repeat: no-repeat;
-    background-size: 800px 104px; 
     display: inline-block;
     position: relative; 
     
     -webkit-animation-duration: 1s;
-    -webkit-animation-fill-mode: forwards; 
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards; 
     -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
     -webkit-animation-name: placeholderShimmer;
+    animation-name: placeholderShimmer;
     -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+}
+
+@-webkit-keyframes placeholderShimmer {
+    0% {
+      background-position: -468px 0;
+    }
+    
+    100% {
+      background-position: 468px 0; 
+    }
+}
+@keyframes placeholderShimmer {
+    0% {
+      background-position: -468px 0;
+    }
+    
+    100% {
+      background-position: 468px 0; 
+    }
 }

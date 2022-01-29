@@ -4,7 +4,7 @@ import loading_comic_page from '../../assets/loading_comic_page.png';
 export default function GracefulImage(props){
     let [loaded, setLoaded] = useState(false);
 
-    let loadingImage =  <img src={loading_comic_page} alt="" className="comicPage loadingComicImage"/>
+    let loadingImage =  loaded ? null : <img src={loading_comic_page} alt="" className="comicPage shimmer loadingComicPage"/>
                         
 
     let loadedImage = <img  
@@ -15,5 +15,5 @@ export default function GracefulImage(props){
                     key={props.keyVal}
                     onLoad={() => setLoaded(true)}/>
 
-    return([loadingImage])
+    return([loadingImage, loadedImage])
 }
