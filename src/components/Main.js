@@ -1,4 +1,5 @@
 import {Switch, Route} from 'react-router-dom';
+import Archive from './comics/archive/Archive';
 import ComicRouter from './comics/ComicRouter';
 import Creators from './creators/about/Creators';
 import Support from './creators/supportUsCards/Support';
@@ -20,6 +21,7 @@ export default function Main() {
                 <Route path='/creatives' component={Creators} />
                 <Route path='/support' component={Support} />
                 <Route path='/read' component={ComicRouter} />
+                <Route path='/archive' component={Archive} />
             </Switch>
         </div>
     );
