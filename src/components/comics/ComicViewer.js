@@ -26,7 +26,11 @@ export default function ComicViewer(props) {
     const isDesktop = useMediaQuery({query: querySizes['lg']});
     const topOfPageRef = useRef(null);
 
-    const scrollToTopOfPage = () => topOfPageRef.current.scrollIntoView({behavior: 'smooth'});
+    const scrollToTopOfPage = () => {
+        let element = document.getElementById("gracefulComicPage");
+        element.classList.add("shimmerMask");
+        topOfPageRef.current.scrollIntoView({behavior: 'smooth'});
+    }
 
     let unknownRequestContent = <div className="invalidComicPage"> 
                                     <div className="text-3xl our-red ">No page found. :(</div> 

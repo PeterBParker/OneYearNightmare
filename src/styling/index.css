@@ -602,7 +602,7 @@
     height: 1000px;
 }
 
-.shimmer {
+.shimmerFill {
     background: #E4E0D4;
     background-image: linear-gradient(to right, #E4E0D4 0%, #e0dbcb 20%, #E4E0D4 40%, #E4E0D4 100%);
     background-repeat: no-repeat;
@@ -638,4 +638,17 @@
     100% {
       background-position: 468px 0; 
     }
+}
+
+.shimmerMask {
+    color: grey;
+    display:inline-block;
+    -webkit-mask:linear-gradient(-60deg,#000 30%,#0005,#000 70%) right/300% 100%;
+    mask:linear-gradient(-60deg,#000 30%,#0005,#000 70%) right/300% 100%;
+    background-repeat: no-repeat;
+    animation: shimmer 2.5s infinite;
+}
+  
+@keyframes shimmer {
+    100% {-webkit-mask-position:left}
 }
