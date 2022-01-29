@@ -69,7 +69,6 @@ export default function ComicViewer(props) {
             <Header defaultBg={false}/>
             {isDesktop ? <SimpleNavBar page={Pages.READ}/> : ''}
             {isDesktop ? <DesktopPageView pageImageUrl={pageImageUrl} sharePageUrl={sharePageUrl} title={title} topOfPageRef={topOfPageRef}/> : <MobilePageView pageImageUrl={pageImageUrl} topOfPageRef={topOfPageRef}/>}
-
             {isDesktop ? <DesktopNavBar pageId={pageId} scrollToTopOfPage={scrollToTopOfPage}/> : <MobileNavBar pageId={pageId} scrollToTopOfPage={scrollToTopOfPage}/>}
             {isDesktop ? '' : <HorizontalShare sharePageUrl={sharePageUrl} shareImageUrl={shareImageUrl} title={title} />}
             {isDesktop ? <DesktopReadPageCards pageId={pageId} /> : <MobileReadPageCards pageId={pageId} />}

@@ -3,9 +3,7 @@ import ComicRouter from './comics/ComicRouter';
 import Creators from './creators/about/Creators';
 import Support from './creators/supportUsCards/Support';
 import Home from './Home';
-import pageData from '../api/data/pagesData.json';
 
-const MOST_RECENT_PAGE_ID = pageData.pageCount;
 export const DOMAIN = 'https://monstersandmyriads.com';
 export const BASE_PATH = '/MnMPages/';
 export const JOINT_SIG = 'Mo and Nate';

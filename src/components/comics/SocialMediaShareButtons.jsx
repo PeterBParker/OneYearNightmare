@@ -67,27 +67,52 @@ export default function SocialMediaShareButtons(props) {
         <div className={`socialShareButtonContainer flex ${props.isVert ? 'flex-col' : 'flex-row'} justify-center w-full px-4 mt-3`}>
             <div className={`facebookShareContainer flex-grow-0 ${props.isVert ? 'my-2' : 'mx-3'}`}>
                 <FacebookShareButton url={props.sharePageUrl} quote={props.title} >
-                    <img src={fbIcon} width={`${props.isVert ? 50 : 32}`} onMouseOver={() => setFbIcon(getIcon('fb', true))} onMouseOut={() => setFbIcon(getIcon('fb', false))}/>
+                    <img 
+                        src={fbIcon} 
+                        width={`${props.isVert ? 50 : 32}`} 
+                        onMouseOver={() => setFbIcon(getIcon('fb', true))} 
+                        onMouseOut={() => setFbIcon(getIcon('fb', false))}
+                        alt="share via facebook icon"/>
                 </FacebookShareButton>
             </div>
             <div className={`twitterShareContainer flex-grow-0 ${props.isVert ? 'my-2' : 'mx-3'}`}>
                 <TwitterShareButton url={props.sharePageUrl} title={props.title}>
-                    <img src={twitterIcon} width={`${props.isVert ? 50 : 32}`} onMouseOver={() => setTwitterIcon(getIcon('twitter', true))} onMouseOut={() => setTwitterIcon(getIcon('twitter', false))} />
+                    <img 
+                        src={twitterIcon} 
+                        width={`${props.isVert ? 50 : 32}`} 
+                        onMouseOver={() => setTwitterIcon(getIcon('twitter', true))} 
+                        onMouseOut={() => setTwitterIcon(getIcon('twitter', false))} 
+                        alt="share via twitter icon"/>
                 </TwitterShareButton>
             </div>
             <div className={`tumblrShareContainer flex-grow-0 ${props.isVert ? 'my-2' : 'mx-3'}`}>
                 <TumblrShareButton url={props.sharePageUrl} title={props.title}>
-                    <img src={tumblrIcon} width={`${props.isVert ? 50 : 32}`} onMouseOver={() => setTumblrIcon(getIcon('tumblr', true))} onMouseOut={() => setTumblrIcon(getIcon('tumblr', false))}/>
+                    <img 
+                        src={tumblrIcon} 
+                        width={`${props.isVert ? 50 : 32}`} 
+                        onMouseOver={() => setTumblrIcon(getIcon('tumblr', true))} 
+                        onMouseOut={() => setTumblrIcon(getIcon('tumblr', false))}
+                        alt="share via tumbler icon"/>
                 </TumblrShareButton>
             </div>
             <div className={`pinterestShareContainer flex-grow-0 ${props.isVert ? 'my-2' : 'mx-3'}`}>
                 <PinterestShareButton url={props.sharePageUrl} media={props.shareImageUrl}>
-                    <img src={pinterestIcon} width={`${props.isVert ? 50 : 32}`} onMouseOver={() => setPinterestIcon(getIcon('pinterest', true))} onMouseOut={() => setPinterestIcon(getIcon('pinterest', false))} />
+                    <img 
+                        src={pinterestIcon} 
+                        width={`${props.isVert ? 50 : 32}`} 
+                        onMouseOver={() => setPinterestIcon(getIcon('pinterest', true))} 
+                        onMouseOut={() => setPinterestIcon(getIcon('pinterest', false))} 
+                        alt="share via pinterest icon"/>
                 </PinterestShareButton>
             </div>
             <div className={`emailShareContainer flex-grow-0 ${props.isVert ? 'my-2' : 'mx-3'}`}>
                 <EmailShareButton url={props.sharePageUrl} subject={props.title} body="body">
-                    <img src={emailIcon} width={`${props.isVert ? 50 : 32}`} onMouseOver={() => setEmailIcon(getIcon('email', true)) } onMouseOut={() => setEmailIcon(getIcon('email', false))}/>
+                    <img 
+                        src={emailIcon} 
+                        width={`${props.isVert ? 50 : 32}`} 
+                        onMouseOver={() => setEmailIcon(getIcon('email', true)) } 
+                        onMouseOut={() => setEmailIcon(getIcon('email', false))}
+                        alt="share via email icon"/>
                 </EmailShareButton>
             </div>
         </div>
