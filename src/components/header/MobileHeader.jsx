@@ -8,7 +8,7 @@ import HamburgerMenu from './HamburgerMenu';
 import {COMIC_VIEWER_DEFAULT_PATH} from '../Main';
 
 export default function MobileHeader(props) {
-    let volNum = ComicPageAPI.getSeasonNum(pageData.pageCount);
+    let volNum = ComicPageAPI.getSeasonNum(pageData.maxDisplayPage);
 
     return (
         <div>

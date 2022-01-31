@@ -7,7 +7,7 @@ import pageData from '../../api/data/pagesData.json';
 import { COMIC_VIEWER_DEFAULT_PATH } from '../Main';
 
 export default function DesktopHeader(props) {
-    let volNum = ComicPageAPI.getSeasonNum(pageData.pageCount);
+    let volNum = ComicPageAPI.getSeasonNum(pageData.maxDisplayPage);
 
     return (
         <div>
