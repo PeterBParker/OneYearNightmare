@@ -58,9 +58,7 @@ const ComicPageAPI = {
             it returns the relevent Season object, Chapter object, and Page object.
 
             Parameters:
-            id - And integer of the page number 
-            chapter - A string of the chapter name
-            season - A string of the season name        
+            id - An integer of the page number       
         */
 
         if (!this.validatePageId(id)) {
