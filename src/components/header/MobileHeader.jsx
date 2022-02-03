@@ -8,7 +8,7 @@ import HamburgerMenu from './HamburgerMenu';
 import {COMIC_VIEWER_DEFAULT_PATH} from '../Main';
 
 export default function MobileHeader(props) {
-    let volNum = 1;
+    let volNum = ComicPageAPI.getSeasonNum(pageData.maxDisplayPage);
 
     return (
         <div>
@@ -22,7 +22,7 @@ export default function MobileHeader(props) {
                             <svg width="32px" height="32px">
                                 <g>
                                     <circle cx="14" cy="14"  r="13" strokeWidth="2" stroke="#998f7e" fillOpacity="0%"></circle>
-                                    <text x="14" y="14" fill="#998f7e" className="headerVolNum" textAnchor="middle" alignmentBaseline="central">{volNum}</text>
+                                    <text x="14" y="20" fill="#998f7e" className="headerVolNum" textAnchor="middle" alignmentBaseline="central">{volNum}</text>
                                 </g>
                             </svg>
                         </div>

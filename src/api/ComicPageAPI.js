@@ -43,7 +43,7 @@ const ComicPageAPI = {
     getSeasonNum: function (pageId) {
         const relObjs = this.getRelValidObjs(pageId);
         if(relObjs) {
-            return relObjs.seasonObj.id;
+            return relObjs.seasonObj.id-1;
         }
         return null;
     },
