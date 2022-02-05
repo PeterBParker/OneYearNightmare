@@ -1,6 +1,5 @@
 import addPage as api
 import os
-from iconMaker import IconMaker
 from pathlib import Path
 from PIL import Image, UnidentifiedImageError
 
@@ -13,13 +12,12 @@ class IconifyPagesController:
     def iconifyAllExistingPages(self):
         iconer = IconMaker()
         pagesDir = Path("../../public/MnMPages/")
-        iconsDir = Path("../assets/page_icons/test.png")
-        tempPath = Path("../../public/MnMPages/prologue/chapter1/Pg0-FILLER-cover.jpg")
-        iconer.iconify_file((150, 150), tempPath, iconsDir)
 
         for seasonDir in pagesDir.iterdir():
             for chapterDir in seasonDir.iterdir():
                 icon_dir = chapterDir / "icons"
+                if not os.path.isdir(icon_dir):
+                    os.mkdir(icon_dir)
                 for page in chapterDir.iterdir():
                     if os.path.basename(page) == "icons":
                         continue
