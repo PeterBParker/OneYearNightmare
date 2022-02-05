@@ -14,7 +14,7 @@ class IconMaker:
         if self.validate_file(image_path):
             im = Image.open(image_path)
             im.thumbnail(dimensions)
-            im.save(output_path)
+            im.save(output_path, format="JPEG")
 
     @staticmethod
     def validate_file(file_path):
@@ -32,14 +32,3 @@ class IconMaker:
         except (UnidentifiedImageError, ValueError):
             pass
         return isImage
-
-
-if __name__ == "__main__":
-    parser = argparse.ArgumentParser()
-    parser.add_argument("dir", help="The directory of the image(s) you want to convert")
-    args = parser.parse_args()
-
-    file_path = Path(args.dir)
-    if not file_path.exists():
-        print("ERROR: File path doesn't exist.")
-        quit()

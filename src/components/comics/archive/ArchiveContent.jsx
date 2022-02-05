@@ -16,7 +16,7 @@ export default function ArchiveContent(props) {
         let chapters = season["chapters"];
         for(let chapterIndex in chapters) {
             let chapter = chapters[chapterIndex];
-            displayBanners.push(<ChapterBanner chapterName={`${season["seasonName"]} - ${chapter["chapterName"]}`}/>)
+            displayBanners.push(<ChapterBanner chapterName={`${season["seasonName"]} - ${chapter["chapterName"]}`} key={`${season["seasonName"]}${chapter["chapterName"]}ArchiveBanner`}/>)
         }
     }
 
