@@ -1,9 +1,11 @@
 import { useState } from "react";
+import testIcon from "../../../assets/page_icons/test.png"; 
+
 
 export default function ChapterBanner(props) {
     const [isActive, setIsActive] = useState(false);
 
-    let pagesDisplay = BuildChapterPagesDisplay(1);
+    let pagesDisplay = BuildChapterPagesDisplay(1, props.chapterName);
 
 
     return(
@@ -16,8 +18,8 @@ export default function ChapterBanner(props) {
     )
 }
 
-function BuildChapterPagesDisplay(chapterId) {
-    let pagesDisplay = "hello world"
+function BuildChapterPagesDisplay(chapterId, chapterName) {
+    let pagesDisplay = <img source={testIcon} loading="lazy" width={150} height={150} alt="test" key={`${chapterName}-${chapterId}`}/>
     //Get the images
 
     //Create icon/page details component
