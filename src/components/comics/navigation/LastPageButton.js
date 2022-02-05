@@ -5,7 +5,7 @@ import disabledLastIcon from '../../../assets/FINAL-ASSETS-072821/final assets/r
 
 export default function LastPageButton(props) {
     const disabledButton = <div className="navButton"><img src={disabledLastIcon} width={30} alt="disabled navigation last page button"/></div>;
-    const lastPageId = ComicPageAPI.getTotalPageCount();
+    const lastPageId = ComicPageAPI.getMaxDisplayPage();
 
     let isValidId = ComicPageAPI.validatePageId(lastPageId);
     if(!isValidId || props.pageId === lastPageId) {
