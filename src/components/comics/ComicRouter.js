@@ -7,7 +7,6 @@ export default function ComicRouter(props) {
     const [cookies, setCookie] = useCookies(['mxmBookmarkedPage'])
 
     let bookmarkedPageUrl = '/read/';
-    console.log("Current bookmark is: ", cookies.mxmBookmarkedPage)
     if (cookies.mxmBookmarkedPage && cookies.mxmBookmarkedPage <= ComicPageAPI.getMaxDisplayPage()) {
             bookmarkedPageUrl = bookmarkedPageUrl.concat(cookies.mxmBookmarkedPage);
     } else {
