@@ -19,7 +19,7 @@ export default function ChapterBanner(props) {
 }
 
 function BuildChapterPagesDisplay(chapterId, chapterName) {
-    let pagesDisplay = <img source={encodeURI(process.env.PUBLIC_URL + BASE_PATH + "prologue/chapter1/icons/PRO2-Icon.png")} loading="lazy" width={150} height={150} alt="test" key={`${chapterName}-${chapterId}`}/>
+    let pagesDisplay = <img src={encodeURI(process.env.PUBLIC_URL + BASE_PATH + "prologue/chapter1/icons/PRO2-Icon.png")} loading="lazy" width={150} height={150} alt="test" key={`${chapterName}-${chapterId}`}/>
     //Get the images
 
     //Create icon/page details component
