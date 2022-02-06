@@ -2,11 +2,12 @@ import {Switch, Route, Redirect} from 'react-router-dom';
 import ComicViewer from './ComicViewer';
 import { useCookies } from 'react-cookie';
 import ComicPageAPI from '../../api/ComicPageAPI';
+import { COMIC_VIEWER_PATH } from '../Main';
 
 export default function ComicRouter(props) {
     const [cookies, setCookie] = useCookies(['mxmBookmarkedPage'])
 
-    let bookmarkedPageUrl = '/read/';
+    let bookmarkedPageUrl = COMIC_VIEWER_PATH+ '/';
     if (cookies.mxmBookmarkedPage && cookies.mxmBookmarkedPage <= ComicPageAPI.getMaxDisplayPage()) {
             bookmarkedPageUrl = bookmarkedPageUrl.concat(cookies.mxmBookmarkedPage);
     } else {
@@ -17,7 +18,7 @@ export default function ComicRouter(props) {
     return (
         <div className="comicViewerPage">
             <Switch>
-                <Route exact path="/read">
+                <Route exact path={COMIC_VIEWER_PATH}>
                     <Redirect to={bookmarkedPageUrl} /> 
                 </Route>
                 <Route path="/read/:pageId" component={ComicViewer}/>

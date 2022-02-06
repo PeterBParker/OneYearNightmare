@@ -10,7 +10,11 @@ export const BASE_PATH = '/MnMPages/';
 export const JOINT_SIG = 'Mo and Nate';
 
 
-export const COMIC_VIEWER_DEFAULT_PATH = `/read/1`;
+export const COMIC_VIEWER_DEFAULT_PATH = '/read/1';
+export const COMIC_VIEWER_PATH = '/read';
+export const SUPPORT_PAGE_PATH = '/support';
+export const ARCHIVE_PAGE_PATH = '/archive';
+export const CREATIVES_PAGE_PATH = '/creatives';
 
 export default function Main() {
     return(
@@ -18,10 +22,10 @@ export default function Main() {
             <Switch>
                 {/* Replace this first route with a redirect to read*/}
                 <Route exact path='/' component={Home} />
-                <Route path='/creatives' component={Creators} />
-                <Route path='/support' component={Support} />
-                <Route path='/read' component={ComicRouter} />
-                <Route path='/archive' component={Archive} />
+                <Route path={CREATIVES_PAGE_PATH} component={Creators} />
+                <Route path={SUPPORT_PAGE_PATH} component={Support} />
+                <Route path={COMIC_VIEWER_PATH} component={ComicRouter} />
+                <Route path={ARCHIVE_PAGE_PATH} component={Archive} />
             </Switch>
         </div>
     );
