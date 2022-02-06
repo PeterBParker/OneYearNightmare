@@ -1,12 +1,12 @@
 {
-    "maxDisplayPage": 2,
-    "pageCount": 32,
+    "maxDisplayPage": 35,
+    "pageCount": 35,
     "seasonCount": 2,
     "seasons": [
         {
             "seasonName": "Prologue",
             "folderName": "prologue",
-            "numOfPages": 2,
+            "numOfPages": 7,
             "numOfChapters": 1,
             "id": 1,
             "chapters": [
