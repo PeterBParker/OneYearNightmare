@@ -3,658 +3,671 @@
 @tailwind utilities;
 
 .html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 .icon {
-    width: 33px;
+  width: 33px;
 }
 
 .volTextContainer {
-    width: 33%;
+  width: 33%;
 }
 .headerVolNum {
-    font-family: Montserrat;
-    font-weight: 600;
-    font-size: 1rem;
-    color: #998f7e;
+  font-family: Montserrat;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #998f7e;
 }
 .headerVolMobile {
-    margin-top: 5px;
+  margin-top: 5px;
 }
 .headerLogoImageDesktop {
-    min-width: 175px;
+  min-width: 175px;
 }
 .desktopDefaultBg {
-    background-image: url(../assets/Background-negative-FINAL-2024px.jpg);
+  background-image: url(../assets/Background-negative-FINAL-2024px.jpg);
 }
 .footerMobileGrid {
-    display: grid;
-    grid-template-columns: 33% 33% 33%;
-    grid-template-rows: auto auto auto;
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  grid-template-rows: auto auto auto;
 }
 .discordLinkContainerGrid {
-    grid-column-start: 1;
-    grid-column-end: 2;
-    grid-row-start: 1;
-    grid-row-end: 4;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 4;
 }
 .readLinkGrid {
-    grid-column-start: 2;
-    grid-column-end: 3;
-    grid-row-start: 1;
-    grid-row-end: 2;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 2;
 }
 .aboutLinkGrid {
-    grid-column-start: 2;
-    grid-column-end: 3;
-    grid-row-start: 2;
-    grid-row-end: 3;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 3;
 }
 .supportLinkGrid {
-    grid-column-start: 2;
-    grid-column-end: 3;
-    grid-row-start: 3;
-    grid-row-end: 4;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 3;
+  grid-row-end: 4;
 }
 .socialMediaFooterGrid {
-    grid-column-start: 3;
-    grid-column-end: 4;
-    grid-row-start: 1;
-    grid-row-end: 4;
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 4;
 }
 .invalidComicPage {
-    height: 1024px;
+  height: 1024px;
 }
 .headerGrid {
-    display: grid;
-    grid-template-columns: 1fr auto 1fr;
-    grid-template-rows: 25% 50% 25%;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  grid-template-rows: 25% 50% 25%;
 }
 .headerGridDesktop {
-    display: grid;
-    grid-template-columns: 25% 50% 25%;
+  display: grid;
+  grid-template-columns: 25% 50% 25%;
 }
 .headerContentDesktop {
-    grid-column-start: 2;
-    grid-column-end: 3;
-    grid-row-start:1;
-    grid-row-end: 3;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 3;
 }
 .volDisplayMobile {
-    grid-column-start: 1;
-    grid-column-end: 2;
-    grid-row-start: 1;
-    grid-row-end: 2;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 2;
 }
 .volDisplayDesktop {
-    grid-column-start: 3;
-    grid-column-end: 4;
+  grid-column-start: 3;
+  grid-column-end: 4;
 }
 .headerLogoMobile {
-    grid-column-start: 2;
-    grid-column-end: 3;
-    grid-row-start: 1;
-    grid-row-end: 3;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 3;
 }
 .headerLogoDesktop {
-    grid-column-start: 2;
-    grid-column-end: 3;
+  grid-column-start: 2;
+  grid-column-end: 3;
 }
 .navMenuMobile {
-    grid-column-start: 3;
-    grid-column-end: 4;
-    grid-row-start: 1;
-    grid-row-end: 2;
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 2;
 }
 .publishDaysMobile {
-    grid-column-start: 1;
-    grid-column-end: 4;
-    grid-row-start: 3;
-    grid-row-end: 4;
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 3;
+  grid-row-end: 4;
 }
 .publishDaysDesktop {
-    grid-column-start: 1;
-    grid-column-end: 2;
+  grid-column-start: 1;
+  grid-column-end: 2;
 }
 .farmHeaderBackground {
-    grid-column-start: 1;
-    grid-column-end: 4;
-    grid-row-start: 2;
-    grid-row-end: 3;
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 2;
+  grid-row-end: 3;
 }
 
 .mobileMenuOverlay {
-    height: 100%;
-    width: 100%;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    right: -100%;
-    overflow-x: hidden;
-    transition: 0.5s;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: -100%;
+  overflow-x: hidden;
+  transition: 0.5s;
 }
 
 .mobileMenuContainer {
-    display: grid;
-    grid-template-columns: 100%;
-    grid-template-rows: 20% 60% 20%;
-    position: relative;
-    height: 100%;
-    width: 100%;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 20% 60% 20%;
+  position: relative;
+  height: 100%;
+  width: 100%;
 }
 .mobileMenuExitContainer {
-    grid-row-start: 1;
-    grid-row-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 2;
 }
 .mobileMenuExitButton {
-    position: relative;
-    top: 1rem;
-    right: 1rem;
+  position: relative;
+  top: 1rem;
+  right: 1rem;
 }
 .mobileMenuLinks {
-    grid-row-start: 2;
-    grid-row-end: 3;
-    display: grid;
-    grid-template-columns: 100%;
-    grid-template-rows: 20% 60% 20%;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 20% 60% 20%;
 }
 .mobileMenuLinksSpacer {
-    grid-row-start: 2;
-    grid-row-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 3;
 }
 .mobileMenuFooterImage {
-    grid-row-start: 3;
-    grid-row-end: 4;
+  grid-row-start: 3;
+  grid-row-end: 4;
 }
 
 .mobileNavButtonsContainer {
-    display: grid;
-    grid-template-columns: 17.5% 17.5% 30% 17.5% 17.5%;
-    grid-template-rows: 100%;
+  display: grid;
+  grid-template-columns: 17.5% 17.5% 30% 17.5% 17.5%;
+  grid-template-rows: 100%;
 }
 .desktopNavButtonsContainer {
-    display: grid;
-    grid-template-columns: 20% 20% 20% 20% 20%;
-    grid-template-rows: 100%;
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+  grid-template-rows: 100%;
 }
 .bookmarkEmpty {
-    cursor: pointer;
+  cursor: pointer;
 }
 .firstPageButton {
-    grid-column-start: 1;
-    grid-column-end: 2;
+  grid-column-start: 1;
+  grid-column-end: 2;
 }
 .prevPageButton {
-    grid-column-start: 2;
-    grid-column-end: 3;
+  grid-column-start: 2;
+  grid-column-end: 3;
 }
 .mysteryButton {
-    grid-column-start: 3;
-    grid-column-end: 4;
+  grid-column-start: 3;
+  grid-column-end: 4;
 }
 .nextButton {
-    grid-column-start: 4;
-    grid-column-end: 5;
+  grid-column-start: 4;
+  grid-column-end: 5;
 }
 .lastPageButton {
-    grid-column-start: 5;
-    grid-column-end: 6;
+  grid-column-start: 5;
+  grid-column-end: 6;
 }
 
 .aboutTheComicContainer {
-    display: grid;
-    grid-template-columns: 100%;
-    grid-template-rows: auto auto ;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: auto auto;
 }
 .aboutTheComicText {
-    grid-row-start: 1;
-    grid-row-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 2;
 }
 .desktopAboutTheComicContainer {
-    max-width: 1100px;
-    width: 70%;
-    border: solid #998f7e;
-    border-width: 1px;
+  max-width: 1100px;
+  width: 70%;
+  border: solid #998f7e;
+  border-width: 1px;
 }
 .readButton {
-    grid-row-start: 2;
-    grid-row-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 3;
 }
 
 .profileCardContainer {
-    grid-template-rows: 60% 40%;
-    grid-template-columns: 100%;
+  grid-template-rows: 60% 40%;
+  grid-template-columns: 100%;
 }
 .profileCardHeader {
-    grid-row-start: 1;
-    grid-row-end: 2;
-    display: grid;
-    grid-template-rows: 33% 33% 33%;
-    grid-template-columns: 45% 55%;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  display: grid;
+  grid-template-rows: 33% 33% 33%;
+  grid-template-columns: 45% 55%;
 }
 .desktopProfileCardHeader {
-    grid-row-start: 1;
-    grid-row-end: 2;
-    display: grid;
-    grid-template-rows: 33% 33% 33%;
-    grid-template-columns: 130px auto;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  display: grid;
+  grid-template-rows: 33% 33% 33%;
+  grid-template-columns: 130px auto;
 }
 .profileCardIcon {
-    grid-row-start: 1;
-    grid-row-end: 4;
-    grid-column-start: 1;
-    grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 4;
+  grid-column-start: 1;
+  grid-column-end: 2;
 }
 .profileLinkIcons {
-    grid-row-start: 1;
-    grid-row-end: 2;
-    grid-column-start: 2;
-    grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  grid-column-start: 2;
+  grid-column-end: 3;
 }
 .profileNameHeader {
-    grid-row-start: 2;
-    grid-row-end: 3;
-    grid-column-start: 2;
-    grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  grid-column-start: 2;
+  grid-column-end: 3;
 }
 .profileRolesHeader {
-    grid-row-start: 3;
-    grid-row-end: 4;
-    grid-column-start: 2;
-    grid-column-end: 3;
+  grid-row-start: 3;
+  grid-row-end: 4;
+  grid-column-start: 2;
+  grid-column-end: 3;
 }
 .profileCardBody {
-    grid-row-start: 2;
-    grid-row-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 3;
 }
 
 .iconCardHeader {
-    background: linear-gradient(180deg, #f4f1ed 50%, #fff 50%);
+  background: linear-gradient(180deg, #f4f1ed 50%, #fff 50%);
 }
-.clearfix::after { 
-    content: " ";
-    display: block; 
-    height: 0; 
-    clear: both;
- }
+.clearfix::after {
+  content: " ";
+  display: block;
+  height: 0;
+  clear: both;
+}
 .mobileIconCardContainer {
-     border-top: 1px solid #998f7e;
+  border-top: 1px solid #998f7e;
 }
 
 .footerVertLine {
-     border-left: 1px solid #998f7e;
-     height: 100%;
+  border-left: 1px solid #998f7e;
+  height: 100%;
 }
 .desktopFooterLinksAndLogo {
-     height: 132px;
-     display: grid;
-     grid-template-columns: 30% 70%;
-     grid-template-rows: 100%;
- }
- .desktopFooterLogo {
-     grid-column-start: 1;
-     grid-column-end: 2;
- }
- .desktopFooterLinks {
-     grid-column-start: 2;
-     grid-column-end: 3;
-     height: 100%;
- }
+  height: 132px;
+  display: grid;
+  grid-template-columns: 30% 70%;
+  grid-template-rows: 100%;
+}
+.desktopFooterLogo {
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+.desktopFooterLinks {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  height: 100%;
+}
 .footerNavLink:hover {
-    color: #a1a14c;
-    cursor: pointer;
+  color: #a1a14c;
+  cursor: pointer;
 }
 
 .desktopPageDetailsContainer {
-    display: grid;
-    grid-template-columns: 100%;
-    grid-template-rows: 5em 1fr 5em;
-    height: 100%;
-    border: solid;
-    border-color: #998f7e;
-    border-width: 2px 1px 2px 2px;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 5em 1fr 5em;
+  height: 100%;
+  border: solid;
+  border-color: #998f7e;
+  border-width: 2px 1px 2px 2px;
 }
 .desktopPageDetailsTitle {
-    grid-row-start: 1;
-    grid-row-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 2;
 }
 .desktopPageDetailsMessage {
-    grid-row-start: 2;
-    grid-row-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 3;
 }
 .desktopPageDetailsSigAndTime {
-    grid-row-start: 3;
-    grid-row-end: 4;
-    display: grid;
-    grid-template-columns: 70% 30%;
-    align-self: end;
+  grid-row-start: 3;
+  grid-row-end: 4;
+  display: grid;
+  grid-template-columns: 70% 30%;
+  align-self: end;
 }
 .desktopPageDetailsSignature {
-    grid-column-start: 1;
-    grid-column-end: 2;
+  grid-column-start: 1;
+  grid-column-end: 2;
 }
 .desktopPageDetailsTime {
-    grid-column-start: 2;
-    grid-column-end: 3;
+  grid-column-start: 2;
+  grid-column-end: 3;
 }
 .signatureAndTime {
-    display: grid;
-    grid-template-rows: 100%;
-    grid-template-columns: 60% 40%;
+  display: grid;
+  grid-template-rows: 100%;
+  grid-template-columns: 60% 40%;
 }
 
 .desktopReadPageCardsWrapper {
-    display: grid;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: auto auto;
-    width: 70%;
-    max-width: 1100px;
-    margin-left: auto;
-    margin-right: auto;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: auto auto;
+  width: 70%;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
 }
 .desktopReadPageCardsDetails {
-    grid-column-start: 1;
-    grid-column-end: 2;
-    grid-row-start: 1;
-    grid-row-end: 2;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 2;
 }
 .desktopReadPageCardsSupport {
-    grid-column-start: 2;
-    grid-column-end: 3;
-    grid-row-start: 1;
-    grid-row-end: 2;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 2;
 }
 .desktopReadPageDiscordBanner {
-    grid-column-start: 1;
-    grid-column-end: 3;
-    grid-row-start: 2;
-    grid-row-end: 3;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 3;
 
-    border: solid;
-    border-color: #998f7e;
-    border-width: 2px;
+  border: solid;
+  border-color: #998f7e;
+  border-width: 2px;
 
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
 .desktopReadPageDiscordBannerText {
-    margin-left: 170px;
+  margin-left: 170px;
 }
 .desktopSupportUsContainer {
-    border: solid;
-    border-color: #998f7e;
-    border-width: 2px 2px 2px 1px;
-    height:100%;
-    display: grid;
-    grid-template-rows: 5em 1fr 5em;
+  border: solid;
+  border-color: #998f7e;
+  border-width: 2px 2px 2px 1px;
+  height: 100%;
+  display: grid;
+  grid-template-rows: 5em 1fr 5em;
 }
 .supportUsTooSmallContainer {
-    grid-template-columns: 100%;
+  grid-template-columns: 100%;
 }
 .supportUsBigEnoughContainer {
-    grid-template-columns: 70% 30%;
+  grid-template-columns: 70% 30%;
 }
 .mobileSupportUsContainer {
-    display: grid;
-    grid-template-columns: 70% 30%;
-    grid-template-rows: 7em 1fr 60px;
+  display: grid;
+  grid-template-columns: 70% 30%;
+  grid-template-rows: 7em 1fr 60px;
 }
 .supportUsTitle {
-    grid-column-start: 1;
-    grid-column-end: 3;
-    grid-row-start: 1;
-    grid-row-end: 2;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 2;
 }
 .supportUsBody {
-    grid-column-start: 1;
-    grid-column-end: 2;
-    grid-row-start: 2;
-    grid-row-end: 3;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 3;
 }
 .supportUsCardLinks {
-    grid-column-start: 1;
-    grid-column-end: 2;
-    grid-row-start: 3;
-    grid-row-end: 4;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 3;
+  grid-row-end: 4;
 }
 .supportUsTipJar {
-    grid-column-start: 2;
-    grid-column-end: 3;
-    grid-row-start: 1;
-    grid-row-end: 4;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 4;
 }
 .textAndImageCardText {
-    margin-right: -5rem !important;
-    position: relative;
-    z-index: 1;
+  margin-right: -5rem !important;
+  position: relative;
+  z-index: 1;
 }
 
 .desktopNavBarContainer {
-    position: -webkit-sticky;
-    position: sticky;
-    bottom:0;
-    display: grid;
-    grid-template-columns: 33% 33% 33%;
-    grid-template-rows: 100%;
-    width: 829px;
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 0;
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  grid-template-rows: 100%;
+  width: 829px;
 }
 .desktopNavLogo {
-    grid-column-start: 1;
-    grid-column-end: 2;
+  grid-column-start: 1;
+  grid-column-end: 2;
 }
 .desktopNavButtons {
-    grid-column-start: 2;
-    grid-column-end: 3;
+  grid-column-start: 2;
+  grid-column-end: 3;
 }
 .desktopNavLinks {
-    grid-column-start: 3;
-    grid-column-end: 4;
+  grid-column-start: 3;
+  grid-column-end: 4;
 }
 .desktopNavLink {
-    font-size: 1.4rem;
+  font-size: 1.4rem;
 }
 .desktopNavLinkSelected {
-    font-size: 1.4rem;
-    color: #a1a14c;
-    border: solid #a1a14c;
-    border-width: 0px 0px 2px 0px;
-    margin-bottom: -2px;
+  font-size: 1.4rem;
+  color: #a1a14c;
+  border: solid #a1a14c;
+  border-width: 0px 0px 2px 0px;
+  margin-bottom: -2px;
 }
 .desktopNavLink:hover {
-    font-size: 1.4rem;
-    color: #393d36;
-    cursor: pointer;
-    border: solid #393d36;
-    border-width: 0px 0px 2px 0px;
-    margin-bottom: -2px;
+  font-size: 1.4rem;
+  color: #393d36;
+  cursor: pointer;
+  border: solid #393d36;
+  border-width: 0px 0px 2px 0px;
+  margin-bottom: -2px;
 }
 
 .desktopComicPageContainer {
-    display: grid;
-    grid-template-columns: 1fr 829px 1fr;
-    grid-template-rows: 100%;
+  display: grid;
+  grid-template-columns: 1fr 829px 1fr;
+  grid-template-rows: 100%;
 }
 .comicViewerDesktop {
-    background-image: url(../assets/Background-light-EDIT-2024px.jpg);
+  background-image: url(../assets/Background-light-EDIT-2024px.jpg);
 }
 .desktopBg {
-    background-repeat: repeat-x;
-    background-position: top;
-    background-size: 2030px;
+  background-repeat: repeat-x;
+  background-position: top;
+  background-size: 2030px;
 }
 .comicPage {
-    grid-column-start: 2;
-    grid-column-end: 3;
+  grid-column-start: 2;
+  grid-column-end: 3;
 }
 .comicViewerVertShare {
-    grid-column-start: 3;
-    grid-column-end: 4;
-    max-width: 128px;
+  grid-column-start: 3;
+  grid-column-end: 4;
+  max-width: 128px;
 }
 .vertShare {
-    position: -webkit-sticky;
-    position: sticky;
-    top: 2em;
-    transition: all 0.5s 0s;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 2em;
+  transition: all 0.5s 0s;
 }
 
 .supportCards {
-    margin-left: auto;
-    margin-right: auto;
-    display: flex;
-    flex-direction: row;
-    width: 70%;
-    min-width: 300px;
-    border: solid #998f7e;
-    border-width: 2px;
-    max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: row;
+  width: 70%;
+  min-width: 300px;
+  border: solid #998f7e;
+  border-width: 2px;
+  max-width: 1100px;
 }
 .childSupportCard {
-    flex-basis: 50%;
+  flex-basis: 50%;
 }
 .patreonSupportCard {
-    border: solid #f4f1ed;
-    border-width: 0px 1px 0px 0px;
+  border: solid #f4f1ed;
+  border-width: 0px 1px 0px 0px;
 }
 .buyusacoffeeSupportCard {
-    border: solid #f4f1ed;
-    border-width: 0px 0px 0px 1px;
+  border: solid #f4f1ed;
+  border-width: 0px 0px 0px 1px;
 }
 .desktopIconCardContainer {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .iconCardButton {
-    justify-self: flex-end;
+  justify-self: flex-end;
 }
 .desktopAboutCreatorsContainer {
-    width: 70%;
-    max-width: 1100px;
-    border: solid #998f7e;
-    border-width: 1px;
+  width: 70%;
+  max-width: 1100px;
+  border: solid #998f7e;
+  border-width: 1px;
 }
 .aboutComicMobileBg {
-    background-image: url('../assets/Phase3-Assets1/1x/SkullBird-white-edge-CROPPED.png');
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position:right;
+  background-image: url("../assets/Phase3-Assets1/1x/SkullBird-white-edge-CROPPED.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: right;
 }
 .textAndImageCardText {
-    grid-column-start: 1;
-    grid-column-end: 2;
+  grid-column-start: 1;
+  grid-column-end: 2;
 }
 .textAndImageCardImage {
-    grid-column-start: 2;
-    grid-column-end: 3;
+  grid-column-start: 2;
+  grid-column-end: 3;
 }
 .textAndImageCard {
-    display: grid;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: 100%;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 100%;
 }
 .desktopCard {
-    width: 70%;
-    max-width: 1100px;
-    border: solid #998f7e;
-    border-width: 1px;
+  width: 70%;
+  max-width: 1100px;
+  border: solid #998f7e;
+  border-width: 1px;
 }
 .desktopAboutCreatorsProfiles {
-    display: grid;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: 100%;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 100%;
 }
 .lightBorder {
-    border: solid #f4f1ed;
+  border: solid #f4f1ed;
 }
 .rightBorder {
-    border-width: 0px 1px 0px 0px;
+  border-width: 0px 1px 0px 0px;
 }
 .leftBorder {
-    border-width: 0px 0px 0px 1px;
+  border-width: 0px 0px 0px 1px;
 }
 .publishDaysTextDesktop {
-    padding-bottom: 5px;
+  padding-bottom: 5px;
 }
 .headerVolNumDesktop {
-    margin-top: 2px;
+  margin-top: 2px;
 }
 .volNumContainer {
-    margin-top: 4px;
+  margin-top: 4px;
 }
 .lightHeaderBg {
-    background-image: url('../assets/MOBILE-Background-negative-EDIT-770px.png');
+  background-image: url("../assets/MOBILE-Background-negative-EDIT-770px.png");
 }
 .darkHeaderBg {
-    background-image: url('../assets/MOBILE-Background-EDIT-770px.png');
+  background-image: url("../assets/MOBILE-Background-EDIT-770px.png");
 }
 .headerBg {
-    background-repeat: repeat-x;
-    background-position: bottom;
+  background-repeat: repeat-x;
+  background-position: bottom;
 }
 .desktopHeaderBg {
-    background-size: 1024px;
+  background-size: 1024px;
 }
 .mobileHeaderBg {
-    background-size: 770px;
+  background-size: 770px;
 }
 .readPageDiscordBannerImage {
-    position: absolute;
+  position: absolute;
 }
 
 .loadingComicPage {
-    width: 800px;
-    height: 1000px;
+  width: 800px;
+  height: 1000px;
 }
 
 .shimmerFill {
-    background: #E4E0D4;
-    background-image: linear-gradient(to right, #E4E0D4 0%, #e0dbcb 20%, #E4E0D4 40%, #E4E0D4 100%);
-    background-repeat: no-repeat;
-    display: inline-block;
-    position: relative; 
-    
-    -webkit-animation-duration: 1s;
-    animation-duration: 1s;
-    -webkit-animation-fill-mode: forwards;
-    animation-fill-mode: forwards; 
-    -webkit-animation-iteration-count: infinite;
-    animation-iteration-count: infinite;
-    -webkit-animation-name: placeholderShimmer;
-    animation-name: placeholderShimmer;
-    -webkit-animation-timing-function: linear;
-    animation-timing-function: linear;
+  background: #e4e0d4;
+  background-image: linear-gradient(
+    to right,
+    #e4e0d4 0%,
+    #e0dbcb 20%,
+    #e4e0d4 40%,
+    #e4e0d4 100%
+  );
+  background-repeat: no-repeat;
+  display: inline-block;
+  position: relative;
+
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-name: placeholderShimmer;
+  animation-name: placeholderShimmer;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
 }
 
 @-webkit-keyframes placeholderShimmer {
-    0% {
-      background-position: -468px 0;
-    }
-    
-    100% {
-      background-position: 468px 0; 
-    }
+  0% {
+    background-position: -468px 0;
+  }
+
+  100% {
+    background-position: 468px 0;
+  }
 }
 @keyframes placeholderShimmer {
-    0% {
-      background-position: -468px 0;
-    }
-    
-    100% {
-      background-position: 468px 0; 
-    }
+  0% {
+    background-position: -468px 0;
+  }
+
+  100% {
+    background-position: 468px 0;
+  }
 }
 
 .shimmerMask {
-    color: grey;
-    display:inline-block;
-    -webkit-mask:linear-gradient(-60deg,#000 30%,#0005,#000 70%) right/300% 100%;
-    mask:linear-gradient(-60deg,#000 30%,#0005,#000 70%) right/300% 100%;
-    background-repeat: no-repeat;
-    animation: shimmer 2.5s infinite;
+  color: grey;
+  display: inline-block;
+  -webkit-mask: linear-gradient(-60deg, #000 30%, #0005, #000 70%) right/300%
+    100%;
+  mask: linear-gradient(-60deg, #000 30%, #0005, #000 70%) right/300% 100%;
+  background-repeat: no-repeat;
+  animation: shimmer 2.5s infinite;
 }
-  
+
 @keyframes shimmer {
-    100% {-webkit-mask-position:left}
+  100% {
+    -webkit-mask-position: left;
+  }
+}
+
+.pageThumbnail {
+  width: 220px;
 }
