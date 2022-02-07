@@ -7,12 +7,13 @@ export default function ComicRouter(props) {
     const [cookies, setCookie] = useCookies(['mxmBookmarkedPage'])
 
     let bookmarkedPageUrl = '/read/';
-    console.log("Current bookmark is: ", cookies.mxmBookmarkedPage)
-    if (cookies.mxmBookmarkedPage && cookies.mxmBookmarkedPage <= ComicPageAPI.getMaxDisplayPage()) {
+    let maxPage = ComicPageAPI.getMaxDisplayPage();
+
+    if (cookies.mxmBookmarkedPage && cookies.mxmBookmarkedPage <= maxPage) {
             bookmarkedPageUrl = bookmarkedPageUrl.concat(cookies.mxmBookmarkedPage);
     } else {
-        // If there is no cookie, we send the reader to the first page
-        setCookie('mxmBookmarkedPage', '1', {path: '/'})
+        // If there is no cookie, we send the reader to the first page on the latest update
+        setCookie('mxmBookmarkedPage', maxPage-1, {path: '/'})
         bookmarkedPageUrl = bookmarkedPageUrl.concat('1');
     }
     return (
