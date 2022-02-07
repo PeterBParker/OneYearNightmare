@@ -1,19 +1,19 @@
 {
-    "maxDisplayPage": 2,
-    "pageCount": 32,
+    "maxDisplayPage": 4,
+    "pageCount": 34,
     "seasonCount": 2,
     "seasons": [
         {
             "seasonName": "Prologue",
             "folderName": "prologue",
-            "numOfPages": 2,
+            "numOfPages": 4,
             "numOfChapters": 1,
             "id": 1,
             "chapters": [
                 {
                     "chapterName": "Chapter One",
                     "folderName": "chapter1",
-                    "numOfPages": 2,
+                    "numOfPages": 4,
                     "id": 1,
                     "pages": [
                         {
@@ -33,6 +33,24 @@
                             "datetime": "2022-01-31 14:46:51",
                             "id": 2,
                             "user": "N1995"
+                        },
+                        {
+                            "pageNum": 3,
+                            "filename": "PRO3.jpg",
+                            "title": "First Visitor Attack",
+                            "message": "You might say they don't take kindly to visitors. Or maybe TOO kindly...maybe the shadowy \"Judas\" was probably just giving the Visitor a big 'ol hug...?",
+                            "datetime": "2022-02-07 13:45:06",
+                            "id": 3,
+                            "user": "N1995"
+                        },
+                        {
+                            "pageNum": 4,
+                            "filename": "PRO4.jpg",
+                            "title": "Ms. Winters Appears",
+                            "message": "Is it just me, or does that cat have something in its eye? ",
+                            "datetime": "2022-02-07 13:46:49",
+                            "id": 4,
+                            "user": "N1995"
                         }
                     ]
                 }
@@ -41,7 +59,7 @@
         {
             "seasonName": "First Blood",
             "folderName": "first blood",
-            "numOfPages": 31,
+            "numOfPages": 33,
             "numOfChapters": 2,
             "id": 2,
             "chapters": [

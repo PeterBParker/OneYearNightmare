@@ -13,8 +13,7 @@ export default function ComicRouter(props) {
             bookmarkedPageUrl = bookmarkedPageUrl.concat(cookies.mxmBookmarkedPage);
     } else {
         // If there is no cookie, we send the reader to the first page on the latest update
-        setCookie('mxmBookmarkedPage', maxPage-1, {path: '/'})
-        bookmarkedPageUrl = bookmarkedPageUrl.concat('1');
+        bookmarkedPageUrl = bookmarkedPageUrl.concat((maxPage-1).toString());
     }
     return (
         <div className="comicViewerPage">
