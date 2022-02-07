@@ -11,10 +11,13 @@ export default function ChapterBanner(props) {
 
     return(
         <div className="my-4 mx-6 font-header text-3xl text-center cursor-pointer">
-            <div className="py-4 bg-eggshell hover:bg-grey-light hover:text-eggshell" onClick={() => setIsActive(() => !isActive)}>
+            <div className="py-4 bg-cream-dark hover:bg-grey-light hover:text-eggshell" onClick={() => setIsActive(() => !isActive)}>
                 {props.chapterName}
             </div>
-            {isActive ? pagesDisplay : null}
+            <div className="flex flex-wrap mx-auto">
+                {isActive ? pagesDisplay : null}
+            </div>
+
         </div>
     )
 }
