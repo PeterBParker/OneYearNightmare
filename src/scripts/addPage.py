@@ -3,6 +3,8 @@ import json
 import ntpath
 import os
 
+from IconifyPages import IconifyPagesController
+from pathlib import Path
 from shutil import copyfile
 from num2words import num2words
 
@@ -41,8 +43,15 @@ def addNewPage(seasonName, chapterName, title, message, filepath, user):
     # Copy image and truncate filename
     filename = pathLeaf(filepath)
     season = getSeason(seasonName)
-    destFilepath = _DIR_PREFIX + season["folderName"] + "/" + chapter["folderName"] + "/" + filename
+    destDir = Path( _DIR_PREFIX + season["folderName"] + "/" + chapter["folderName"] + "/")
+    destFilepath = destDir / filename
     copyfile(filepath, destFilepath)
+
+    # Generate icon and add it to db
+    iconer = IconifyPagesController()
+    icon_dir = destDir / iconer.icon_dir
+    icon_path = iconer.iconifyExistingPage(destFilepath, icon_dir)
+    iconer.addAnIconPathToDb(_WORKING_DATA_FILENAME, icon_path, identifier)
 
     newPage = {
         "pageNum": pageNum,

@@ -5,12 +5,30 @@ from PIL import Image, UnidentifiedImageError
 
 
 class IconifyPagesController:
-    def __init__(self, icon_suffix="-Icon.png", icon_dir="icons/"):
+    def __init__(self, icon_suffix="-Icon.png", icon_dir=Path("icons/"), icon_dims=(200,200)):
         self.icon_suffix = icon_suffix
         self.icon_dir = icon_dir
+        self.icon_dims = icon_dims
+
+    def getIconName(self, base_page_path):
+        return os.path.splitext(os.path.basename(base_page_path))[0] + self.icon_suffix
+
+    def iconifyExistingPage(self, page_file_path, icon_dir):
+        """ Saves a copy of an image as an icon. 
+        
+        :param page_file_path(pathlib.Path): An absolute filepath to an image
+        :param icon_dir(pathlib.Path): An absolute filepath to the output dir
+
+        :returns: path to the icon
+        :rtype: pathlib.Path
+        """
+        icon_filename = self.getIconName(page_file_path)
+        icon_path = icon_dir / icon_filename
+        iconer = IconMaker()
+        iconer.iconify_file(self.icon_dims, page_file_path, icon_path)
+        return icon_path
 
     def iconifyAllExistingPages(self):
-        iconer = IconMaker()
         pagesDir = Path("../../public/MnMPages/")
 
         for seasonDir in pagesDir.iterdir():
@@ -21,11 +39,23 @@ class IconifyPagesController:
                 for page in chapterDir.iterdir():
                     if os.path.basename(page) == "icons":
                         continue
-                    icon_filename = (
-                        os.path.splitext(os.path.basename(page))[0] + self.icon_suffix
-                    )
-                    icon_path = icon_dir / icon_filename
-                    iconer.iconify_file((200, 200), page, icon_path)
+                    self.iconifyExistingPage(page, icon_dir)
+
+    def addAnIconPathToDb(self, db_filename, icon_path, page_id):
+        """ Adds the path of an icon to the db json file.
+        
+        :param db_filename(pathlib.Path): Absolute path to db file
+        :param icon_path(pathlib.Path): Absolute path to icon
+        :param page_id(int): Unique id of page
+        """
+        data = api.getData(db_filename, "r")
+        chapter_dir = icon_path.parent.parent
+        season_dir = chapter_dir.parent
+        season = next(season for season in data["seasons"] if season["foldername"] == season_dir.name)
+        chapter = next(chapter for chapter in season["chapters"] if chapter["foldername"] == chapter_dir.name)
+        page = next(page for page in chapter["pages"] if page["id"] == page_id)
+        page["icon"] == self.icon_dir / icon_path.name
+        api.writeToFile(data, db_filename)
 
     def addIconPathsToDb(self, db_filename):
         data = api.getData(db_filename, "r")
@@ -43,6 +73,9 @@ class IconifyPagesController:
         self.iconifyAllExistingPages()
         self.addIconPathsToDb(db_filename)
 
+    def generateAndAddAIcon(self, db_filename):
+        self.ic
+
 
 class IconMaker:
     def iconify_file(self, dimensions, image_path, output_path):
@@ -55,7 +88,7 @@ class IconMaker:
         if self.validate_file(image_path):
             im = Image.open(image_path)
             im.thumbnail(dimensions)
-            im.save(output_path, format="JPEG")
+            im.save(output_path)
 
     @staticmethod
     def validate_file(file_path):
