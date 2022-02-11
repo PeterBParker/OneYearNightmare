@@ -671,3 +671,11 @@
 .pageThumbnail {
   width: 220px;
 }
+
+.desktopHeaderLogoWingData {
+  width: 120px;
+}
+
+.desktopHeaderUpdateSchedule {
+  line-height: 105%;
+}

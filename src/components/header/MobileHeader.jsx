@@ -37,7 +37,7 @@ export default function MobileHeader(props) {
                 
             </div>
             <div className={`publishDaysMobile text-mocha-dark self-end pb-2 font-medium h-full ${props.defaultBg ? "bg-white" : "bg-cream-dark"}`}>
-                    <p>mon | thur</p>
+                    <p>Updates every Monday</p>
                 </div>
         </div>
     );
