@@ -21,10 +21,10 @@ class IconifyPagesController:
         :returns: path to the icon
         :rtype: pathlib.Path
         """
-        icon_filename = self.getIconName(page_file_path)
-        icon_path = icon_dir / icon_filename
         iconer = IconMaker()
-        iconer.iconify_file(self.icon_dims, page_file_path, iconer.getIconName())
+        icon_filename = iconer.getIconName(page_file_path)
+        icon_path = icon_dir / icon_filename
+        iconer.iconify_file(self.icon_dims, page_file_path, icon_path)
         return icon_path
 
     def iconifyAllExistingPages(self):
@@ -46,7 +46,7 @@ class IconifyPagesController:
             for chapter in season["chapters"]:
                 for page in chapter["pages"]:
                     page["icon"] = (
-                        self.icon_dir
+                        str(self.icon_dir) + "/"
                         + os.path.splitext(page["filename"])[0]
                         + self.icon_suffix
                     )
