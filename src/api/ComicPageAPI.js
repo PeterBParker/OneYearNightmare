@@ -47,6 +47,13 @@ const ComicPageAPI = {
         }
         return null;
     },
+    getChapterNum: function (pageId) {
+        const relObjs = this.getRelValidObjs(pageId);
+        if(relObjs) {
+            return relObjs.chapterObj.id-1;
+        }
+        return null;
+    },
     getSeasonOrder: function (seasonName) {
         const isSeason = p => p.seasonName === seasonName;
         let seasons = this.getSeasons();

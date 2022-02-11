@@ -1,19 +1,19 @@
 {
     "maxDisplayPage": 35,
     "pageCount": 35,
-    "seasonCount": 2,
+    "seasonCount": 1,
     "seasons": [
         {
-            "seasonName": "Prologue",
-            "folderName": "prologue",
-            "numOfPages": 7,
-            "numOfChapters": 1,
+            "seasonName": "First Blood",
+            "folderName": "first blood",
+            "numOfPages": 38,
+            "numOfChapters": 3,
             "id": 1,
             "chapters": [
                 {
-                    "chapterName": "Chapter One",
-                    "folderName": "chapter1",
-                    "numOfPages": 2,
+                    "chapterName": "Prologue",
+                    "folderName": "prologue",
+                    "numOfPages": 7,
                     "id": 1,
                     "pages": [
                         {
@@ -37,21 +37,12 @@
                             "icon": "icons/PRO2-Icon.png"
                         }
                     ]
-                }
-            ]
-        },
-        {
-            "seasonName": "First Blood",
-            "folderName": "first blood",
-            "numOfPages": 31,
-            "numOfChapters": 2,
-            "id": 2,
-            "chapters": [
+                },
                 {
                     "chapterName": "Chapter One",
                     "folderName": "chapter1",
                     "numOfPages": 26,
-                    "id": 1,
+                    "id": 2,
                     "pages": [
                         {
                             "pageNum": 1,
@@ -319,7 +310,7 @@
                     "chapterName": "Chapter Two",
                     "folderName": "chapter2",
                     "numOfPages": 2,
-                    "id": 2,
+                    "id": 3,
                     "pages": [
                         {
                             "pageNum": 1,
