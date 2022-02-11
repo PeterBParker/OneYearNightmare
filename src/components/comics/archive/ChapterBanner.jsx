@@ -5,16 +5,18 @@ import PageThumbnail from "./PageThumbnail";
 
 export default function ChapterBanner(props) {
     const [isActive, setIsActive] = useState(false);
+    // Not using hover because I only want the effect triggered once per mouse entry
+    const [isMouseOver, setIsMouseOver] = useState(false); 
 
     let pagesDisplay = BuildChapterPagesDisplay(props.chapter, props.chapterPath);
 
 
     return(
         <div className="my-4 mx-6 font-header text-3xl text-center cursor-pointer">
-            <div className={`py-4 ${isActive? "bg-mocha-dark text-eggshell": "bg-cream-dark hover:bg-mocha-dark hover:text-eggshell"} transition-colors`} onClick={() => setIsActive(() => !isActive)}>
+            <div className={`py-4 ${isActive? "bg-mocha-dark text-eggshell": `${isMouseOver ? "bg-mocha-dark text-eggshell" : "bg-cream-dark"}`}  transition-colors`} onClick={() => setIsActive(() => !isActive)} onMouseEnter={() => setIsMouseOver(true)} onMouseLeave={() => setIsMouseOver(false)}>
                 {props.chapterName}
             </div>
-            <div className="flex flex-wrap mx-auto">
+            <div className="flex flex-wrap justify-center mx-auto">
                 {isActive ? pagesDisplay : null}
             </div>
 
