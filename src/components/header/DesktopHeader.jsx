@@ -1,22 +1,12 @@
 import logo from '../../assets/Website Assets - Phase 1/SVG/LOGO-header.svg';
-import { useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
-import ComicPageAPI from '../../api/ComicPageAPI';
-import pageData from '../../api/data/pagesData.json';
+import { Link } from 'react-router-dom';
 
+import ChapterNumIcon from './ChapterNumIcon';
 
 import { COMIC_VIEWER_DEFAULT_PATH } from '../Main';
 
 export default function DesktopHeader(props) {
-    const params = useParams();
-    const [currPage, setCurrPage] = useState(pageData.maxDisplayPage);
 
-    if (params.pageId && parseInt(params.pageId) !== parseInt(currPage)) {
-        setCurrPage(params.pageId);
-    }
-    let chapNum = ComicPageAPI.getSeasonNum(currPage);
-
-    console.log(params.pageId)
     return (
         <div>
 
@@ -29,21 +19,14 @@ export default function DesktopHeader(props) {
                         <Link to={COMIC_VIEWER_DEFAULT_PATH}><img className="headerLogoImageDesktop mx-auto" src={logo} width="200px" height="auto" /></Link>
                     </div>
                     <div className="volDisplayDesktop desktopHeaderLogoWingData text-mocha-dark font-medium text-left ml-6 self-center justify-self-start">
-                        <div className="volTextContainer flex flex-row w-full">
-                            <div className="volText headerVolNumDesktop self-center text-md">
-                                chapter
-                            </div>
-                            <div className="volNumContainer ml-2 flex-shrink-0">
-                                <svg width="32px" height="32px">
-                                    <g>
-                                        <circle cx="14" cy="14" r="13" strokeWidth="2" stroke="#998f7e" fillOpacity="0%"></circle>
-                                        <text x="14" y="14" fill="#998f7e" className="headerVolNum" textAnchor="middle" alignmentBaseline="central">{chapNum}</text>
-                                    </g>
-                                </svg>
-                            </div>
+            <div className="volTextContainer flex flex-row w-full">
+                <div className="volText headerVolNumDesktop self-center text-md">
+                    chapter
+                </div>
+                <ChapterNumIcon />
 
-                        </div>
-                    </div>
+            </div>
+        </div>
                 </div>
             </div>
         </div>
