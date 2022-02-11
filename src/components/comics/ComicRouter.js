@@ -7,8 +7,10 @@ import { COMIC_VIEWER_PATH } from '../Main';
 export default function ComicRouter(props) {
     const [cookies, setCookie] = useCookies(['mxmBookmarkedPage'])
 
+    const maxPage = ComicPageAPI.getMaxDisplayPage()
+
     let bookmarkedPageUrl = COMIC_VIEWER_PATH+ '/';
-    if (cookies.mxmBookmarkedPage && cookies.mxmBookmarkedPage <= ComicPageAPI.getMaxDisplayPage()) {
+    if (cookies.mxmBookmarkedPage && cookies.mxmBookmarkedPage <= maxPage) {
             bookmarkedPageUrl = bookmarkedPageUrl.concat(cookies.mxmBookmarkedPage);
     } else {
         // If there is no cookie, we send the reader to the first page on the latest update
