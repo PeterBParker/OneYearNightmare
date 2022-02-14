@@ -1,12 +1,12 @@
 {
-    "maxDisplayPage": 35,
+    "maxDisplayPage": 6,
     "pageCount": 35,
-    "seasonCount": 1,
+    "seasonCount": 2,
     "seasons": [
         {
             "seasonName": "First Blood",
             "folderName": "first blood",
-            "numOfPages": 38,
+            "numOfPages": 35,
             "numOfChapters": 3,
             "id": 1,
             "chapters": [
@@ -50,11 +50,31 @@
                             "pageNum": 4,
                             "filename": "PRO4.jpg",
                             "title": "Ms. Winters Appears",
-                            "message": "Is it just me, or does that cat have something in its eye? ",
+                            "message": "Is it just me, or does that cat have something in its eye? 👀",
                             "datetime": "2022-02-07 13:46:49",
                             "id": 4,
                             "user": "N1995",
                             "icon": "icons/PRO4-Icon.png"
+                        },
+                        {
+                            "pageNum": 5,
+                            "filename": "PRO5.jpg",
+                            "title": "Is that a drop off at the town border?",
+                            "message": "Never underestimate your local cat lady. She may be a drug dealer.",
+                            "datetime": "2022-02-14 11:41:44",
+                            "id": 5,
+                            "user": "M1998",
+                            "icon": "icons/PRO5-Icon.png"
+                        },
+                        {
+                            "pageNum": 6,
+                            "filename": "PRO6.jpg",
+                            "title": "Pizza man joy ride and mailbox gremlins",
+                            "message": "Happy Valentines Day everybody! True love = pizza with a side of mailbox gremlin.",
+                            "datetime": "2022-02-14 11:45:45",
+                            "id": 6,
+                            "user": "M1998",
+                            "icon": "icons/PRO6-Icon.png"
                         }
                     ]
                 },
