@@ -47,6 +47,13 @@ const ComicPageAPI = {
         }
         return null;
     },
+    getChapterNum: function (pageId) {
+        const relObjs = this.getRelValidObjs(pageId);
+        if(relObjs) {
+            return relObjs.chapterObj.id-1;
+        }
+        return null;
+    },
     getSeasonOrder: function (seasonName) {
         const isSeason = p => p.seasonName === seasonName;
         let seasons = this.getSeasons();
@@ -58,9 +65,7 @@ const ComicPageAPI = {
             it returns the relevent Season object, Chapter object, and Page object.
 
             Parameters:
-            id - And integer of the page number 
-            chapter - A string of the chapter name
-            season - A string of the season name        
+            id - An integer of the page number       
         */
 
         if (!this.validatePageId(id)) {

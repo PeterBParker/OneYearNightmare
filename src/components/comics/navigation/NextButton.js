@@ -9,7 +9,7 @@ export default function NextButton(props) {
 
     let isValidId = ComicPageAPI.validatePageId(nextPageId);
     if(!isValidId) {
-        return disabledButton;
+        return (disabledButton);
     }
 
     const pageInfo = ComicPageAPI.getPage(nextPageId);
@@ -20,7 +20,7 @@ export default function NextButton(props) {
         );
     } else {
         return(
-            {disabledButton}
+            disabledButton
         );
     }
     

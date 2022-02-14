@@ -9,9 +9,9 @@ export default function PageDetailsCard(props) {
 
     let page = ComicPageAPI.getPageObj(props.pageId)
     let date = new Date(page.datetime)
-    let volNum = String(ComicPageAPI.getSeasonNum(props.pageId)).padStart(2, '0');
+    let volNum = String(ComicPageAPI.getChapterNum(props.pageId)).padStart(2, '0');
     let pageNum = String(page.pageNum).padStart(2, '0');
-    let title = "Vol " + volNum + " // Pg " + pageNum;
+    let title = "Chap. " + volNum + " // Pg " + pageNum;
 
     return (
         isDesktop ? 
