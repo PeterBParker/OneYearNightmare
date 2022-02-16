@@ -630,6 +630,10 @@
   line-height: 105%;
 }
 
+.archiveLoadingThumbnail {
+  width: 216px;
+  height: 337px;
+}
 
 /*
  * Effects
