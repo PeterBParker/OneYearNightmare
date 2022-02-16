@@ -668,14 +668,19 @@
   }
 }
 
-.pageThumbnail {
-  width: 220px;
-}
-
 .desktopHeaderLogoWingData {
   width: 120px;
 }
 
 .desktopHeaderUpdateSchedule {
   line-height: 105%;
+}
+
+/* Effects */
+.grow {
+  transition: all .2s ease-in-out;
+}
+
+.grow:hover {
+  transform: scale(1.1);
 }
