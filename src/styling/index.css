@@ -6,6 +6,20 @@
   scroll-behavior: smooth;
 }
 
+.App {
+  display: flex;
+  flex-direction: column;
+}
+
+.body {
+  height: 100%;
+  min-height: 100%;
+}
+
+.footer {
+  margin-top: auto;
+}
+
 .icon {
   width: 33px;
 }
@@ -608,12 +622,58 @@
   height: 1000px;
 }
 
+.desktopHeaderLogoWingData {
+  width: 120px;
+}
+
+.desktopHeaderUpdateSchedule {
+  line-height: 105%;
+}
+
+
+/*
+ * Effects
+ *
+ */
+.grow {
+  transition: all .2s ease-in-out;
+}
+
+.grow:hover {
+  transform: scale(1.1);
+}
+
 .shimmerFill {
   background: #e4e0d4;
   background-image: linear-gradient(
     to right,
     #e4e0d4 0%,
     #e0dbcb 20%,
+    #e4e0d4 40%,
+    #e4e0d4 100%
+  );
+  background-repeat: no-repeat;
+  display: inline-block;
+  position: relative;
+
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-name: placeholderShimmer;
+  animation-name: placeholderShimmer;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+}
+
+.shimmerFillHighContrast {
+  background: #e4e0d4;
+  background-image: linear-gradient(
+    to right,
+    #e4e0d4 0%,
+    #ccc5ad 20%,
     #e4e0d4 40%,
     #e4e0d4 100%
   );
@@ -668,19 +728,12 @@
   }
 }
 
-.desktopHeaderLogoWingData {
-  width: 120px;
+.loaded-animation {
+  animation-name: slide-up;
+  animation-duration: 300ms;
 }
 
-.desktopHeaderUpdateSchedule {
-  line-height: 105%;
-}
-
-/* Effects */
-.grow {
-  transition: all .2s ease-in-out;
-}
-
-.grow:hover {
-  transform: scale(1.1);
+@keyframes slide-up {
+  0% {top:20px;}
+  100% {top:0px;}
 }

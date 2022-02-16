@@ -11,7 +11,7 @@ export default function DesktopFooter(props) {
     const xlDiscordText = <p>Join the fun on<br /> our Discord!</p>
 
     return (
-        <div className="desktopFooterWrapper bg-grey-light">
+        <div className="desktopFooterWrapper footer bg-grey-light">
             <div className="desktopFooterLinksAndLogo py-6 px-8 items-center">
 
                 <div className="desktopFooterLogo">
