@@ -748,3 +748,23 @@ body {
   0% {top:20px;}
   100% {top:0px;}
 }
+
+/* accordion Effect for Archive Page */
+.accordion {
+  overflow: hidden;
+}
+.accordion__banner {
+  position: relative;
+  cursor: pointer;
+}
+.accordion__content {
+  max-height: 0;
+  overflow: hidden;
+  transition-property: all;
+  transition-timing-function: ease-out;
+  transition-duration: 0.2s;
+  opacity: 1;
+}
+.accordion__active {
+  opacity: 1;
+}
