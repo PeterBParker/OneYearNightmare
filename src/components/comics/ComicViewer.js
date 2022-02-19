@@ -6,30 +6,43 @@ import MobileReadPageCards from './ComicViewerCards/MobileReadPageCards';
 import DesktopPageView from './ComicViewerCards/DesktopPageView';
 import MobilePageView from './ComicViewerCards/MobilePageView';
 import Header from '../header/Header';
+
 import {
     useParams,
     Link
 } from 'react-router-dom';
+
 import {
     BASE_PATH,
     COMIC_VIEWER_DEFAULT_PATH,
-    DOMAIN
+    DOMAIN,
+    SNAP_TO_PAGE_PATH
 } from '../Main';
+
 import Pages from './navigation/desktop/Pages';
 import { useMediaQuery } from 'react-responsive';
 import querySizes from '../../styling/breakpoints.json';
 import HorizontalShare from './HorizontalShare';
 import SimpleNavBar from '../comics/navigation/desktop/SimpleNavBar';
-import { useRef } from 'react';
+import { useRef, useEffect } from 'react';
 
 export default function ComicViewer(props) {
+    const params = useParams();
     const isDesktop = useMediaQuery({query: querySizes['lg']});
     const topOfPageRef = useRef(null);
 
     const scrollToTopOfPage = () => {
+        topOfPageRef.current.scrollIntoView({behavior: 'smooth'});
+    }
+
+    const addShimmer = () => {
         let element = document.getElementById("gracefulComicPage");
         element.classList.add("shimmerMask");
-        topOfPageRef.current.scrollIntoView({behavior: 'smooth'});
+    }
+
+    const loadNextPageEffects = () => {
+        addShimmer();
+        scrollToTopOfPage();
     }
 
     let unknownRequestContent = <div className="invalidComicPage"> 
@@ -39,10 +52,17 @@ export default function ComicViewer(props) {
                                         <Link className="p-4 border-2 rounded hover:bg-purple-700 hover:gray-50" to={COMIC_VIEWER_DEFAULT_PATH}>>></Link>
                                     </div>
                                 </div>;
-    const params = useParams();
-    const pageId = parseInt(params.pageId, 10);
+
+    // Snaps the display to the top of the page
+    useEffect(() => {
+        if(params.focus == SNAP_TO_PAGE_PATH) {
+            scrollToTopOfPage();
+        }
+    }, []);
+
 
     // Checks the id in the url is a valid page
+    const pageId = parseInt(params.pageId, 10);
     let isValidId = ComicPageAPI.validatePageId(pageId);
     if (!isValidId) {
         return (<div className={`${isDesktop ? "comicViewerDesktop" : ''} pb-24`}>
@@ -73,7 +93,7 @@ export default function ComicViewer(props) {
             <Header defaultBg={false}/>
             {isDesktop ? <SimpleNavBar page={Pages.READ}/> : ''}
             {isDesktop ? <DesktopPageView pageImageUrl={pageImageUrl} sharePageUrl={sharePageUrl} title={title} topOfPageRef={topOfPageRef}/> : <MobilePageView pageImageUrl={pageImageUrl} topOfPageRef={topOfPageRef}/>}
-            {isDesktop ? <DesktopNavBar pageId={pageId} scrollToTopOfPage={scrollToTopOfPage}/> : <MobileNavBar pageId={pageId} scrollToTopOfPage={scrollToTopOfPage}/>}
+            {isDesktop ? <DesktopNavBar pageId={pageId} clickEffects={loadNextPageEffects}/> : <MobileNavBar pageId={pageId} clickEffects={loadNextPageEffects}/>}
             {isDesktop ? '' : <HorizontalShare sharePageUrl={sharePageUrl} shareImageUrl={shareImageUrl} title={title} />}
             {isDesktop ? <DesktopReadPageCards pageId={pageId} /> : <MobileReadPageCards pageId={pageId} />}
         </div>

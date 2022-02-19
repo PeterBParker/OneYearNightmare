@@ -19,6 +19,6 @@ export default function MobileNavBar(props) {
     }, [cookies.mxmBookmarkedPage, props.pageId]);
 
     return (
-        <PageNavButtons pageId={props.pageId} isMobile={true} bookmarkIcon={bookmarkIcon} setBookmark={setCookie} scrollToTopOfPage={props.scrollToTopOfPage}/>
+        <PageNavButtons pageId={props.pageId} isMobile={true} bookmarkIcon={bookmarkIcon} setBookmark={setCookie} clickEffects={props.clickEffects}/>
     );
 }

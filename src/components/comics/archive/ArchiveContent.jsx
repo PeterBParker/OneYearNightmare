@@ -4,6 +4,7 @@ import ChapterBanner from "./ChapterBanner";
 import ComicPageAPI from "../../../api/ComicPageAPI";
 import { useMediaQuery } from 'react-responsive';
 import querySizes from '../../../styling/breakpoints.json';
+import {v4 as uuidv4} from 'uuid';
 
 export default function ArchiveContent(props) {
     const isTabletOrDesktop = useMediaQuery({query: querySizes['lg']});
@@ -18,7 +19,8 @@ export default function ArchiveContent(props) {
         for(let chapterIndex in chapters) {
             let chapter = chapters[chapterIndex];
             let chapterPath = seasonPath + "/" + chapter["folderName"]
-            displayBanners.push(<ChapterBanner chapter={chapter} chapterPath={chapterPath} chapterName={`${season["seasonName"]} - ${chapter["chapterName"]}`} key={`${season["seasonName"]}${chapter["chapterName"]}ArchiveBanner`}/>)
+            let chapterBannerKey = uuidv4().replace(/-/g, "");
+            displayBanners.push(<ChapterBanner chapter={chapter} chapterPath={chapterPath} chapterName={`${season["seasonName"]} - ${chapter["chapterName"]}`} key={chapterBannerKey} bannerId={chapterBannerKey}/>)
         }
     }
 
@@ -26,7 +28,9 @@ export default function ArchiveContent(props) {
     return(
         <div className={`archiveContent mx-auto mt-4 mb-12 ${isTabletOrDesktop ? "desktopCard" : ""}`}>
             <CardHeader isDesktop={isTabletOrDesktop} text="Archive"/>
-            {displayBanners}
+            <div className="my-8">
+                {displayBanners}
+            </div>
         </div>
     )
 }

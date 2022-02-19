@@ -29,7 +29,7 @@ export default function DesktopNavBar(props) {
 
     let middleButtons = null
     if (props.pageId) {
-        middleButtons = <PageNavButtons pageId={props.pageId} isMobile={false} scrollToTopOfPage={props.scrollToTopOfPage}/>
+        middleButtons = <PageNavButtons pageId={props.pageId} isMobile={false} clickEffects={props.clickEffects}/>
         
     } else {
         middleButtons = ''

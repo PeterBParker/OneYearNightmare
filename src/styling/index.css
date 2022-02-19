@@ -2,8 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
-.html {
+html {
   scroll-behavior: smooth;
+  height: 100%;
+}
+body {
+  height: 100%;
+}
+#root {
+  height: 100%;
+}
+.App {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.body {
+  height: 100%;
+  min-height: 100%;
+}
+
+.footer {
+  margin-top: auto;
 }
 
 .icon {
@@ -438,6 +459,7 @@
   grid-template-columns: 33% 33% 33%;
   grid-template-rows: 100%;
   width: 829px;
+  z-index: 10;
 }
 .desktopNavLogo {
   grid-column-start: 1;
@@ -486,6 +508,9 @@
 .comicPage {
   grid-column-start: 2;
   grid-column-end: 3;
+  height: 1242px;
+  width:828px;
+  position: relative;
 }
 .comicViewerVertShare {
   grid-column-start: 3;
@@ -603,9 +628,40 @@
   position: absolute;
 }
 
-.loadingComicPage {
-  width: 800px;
-  height: 1000px;
+.loadingComicImage {
+  position: absolute !important;
+  left: 0px;
+  top: 0px;
+  z-index: 5;
+}
+
+.desktopHeaderLogoWingData {
+  width: 120px;
+}
+
+.desktopHeaderUpdateSchedule {
+  line-height: 105%;
+}
+
+.archiveLoadingThumbnail {
+  width: 216px;
+  height: 337px;
+}
+
+::-webkit-scrollbar { 
+  display: none; 
+}
+
+/*
+ * Effects
+ *
+ */
+.grow {
+  transition: all .2s ease-in-out;
+}
+
+.grow:hover {
+  transform: scale(1.1);
 }
 
 .shimmerFill {
@@ -614,6 +670,31 @@
     to right,
     #e4e0d4 0%,
     #e0dbcb 20%,
+    #e4e0d4 40%,
+    #e4e0d4 100%
+  );
+  background-repeat: no-repeat;
+  display: inline-block;
+  position: relative;
+
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-name: placeholderShimmer;
+  animation-name: placeholderShimmer;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+}
+
+.shimmerFillHighContrast {
+  background: #e4e0d4;
+  background-image: linear-gradient(
+    to right,
+    #e4e0d4 0%,
+    #ccc5ad 20%,
     #e4e0d4 40%,
     #e4e0d4 100%
   );
@@ -668,14 +749,32 @@
   }
 }
 
-.pageThumbnail {
-  width: 220px;
+.loaded-animation {
+  animation-name: slide-up;
+  animation-duration: 300ms;
 }
 
-.desktopHeaderLogoWingData {
-  width: 120px;
+@keyframes slide-up {
+  0% {top:20px;}
+  100% {top:0px;}
 }
 
-.desktopHeaderUpdateSchedule {
-  line-height: 105%;
+/* accordion Effect for Archive Page */
+.accordion {
+  overflow: hidden;
+}
+.accordion__banner {
+  position: relative;
+  cursor: pointer;
+}
+.accordion__content {
+  max-height: 0;
+  overflow: hidden;
+  transition-property: all;
+  transition-timing-function: ease-out;
+  transition-duration: 0.2s;
+  opacity: 1;
+}
+.accordion__active {
+  opacity: 1;
 }

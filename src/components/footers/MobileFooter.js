@@ -8,7 +8,7 @@ import {Link} from 'react-router-dom';
 export default function MobileFooter() {
    
     return (
-        <div className="footerWrapper bg-grey-light">
+        <div className="footerWrapper footer bg-grey-light">
             <div className="footerLinksAndLogo py-6 px-6 ">
                 <div className="logo pb-3 w-full place-content-center">
                     <img src={logo} width="220" className="mx-auto" alt="Monsters and Myriads logo"/>

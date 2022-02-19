@@ -24,9 +24,6 @@ export default function MobileMenu(props) {
                         <div className="comicViewerNavLink">
                             <Link to={'/read'} onClick={props.onMenuChange}>read</Link>
                         </div>
-                        <div className="archiveNavLink">
-                            <Link to='/archive' onClick={props.onMenuChange}>archive</Link>
-                        </div>
                         <div className="creatorsNavLink">
                             <Link to='/creatives' onClick={props.onMenuChange}>about us</Link>
                         </div>

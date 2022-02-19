@@ -17,7 +17,7 @@ export default function LastPageButton(props) {
     if(pageInfo) {
         const pageFilePath = '/read/' + lastPageId;
         return(
-            <div className="navButton" onClick={props.scrollToTopOfPage}><Link to={pageFilePath}><img src={activeLastIcon} width={30} alt="enabled navigation last page button"/></Link></div>
+            <div className="navButton" onClick={props.clickEffects}><Link to={pageFilePath}><img src={activeLastIcon} width={30} alt="enabled navigation last page button"/></Link></div>
         );
     } else {
         return(
