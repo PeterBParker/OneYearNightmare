@@ -1,6 +1,8 @@
 import MobileAboutComic from './aboutCards/MobileAboutComic';
 import DesktopAboutComic from './aboutCards/DesktopAboutComic';
 
+import Pages from '../../comics/navigation/desktop/Pages';
+
 import nathanProfileIcon from '../../../assets/Phase2-Assets1/images/profile-pic-N3.jpg';
 import morghanProfileIcon from '../../../assets/Phase2-Assets1/images/profile-pic-M3.jpg';
 import githubIcon from '../../../assets/Phase3-Assets1/1x/32x-dark-cat.png';
@@ -10,9 +12,15 @@ import instagramIcon from '../../../assets/Phase3-Assets1/1x/32x-dark-IG.png';
 
 import { useMediaQuery } from 'react-responsive';
 import querySizes from '../../../styling/breakpoints.json';
+import { useEffect } from 'react';
 
-export default function Creators() {
+export default function Creators(props) {
     const isDesktop = useMediaQuery({query: querySizes['lg']});
+
+    useEffect(() => {
+        props.setMainPageState(Pages.ABOUT);
+    }, []);
+
     let nathanAbout = "I love all things made from a marinade of mystery, a couple cups of comedy, and a quick whisk of wonder. I do backend python development during the day, dream up stories by night, and in the evenings in-between I work on this website. My favorite authors include Neil Gaiman, G.K. Chesterton, and Terry Prachett, and the Paranatural webcomic sparked the dream to write a webcomic of my own."
     let morghanAbout = "I like to draw. :)"
     let comicText = "Monsters and Myriads is a midwestern exploration into the spooky fantastic that haunts closed arcades, moon-frosted cornfields, and shadowed school hallways. Inspired by stories like Stranger Things, Gravity Falls, and Coraline, a group of incongruous highschoolers band together to uncover a gothic conspiracy that threatens to unravel their school, town, and world."

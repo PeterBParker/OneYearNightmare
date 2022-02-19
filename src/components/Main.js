@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import {Switch, Route} from 'react-router-dom';
 import Archive from './comics/archive/Archive';
 import ComicRouter from './comics/ComicRouter';
@@ -19,14 +20,26 @@ export const CREATIVES_PAGE_PATH = '/creatives';
 export const SNAP_TO_PAGE_PATH = 'snap-to-page';
 
 export default function Main() {
+    const [currentPage, setCurrentPage] = useState(null);
+
+    // TODO The idea is to render the header outside of the switch and then use the currentPage to determine the header color
+    // the main downside to this idea is that I need to provide a default color
     return(
         <div className="main">
             <Switch>
                 <Route exact path='/' component={Home} />
-                <Route path={CREATIVES_PAGE_PATH} component={Creators} />
-                <Route path={SUPPORT_PAGE_PATH} component={Support} />
-                <Route path={COMIC_VIEWER_PATH} component={ComicRouter} />
-                <Route path={ARCHIVE_PAGE_PATH} component={Archive} />
+                <Route path={CREATIVES_PAGE_PATH}>
+                    <Creators mainPageState={currentPage} setMainPageState={setCurrentPage}/>
+                </Route>
+                <Route path={SUPPORT_PAGE_PATH}>
+                    <Support mainPageState={currentPage} setMainPageState={setCurrentPage}/>
+                </Route>
+                <Route path={COMIC_VIEWER_PATH}>
+                    <ComicRouter mainPageState={currentPage} setMainPageState={setCurrentPage}/>
+                </Route>
+                <Route path={ARCHIVE_PAGE_PATH}>
+                    <Archive mainPageState={currentPage} setMainPageState={setCurrentPage}/>
+                </Route>
             </Switch>
         </div>
     );
