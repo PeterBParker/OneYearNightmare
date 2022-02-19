@@ -16,11 +16,12 @@ export const SUPPORT_PAGE_PATH = '/support';
 export const ARCHIVE_PAGE_PATH = '/archive';
 export const CREATIVES_PAGE_PATH = '/creatives';
 
+export const SNAP_TO_PAGE_PATH = 'snap-to-page';
+
 export default function Main() {
     return(
         <div className="main">
             <Switch>
-                {/* Replace this first route with a redirect to read*/}
                 <Route exact path='/' component={Home} />
                 <Route path={CREATIVES_PAGE_PATH} component={Creators} />
                 <Route path={SUPPORT_PAGE_PATH} component={Support} />

@@ -17,7 +17,7 @@ export default function FirstPageButton(props) {
     if(pageInfo) {
         const pageFilePath = '/read/' + firstPageId;
         return(
-            <div className="navButton" onClick={props.scrollToTopOfPage}><Link to={pageFilePath}><img src={activeFirstIcon} width={30} alt="enabled navigation first page button"/></Link></div>
+            <div className="navButton" onClick={props.clickEffects}><Link to={pageFilePath}><img src={activeFirstIcon} width={30} alt="enabled navigation first page button"/></Link></div>
         );
     } else {
         return(
