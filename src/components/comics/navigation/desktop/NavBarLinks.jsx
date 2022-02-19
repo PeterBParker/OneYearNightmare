@@ -10,10 +10,7 @@ export default function NavBarLinks(props) {
             </div>,
             <div className={`${props.page.name === Pages.SUPPORT.name ? 'desktopNavLinkSelected' : 'desktopNavLink'} text-grey-light mr-8 font-medium `} key="supportNavBarLink">
                 <Link to={'/support'}>support</Link>
-            </div>,
-            <span className={`${props.page.name === Pages.ARCHIVE.name ? 'desktopNavLinkSelected' : 'desktopNavLink' } text-grey-light font-medium `} key="archiveNavBarLink">
-                <Link to={'/archive'}>archive</Link>
-            </span>
+            </div>
             ]
     )
 }
