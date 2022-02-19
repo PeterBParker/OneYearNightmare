@@ -508,8 +508,6 @@ body {
 .comicPage {
   grid-column-start: 2;
   grid-column-end: 3;
-  height: 1242px;
-  width:828px;
   position: relative;
 }
 .comicViewerVertShare {
