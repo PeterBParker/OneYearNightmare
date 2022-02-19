@@ -648,6 +648,10 @@ body {
   height: 337px;
 }
 
+::-webkit-scrollbar { 
+  display: none; 
+}
+
 /*
  * Effects
  *
