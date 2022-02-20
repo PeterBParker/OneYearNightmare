@@ -8,10 +8,6 @@ import Pages from './navigation/desktop/Pages';
 
 export default function ComicRouter(props) {
     const [cookies, setCookie] = useCookies(['mxmBookmarkedPage']);
-    
-    useEffect(() => {
-        props.setMainPageState(Pages.READ);
-    }, []);
 
     const maxPage = ComicPageAPI.getMaxDisplayPage()
 

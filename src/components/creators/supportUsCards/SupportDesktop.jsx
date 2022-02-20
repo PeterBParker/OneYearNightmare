@@ -8,8 +8,8 @@ import custardIcon from '../../../assets/FINAL-ASSETS-072821/final assets/fill-w
 export default function SupportDesktop(props) {
 
     return(
-        <div className="desktopDefaultBg desktopBg pb-24">
-            <Header defaultBg={true}/>
+        <div className="pb-24">
+            <Header/>
             <SimpleNavBar page={Pages.SUPPORT}/>
             <div className="supportCards mt-8">
                 <div className="childSupportCard patreonSupportCard bg-white" id="patreonSupportCard">

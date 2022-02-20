@@ -10,10 +10,6 @@ import { useEffect } from 'react';
 export default function Support(props) {
     const isTabletOrDesktop = useMediaQuery({query: querySizes['lg']});
 
-    useEffect(() => {
-        props.setMainPageState(Pages.SUPPORT);
-    }, []);
-
     let patreonBody="Join the fun on our discord channel with a\
     monthly $1 contribution. Join the conversation\
     and conspiracy theories, meet fellow readers,\
