@@ -1,7 +1,7 @@
 
 export default function Support(props) {
     return (
-        <div className={`${props.isDesktop ? 'desktopIconCardContainer' : 'mobileIconCardContainer'} width-full`}>
+        <div className={`${props.isDesktop ? 'desktopIconCardContainer' : 'mobileIconCardContainer'} ${props.shouldFade ? 'whiteBackgroundColorFade' : 'bg-white'} ${props.shouldAddBottomMargin ? 'mb-16' : null} width-full`}>
             <div className="test">
                 <div className="iconCardHeader">
                     <img src={props.icon} width={`${props.isDesktop ? '180' : '120'}`} className={`${props.isDesktop ? 'py-8' : 'py-4'} mx-auto`} />

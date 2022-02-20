@@ -9,10 +9,10 @@ import aboutComicCardImage from '../../../../assets/Phase3-Assets1/1x/SkullBird-
 
 export default function DesktopAboutComic(props) {
     return (
-        <div className="desktopDefaultBg desktopBg">
+        <div className="">
             <Header defaultBg={true}/>
             <SimpleNavBar page={Pages.ABOUT}/>
-            <div className="desktopAboutTheComicContainer grid mx-auto mt-4 mb-12">
+            <div className="desktopAboutTheComicContainer bg-white grid mx-auto mt-4 mb-12">
                 <div className="aboutTheComicText">
                     <CardHeader text="About the Comic" isDesktop={true} />
                 </div>
