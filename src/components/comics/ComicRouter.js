@@ -3,9 +3,11 @@ import ComicViewer from './ComicViewer';
 import { useCookies } from 'react-cookie';
 import ComicPageAPI from '../../api/ComicPageAPI';
 import { COMIC_VIEWER_PATH } from '../Main';
+import { useEffect } from 'react';
+import Pages from './navigation/desktop/Pages';
 
 export default function ComicRouter(props) {
-    const [cookies, setCookie] = useCookies(['mxmBookmarkedPage'])
+    const [cookies, setCookie] = useCookies(['mxmBookmarkedPage']);
 
     const maxPage = ComicPageAPI.getMaxDisplayPage()
 

@@ -74,13 +74,6 @@ export default function ComicViewer(props) {
     }
 
     var pageInfo = ComicPageAPI.getPage(pageId);
-    if (!pageInfo) {
-        return (<div className={`${isDesktop ? "comicViewerDesktop" : ''} pb-24`}>
-        <Header defaultBg={false}/>
-        {isDesktop ? <SimpleNavBar page={Pages.READ}/> : ''}
-        {unknownRequestContent}
-        </div>);
-    }
 
     const pageImageUrl = encodeURI(process.env.PUBLIC_URL + BASE_PATH + pageInfo.seasonPath + '/' + pageInfo.chapterPath + '/' + pageInfo.pagePath);
     let title = "One Year Nightmare Page " + pageId;
@@ -89,14 +82,22 @@ export default function ComicViewer(props) {
     // TODO 6/10 Before deploying, implement these security measures: https://stackoverflow.com/questions/21110130/protect-image-download/21110248
    
     return (
-        <div className={`${isDesktop ? "comicViewerDesktop desktopBg pb-24" : 'pb-16'}`}>
-            <Header defaultBg={false}/>
-            {isDesktop ? <SimpleNavBar page={Pages.READ}/> : ''}
-            {isDesktop ? <DesktopPageView pageImageUrl={pageImageUrl} sharePageUrl={sharePageUrl} title={title} topOfPageRef={topOfPageRef}/> : <MobilePageView pageImageUrl={pageImageUrl} topOfPageRef={topOfPageRef}/>}
-            {isDesktop ? <DesktopNavBar pageId={pageId} clickEffects={loadNextPageEffects}/> : <MobileNavBar pageId={pageId} clickEffects={loadNextPageEffects}/>}
-            {isDesktop ? '' : <HorizontalShare sharePageUrl={sharePageUrl} shareImageUrl={shareImageUrl} title={title} />}
-            {isDesktop ? <DesktopReadPageCards pageId={pageId} /> : <MobileReadPageCards pageId={pageId} />}
-        </div>
+        pageInfo ?
+            <div className={`${isDesktop ? "pb-24" : 'pb-16'}`}>
+                <Header defaultBg={false}/>
+                {isDesktop ? <SimpleNavBar page={Pages.READ}/> : ''}
+                {isDesktop ? <DesktopPageView pageImageUrl={pageImageUrl} sharePageUrl={sharePageUrl} title={title} topOfPageRef={topOfPageRef}/> : <MobilePageView pageImageUrl={pageImageUrl} topOfPageRef={topOfPageRef}/>}
+                {isDesktop ? <DesktopNavBar pageId={pageId} clickEffects={loadNextPageEffects}/> : <MobileNavBar pageId={pageId} clickEffects={loadNextPageEffects}/>}
+                {isDesktop ? '' : <HorizontalShare sharePageUrl={sharePageUrl} shareImageUrl={shareImageUrl} title={title} />}
+                {isDesktop ? <DesktopReadPageCards pageId={pageId} /> : <MobileReadPageCards pageId={pageId} />}
+            </div>
+        :
+
+            <div className={`${isDesktop ? "" : ''} pb-24`}>
+                <Header defaultBg={false}/>
+                {isDesktop ? <SimpleNavBar page={Pages.READ}/> : ''}
+                {unknownRequestContent}
+            </div>
 
     );
 }

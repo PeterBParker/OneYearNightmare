@@ -8,7 +8,7 @@ export default function MobileAboutComic(props) {
     return (
         <div>
             <Header defaultBg={true}/>
-            <div className="aboutTheComicContainer grid">
+            <div className="aboutTheComicContainer bg-white grid">
                 <div className="aboutTheComicText">
                     <TextCard header="About the Comic" content={props.comicText} isDesktop={false}/>
                 </div>

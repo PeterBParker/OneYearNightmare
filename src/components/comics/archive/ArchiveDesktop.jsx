@@ -5,8 +5,8 @@ import ArchiveContent from "./ArchiveContent";
 
 export default function ArchiveDesktop(props) {
     return(
-        <div className="desktopDefaultBg desktopBg pb-24">
-            <Header defaultBg={true}/>
+        <div className="pb-24">
+            <Header/>
             <SimpleNavBar page={Pages.ARCHIVE}/>
             <ArchiveContent/>
         </div>

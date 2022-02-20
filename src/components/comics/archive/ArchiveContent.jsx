@@ -26,7 +26,7 @@ export default function ArchiveContent(props) {
 
 
     return(
-        <div className={`archiveContent mx-auto mt-4 mb-12 ${isTabletOrDesktop ? "desktopCard" : ""}`}>
+        <div className={`archiveContent mx-auto  mb-12 ${isTabletOrDesktop ? "desktopCard mt-4 bg-white" : "pb-4 whiteBackgroundColorFade"}`}>
             <CardHeader isDesktop={isTabletOrDesktop} text="Archive"/>
             <div className="my-8">
                 {displayBanners}

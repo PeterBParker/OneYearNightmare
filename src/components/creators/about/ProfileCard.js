@@ -6,7 +6,7 @@ export default function ProfileCard(props) {
     return(
         <div>
             <hr className="border-eggshell border-2"/>
-            <div className={`profileCardContainer pt-5 pb-8 ${props.isDesktop ? 'px-8' : 'px-6'}`}>
+            <div className={`profileCardContainer ${props.shouldFade ? 'whiteBackgroundColorFade' : 'bg-white'} ${props.addMarginBottom ? "pb-32" : null} pt-5 pb-8 ${props.isDesktop ? 'px-8' : 'px-6'}`}>
             
             <div className={`${props.isDesktop ? 'mb-6 desktopProfileCardHeader mt-2' : 'mb-3 profileCardHeader'}`}>
                 <div className={`${props.isDesktop ? 'justify-self-left' : 'justify-self-center'} profileCardIcon`}>
