@@ -61,5 +61,5 @@ if __name__ == "__main__":
     print("Creating icons...")
     ico_controller = IconifyPagesController()
     print("Success!\nAdding to database file...")
-    ico_controller.generateAndAddIcons(api._BACKUP_FILENAME)
+    ico_controller.generateAndAddIcons(api._DATA_FILENAME)
     print("Success!")

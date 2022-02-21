@@ -1,7 +1,7 @@
 {
     "maxDisplayPage": 35,
     "pageCount": 35,
-    "seasonCount": 2,
+    "seasonCount": 1,
     "seasons": [
         {
             "seasonName": "First Blood",
@@ -75,6 +75,16 @@
                             "id": 6,
                             "user": "M1998",
                             "icon": "icons/PRO6-Icon.png"
+                        },
+                        {
+                            "pageNum": 7,
+                            "filename": "PRO7.jpg",
+                            "title": "Donny is late for a very important date",
+                            "message": "Donny, my man, I feel for you. Spared from one storm just to fall into another. 🌧",
+                            "datetime": "2022-02-21 14:52:57",
+                            "id": 7,
+                            "user": "M1998",
+                            "icon": "icons/PRO7-Icon.png"
                         }
                     ]
                 },
@@ -86,143 +96,143 @@
                     "pages": [
                         {
                             "pageNum": 1,
-                            "filename": "Season_1_First_Blood.jpg",
+                            "filename": "Chap1-COVER.jpg",
                             "title": "First Blood Title Page",
                             "message": "It's here! Hang on to your couch, office chair, or whatever seat you're reading from! We're about to officially get started... (づ￣ 3￣)づ",
                             "datetime": "2021-09-06 15:14:10",
                             "id": 8,
                             "user": "N1995",
-                            "icon": "icons/Season_1_First_Blood-Icon.png"
+                            "icon": "icons/Chap1-COVER-Icon.png"
                         },
                         {
                             "pageNum": 2,
-                            "filename": "Vol1-Pg1-Monsters-x-Myriads.jpg",
+                            "filename": "Chap1-Pg1.jpg",
                             "title": "Rose finds drugs?",
                             "message": "Season 1 starting off with a happy dance! What do you think is in the bottle??? Comment your guess in our discord chat!",
                             "datetime": "2021-09-09 11:50:23",
                             "id": 9,
                             "user": "M1998",
-                            "icon": "icons/Vol1-Pg1-Monsters-x-Myriads-Icon.png"
+                            "icon": "icons/Chap1-Pg1-Icon.png"
                         },
                         {
                             "pageNum": 3,
-                            "filename": "Vol1-Pg2-Monsters-x-Myriads.jpg",
+                            "filename": "Chap1-Pg2.jpg",
                             "title": "Rose escapes her mother's room",
                             "message": "From butchering beasts in high heels to jumping out of windows in flip flops...we need to get these girls some sneakers!",
                             "datetime": "2021-09-13 14:09:28",
                             "id": 10,
                             "user": "M1998",
-                            "icon": "icons/Vol1-Pg2-Monsters-x-Myriads-Icon.png"
+                            "icon": "icons/Chap1-Pg2-Icon.png"
                         },
                         {
                             "pageNum": 4,
-                            "filename": "Vol1-Pg3-Monsters-x-Myriads.jpg",
+                            "filename": "Chap1-Pg3.jpg",
                             "title": "Donny discovers Rose's escape measures",
                             "message": "Don't know what Jean usually listens to on her ipod, but it's \"ffmmping!\"",
                             "datetime": "2021-09-16 14:05:25",
                             "id": 11,
                             "user": "M1998",
-                            "icon": "icons/Vol1-Pg3-Monsters-x-Myriads-Icon.png"
+                            "icon": "icons/Chap1-Pg3-Icon.png"
                         },
                         {
                             "pageNum": 5,
-                            "filename": "Vol1-Pg4-Monsters-x-Myriads.jpg",
+                            "filename": "Chap1-Pg4.jpg",
                             "title": "Rose embarrasses herself in front of cats",
                             "message": "Them cats know a good purple manicure when they see it. ",
                             "datetime": "2021-09-20 14:52:44",
                             "id": 12,
                             "user": "M1998",
-                            "icon": "icons/Vol1-Pg4-Monsters-x-Myriads-Icon.png"
+                            "icon": "icons/Chap1-Pg4-Icon.png"
                         },
                         {
                             "pageNum": 6,
-                            "filename": "Vol1-Pg5-Monsters-x-Myriads.jpg",
+                            "filename": "Chap1-Pg5.jpg",
                             "title": "Who is the Penguin man?",
                             "message": "New page and lots of new faces! But the most important face of all...this elusive Mr. Freezy Cee...",
                             "datetime": "2021-09-23 15:58:07",
                             "id": 13,
                             "user": "M1998",
-                            "icon": "icons/Vol1-Pg5-Monsters-x-Myriads-Icon.png"
+                            "icon": "icons/Chap1-Pg5-Icon.png"
                         },
                         {
                             "pageNum": 7,
-                            "filename": "Vol1-Pg6-Monsters-x-Myriads.jpg",
+                            "filename": "Chap1-Pg6.jpg",
                             "title": "Zylo is seeing things, and those things have a lot of teeth",
                             "message": "I could have sworn she had less teeth in the last pannel.",
                             "datetime": "2021-09-27 11:33:25",
                             "id": 14,
                             "user": "M1998",
-                            "icon": "icons/Vol1-Pg6-Monsters-x-Myriads-Icon.png"
+                            "icon": "icons/Chap1-Pg6-Icon.png"
                         },
                         {
                             "pageNum": 8,
-                            "filename": "Vol1-Pg7-Monsters-x-Myriads.jpg",
+                            "filename": "Chap1-Pg7.jpg",
                             "title": "He DEFINITELY likes me...",
                             "message": "You may have wondered if penguin boy has flippers for hands or if it's just part of his costume. Well now you know, you're welcome.",
                             "datetime": "2021-09-30 10:12:11",
                             "id": 15,
                             "user": "M1998",
-                            "icon": "icons/Vol1-Pg7-Monsters-x-Myriads-Icon.png"
+                            "icon": "icons/Chap1-Pg7-Icon.png"
                         },
                         {
                             "pageNum": 9,
-                            "filename": "Vol1-Pg8-Monsters-x-Myriads.jpg",
+                            "filename": "Chap1-Pg8.jpg",
                             "title": "Rose coming in hot",
                             "message": "Poor Mr. \"Definitely Not Mr. Freezy Cee\" can't catch a break.",
                             "datetime": "2021-10-04 16:20:14",
                             "id": 16,
                             "user": "M1998",
-                            "icon": "icons/Vol1-Pg8-Monsters-x-Myriads-Icon.png"
+                            "icon": "icons/Chap1-Pg8-Icon.png"
                         },
                         {
                             "pageNum": 10,
-                            "filename": "Vol1-Pg9-Monsters-x-Myriads.jpg",
+                            "filename": "Chap1-Pg9.jpg",
                             "title": "Rose and Casper Collision",
                             "message": "And that, kids, was how I met your mother. Hahaha just kidding...unless...",
                             "datetime": "2021-10-07 16:24:10",
                             "id": 17,
                             "user": "M1998",
-                            "icon": "icons/Vol1-Pg9-Monsters-x-Myriads-Icon.png"
+                            "icon": "icons/Chap1-Pg9-Icon.png"
                         },
                         {
                             "pageNum": 11,
-                            "filename": "Vol1-Pg10-Monsters-x-Myriads.jpg",
+                            "filename": "Chap1-Pg10.jpg",
                             "title": "Oh nononono Rose got God Blood on her blood",
                             "message": "Oh nononono, Rose got \"God Blood\" on her blood. I'm sure everything's fine.",
                             "datetime": "2021-10-11 12:46:29",
                             "id": 18,
                             "user": "M1998",
-                            "icon": "icons/Vol1-Pg10-Monsters-x-Myriads-Icon.png"
+                            "icon": "icons/Chap1-Pg10-Icon.png"
                         },
                         {
                             "pageNum": 12,
-                            "filename": "Rubber_Man.jpg",
+                            "filename": "Chap1-Pg11.jpg",
                             "title": "He's Bouncy like Rubber, BOING!",
                             "message": "It's okay dude, we know what One Piece is and WE think you're cool.",
                             "datetime": "2021-10-18 16:43:17",
                             "id": 19,
                             "user": "M1998",
-                            "icon": "icons/Rubber_Man-Icon.png"
+                            "icon": "icons/Chap1-Pg11-Icon.png"
                         },
                         {
                             "pageNum": 13,
-                            "filename": "Vol1-Pg12-Monsters-x-Myriads.jpg",
+                            "filename": "Chap1-Pg12.jpg",
                             "title": "Blush Overload and Jealous Rage",
                             "message": "Someone may be jealous... but jury is still out on that.",
                             "datetime": "2021-10-25 14:28:32",
                             "id": 20,
                             "user": "M1998",
-                            "icon": "icons/Vol1-Pg12-Monsters-x-Myriads-Icon.png"
+                            "icon": "icons/Chap1-Pg12-Icon.png"
                         },
                         {
                             "pageNum": 14,
-                            "filename": "Vol1-Pg13-Monsters-x-Myriads.jpg",
+                            "filename": "Chap1-Pg13.jpg",
                             "title": "A hero is needed, and Casper will have to do",
                             "message": "When that rando kid thinks they are the main character.",
                             "datetime": "2021-10-28 14:40:51",
                             "id": 21,
                             "user": "M1998",
-                            "icon": "icons/Vol1-Pg13-Monsters-x-Myriads-Icon.png"
+                            "icon": "icons/Chap1-Pg13-Icon.png"
                         },
                         {
                             "pageNum": 15,
@@ -236,113 +246,113 @@
                         },
                         {
                             "pageNum": 16,
-                            "filename": "Vol1-Pg14-Monsters-x-Myriads.jpg",
+                            "filename": "Chap1-Pg14.jpg",
                             "title": "Your....Vanilla Cones",
                             "message": "I don't know which part made me happier to draw, the icecream on the kitty's nose, or Casper vrooooming off into the sunset. Or maybe the phantom newcomer in the depths of the Freezy Cee's custard shack...",
                             "datetime": "2021-11-04 12:32:38",
                             "id": 23,
                             "user": "M1998",
-                            "icon": "icons/Vol1-Pg14-Monsters-x-Myriads-Icon.png"
+                            "icon": "icons/Chap1-Pg14-Icon.png"
                         },
                         {
                             "pageNum": 17,
-                            "filename": "Vol1-Pg15-Monsters-x-Myriads.jpg",
+                            "filename": "Chap1-Pg15.jpg",
                             "title": "Here enters the Elusive Mr. Freezy Cee",
                             "message": "The man, the myth, the legend, Mr. Freezy Cee!! Dropping some hot takes and hard facts. Posting from Colorado Springs this morning (my concept of time has been severely crippled between moving from Ohio to Wisconsin to Colorado, during a daylight savings no less 🙀).",
                             "datetime": "2021-11-08 11:41:04",
                             "id": 24,
                             "user": "M1998",
-                            "icon": "icons/Vol1-Pg15-Monsters-x-Myriads-Icon.png"
+                            "icon": "icons/Chap1-Pg15-Icon.png"
                         },
                         {
                             "pageNum": 18,
-                            "filename": "Vol1-Pg16-Monsters-x-Myriads.jpg",
+                            "filename": "Chap1-Pg16.jpg",
                             "title": "Mr Freezy Cee on the philosophy of penguin pajamas",
                             "message": "This just in: Mr. Freezy Cee on the philosophy of penguin pajamas.",
                             "datetime": "2021-11-11 11:55:09",
                             "id": 25,
                             "user": "M1998",
-                            "icon": "icons/Vol1-Pg16-Monsters-x-Myriads-Icon.png"
+                            "icon": "icons/Chap1-Pg16-Icon.png"
                         },
                         {
                             "pageNum": 19,
-                            "filename": "Vol1-Pg17-Monsters-x-Myriads.jpg",
+                            "filename": "Chap1-Pg17.jpg",
                             "title": "Just about anything can make you interesting",
                             "message": "Zylo \"unmasked\", not a penguin after all.",
                             "datetime": "2021-11-15 14:55:54",
                             "id": 26,
                             "user": "M1998",
-                            "icon": "icons/Vol1-Pg17-Monsters-x-Myriads-Icon.png"
+                            "icon": "icons/Chap1-Pg17-Icon.png"
                         },
                         {
                             "pageNum": 20,
-                            "filename": "Vol1-Pg18-Monsters-x-Myriads.jpg",
+                            "filename": "Chap1-Pg18.jpg",
                             "title": "Hacker Chick and her Nut Cracker immerges",
                             "message": "Little known hallmark film coming out this season...Hacker and the NuT Cracker. Buy your tickets today!",
                             "datetime": "2021-11-18 15:34:14",
                             "id": 27,
                             "user": "M1998",
-                            "icon": "icons/Vol1-Pg18-Monsters-x-Myriads-Icon.png"
+                            "icon": "icons/Chap1-Pg18-Icon.png"
                         },
                         {
                             "pageNum": 21,
-                            "filename": "Vol1-Pg19-Monsters-x-Myriads.jpg",
+                            "filename": "Chap1-Pg19.jpg",
                             "title": "I'm sure your deserted little twin brothers are fine...",
                             "message": "I'm sure your deserted little twin brothers are fine, Casper. I mean, they had icecream and an absurd lack of supervision to keep them company.",
                             "datetime": "2021-11-22 12:52:25",
                             "id": 28,
                             "user": "M1998",
-                            "icon": "icons/Vol1-Pg19-Monsters-x-Myriads-Icon.png"
+                            "icon": "icons/Chap1-Pg19-Icon.png"
                         },
                         {
                             "pageNum": 22,
-                            "filename": "Vol1-Pg20-Monsters-x-Myriads.jpg",
+                            "filename": "Chap1-Pg20.jpg",
                             "title": "Rose may be tripping afterall",
                             "message": "Well Rose is certainly tripping on something.",
                             "datetime": "2021-11-29 16:13:07",
                             "id": 29,
                             "user": "M1998",
-                            "icon": "icons/Vol1-Pg20-Monsters-x-Myriads-Icon.png"
+                            "icon": "icons/Chap1-Pg20-Icon.png"
                         },
                         {
                             "pageNum": 23,
-                            "filename": "Vol1-Pg21-Monsters-x-Myriads.jpg",
+                            "filename": "Chap1-Pg21.jpg",
                             "title": "Maybe we're both high?",
                             "message": "Have I been playing too much Pikmin Bloom, or does Quill's ghost need a name? I'm leaning towards Reginald but I am open to suggestions.",
                             "datetime": "2021-12-02 09:49:21",
                             "id": 30,
                             "user": "M1998",
-                            "icon": "icons/Vol1-Pg21-Monsters-x-Myriads-Icon.png"
+                            "icon": "icons/Chap1-Pg21-Icon.png"
                         },
                         {
                             "pageNum": 24,
-                            "filename": "Vol1-Pg22-Monsters-x-Myriads.jpg",
+                            "filename": "Chap1-Pg22.jpg",
                             "title": "Uncle Dan finds the kiddos with a broken window",
                             "message": "All things considered, both Uncle Dan and Rose are taking it all rather well. (⊙_⊙;)",
                             "datetime": "2021-12-06 15:49:41",
                             "id": 31,
                             "user": "M1998",
-                            "icon": "icons/Vol1-Pg22-Monsters-x-Myriads-Icon.png"
+                            "icon": "icons/Chap1-Pg22-Icon.png"
                         },
                         {
                             "pageNum": 25,
-                            "filename": "Vol1-Pg23-Monsters-x-Myriads.jpg",
+                            "filename": "Chap1-Pg23.jpg",
                             "title": "Uncle Dan to the rescue",
                             "message": "Typical.",
                             "datetime": "2021-12-09 12:21:46",
                             "id": 32,
                             "user": "M1998",
-                            "icon": "icons/Vol1-Pg23-Monsters-x-Myriads-Icon.png"
+                            "icon": "icons/Chap1-Pg23-Icon.png"
                         },
                         {
                             "pageNum": 26,
-                            "filename": "Vol1-Pg24-Monsters-x-Myriads.jpg",
+                            "filename": "Chap1-Pg24.jpg",
                             "title": "Rose isn't crazy, and Quill is gonna help her",
                             "message": "I didn't grow up with cousins my age, but I imagine this is how general cousinly bickering would go.",
                             "datetime": "2021-12-13 14:41:40",
                             "id": 33,
                             "user": "M1998",
-                            "icon": "icons/Vol1-Pg24-Monsters-x-Myriads-Icon.png"
+                            "icon": "icons/Chap1-Pg24-Icon.png"
                         }
                     ]
                 },
@@ -354,13 +364,13 @@
                     "pages": [
                         {
                             "pageNum": 1,
-                            "filename": "Chap-02b.jpg",
+                            "filename": "Chap2-COVER.jpg",
                             "title": "Chapter 2 Killing Time in Detention",
                             "message": "Woot woot!! Heading into the next chapter! Thank you all for checking out our comic up til this point! This marks the start of the Monsters & Myriads holiday hiatus where we the creators will be making some fun edits to be revealed this coming January. In the meantime, check out our Discord to join in the conversation and share your ideas/theories. We love to hear from you guys! Merry Christmas all and see you in the new year! 🎄⛄",
                             "datetime": "2021-12-16 15:09:27",
                             "id": 34,
                             "user": "M1998",
-                            "icon": "icons/Chap-02b-Icon.png"
+                            "icon": "icons/Chap2-COVER-Icon.png"
                         },
                         {
                             "pageNum": 2,
