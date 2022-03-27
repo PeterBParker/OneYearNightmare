@@ -1,12 +1,12 @@
 {
-    "maxDisplayPage": 35,
-    "pageCount": 35,
+    "maxDisplayPage": 45,
+    "pageCount": 45,
     "seasonCount": 1,
     "seasons": [
         {
             "seasonName": "First Blood",
             "folderName": "first blood",
-            "numOfPages": 35,
+            "numOfPages": 45,
             "numOfChapters": 3,
             "id": 1,
             "chapters": [
@@ -18,13 +18,13 @@
                     "pages": [
                         {
                             "pageNum": 1,
-                            "filename": "PRO1-COVER.jpg",
+                            "filename": "PRO1.jpg",
                             "title": "Prologue Cover Page",
                             "message": "Welcome back, mystery hunters! We decided to archive the old prologue for our patrons over on Patreon, and release a brand, spanking NEW AND IMPROVED prologue crammed with all the lessons we learned in doing the first 50 pages of Monsters and Myriads. \"But, Nathan,\" you may say, \"you aren't going to make any progress if you keep redoing what you've outgrown.\" To which I respond: you're absolutely right. We're going to keep moving after this, promise! Once we post all 7 pages of the new prologue, we'll un-hide the Chapter 1 pages and move on to Chapter 2. So thank you for coming back or starting it fresh! We're so excited and proud of what we're doing, but we are learning everyday how to write/illustrate better. If you have ideas, we'd love to hear them in our Discord! The link is below. :)",
                             "datetime": "2022-01-31 14:25:53",
                             "id": 1,
                             "user": "N1995",
-                            "icon": "icons/PRO1-COVER-Icon.png"
+                            "icon": "icons/PRO1-Icon.png"
                         },
                         {
                             "pageNum": 2,
@@ -78,13 +78,13 @@
                         },
                         {
                             "pageNum": 7,
-                            "filename": "PRO7.jpg",
+                            "filename": "PRO7-2.0.jpg",
                             "title": "Donny is late for a very important date",
                             "message": "Donny, my man, I feel for you. Spared from one storm just to fall into another. 🌧",
                             "datetime": "2022-02-21 14:52:57",
                             "id": 7,
                             "user": "M1998",
-                            "icon": "icons/PRO7-Icon.png"
+                            "icon": "icons/PRO7-2.0-Icon.png"
                         }
                     ]
                 },
@@ -96,13 +96,13 @@
                     "pages": [
                         {
                             "pageNum": 1,
-                            "filename": "Chap1-COVER.jpg",
+                            "filename": "Chapter1_NEW.jpg",
                             "title": "First Blood Title Page",
                             "message": "It's here! Hang on to your couch, office chair, or whatever seat you're reading from! We're about to officially get started... (づ￣ 3￣)づ",
                             "datetime": "2021-09-06 15:14:10",
                             "id": 8,
                             "user": "N1995",
-                            "icon": "icons/Chap1-COVER-Icon.png"
+                            "icon": "icons/Chapter1_NEW-Icon.png"
                         },
                         {
                             "pageNum": 2,
@@ -359,18 +359,18 @@
                 {
                     "chapterName": "Chapter Two",
                     "folderName": "chapter2",
-                    "numOfPages": 2,
+                    "numOfPages": 12,
                     "id": 3,
                     "pages": [
                         {
                             "pageNum": 1,
-                            "filename": "Chap2-COVER.jpg",
+                            "filename": "Chapter2_NEW.jpg",
                             "title": "Chapter 2 Killing Time in Detention",
                             "message": "Woot woot!! Heading into the next chapter! Thank you all for checking out our comic up til this point! This marks the start of the Monsters & Myriads holiday hiatus where we the creators will be making some fun edits to be revealed this coming January. In the meantime, check out our Discord to join in the conversation and share your ideas/theories. We love to hear from you guys! Merry Christmas all and see you in the new year! 🎄⛄",
                             "datetime": "2021-12-16 15:09:27",
                             "id": 34,
                             "user": "M1998",
-                            "icon": "icons/Chap2-COVER-Icon.png"
+                            "icon": "icons/Chapter2_NEW-Icon.png"
                         },
                         {
                             "pageNum": 2,
@@ -381,6 +381,106 @@
                             "id": 35,
                             "user": "M1998",
                             "icon": "icons/Holidays2022-Icon.png"
+                        },
+                        {
+                            "pageNum": 3,
+                            "filename": "Chap2-Pg1.jpg",
+                            "title": "Casper floating over grayed out farm",
+                            "message": "Coming to you live, boy in flannel pajamas floating in the sky. ",
+                            "datetime": "2022-02-28 13:49:51",
+                            "id": 36,
+                            "user": "M1998",
+                            "icon": "icons/Chap2-Pg1-Icon.png"
+                        },
+                        {
+                            "pageNum": 4,
+                            "filename": "Chap2-pg2.jpg",
+                            "title": "Casper knock knock on barn door and it hisses",
+                            "message": "Oh dear, Casper. What have you gotten yourself into...",
+                            "datetime": "2022-02-28 14:07:27",
+                            "id": 37,
+                            "user": "M1998",
+                            "icon": "icons/Chap2-pg2-Icon.png"
+                        },
+                        {
+                            "pageNum": 5,
+                            "filename": "Chap2-pg03.jpg",
+                            "title": "Just give me a sign",
+                            "message": "Fire laurel? Check. All the credentials you need for nefarious metaphorical parasite removal.",
+                            "datetime": "2022-03-07 20:16:24",
+                            "id": 38,
+                            "user": "M1998",
+                            "icon": "icons/Chap2-pg03-Icon.png"
+                        },
+                        {
+                            "pageNum": 6,
+                            "filename": "Chap2-pg04.jpg",
+                            "title": "Hooded lady isn't quite feeling herself",
+                            "message": "Wonder who \"it\" is...a friend? ...probs not.",
+                            "datetime": "2022-03-07 20:20:41",
+                            "id": 39,
+                            "user": "M1998",
+                            "icon": "icons/Chap2-pg04-Icon.png"
+                        },
+                        {
+                            "pageNum": 7,
+                            "filename": "Chap2-pg05.jpg",
+                            "title": "Rat Monster and a Rude Awakening",
+                            "message": "Alright, time to count 'em all. How many rats in the rat monster. Note: no picking up, shaking, or breaking the rat monster. That's cheating and will lead to disqualification. Rats will be counted by the end of the week and the winner will be notified by messenger pigeon...if said pigeon isn't devoured in the counting process.",
+                            "datetime": "2022-03-14 16:25:50",
+                            "id": 40,
+                            "user": "M1998",
+                            "icon": "icons/Chap2-pg05-Icon.png"
+                        },
+                        {
+                            "pageNum": 8,
+                            "filename": "Chap2-pg06.jpg",
+                            "title": "My Favorite Comic \"One Part\" and Blackmail",
+                            "message": "Siblings, your gateway drug into blackmail. Also, previously noted rat counting contest has been cancelled. Artist does not know nor desires to know number of rats and warns against long exposure to said rats.",
+                            "datetime": "2022-03-14 16:32:54",
+                            "id": 41,
+                            "user": "M1998",
+                            "icon": "icons/Chap2-pg06-Icon.png"
+                        },
+                        {
+                            "pageNum": 9,
+                            "filename": "Chap2-pg07.jpg",
+                            "title": "Casper Cat Staring Contest",
+                            "message": "The Casper Cat Stare-off of year *REDACTED*, an age old tradition passed down by the *REDACTED* and hence the birth of the earmuff. Also, what's with the funny-looking smudge on the neighbor's roof?",
+                            "datetime": "2022-03-20 21:19:45",
+                            "id": 42,
+                            "user": "M1998",
+                            "icon": "icons/Chap2-pg07-Icon.png"
+                        },
+                        {
+                            "pageNum": 10,
+                            "filename": "Chap2-pg08.jpg",
+                            "title": "Wake up in the morning feeling like p diddy",
+                            "message": "Ah yes, brothers and cat and spectral, tea-drinking shadow gathering about for some late night manga reading. When you can't live your best life, you write about it and make your wife draw it.",
+                            "datetime": "2022-03-20 21:24:08",
+                            "id": 43,
+                            "user": "M1998",
+                            "icon": "icons/Chap2-pg08-Icon.png"
+                        },
+                        {
+                            "pageNum": 11,
+                            "filename": "Chap2-pg9.jpg",
+                            "title": "Casper's Morning Rush!",
+                            "message": " Full transparency here, this is a pretty regular Sunday morning for me. No kids to wrangle or siblings to fend off, and yet I still can't seem to get to church on time. ⏰😅",
+                            "datetime": "2022-03-27 18:17:39",
+                            "id": 44,
+                            "user": "N1995",
+                            "icon": "icons/Chap2-pg9-Icon.png"
+                        },
+                        {
+                            "pageNum": 12,
+                            "filename": "Chap2-pg10.jpg",
+                            "title": "Millie's Manipulation",
+                            "message": "Not many highschoolers can drive in Shenee, and with gas prices as ludicrously high as they are even fewer can afford to drive. Good thing Millie the Magnificent's got a lucrative carpool deal worked with the rich parents! Sure would suck to not be able to afford gas...I SAID IT SURE WOULD SUCK TO-ah, forget it. Guess it's a great time to pick up running, huh? 🏃‍♂️🏃‍♀️",
+                            "datetime": "2022-03-27 18:25:38",
+                            "id": 45,
+                            "user": "N1995",
+                            "icon": "icons/Chap2-pg10-Icon.png"
                         }
                     ]
                 }
