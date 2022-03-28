@@ -10,7 +10,9 @@ import { initializeApp } from 'firebase/app';
 import { getFirestore } from 'firebase/firestore/lite';
 import { getAuth } from "firebase/auth";
 import { getAnalytics } from "firebase/analytics";
+import { initializeAppCheck, ReCaptchaV3Provider } from "firebase/app-check";
 
+// Initialize the Firebase Application
 var firebaseConfig = {
   apiKey: "AIzaSyDwiYUN-zDZBeAc8QaH9WFDftkqW1XXDdQ",
   authDomain: "oneyearnightmarefirstsite.firebaseapp.com",
@@ -21,6 +23,19 @@ var firebaseConfig = {
   measurementId: "G-DKRZFY2R89"
 };
 const firebaseApp = initializeApp(firebaseConfig);
+
+// Perform the App Check with ReCaptcha to prevent unauthorized usage of Firestore
+if (window.location.hostname === 'localhost') {
+  window.FIREBASE_APPCHECK_DEBUG_TOKEN = process.env.REACT_APP_API_KEY;
+}
+
+const appCheck = initializeAppCheck(firebaseApp, {
+  provider: new ReCaptchaV3Provider('6Lc4Nx4fAAAAAAp7ZK-t2_1cMEZyfrhdTabLb8Tj'),
+  isTokenAutoRefreshEnabled: true
+})
+
+
+// Initialize the Firebase service objects
 export const analytics = getAnalytics(firebaseApp);
 export const db = getFirestore(firebaseApp);
 export const auth = getAuth(firebaseApp);

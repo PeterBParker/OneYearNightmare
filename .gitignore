@@ -34,3 +34,4 @@ src/styling/tailwind.output.css
 
 *.pyc
 *.cache
+.env
