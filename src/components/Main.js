@@ -26,8 +26,6 @@ export default function Main(props) {
     const location = useLocation();
     const isDesktop = useMediaQuery({query: querySizes['lg']});
 
-    console.log(location.pathname.split('/')[1])
-
     // TODO The idea is to render the header outside of the switch and then use the currentPage to determine the header color
     // the main downside to this idea is that I need to provide a default color
     let desktopLightBg = "desktopDefaultBg desktopBg";
