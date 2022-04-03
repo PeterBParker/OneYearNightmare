@@ -26,7 +26,7 @@ const firebaseApp = initializeApp(firebaseConfig);
 
 // Perform the App Check with ReCaptcha to prevent unauthorized usage of Firestore
 if (window.location.hostname === 'localhost') {
-  window.FIREBASE_APPCHECK_DEBUG_TOKEN = process.env.REACT_APP_API_KEY;
+  window.FIREBASE_APPCHECK_DEBUG_TOKEN = process.env.REACT_APP_DEV_TOKEN;
 }
 
 const appCheck = initializeAppCheck(firebaseApp, {
