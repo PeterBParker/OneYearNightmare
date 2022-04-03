@@ -1,35 +1,33 @@
-import { createAvatar } from '@dicebear/avatars';
-import * as style from '@dicebear/big-smile';
 import moment from "moment"
 import { comment } from 'postcss';
 import { useState } from 'react';
+import PropTypes from "prop-types";
+import CommentForm from './CommentForm';
 
 /**
  * Renders a single comment with basic author information
  */
-function SingleComment(props) {
-    const avatar = createAvatar(style, {
-        seed: props.comment.author_name
-    })
+export function SingleComment(props) {
     return(
         <div>
             <div className="flex-container">
                 <div className="flex comment-avatar">
-                    <img
-                        src={avatar}
+                    {<img
+                        src={`https://avatars.dicebear.com/api/big-smile/${props.comment.author_name}}.svg`}
                         alt="avatar"
-                    />
+                        width={100}
+                    />}
                 </div>
                 <div className="flex">
                     <p className="comment-author">
                         {props.comment.author_name} <span>says</span>
                     </p>
                     <div className="comment-time">
-                        {props.comment.time && (<time>{moment(comment.time.toDate()).calendar()}</time>)}
+                        {props.comment.time && (<time>{moment(props.comment.time.toDateString()).calendar()}</time>)}
                     </div>
                 </div>
                 <div className="comment-content">
-                    {comment.content}
+                    {props.comment.content}
                 </div>
             </div>
         </div>
@@ -48,7 +46,7 @@ export default function Comment(props) {
     return(
         <div className="comment-box">
             <SingleComment comment={props.comment} />
-            {children && (children.map(child => {
+            {props.children && (props.children.map(child => {
                 return(
                     <div className="comment-box comment-reply">
                         <SingleComment
@@ -58,11 +56,11 @@ export default function Comment(props) {
                     </div>
                 )
             }))}
-            {!children && (
+            {!props.children && (
                 <div>
                     {showReplyBox ? (
                         <div>
-                            <button className="cancel-btn btn" onClick={() => setShowReplyBow(false)}>
+                            <button className="cancel-btn btn" onClick={() => setShowReplyBox(false)}>
                                 Cancel Reply
                             </button>
                             <CommentForm parentId={props.comment.id} slug={props.slug} />
