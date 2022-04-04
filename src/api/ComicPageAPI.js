@@ -16,7 +16,14 @@ const ComicPageAPI = {
     getPageObj: function(pageId) {
         const releventObjs = this.getRelValidObjs(pageId);
         if(releventObjs) {
-            return releventObjs.pageObj
+            return releventObjs.pageObj;
+        }
+        return null;
+    },
+    getPageUuid: function(pageId) {
+        const pageObj = this.getPageObj(pageId);
+        if(pageObj) {
+            return pageObj.page_uuid;
         }
         return null;
     },
