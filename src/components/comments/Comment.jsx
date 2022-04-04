@@ -10,7 +10,7 @@ import CommentForm from './CommentForm';
 export function SingleComment(props) {
     return(
         <div>
-            <div className="flex-container">
+            <div className="flex w-full">
                 <div className="flex comment-avatar">
                     {<img
                         src={`https://avatars.dicebear.com/api/big-smile/${props.comment.author_name}}.svg`}
@@ -18,17 +18,20 @@ export function SingleComment(props) {
                         width={100}
                     />}
                 </div>
-                <div className="flex">
-                    <p className="comment-author">
-                        {props.comment.author_name} <span>says</span>
-                    </p>
-                    <div className="comment-time">
-                        {props.comment.time && (<time>{moment(props.comment.time.toDateString()).calendar()}</time>)}
+                <div>
+                    <div className="flex justify-between">
+                        <p className="comment-author">
+                            {props.comment.author_name}
+                        </p>
+                        <div className="comment-time">
+                            {props.comment.time && (<time>{moment(props.comment.time.toDateString()).calendar()}</time>)}
+                        </div>
+                    </div>
+                    <div className="comment-content">
+                        {props.comment.content}
                     </div>
                 </div>
-                <div className="comment-content">
-                    {props.comment.content}
-                </div>
+
             </div>
         </div>
     );

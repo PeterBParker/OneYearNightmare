@@ -2,15 +2,21 @@ import PropTypes from "prop-types"
 
 import Comment from "./Comment"
 import CommentForm from "./CommentForm"
+import Title from "../generic/Title";
+import { useState } from "react";
 
 /**
  * Renders supplied comment data.
  */
 export default function Comments(props){
+    const [showCommentSubmit, setShowCommentSubmit] = useState(false);
+
     return(
-        <div className="comments-container">
-            <div className="card-header">Tell us what you think!</div>
-            <CommentForm slug={props.slug}/>
+        <div className="comments-container desktopPageCommentsContainer ">
+            <div className="py-4 px-8 bg-eggshell text-left flex flex-row items-center">
+                <Title text="Comments //"/>
+            </div>
+            
             <div className="comment-list">
                 {/* If there are comments, create a Comment component for each */}
                 {props.comments.length > 0 &&
@@ -32,6 +38,19 @@ export default function Comments(props){
                             )
                         })}
             </div>
+            {showCommentSubmit ? (
+                <div>
+                    <CommentForm slug={props.slug}/>
+                    <button className="cancel-comment-btn" onClick={e => setShowCommentSubmit(false)}>
+                        Cancel
+                    </button>
+                </div>
+            ) : (
+                <button className="add-comment-btn" onClick={e => setShowCommentSubmit(true)}>
+                    Add Comment
+                </button>
+            )}
+            
         </div>
     );
 }

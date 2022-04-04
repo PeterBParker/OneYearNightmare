@@ -25,23 +25,23 @@ export default function CommentForm(props) {
     return(
         <div className="comment-input-box">
             <form onSubmit={handleSubmit}>
-                <label htmlFor="name">
+                <label htmlFor="comment-name-input">
                     Name:
                     <input 
-                        id="name"
+                        id="comment-name-input"
                         type="text"
                         value={name}
                         onChange={e => setName(e.target.value)}
                         required
                     />
                 </label>
-                <label htmlFor="content">
+                <label htmlFor="comment-content-input">
                     Comment:
                     <textarea
                         id="comment"
                         onChange={e => setContent(e.target.value)}
                         value={content}
-                        name="comment"
+                        name="comment-content-input"
                         required="required"
                         cols="45"
                         rows="8"
