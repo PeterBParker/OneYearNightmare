@@ -11,7 +11,7 @@ export default function DesktopReadPageCards(props) {
         {
             author_name: "Nathan Harris",
             time: new Date(),
-            content: "Wow! I almost got into Harvard!",
+            content: "Wow! I almost got into Harvard! This is a crazy long story about my journey with applying to Harvard and how I was inspired by THIS VERY page. Anyway, I'm kinda rambling now, but I just really wanted to drive home how much I love what you guys are doing and respect the creative hustle and drive to bring something exciting and enriching into this world. Best of luck in your publishing journey and if you ever crowd source this let me know! :)",
             id: 1
         },
         {
@@ -19,6 +19,20 @@ export default function DesktopReadPageCards(props) {
             time: new Date(),
             content: "This takes me back to when I got into Harvard lol",
             id: 2 
+        },
+        {
+            author_name: "Sami Harris",
+            time: new Date(),
+            content: "Cool story, bro.",
+            parent_comment_id: 1,
+            id: 3
+        },
+        {
+            author_name: "Penee ONeil",
+            time: new Date(),
+            content: "Wow! Maybe you and Morghan could've met there!",
+            parent_comment_id: 1,
+            id: 4
         }
     ]
     const page_uuid = ComicPageAPI.getPageUuid(props.pageId)
