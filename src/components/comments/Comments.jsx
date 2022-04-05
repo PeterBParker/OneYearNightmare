@@ -41,14 +41,14 @@ export default function Comments(props){
             {showCommentSubmit ? (
                 <div>
                     <CommentForm slug={props.slug}/>
-                    <button className="cancel-comment-btn" onClick={e => setShowCommentSubmit(false)}>
+                    <div className="cancel-comment-btn btn" onClick={e => setShowCommentSubmit(false)}>
                         Cancel
-                    </button>
+                    </div>
                 </div>
             ) : (
-                <button className="add-comment-btn" onClick={e => setShowCommentSubmit(true)}>
+                <div className="add-comment-btn my-4 py-2 mx-4 btn bg-eggshell font-medium" onClick={e => setShowCommentSubmit(true)}>
                     Add Comment
-                </button>
+                </div>
             )}
             
         </div>

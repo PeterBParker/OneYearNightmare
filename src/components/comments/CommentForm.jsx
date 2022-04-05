@@ -6,46 +6,33 @@ import { useState } from "react"
  */
 export default function CommentForm(props) {
 
-    const [name, setName] = useState("");
     const [content, setContent] = useState("");
 
     const handleSubmit = async e => {
         e.preventDefault()
         let comment = {
-            author_name: name,
+            author_name: "name",
             content: content,
             parent_comment_id: props.parentId || null,
             time: new Date(),
         }
-        setName("")
         setContent("")
         console.log(comment)
     }
 
     return(
-        <div className="comment-input-box">
+        <div className="comment-input-box bg-eggshell mx-4 p-2">
             <form onSubmit={handleSubmit}>
-                <label htmlFor="comment-name-input">
-                    Name:
-                    <input 
-                        id="comment-name-input"
-                        type="text"
-                        value={name}
-                        onChange={e => setName(e.target.value)}
-                        required
-                    />
-                </label>
                 <label htmlFor="comment-content-input">
-                    Comment:
                     <textarea
                         id="comment"
                         onChange={e => setContent(e.target.value)}
                         value={content}
                         name="comment-content-input"
                         required="required"
-                        cols="45"
+                        cols="30"
                         rows="8"
-                    />
+                    >Write your comment here!</textarea>
                 </label>
                 <button type="submit" className="submit-btn">
                     Submit

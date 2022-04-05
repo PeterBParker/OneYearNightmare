@@ -663,6 +663,33 @@ body {
   background-image: linear-gradient(to bottom, rgba(255,255,255,1) 60%, rgba(255,255,255,0));
 }
 
+.comments-container {
+  max-height: 700px;
+  overflow-y: scroll;
+}
+
+.comment-box {
+  border-bottom: 1px solid #e0dcd1;
+}
+
+.comment-avatar {
+  border-radius: 4rem;
+  border: solid #e0dcd1; 
+  border-width: 1px;
+}
+
+.btn {
+  cursor: pointer;
+}
+
+.add-comment-btn {
+  transition: all .1s ease-in-out;
+}
+
+.add-comment-btn:hover {
+  transform: scale(1.03);
+}
+
 /*
  * Effects
  *
