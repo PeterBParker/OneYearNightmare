@@ -28,7 +28,7 @@ export default function ChapterBanner(props) {
 
     return(
         <div className="accordion my-4 mx-6 font-header text-3xl text-center cursor-pointer" id={props.bannerId}>
-            <div className={`accordion__banner py-4 ${isActive? "bg-mocha-dark text-eggshell": `${isMouseOver ? "bg-mocha-dark text-eggshell" : "bg-cream-dark"}`}  transition-colors`} onClick={() => setIsActive(() => !isActive)} onMouseEnter={() => setIsMouseOver(true)} onMouseLeave={() => setIsMouseOver(false)}>
+            <div className={`accordion__banner py-4 ${isActive? "bg-mocha-dark text-eggshell": `${isMouseOver ? "bg-mocha-dark text-eggshell" : "bg-cream-dark"}`}  transition-colors px-4`} onClick={() => setIsActive(() => !isActive)} onMouseEnter={() => setIsMouseOver(true)} onMouseLeave={() => setIsMouseOver(false)}>
                 {props.chapterName}
             </div>
             <div className="accordion__content">
