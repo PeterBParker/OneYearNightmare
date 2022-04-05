@@ -1,12 +1,12 @@
 {
-    "maxDisplayPage": 45,
-    "pageCount": 45,
+    "maxDisplayPage": 47,
+    "pageCount": 47,
     "seasonCount": 1,
     "seasons": [
         {
             "seasonName": "First Blood",
             "folderName": "first blood",
-            "numOfPages": 45,
+            "numOfPages": 47,
             "numOfChapters": 3,
             "id": 1,
             "chapters": [
@@ -359,7 +359,7 @@
                 {
                     "chapterName": "Chapter Two",
                     "folderName": "chapter2",
-                    "numOfPages": 12,
+                    "numOfPages": 14,
                     "id": 3,
                     "pages": [
                         {
@@ -481,6 +481,26 @@
                             "id": 45,
                             "user": "N1995",
                             "icon": "icons/Chap2-pg10-Icon.png"
+                        },
+                        {
+                            "pageNum": 13,
+                            "filename": "Chap2-pg11.jpg",
+                            "title": "Ride to school in the Millie Mobile",
+                            "message": "Guhhhh, I hate it when I can't really remember my dream but can kinda remember parts of it or at least get mad deja vu when something random happens later that day. It's like finishing an ice-cream cone and not being able to describe what it tasted like.",
+                            "datetime": "2022-04-03 21:08:06",
+                            "id": 46,
+                            "user": "N1995",
+                            "icon": "icons/Chap2-pg11-Icon.png"
+                        },
+                        {
+                            "pageNum": 14,
+                            "filename": "Chap2-pg12.jpg",
+                            "title": "Casper remembers the surgeon",
+                            "message": "Ya'll have any awkward stories from highschool? Haha yup me neither that's crazy! But if I did there may be one or two that started with the sudden urge to cold approach a girl.",
+                            "datetime": "2022-04-03 21:10:39",
+                            "id": 47,
+                            "user": "N1995",
+                            "icon": "icons/Chap2-pg12-Icon.png"
                         }
                     ]
                 }
