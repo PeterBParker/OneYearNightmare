@@ -690,6 +690,16 @@ body {
   transform: scale(1.03);
 }
 
+.comment-content-input {
+  width: 100%;
+  padding: 8px 12px;
+  box-sizing:border-box;
+  border: solid #000;
+  border-width: 1px;
+  border-radius: 0.5rem;
+}
+
+
 /*
  * Effects
  *
