@@ -21,22 +21,24 @@ export default function CommentForm(props) {
     }
 
     return(
-        <div className="comment-input-box bg-eggshell mx-4 p-2">
+        <div className="comment-input-box">
             <form onSubmit={handleSubmit}>
-                <label htmlFor="comment-content-input">
-                    <textarea
-                        id="comment"
-                        onChange={e => setContent(e.target.value)}
-                        value={content}
-                        name="comment-content-input"
-                        required="required"
-                        cols="30"
-                        rows="8"
-                    >Write your comment here!</textarea>
-                </label>
-                <button type="submit" className="submit-btn">
-                    Submit
-                </button>
+                <div className="flex comment-input-elements py-2 w-full">
+                    <div className="bg-eggshell py-2 px-2 basis-3/4 w-full">
+                        <textarea
+                            id="comment"
+                            className="comment-content-input"
+                            onChange={e => setContent(e.target.value)}
+                            value={content}
+                            name="comment-content-input"
+                            required="required"
+                            maxLength={500}
+                        />
+                    </div>
+                    <button type="submit" className="submit-btn btn text-center px-4 py-2 basis-1/4 font-medium text-lg bg-cream-dark">
+                        Submit
+                    </button>
+                </div>
             </form>
         </div>
     );
