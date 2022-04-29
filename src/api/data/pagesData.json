@@ -1,12 +1,12 @@
 {
-    "maxDisplayPage": 47,
-    "pageCount": 47,
+    "maxDisplayPage": 53,
+    "pageCount": 53,
     "seasonCount": 1,
     "seasons": [
         {
             "seasonName": "First Blood",
             "folderName": "first blood",
-            "numOfPages": 47,
+            "numOfPages": 53,
             "numOfChapters": 3,
             "id": 1,
             "chapters": [
@@ -359,7 +359,7 @@
                 {
                     "chapterName": "Chapter Two",
                     "folderName": "chapter2",
-                    "numOfPages": 14,
+                    "numOfPages": 20,
                     "id": 3,
                     "pages": [
                         {
@@ -501,6 +501,66 @@
                             "id": 47,
                             "user": "N1995",
                             "icon": "icons/Chap2-pg12-Icon.png"
+                        },
+                        {
+                            "pageNum": 15,
+                            "filename": "Chap2-Pg13.jpg",
+                            "title": "Oh yeah, it's all coming together.",
+                            "message": "*kronk voice* \"Oh yeah, it's all coming together.\"",
+                            "datetime": "2022-04-11 10:44:45",
+                            "id": 48,
+                            "user": "M1998",
+                            "icon": "icons/Chap2-Pg13-Icon.png"
+                        },
+                        {
+                            "pageNum": 16,
+                            "filename": "Chap2-pg14.jpg",
+                            "title": "Casper attempts an intervention, and is interventioned himself",
+                            "message": "Casper, my man, attempts an intervention...only to be subject to another intervention. Intervenception.",
+                            "datetime": "2022-04-11 10:51:40",
+                            "id": 49,
+                            "user": "M1998",
+                            "icon": "icons/Chap2-pg14-Icon.png"
+                        },
+                        {
+                            "pageNum": 17,
+                            "filename": "Chap2-pg15.jpg",
+                            "title": "Zylo confronts Casper",
+                            "message": "Happy Easter, everyone! I... I said HAPPY, oh forget it. If you're going to be like that, Zylo, might as well divert that pent up rage towards someone who deserves it... like whoever ordered all the snow this morning...",
+                            "datetime": "2022-04-18 12:08:05",
+                            "id": 50,
+                            "user": "M1998",
+                            "icon": "icons/Chap2-pg15-Icon.png"
+                        },
+                        {
+                            "pageNum": 18,
+                            "filename": "Chap2-pg16.jpg",
+                            "title": "Rose puts her foot in her mouth",
+                            "message": "HAHA how does that foot taste, Rose? ......wait. no. That came out weird. Cause putting your foot in your mouth--forget I said anything... (⊙﹏⊙)",
+                            "datetime": "2022-04-18 12:15:05",
+                            "id": 51,
+                            "user": "M1998",
+                            "icon": "icons/Chap2-pg16-Icon.png"
+                        },
+                        {
+                            "pageNum": 19,
+                            "filename": "Chap2-pg17.jpg",
+                            "title": "Casper Protecting Rose from Penguin Guy?",
+                            "message": "I didn't know Casper had it in him! Oh... oh wait, yup sweaty Casper's back. (っ °Д °;)っ Didn't take much.",
+                            "datetime": "2022-04-25 13:13:46",
+                            "id": 52,
+                            "user": "M1998",
+                            "icon": "icons/Chap2-pg17-Icon.png"
+                        },
+                        {
+                            "pageNum": 20,
+                            "filename": "Chap2-pg18.jpg",
+                            "title": "Vice Principal Lopez Appears Stage Left",
+                            "message": "RIP Casper's spotless record. His mom's gonna love this.",
+                            "datetime": "2022-04-25 13:20:06",
+                            "id": 53,
+                            "user": "M1998",
+                            "icon": "icons/Chap2-pg18-Icon.png"
                         }
                     ]
                 }
