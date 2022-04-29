@@ -60,7 +60,9 @@ export function SingleComment(props) {
 }
 
 SingleComment.propTypes = {
-    comment: PropTypes.object.isRequired
+    comment: PropTypes.object.isRequired,
+    isTopLevel: PropTypes.bool.isRequired,
+    slug: PropTypes.string.isRequired
 }
 
 /**
@@ -70,7 +72,7 @@ export default function Comment(props) {
     
     return(
         <div className="comment-box mx-4 my-2 pl-2 pr-6 py-2">
-            <SingleComment comment={props.comment} isTopLevel={true}/>
+            <SingleComment comment={props.comment} isTopLevel={true} slug={props.slug}/>
             {props.children && (props.children.map(child => {
                 return(
                     <div className="comment-reply ml-6 my-2">

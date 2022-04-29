@@ -17,11 +17,11 @@ export default function DesktopReadPageCards(props) {
     useEffect(async () => {
         const commentsQuery = query(collection(db, "page_comments"), where("page_id", "==", page_uuid));
         const querySnapshot = await getDocs(commentsQuery);
-        let comments = []
+        let commentData = []
         querySnapshot.forEach((doc) => {
-            comments.push({id: doc.id, ...doc.data()})
+            commentData.push({id: doc.id, ...doc.data()})
         })
-        setComments(comments)
+        setComments(commentData)
     }, [page_uuid])
     return (
         <>
