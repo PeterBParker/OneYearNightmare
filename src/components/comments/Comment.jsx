@@ -8,7 +8,7 @@ import CommentForm from './CommentForm';
  * Renders a single comment with basic author information
  */
 export function SingleComment(props) {
-    const [showReplyBox, setShowReplyBox] = useState(false)
+    const [showReplyBox, setShowReplyBox] = useState(false);
     return(
         <div>
             <div className="flex mb-2">
@@ -49,7 +49,7 @@ export function SingleComment(props) {
                                 )}
                             </div>
                             {showReplyBox ? (
-                                <CommentForm parentId={props.comment.id} slug={props.slug} />
+                                <CommentForm parentId={props.comment.id} slug={props.slug} onSubmitAction={() => setShowReplyBox(false)}/>
                             ): null}
                         </div>
                     ) : null}
@@ -69,17 +69,16 @@ SingleComment.propTypes = {
  * Renders a comment with its replies and the opportunity to reply.
  */
 export default function Comment(props) {
-    
     return(
         <div className="comment-box mx-4 my-2 pl-2 pr-6 py-2">
-            <SingleComment comment={props.comment} isTopLevel={true} slug={props.slug}/>
+            <SingleComment comment={props.comment} isTopLevel={true} slug={props.slug} key={props.comment.id}/>
             {props.children && (props.children.map(child => {
                 return(
-                    <div className="comment-reply ml-6 my-2">
+                    <div className="comment-reply ml-6 my-2" key={child.id}>
                         <SingleComment
                             comment={child}
-                            key={child.id}
                             isTopLevel={false}
+                            slug={props.slug}
                         />
                     </div>
                 )
