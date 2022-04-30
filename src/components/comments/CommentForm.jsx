@@ -1,5 +1,7 @@
 import PropTypes from "prop-types"
 import { useState } from "react"
+import {db} from "../../index";
+import {collection, addDoc, Timestamp} from "firebase/firestore";
 
 /**
  * Provides a form for a user to submit a comment
@@ -13,11 +15,14 @@ export default function CommentForm(props) {
         let comment = {
             author_name: "name",
             content: content,
+            num_likes: 0,
+            page_id: props.slug,
             parent_comment_id: props.parentId || null,
-            time: new Date(),
+            time_created: Timestamp.fromDate(new Date()),
         }
-        setContent("")
-        console.log(comment)
+        await addDoc(collection(db, "page_comments"), comment);
+        setContent("");
+        props.onSubmitAction();
     }
 
     return(

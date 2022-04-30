@@ -7,7 +7,7 @@ import {CookiesProvider} from 'react-cookie';
 import './styling/tailwind.output.css';
 
 import { initializeApp } from 'firebase/app';
-import { getFirestore } from 'firebase/firestore/lite';
+import { getFirestore } from 'firebase/firestore';
 import { getAuth } from "firebase/auth";
 import { getAnalytics } from "firebase/analytics";
 import { initializeAppCheck, ReCaptchaV3Provider } from "firebase/app-check";

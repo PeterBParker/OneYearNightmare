@@ -40,7 +40,7 @@ export default function Comments(props){
             </div>
             {showCommentSubmit ? (
                 <div className="mx-4 my-4">
-                    <CommentForm slug={props.slug}/>
+                    <CommentForm slug={props.slug} onSubmitAction={() => setShowCommentSubmit(false)}/>
                     <div className="cancel-comment-btn btn" onClick={e => setShowCommentSubmit(false)}>
                         Cancel
                     </div>

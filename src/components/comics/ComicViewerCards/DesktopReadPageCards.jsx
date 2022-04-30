@@ -4,7 +4,7 @@ import Comments from '../../comments/Comments';
 import ComicPageAPI from '../../../api/ComicPageAPI';
 import {useEffect, useState} from 'react';
 import {db} from '../../../index';
-import {collection, query, where, getDocs} from "firebase/firestore/lite";
+import {collection, query, where, getDocs} from "firebase/firestore";
 
 import discordBanner from '../../../assets/FINAL-ASSETS-072821/final assets/discord-banner-ill-CROPPED.png'
 

@@ -4,6 +4,9 @@
   - Make Comment header sticky
   - Style Form
   - Hook up to Database
+      * add auto refresh on submitting a comment
+      * add error handling if comment submission failed
+      * add ability to edit comment
   - Add Authentication/User data
 - Add tap on either side of page to navigate
 - Move/animate bookmark icon to top right of comic page.
