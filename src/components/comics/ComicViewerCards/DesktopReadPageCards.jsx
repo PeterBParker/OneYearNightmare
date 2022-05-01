@@ -4,7 +4,7 @@ import Comments from '../../comments/Comments';
 import ComicPageAPI from '../../../api/ComicPageAPI';
 import {useEffect, useState} from 'react';
 import {db} from '../../../index';
-import {collection, query, where, getDocs} from "firebase/firestore";
+import {collection, query, where, orderBy, onSnapshot} from "firebase/firestore";
 
 import discordBanner from '../../../assets/FINAL-ASSETS-072821/final assets/discord-banner-ill-CROPPED.png'
 
@@ -15,13 +15,18 @@ export default function DesktopReadPageCards(props) {
     const page_uuid = ComicPageAPI.getPageUuid(props.pageId)
 
     useEffect(async () => {
-        const commentsQuery = query(collection(db, "page_comments"), where("page_id", "==", page_uuid));
-        const querySnapshot = await getDocs(commentsQuery);
-        let commentData = []
-        querySnapshot.forEach((doc) => {
-            commentData.push({id: doc.id, ...doc.data()})
+        const commentsQuery = query(collection(db, "page_comments"), where("page_id", "==", page_uuid), orderBy("time_created"), orderBy("num_likes"));
+
+        const unsub = onSnapshot(commentsQuery, (snapshot) => {
+            let commentData = []
+            snapshot.forEach((doc) => {
+                commentData.push({id: doc.id, ...doc.data()})
+            })
+            setComments(commentData)
         })
-        setComments(commentData)
+        return function cleanup() {
+            unsub();
+        };
     }, [page_uuid])
     return (
         <>
