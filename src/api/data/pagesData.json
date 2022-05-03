@@ -1,12 +1,12 @@
 {
-    "maxDisplayPage": 53,
-    "pageCount": 53,
+    "maxDisplayPage": 55,
+    "pageCount": 55,
     "seasonCount": 1,
     "seasons": [
         {
             "seasonName": "First Blood",
             "folderName": "first blood",
-            "numOfPages": 53,
+            "numOfPages": 55,
             "numOfChapters": 3,
             "id": 1,
             "chapters": [
@@ -359,7 +359,7 @@
                 {
                     "chapterName": "Chapter Two",
                     "folderName": "chapter2",
-                    "numOfPages": 20,
+                    "numOfPages": 22,
                     "id": 3,
                     "pages": [
                         {
@@ -561,6 +561,26 @@
                             "id": 53,
                             "user": "M1998",
                             "icon": "icons/Chap2-pg18-Icon.png"
+                        },
+                        {
+                            "pageNum": 21,
+                            "filename": "Chap2-pg19.jpg",
+                            "title": "Zylo and Casper get detention",
+                            "message": "In this world, you're either a Casper or a Zylo. For me? 100% a Casper. I nearly peed my pants when I got written up by campus safety for stargazing on the crosscountry fields.",
+                            "datetime": "2022-05-01 20:06:13",
+                            "id": 54,
+                            "user": "N1995",
+                            "icon": "icons/Chap2-pg19-Icon.png"
+                        },
+                        {
+                            "pageNum": 22,
+                            "filename": "Chap2-pg20.jpg",
+                            "title": "Rose and Quill late for class...but not?",
+                            "message": "I don't think Quill's the OOoonly one trying to \"find someone\"... if you know what I mean 😉",
+                            "datetime": "2022-05-01 20:12:16",
+                            "id": 55,
+                            "user": "N1995",
+                            "icon": "icons/Chap2-pg20-Icon.png"
                         }
                     ]
                 }
