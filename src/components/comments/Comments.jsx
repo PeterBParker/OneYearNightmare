@@ -4,12 +4,15 @@ import Comment from "./Comment"
 import CommentForm from "./CommentForm"
 import Title from "../generic/Title";
 import { useState } from "react";
+import {SIGNIN_PAGE_PATH} from "../Main"
+import LinkButton from "../generic/LinkButton";
 
 /**
  * Renders supplied comment data.
  */
 export default function Comments(props){
     const [showCommentSubmit, setShowCommentSubmit] = useState(false);
+    const [loggedIn, setLoggedIn] = useState(false);
 
     return(
         <div className="comments-container desktopPageCommentsContainer ">
@@ -38,18 +41,23 @@ export default function Comments(props){
                             )
                         })}
             </div>
-            {showCommentSubmit ? (
-                <div className="mx-4 my-4">
-                    <CommentForm slug={props.slug} onSubmitAction={() => setShowCommentSubmit(false)}/>
-                    <div className="cancel-comment-btn btn" onClick={e => setShowCommentSubmit(false)}>
-                        Cancel
+            {loggedIn ? (
+                showCommentSubmit ? (
+                    <div className="mx-4 my-4">
+                        <CommentForm slug={props.slug} onSubmitAction={() => setShowCommentSubmit(false)}/>
+                        <div className="cancel-comment-btn btn" onClick={e => setShowCommentSubmit(false)}>
+                            Cancel
+                        </div>
                     </div>
-                </div>
-            ) : (
-                <div className="add-comment-btn my-4 py-2 mx-4 btn bg-eggshell font-medium" onClick={e => setShowCommentSubmit(true)}>
-                    Add Comment
-                </div>
+                ) : (
+                    <div className="grow-btn my-4 py-2 mx-4 btn bg-eggshell font-medium" onClick={e => setShowCommentSubmit(true)}>
+                        Add Comment
+                    </div>
+                )
+            ):(
+                <LinkButton to={SIGNIN_PAGE_PATH} styles="grow-btn btn my-4 py-2 mx-4 btn bg-eggshell font-medium" buttonContent="Log In"/>
             )}
+            
             
         </div>
     );
