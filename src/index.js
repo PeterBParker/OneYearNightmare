@@ -8,7 +8,7 @@ import './styling/tailwind.output.css';
 
 import { initializeApp } from 'firebase/app';
 import { getFirestore } from 'firebase/firestore';
-import { getAuth } from "firebase/auth";
+import { getAuth, connectAuthEmulator } from "firebase/auth";
 import { getAnalytics } from "firebase/analytics";
 import { initializeAppCheck, ReCaptchaV3Provider } from "firebase/app-check";
 
@@ -39,6 +39,10 @@ const appCheck = initializeAppCheck(firebaseApp, {
 export const analytics = getAnalytics(firebaseApp);
 export const db = getFirestore(firebaseApp);
 export const auth = getAuth(firebaseApp);
+
+if (window.location.hostname == "localhost") {
+  connectAuthEmulator(auth, "http://localhost:9099"); // to use the emulator run "firebase emulators:start"
+}
 
 ReactDOM.render(
   <React.StrictMode>

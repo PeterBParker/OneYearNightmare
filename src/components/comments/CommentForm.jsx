@@ -19,6 +19,7 @@ export default function CommentForm(props) {
             page_id: props.slug,
             parent_comment_id: props.parentId || null,
             time_created: Timestamp.fromDate(new Date()),
+            liked_by_uids: null
         }
         await addDoc(collection(db, "page_comments"), comment);
         setContent("");

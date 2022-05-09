@@ -1,11 +1,11 @@
-import { useState } from 'react';
 import {Switch, Route, useLocation} from 'react-router-dom';
 import Archive from './comics/archive/Archive';
 import ComicRouter from './comics/ComicRouter';
 import Creators from './creators/about/Creators';
 import Support from './creators/supportUsCards/Support';
 import Home from './Home';
-import Pages from './comics/navigation/desktop/Pages';
+import SignIn from './users/pages/SignIn';
+
 import { useMediaQuery } from 'react-responsive';
 import querySizes from '../styling/breakpoints.json';
 
@@ -19,6 +19,7 @@ export const COMIC_VIEWER_PATH = '/read';
 export const SUPPORT_PAGE_PATH = '/support';
 export const ARCHIVE_PAGE_PATH = '/archive';
 export const CREATIVES_PAGE_PATH = '/creatives';
+export const SIGNIN_PAGE_PATH = '/login';
 
 export const SNAP_TO_PAGE_PATH = 'snap-to-page';
 
@@ -65,6 +66,9 @@ export default function Main(props) {
                 </Route>
                 <Route path={ARCHIVE_PAGE_PATH}>
                     <Archive />
+                </Route>
+                <Route path={SIGNIN_PAGE_PATH}>
+                    <SignIn />
                 </Route>
             </Switch>
         </div>

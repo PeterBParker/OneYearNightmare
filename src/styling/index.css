@@ -682,11 +682,11 @@ body {
   cursor: pointer;
 }
 
-.add-comment-btn {
+.grow-btn {
   transition: all .1s ease-in-out;
 }
 
-.add-comment-btn:hover {
+.grow-btn:hover {
   transform: scale(1.03);
 }
 
