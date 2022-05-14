@@ -1,12 +1,12 @@
 {
-    "maxDisplayPage": 55,
-    "pageCount": 55,
+    "maxDisplayPage": 57,
+    "pageCount": 57,
     "seasonCount": 1,
     "seasons": [
         {
             "seasonName": "First Blood",
             "folderName": "first blood",
-            "numOfPages": 55,
+            "numOfPages": 57,
             "numOfChapters": 3,
             "id": 1,
             "chapters": [
@@ -359,7 +359,7 @@
                 {
                     "chapterName": "Chapter Two",
                     "folderName": "chapter2",
-                    "numOfPages": 22,
+                    "numOfPages": 24,
                     "id": 3,
                     "pages": [
                         {
@@ -581,6 +581,26 @@
                             "id": 55,
                             "user": "N1995",
                             "icon": "icons/Chap2-pg20-Icon.png"
+                        },
+                        {
+                            "pageNum": 23,
+                            "filename": "Chap2-pg21.jpg",
+                            "title": "Spooky School Wanderings",
+                            "message": "Yech. Lunch hasn't even happened yet, and those tables are...hygienically challenged. Whoever is in charge of cleaning those tables needs a raise. Or to be fired. Or to get a raise, and then get fired.",
+                            "datetime": "2022-05-09 12:47:56",
+                            "id": 56,
+                            "user": "N1995",
+                            "icon": "icons/Chap2-pg21-Icon.png"
+                        },
+                        {
+                            "pageNum": 24,
+                            "filename": "Chap2-pg22.jpg",
+                            "title": "School Eavesdropping Part 1",
+                            "message": "Once there was a student body vote on the most hated thing in the school, and while the lunch table filth was the official first place winner, everyone knew the ballot write-in's for Vice Principal Lopez won by a vast majority.",
+                            "datetime": "2022-05-09 12:54:47",
+                            "id": 57,
+                            "user": "N1995",
+                            "icon": "icons/Chap2-pg22-Icon.png"
                         }
                     ]
                 }
