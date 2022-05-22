@@ -1,12 +1,12 @@
 {
-    "maxDisplayPage": 57,
-    "pageCount": 57,
+    "maxDisplayPage": 59,
+    "pageCount": 59,
     "seasonCount": 1,
     "seasons": [
         {
             "seasonName": "First Blood",
             "folderName": "first blood",
-            "numOfPages": 57,
+            "numOfPages": 59,
             "numOfChapters": 3,
             "id": 1,
             "chapters": [
@@ -359,7 +359,7 @@
                 {
                     "chapterName": "Chapter Two",
                     "folderName": "chapter2",
-                    "numOfPages": 24,
+                    "numOfPages": 26,
                     "id": 3,
                     "pages": [
                         {
@@ -601,6 +601,26 @@
                             "id": 57,
                             "user": "N1995",
                             "icon": "icons/Chap2-pg22-Icon.png"
+                        },
+                        {
+                            "pageNum": 25,
+                            "filename": "Chap2-pg23.jpg",
+                            "title": "Should have burned those bloody clothes",
+                            "message": "Red dress? They're robes, Chief. If they were dresses I would have drawn them as such.🙄 On another note, who else would pay money to see Vice Principal Lopez and Chief Garrison get a few punches in? ✋🥊",
+                            "datetime": "2022-05-16 15:31:31",
+                            "id": 58,
+                            "user": "M1998",
+                            "icon": "icons/Chap2-pg23-Icon.png"
+                        },
+                        {
+                            "pageNum": 26,
+                            "filename": "Chap2-Pg24.jpg",
+                            "title": "Stumbled upon Millie giving a head massage",
+                            "message": "It would seem Millie is a fan of The Killers.......the more you know! Understanding one's music taste is a window into their soul, if they have one. 💀",
+                            "datetime": "2022-05-16 15:34:53",
+                            "id": 59,
+                            "user": "M1998",
+                            "icon": "icons/Chap2-Pg24-Icon.png"
                         }
                     ]
                 }
