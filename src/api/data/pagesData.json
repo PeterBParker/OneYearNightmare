@@ -1,12 +1,12 @@
 {
-    "maxDisplayPage": 59,
-    "pageCount": 59,
+    "maxDisplayPage": 61,
+    "pageCount": 61,
     "seasonCount": 1,
     "seasons": [
         {
             "seasonName": "First Blood",
             "folderName": "first blood",
-            "numOfPages": 59,
+            "numOfPages": 61,
             "numOfChapters": 3,
             "id": 1,
             "chapters": [
@@ -359,7 +359,7 @@
                 {
                     "chapterName": "Chapter Two",
                     "folderName": "chapter2",
-                    "numOfPages": 26,
+                    "numOfPages": 28,
                     "id": 3,
                     "pages": [
                         {
@@ -621,6 +621,26 @@
                             "id": 59,
                             "user": "M1998",
                             "icon": "icons/Chap2-Pg24-Icon.png"
+                        },
+                        {
+                            "pageNum": 27,
+                            "filename": "Chap2-Pg25.jpg",
+                            "title": "Millie makes speedy escape through ceiling",
+                            "message": "Millie exits stage up.",
+                            "datetime": "2022-05-23 11:54:29",
+                            "id": 60,
+                            "user": "M1998",
+                            "icon": "icons/Chap2-Pg25-Icon.png"
+                        },
+                        {
+                            "pageNum": 28,
+                            "filename": "Chap2-Pg26.jpg",
+                            "title": "Rose pushed Lopez a little too far",
+                            "message": "Lopez got dog owner/toddler mom energy when they see they're baby horking down on something they know ain't food.",
+                            "datetime": "2022-05-23 12:01:03",
+                            "id": 61,
+                            "user": "M1998",
+                            "icon": "icons/Chap2-Pg26-Icon.png"
                         }
                     ]
                 }
