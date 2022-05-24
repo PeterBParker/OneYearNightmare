@@ -1,8 +1,20 @@
 import * as firebaseui from "firebaseui";
-import { EmailAuthProvider } from "firebase/auth";
+import { EmailAuthProvider, signOut } from "firebase/auth";
 import React from "react";
 import { useEffect } from "react";
-import { auth } from "../../..";
+import { auth } from "../..";
+import useFirebaseAuth from "./hooks/useFirebaseAuth";
+
+/**
+ *
+ * @param {firebase.auth.User} user
+ */
+const handleSignedInUser = (user) => {};
+
+const handleSignedOutUser = () => {
+  document.getElementById("user-signed-in").style.display = "none";
+  document.getElementById("user-signed-out").style.display = "block";
+};
 
 const getUiConfig = () => {
   var uiConfig = {
@@ -32,6 +44,7 @@ const getUiConfig = () => {
       {
         provider: EmailAuthProvider.PROVIDER_ID,
         signInMethod: EmailAuthProvider.EMAIL_LINK_SIGN_IN_METHOD,
+        requireDisplayName: true,
         // Allow the user the ability to complete sign-in cross device, including
         // the mobile apps specified in the ActionCodeSettings object below.
         forceSameDevice: false,
@@ -43,6 +56,38 @@ const getUiConfig = () => {
     privacyPolicyUrl: "<your-privacy-policy-url>",
   };
   return uiConfig;
+};
+
+const SignInToUserProfile = () => {
+  const authUser = useFirebaseAuth(auth);
+
+  // TODO Fix the first render of the sign in page before displaying the user profile
+  return (
+    <React.Fragment>
+      {authUser ? <UserProfile user={authUser} /> : <SignIn />}
+    </React.Fragment>
+  );
+};
+
+const UserProfile = (user) => {
+  return (
+    <div>
+      <h1>Signed In! Welcome, {user.displayName}</h1>
+      <button
+        onClick={() =>
+          signOut(auth)
+            .then(() => {
+              console.log("Successfully Signed Out!");
+            })
+            .catch((error) => {
+              console.log("Failed to Sign Out. Error:", error);
+            })
+        }
+      >
+        Sign Out
+      </button>
+    </div>
+  );
 };
 
 const SignIn = () => {
@@ -57,11 +102,10 @@ const SignIn = () => {
 
   return (
     <div>
-      <h1>Welcome to My Awesome App</h1>
       <div id="firebaseui-auth-container"></div>
       <div id="loader">Loading...</div>
     </div>
   );
 };
 
-export default SignIn;
+export default SignInToUserProfile;
