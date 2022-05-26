@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "../../header/Header";
-import SignInToUserProfile from "../SignInToUserProfile";
+import SignInToUserProfile from "../components/SignInToUserProfile";
 
 const SignInPage = () => {
   return (

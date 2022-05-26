@@ -1,9 +1,10 @@
 import * as firebaseui from "firebaseui";
-import { EmailAuthProvider, signOut } from "firebase/auth";
+import { EmailAuthProvider } from "firebase/auth";
 import React from "react";
 import { useEffect } from "react";
-import { auth } from "../..";
-import useFirebaseAuth from "./hooks/useFirebaseAuth";
+import { auth } from "../../..";
+import useFirebaseAuth from "../hooks/useFirebaseAuth";
+import UserProfile from "./UserProfile";
 
 /**
  *
@@ -66,27 +67,6 @@ const SignInToUserProfile = () => {
     <React.Fragment>
       {authUser ? <UserProfile user={authUser} /> : <SignIn />}
     </React.Fragment>
-  );
-};
-
-const UserProfile = (user) => {
-  return (
-    <div>
-      <h1>Signed In! Welcome, {user.displayName}</h1>
-      <button
-        onClick={() =>
-          signOut(auth)
-            .then(() => {
-              console.log("Successfully Signed Out!");
-            })
-            .catch((error) => {
-              console.log("Failed to Sign Out. Error:", error);
-            })
-        }
-      >
-        Sign Out
-      </button>
-    </div>
   );
 };
 
