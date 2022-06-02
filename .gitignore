@@ -23,7 +23,6 @@
 .env.production.local
 .vscode
 /.firebase/
-hosting.**.cache
 
 npm-debug.log*
 firestore-debug.log*
