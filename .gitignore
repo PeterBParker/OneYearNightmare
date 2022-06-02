@@ -22,8 +22,11 @@
 .env.test.local
 .env.production.local
 .vscode
+/.firebase/
+hosting.**.cache
 
 npm-debug.log*
+firestore-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
