@@ -1,8 +1,24 @@
 rules_version = '2';
 service firebase.storage {
   match /b/{bucket}/o {
+    // Rule 1: Users cannot write  or read from any other table
     match /page_comments/{comment} {
-      allow read, write: if request.auth!=null;
+      // Rule 2: User can Read all comments even if not logged in
+      allow read;
+      // Rule 3: User can Write comments only if they are logged in and if their write 
+      //         is attributed TO the user that is logged in
+      // Rule 4: User can only edit comments they wrote if they are logged in
+      allow write: if request.auth!=null && request.auth.currentUser.displayName==resource.data.author_name;
+
+      // TODO Rule 5: Users cannot change their own comment like value
+      
+      // TODO Rule 6: Users can only delete their own comments
+
+    }
+
+    match /users/{user} {
+      allow write: if request.auth!=null && request.uid==resource.data.uid;
+      allow read;
     }
   }
 }

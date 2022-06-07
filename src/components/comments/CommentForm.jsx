@@ -13,7 +13,7 @@ export default function CommentForm(props) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     let comment = {
-      author_name: auth.currentUser.displayName,
+      author_uid: auth.currentUser.uid,
       content: content,
       num_likes: 0,
       page_id: props.slug,

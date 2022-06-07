@@ -1,17 +1,23 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { signOut, updateProfile } from "firebase/auth";
 import { auth } from "../../..";
+import { db } from "../../../index";
+import { collection, setDoc, doc, Timestamp } from "firebase/firestore";
+import { getDisplayName } from "../utils";
 
 const UserProfile = () => {
-  console.log(auth.currentUser.displayName);
   return auth.currentUser.displayName ? <DisplayInfo /> : <InitializeInfo />;
 };
 
 const InitializeInfo = () => {
   const [name, setName] = useState("");
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const changeDisplayName = async (new_name) => {
+    let userDoc = {
+      display_name: new_name,
+      last_updated: Timestamp.fromDate(new Date()),
+    };
+    await setDoc(doc(collection(db, "users"), auth.currentUser.uid), userDoc);
     updateProfile(auth.currentUser, {
       displayName: name,
     }).then(
@@ -22,6 +28,11 @@ const InitializeInfo = () => {
         console.log("An error occured while updating profile:", error);
       }
     );
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    await changeDisplayName(name);
   };
   return (
     <div>
@@ -45,12 +56,20 @@ const InitializeInfo = () => {
 };
 
 const DisplayInfo = () => {
+  const [displayName, setDisplayName] = useState("");
+
+  useEffect(() => {
+    getDisplayName(auth.currentUser.uid).then((name) => {
+      setDisplayName(name);
+    });
+  }, [auth.currentUser]);
+
   return (
     <div>
       <div className="cardHeader">User Profile</div>
       <div className="grid">
         <div>Profile Picture Placeholder</div>
-        <div>Display Name: {auth.currentUser.displayName}</div>
+        <div>Display Name: {displayName}</div>
         <div>Delete Account</div>
       </div>
       <SignOutButton />

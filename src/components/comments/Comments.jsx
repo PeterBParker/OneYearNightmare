@@ -6,7 +6,7 @@ import Title from "../generic/Title";
 import { useState } from "react";
 import { SIGNIN_PAGE_PATH } from "../Main";
 import LinkButton from "../generic/LinkButton";
-import { auth } from "../..";
+import { auth } from "../../index";
 import useFirebaseAuth from "../users/hooks/useFirebaseAuth";
 
 /**

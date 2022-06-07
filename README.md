@@ -2,23 +2,23 @@
 
 - Make Comments
   - Make Comment header sticky
-  - Style Form
   - Hook up to Database
-      * add error handling if comment submission failed
-        * add visual state to indicate pending server write
-        * add visual state to indicate completed server write
-      * add ability to edit comment
-      * add pagination
-      * add like button and display to comments
-      * Retrieve top three comments by likes, and the rest sorted by date newest first
+    - Figure out the uncaught Error if the FirebaseUI widget element isn't found on page
+    - add error handling if comment submission failed
+      - add visual state to indicate pending server write
+      - add visual state to indicate completed server write
+    - add ability to edit comment
+    - add pagination
+    - add like button and display to comments
+    - Retrieve top three comments by likes, and the rest sorted by date newest first
   - Add Authentication/User data
-      * add login interaction
-      * add sign up interaction
-        * store email and password
-        * get terms and conditions
-          * add display module for terms and conditions
-      * add database enforcement of editing only comments owned by the currently signed in user
-      * populate comment data with user info
+    - Add automatic refresh when display name is set
+    - Style User profile
+    - Add View Profile/Login Link to main menu
+    - get terms and conditions
+      - add display module for terms and conditions
+    - add database enforcement of editing only comments owned by the currently signed in user
+    - populate comment data with user info
 - Add tap on either side of page to navigate
 - Move/animate bookmark icon to top right of comic page.
 - Optimize performance
