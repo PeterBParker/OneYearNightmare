@@ -1,12 +1,12 @@
 {
-    "maxDisplayPage": 64,
-    "pageCount": 64,
+    "maxDisplayPage": 68,
+    "pageCount": 68,
     "seasonCount": 1,
     "seasons": [
         {
             "seasonName": "First Blood",
             "folderName": "first blood",
-            "numOfPages": 64,
+            "numOfPages": 68,
             "numOfChapters": 3,
             "id": 1,
             "chapters": [
@@ -359,7 +359,7 @@
                 {
                     "chapterName": "Chapter Two",
                     "folderName": "chapter2",
-                    "numOfPages": 31,
+                    "numOfPages": 35,
                     "id": 3,
                     "pages": [
                         {
@@ -671,6 +671,46 @@
                             "id": 64,
                             "user": "M1998",
                             "icon": "icons/Chap2-pg28-Icon.png"
+                        },
+                        {
+                            "pageNum": 32,
+                            "filename": "Chap2-pg29.jpg",
+                            "title": "What's Going On???",
+                            "message": "Can you sum up your entire thought process over the course of a Monday school day with a 3-word sentence? Can relate.",
+                            "datetime": "2022-06-13 12:38:38",
+                            "id": 65,
+                            "user": "M1998",
+                            "icon": "icons/Chap2-pg29-Icon.png"
+                        },
+                        {
+                            "pageNum": 33,
+                            "filename": "Chap2-Pg30.jpg",
+                            "title": "3 o'clock detention crew",
+                            "message": "Ah, the motley Detention Crew spearheaded by the famed Mr. Barr, still down for his \"old person\" nap...",
+                            "datetime": "2022-06-13 12:44:03",
+                            "id": 66,
+                            "user": "M1998",
+                            "icon": "icons/Chap2-Pg30-Icon.png"
+                        },
+                        {
+                            "pageNum": 34,
+                            "filename": "Chap2-Pg31.jpg",
+                            "title": "Rubber Band Burns",
+                            "message": "Update coming in later than usual due to us roadtrippin' south for a few days. Nothing like a nice bumpy carride to put artist behind, I've discovered.",
+                            "datetime": "2022-06-20 18:17:25",
+                            "id": 67,
+                            "user": "N1995",
+                            "icon": "icons/Chap2-Pg31-Icon.png"
+                        },
+                        {
+                            "pageNum": 35,
+                            "filename": "Chap2-Pg32.jpg",
+                            "title": "Quill Quips",
+                            "message": "Oof. Bullies suck, but getting laughed out of a room by the girl you asked out is pretttty rough. Let's hope Rose's menacing baseball ex boyfriend is level-headed enough to keep the peace.",
+                            "datetime": "2022-06-20 18:20:35",
+                            "id": 68,
+                            "user": "N1995",
+                            "icon": "icons/Chap2-Pg32-Icon.png"
                         }
                     ]
                 }
