@@ -11,7 +11,7 @@ import {
   orderBy,
   onSnapshot,
 } from "firebase/firestore";
-
+import { PAGE_COMMENTS_TABLE } from "../../comments/utils/constants";
 import discordBanner from "../../../assets/FINAL-ASSETS-072821/final assets/discord-banner-ill-CROPPED.png";
 
 export default function DesktopReadPageCards(props) {
@@ -21,7 +21,7 @@ export default function DesktopReadPageCards(props) {
 
   useEffect(async () => {
     const commentsQuery = query(
-      collection(db, "page_comments"),
+      collection(db, PAGE_COMMENTS_TABLE),
       where("page_id", "==", page_uuid),
       orderBy("time_created"),
       orderBy("num_likes")

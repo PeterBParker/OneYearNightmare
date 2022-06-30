@@ -6,6 +6,7 @@ import { auth } from "../..";
 import { db } from "../../index";
 import { doc, getDoc } from "firebase/firestore";
 import { getDisplayName } from "../users/utils";
+import EditCommentForm from "./EditCommentForm";
 
 /**
  * Renders a single comment with basic author information
@@ -13,6 +14,7 @@ import { getDisplayName } from "../users/utils";
 export function SingleComment(props) {
   const [showReplyBox, setShowReplyBox] = useState(false);
   const [displayName, setDisplayName] = useState("");
+  const [editComment, setEditComment] = useState(false);
 
   useEffect(() => {
     getDisplayName(props.comment.author_uid).then((display_name) => {
@@ -48,10 +50,16 @@ export function SingleComment(props) {
               )}
             </div>
           </div>
-          <div className="comment-content text-left">
+          {editComment ?
+            <EditCommentForm 
+              initialContent={props.comment.content}
+              slug={props.slug}
+              callback={() => setEditComment(false)}
+              comment={props.comment}/>
+          :
+            <div className="comment-content text-left">
             {props.comment.content}
-          </div>
-          {props.isTopLevel ? (
+            {props.isTopLevel ? (
             <div>
               <div className="flex justify-start">
                 {showReplyBox ? (
@@ -62,12 +70,21 @@ export function SingleComment(props) {
                     Cancel Reply
                   </span>
                 ) : (
-                  <span
-                    className="reply-btn btn text-left font-medium text-green-dark"
+                  <div className="w-full">
+                    <span
+                    className="reply-btn btn text-left font-medium text-green-dark float-left"
                     onClick={() => setShowReplyBox(true)}
-                  >
-                    Reply
-                  </span>
+                    >
+                      Reply
+                    </span>
+                    <span
+                      className="reply-btn btn text-left font-medium text-green-dark float-right"
+                      onClick={() => setEditComment(true)}
+                      >
+                        Edit
+                    </span>
+                  </div>
+                  
                 )}
               </div>
               {showReplyBox ? (
@@ -79,6 +96,8 @@ export function SingleComment(props) {
               ) : null}
             </div>
           ) : null}
+          </div>
+          }
         </div>
       </div>
     </div>

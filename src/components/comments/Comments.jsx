@@ -8,6 +8,7 @@ import { SIGNIN_PAGE_PATH } from "../Main";
 import LinkButton from "../generic/LinkButton";
 import { auth } from "../../index";
 import useFirebaseAuth from "../users/hooks/useFirebaseAuth";
+import CreateNewCommentForm from "./CreateNewCommentForm";
 
 /**
  * Renders supplied comment data.
@@ -50,9 +51,9 @@ export default function Comments(props) {
       {authUser ? (
         showCommentSubmit ? (
           <div className="mx-4 my-4">
-            <CommentForm
+            <CreateNewCommentForm
               slug={props.slug}
-              onSubmitAction={() => setShowCommentSubmit(false)}
+              callback={() => setShowCommentSubmit(false)}
             />
             <div
               className="cancel-comment-btn btn"
