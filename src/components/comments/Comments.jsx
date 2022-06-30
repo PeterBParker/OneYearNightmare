@@ -1,7 +1,6 @@
 import PropTypes from "prop-types";
 
 import Comment from "./Comment";
-import CommentForm from "./CommentForm";
 import Title from "../generic/Title";
 import { useState } from "react";
 import { SIGNIN_PAGE_PATH } from "../Main";

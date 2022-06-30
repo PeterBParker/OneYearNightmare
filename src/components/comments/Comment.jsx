@@ -7,6 +7,7 @@ import { db } from "../../index";
 import { doc, getDoc } from "firebase/firestore";
 import { getDisplayName } from "../users/utils";
 import EditCommentForm from "./EditCommentForm";
+import CreateNewCommentForm from "./CreateNewCommentForm";
 
 /**
  * Renders a single comment with basic author information
@@ -15,12 +16,17 @@ export function SingleComment(props) {
   const [showReplyBox, setShowReplyBox] = useState(false);
   const [displayName, setDisplayName] = useState("");
   const [editComment, setEditComment] = useState(false);
+  const [belongsToCurrUser, setBelongsToCurrUser] = useState(auth.currentUser.uid === props.comment.author_uid)
 
   useEffect(() => {
     getDisplayName(props.comment.author_uid).then((display_name) => {
       setDisplayName(display_name);
     });
   });
+
+  useEffect(() => {
+    setBelongsToCurrUser(auth.currentUser.uid === props.comment.author_uid)
+  }, [auth.currentUser])
 
   return (
     <div>
@@ -50,7 +56,7 @@ export function SingleComment(props) {
               )}
             </div>
           </div>
-          {editComment ?
+          {editComment && belongsToCurrUser ?
             <EditCommentForm 
               initialContent={props.comment.content}
               slug={props.slug}
@@ -59,7 +65,6 @@ export function SingleComment(props) {
           :
             <div className="comment-content text-left">
             {props.comment.content}
-            {props.isTopLevel ? (
             <div>
               <div className="flex justify-start">
                 {showReplyBox ? (
@@ -71,31 +76,40 @@ export function SingleComment(props) {
                   </span>
                 ) : (
                   <div className="w-full">
-                    <span
-                    className="reply-btn btn text-left font-medium text-green-dark float-left"
-                    onClick={() => setShowReplyBox(true)}
-                    >
-                      Reply
-                    </span>
-                    <span
+                    {
+                      props.isTopLevel ?
+                        <span
+                          className="reply-btn btn text-left font-medium text-green-dark float-left"
+                          onClick={() => setShowReplyBox(true)}
+                        >
+                          Reply
+                        </span>
+                      :
+                      null
+                    }
+                    
+                    {belongsToCurrUser ?
+                      <span
                       className="reply-btn btn text-left font-medium text-green-dark float-right"
                       onClick={() => setEditComment(true)}
                       >
                         Edit
                     </span>
+                    :
+                    null
+                    }
                   </div>
                   
                 )}
               </div>
               {showReplyBox ? (
-                <CommentForm
+                <CreateNewCommentForm
                   parentId={props.comment.id}
                   slug={props.slug}
-                  onSubmitAction={() => setShowReplyBox(false)}
+                  callback={() => setShowReplyBox(false)}
                 />
               ) : null}
             </div>
-          ) : null}
           </div>
           }
         </div>

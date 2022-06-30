@@ -24,7 +24,13 @@ function CreateNewCommentForm(props) {
       };
 
     return (
-        <CommentForm onSubmitAction={createNewComment} slug={props.slug} content={content} setContent={(a) => setContent(a)}/>
+        <CommentForm 
+            onSubmitAction={createNewComment}
+            slug={props.slug}
+            parentId={props.parentId}
+            content={content}
+            setContent={(a) => setContent(a)}
+        />
     );
 }
 
