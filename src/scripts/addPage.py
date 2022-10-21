@@ -50,6 +50,7 @@ def generateThumbnail(image_path):
     """
     iconer = IconMaker()
     icon_path = image_path.parent / _ICON_REL_DIR / iconer.getIconName(image_path)
+    icon_path.parent.mkdir(exist_ok=True)
     iconer.iconify_file((200, 200), image_path, icon_path)
     return icon_path
 
@@ -95,7 +96,6 @@ def addNewPage(seasonName, chapterName, title, message, filepath, user):
     copyfile(filepath, destFilepath)
 
     # Generate icon and add it to db
-
     icon_path = generateThumbnail(destFilepath)
 
     newPage = {
@@ -149,16 +149,15 @@ def createNewChapter(seasonName):
     seasonIndex = getSeasonIndex(seasonName)
     season = getSeason(seasonName)
 
-    chapterNum = season["numOfChapters"] + 1
+    chapterNum = season["numOfChapters"]
     chapterName = "Chapter " + num2words(chapterNum).capitalize()
 
     # Make folder
     folderName = "chapter" + str(chapterNum)
-    print("This is the folderName: ", folderName)
-    input("Pause")
     makeDirectory(_DIR_PREFIX + season["folderName"] + "/" + folderName)
-
-    addChapter(seasonName, chapterName, folderName, 0, chapterNum, [])
+    lastChapName = getLastChapterNameInSeason(seasonName)
+    lastChap = getChapterInSeason(seasonName, lastChapName)
+    addChapter(seasonName, chapterName, folderName, 0, lastChap["id"]+1, [])
     return chapterName
 
 
