@@ -1,13 +1,13 @@
 {
-  "maxDisplayPage": 69,
-  "pageCount": 69,
+  "maxDisplayPage": 94,
+  "pageCount": 94,
   "seasonCount": 1,
   "seasons": [
     {
       "seasonName": "First Blood",
       "folderName": "first blood",
-      "numOfPages": 69,
-      "numOfChapters": 3,
+      "numOfPages": 94,
+      "numOfChapters": 4,
       "id": 1,
       "chapters": [
         {
@@ -359,7 +359,7 @@
         {
           "chapterName": "Chapter Two",
           "folderName": "chapter2",
-          "numOfPages": 36,
+          "numOfPages": 56,
           "id": 3,
           "pages": [
             {
@@ -721,6 +721,264 @@
               "id": 69,
               "user": "M1998",
               "icon": "icons/Chap2-Pg33-Icon.png"
+            },
+            {
+              "pageNum": 37,
+              "filename": "Chap2-Pg34.jpg",
+              "title": "Rose and Chuck back together...?",
+              "message": "Be thankful you only have to read Chuck...I have to sketch, ink, color, and shade all 15 or so panels of the jerkface. TT_TT",
+              "datetime": "2022-07-04 09:05:40",
+              "id": 70,
+              "user": "M1998",
+              "icon": "icons/Chap2-Pg34-Icon.png"
+            },
+            {
+              "pageNum": 38,
+              "filename": "Chap2-Pg35.jpg",
+              "title": "Oh, so Chuck might know what happened to Sam",
+              "message": "Yeah, with gas being $28.99 a gallon...that doesn't sound like something you just \"borrow.\" And I'm not making that number up neither, check the prologue if you don't believe me ;)",
+              "datetime": "2022-07-11 10:45:36",
+              "id": 71,
+              "user": "M1998",
+              "icon": "icons/Chap2-Pg35-Icon.png"
+            },
+            {
+              "pageNum": 39,
+              "filename": "Chap2-Pg36.jpg",
+              "title": "Sometimes it's best not to provoke the school jerk, Casper",
+              "message": "*munches softly*",
+              "datetime": "2022-07-18 20:10:24",
+              "id": 72,
+              "user": "M1998",
+              "icon": "icons/Chap2-Pg36-Icon.png"
+            },
+            {
+              "pageNum": 40,
+              "filename": "Chap2-Pg37.jpg",
+              "title": "Turning over a new leaf...",
+              "message": "You ever catch yourself mid-story and realize that maybe telling this story was a bad...bad idea? But there's no way out of it because at that point, you have the room's full attention? ...yeaaah, Nate and I like to write what we know.",
+              "datetime": "2022-07-25 12:19:48",
+              "id": 73,
+              "user": "M1998",
+              "icon": "icons/Chap2-Pg37-Icon.png"
+            },
+            {
+              "pageNum": 41,
+              "filename": "Chap2-Pg38.jpg",
+              "title": "We Gotta LEAF!!",
+              "message": "Excuse me Casper, I believe you mean \"We gotta LEAF! He's Coming!\" ",
+              "datetime": "2022-08-01 09:48:59",
+              "id": 74,
+              "user": "M1998",
+              "icon": "icons/Chap2-Pg38-Icon.png"
+            },
+            {
+              "pageNum": 42,
+              "filename": "Chap2-Pg39.jpg",
+              "title": "Detention is Getting Spicey",
+              "message": "All the back-to-school essentials: paper, pencils, a bad attitude, erasers--CRIKE, IS THAT A GUN!?",
+              "datetime": "2022-08-08 14:31:47",
+              "id": 75,
+              "user": "M1998",
+              "icon": "icons/Chap2-Pg39-Icon.png"
+            },
+            {
+              "pageNum": 43,
+              "filename": "Chap2-pg40.jpg",
+              "title": "Bite it to be sure. It might be a metaphor.",
+              "message": "Bite it to be sure. It might be a metaphor.",
+              "datetime": "2022-08-08 14:35:56",
+              "id": 76,
+              "user": "M1998",
+              "icon": "icons/Chap2-pg40-Icon.png"
+            },
+            {
+              "pageNum": 44,
+              "filename": "Chap2-pg41.jpg",
+              "title": "Sky's Out, Knives Out",
+              "message": "Get yo'self a Quill.",
+              "datetime": "2022-08-15 16:25:58",
+              "id": 77,
+              "user": "M1998",
+              "icon": "icons/Chap2-pg41-Icon.png"
+            },
+            {
+              "pageNum": 45,
+              "filename": "Chap2-pg42.jpg",
+              "title": "The fight has begun",
+              "message": "I mean, Casper is supposed to be this anime nerd...but the boi doesn't miss his hip thrusts and bulgarians, that's for sure O_O",
+              "datetime": "2022-08-15 16:29:19",
+              "id": 78,
+              "user": "M1998",
+              "icon": "icons/Chap2-pg42-Icon.png"
+            },
+            {
+              "pageNum": 46,
+              "filename": "Chap2-pg43.jpg",
+              "title": "Patrick goes full Waluigi stomp on Casper",
+              "message": "Drawing Pat in the final panel was giving me some mad deja vu, but I couldn't put my finger on who he reminded me of......Waluigi, it was Waluigi.",
+              "datetime": "2022-08-22 15:14:03",
+              "id": 79,
+              "user": "M1998",
+              "icon": "icons/Chap2-pg43-Icon.png"
+            },
+            {
+              "pageNum": 47,
+              "filename": "Chap2-pg44.jpg",
+              "title": "Casper sweep the leg",
+              "message": "Stomp it. Sweep it. Bop it.",
+              "datetime": "2022-08-22 15:22:08",
+              "id": 80,
+              "user": "M1998",
+              "icon": "icons/Chap2-pg44-Icon.png"
+            },
+            {
+              "pageNum": 48,
+              "filename": "Chap2-pg45.jpg",
+              "title": "Casper wins his first fight",
+              "message": "When you take down two armed bullies, single-handedly rescuing your highschool's sweetheart, Rose Stewart, all while haloed by literal fire, and still no one notices.",
+              "datetime": "2022-08-29 15:14:45",
+              "id": 81,
+              "user": "M1998",
+              "icon": "icons/Chap2-pg45-Icon.png"
+            },
+            {
+              "pageNum": 49,
+              "filename": "Chap2-Pg46.jpg",
+              "title": "Rose the Gun! Right!",
+              "message": "Not everyone thinks best on their feet.",
+              "datetime": "2022-08-29 15:18:56",
+              "id": 82,
+              "user": "M1998",
+              "icon": "icons/Chap2-Pg46-Icon.png"
+            },
+            {
+              "pageNum": 50,
+              "filename": "Labor_Day.jpg",
+              "title": "Happy Labor Day",
+              "message": "Happy Labor Day, friends!! More pages are coming this week, so don't worry! We won't leave you hanging...but in the meantime, enjoy this kitty taking a nap in honor of the holiday 🐈",
+              "datetime": "2022-09-05 21:06:27",
+              "id": 83,
+              "user": "M1998",
+              "icon": "icons/Labor_Day-Icon.png"
+            },
+            {
+              "pageNum": 51,
+              "filename": "Chap2-pg47.jpg",
+              "title": "Chuck does big slash. Big effective.",
+              "message": "Don't run, play, or turn around suddenly with knives, kids. Or better yet...forget knives. Sporks are the ultimate utensil.",
+              "datetime": "2022-09-07 14:48:46",
+              "id": 84,
+              "user": "M1998",
+              "icon": "icons/Chap2-pg47-Icon.png"
+            },
+            {
+              "pageNum": 52,
+              "filename": "Chap2-pg48.jpg",
+              "title": "Casper got got",
+              "message": "Don't worry guys, just RGB red light pixels on your screen. No friends were hurt in the making of this comic. ",
+              "datetime": "2022-09-07 14:52:09",
+              "id": 85,
+              "user": "M1998",
+              "icon": "icons/Chap2-pg48-Icon.png"
+            },
+            {
+              "pageNum": 53,
+              "filename": "Under_Construction-09122022.jpg",
+              "title": "Pages Under Construction",
+              "message": "Hey! New pages aren't done yet but we have some glorious rainy overcast days on the horizon which is ideal art-making weather for my little pluviophile heart.<3 Join us back here next Monday as we get ready to close out Chapter 2!!!",
+              "datetime": "2022-09-12 11:42:35",
+              "id": 86,
+              "user": "M1998",
+              "icon": "icons/Under_Construction-09122022-Icon.png"
+            },
+            {
+              "pageNum": 54,
+              "filename": "Chap2-pg49.jpg",
+              "title": "Quill shakes down Mr. Barr",
+              "message": "Just remember. There was a point this past week that I was sitting at my computer, thinking about what sort of sound \"Quill shakes an unconscious Mr. Barr\" makes. DM me if you have suggestions that smack \"Wa-Whoosh\" out of the competition.",
+              "datetime": "2022-09-19 15:12:05",
+              "id": 87,
+              "user": "M1998",
+              "icon": "icons/Chap2-pg49-Icon.png"
+            },
+            {
+              "pageNum": 55,
+              "filename": "Chap2-pg50.jpg",
+              "title": "Chucks busts out the window",
+              "message": "Bippity boppity boop, Chuck has flown the coop.",
+              "datetime": "2022-09-19 15:20:16",
+              "id": 88,
+              "user": "M1998",
+              "icon": "icons/Chap2-pg50-Icon.png"
+            },
+            {
+              "pageNum": 56,
+              "filename": "Chap2-pg51.jpg",
+              "title": "Desperate times call for desperate measures",
+              "message": "Oh cute! They're working together...toooo throw Casper out the second story window.",
+              "datetime": "2022-09-26 15:20:22",
+              "id": 89,
+              "user": "M1998",
+              "icon": "icons/Chap2-pg51-Icon.png"
+            }
+          ]
+        },
+        {
+          "chapterName": "Chapter Three",
+          "folderName": "chapter3",
+          "numOfPages": 5,
+          "id": 4,
+          "pages": [
+            {
+              "pageNum": 1,
+              "filename": "Chapter3.jpg",
+              "title": "Chapter 3 Cover - Roadtrip with Death",
+              "message": "Fun fact: although Millie is the youngest of the main characters, she is the only one that knows how to drive. Legally, that is.",
+              "datetime": "2022-09-26 15:57:49",
+              "id": 90,
+              "user": "N1995",
+              "icon": "icons/Chapter3-Icon.png"
+            },
+            {
+              "pageNum": 2,
+              "filename": "Chp3-Pg1.jpg",
+              "title": "I didn't QUITE kill him",
+              "message": "Chapter 3 baby!! You know who loooooves drawing backgrounds?!?! ....cause, like, if you know anyone, send them over my way, kay?",
+              "datetime": "2022-10-03 16:16:43",
+              "id": 91,
+              "user": "M1998",
+              "icon": "icons/Chp3-Pg1-Icon.png"
+            },
+            {
+              "pageNum": 3,
+              "filename": "Chp3-Pg2.jpg",
+              "title": "Suspicious Skeleton guy in the van with Millie",
+              "message": "Now how many of you saw the beat-up van with a trail of smoke coming out of it on the last page and thought it was a blunt? Now be honest...",
+              "datetime": "2022-10-03 16:18:42",
+              "id": 92,
+              "user": "M1998",
+              "icon": "icons/Chp3-Pg2-Icon.png"
+            },
+            {
+              "pageNum": 4,
+              "filename": "Chp3-Pg3.jpg",
+              "title": "Introducing Mors",
+              "message": "Death isn't always ragged cloaks and bloody scythes. Sure there's that part, the fun bit everyone sees, but there's a lot of paperwork that has to happen behind-the-scenes, a lot of checks and balances that have to add up. With that much deskwork stacking up, the Grim Reaper practically had to invent accounting. Too bad he's too busy to refresh his wardrobe more than every hundred years or so. 🤓",
+              "datetime": "2022-10-10 16:44:49",
+              "id": 93,
+              "user": "N1995",
+              "icon": "icons/Chp3-Pg3-Icon.png"
+            },
+            {
+              "pageNum": 5,
+              "filename": "Chp3-Pg4.jpg",
+              "title": "Death Puns #1",
+              "message": "We love to see a friend who laughs at terrible jokes. We much less love if they are death incarnate, but hey! Sometimes the puns are bad enough you can't be picky... 💀",
+              "datetime": "2022-10-10 16:51:47",
+              "id": 94,
+              "user": "N1995",
+              "icon": "icons/Chp3-Pg4-Icon.png"
             }
           ]
         }

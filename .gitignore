@@ -13,7 +13,6 @@
 
 # images
 /public/MnMPages
-/src/assets
 
 # misc
 .DS_Store
