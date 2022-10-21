@@ -11,10 +11,6 @@
 # production
 /build
 
-# images
-/public/MnMPages
-/src/assets
-
 # misc
 .DS_Store
 .env.local
@@ -22,8 +18,10 @@
 .env.test.local
 .env.production.local
 .vscode
+/.firebase/
 
 npm-debug.log*
+firestore-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
@@ -39,3 +37,4 @@ src/styling/tailwind.output.css
 ui-debug.log
 package-lock.json
 database-debug.log
+
