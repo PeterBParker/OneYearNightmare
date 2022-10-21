@@ -36,3 +36,6 @@ src/styling/tailwind.output.css
 *.cache
 .env
 *.log
+ui-debug.log
+package-lock.json
+database-debug.log
