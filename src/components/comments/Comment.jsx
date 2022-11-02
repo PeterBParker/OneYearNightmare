@@ -16,7 +16,7 @@ export function SingleComment(props) {
   const [showReplyBox, setShowReplyBox] = useState(false);
   const [displayName, setDisplayName] = useState("");
   const [editComment, setEditComment] = useState(false);
-  const [belongsToCurrUser, setBelongsToCurrUser] = useState(auth.currentUser.uid === props.comment.author_uid)
+  const [belongsToCurrUser, setBelongsToCurrUser] = useState(auth.currentUser ? auth.currentUser.uid === props.comment.author_uid : false)
 
   useEffect(() => {
     getDisplayName(props.comment.author_uid).then((display_name) => {
@@ -25,7 +25,7 @@ export function SingleComment(props) {
   });
 
   useEffect(() => {
-    setBelongsToCurrUser(auth.currentUser.uid === props.comment.author_uid)
+    setBelongsToCurrUser(auth.currentUser ? auth.currentUser.uid === props.comment.author_uid : false)
   }, [auth.currentUser])
 
   return (
