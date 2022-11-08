@@ -18,7 +18,7 @@ export default function Comments(props) {
 
   return (
     <div className="comments-container desktopPageCommentsContainer ">
-      <div className="py-4 px-8 bg-eggshell text-left flex flex-row items-center">
+      <div className="py-4 px-8 bg-eggshell text-left flex flex-row items-center comments-title">
         <Title text="Comments //" />
       </div>
 

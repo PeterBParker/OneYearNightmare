@@ -1,9 +1,7 @@
 # TODO
 
 - Make Comments
-  - Make Comment header sticky
   - Hook up to Database
-    - Figure out the uncaught Error if the FirebaseUI widget element isn't found on page
     - add error handling if comment submission failed
       - add visual state to indicate pending server write
       - add visual state to indicate completed server write
@@ -11,7 +9,6 @@
     - add like button and display to comments
     - Retrieve top three comments by likes, and the rest sorted by date newest first
   - Add Authentication/User data
-    - Add automatic refresh when display name is set
     - Style User profile
     - Add View Profile/Login Link to main menu
     - get terms and conditions

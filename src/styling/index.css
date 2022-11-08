@@ -668,6 +668,11 @@ body {
   background-image: linear-gradient(to bottom, rgba(255,255,255,1) 60%, rgba(255,255,255,0));
 }
 
+.comments-title {
+  position: sticky;
+  top: 0;
+}
+
 .comments-container {
   max-height: 700px;
   overflow-y: scroll;
