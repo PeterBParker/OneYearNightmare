@@ -6,10 +6,12 @@ import { collection, setDoc, doc, Timestamp } from "firebase/firestore";
 import { getDisplayName } from "../utils";
 
 const UserProfile = () => {
-  return auth.currentUser.displayName ? <DisplayInfo /> : <InitializeInfo />;
+  const [notInitialized, setNotInitialized] = useState(auth.currentUser.displayName === null)
+
+  return notInitialized ? <InitializeInfo setNotInitialized={setNotInitialized} /> : <DisplayInfo />;
 };
 
-const InitializeInfo = () => {
+const InitializeInfo = (props) => {
   const [name, setName] = useState("");
 
   const changeDisplayName = async (new_name) => {
@@ -23,6 +25,7 @@ const InitializeInfo = () => {
     }).then(
       () => {
         setName("");
+        props.setNotInitialized(false);
       },
       function (error) {
         console.log("An error occured while updating profile:", error);
