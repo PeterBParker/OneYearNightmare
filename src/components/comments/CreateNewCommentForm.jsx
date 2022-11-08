@@ -22,15 +22,20 @@ function CreateNewCommentForm(props) {
         setContent("");
         props.callback();
       };
-
     return (
-        <CommentForm 
+      <>
+        {auth.currentUser != null ?
+          <CommentForm 
             onSubmitAction={createNewComment}
             slug={props.slug}
             parentId={props.parentId}
             content={content}
             setContent={(a) => setContent(a)}
-        />
+          />
+        :
+        <div>Please sign in.</div>
+      }
+      </>
     );
 }
 

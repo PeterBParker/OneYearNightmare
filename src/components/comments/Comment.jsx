@@ -30,89 +30,86 @@ export function SingleComment(props) {
 
   return (
     <div>
-      <div className="flex mb-2">
-        <div className="flex mr-2 justify-start">
+      <div className="mb-2 single-comment-container">
+        <div className="flex mr-2 justify-start comment-avatar-container">
           <div>
             {
               <img
                 src={`https://avatars.dicebear.com/api/big-smile/${displayName}}.svg`}
                 alt="avatar"
-                width={80}
-                className=" comment-avatar"
+                width={70}
+                className="comment-avatar"
               />
             }
           </div>
         </div>
-        <div className="w-full">
-          <div className="flex justify-between">
-            <p className="comment-author font-medium text-left">
-              {displayName}
-            </p>
-            <div className="comment-time mr-2 text-mocha-dark">
-              {props.comment.time && (
-                <time>
-                  {moment(props.comment.time.toDateString()).calendar()}
-                </time>
-              )}
-            </div>
+        <div className="flex comment-data-header justify-between">
+          <p className="comment-author font-medium text-left">
+            {displayName}
+          </p>
+          <div className="comment-time mr-2 text-mocha-dark">
+            {props.comment.time && (
+              <time>
+                {moment(props.comment.time.toDateString()).calendar()}
+              </time>
+            )}
           </div>
-          {editComment && belongsToCurrUser ?
-            <EditCommentForm 
-              initialContent={props.comment.content}
-              slug={props.slug}
-              callback={() => setEditComment(false)}
-              comment={props.comment}/>
+        </div>
+        {editComment && belongsToCurrUser ?
+          <EditCommentForm
+            initialContent={props.comment.content}
+            slug={props.slug}
+            callback={() => setEditComment(false)}
+            comment={props.comment} />
           :
-            <div className="comment-content text-left">
+          <div className="comment-content text-left">
             {props.comment.content}
-            <div>
-              <div className="flex justify-start">
-                {showReplyBox ? (
-                  <span
-                    className="cancel-btn btn text-left font-medium text-green-dark"
-                    onClick={() => setShowReplyBox(false)}
-                  >
-                    Cancel Reply
-                  </span>
-                ) : (
-                  <div className="w-full">
-                    {
-                      props.isTopLevel ?
-                        <span
-                          className="reply-btn btn text-left font-medium text-green-dark float-left"
-                          onClick={() => setShowReplyBox(true)}
-                        >
-                          Reply
-                        </span>
+          
+            <div className="flex justify-start comment-interaction-container">
+              {showReplyBox ? (
+                <span
+                  className="cancel-btn btn text-left font-medium text-green-dark"
+                  onClick={() => setShowReplyBox(false)}
+                >
+                  Cancel Reply
+                </span>
+              ) : (
+                <div className="w-full">
+                  {
+                    props.isTopLevel && auth.currentUser != null ?
+                      <span
+                        className="reply-btn btn text-left font-medium text-green-dark float-left"
+                        onClick={() => setShowReplyBox(true)}
+                      >
+                        Reply
+                      </span>
                       :
                       null
-                    }
-                    
-                    {belongsToCurrUser ?
-                      <span
+                  }
+
+                  {belongsToCurrUser ?
+                    <span
                       className="reply-btn btn text-left font-medium text-green-dark float-right"
                       onClick={() => setEditComment(true)}
-                      >
-                        Edit
+                    >
+                      Edit
                     </span>
                     :
                     null
-                    }
-                  </div>
-                  
-                )}
-              </div>
-              {showReplyBox ? (
-                <CreateNewCommentForm
-                  parentId={props.comment.id}
-                  slug={props.slug}
-                  callback={() => setShowReplyBox(false)}
-                />
-              ) : null}
+                  }
+                </div>
+
+              )}
             </div>
+            {showReplyBox ? (
+              <CreateNewCommentForm
+                parentId={props.comment.id}
+                slug={props.slug}
+                callback={() => setShowReplyBox(false)}
+              />
+            ) : null}
           </div>
-          }
-        </div>
+        }
       </div>
     </div>
   );

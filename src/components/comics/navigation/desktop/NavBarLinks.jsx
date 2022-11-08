@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import Pages from "./Pages";
+import { auth } from "../../../../index"
 import {
   COMIC_VIEWER_PATH,
   SUPPORT_PAGE_PATH,
@@ -58,7 +59,7 @@ export default function NavBarLinks(props) {
       } text-grey-light mr-8 font-medium `}
       key="signinNavBarLink"
     >
-      <Link to={SIGNIN_PAGE_PATH}>Login</Link>
+      <Link to={SIGNIN_PAGE_PATH}>{auth.currentUser == null ? "Login" : "User"}</Link>
     </div>,
   ];
 }

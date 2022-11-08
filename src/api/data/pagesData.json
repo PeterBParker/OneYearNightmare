@@ -1,988 +1,1082 @@
 {
-  "maxDisplayPage": 94,
-  "pageCount": 94,
-  "seasonCount": 1,
-  "seasons": [
-    {
-      "seasonName": "First Blood",
-      "folderName": "first blood",
-      "numOfPages": 94,
-      "numOfChapters": 4,
-      "id": 1,
-      "chapters": [
+    "maxDisplayPage": 94,
+    "pageCount": 94,
+    "seasonCount": 1,
+    "seasons": [
         {
-          "chapterName": "Prologue",
-          "folderName": "prologue",
-          "numOfPages": 7,
-          "id": 1,
-          "pages": [
-            {
-              "pageNum": 1,
-              "filename": "PRO1.jpg",
-              "title": "Prologue Cover Page",
-              "message": "Welcome back, mystery hunters! We decided to archive the old prologue for our patrons over on Patreon, and release a brand, spanking NEW AND IMPROVED prologue crammed with all the lessons we learned in doing the first 50 pages of Monsters and Myriads. \"But, Nathan,\" you may say, \"you aren't going to make any progress if you keep redoing what you've outgrown.\" To which I respond: you're absolutely right. We're going to keep moving after this, promise! Once we post all 7 pages of the new prologue, we'll un-hide the Chapter 1 pages and move on to Chapter 2. So thank you for coming back or starting it fresh! We're so excited and proud of what we're doing, but we are learning everyday how to write/illustrate better. If you have ideas, we'd love to hear them in our Discord! The link is below. :)",
-              "datetime": "2022-01-31 14:25:53",
-              "id": 1,
-              "user": "N1995",
-              "icon": "icons/PRO1-Icon.png"
-            },
-            {
-              "pageNum": 2,
-              "filename": "PRO2.jpg",
-              "title": "The First Visitor",
-              "message": "Who's nightmare do ya think this Visitor was? My money's on a deer hunter, but in Wisconsin that could be anyone. Even your little sister. Especially your little sister. 😮 Reminder that we will un-hide the rest of Chapter 1 and get back to Chapter 2 in six more pages!",
-              "datetime": "2022-01-31 14:46:51",
-              "id": 2,
-              "user": "N1995",
-              "icon": "icons/PRO2-Icon.png"
-            },
-            {
-              "pageNum": 3,
-              "filename": "PRO3.jpg",
-              "title": "First Visitor Attack",
-              "message": "You might say they don't take kindly to visitors. Or maybe TOO kindly...maybe the shadowy \"Judas\" was probably just giving the Visitor a big 'ol hug...?",
-              "datetime": "2022-02-07 13:45:06",
-              "id": 3,
-              "user": "N1995",
-              "icon": "icons/PRO3-Icon.png"
-            },
-            {
-              "pageNum": 4,
-              "filename": "PRO4.jpg",
-              "title": "Ms. Winters Appears",
-              "message": "Is it just me, or does that cat have something in its eye? 👀",
-              "datetime": "2022-02-07 13:46:49",
-              "id": 4,
-              "user": "N1995",
-              "icon": "icons/PRO4-Icon.png"
-            },
-            {
-              "pageNum": 5,
-              "filename": "PRO5.jpg",
-              "title": "Is that a drop off at the town border?",
-              "message": "Never underestimate your local cat lady. She may be a drug dealer.",
-              "datetime": "2022-02-14 11:41:44",
-              "id": 5,
-              "user": "M1998",
-              "icon": "icons/PRO5-Icon.png"
-            },
-            {
-              "pageNum": 6,
-              "filename": "PRO6.jpg",
-              "title": "Pizza man joy ride and mailbox gremlins",
-              "message": "Happy Valentines Day everybody! True love = pizza with a side of mailbox gremlin.",
-              "datetime": "2022-02-14 11:45:45",
-              "id": 6,
-              "user": "M1998",
-              "icon": "icons/PRO6-Icon.png"
-            },
-            {
-              "pageNum": 7,
-              "filename": "PRO7-2.0.jpg",
-              "title": "Donny is late for a very important date",
-              "message": "Donny, my man, I feel for you. Spared from one storm just to fall into another. 🌧",
-              "datetime": "2022-02-21 14:52:57",
-              "id": 7,
-              "user": "M1998",
-              "icon": "icons/PRO7-2.0-Icon.png"
-            }
-          ]
-        },
-        {
-          "chapterName": "Chapter One",
-          "folderName": "chapter1",
-          "numOfPages": 26,
-          "id": 2,
-          "pages": [
-            {
-              "pageNum": 1,
-              "filename": "Chapter1_NEW.jpg",
-              "title": "First Blood Title Page",
-              "message": "It's here! Hang on to your couch, office chair, or whatever seat you're reading from! We're about to officially get started... (づ￣ 3￣)づ",
-              "datetime": "2021-09-06 15:14:10",
-              "id": 8,
-              "user": "N1995",
-              "icon": "icons/Chapter1_NEW-Icon.png"
-            },
-            {
-              "pageNum": 2,
-              "filename": "Chap1-Pg1.jpg",
-              "title": "Rose finds drugs?",
-              "message": "Season 1 starting off with a happy dance! What do you think is in the bottle??? Comment your guess in our discord chat!",
-              "datetime": "2021-09-09 11:50:23",
-              "id": 9,
-              "user": "M1998",
-              "icon": "icons/Chap1-Pg1-Icon.png"
-            },
-            {
-              "pageNum": 3,
-              "filename": "Chap1-Pg2.jpg",
-              "title": "Rose escapes her mother's room",
-              "message": "From butchering beasts in high heels to jumping out of windows in flip flops...we need to get these girls some sneakers!",
-              "datetime": "2021-09-13 14:09:28",
-              "id": 10,
-              "user": "M1998",
-              "icon": "icons/Chap1-Pg2-Icon.png"
-            },
-            {
-              "pageNum": 4,
-              "filename": "Chap1-Pg3.jpg",
-              "title": "Donny discovers Rose's escape measures",
-              "message": "Don't know what Jean usually listens to on her ipod, but it's \"ffmmping!\"",
-              "datetime": "2021-09-16 14:05:25",
-              "id": 11,
-              "user": "M1998",
-              "icon": "icons/Chap1-Pg3-Icon.png"
-            },
-            {
-              "pageNum": 5,
-              "filename": "Chap1-Pg4.jpg",
-              "title": "Rose embarrasses herself in front of cats",
-              "message": "Them cats know a good purple manicure when they see it. ",
-              "datetime": "2021-09-20 14:52:44",
-              "id": 12,
-              "user": "M1998",
-              "icon": "icons/Chap1-Pg4-Icon.png"
-            },
-            {
-              "pageNum": 6,
-              "filename": "Chap1-Pg5.jpg",
-              "title": "Who is the Penguin man?",
-              "message": "New page and lots of new faces! But the most important face of all...this elusive Mr. Freezy Cee...",
-              "datetime": "2021-09-23 15:58:07",
-              "id": 13,
-              "user": "M1998",
-              "icon": "icons/Chap1-Pg5-Icon.png"
-            },
-            {
-              "pageNum": 7,
-              "filename": "Chap1-Pg6.jpg",
-              "title": "Zylo is seeing things, and those things have a lot of teeth",
-              "message": "I could have sworn she had less teeth in the last pannel.",
-              "datetime": "2021-09-27 11:33:25",
-              "id": 14,
-              "user": "M1998",
-              "icon": "icons/Chap1-Pg6-Icon.png"
-            },
-            {
-              "pageNum": 8,
-              "filename": "Chap1-Pg7.jpg",
-              "title": "He DEFINITELY likes me...",
-              "message": "You may have wondered if penguin boy has flippers for hands or if it's just part of his costume. Well now you know, you're welcome.",
-              "datetime": "2021-09-30 10:12:11",
-              "id": 15,
-              "user": "M1998",
-              "icon": "icons/Chap1-Pg7-Icon.png"
-            },
-            {
-              "pageNum": 9,
-              "filename": "Chap1-Pg8.jpg",
-              "title": "Rose coming in hot",
-              "message": "Poor Mr. \"Definitely Not Mr. Freezy Cee\" can't catch a break.",
-              "datetime": "2021-10-04 16:20:14",
-              "id": 16,
-              "user": "M1998",
-              "icon": "icons/Chap1-Pg8-Icon.png"
-            },
-            {
-              "pageNum": 10,
-              "filename": "Chap1-Pg9.jpg",
-              "title": "Rose and Casper Collision",
-              "message": "And that, kids, was how I met your mother. Hahaha just kidding...unless...",
-              "datetime": "2021-10-07 16:24:10",
-              "id": 17,
-              "user": "M1998",
-              "icon": "icons/Chap1-Pg9-Icon.png"
-            },
-            {
-              "pageNum": 11,
-              "filename": "Chap1-Pg10.jpg",
-              "title": "Oh nononono Rose got God Blood on her blood",
-              "message": "Oh nononono, Rose got \"God Blood\" on her blood. I'm sure everything's fine.",
-              "datetime": "2021-10-11 12:46:29",
-              "id": 18,
-              "user": "M1998",
-              "icon": "icons/Chap1-Pg10-Icon.png"
-            },
-            {
-              "pageNum": 12,
-              "filename": "Chap1-Pg11.jpg",
-              "title": "He's Bouncy like Rubber, BOING!",
-              "message": "It's okay dude, we know what One Piece is and WE think you're cool.",
-              "datetime": "2021-10-18 16:43:17",
-              "id": 19,
-              "user": "M1998",
-              "icon": "icons/Chap1-Pg11-Icon.png"
-            },
-            {
-              "pageNum": 13,
-              "filename": "Chap1-Pg12.jpg",
-              "title": "Blush Overload and Jealous Rage",
-              "message": "Someone may be jealous... but jury is still out on that.",
-              "datetime": "2021-10-25 14:28:32",
-              "id": 20,
-              "user": "M1998",
-              "icon": "icons/Chap1-Pg12-Icon.png"
-            },
-            {
-              "pageNum": 14,
-              "filename": "Chap1-Pg13.jpg",
-              "title": "A hero is needed, and Casper will have to do",
-              "message": "When that rando kid thinks they are the main character.",
-              "datetime": "2021-10-28 14:40:51",
-              "id": 21,
-              "user": "M1998",
-              "icon": "icons/Chap1-Pg13-Icon.png"
-            },
-            {
-              "pageNum": 15,
-              "filename": "Moved_To_Wisconsin.jpg",
-              "title": "We Moved to Wisconsin",
-              "message": "Hey guys! So you may have heard we were buying a house. The house is no more! In the mean time, we are setting up camp in Wisconsin (the home of the Monsters and Myriads comic ironically). We're just now getting settled in and figuring out our future adventures. So no new page today, however, pages will continue this Thursday (November 4th). Also, Happy Belated Halloween, you spooky hooligans!",
-              "datetime": "2021-11-01 15:35:23",
-              "id": 22,
-              "user": "M1998",
-              "icon": "icons/Moved_To_Wisconsin-Icon.png"
-            },
-            {
-              "pageNum": 16,
-              "filename": "Chap1-Pg14.jpg",
-              "title": "Your....Vanilla Cones",
-              "message": "I don't know which part made me happier to draw, the icecream on the kitty's nose, or Casper vrooooming off into the sunset. Or maybe the phantom newcomer in the depths of the Freezy Cee's custard shack...",
-              "datetime": "2021-11-04 12:32:38",
-              "id": 23,
-              "user": "M1998",
-              "icon": "icons/Chap1-Pg14-Icon.png"
-            },
-            {
-              "pageNum": 17,
-              "filename": "Chap1-Pg15.jpg",
-              "title": "Here enters the Elusive Mr. Freezy Cee",
-              "message": "The man, the myth, the legend, Mr. Freezy Cee!! Dropping some hot takes and hard facts. Posting from Colorado Springs this morning (my concept of time has been severely crippled between moving from Ohio to Wisconsin to Colorado, during a daylight savings no less 🙀).",
-              "datetime": "2021-11-08 11:41:04",
-              "id": 24,
-              "user": "M1998",
-              "icon": "icons/Chap1-Pg15-Icon.png"
-            },
-            {
-              "pageNum": 18,
-              "filename": "Chap1-Pg16.jpg",
-              "title": "Mr Freezy Cee on the philosophy of penguin pajamas",
-              "message": "This just in: Mr. Freezy Cee on the philosophy of penguin pajamas.",
-              "datetime": "2021-11-11 11:55:09",
-              "id": 25,
-              "user": "M1998",
-              "icon": "icons/Chap1-Pg16-Icon.png"
-            },
-            {
-              "pageNum": 19,
-              "filename": "Chap1-Pg17.jpg",
-              "title": "Just about anything can make you interesting",
-              "message": "Zylo \"unmasked\", not a penguin after all.",
-              "datetime": "2021-11-15 14:55:54",
-              "id": 26,
-              "user": "M1998",
-              "icon": "icons/Chap1-Pg17-Icon.png"
-            },
-            {
-              "pageNum": 20,
-              "filename": "Chap1-Pg18.jpg",
-              "title": "Hacker Chick and her Nut Cracker immerges",
-              "message": "Little known hallmark film coming out this season...Hacker and the NuT Cracker. Buy your tickets today!",
-              "datetime": "2021-11-18 15:34:14",
-              "id": 27,
-              "user": "M1998",
-              "icon": "icons/Chap1-Pg18-Icon.png"
-            },
-            {
-              "pageNum": 21,
-              "filename": "Chap1-Pg19.jpg",
-              "title": "I'm sure your deserted little twin brothers are fine...",
-              "message": "I'm sure your deserted little twin brothers are fine, Casper. I mean, they had icecream and an absurd lack of supervision to keep them company.",
-              "datetime": "2021-11-22 12:52:25",
-              "id": 28,
-              "user": "M1998",
-              "icon": "icons/Chap1-Pg19-Icon.png"
-            },
-            {
-              "pageNum": 22,
-              "filename": "Chap1-Pg20.jpg",
-              "title": "Rose may be tripping afterall",
-              "message": "Well Rose is certainly tripping on something.",
-              "datetime": "2021-11-29 16:13:07",
-              "id": 29,
-              "user": "M1998",
-              "icon": "icons/Chap1-Pg20-Icon.png"
-            },
-            {
-              "pageNum": 23,
-              "filename": "Chap1-Pg21.jpg",
-              "title": "Maybe we're both high?",
-              "message": "Have I been playing too much Pikmin Bloom, or does Quill's ghost need a name? I'm leaning towards Reginald but I am open to suggestions.",
-              "datetime": "2021-12-02 09:49:21",
-              "id": 30,
-              "user": "M1998",
-              "icon": "icons/Chap1-Pg21-Icon.png"
-            },
-            {
-              "pageNum": 24,
-              "filename": "Chap1-Pg22.jpg",
-              "title": "Uncle Dan finds the kiddos with a broken window",
-              "message": "All things considered, both Uncle Dan and Rose are taking it all rather well. (⊙_⊙;)",
-              "datetime": "2021-12-06 15:49:41",
-              "id": 31,
-              "user": "M1998",
-              "icon": "icons/Chap1-Pg22-Icon.png"
-            },
-            {
-              "pageNum": 25,
-              "filename": "Chap1-Pg23.jpg",
-              "title": "Uncle Dan to the rescue",
-              "message": "Typical.",
-              "datetime": "2021-12-09 12:21:46",
-              "id": 32,
-              "user": "M1998",
-              "icon": "icons/Chap1-Pg23-Icon.png"
-            },
-            {
-              "pageNum": 26,
-              "filename": "Chap1-Pg24.jpg",
-              "title": "Rose isn't crazy, and Quill is gonna help her",
-              "message": "I didn't grow up with cousins my age, but I imagine this is how general cousinly bickering would go.",
-              "datetime": "2021-12-13 14:41:40",
-              "id": 33,
-              "user": "M1998",
-              "icon": "icons/Chap1-Pg24-Icon.png"
-            }
-          ]
-        },
-        {
-          "chapterName": "Chapter Two",
-          "folderName": "chapter2",
-          "numOfPages": 56,
-          "id": 3,
-          "pages": [
-            {
-              "pageNum": 1,
-              "filename": "Chapter2_NEW.jpg",
-              "title": "Chapter 2 Killing Time in Detention",
-              "message": "Woot woot!! Heading into the next chapter! Thank you all for checking out our comic up til this point! This marks the start of the Monsters & Myriads holiday hiatus where we the creators will be making some fun edits to be revealed this coming January. In the meantime, check out our Discord to join in the conversation and share your ideas/theories. We love to hear from you guys! Merry Christmas all and see you in the new year! 🎄⛄",
-              "datetime": "2021-12-16 15:09:27",
-              "id": 34,
-              "user": "M1998",
-              "icon": "icons/Chapter2_NEW-Icon.png"
-            },
-            {
-              "pageNum": 2,
-              "filename": "Holidays2022.jpg",
-              "title": "Holiday Hiatus 2022",
-              "message": "Hey guys! I hope your holidays were warm and filled with great memories! Over the last few weeks, we've discussed our vision for this comic at length and have finally decided to *drum roll please* remake the prologue for Monsters & Myriads!! 🥳🥂 The one we have now served its purpose in teaching us a lot of lessons about making comics, but over the next few weeks, we intend to breathe new life into the beginning of our novel, setting more clear expections and setting for the story. We will restart our posting schedule the last monday of the month, January 31.",
-              "datetime": "2022-01-03 20:47:44",
-              "id": 35,
-              "user": "M1998",
-              "icon": "icons/Holidays2022-Icon.png"
-            },
-            {
-              "pageNum": 3,
-              "filename": "Chap2-Pg1.jpg",
-              "title": "Casper floating over grayed out farm",
-              "message": "Coming to you live, boy in flannel pajamas floating in the sky. ",
-              "datetime": "2022-02-28 13:49:51",
-              "id": 36,
-              "user": "M1998",
-              "icon": "icons/Chap2-Pg1-Icon.png"
-            },
-            {
-              "pageNum": 4,
-              "filename": "Chap2-pg2.jpg",
-              "title": "Casper knock knock on barn door and it hisses",
-              "message": "Oh dear, Casper. What have you gotten yourself into...",
-              "datetime": "2022-02-28 14:07:27",
-              "id": 37,
-              "user": "M1998",
-              "icon": "icons/Chap2-pg2-Icon.png"
-            },
-            {
-              "pageNum": 5,
-              "filename": "Chap2-pg03.jpg",
-              "title": "Just give me a sign",
-              "message": "Fire laurel? Check. All the credentials you need for nefarious metaphorical parasite removal.",
-              "datetime": "2022-03-07 20:16:24",
-              "id": 38,
-              "user": "M1998",
-              "icon": "icons/Chap2-pg03-Icon.png"
-            },
-            {
-              "pageNum": 6,
-              "filename": "Chap2-pg04.jpg",
-              "title": "Hooded lady isn't quite feeling herself",
-              "message": "Wonder who \"it\" is...a friend? ...probs not.",
-              "datetime": "2022-03-07 20:20:41",
-              "id": 39,
-              "user": "M1998",
-              "icon": "icons/Chap2-pg04-Icon.png"
-            },
-            {
-              "pageNum": 7,
-              "filename": "Chap2-pg05.jpg",
-              "title": "Rat Monster and a Rude Awakening",
-              "message": "Alright, time to count 'em all. How many rats in the rat monster. Note: no picking up, shaking, or breaking the rat monster. That's cheating and will lead to disqualification. Rats will be counted by the end of the week and the winner will be notified by messenger pigeon...if said pigeon isn't devoured in the counting process.",
-              "datetime": "2022-03-14 16:25:50",
-              "id": 40,
-              "user": "M1998",
-              "icon": "icons/Chap2-pg05-Icon.png"
-            },
-            {
-              "pageNum": 8,
-              "filename": "Chap2-pg06.jpg",
-              "title": "My Favorite Comic \"One Part\" and Blackmail",
-              "message": "Siblings, your gateway drug into blackmail. Also, previously noted rat counting contest has been cancelled. Artist does not know nor desires to know number of rats and warns against long exposure to said rats.",
-              "datetime": "2022-03-14 16:32:54",
-              "id": 41,
-              "user": "M1998",
-              "icon": "icons/Chap2-pg06-Icon.png"
-            },
-            {
-              "pageNum": 9,
-              "filename": "Chap2-pg07.jpg",
-              "title": "Casper Cat Staring Contest",
-              "message": "The Casper Cat Stare-off of year *REDACTED*, an age old tradition passed down by the *REDACTED* and hence the birth of the earmuff. Also, what's with the funny-looking smudge on the neighbor's roof?",
-              "datetime": "2022-03-20 21:19:45",
-              "id": 42,
-              "user": "M1998",
-              "icon": "icons/Chap2-pg07-Icon.png"
-            },
-            {
-              "pageNum": 10,
-              "filename": "Chap2-pg08.jpg",
-              "title": "Wake up in the morning feeling like p diddy",
-              "message": "Ah yes, brothers and cat and spectral, tea-drinking shadow gathering about for some late night manga reading. When you can't live your best life, you write about it and make your wife draw it.",
-              "datetime": "2022-03-20 21:24:08",
-              "id": 43,
-              "user": "M1998",
-              "icon": "icons/Chap2-pg08-Icon.png"
-            },
-            {
-              "pageNum": 11,
-              "filename": "Chap2-pg9.jpg",
-              "title": "Casper's Morning Rush!",
-              "message": " Full transparency here, this is a pretty regular Sunday morning for me. No kids to wrangle or siblings to fend off, and yet I still can't seem to get to church on time. ⏰😅",
-              "datetime": "2022-03-27 18:17:39",
-              "id": 44,
-              "user": "N1995",
-              "icon": "icons/Chap2-pg9-Icon.png"
-            },
-            {
-              "pageNum": 12,
-              "filename": "Chap2-pg10.jpg",
-              "title": "Millie's Manipulation",
-              "message": "Not many highschoolers can drive in Shenee, and with gas prices as ludicrously high as they are even fewer can afford to drive. Good thing Millie the Magnificent's got a lucrative carpool deal worked with the rich parents! Sure would suck to not be able to afford gas...I SAID IT SURE WOULD SUCK TO-ah, forget it. Guess it's a great time to pick up running, huh? 🏃‍♂️🏃‍♀️",
-              "datetime": "2022-03-27 18:25:38",
-              "id": 45,
-              "user": "N1995",
-              "icon": "icons/Chap2-pg10-Icon.png"
-            },
-            {
-              "pageNum": 13,
-              "filename": "Chap2-pg11.jpg",
-              "title": "Ride to school in the Millie Mobile",
-              "message": "Guhhhh, I hate it when I can't really remember my dream but can kinda remember parts of it or at least get mad deja vu when something random happens later that day. It's like finishing an ice-cream cone and not being able to describe what it tasted like.",
-              "datetime": "2022-04-03 21:08:06",
-              "id": 46,
-              "user": "N1995",
-              "icon": "icons/Chap2-pg11-Icon.png"
-            },
-            {
-              "pageNum": 14,
-              "filename": "Chap2-pg12.jpg",
-              "title": "Casper remembers the surgeon",
-              "message": "Ya'll have any awkward stories from highschool? Haha yup me neither that's crazy! But if I did there may be one or two that started with the sudden urge to cold approach a girl.",
-              "datetime": "2022-04-03 21:10:39",
-              "id": 47,
-              "user": "N1995",
-              "icon": "icons/Chap2-pg12-Icon.png"
-            },
-            {
-              "pageNum": 15,
-              "filename": "Chap2-Pg13.jpg",
-              "title": "Oh yeah, it's all coming together.",
-              "message": "*kronk voice* \"Oh yeah, it's all coming together.\"",
-              "datetime": "2022-04-11 10:44:45",
-              "id": 48,
-              "user": "M1998",
-              "icon": "icons/Chap2-Pg13-Icon.png"
-            },
-            {
-              "pageNum": 16,
-              "filename": "Chap2-pg14.jpg",
-              "title": "Casper attempts an intervention, and is interventioned himself",
-              "message": "Casper, my man, attempts an intervention...only to be subject to another intervention. Intervenception.",
-              "datetime": "2022-04-11 10:51:40",
-              "id": 49,
-              "user": "M1998",
-              "icon": "icons/Chap2-pg14-Icon.png"
-            },
-            {
-              "pageNum": 17,
-              "filename": "Chap2-pg15.jpg",
-              "title": "Zylo confronts Casper",
-              "message": "Happy Easter, everyone! I... I said HAPPY, oh forget it. If you're going to be like that, Zylo, might as well divert that pent up rage towards someone who deserves it... like whoever ordered all the snow this morning...",
-              "datetime": "2022-04-18 12:08:05",
-              "id": 50,
-              "user": "M1998",
-              "icon": "icons/Chap2-pg15-Icon.png"
-            },
-            {
-              "pageNum": 18,
-              "filename": "Chap2-pg16.jpg",
-              "title": "Rose puts her foot in her mouth",
-              "message": "HAHA how does that foot taste, Rose? ......wait. no. That came out weird. Cause putting your foot in your mouth--forget I said anything... (⊙﹏⊙)",
-              "datetime": "2022-04-18 12:15:05",
-              "id": 51,
-              "user": "M1998",
-              "icon": "icons/Chap2-pg16-Icon.png"
-            },
-            {
-              "pageNum": 19,
-              "filename": "Chap2-pg17.jpg",
-              "title": "Casper Protecting Rose from Penguin Guy?",
-              "message": "I didn't know Casper had it in him! Oh... oh wait, yup sweaty Casper's back. (っ °Д °;)っ Didn't take much.",
-              "datetime": "2022-04-25 13:13:46",
-              "id": 52,
-              "user": "M1998",
-              "icon": "icons/Chap2-pg17-Icon.png"
-            },
-            {
-              "pageNum": 20,
-              "filename": "Chap2-pg18.jpg",
-              "title": "Vice Principal Lopez Appears Stage Left",
-              "message": "RIP Casper's spotless record. His mom's gonna love this.",
-              "datetime": "2022-04-25 13:20:06",
-              "id": 53,
-              "user": "M1998",
-              "icon": "icons/Chap2-pg18-Icon.png"
-            },
-            {
-              "pageNum": 21,
-              "filename": "Chap2-pg19.jpg",
-              "title": "Zylo and Casper get detention",
-              "message": "In this world, you're either a Casper or a Zylo. For me? 100% a Casper. I nearly peed my pants when I got written up by campus safety for stargazing on the crosscountry fields.",
-              "datetime": "2022-05-01 20:06:13",
-              "id": 54,
-              "user": "N1995",
-              "icon": "icons/Chap2-pg19-Icon.png"
-            },
-            {
-              "pageNum": 22,
-              "filename": "Chap2-pg20.jpg",
-              "title": "Rose and Quill late for class...but not?",
-              "message": "I don't think Quill's the OOoonly one trying to \"find someone\"... if you know what I mean 😉",
-              "datetime": "2022-05-01 20:12:16",
-              "id": 55,
-              "user": "N1995",
-              "icon": "icons/Chap2-pg20-Icon.png"
-            },
-            {
-              "pageNum": 23,
-              "filename": "Chap2-pg21.jpg",
-              "title": "Spooky School Wanderings",
-              "message": "Yech. Lunch hasn't even happened yet, and those tables are...hygienically challenged. Whoever is in charge of cleaning those tables needs a raise. Or to be fired. Or to get a raise, and then get fired.",
-              "datetime": "2022-05-09 12:47:56",
-              "id": 56,
-              "user": "N1995",
-              "icon": "icons/Chap2-pg21-Icon.png"
-            },
-            {
-              "pageNum": 24,
-              "filename": "Chap2-pg22.jpg",
-              "title": "School Eavesdropping Part 1",
-              "message": "Once there was a student body vote on the most hated thing in the school, and while the lunch table filth was the official first place winner, everyone knew the ballot write-in's for Vice Principal Lopez won by a vast majority.",
-              "datetime": "2022-05-09 12:54:47",
-              "id": 57,
-              "user": "N1995",
-              "icon": "icons/Chap2-pg22-Icon.png"
-            },
-            {
-              "pageNum": 25,
-              "filename": "Chap2-pg23.jpg",
-              "title": "Should have burned those bloody clothes",
-              "message": "Red dress? They're robes, Chief. If they were dresses I would have drawn them as such.🙄 On another note, who else would pay money to see Vice Principal Lopez and Chief Garrison get a few punches in? ✋🥊",
-              "datetime": "2022-05-16 15:31:31",
-              "id": 58,
-              "user": "M1998",
-              "icon": "icons/Chap2-pg23-Icon.png"
-            },
-            {
-              "pageNum": 26,
-              "filename": "Chap2-Pg24.jpg",
-              "title": "Stumbled upon Millie giving a head massage",
-              "message": "It would seem Millie is a fan of The Killers.......the more you know! Understanding one's music taste is a window into their soul, if they have one. 💀",
-              "datetime": "2022-05-16 15:34:53",
-              "id": 59,
-              "user": "M1998",
-              "icon": "icons/Chap2-Pg24-Icon.png"
-            },
-            {
-              "pageNum": 27,
-              "filename": "Chap2-Pg25.jpg",
-              "title": "Millie makes speedy escape through ceiling",
-              "message": "Millie exits stage up.",
-              "datetime": "2022-05-23 11:54:29",
-              "id": 60,
-              "user": "M1998",
-              "icon": "icons/Chap2-Pg25-Icon.png"
-            },
-            {
-              "pageNum": 28,
-              "filename": "Chap2-Pg26.jpg",
-              "title": "Rose pushed Lopez a little too far",
-              "message": "Lopez got dog owner/toddler mom energy when they see they're baby horking down on something they know ain't food.",
-              "datetime": "2022-05-23 12:01:03",
-              "id": 61,
-              "user": "M1998",
-              "icon": "icons/Chap2-Pg26-Icon.png"
-            },
-            {
-              "pageNum": 29,
-              "filename": "Memorial_Day1.png",
-              "title": "Happy Memorial Day",
-              "message": "Hey friends, hope you all had a wonderful Memorial Day weekend! No new pages this week TT_TT but here is a mini comic for you! Check back next Monday (June 7th) for two new pages! If you haven't already, you can join our discord to get notifications when pages are posted and join in some story discussions (link at the bottom of the webpage)!",
-              "datetime": "2022-05-31 13:53:04",
-              "id": 62,
-              "user": "M1998",
-              "icon": "icons/Memorial_Day1-Icon.png"
-            },
-            {
-              "pageNum": 30,
-              "filename": "Chap2-pg27.jpg",
-              "title": "Rose says she knows nothing...teachers seem to think otherwise",
-              "message": "We're back!! And two more candidates have joined the \"Detention Squad\"",
-              "datetime": "2022-06-06 12:35:19",
-              "id": 63,
-              "user": "M1998",
-              "icon": "icons/Chap2-pg27-Icon.png"
-            },
-            {
-              "pageNum": 31,
-              "filename": "Chap2-pg28.jpg",
-              "title": "The DOT is going to have to keep an eye on those two",
-              "message": "What kind of \"nifty toys\" does the Department of Tourism really need. Like, a really nice self-folding map?",
-              "datetime": "2022-06-06 12:48:55",
-              "id": 64,
-              "user": "M1998",
-              "icon": "icons/Chap2-pg28-Icon.png"
-            },
-            {
-              "pageNum": 32,
-              "filename": "Chap2-pg29.jpg",
-              "title": "What's Going On???",
-              "message": "Can you sum up your entire thought process over the course of a Monday school day with a 3-word sentence? Can relate.",
-              "datetime": "2022-06-13 12:38:38",
-              "id": 65,
-              "user": "M1998",
-              "icon": "icons/Chap2-pg29-Icon.png"
-            },
-            {
-              "pageNum": 33,
-              "filename": "Chap2-Pg30.jpg",
-              "title": "3 o'clock detention crew",
-              "message": "Ah, the motley Detention Crew spearheaded by the famed Mr. Barr, still down for his \"old person\" nap...",
-              "datetime": "2022-06-13 12:44:03",
-              "id": 66,
-              "user": "M1998",
-              "icon": "icons/Chap2-Pg30-Icon.png"
-            },
-            {
-              "pageNum": 34,
-              "filename": "Chap2-Pg31.jpg",
-              "title": "Rubber Band Burns",
-              "message": "Update coming in later than usual due to us roadtrippin' south for a few days. Nothing like a nice bumpy carride to put artist behind, I've discovered.",
-              "datetime": "2022-06-20 18:17:25",
-              "id": 67,
-              "user": "N1995",
-              "icon": "icons/Chap2-Pg31-Icon.png"
-            },
-            {
-              "pageNum": 35,
-              "filename": "Chap2-Pg32.jpg",
-              "title": "Quill Quips",
-              "message": "Oof. Bullies suck, but getting laughed out of a room by the girl you asked out is pretttty rough. Let's hope Rose's menacing baseball ex boyfriend is level-headed enough to keep the peace.",
-              "datetime": "2022-06-20 18:20:35",
-              "id": 68,
-              "user": "N1995",
-              "icon": "icons/Chap2-Pg32-Icon.png"
-            },
-            {
-              "pageNum": 36,
-              "filename": "Chap2-Pg33.jpg",
-              "title": "Chuck knows something about Sam",
-              "message": "Gotta hand it to her, Rose can turn the dramatics on and off like *snapping emoji* ...like, where did that handkerchief even come from anyways? ALSO, HEADS UP: Starting today and through the month of July, we will be reducing to ONE PAGE a week. This is for several reasons, mainly a sister's wedding 🥂🥳 and Nate and I moving into OUR NEW HOME!!! It's been a long haul but we are BEYOND thrilled to move out of the basement we have been calling home for the last 8 months (can't believe it's been that long)!! Plus all the traveling and packing required, we thought it best to slim down, but rest assured! Our regular TWO PAGES per week will return in August on this comic's 1 YEAR ANNIVERSARY!!!! 🍾🥳🙌",
-              "datetime": "2022-06-27 15:11:06",
-              "id": 69,
-              "user": "M1998",
-              "icon": "icons/Chap2-Pg33-Icon.png"
-            },
-            {
-              "pageNum": 37,
-              "filename": "Chap2-Pg34.jpg",
-              "title": "Rose and Chuck back together...?",
-              "message": "Be thankful you only have to read Chuck...I have to sketch, ink, color, and shade all 15 or so panels of the jerkface. TT_TT",
-              "datetime": "2022-07-04 09:05:40",
-              "id": 70,
-              "user": "M1998",
-              "icon": "icons/Chap2-Pg34-Icon.png"
-            },
-            {
-              "pageNum": 38,
-              "filename": "Chap2-Pg35.jpg",
-              "title": "Oh, so Chuck might know what happened to Sam",
-              "message": "Yeah, with gas being $28.99 a gallon...that doesn't sound like something you just \"borrow.\" And I'm not making that number up neither, check the prologue if you don't believe me ;)",
-              "datetime": "2022-07-11 10:45:36",
-              "id": 71,
-              "user": "M1998",
-              "icon": "icons/Chap2-Pg35-Icon.png"
-            },
-            {
-              "pageNum": 39,
-              "filename": "Chap2-Pg36.jpg",
-              "title": "Sometimes it's best not to provoke the school jerk, Casper",
-              "message": "*munches softly*",
-              "datetime": "2022-07-18 20:10:24",
-              "id": 72,
-              "user": "M1998",
-              "icon": "icons/Chap2-Pg36-Icon.png"
-            },
-            {
-              "pageNum": 40,
-              "filename": "Chap2-Pg37.jpg",
-              "title": "Turning over a new leaf...",
-              "message": "You ever catch yourself mid-story and realize that maybe telling this story was a bad...bad idea? But there's no way out of it because at that point, you have the room's full attention? ...yeaaah, Nate and I like to write what we know.",
-              "datetime": "2022-07-25 12:19:48",
-              "id": 73,
-              "user": "M1998",
-              "icon": "icons/Chap2-Pg37-Icon.png"
-            },
-            {
-              "pageNum": 41,
-              "filename": "Chap2-Pg38.jpg",
-              "title": "We Gotta LEAF!!",
-              "message": "Excuse me Casper, I believe you mean \"We gotta LEAF! He's Coming!\" ",
-              "datetime": "2022-08-01 09:48:59",
-              "id": 74,
-              "user": "M1998",
-              "icon": "icons/Chap2-Pg38-Icon.png"
-            },
-            {
-              "pageNum": 42,
-              "filename": "Chap2-Pg39.jpg",
-              "title": "Detention is Getting Spicey",
-              "message": "All the back-to-school essentials: paper, pencils, a bad attitude, erasers--CRIKE, IS THAT A GUN!?",
-              "datetime": "2022-08-08 14:31:47",
-              "id": 75,
-              "user": "M1998",
-              "icon": "icons/Chap2-Pg39-Icon.png"
-            },
-            {
-              "pageNum": 43,
-              "filename": "Chap2-pg40.jpg",
-              "title": "Bite it to be sure. It might be a metaphor.",
-              "message": "Bite it to be sure. It might be a metaphor.",
-              "datetime": "2022-08-08 14:35:56",
-              "id": 76,
-              "user": "M1998",
-              "icon": "icons/Chap2-pg40-Icon.png"
-            },
-            {
-              "pageNum": 44,
-              "filename": "Chap2-pg41.jpg",
-              "title": "Sky's Out, Knives Out",
-              "message": "Get yo'self a Quill.",
-              "datetime": "2022-08-15 16:25:58",
-              "id": 77,
-              "user": "M1998",
-              "icon": "icons/Chap2-pg41-Icon.png"
-            },
-            {
-              "pageNum": 45,
-              "filename": "Chap2-pg42.jpg",
-              "title": "The fight has begun",
-              "message": "I mean, Casper is supposed to be this anime nerd...but the boi doesn't miss his hip thrusts and bulgarians, that's for sure O_O",
-              "datetime": "2022-08-15 16:29:19",
-              "id": 78,
-              "user": "M1998",
-              "icon": "icons/Chap2-pg42-Icon.png"
-            },
-            {
-              "pageNum": 46,
-              "filename": "Chap2-pg43.jpg",
-              "title": "Patrick goes full Waluigi stomp on Casper",
-              "message": "Drawing Pat in the final panel was giving me some mad deja vu, but I couldn't put my finger on who he reminded me of......Waluigi, it was Waluigi.",
-              "datetime": "2022-08-22 15:14:03",
-              "id": 79,
-              "user": "M1998",
-              "icon": "icons/Chap2-pg43-Icon.png"
-            },
-            {
-              "pageNum": 47,
-              "filename": "Chap2-pg44.jpg",
-              "title": "Casper sweep the leg",
-              "message": "Stomp it. Sweep it. Bop it.",
-              "datetime": "2022-08-22 15:22:08",
-              "id": 80,
-              "user": "M1998",
-              "icon": "icons/Chap2-pg44-Icon.png"
-            },
-            {
-              "pageNum": 48,
-              "filename": "Chap2-pg45.jpg",
-              "title": "Casper wins his first fight",
-              "message": "When you take down two armed bullies, single-handedly rescuing your highschool's sweetheart, Rose Stewart, all while haloed by literal fire, and still no one notices.",
-              "datetime": "2022-08-29 15:14:45",
-              "id": 81,
-              "user": "M1998",
-              "icon": "icons/Chap2-pg45-Icon.png"
-            },
-            {
-              "pageNum": 49,
-              "filename": "Chap2-Pg46.jpg",
-              "title": "Rose the Gun! Right!",
-              "message": "Not everyone thinks best on their feet.",
-              "datetime": "2022-08-29 15:18:56",
-              "id": 82,
-              "user": "M1998",
-              "icon": "icons/Chap2-Pg46-Icon.png"
-            },
-            {
-              "pageNum": 50,
-              "filename": "Labor_Day.jpg",
-              "title": "Happy Labor Day",
-              "message": "Happy Labor Day, friends!! More pages are coming this week, so don't worry! We won't leave you hanging...but in the meantime, enjoy this kitty taking a nap in honor of the holiday 🐈",
-              "datetime": "2022-09-05 21:06:27",
-              "id": 83,
-              "user": "M1998",
-              "icon": "icons/Labor_Day-Icon.png"
-            },
-            {
-              "pageNum": 51,
-              "filename": "Chap2-pg47.jpg",
-              "title": "Chuck does big slash. Big effective.",
-              "message": "Don't run, play, or turn around suddenly with knives, kids. Or better yet...forget knives. Sporks are the ultimate utensil.",
-              "datetime": "2022-09-07 14:48:46",
-              "id": 84,
-              "user": "M1998",
-              "icon": "icons/Chap2-pg47-Icon.png"
-            },
-            {
-              "pageNum": 52,
-              "filename": "Chap2-pg48.jpg",
-              "title": "Casper got got",
-              "message": "Don't worry guys, just RGB red light pixels on your screen. No friends were hurt in the making of this comic. ",
-              "datetime": "2022-09-07 14:52:09",
-              "id": 85,
-              "user": "M1998",
-              "icon": "icons/Chap2-pg48-Icon.png"
-            },
-            {
-              "pageNum": 53,
-              "filename": "Under_Construction-09122022.jpg",
-              "title": "Pages Under Construction",
-              "message": "Hey! New pages aren't done yet but we have some glorious rainy overcast days on the horizon which is ideal art-making weather for my little pluviophile heart.<3 Join us back here next Monday as we get ready to close out Chapter 2!!!",
-              "datetime": "2022-09-12 11:42:35",
-              "id": 86,
-              "user": "M1998",
-              "icon": "icons/Under_Construction-09122022-Icon.png"
-            },
-            {
-              "pageNum": 54,
-              "filename": "Chap2-pg49.jpg",
-              "title": "Quill shakes down Mr. Barr",
-              "message": "Just remember. There was a point this past week that I was sitting at my computer, thinking about what sort of sound \"Quill shakes an unconscious Mr. Barr\" makes. DM me if you have suggestions that smack \"Wa-Whoosh\" out of the competition.",
-              "datetime": "2022-09-19 15:12:05",
-              "id": 87,
-              "user": "M1998",
-              "icon": "icons/Chap2-pg49-Icon.png"
-            },
-            {
-              "pageNum": 55,
-              "filename": "Chap2-pg50.jpg",
-              "title": "Chucks busts out the window",
-              "message": "Bippity boppity boop, Chuck has flown the coop.",
-              "datetime": "2022-09-19 15:20:16",
-              "id": 88,
-              "user": "M1998",
-              "icon": "icons/Chap2-pg50-Icon.png"
-            },
-            {
-              "pageNum": 56,
-              "filename": "Chap2-pg51.jpg",
-              "title": "Desperate times call for desperate measures",
-              "message": "Oh cute! They're working together...toooo throw Casper out the second story window.",
-              "datetime": "2022-09-26 15:20:22",
-              "id": 89,
-              "user": "M1998",
-              "icon": "icons/Chap2-pg51-Icon.png"
-            }
-          ]
-        },
-        {
-          "chapterName": "Chapter Three",
-          "folderName": "chapter3",
-          "numOfPages": 5,
-          "id": 4,
-          "pages": [
-            {
-              "pageNum": 1,
-              "filename": "Chapter3.jpg",
-              "title": "Chapter 3 Cover - Roadtrip with Death",
-              "message": "Fun fact: although Millie is the youngest of the main characters, she is the only one that knows how to drive. Legally, that is.",
-              "datetime": "2022-09-26 15:57:49",
-              "id": 90,
-              "user": "N1995",
-              "icon": "icons/Chapter3-Icon.png"
-            },
-            {
-              "pageNum": 2,
-              "filename": "Chp3-Pg1.jpg",
-              "title": "I didn't QUITE kill him",
-              "message": "Chapter 3 baby!! You know who loooooves drawing backgrounds?!?! ....cause, like, if you know anyone, send them over my way, kay?",
-              "datetime": "2022-10-03 16:16:43",
-              "id": 91,
-              "user": "M1998",
-              "icon": "icons/Chp3-Pg1-Icon.png"
-            },
-            {
-              "pageNum": 3,
-              "filename": "Chp3-Pg2.jpg",
-              "title": "Suspicious Skeleton guy in the van with Millie",
-              "message": "Now how many of you saw the beat-up van with a trail of smoke coming out of it on the last page and thought it was a blunt? Now be honest...",
-              "datetime": "2022-10-03 16:18:42",
-              "id": 92,
-              "user": "M1998",
-              "icon": "icons/Chp3-Pg2-Icon.png"
-            },
-            {
-              "pageNum": 4,
-              "filename": "Chp3-Pg3.jpg",
-              "title": "Introducing Mors",
-              "message": "Death isn't always ragged cloaks and bloody scythes. Sure there's that part, the fun bit everyone sees, but there's a lot of paperwork that has to happen behind-the-scenes, a lot of checks and balances that have to add up. With that much deskwork stacking up, the Grim Reaper practically had to invent accounting. Too bad he's too busy to refresh his wardrobe more than every hundred years or so. 🤓",
-              "datetime": "2022-10-10 16:44:49",
-              "id": 93,
-              "user": "N1995",
-              "icon": "icons/Chp3-Pg3-Icon.png"
-            },
-            {
-              "pageNum": 5,
-              "filename": "Chp3-Pg4.jpg",
-              "title": "Death Puns #1",
-              "message": "We love to see a friend who laughs at terrible jokes. We much less love if they are death incarnate, but hey! Sometimes the puns are bad enough you can't be picky... 💀",
-              "datetime": "2022-10-10 16:51:47",
-              "id": 94,
-              "user": "N1995",
-              "icon": "icons/Chp3-Pg4-Icon.png"
-            }
-          ]
+            "seasonName": "First Blood",
+            "folderName": "first blood",
+            "numOfPages": 94,
+            "numOfChapters": 4,
+            "id": 1,
+            "chapters": [
+                {
+                    "chapterName": "Prologue",
+                    "folderName": "prologue",
+                    "numOfPages": 7,
+                    "id": 1,
+                    "pages": [
+                        {
+                            "pageNum": 1,
+                            "filename": "PRO1.jpg",
+                            "title": "Prologue Cover Page",
+                            "message": "Welcome back, mystery hunters! We decided to archive the old prologue for our patrons over on Patreon, and release a brand, spanking NEW AND IMPROVED prologue crammed with all the lessons we learned in doing the first 50 pages of Monsters and Myriads. \"But, Nathan,\" you may say, \"you aren't going to make any progress if you keep redoing what you've outgrown.\" To which I respond: you're absolutely right. We're going to keep moving after this, promise! Once we post all 7 pages of the new prologue, we'll un-hide the Chapter 1 pages and move on to Chapter 2. So thank you for coming back or starting it fresh! We're so excited and proud of what we're doing, but we are learning everyday how to write/illustrate better. If you have ideas, we'd love to hear them in our Discord! The link is below. :)",
+                            "datetime": "2022-01-31 14:25:53",
+                            "id": 1,
+                            "user": "N1995",
+                            "icon": "icons/PRO1-Icon.png",
+                            "page_uuid": "a91485e8-0ef2-4d62-9664-7d468f50e360"
+                        },
+                        {
+                            "pageNum": 2,
+                            "filename": "PRO2.jpg",
+                            "title": "The First Visitor",
+                            "message": "Who's nightmare do ya think this Visitor was? My money's on a deer hunter, but in Wisconsin that could be anyone. Even your little sister. Especially your little sister. 😮 Reminder that we will un-hide the rest of Chapter 1 and get back to Chapter 2 in six more pages!",
+                            "datetime": "2022-01-31 14:46:51",
+                            "id": 2,
+                            "user": "N1995",
+                            "icon": "icons/PRO2-Icon.png",
+                            "page_uuid": "c7f18b53-8e49-4468-a3c6-d01bf57f67e1"
+                        },
+                        {
+                            "pageNum": 3,
+                            "filename": "PRO3.jpg",
+                            "title": "First Visitor Attack",
+                            "message": "You might say they don't take kindly to visitors. Or maybe TOO kindly...maybe the shadowy \"Judas\" was probably just giving the Visitor a big 'ol hug...?",
+                            "datetime": "2022-02-07 13:45:06",
+                            "id": 3,
+                            "user": "N1995",
+                            "icon": "icons/PRO3-Icon.png",
+                            "page_uuid": "e65542d1-3279-4c7f-a666-be7bad4ec716"
+                        },
+                        {
+                            "pageNum": 4,
+                            "filename": "PRO4.jpg",
+                            "title": "Ms. Winters Appears",
+                            "message": "Is it just me, or does that cat have something in its eye? 👀",
+                            "datetime": "2022-02-07 13:46:49",
+                            "id": 4,
+                            "user": "N1995",
+                            "icon": "icons/PRO4-Icon.png",
+                            "page_uuid": "c52887a5-d07f-448d-9732-c1a596a60c9e"
+                        },
+                        {
+                            "pageNum": 5,
+                            "filename": "PRO5.jpg",
+                            "title": "Is that a drop off at the town border?",
+                            "message": "Never underestimate your local cat lady. She may be a drug dealer.",
+                            "datetime": "2022-02-14 11:41:44",
+                            "id": 5,
+                            "user": "M1998",
+                            "icon": "icons/PRO5-Icon.png",
+                            "page_uuid": "7e3de6e5-9434-4661-a932-f893ba0d0892"
+                        },
+                        {
+                            "pageNum": 6,
+                            "filename": "PRO6.jpg",
+                            "title": "Pizza man joy ride and mailbox gremlins",
+                            "message": "Happy Valentines Day everybody! True love = pizza with a side of mailbox gremlin.",
+                            "datetime": "2022-02-14 11:45:45",
+                            "id": 6,
+                            "user": "M1998",
+                            "icon": "icons/PRO6-Icon.png",
+                            "page_uuid": "ef10b105-6bdf-4bdb-a4b4-356fdd5d290a"
+                        },
+                        {
+                            "pageNum": 7,
+                            "filename": "PRO7-2.0.jpg",
+                            "title": "Donny is late for a very important date",
+                            "message": "Donny, my man, I feel for you. Spared from one storm just to fall into another. 🌧",
+                            "datetime": "2022-02-21 14:52:57",
+                            "id": 7,
+                            "user": "M1998",
+                            "icon": "icons/PRO7-2.0-Icon.png",
+                            "page_uuid": "2c0014dd-f667-4079-8da0-31c7c34055c1"
+                        }
+                    ]
+                },
+                {
+                    "chapterName": "Chapter One",
+                    "folderName": "chapter1",
+                    "numOfPages": 26,
+                    "id": 2,
+                    "pages": [
+                        {
+                            "pageNum": 1,
+                            "filename": "Chapter1_NEW.jpg",
+                            "title": "First Blood Title Page",
+                            "message": "It's here! Hang on to your couch, office chair, or whatever seat you're reading from! We're about to officially get started... (づ￣ 3￣)づ",
+                            "datetime": "2021-09-06 15:14:10",
+                            "id": 8,
+                            "user": "N1995",
+                            "icon": "icons/Chapter1_NEW-Icon.png",
+                            "page_uuid": "b5f7b9aa-2b31-4d16-b5d8-52256b107849"
+                        },
+                        {
+                            "pageNum": 2,
+                            "filename": "Chap1-Pg1.jpg",
+                            "title": "Rose finds drugs?",
+                            "message": "Season 1 starting off with a happy dance! What do you think is in the bottle??? Comment your guess in our discord chat!",
+                            "datetime": "2021-09-09 11:50:23",
+                            "id": 9,
+                            "user": "M1998",
+                            "icon": "icons/Chap1-Pg1-Icon.png",
+                            "page_uuid": "1751991a-87ab-41b6-aeae-0dcf254bdc84"
+                        },
+                        {
+                            "pageNum": 3,
+                            "filename": "Chap1-Pg2.jpg",
+                            "title": "Rose escapes her mother's room",
+                            "message": "From butchering beasts in high heels to jumping out of windows in flip flops...we need to get these girls some sneakers!",
+                            "datetime": "2021-09-13 14:09:28",
+                            "id": 10,
+                            "user": "M1998",
+                            "icon": "icons/Chap1-Pg2-Icon.png",
+                            "page_uuid": "70b7b8ad-a69b-4418-9c8b-856b36979267"
+                        },
+                        {
+                            "pageNum": 4,
+                            "filename": "Chap1-Pg3.jpg",
+                            "title": "Donny discovers Rose's escape measures",
+                            "message": "Don't know what Jean usually listens to on her ipod, but it's \"ffmmping!\"",
+                            "datetime": "2021-09-16 14:05:25",
+                            "id": 11,
+                            "user": "M1998",
+                            "icon": "icons/Chap1-Pg3-Icon.png",
+                            "page_uuid": "a711a2d6-4fa6-40cc-8b0b-3d22a3c645f1"
+                        },
+                        {
+                            "pageNum": 5,
+                            "filename": "Chap1-Pg4.jpg",
+                            "title": "Rose embarrasses herself in front of cats",
+                            "message": "Them cats know a good purple manicure when they see it. ",
+                            "datetime": "2021-09-20 14:52:44",
+                            "id": 12,
+                            "user": "M1998",
+                            "icon": "icons/Chap1-Pg4-Icon.png",
+                            "page_uuid": "ddddfc92-0b68-4a8c-8561-f89abf54dfaf"
+                        },
+                        {
+                            "pageNum": 6,
+                            "filename": "Chap1-Pg5.jpg",
+                            "title": "Who is the Penguin man?",
+                            "message": "New page and lots of new faces! But the most important face of all...this elusive Mr. Freezy Cee...",
+                            "datetime": "2021-09-23 15:58:07",
+                            "id": 13,
+                            "user": "M1998",
+                            "icon": "icons/Chap1-Pg5-Icon.png",
+                            "page_uuid": "aeb0efca-cbd8-42c7-bb7c-05eb6a403472"
+                        },
+                        {
+                            "pageNum": 7,
+                            "filename": "Chap1-Pg6.jpg",
+                            "title": "Zylo is seeing things, and those things have a lot of teeth",
+                            "message": "I could have sworn she had less teeth in the last pannel.",
+                            "datetime": "2021-09-27 11:33:25",
+                            "id": 14,
+                            "user": "M1998",
+                            "icon": "icons/Chap1-Pg6-Icon.png",
+                            "page_uuid": "5986b5b8-993b-4f99-af7a-f235294731eb"
+                        },
+                        {
+                            "pageNum": 8,
+                            "filename": "Chap1-Pg7.jpg",
+                            "title": "He DEFINITELY likes me...",
+                            "message": "You may have wondered if penguin boy has flippers for hands or if it's just part of his costume. Well now you know, you're welcome.",
+                            "datetime": "2021-09-30 10:12:11",
+                            "id": 15,
+                            "user": "M1998",
+                            "icon": "icons/Chap1-Pg7-Icon.png",
+                            "page_uuid": "a78d0b2b-b18d-42ae-a6d3-81a049312b90"
+                        },
+                        {
+                            "pageNum": 9,
+                            "filename": "Chap1-Pg8.jpg",
+                            "title": "Rose coming in hot",
+                            "message": "Poor Mr. \"Definitely Not Mr. Freezy Cee\" can't catch a break.",
+                            "datetime": "2021-10-04 16:20:14",
+                            "id": 16,
+                            "user": "M1998",
+                            "icon": "icons/Chap1-Pg8-Icon.png",
+                            "page_uuid": "e871b8c8-a86f-40c2-86dd-a19263886731"
+                        },
+                        {
+                            "pageNum": 10,
+                            "filename": "Chap1-Pg9.jpg",
+                            "title": "Rose and Casper Collision",
+                            "message": "And that, kids, was how I met your mother. Hahaha just kidding...unless...",
+                            "datetime": "2021-10-07 16:24:10",
+                            "id": 17,
+                            "user": "M1998",
+                            "icon": "icons/Chap1-Pg9-Icon.png",
+                            "page_uuid": "51ce50ea-035a-490d-9f28-bf4ec3ccee02"
+                        },
+                        {
+                            "pageNum": 11,
+                            "filename": "Chap1-Pg10.jpg",
+                            "title": "Oh nononono Rose got God Blood on her blood",
+                            "message": "Oh nononono, Rose got \"God Blood\" on her blood. I'm sure everything's fine.",
+                            "datetime": "2021-10-11 12:46:29",
+                            "id": 18,
+                            "user": "M1998",
+                            "icon": "icons/Chap1-Pg10-Icon.png",
+                            "page_uuid": "fce36a5e-65c7-4278-9049-f4c0b63b0ddc"
+                        },
+                        {
+                            "pageNum": 12,
+                            "filename": "Chap1-Pg11.jpg",
+                            "title": "He's Bouncy like Rubber, BOING!",
+                            "message": "It's okay dude, we know what One Piece is and WE think you're cool.",
+                            "datetime": "2021-10-18 16:43:17",
+                            "id": 19,
+                            "user": "M1998",
+                            "icon": "icons/Chap1-Pg11-Icon.png",
+                            "page_uuid": "5e53a51e-cf3a-4f96-b875-d1a4b8d8732f"
+                        },
+                        {
+                            "pageNum": 13,
+                            "filename": "Chap1-Pg12.jpg",
+                            "title": "Blush Overload and Jealous Rage",
+                            "message": "Someone may be jealous... but jury is still out on that.",
+                            "datetime": "2021-10-25 14:28:32",
+                            "id": 20,
+                            "user": "M1998",
+                            "icon": "icons/Chap1-Pg12-Icon.png",
+                            "page_uuid": "112fa920-1270-463b-8606-19a76148c98f"
+                        },
+                        {
+                            "pageNum": 14,
+                            "filename": "Chap1-Pg13.jpg",
+                            "title": "A hero is needed, and Casper will have to do",
+                            "message": "When that rando kid thinks they are the main character.",
+                            "datetime": "2021-10-28 14:40:51",
+                            "id": 21,
+                            "user": "M1998",
+                            "icon": "icons/Chap1-Pg13-Icon.png",
+                            "page_uuid": "ec70f967-f9a2-4060-aeaa-8871c90460aa"
+                        },
+                        {
+                            "pageNum": 15,
+                            "filename": "Moved_To_Wisconsin.jpg",
+                            "title": "We Moved to Wisconsin",
+                            "message": "Hey guys! So you may have heard we were buying a house. The house is no more! In the mean time, we are setting up camp in Wisconsin (the home of the Monsters and Myriads comic ironically). We're just now getting settled in and figuring out our future adventures. So no new page today, however, pages will continue this Thursday (November 4th). Also, Happy Belated Halloween, you spooky hooligans!",
+                            "datetime": "2021-11-01 15:35:23",
+                            "id": 22,
+                            "user": "M1998",
+                            "icon": "icons/Moved_To_Wisconsin-Icon.png",
+                            "page_uuid": "a59b7cc5-e678-4504-83e0-c19b4600412a"
+                        },
+                        {
+                            "pageNum": 16,
+                            "filename": "Chap1-Pg14.jpg",
+                            "title": "Your....Vanilla Cones",
+                            "message": "I don't know which part made me happier to draw, the icecream on the kitty's nose, or Casper vrooooming off into the sunset. Or maybe the phantom newcomer in the depths of the Freezy Cee's custard shack...",
+                            "datetime": "2021-11-04 12:32:38",
+                            "id": 23,
+                            "user": "M1998",
+                            "icon": "icons/Chap1-Pg14-Icon.png",
+                            "page_uuid": "8715320b-92f6-4898-b940-88c9442ef9c3"
+                        },
+                        {
+                            "pageNum": 17,
+                            "filename": "Chap1-Pg15.jpg",
+                            "title": "Here enters the Elusive Mr. Freezy Cee",
+                            "message": "The man, the myth, the legend, Mr. Freezy Cee!! Dropping some hot takes and hard facts. Posting from Colorado Springs this morning (my concept of time has been severely crippled between moving from Ohio to Wisconsin to Colorado, during a daylight savings no less 🙀).",
+                            "datetime": "2021-11-08 11:41:04",
+                            "id": 24,
+                            "user": "M1998",
+                            "icon": "icons/Chap1-Pg15-Icon.png",
+                            "page_uuid": "1b5f8f3d-a137-47a8-afeb-eb6a490a4532"
+                        },
+                        {
+                            "pageNum": 18,
+                            "filename": "Chap1-Pg16.jpg",
+                            "title": "Mr Freezy Cee on the philosophy of penguin pajamas",
+                            "message": "This just in: Mr. Freezy Cee on the philosophy of penguin pajamas.",
+                            "datetime": "2021-11-11 11:55:09",
+                            "id": 25,
+                            "user": "M1998",
+                            "icon": "icons/Chap1-Pg16-Icon.png",
+                            "page_uuid": "0c0bf2b2-8f78-419c-acda-6e48cba1b742"
+                        },
+                        {
+                            "pageNum": 19,
+                            "filename": "Chap1-Pg17.jpg",
+                            "title": "Just about anything can make you interesting",
+                            "message": "Zylo \"unmasked\", not a penguin after all.",
+                            "datetime": "2021-11-15 14:55:54",
+                            "id": 26,
+                            "user": "M1998",
+                            "icon": "icons/Chap1-Pg17-Icon.png",
+                            "page_uuid": "c18bbd0b-4c1e-434b-9725-f8d951043af6"
+                        },
+                        {
+                            "pageNum": 20,
+                            "filename": "Chap1-Pg18.jpg",
+                            "title": "Hacker Chick and her Nut Cracker immerges",
+                            "message": "Little known hallmark film coming out this season...Hacker and the NuT Cracker. Buy your tickets today!",
+                            "datetime": "2021-11-18 15:34:14",
+                            "id": 27,
+                            "user": "M1998",
+                            "icon": "icons/Chap1-Pg18-Icon.png",
+                            "page_uuid": "596269ae-4b0a-4e63-ab9e-a3b7c894b13c"
+                        },
+                        {
+                            "pageNum": 21,
+                            "filename": "Chap1-Pg19.jpg",
+                            "title": "I'm sure your deserted little twin brothers are fine...",
+                            "message": "I'm sure your deserted little twin brothers are fine, Casper. I mean, they had icecream and an absurd lack of supervision to keep them company.",
+                            "datetime": "2021-11-22 12:52:25",
+                            "id": 28,
+                            "user": "M1998",
+                            "icon": "icons/Chap1-Pg19-Icon.png",
+                            "page_uuid": "73c0062b-9bba-4f17-a947-2f238d7085ec"
+                        },
+                        {
+                            "pageNum": 22,
+                            "filename": "Chap1-Pg20.jpg",
+                            "title": "Rose may be tripping afterall",
+                            "message": "Well Rose is certainly tripping on something.",
+                            "datetime": "2021-11-29 16:13:07",
+                            "id": 29,
+                            "user": "M1998",
+                            "icon": "icons/Chap1-Pg20-Icon.png",
+                            "page_uuid": "9fa5131b-f89b-40b0-8b40-95276dccb762"
+                        },
+                        {
+                            "pageNum": 23,
+                            "filename": "Chap1-Pg21.jpg",
+                            "title": "Maybe we're both high?",
+                            "message": "Have I been playing too much Pikmin Bloom, or does Quill's ghost need a name? I'm leaning towards Reginald but I am open to suggestions.",
+                            "datetime": "2021-12-02 09:49:21",
+                            "id": 30,
+                            "user": "M1998",
+                            "icon": "icons/Chap1-Pg21-Icon.png",
+                            "page_uuid": "14929e5a-6aca-4d4b-9968-a0f78f109bda"
+                        },
+                        {
+                            "pageNum": 24,
+                            "filename": "Chap1-Pg22.jpg",
+                            "title": "Uncle Dan finds the kiddos with a broken window",
+                            "message": "All things considered, both Uncle Dan and Rose are taking it all rather well. (⊙_⊙;)",
+                            "datetime": "2021-12-06 15:49:41",
+                            "id": 31,
+                            "user": "M1998",
+                            "icon": "icons/Chap1-Pg22-Icon.png",
+                            "page_uuid": "7de3c1df-4fac-4b9b-b89a-c30ba1cb0126"
+                        },
+                        {
+                            "pageNum": 25,
+                            "filename": "Chap1-Pg23.jpg",
+                            "title": "Uncle Dan to the rescue",
+                            "message": "Typical.",
+                            "datetime": "2021-12-09 12:21:46",
+                            "id": 32,
+                            "user": "M1998",
+                            "icon": "icons/Chap1-Pg23-Icon.png",
+                            "page_uuid": "cad99e72-9d90-4c11-bf03-b9ce5d464c11"
+                        },
+                        {
+                            "pageNum": 26,
+                            "filename": "Chap1-Pg24.jpg",
+                            "title": "Rose isn't crazy, and Quill is gonna help her",
+                            "message": "I didn't grow up with cousins my age, but I imagine this is how general cousinly bickering would go.",
+                            "datetime": "2021-12-13 14:41:40",
+                            "id": 33,
+                            "user": "M1998",
+                            "icon": "icons/Chap1-Pg24-Icon.png",
+                            "page_uuid": "5814ce12-afb8-4a3e-a7e0-471274bd98bf"
+                        }
+                    ]
+                },
+                {
+                    "chapterName": "Chapter Two",
+                    "folderName": "chapter2",
+                    "numOfPages": 56,
+                    "id": 3,
+                    "pages": [
+                        {
+                            "pageNum": 1,
+                            "filename": "Chapter2_NEW.jpg",
+                            "title": "Chapter 2 Killing Time in Detention",
+                            "message": "Woot woot!! Heading into the next chapter! Thank you all for checking out our comic up til this point! This marks the start of the Monsters & Myriads holiday hiatus where we the creators will be making some fun edits to be revealed this coming January. In the meantime, check out our Discord to join in the conversation and share your ideas/theories. We love to hear from you guys! Merry Christmas all and see you in the new year! 🎄⛄",
+                            "datetime": "2021-12-16 15:09:27",
+                            "id": 34,
+                            "user": "M1998",
+                            "icon": "icons/Chapter2_NEW-Icon.png",
+                            "page_uuid": "d615a5cc-9cd2-4fdb-9de2-6c5093c5558c"
+                        },
+                        {
+                            "pageNum": 2,
+                            "filename": "Holidays2022.jpg",
+                            "title": "Holiday Hiatus 2022",
+                            "message": "Hey guys! I hope your holidays were warm and filled with great memories! Over the last few weeks, we've discussed our vision for this comic at length and have finally decided to *drum roll please* remake the prologue for Monsters & Myriads!! 🥳🥂 The one we have now served its purpose in teaching us a lot of lessons about making comics, but over the next few weeks, we intend to breathe new life into the beginning of our novel, setting more clear expections and setting for the story. We will restart our posting schedule the last monday of the month, January 31.",
+                            "datetime": "2022-01-03 20:47:44",
+                            "id": 35,
+                            "user": "M1998",
+                            "icon": "icons/Holidays2022-Icon.png",
+                            "page_uuid": "ee7c05a0-49cd-4420-9743-5e64003795e3"
+                        },
+                        {
+                            "pageNum": 3,
+                            "filename": "Chap2-Pg1.jpg",
+                            "title": "Casper floating over grayed out farm",
+                            "message": "Coming to you live, boy in flannel pajamas floating in the sky. ",
+                            "datetime": "2022-02-28 13:49:51",
+                            "id": 36,
+                            "user": "M1998",
+                            "icon": "icons/Chap2-Pg1-Icon.png",
+                            "page_uuid": "aaedf4f4-41d0-4438-bd35-98323f46522c"
+                        },
+                        {
+                            "pageNum": 4,
+                            "filename": "Chap2-pg2.jpg",
+                            "title": "Casper knock knock on barn door and it hisses",
+                            "message": "Oh dear, Casper. What have you gotten yourself into...",
+                            "datetime": "2022-02-28 14:07:27",
+                            "id": 37,
+                            "user": "M1998",
+                            "icon": "icons/Chap2-pg2-Icon.png",
+                            "page_uuid": "454a43ce-d88e-4964-8474-fb3ef8f49a3d"
+                        },
+                        {
+                            "pageNum": 5,
+                            "filename": "Chap2-pg03.jpg",
+                            "title": "Just give me a sign",
+                            "message": "Fire laurel? Check. All the credentials you need for nefarious metaphorical parasite removal.",
+                            "datetime": "2022-03-07 20:16:24",
+                            "id": 38,
+                            "user": "M1998",
+                            "icon": "icons/Chap2-pg03-Icon.png",
+                            "page_uuid": "655a8a5b-8abe-4cde-87be-0ddff44f5a69"
+                        },
+                        {
+                            "pageNum": 6,
+                            "filename": "Chap2-pg04.jpg",
+                            "title": "Hooded lady isn't quite feeling herself",
+                            "message": "Wonder who \"it\" is...a friend? ...probs not.",
+                            "datetime": "2022-03-07 20:20:41",
+                            "id": 39,
+                            "user": "M1998",
+                            "icon": "icons/Chap2-pg04-Icon.png",
+                            "page_uuid": "aa3ef18a-1a40-4eac-9280-0243c17e068c"
+                        },
+                        {
+                            "pageNum": 7,
+                            "filename": "Chap2-pg05.jpg",
+                            "title": "Rat Monster and a Rude Awakening",
+                            "message": "Alright, time to count 'em all. How many rats in the rat monster. Note: no picking up, shaking, or breaking the rat monster. That's cheating and will lead to disqualification. Rats will be counted by the end of the week and the winner will be notified by messenger pigeon...if said pigeon isn't devoured in the counting process.",
+                            "datetime": "2022-03-14 16:25:50",
+                            "id": 40,
+                            "user": "M1998",
+                            "icon": "icons/Chap2-pg05-Icon.png",
+                            "page_uuid": "1fd66105-2c24-499f-a363-db539b47ab40"
+                        },
+                        {
+                            "pageNum": 8,
+                            "filename": "Chap2-pg06.jpg",
+                            "title": "My Favorite Comic \"One Part\" and Blackmail",
+                            "message": "Siblings, your gateway drug into blackmail. Also, previously noted rat counting contest has been cancelled. Artist does not know nor desires to know number of rats and warns against long exposure to said rats.",
+                            "datetime": "2022-03-14 16:32:54",
+                            "id": 41,
+                            "user": "M1998",
+                            "icon": "icons/Chap2-pg06-Icon.png",
+                            "page_uuid": "1f79974e-cedd-4662-801a-e98df6a72648"
+                        },
+                        {
+                            "pageNum": 9,
+                            "filename": "Chap2-pg07.jpg",
+                            "title": "Casper Cat Staring Contest",
+                            "message": "The Casper Cat Stare-off of year *REDACTED*, an age old tradition passed down by the *REDACTED* and hence the birth of the earmuff. Also, what's with the funny-looking smudge on the neighbor's roof?",
+                            "datetime": "2022-03-20 21:19:45",
+                            "id": 42,
+                            "user": "M1998",
+                            "icon": "icons/Chap2-pg07-Icon.png",
+                            "page_uuid": "38f2b2f3-c7d3-4491-8bdf-e26f578e5b96"
+                        },
+                        {
+                            "pageNum": 10,
+                            "filename": "Chap2-pg08.jpg",
+                            "title": "Wake up in the morning feeling like p diddy",
+                            "message": "Ah yes, brothers and cat and spectral, tea-drinking shadow gathering about for some late night manga reading. When you can't live your best life, you write about it and make your wife draw it.",
+                            "datetime": "2022-03-20 21:24:08",
+                            "id": 43,
+                            "user": "M1998",
+                            "icon": "icons/Chap2-pg08-Icon.png",
+                            "page_uuid": "8668dccd-cbd2-4f1d-96c5-d0fc37d4a8e0"
+                        },
+                        {
+                            "pageNum": 11,
+                            "filename": "Chap2-pg9.jpg",
+                            "title": "Casper's Morning Rush!",
+                            "message": " Full transparency here, this is a pretty regular Sunday morning for me. No kids to wrangle or siblings to fend off, and yet I still can't seem to get to church on time. ⏰😅",
+                            "datetime": "2022-03-27 18:17:39",
+                            "id": 44,
+                            "user": "N1995",
+                            "icon": "icons/Chap2-pg9-Icon.png",
+                            "page_uuid": "e18c6a64-112e-46fc-bbb5-d3fd0dd2ed27"
+                        },
+                        {
+                            "pageNum": 12,
+                            "filename": "Chap2-pg10.jpg",
+                            "title": "Millie's Manipulation",
+                            "message": "Not many highschoolers can drive in Shenee, and with gas prices as ludicrously high as they are even fewer can afford to drive. Good thing Millie the Magnificent's got a lucrative carpool deal worked with the rich parents! Sure would suck to not be able to afford gas...I SAID IT SURE WOULD SUCK TO-ah, forget it. Guess it's a great time to pick up running, huh? 🏃‍♂️🏃‍♀️",
+                            "datetime": "2022-03-27 18:25:38",
+                            "id": 45,
+                            "user": "N1995",
+                            "icon": "icons/Chap2-pg10-Icon.png",
+                            "page_uuid": "c662be1b-2975-490e-a84c-7873b06b3b0b"
+                        },
+                        {
+                            "pageNum": 13,
+                            "filename": "Chap2-pg11.jpg",
+                            "title": "Ride to school in the Millie Mobile",
+                            "message": "Guhhhh, I hate it when I can't really remember my dream but can kinda remember parts of it or at least get mad deja vu when something random happens later that day. It's like finishing an ice-cream cone and not being able to describe what it tasted like.",
+                            "datetime": "2022-04-03 21:08:06",
+                            "id": 46,
+                            "user": "N1995",
+                            "icon": "icons/Chap2-pg11-Icon.png",
+                            "page_uuid": "226602eb-affd-4a23-8e65-855b52618867"
+                        },
+                        {
+                            "pageNum": 14,
+                            "filename": "Chap2-pg12.jpg",
+                            "title": "Casper remembers the surgeon",
+                            "message": "Ya'll have any awkward stories from highschool? Haha yup me neither that's crazy! But if I did there may be one or two that started with the sudden urge to cold approach a girl.",
+                            "datetime": "2022-04-03 21:10:39",
+                            "id": 47,
+                            "user": "N1995",
+                            "icon": "icons/Chap2-pg12-Icon.png",
+                            "page_uuid": "c04538ea-bb79-4ffe-b897-02af5e70e3bd"
+                        },
+                        {
+                            "pageNum": 15,
+                            "filename": "Chap2-Pg13.jpg",
+                            "title": "Oh yeah, it's all coming together.",
+                            "message": "*kronk voice* \"Oh yeah, it's all coming together.\"",
+                            "datetime": "2022-04-11 10:44:45",
+                            "id": 48,
+                            "user": "M1998",
+                            "icon": "icons/Chap2-Pg13-Icon.png",
+                            "page_uuid": "75a394b3-df03-44a1-b34c-d9a5f587ebe9"
+                        },
+                        {
+                            "pageNum": 16,
+                            "filename": "Chap2-pg14.jpg",
+                            "title": "Casper attempts an intervention, and is interventioned himself",
+                            "message": "Casper, my man, attempts an intervention...only to be subject to another intervention. Intervenception.",
+                            "datetime": "2022-04-11 10:51:40",
+                            "id": 49,
+                            "user": "M1998",
+                            "icon": "icons/Chap2-pg14-Icon.png",
+                            "page_uuid": "595460d9-8be7-4de0-85e2-fd3ace14a52b"
+                        },
+                        {
+                            "pageNum": 17,
+                            "filename": "Chap2-pg15.jpg",
+                            "title": "Zylo confronts Casper",
+                            "message": "Happy Easter, everyone! I... I said HAPPY, oh forget it. If you're going to be like that, Zylo, might as well divert that pent up rage towards someone who deserves it... like whoever ordered all the snow this morning...",
+                            "datetime": "2022-04-18 12:08:05",
+                            "id": 50,
+                            "user": "M1998",
+                            "icon": "icons/Chap2-pg15-Icon.png",
+                            "page_uuid": "7aed943a-15fe-4cd1-a833-8300e84e994d"
+                        },
+                        {
+                            "pageNum": 18,
+                            "filename": "Chap2-pg16.jpg",
+                            "title": "Rose puts her foot in her mouth",
+                            "message": "HAHA how does that foot taste, Rose? ......wait. no. That came out weird. Cause putting your foot in your mouth--forget I said anything... (⊙﹏⊙)",
+                            "datetime": "2022-04-18 12:15:05",
+                            "id": 51,
+                            "user": "M1998",
+                            "icon": "icons/Chap2-pg16-Icon.png",
+                            "page_uuid": "8dd4ca46-b930-48df-a416-77a63b0e768e"
+                        },
+                        {
+                            "pageNum": 19,
+                            "filename": "Chap2-pg17.jpg",
+                            "title": "Casper Protecting Rose from Penguin Guy?",
+                            "message": "I didn't know Casper had it in him! Oh... oh wait, yup sweaty Casper's back. (っ °Д °;)っ Didn't take much.",
+                            "datetime": "2022-04-25 13:13:46",
+                            "id": 52,
+                            "user": "M1998",
+                            "icon": "icons/Chap2-pg17-Icon.png",
+                            "page_uuid": "3ec3d85f-ea98-423e-bc26-fe8e0f8a0d92"
+                        },
+                        {
+                            "pageNum": 20,
+                            "filename": "Chap2-pg18.jpg",
+                            "title": "Vice Principal Lopez Appears Stage Left",
+                            "message": "RIP Casper's spotless record. His mom's gonna love this.",
+                            "datetime": "2022-04-25 13:20:06",
+                            "id": 53,
+                            "user": "M1998",
+                            "icon": "icons/Chap2-pg18-Icon.png",
+                            "page_uuid": "e778240b-b404-4cec-a2c6-afdf980e31ce"
+                        },
+                        {
+                            "pageNum": 21,
+                            "filename": "Chap2-pg19.jpg",
+                            "title": "Zylo and Casper get detention",
+                            "message": "In this world, you're either a Casper or a Zylo. For me? 100% a Casper. I nearly peed my pants when I got written up by campus safety for stargazing on the crosscountry fields.",
+                            "datetime": "2022-05-01 20:06:13",
+                            "id": 54,
+                            "user": "N1995",
+                            "icon": "icons/Chap2-pg19-Icon.png",
+                            "page_uuid": "2ae822a9-2d91-4f92-88f4-dc83136ef245"
+                        },
+                        {
+                            "pageNum": 22,
+                            "filename": "Chap2-pg20.jpg",
+                            "title": "Rose and Quill late for class...but not?",
+                            "message": "I don't think Quill's the OOoonly one trying to \"find someone\"... if you know what I mean 😉",
+                            "datetime": "2022-05-01 20:12:16",
+                            "id": 55,
+                            "user": "N1995",
+                            "icon": "icons/Chap2-pg20-Icon.png",
+                            "page_uuid": "ea977bcc-4eb6-4f8e-ad1e-1d532552553d"
+                        },
+                        {
+                            "pageNum": 23,
+                            "filename": "Chap2-pg21.jpg",
+                            "title": "Spooky School Wanderings",
+                            "message": "Yech. Lunch hasn't even happened yet, and those tables are...hygienically challenged. Whoever is in charge of cleaning those tables needs a raise. Or to be fired. Or to get a raise, and then get fired.",
+                            "datetime": "2022-05-09 12:47:56",
+                            "id": 56,
+                            "user": "N1995",
+                            "icon": "icons/Chap2-pg21-Icon.png",
+                            "page_uuid": "4e2174fe-a492-445d-a1fe-21bd74558244"
+                        },
+                        {
+                            "pageNum": 24,
+                            "filename": "Chap2-pg22.jpg",
+                            "title": "School Eavesdropping Part 1",
+                            "message": "Once there was a student body vote on the most hated thing in the school, and while the lunch table filth was the official first place winner, everyone knew the ballot write-in's for Vice Principal Lopez won by a vast majority.",
+                            "datetime": "2022-05-09 12:54:47",
+                            "id": 57,
+                            "user": "N1995",
+                            "icon": "icons/Chap2-pg22-Icon.png",
+                            "page_uuid": "9544617e-91a1-425d-9811-7ecbea35b565"
+                        },
+                        {
+                            "pageNum": 25,
+                            "filename": "Chap2-pg23.jpg",
+                            "title": "Should have burned those bloody clothes",
+                            "message": "Red dress? They're robes, Chief. If they were dresses I would have drawn them as such.🙄 On another note, who else would pay money to see Vice Principal Lopez and Chief Garrison get a few punches in? ✋🥊",
+                            "datetime": "2022-05-16 15:31:31",
+                            "id": 58,
+                            "user": "M1998",
+                            "icon": "icons/Chap2-pg23-Icon.png",
+                            "page_uuid": "5ab6402e-85d6-426e-9f9e-2d2b4ca7f1e8"
+                        },
+                        {
+                            "pageNum": 26,
+                            "filename": "Chap2-Pg24.jpg",
+                            "title": "Stumbled upon Millie giving a head massage",
+                            "message": "It would seem Millie is a fan of The Killers.......the more you know! Understanding one's music taste is a window into their soul, if they have one. 💀",
+                            "datetime": "2022-05-16 15:34:53",
+                            "id": 59,
+                            "user": "M1998",
+                            "icon": "icons/Chap2-Pg24-Icon.png",
+                            "page_uuid": "affe4928-df23-4a7f-9356-d5f6e73a6745"
+                        },
+                        {
+                            "pageNum": 27,
+                            "filename": "Chap2-Pg25.jpg",
+                            "title": "Millie makes speedy escape through ceiling",
+                            "message": "Millie exits stage up.",
+                            "datetime": "2022-05-23 11:54:29",
+                            "id": 60,
+                            "user": "M1998",
+                            "icon": "icons/Chap2-Pg25-Icon.png",
+                            "page_uuid": "02438e02-75d6-4004-8b50-7df1f3e5cdac"
+                        },
+                        {
+                            "pageNum": 28,
+                            "filename": "Chap2-Pg26.jpg",
+                            "title": "Rose pushed Lopez a little too far",
+                            "message": "Lopez got dog owner/toddler mom energy when they see they're baby horking down on something they know ain't food.",
+                            "datetime": "2022-05-23 12:01:03",
+                            "id": 61,
+                            "user": "M1998",
+                            "icon": "icons/Chap2-Pg26-Icon.png",
+                            "page_uuid": "4e797821-03e2-4f7e-a687-3760c0958ed0"
+                        },
+                        {
+                            "pageNum": 29,
+                            "filename": "Memorial_Day1.png",
+                            "title": "Happy Memorial Day",
+                            "message": "Hey friends, hope you all had a wonderful Memorial Day weekend! No new pages this week TT_TT but here is a mini comic for you! Check back next Monday (June 7th) for two new pages! If you haven't already, you can join our discord to get notifications when pages are posted and join in some story discussions (link at the bottom of the webpage)!",
+                            "datetime": "2022-05-31 13:53:04",
+                            "id": 62,
+                            "user": "M1998",
+                            "icon": "icons/Memorial_Day1-Icon.png",
+                            "page_uuid": "960c2f13-c429-4974-94b2-16f179251a6b"
+                        },
+                        {
+                            "pageNum": 30,
+                            "filename": "Chap2-pg27.jpg",
+                            "title": "Rose says she knows nothing...teachers seem to think otherwise",
+                            "message": "We're back!! And two more candidates have joined the \"Detention Squad\"",
+                            "datetime": "2022-06-06 12:35:19",
+                            "id": 63,
+                            "user": "M1998",
+                            "icon": "icons/Chap2-pg27-Icon.png",
+                            "page_uuid": "57714277-d15b-4be7-99e8-8a5ba1821c4d"
+                        },
+                        {
+                            "pageNum": 31,
+                            "filename": "Chap2-pg28.jpg",
+                            "title": "The DOT is going to have to keep an eye on those two",
+                            "message": "What kind of \"nifty toys\" does the Department of Tourism really need. Like, a really nice self-folding map?",
+                            "datetime": "2022-06-06 12:48:55",
+                            "id": 64,
+                            "user": "M1998",
+                            "icon": "icons/Chap2-pg28-Icon.png",
+                            "page_uuid": "361ba717-202b-46c9-ab54-5b9db80f0e7a"
+                        },
+                        {
+                            "pageNum": 32,
+                            "filename": "Chap2-pg29.jpg",
+                            "title": "What's Going On???",
+                            "message": "Can you sum up your entire thought process over the course of a Monday school day with a 3-word sentence? Can relate.",
+                            "datetime": "2022-06-13 12:38:38",
+                            "id": 65,
+                            "user": "M1998",
+                            "icon": "icons/Chap2-pg29-Icon.png",
+                            "page_uuid": "3e312e32-dac9-4115-b0d2-c330c5609b29"
+                        },
+                        {
+                            "pageNum": 33,
+                            "filename": "Chap2-Pg30.jpg",
+                            "title": "3 o'clock detention crew",
+                            "message": "Ah, the motley Detention Crew spearheaded by the famed Mr. Barr, still down for his \"old person\" nap...",
+                            "datetime": "2022-06-13 12:44:03",
+                            "id": 66,
+                            "user": "M1998",
+                            "icon": "icons/Chap2-Pg30-Icon.png",
+                            "page_uuid": "c2574a3f-1260-4c5c-a154-1935d2f1887b"
+                        },
+                        {
+                            "pageNum": 34,
+                            "filename": "Chap2-Pg31.jpg",
+                            "title": "Rubber Band Burns",
+                            "message": "Update coming in later than usual due to us roadtrippin' south for a few days. Nothing like a nice bumpy carride to put artist behind, I've discovered.",
+                            "datetime": "2022-06-20 18:17:25",
+                            "id": 67,
+                            "user": "N1995",
+                            "icon": "icons/Chap2-Pg31-Icon.png",
+                            "page_uuid": "efddecaa-3bfb-4279-a9c6-4ccaeecca0b0"
+                        },
+                        {
+                            "pageNum": 35,
+                            "filename": "Chap2-Pg32.jpg",
+                            "title": "Quill Quips",
+                            "message": "Oof. Bullies suck, but getting laughed out of a room by the girl you asked out is pretttty rough. Let's hope Rose's menacing baseball ex boyfriend is level-headed enough to keep the peace.",
+                            "datetime": "2022-06-20 18:20:35",
+                            "id": 68,
+                            "user": "N1995",
+                            "icon": "icons/Chap2-Pg32-Icon.png",
+                            "page_uuid": "1e395696-c8ba-4ac4-af8e-aa17624c966d"
+                        },
+                        {
+                            "pageNum": 36,
+                            "filename": "Chap2-Pg33.jpg",
+                            "title": "Chuck knows something about Sam",
+                            "message": "Gotta hand it to her, Rose can turn the dramatics on and off like *snapping emoji* ...like, where did that handkerchief even come from anyways? ALSO, HEADS UP: Starting today and through the month of July, we will be reducing to ONE PAGE a week. This is for several reasons, mainly a sister's wedding 🥂🥳 and Nate and I moving into OUR NEW HOME!!! It's been a long haul but we are BEYOND thrilled to move out of the basement we have been calling home for the last 8 months (can't believe it's been that long)!! Plus all the traveling and packing required, we thought it best to slim down, but rest assured! Our regular TWO PAGES per week will return in August on this comic's 1 YEAR ANNIVERSARY!!!! 🍾🥳🙌",
+                            "datetime": "2022-06-27 15:11:06",
+                            "id": 69,
+                            "user": "M1998",
+                            "icon": "icons/Chap2-Pg33-Icon.png",
+                            "page_uuid": "6858f50e-56d3-4c7b-91b3-446332bedec5"
+                        },
+                        {
+                            "pageNum": 37,
+                            "filename": "Chap2-Pg34.jpg",
+                            "title": "Rose and Chuck back together...?",
+                            "message": "Be thankful you only have to read Chuck...I have to sketch, ink, color, and shade all 15 or so panels of the jerkface. TT_TT",
+                            "datetime": "2022-07-04 09:05:40",
+                            "id": 70,
+                            "user": "M1998",
+                            "icon": "icons/Chap2-Pg34-Icon.png",
+                            "page_uuid": "328c2d58-7210-4fd1-896f-2486fa7e93eb"
+                        },
+                        {
+                            "pageNum": 38,
+                            "filename": "Chap2-Pg35.jpg",
+                            "title": "Oh, so Chuck might know what happened to Sam",
+                            "message": "Yeah, with gas being $28.99 a gallon...that doesn't sound like something you just \"borrow.\" And I'm not making that number up neither, check the prologue if you don't believe me ;)",
+                            "datetime": "2022-07-11 10:45:36",
+                            "id": 71,
+                            "user": "M1998",
+                            "icon": "icons/Chap2-Pg35-Icon.png",
+                            "page_uuid": "05c06d06-140e-4f25-8084-5f667b72c5f6"
+                        },
+                        {
+                            "pageNum": 39,
+                            "filename": "Chap2-Pg36.jpg",
+                            "title": "Sometimes it's best not to provoke the school jerk, Casper",
+                            "message": "*munches softly*",
+                            "datetime": "2022-07-18 20:10:24",
+                            "id": 72,
+                            "user": "M1998",
+                            "icon": "icons/Chap2-Pg36-Icon.png",
+                            "page_uuid": "ef4da82f-1d70-4a68-a01f-d47b42106afb"
+                        },
+                        {
+                            "pageNum": 40,
+                            "filename": "Chap2-Pg37.jpg",
+                            "title": "Turning over a new leaf...",
+                            "message": "You ever catch yourself mid-story and realize that maybe telling this story was a bad...bad idea? But there's no way out of it because at that point, you have the room's full attention? ...yeaaah, Nate and I like to write what we know.",
+                            "datetime": "2022-07-25 12:19:48",
+                            "id": 73,
+                            "user": "M1998",
+                            "icon": "icons/Chap2-Pg37-Icon.png",
+                            "page_uuid": "477fea62-5749-4ab8-bf07-963fae23fec7"
+                        },
+                        {
+                            "pageNum": 41,
+                            "filename": "Chap2-Pg38.jpg",
+                            "title": "We Gotta LEAF!!",
+                            "message": "Excuse me Casper, I believe you mean \"We gotta LEAF! He's Coming!\" ",
+                            "datetime": "2022-08-01 09:48:59",
+                            "id": 74,
+                            "user": "M1998",
+                            "icon": "icons/Chap2-Pg38-Icon.png",
+                            "page_uuid": "9d52adc3-effb-4f28-8366-ccfd8438e3eb"
+                        },
+                        {
+                            "pageNum": 42,
+                            "filename": "Chap2-Pg39.jpg",
+                            "title": "Detention is Getting Spicey",
+                            "message": "All the back-to-school essentials: paper, pencils, a bad attitude, erasers--CRIKE, IS THAT A GUN!?",
+                            "datetime": "2022-08-08 14:31:47",
+                            "id": 75,
+                            "user": "M1998",
+                            "icon": "icons/Chap2-Pg39-Icon.png",
+                            "page_uuid": "65f0b2c3-892d-4e72-9fd1-10e539eb50e8"
+                        },
+                        {
+                            "pageNum": 43,
+                            "filename": "Chap2-pg40.jpg",
+                            "title": "Bite it to be sure. It might be a metaphor.",
+                            "message": "Bite it to be sure. It might be a metaphor.",
+                            "datetime": "2022-08-08 14:35:56",
+                            "id": 76,
+                            "user": "M1998",
+                            "icon": "icons/Chap2-pg40-Icon.png",
+                            "page_uuid": "5a79f16d-ae6c-429d-9d5a-82a933941092"
+                        },
+                        {
+                            "pageNum": 44,
+                            "filename": "Chap2-pg41.jpg",
+                            "title": "Sky's Out, Knives Out",
+                            "message": "Get yo'self a Quill.",
+                            "datetime": "2022-08-15 16:25:58",
+                            "id": 77,
+                            "user": "M1998",
+                            "icon": "icons/Chap2-pg41-Icon.png",
+                            "page_uuid": "34e111f1-4944-42dd-8705-97126a25e9e2"
+                        },
+                        {
+                            "pageNum": 45,
+                            "filename": "Chap2-pg42.jpg",
+                            "title": "The fight has begun",
+                            "message": "I mean, Casper is supposed to be this anime nerd...but the boi doesn't miss his hip thrusts and bulgarians, that's for sure O_O",
+                            "datetime": "2022-08-15 16:29:19",
+                            "id": 78,
+                            "user": "M1998",
+                            "icon": "icons/Chap2-pg42-Icon.png",
+                            "page_uuid": "319d6491-611b-477c-bccf-a9affd217335"
+                        },
+                        {
+                            "pageNum": 46,
+                            "filename": "Chap2-pg43.jpg",
+                            "title": "Patrick goes full Waluigi stomp on Casper",
+                            "message": "Drawing Pat in the final panel was giving me some mad deja vu, but I couldn't put my finger on who he reminded me of......Waluigi, it was Waluigi.",
+                            "datetime": "2022-08-22 15:14:03",
+                            "id": 79,
+                            "user": "M1998",
+                            "icon": "icons/Chap2-pg43-Icon.png",
+                            "page_uuid": "c9dd26c1-edf3-4cfc-9aff-86b965a64e4a"
+                        },
+                        {
+                            "pageNum": 47,
+                            "filename": "Chap2-pg44.jpg",
+                            "title": "Casper sweep the leg",
+                            "message": "Stomp it. Sweep it. Bop it.",
+                            "datetime": "2022-08-22 15:22:08",
+                            "id": 80,
+                            "user": "M1998",
+                            "icon": "icons/Chap2-pg44-Icon.png",
+                            "page_uuid": "ccf1a884-e1a2-4563-a22d-29a2ef0a8a36"
+                        },
+                        {
+                            "pageNum": 48,
+                            "filename": "Chap2-pg45.jpg",
+                            "title": "Casper wins his first fight",
+                            "message": "When you take down two armed bullies, single-handedly rescuing your highschool's sweetheart, Rose Stewart, all while haloed by literal fire, and still no one notices.",
+                            "datetime": "2022-08-29 15:14:45",
+                            "id": 81,
+                            "user": "M1998",
+                            "icon": "icons/Chap2-pg45-Icon.png",
+                            "page_uuid": "b88b17d3-b8ec-4fd1-8dd6-af21045eb65e"
+                        },
+                        {
+                            "pageNum": 49,
+                            "filename": "Chap2-Pg46.jpg",
+                            "title": "Rose the Gun! Right!",
+                            "message": "Not everyone thinks best on their feet.",
+                            "datetime": "2022-08-29 15:18:56",
+                            "id": 82,
+                            "user": "M1998",
+                            "icon": "icons/Chap2-Pg46-Icon.png",
+                            "page_uuid": "b04e3609-d5cb-43fe-8315-e12aa4fdea95"
+                        },
+                        {
+                            "pageNum": 50,
+                            "filename": "Labor_Day.jpg",
+                            "title": "Happy Labor Day",
+                            "message": "Happy Labor Day, friends!! More pages are coming this week, so don't worry! We won't leave you hanging...but in the meantime, enjoy this kitty taking a nap in honor of the holiday 🐈",
+                            "datetime": "2022-09-05 21:06:27",
+                            "id": 83,
+                            "user": "M1998",
+                            "icon": "icons/Labor_Day-Icon.png",
+                            "page_uuid": "1ec2ef45-2cf0-469c-8f52-9b2995d7b9ee"
+                        },
+                        {
+                            "pageNum": 51,
+                            "filename": "Chap2-pg47.jpg",
+                            "title": "Chuck does big slash. Big effective.",
+                            "message": "Don't run, play, or turn around suddenly with knives, kids. Or better yet...forget knives. Sporks are the ultimate utensil.",
+                            "datetime": "2022-09-07 14:48:46",
+                            "id": 84,
+                            "user": "M1998",
+                            "icon": "icons/Chap2-pg47-Icon.png",
+                            "page_uuid": "b1eca280-9449-4912-81ce-07cc6f48fa1a"
+                        },
+                        {
+                            "pageNum": 52,
+                            "filename": "Chap2-pg48.jpg",
+                            "title": "Casper got got",
+                            "message": "Don't worry guys, just RGB red light pixels on your screen. No friends were hurt in the making of this comic. ",
+                            "datetime": "2022-09-07 14:52:09",
+                            "id": 85,
+                            "user": "M1998",
+                            "icon": "icons/Chap2-pg48-Icon.png",
+                            "page_uuid": "b83c676a-2da7-4306-a023-3a6949bca49a"
+                        },
+                        {
+                            "pageNum": 53,
+                            "filename": "Under_Construction-09122022.jpg",
+                            "title": "Pages Under Construction",
+                            "message": "Hey! New pages aren't done yet but we have some glorious rainy overcast days on the horizon which is ideal art-making weather for my little pluviophile heart.<3 Join us back here next Monday as we get ready to close out Chapter 2!!!",
+                            "datetime": "2022-09-12 11:42:35",
+                            "id": 86,
+                            "user": "M1998",
+                            "icon": "icons/Under_Construction-09122022-Icon.png",
+                            "page_uuid": "0e94ab20-f094-4ea4-85c6-9dadfb48850a"
+                        },
+                        {
+                            "pageNum": 54,
+                            "filename": "Chap2-pg49.jpg",
+                            "title": "Quill shakes down Mr. Barr",
+                            "message": "Just remember. There was a point this past week that I was sitting at my computer, thinking about what sort of sound \"Quill shakes an unconscious Mr. Barr\" makes. DM me if you have suggestions that smack \"Wa-Whoosh\" out of the competition.",
+                            "datetime": "2022-09-19 15:12:05",
+                            "id": 87,
+                            "user": "M1998",
+                            "icon": "icons/Chap2-pg49-Icon.png",
+                            "page_uuid": "2ed1d069-7cbd-418e-97ca-1751719e10f6"
+                        },
+                        {
+                            "pageNum": 55,
+                            "filename": "Chap2-pg50.jpg",
+                            "title": "Chucks busts out the window",
+                            "message": "Bippity boppity boop, Chuck has flown the coop.",
+                            "datetime": "2022-09-19 15:20:16",
+                            "id": 88,
+                            "user": "M1998",
+                            "icon": "icons/Chap2-pg50-Icon.png",
+                            "page_uuid": "50947ac8-c62a-4663-a65e-8ac5a45b133e"
+                        },
+                        {
+                            "pageNum": 56,
+                            "filename": "Chap2-pg51.jpg",
+                            "title": "Desperate times call for desperate measures",
+                            "message": "Oh cute! They're working together...toooo throw Casper out the second story window.",
+                            "datetime": "2022-09-26 15:20:22",
+                            "id": 89,
+                            "user": "M1998",
+                            "icon": "icons/Chap2-pg51-Icon.png",
+                            "page_uuid": "434d60b9-2f87-4dda-a27c-85a3ec4840b8"
+                        }
+                    ]
+                },
+                {
+                    "chapterName": "Chapter Three",
+                    "folderName": "chapter3",
+                    "numOfPages": 5,
+                    "id": 4,
+                    "pages": [
+                        {
+                            "pageNum": 1,
+                            "filename": "Chapter3.jpg",
+                            "title": "Chapter 3 Cover - Roadtrip with Death",
+                            "message": "Fun fact: although Millie is the youngest of the main characters, she is the only one that knows how to drive. Legally, that is.",
+                            "datetime": "2022-09-26 15:57:49",
+                            "id": 90,
+                            "user": "N1995",
+                            "icon": "icons/Chapter3-Icon.png",
+                            "page_uuid": "75e586d9-376c-46d0-b771-fd88b35bb562"
+                        },
+                        {
+                            "pageNum": 2,
+                            "filename": "Chp3-Pg1.jpg",
+                            "title": "I didn't QUITE kill him",
+                            "message": "Chapter 3 baby!! You know who loooooves drawing backgrounds?!?! ....cause, like, if you know anyone, send them over my way, kay?",
+                            "datetime": "2022-10-03 16:16:43",
+                            "id": 91,
+                            "user": "M1998",
+                            "icon": "icons/Chp3-Pg1-Icon.png",
+                            "page_uuid": "fdd58e36-9955-4bf5-8da2-e02420836352"
+                        },
+                        {
+                            "pageNum": 3,
+                            "filename": "Chp3-Pg2.jpg",
+                            "title": "Suspicious Skeleton guy in the van with Millie",
+                            "message": "Now how many of you saw the beat-up van with a trail of smoke coming out of it on the last page and thought it was a blunt? Now be honest...",
+                            "datetime": "2022-10-03 16:18:42",
+                            "id": 92,
+                            "user": "M1998",
+                            "icon": "icons/Chp3-Pg2-Icon.png",
+                            "page_uuid": "9ceba897-0a34-46f3-b674-e3a57acd76fa"
+                        },
+                        {
+                            "pageNum": 4,
+                            "filename": "Chp3-Pg3.jpg",
+                            "title": "Introducing Mors",
+                            "message": "Death isn't always ragged cloaks and bloody scythes. Sure there's that part, the fun bit everyone sees, but there's a lot of paperwork that has to happen behind-the-scenes, a lot of checks and balances that have to add up. With that much deskwork stacking up, the Grim Reaper practically had to invent accounting. Too bad he's too busy to refresh his wardrobe more than every hundred years or so. 🤓",
+                            "datetime": "2022-10-10 16:44:49",
+                            "id": 93,
+                            "user": "N1995",
+                            "icon": "icons/Chp3-Pg3-Icon.png",
+                            "page_uuid": "338c4ad6-a0eb-47de-b8b0-4e7e387e94ac"
+                        },
+                        {
+                            "pageNum": 5,
+                            "filename": "Chp3-Pg4.jpg",
+                            "title": "Death Puns #1",
+                            "message": "We love to see a friend who laughs at terrible jokes. We much less love if they are death incarnate, but hey! Sometimes the puns are bad enough you can't be picky... 💀",
+                            "datetime": "2022-10-10 16:51:47",
+                            "id": 94,
+                            "user": "N1995",
+                            "icon": "icons/Chp3-Pg4-Icon.png",
+                            "page_uuid": "1ae6b75c-93f0-432d-8a94-382a238cb00e"
+                        }
+                    ]
+                }
+            ]
         }
-      ]
-    }
-  ]
+    ]
 }

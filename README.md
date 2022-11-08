@@ -7,7 +7,6 @@
     - add error handling if comment submission failed
       - add visual state to indicate pending server write
       - add visual state to indicate completed server write
-    - add ability to edit comment
     - add pagination
     - add like button and display to comments
     - Retrieve top three comments by likes, and the rest sorted by date newest first
