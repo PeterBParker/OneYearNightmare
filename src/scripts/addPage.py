@@ -108,7 +108,7 @@ def addNewPage(seasonName, chapterName, title, message, filepath, user):
         "id": identifier,
         "user": user,
         "icon": str((Path(_ICON_REL_DIR) / icon_path.name).as_posix()),
-        "uuid": str(uuid4())
+        "page_uuid": str(uuid4())
     }
 
     writeIncrementChapterPageCount(season["id"], chapter["id"])
