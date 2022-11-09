@@ -7,6 +7,7 @@ from IconMaker import IconMaker
 from pathlib import Path
 from shutil import copyfile
 from num2words import num2words
+from uuid import uuid4
 
 # Future TODO: Rewrite this in javascript and use the data API instead of declaring new functions.
 # TODO:         Delete folders if the program crashes? idk.
@@ -107,6 +108,7 @@ def addNewPage(seasonName, chapterName, title, message, filepath, user):
         "id": identifier,
         "user": user,
         "icon": str((Path(_ICON_REL_DIR) / icon_path.name).as_posix()),
+        "uuid": str(uuid4())
     }
 
     writeIncrementChapterPageCount(season["id"], chapter["id"])
