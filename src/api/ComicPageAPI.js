@@ -2,8 +2,8 @@ import pagesData from './data/pagesData.json';
 import users from './data/users.json';
 
 const ComicPageAPI = {
-    getPage: function (pageId) {
-        const releventObjs = this.getRelValidObjs(pageId);
+    getFilePaths: function (pageNum) {
+        const releventObjs = this.getRelValidObjs(pageNum);
         if (releventObjs) {
             return {
                 "seasonPath": releventObjs.seasonObj.folderName,
@@ -13,8 +13,8 @@ const ComicPageAPI = {
         }
         return null;
     },
-    getPageObj: function(pageId) {
-        const releventObjs = this.getRelValidObjs(pageId);
+    getPageObj: function(pageNum) {
+        const releventObjs = this.getRelValidObjs(pageNum);
         if(releventObjs) {
             return releventObjs.pageObj
         }
@@ -60,15 +60,15 @@ const ComicPageAPI = {
         let season = seasons.find(isSeason);
         return season.order;
     },
-    getRelValidObjs: function (id) {
-        /* This function checks if the page address is valid, and if so
+    getRelValidObjs: function (pageNum) {
+        /* This function checks if the page number is valid, and if so
             it returns the relevent Season object, Chapter object, and Page object.
 
             Parameters:
-            id - An integer of the page number       
+            pageNum - An integer of the page number       
         */
 
-        if (!this.validatePageId(id)) {
+        if (!this.validatePageNum(pageNum)) {
             return null;
         }
 
@@ -79,18 +79,18 @@ const ComicPageAPI = {
         for (let seasonIndex in seasons) {
             let season = seasons[seasonIndex];
             // Checks if the page we're looking for is within the block of the season
-            if (id > pageCount && id <= pageCount + season.numOfPages) {
+            if (pageNum > pageCount && pageNum <= pageCount + season.numOfPages) {
                 validObjs.seasonObj = season;
                 let chapters = this.getChaptersInSeason(season.seasonName);
                 for (let chapterIndex in chapters) {
                     let chapter = chapters[chapterIndex];
                     //Checks if the page we're looking for is within the block of the chapter
-                    if (id > pageCount && id <= pageCount + chapter.numOfPages) {
+                    if (pageNum > pageCount && pageNum <= pageCount + chapter.numOfPages) {
                         validObjs.chapterObj = chapter;
                         let pages = chapter.pages;
                         for (let pageIndex in pages) {
                             let page = pages[pageIndex];
-                            if (page.id === id) {
+                            if (page.id === pageNum) {
                                 validObjs.pageObj = page
                                 return validObjs;
                             }
@@ -105,9 +105,9 @@ const ComicPageAPI = {
         }
         return null;
     },
-    validatePageId: function (id) {
+    validatePageNum: function (pageNum) {
         let pageCount = this.getMaxDisplayPage();
-        if (id > 0 && id <= pageCount) {
+        if (pageNum > 0 && pageNum <= pageCount) {
             return true;
         } else {
             return false;
@@ -137,15 +137,6 @@ const ComicPageAPI = {
     },
     getSeasons: function () {
         return pagesData.seasons;
-    },
-    getMessageData: function(id) {
-        let relObjs = this.getRelValidObjs(id);
-        if(!relObjs) {
-            return null;
-        }
-        return(
-            {"message": relObjs.pageObj.message, "title": relObjs.pageObj.title, "time": relObjs.pageObj.time}
-        )
     },
     getAdminDisplayName: function(userId) {
         for (let user in users.admins) {

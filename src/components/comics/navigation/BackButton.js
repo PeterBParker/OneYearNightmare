@@ -7,14 +7,12 @@ export default function BackButton(props) {
     const disabledButton = <div className="navButton"><img src={disabledBackIcon} width={30} alt="disabled navigation back page button"/></div>;
     const backPageId = props.pageId-1;
 
-    let isValidId = ComicPageAPI.validatePageId(backPageId);
+    let isValidId = ComicPageAPI.validatePageNum(backPageId);
     if(!isValidId) {
         return disabledButton;
     }
 
-    let pageInfo = ComicPageAPI.getPage(backPageId);
-
-    if(pageInfo) {
+    if(isValidId) {
         const pageFilePath = '/read/' + backPageId;
         return(
             <div className="navButton" onClick={props.clickEffects}><Link to={pageFilePath}><img src={activeBackIcon} width={30} alt="enabled navigation back page button"/></Link></div>

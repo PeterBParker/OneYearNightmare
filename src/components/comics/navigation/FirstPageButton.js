@@ -7,14 +7,13 @@ export default function FirstPageButton(props) {
     const disabledButton = <div className="navButton"><img src={disabledFirstIcon} width={30} alt="disabled navigation first page button"/></div>;
     const firstPageId = 1;
 
-    let isValidId = ComicPageAPI.validatePageId(firstPageId);
+    let isValidId = ComicPageAPI.validatePageNum(firstPageId);
     if(!isValidId || props.pageId===firstPageId) {
         return disabledButton;
     }
 
-    let pageInfo = ComicPageAPI.getPage(firstPageId);
 
-    if(pageInfo) {
+    if(isValidId) {
         const pageFilePath = '/read/' + firstPageId;
         return(
             <div className="navButton" onClick={props.clickEffects}><Link to={pageFilePath}><img src={activeFirstIcon} width={30} alt="enabled navigation first page button"/></Link></div>

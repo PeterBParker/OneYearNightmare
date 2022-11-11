@@ -62,8 +62,8 @@ export default function ComicViewer(props) {
 
 
     // Checks the id in the url is a valid page
-    const pageId = parseInt(params.pageId, 10);
-    let isValidId = ComicPageAPI.validatePageId(pageId);
+    const pageNum = parseInt(params.pageNum, 10);
+    let isValidId = ComicPageAPI.validatePageNum(pageNum);
     if (!isValidId) {
         return (<div className={`${isDesktop ? "comicViewerDesktop" : ''} pb-24`}>
         <Header defaultBg={false}/>
@@ -73,23 +73,22 @@ export default function ComicViewer(props) {
         </div>);
     }
 
-    var pageInfo = ComicPageAPI.getPage(pageId);
-
-    const pageImageUrl = encodeURI(process.env.PUBLIC_URL + BASE_PATH + pageInfo.seasonPath + '/' + pageInfo.chapterPath + '/' + pageInfo.pagePath);
-    let title = "One Year Nightmare Page " + pageId;
+    var filePaths = ComicPageAPI.getFilePaths(pageNum);
+    const pageImageUrl = encodeURI(process.env.PUBLIC_URL + BASE_PATH + filePaths.seasonPath + '/' + filePaths.chapterPath + '/' + filePaths.pagePath);
+    let title = "One Year Nightmare Page " + pageNum;
     const shareImageUrl = DOMAIN + pageImageUrl;
-    const sharePageUrl = DOMAIN + "/read/" + params.pageId;
+    const sharePageUrl = DOMAIN + "/read/" + params.pageNum;
     // TODO 6/10 Before deploying, implement these security measures: https://stackoverflow.com/questions/21110130/protect-image-download/21110248
-   
+    let relaventObjects = ComicPageAPI.getRelValidObjs(pageNum);
     return (
-        pageInfo ?
+        filePaths ?
             <div className={`${isDesktop ? "pb-24" : 'pb-16'}`}>
                 <Header defaultBg={false}/>
                 {isDesktop ? <SimpleNavBar page={Pages.READ}/> : ''}
                 {isDesktop ? <DesktopPageView pageImageUrl={pageImageUrl} sharePageUrl={sharePageUrl} title={title} topOfPageRef={topOfPageRef}/> : <MobilePageView pageImageUrl={pageImageUrl} topOfPageRef={topOfPageRef}/>}
-                {isDesktop ? <DesktopNavBar pageId={pageId} clickEffects={loadNextPageEffects}/> : <MobileNavBar pageId={pageId} clickEffects={loadNextPageEffects}/>}
+                {isDesktop ? <DesktopNavBar pageId={pageNum} clickEffects={loadNextPageEffects}/> : <MobileNavBar pageId={pageNum} clickEffects={loadNextPageEffects}/>}
                 {isDesktop ? '' : <HorizontalShare sharePageUrl={sharePageUrl} shareImageUrl={shareImageUrl} title={title} />}
-                {isDesktop ? <DesktopReadPageCards pageId={pageId} /> : <MobileReadPageCards pageId={pageId} />}
+                {isDesktop ? <DesktopReadPageCards pageId={pageNum} page={relaventObjects.pageObj} chapter={relaventObjects.chapterObj}/> : <MobileReadPageCards pageId={pageNum} page={relaventObjects.pageObj} chapter={relaventObjects.chapterObj}/>}
             </div>
         :
 

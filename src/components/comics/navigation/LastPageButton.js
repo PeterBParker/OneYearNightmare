@@ -7,14 +7,12 @@ export default function LastPageButton(props) {
     const disabledButton = <div className="navButton"><img src={disabledLastIcon} width={30} alt="disabled navigation last page button"/></div>;
     const lastPageId = ComicPageAPI.getMaxDisplayPage();
 
-    let isValidId = ComicPageAPI.validatePageId(lastPageId);
+    let isValidId = ComicPageAPI.validatePageNum(lastPageId);
     if(!isValidId || props.pageId === lastPageId) {
         return disabledButton;
     }
 
-    let pageInfo = ComicPageAPI.getPage(lastPageId);
-
-    if(pageInfo) {
+    if(isValidId) {
         const pageFilePath = '/read/' + lastPageId;
         return(
             <div className="navButton" onClick={props.clickEffects}><Link to={pageFilePath}><img src={activeLastIcon} width={30} alt="enabled navigation last page button"/></Link></div>
