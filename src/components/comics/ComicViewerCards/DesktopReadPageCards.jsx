@@ -1,7 +1,6 @@
 import PageDetailsCard from '../PageDetailsCard';
-
+import SupportUsCard from '../../generic/SupportUs/SupportUsCard';
 import discordBanner from '../../../assets/FINAL-ASSETS-072821/final assets/discord-banner-ill-CROPPED.png'
-import CommentCard from '../../generic/CommentCard';
 
 export default function DesktopReadPageCards(props) {
     return (
@@ -12,7 +11,7 @@ export default function DesktopReadPageCards(props) {
                 <img src={discordBanner} width={120} className="readPageDiscordBannerImage ml-8" alt="discord link banner"/>
             </div>
             <div className="desktopReadPageCardsSupport bg-white">
-                <CommentCard page={props.page}/>
+                <SupportUsCard />
             </div>
             <div className="desktopReadPageDiscordBanner mt-6 justify-between py-6 items-center">
                 <div className="desktopReadPageDiscordBannerText text-left ">
