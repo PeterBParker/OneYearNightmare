@@ -6,7 +6,7 @@ def main():
     for season in data["seasons"]:
         for chapter in season["chapters"]:
             for page in chapter["pages"]:
-                page["page_uuid"] = str(uuid4())
+                page["uuid"] = str(uuid4())
     api.writeToFile(data, api._DATA_FILENAME)
 
 if __name__ == "__main__":

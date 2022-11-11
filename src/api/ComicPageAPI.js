@@ -145,30 +145,6 @@ const ComicPageAPI = {
             }
         }
         return "Mo and Nate"
-    },
-    getPageContent: function(pageUuid) {
-        /* Retrieves the content of a specific page object by uuid.
-
-        Args:
-            pageUuid (str): The uuid of the content of a page
-        */
-        let seasons = this.getSeasons()
-        for (let season in seasons) {
-            season = seasons[season]
-            for (let chapter in season.chapters){
-                chapter = season.chapters[chapter]
-                for (let page in chapter.pages){
-                    page = chapter.pages[page]
-                    if (page.page_uuid == pageUuid) {
-                        return page
-                    }
-                }
-            }
-        }
-        throw 'Error1'
-    },
-    errorCodes: {
-        "Error1": 'No page found for that uuid.'
     }
 }
 

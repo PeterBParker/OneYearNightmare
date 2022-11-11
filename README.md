@@ -1,8 +1,6 @@
 # TODO
 
 - Integrate Comment Service
-  - add uuid's to all pages
-  - configure commento to use the uuid's as the data-page-id instead of the url
 - Integrate email service and start mailing list
 - Add infinite scroll instead of button navigation
 - Add tap on either side of page to navigate
