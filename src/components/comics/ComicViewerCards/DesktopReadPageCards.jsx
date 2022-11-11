@@ -17,7 +17,7 @@ import discordBanner from "../../../assets/FINAL-ASSETS-072821/final assets/disc
 export default function DesktopReadPageCards(props) {
   const [comments, setComments] = useState([]);
 
-  const page_uuid = ComicPageAPI.getPageUuid(props.pageId);
+  const page_uuid = props.page.uuid;
 
   useEffect(async () => {
     const commentsQuery = query(
@@ -43,7 +43,7 @@ export default function DesktopReadPageCards(props) {
     <>
       <div className="desktopReadPageCardsWrapper mx-8 mt-12">
         <div className="desktopReadPageCardsDetails bg-white">
-          <PageDetailsCard pageId={props.pageId} />
+          <PageDetailsCard page={props.page} chapter={props.chapter}/>
           <img
             src={discordBanner}
             width={120}

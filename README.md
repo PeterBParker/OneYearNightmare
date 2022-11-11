@@ -15,6 +15,8 @@
       - add display module for terms and conditions
     - add database enforcement of editing only comments owned by the currently signed in user
     - populate comment data with user info
+- Integrate email service and start mailing list
+- Add infinite scroll instead of button navigation
 - Add tap on either side of page to navigate
 - Move/animate bookmark icon to top right of comic page.
 - Optimize performance

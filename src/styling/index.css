@@ -422,7 +422,8 @@ body {
   border-width: 2px 2px 2px 1px;
   height: 100%;
   display: grid;
-  grid-template-rows: 5em 1fr 5em;
+  grid-template-columns: 100%;
+  grid-template-rows: 5em auto;
 }
 .supportUsTooSmallContainer {
   grid-template-columns: 100%;
@@ -432,7 +433,7 @@ body {
 }
 .mobileSupportUsContainer {
   display: grid;
-  grid-template-columns: 70% 30%;
+  grid-template-columns: 100%;
   grid-template-rows: 7em 1fr 60px;
 }
 .supportUsTitle {

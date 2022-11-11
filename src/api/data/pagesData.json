@@ -1,12 +1,12 @@
 {
-    "maxDisplayPage": 94,
-    "pageCount": 94,
+    "maxDisplayPage": 100,
+    "pageCount": 100,
     "seasonCount": 1,
     "seasons": [
         {
             "seasonName": "First Blood",
             "folderName": "first blood",
-            "numOfPages": 94,
+            "numOfPages": 100,
             "numOfChapters": 4,
             "id": 1,
             "chapters": [
@@ -25,7 +25,7 @@
                             "id": 1,
                             "user": "N1995",
                             "icon": "icons/PRO1-Icon.png",
-                            "page_uuid": "a91485e8-0ef2-4d62-9664-7d468f50e360"
+                            "uuid": "92870370-64f8-4278-bc19-bf32fb6de9fc"
                         },
                         {
                             "pageNum": 2,
@@ -36,7 +36,7 @@
                             "id": 2,
                             "user": "N1995",
                             "icon": "icons/PRO2-Icon.png",
-                            "page_uuid": "c7f18b53-8e49-4468-a3c6-d01bf57f67e1"
+                            "uuid": "e6a51887-3d17-4fa2-94f4-128c1d0018a0"
                         },
                         {
                             "pageNum": 3,
@@ -47,7 +47,7 @@
                             "id": 3,
                             "user": "N1995",
                             "icon": "icons/PRO3-Icon.png",
-                            "page_uuid": "e65542d1-3279-4c7f-a666-be7bad4ec716"
+                            "uuid": "fbda255f-c1bc-46bd-b0b9-df1d4f1a67eb"
                         },
                         {
                             "pageNum": 4,
@@ -58,7 +58,7 @@
                             "id": 4,
                             "user": "N1995",
                             "icon": "icons/PRO4-Icon.png",
-                            "page_uuid": "c52887a5-d07f-448d-9732-c1a596a60c9e"
+                            "uuid": "de0e4507-b363-4eca-81fc-19931550ae13"
                         },
                         {
                             "pageNum": 5,
@@ -69,7 +69,7 @@
                             "id": 5,
                             "user": "M1998",
                             "icon": "icons/PRO5-Icon.png",
-                            "page_uuid": "7e3de6e5-9434-4661-a932-f893ba0d0892"
+                            "uuid": "8fe6873d-7ba5-40dd-9d24-e7ed416916f9"
                         },
                         {
                             "pageNum": 6,
@@ -80,7 +80,7 @@
                             "id": 6,
                             "user": "M1998",
                             "icon": "icons/PRO6-Icon.png",
-                            "page_uuid": "ef10b105-6bdf-4bdb-a4b4-356fdd5d290a"
+                            "uuid": "20dd6244-bfe5-4deb-ab8d-0a499590782c"
                         },
                         {
                             "pageNum": 7,
@@ -91,7 +91,7 @@
                             "id": 7,
                             "user": "M1998",
                             "icon": "icons/PRO7-2.0-Icon.png",
-                            "page_uuid": "2c0014dd-f667-4079-8da0-31c7c34055c1"
+                            "uuid": "be6bf3b5-5f0b-4367-9f6e-7af196786e0e"
                         }
                     ]
                 },
@@ -110,7 +110,7 @@
                             "id": 8,
                             "user": "N1995",
                             "icon": "icons/Chapter1_NEW-Icon.png",
-                            "page_uuid": "b5f7b9aa-2b31-4d16-b5d8-52256b107849"
+                            "uuid": "e302ab51-9b0f-4ada-b9fb-869a5082a2a2"
                         },
                         {
                             "pageNum": 2,
@@ -121,7 +121,7 @@
                             "id": 9,
                             "user": "M1998",
                             "icon": "icons/Chap1-Pg1-Icon.png",
-                            "page_uuid": "1751991a-87ab-41b6-aeae-0dcf254bdc84"
+                            "uuid": "4919794c-70e2-4c09-9826-bb865702ec60"
                         },
                         {
                             "pageNum": 3,
@@ -132,7 +132,7 @@
                             "id": 10,
                             "user": "M1998",
                             "icon": "icons/Chap1-Pg2-Icon.png",
-                            "page_uuid": "70b7b8ad-a69b-4418-9c8b-856b36979267"
+                            "uuid": "31816435-e400-4727-b025-f264288e6a20"
                         },
                         {
                             "pageNum": 4,
@@ -143,7 +143,7 @@
                             "id": 11,
                             "user": "M1998",
                             "icon": "icons/Chap1-Pg3-Icon.png",
-                            "page_uuid": "a711a2d6-4fa6-40cc-8b0b-3d22a3c645f1"
+                            "uuid": "39f3a834-d890-45dc-aed8-a1c111fcf997"
                         },
                         {
                             "pageNum": 5,
@@ -154,7 +154,7 @@
                             "id": 12,
                             "user": "M1998",
                             "icon": "icons/Chap1-Pg4-Icon.png",
-                            "page_uuid": "ddddfc92-0b68-4a8c-8561-f89abf54dfaf"
+                            "uuid": "bb590549-f8c4-4577-8121-3a73638e1917"
                         },
                         {
                             "pageNum": 6,
@@ -165,7 +165,7 @@
                             "id": 13,
                             "user": "M1998",
                             "icon": "icons/Chap1-Pg5-Icon.png",
-                            "page_uuid": "aeb0efca-cbd8-42c7-bb7c-05eb6a403472"
+                            "uuid": "5ba58b25-864d-48d5-94c7-576861e672ec"
                         },
                         {
                             "pageNum": 7,
@@ -176,7 +176,7 @@
                             "id": 14,
                             "user": "M1998",
                             "icon": "icons/Chap1-Pg6-Icon.png",
-                            "page_uuid": "5986b5b8-993b-4f99-af7a-f235294731eb"
+                            "uuid": "d001e3ec-915d-47a7-be54-ba2f2ea55d29"
                         },
                         {
                             "pageNum": 8,
@@ -187,7 +187,7 @@
                             "id": 15,
                             "user": "M1998",
                             "icon": "icons/Chap1-Pg7-Icon.png",
-                            "page_uuid": "a78d0b2b-b18d-42ae-a6d3-81a049312b90"
+                            "uuid": "05009c26-2bf4-4df9-8315-88e7694ff5e4"
                         },
                         {
                             "pageNum": 9,
@@ -198,7 +198,7 @@
                             "id": 16,
                             "user": "M1998",
                             "icon": "icons/Chap1-Pg8-Icon.png",
-                            "page_uuid": "e871b8c8-a86f-40c2-86dd-a19263886731"
+                            "uuid": "ed45a559-6208-407d-8439-e71ebb4d7c97"
                         },
                         {
                             "pageNum": 10,
@@ -209,7 +209,7 @@
                             "id": 17,
                             "user": "M1998",
                             "icon": "icons/Chap1-Pg9-Icon.png",
-                            "page_uuid": "51ce50ea-035a-490d-9f28-bf4ec3ccee02"
+                            "uuid": "39741c5e-a7a1-435c-9a35-91cd1c989a0a"
                         },
                         {
                             "pageNum": 11,
@@ -220,7 +220,7 @@
                             "id": 18,
                             "user": "M1998",
                             "icon": "icons/Chap1-Pg10-Icon.png",
-                            "page_uuid": "fce36a5e-65c7-4278-9049-f4c0b63b0ddc"
+                            "uuid": "3a73c11d-c734-4dbc-a34f-887ee0b0fcec"
                         },
                         {
                             "pageNum": 12,
@@ -231,7 +231,7 @@
                             "id": 19,
                             "user": "M1998",
                             "icon": "icons/Chap1-Pg11-Icon.png",
-                            "page_uuid": "5e53a51e-cf3a-4f96-b875-d1a4b8d8732f"
+                            "uuid": "c6ed1f05-ac62-4bfa-97c4-7ac19091f190"
                         },
                         {
                             "pageNum": 13,
@@ -242,7 +242,7 @@
                             "id": 20,
                             "user": "M1998",
                             "icon": "icons/Chap1-Pg12-Icon.png",
-                            "page_uuid": "112fa920-1270-463b-8606-19a76148c98f"
+                            "uuid": "cb038fa4-46dc-45f1-91af-cf956b09fe1e"
                         },
                         {
                             "pageNum": 14,
@@ -253,7 +253,7 @@
                             "id": 21,
                             "user": "M1998",
                             "icon": "icons/Chap1-Pg13-Icon.png",
-                            "page_uuid": "ec70f967-f9a2-4060-aeaa-8871c90460aa"
+                            "uuid": "53a1b3de-07b6-4a3d-9443-c022bc53c910"
                         },
                         {
                             "pageNum": 15,
@@ -264,7 +264,7 @@
                             "id": 22,
                             "user": "M1998",
                             "icon": "icons/Moved_To_Wisconsin-Icon.png",
-                            "page_uuid": "a59b7cc5-e678-4504-83e0-c19b4600412a"
+                            "uuid": "b0ab22dc-0acd-4423-b8c9-58901f551b70"
                         },
                         {
                             "pageNum": 16,
@@ -275,7 +275,7 @@
                             "id": 23,
                             "user": "M1998",
                             "icon": "icons/Chap1-Pg14-Icon.png",
-                            "page_uuid": "8715320b-92f6-4898-b940-88c9442ef9c3"
+                            "uuid": "811dcb55-9e31-43d5-aaf3-ac2ea1033c9c"
                         },
                         {
                             "pageNum": 17,
@@ -286,7 +286,7 @@
                             "id": 24,
                             "user": "M1998",
                             "icon": "icons/Chap1-Pg15-Icon.png",
-                            "page_uuid": "1b5f8f3d-a137-47a8-afeb-eb6a490a4532"
+                            "uuid": "bd7d5432-df04-4ed3-953d-ae93a100fde3"
                         },
                         {
                             "pageNum": 18,
@@ -297,7 +297,7 @@
                             "id": 25,
                             "user": "M1998",
                             "icon": "icons/Chap1-Pg16-Icon.png",
-                            "page_uuid": "0c0bf2b2-8f78-419c-acda-6e48cba1b742"
+                            "uuid": "9544b748-0888-4afc-93f1-2ba73fd27b42"
                         },
                         {
                             "pageNum": 19,
@@ -308,7 +308,7 @@
                             "id": 26,
                             "user": "M1998",
                             "icon": "icons/Chap1-Pg17-Icon.png",
-                            "page_uuid": "c18bbd0b-4c1e-434b-9725-f8d951043af6"
+                            "uuid": "0580da8a-ed1e-45a3-a2e6-89eb1b0e44e8"
                         },
                         {
                             "pageNum": 20,
@@ -319,7 +319,7 @@
                             "id": 27,
                             "user": "M1998",
                             "icon": "icons/Chap1-Pg18-Icon.png",
-                            "page_uuid": "596269ae-4b0a-4e63-ab9e-a3b7c894b13c"
+                            "uuid": "790f2161-f952-4210-ae5e-61dc7e0ee9c1"
                         },
                         {
                             "pageNum": 21,
@@ -330,7 +330,7 @@
                             "id": 28,
                             "user": "M1998",
                             "icon": "icons/Chap1-Pg19-Icon.png",
-                            "page_uuid": "73c0062b-9bba-4f17-a947-2f238d7085ec"
+                            "uuid": "e80361c8-fa41-4fb2-93f7-44c1dba59859"
                         },
                         {
                             "pageNum": 22,
@@ -341,7 +341,7 @@
                             "id": 29,
                             "user": "M1998",
                             "icon": "icons/Chap1-Pg20-Icon.png",
-                            "page_uuid": "9fa5131b-f89b-40b0-8b40-95276dccb762"
+                            "uuid": "c94109cd-27e6-4b98-ba07-e07809cbfc27"
                         },
                         {
                             "pageNum": 23,
@@ -352,7 +352,7 @@
                             "id": 30,
                             "user": "M1998",
                             "icon": "icons/Chap1-Pg21-Icon.png",
-                            "page_uuid": "14929e5a-6aca-4d4b-9968-a0f78f109bda"
+                            "uuid": "becd99ef-9d28-4fec-b3af-a988d4ee8aa2"
                         },
                         {
                             "pageNum": 24,
@@ -363,7 +363,7 @@
                             "id": 31,
                             "user": "M1998",
                             "icon": "icons/Chap1-Pg22-Icon.png",
-                            "page_uuid": "7de3c1df-4fac-4b9b-b89a-c30ba1cb0126"
+                            "uuid": "40bf0c31-d69b-439e-9d68-df53d38abf81"
                         },
                         {
                             "pageNum": 25,
@@ -374,7 +374,7 @@
                             "id": 32,
                             "user": "M1998",
                             "icon": "icons/Chap1-Pg23-Icon.png",
-                            "page_uuid": "cad99e72-9d90-4c11-bf03-b9ce5d464c11"
+                            "uuid": "eac2edce-2ed6-4ed3-8790-3615ca26f81b"
                         },
                         {
                             "pageNum": 26,
@@ -385,7 +385,7 @@
                             "id": 33,
                             "user": "M1998",
                             "icon": "icons/Chap1-Pg24-Icon.png",
-                            "page_uuid": "5814ce12-afb8-4a3e-a7e0-471274bd98bf"
+                            "uuid": "717bb5a7-6ba4-4560-8375-d348618302d5"
                         }
                     ]
                 },
@@ -404,7 +404,7 @@
                             "id": 34,
                             "user": "M1998",
                             "icon": "icons/Chapter2_NEW-Icon.png",
-                            "page_uuid": "d615a5cc-9cd2-4fdb-9de2-6c5093c5558c"
+                            "uuid": "a7640e97-32aa-485c-8eaf-9c051db102c2"
                         },
                         {
                             "pageNum": 2,
@@ -415,7 +415,7 @@
                             "id": 35,
                             "user": "M1998",
                             "icon": "icons/Holidays2022-Icon.png",
-                            "page_uuid": "ee7c05a0-49cd-4420-9743-5e64003795e3"
+                            "uuid": "188c2485-a664-4b27-bde2-cfbbffc404d7"
                         },
                         {
                             "pageNum": 3,
@@ -426,7 +426,7 @@
                             "id": 36,
                             "user": "M1998",
                             "icon": "icons/Chap2-Pg1-Icon.png",
-                            "page_uuid": "aaedf4f4-41d0-4438-bd35-98323f46522c"
+                            "uuid": "98db6468-da42-4f6b-b8d2-47c113f14d0d"
                         },
                         {
                             "pageNum": 4,
@@ -437,7 +437,7 @@
                             "id": 37,
                             "user": "M1998",
                             "icon": "icons/Chap2-pg2-Icon.png",
-                            "page_uuid": "454a43ce-d88e-4964-8474-fb3ef8f49a3d"
+                            "uuid": "445b223f-7819-4f54-8216-883e2374f98b"
                         },
                         {
                             "pageNum": 5,
@@ -448,7 +448,7 @@
                             "id": 38,
                             "user": "M1998",
                             "icon": "icons/Chap2-pg03-Icon.png",
-                            "page_uuid": "655a8a5b-8abe-4cde-87be-0ddff44f5a69"
+                            "uuid": "669789c5-4537-4674-93f3-2a210d1ff6cf"
                         },
                         {
                             "pageNum": 6,
@@ -459,7 +459,7 @@
                             "id": 39,
                             "user": "M1998",
                             "icon": "icons/Chap2-pg04-Icon.png",
-                            "page_uuid": "aa3ef18a-1a40-4eac-9280-0243c17e068c"
+                            "uuid": "af428072-0404-4468-bea7-35024cf31269"
                         },
                         {
                             "pageNum": 7,
@@ -470,7 +470,7 @@
                             "id": 40,
                             "user": "M1998",
                             "icon": "icons/Chap2-pg05-Icon.png",
-                            "page_uuid": "1fd66105-2c24-499f-a363-db539b47ab40"
+                            "uuid": "b2efadd1-136b-41fa-91da-dc1c1990ce47"
                         },
                         {
                             "pageNum": 8,
@@ -481,7 +481,7 @@
                             "id": 41,
                             "user": "M1998",
                             "icon": "icons/Chap2-pg06-Icon.png",
-                            "page_uuid": "1f79974e-cedd-4662-801a-e98df6a72648"
+                            "uuid": "f7f9d73b-eade-4249-845c-71073452b5dd"
                         },
                         {
                             "pageNum": 9,
@@ -492,7 +492,7 @@
                             "id": 42,
                             "user": "M1998",
                             "icon": "icons/Chap2-pg07-Icon.png",
-                            "page_uuid": "38f2b2f3-c7d3-4491-8bdf-e26f578e5b96"
+                            "uuid": "6f8357f4-b5c7-43ca-a0b7-b31275f32e02"
                         },
                         {
                             "pageNum": 10,
@@ -503,7 +503,7 @@
                             "id": 43,
                             "user": "M1998",
                             "icon": "icons/Chap2-pg08-Icon.png",
-                            "page_uuid": "8668dccd-cbd2-4f1d-96c5-d0fc37d4a8e0"
+                            "uuid": "4bcef01f-ccc1-4c2b-afc6-3302261a01b0"
                         },
                         {
                             "pageNum": 11,
@@ -514,7 +514,7 @@
                             "id": 44,
                             "user": "N1995",
                             "icon": "icons/Chap2-pg9-Icon.png",
-                            "page_uuid": "e18c6a64-112e-46fc-bbb5-d3fd0dd2ed27"
+                            "uuid": "2fe27ba6-3b39-449f-8f97-09aaf6908c9a"
                         },
                         {
                             "pageNum": 12,
@@ -525,7 +525,7 @@
                             "id": 45,
                             "user": "N1995",
                             "icon": "icons/Chap2-pg10-Icon.png",
-                            "page_uuid": "c662be1b-2975-490e-a84c-7873b06b3b0b"
+                            "uuid": "822799da-a509-418b-bd08-0dfeb65a9006"
                         },
                         {
                             "pageNum": 13,
@@ -536,7 +536,7 @@
                             "id": 46,
                             "user": "N1995",
                             "icon": "icons/Chap2-pg11-Icon.png",
-                            "page_uuid": "226602eb-affd-4a23-8e65-855b52618867"
+                            "uuid": "e5df8eb0-3cc6-4dc5-a1e3-60e6af7d4ade"
                         },
                         {
                             "pageNum": 14,
@@ -547,7 +547,7 @@
                             "id": 47,
                             "user": "N1995",
                             "icon": "icons/Chap2-pg12-Icon.png",
-                            "page_uuid": "c04538ea-bb79-4ffe-b897-02af5e70e3bd"
+                            "uuid": "9b2f3f3d-56d0-42bb-bc47-65024c559eb4"
                         },
                         {
                             "pageNum": 15,
@@ -558,7 +558,7 @@
                             "id": 48,
                             "user": "M1998",
                             "icon": "icons/Chap2-Pg13-Icon.png",
-                            "page_uuid": "75a394b3-df03-44a1-b34c-d9a5f587ebe9"
+                            "uuid": "d5473a7a-c74f-41e8-856a-5088a70f7c17"
                         },
                         {
                             "pageNum": 16,
@@ -569,7 +569,7 @@
                             "id": 49,
                             "user": "M1998",
                             "icon": "icons/Chap2-pg14-Icon.png",
-                            "page_uuid": "595460d9-8be7-4de0-85e2-fd3ace14a52b"
+                            "uuid": "db77a9ec-38ce-48df-b963-2d643c4f6d44"
                         },
                         {
                             "pageNum": 17,
@@ -580,7 +580,7 @@
                             "id": 50,
                             "user": "M1998",
                             "icon": "icons/Chap2-pg15-Icon.png",
-                            "page_uuid": "7aed943a-15fe-4cd1-a833-8300e84e994d"
+                            "uuid": "403b5d3b-f9fb-4922-8be9-3dc23e4958a9"
                         },
                         {
                             "pageNum": 18,
@@ -591,7 +591,7 @@
                             "id": 51,
                             "user": "M1998",
                             "icon": "icons/Chap2-pg16-Icon.png",
-                            "page_uuid": "8dd4ca46-b930-48df-a416-77a63b0e768e"
+                            "uuid": "ae6620d2-4f7e-4721-a3ed-f679809d1645"
                         },
                         {
                             "pageNum": 19,
@@ -602,7 +602,7 @@
                             "id": 52,
                             "user": "M1998",
                             "icon": "icons/Chap2-pg17-Icon.png",
-                            "page_uuid": "3ec3d85f-ea98-423e-bc26-fe8e0f8a0d92"
+                            "uuid": "204a0365-d907-43ec-bd73-fd8657f758d1"
                         },
                         {
                             "pageNum": 20,
@@ -613,7 +613,7 @@
                             "id": 53,
                             "user": "M1998",
                             "icon": "icons/Chap2-pg18-Icon.png",
-                            "page_uuid": "e778240b-b404-4cec-a2c6-afdf980e31ce"
+                            "uuid": "b6aebe7b-2554-4c4b-a62a-d72e5e6b5fe2"
                         },
                         {
                             "pageNum": 21,
@@ -624,7 +624,7 @@
                             "id": 54,
                             "user": "N1995",
                             "icon": "icons/Chap2-pg19-Icon.png",
-                            "page_uuid": "2ae822a9-2d91-4f92-88f4-dc83136ef245"
+                            "uuid": "7e595a8d-cb2d-4275-8cc0-84792e45d48e"
                         },
                         {
                             "pageNum": 22,
@@ -635,7 +635,7 @@
                             "id": 55,
                             "user": "N1995",
                             "icon": "icons/Chap2-pg20-Icon.png",
-                            "page_uuid": "ea977bcc-4eb6-4f8e-ad1e-1d532552553d"
+                            "uuid": "977bbbac-b82b-4f05-b6ec-8188797cf9b2"
                         },
                         {
                             "pageNum": 23,
@@ -646,7 +646,7 @@
                             "id": 56,
                             "user": "N1995",
                             "icon": "icons/Chap2-pg21-Icon.png",
-                            "page_uuid": "4e2174fe-a492-445d-a1fe-21bd74558244"
+                            "uuid": "b27732de-479f-4f45-aa32-8c6c28f412c9"
                         },
                         {
                             "pageNum": 24,
@@ -657,7 +657,7 @@
                             "id": 57,
                             "user": "N1995",
                             "icon": "icons/Chap2-pg22-Icon.png",
-                            "page_uuid": "9544617e-91a1-425d-9811-7ecbea35b565"
+                            "uuid": "bf585724-89ff-49a8-a7aa-2bf535557cce"
                         },
                         {
                             "pageNum": 25,
@@ -668,7 +668,7 @@
                             "id": 58,
                             "user": "M1998",
                             "icon": "icons/Chap2-pg23-Icon.png",
-                            "page_uuid": "5ab6402e-85d6-426e-9f9e-2d2b4ca7f1e8"
+                            "uuid": "75fd0c26-d72a-406a-b2c2-0a698e02fd77"
                         },
                         {
                             "pageNum": 26,
@@ -679,7 +679,7 @@
                             "id": 59,
                             "user": "M1998",
                             "icon": "icons/Chap2-Pg24-Icon.png",
-                            "page_uuid": "affe4928-df23-4a7f-9356-d5f6e73a6745"
+                            "uuid": "853e4c0c-812e-414a-a20d-a5ccba5f6c28"
                         },
                         {
                             "pageNum": 27,
@@ -690,7 +690,7 @@
                             "id": 60,
                             "user": "M1998",
                             "icon": "icons/Chap2-Pg25-Icon.png",
-                            "page_uuid": "02438e02-75d6-4004-8b50-7df1f3e5cdac"
+                            "uuid": "1e9f4d8d-1b9b-445f-b906-3bfeaf2cbae8"
                         },
                         {
                             "pageNum": 28,
@@ -701,7 +701,7 @@
                             "id": 61,
                             "user": "M1998",
                             "icon": "icons/Chap2-Pg26-Icon.png",
-                            "page_uuid": "4e797821-03e2-4f7e-a687-3760c0958ed0"
+                            "uuid": "bd48d977-a4a2-43b0-bc79-27a0c0644c5a"
                         },
                         {
                             "pageNum": 29,
@@ -712,7 +712,7 @@
                             "id": 62,
                             "user": "M1998",
                             "icon": "icons/Memorial_Day1-Icon.png",
-                            "page_uuid": "960c2f13-c429-4974-94b2-16f179251a6b"
+                            "uuid": "2753e850-fdd8-450f-83ca-df8a8fa9c7a7"
                         },
                         {
                             "pageNum": 30,
@@ -723,7 +723,7 @@
                             "id": 63,
                             "user": "M1998",
                             "icon": "icons/Chap2-pg27-Icon.png",
-                            "page_uuid": "57714277-d15b-4be7-99e8-8a5ba1821c4d"
+                            "uuid": "29013ad6-faf5-484a-bc83-4ae8a9210371"
                         },
                         {
                             "pageNum": 31,
@@ -734,7 +734,7 @@
                             "id": 64,
                             "user": "M1998",
                             "icon": "icons/Chap2-pg28-Icon.png",
-                            "page_uuid": "361ba717-202b-46c9-ab54-5b9db80f0e7a"
+                            "uuid": "9fd7c9a1-69af-4f97-9a3b-e408f0feaefd"
                         },
                         {
                             "pageNum": 32,
@@ -745,7 +745,7 @@
                             "id": 65,
                             "user": "M1998",
                             "icon": "icons/Chap2-pg29-Icon.png",
-                            "page_uuid": "3e312e32-dac9-4115-b0d2-c330c5609b29"
+                            "uuid": "bf1e051e-144e-4bc1-ae2a-cbe6c38f7220"
                         },
                         {
                             "pageNum": 33,
@@ -756,7 +756,7 @@
                             "id": 66,
                             "user": "M1998",
                             "icon": "icons/Chap2-Pg30-Icon.png",
-                            "page_uuid": "c2574a3f-1260-4c5c-a154-1935d2f1887b"
+                            "uuid": "41e455be-c56d-4016-a37f-b696bfd753e6"
                         },
                         {
                             "pageNum": 34,
@@ -767,7 +767,7 @@
                             "id": 67,
                             "user": "N1995",
                             "icon": "icons/Chap2-Pg31-Icon.png",
-                            "page_uuid": "efddecaa-3bfb-4279-a9c6-4ccaeecca0b0"
+                            "uuid": "bf3dedec-1da9-46ad-a235-297a5fe502ae"
                         },
                         {
                             "pageNum": 35,
@@ -778,7 +778,7 @@
                             "id": 68,
                             "user": "N1995",
                             "icon": "icons/Chap2-Pg32-Icon.png",
-                            "page_uuid": "1e395696-c8ba-4ac4-af8e-aa17624c966d"
+                            "uuid": "29d009c4-4faf-47c2-b365-c267c24af0ce"
                         },
                         {
                             "pageNum": 36,
@@ -789,7 +789,7 @@
                             "id": 69,
                             "user": "M1998",
                             "icon": "icons/Chap2-Pg33-Icon.png",
-                            "page_uuid": "6858f50e-56d3-4c7b-91b3-446332bedec5"
+                            "uuid": "381b619c-6e77-4b10-812f-4890d3362a09"
                         },
                         {
                             "pageNum": 37,
@@ -800,7 +800,7 @@
                             "id": 70,
                             "user": "M1998",
                             "icon": "icons/Chap2-Pg34-Icon.png",
-                            "page_uuid": "328c2d58-7210-4fd1-896f-2486fa7e93eb"
+                            "uuid": "89ec94cf-3b11-4d5b-ae12-e50657f6b034"
                         },
                         {
                             "pageNum": 38,
@@ -811,7 +811,7 @@
                             "id": 71,
                             "user": "M1998",
                             "icon": "icons/Chap2-Pg35-Icon.png",
-                            "page_uuid": "05c06d06-140e-4f25-8084-5f667b72c5f6"
+                            "uuid": "b907930f-4904-4e60-8439-f496ff86178c"
                         },
                         {
                             "pageNum": 39,
@@ -822,7 +822,7 @@
                             "id": 72,
                             "user": "M1998",
                             "icon": "icons/Chap2-Pg36-Icon.png",
-                            "page_uuid": "ef4da82f-1d70-4a68-a01f-d47b42106afb"
+                            "uuid": "418b458d-0c39-48a1-948a-22e0e3a16c3e"
                         },
                         {
                             "pageNum": 40,
@@ -833,7 +833,7 @@
                             "id": 73,
                             "user": "M1998",
                             "icon": "icons/Chap2-Pg37-Icon.png",
-                            "page_uuid": "477fea62-5749-4ab8-bf07-963fae23fec7"
+                            "uuid": "b564d950-fe0c-4c55-8f93-2e78921a98c6"
                         },
                         {
                             "pageNum": 41,
@@ -844,7 +844,7 @@
                             "id": 74,
                             "user": "M1998",
                             "icon": "icons/Chap2-Pg38-Icon.png",
-                            "page_uuid": "9d52adc3-effb-4f28-8366-ccfd8438e3eb"
+                            "uuid": "9c6f7776-6255-48ee-8086-942df9073ae2"
                         },
                         {
                             "pageNum": 42,
@@ -855,7 +855,7 @@
                             "id": 75,
                             "user": "M1998",
                             "icon": "icons/Chap2-Pg39-Icon.png",
-                            "page_uuid": "65f0b2c3-892d-4e72-9fd1-10e539eb50e8"
+                            "uuid": "6d05b4a9-111f-4d3d-a7e3-ca808047603b"
                         },
                         {
                             "pageNum": 43,
@@ -866,7 +866,7 @@
                             "id": 76,
                             "user": "M1998",
                             "icon": "icons/Chap2-pg40-Icon.png",
-                            "page_uuid": "5a79f16d-ae6c-429d-9d5a-82a933941092"
+                            "uuid": "800abbd9-347f-482b-ae22-e42dfe6dbaff"
                         },
                         {
                             "pageNum": 44,
@@ -877,7 +877,7 @@
                             "id": 77,
                             "user": "M1998",
                             "icon": "icons/Chap2-pg41-Icon.png",
-                            "page_uuid": "34e111f1-4944-42dd-8705-97126a25e9e2"
+                            "uuid": "019ed8bb-9b99-4c23-add0-eb8c6020975b"
                         },
                         {
                             "pageNum": 45,
@@ -888,7 +888,7 @@
                             "id": 78,
                             "user": "M1998",
                             "icon": "icons/Chap2-pg42-Icon.png",
-                            "page_uuid": "319d6491-611b-477c-bccf-a9affd217335"
+                            "uuid": "1492da4d-addb-4dfa-9732-837055e0b90b"
                         },
                         {
                             "pageNum": 46,
@@ -899,7 +899,7 @@
                             "id": 79,
                             "user": "M1998",
                             "icon": "icons/Chap2-pg43-Icon.png",
-                            "page_uuid": "c9dd26c1-edf3-4cfc-9aff-86b965a64e4a"
+                            "uuid": "027cf736-b143-4c39-a2ae-9f46976e1efa"
                         },
                         {
                             "pageNum": 47,
@@ -910,7 +910,7 @@
                             "id": 80,
                             "user": "M1998",
                             "icon": "icons/Chap2-pg44-Icon.png",
-                            "page_uuid": "ccf1a884-e1a2-4563-a22d-29a2ef0a8a36"
+                            "uuid": "2e4773bd-e9e1-40ae-92a0-ac873635111e"
                         },
                         {
                             "pageNum": 48,
@@ -921,7 +921,7 @@
                             "id": 81,
                             "user": "M1998",
                             "icon": "icons/Chap2-pg45-Icon.png",
-                            "page_uuid": "b88b17d3-b8ec-4fd1-8dd6-af21045eb65e"
+                            "uuid": "42df162e-55ad-44a0-9ba9-a9dbc54130ef"
                         },
                         {
                             "pageNum": 49,
@@ -932,7 +932,7 @@
                             "id": 82,
                             "user": "M1998",
                             "icon": "icons/Chap2-Pg46-Icon.png",
-                            "page_uuid": "b04e3609-d5cb-43fe-8315-e12aa4fdea95"
+                            "uuid": "11cbe105-8539-4eda-be42-5e042d0dd8c5"
                         },
                         {
                             "pageNum": 50,
@@ -943,7 +943,7 @@
                             "id": 83,
                             "user": "M1998",
                             "icon": "icons/Labor_Day-Icon.png",
-                            "page_uuid": "1ec2ef45-2cf0-469c-8f52-9b2995d7b9ee"
+                            "uuid": "413a3de0-2961-40d7-b57e-937bfa567a20"
                         },
                         {
                             "pageNum": 51,
@@ -954,7 +954,7 @@
                             "id": 84,
                             "user": "M1998",
                             "icon": "icons/Chap2-pg47-Icon.png",
-                            "page_uuid": "b1eca280-9449-4912-81ce-07cc6f48fa1a"
+                            "uuid": "97c76b36-f5a2-4b7e-899b-e25bb7ce7abb"
                         },
                         {
                             "pageNum": 52,
@@ -965,7 +965,7 @@
                             "id": 85,
                             "user": "M1998",
                             "icon": "icons/Chap2-pg48-Icon.png",
-                            "page_uuid": "b83c676a-2da7-4306-a023-3a6949bca49a"
+                            "uuid": "681c399d-a3fc-46ed-9802-d4b51eb576ed"
                         },
                         {
                             "pageNum": 53,
@@ -976,7 +976,7 @@
                             "id": 86,
                             "user": "M1998",
                             "icon": "icons/Under_Construction-09122022-Icon.png",
-                            "page_uuid": "0e94ab20-f094-4ea4-85c6-9dadfb48850a"
+                            "uuid": "3215f553-5874-4e6a-b626-481e92e77863"
                         },
                         {
                             "pageNum": 54,
@@ -987,7 +987,7 @@
                             "id": 87,
                             "user": "M1998",
                             "icon": "icons/Chap2-pg49-Icon.png",
-                            "page_uuid": "2ed1d069-7cbd-418e-97ca-1751719e10f6"
+                            "uuid": "9a27b867-96d6-47e1-8334-fede6881c46c"
                         },
                         {
                             "pageNum": 55,
@@ -998,7 +998,7 @@
                             "id": 88,
                             "user": "M1998",
                             "icon": "icons/Chap2-pg50-Icon.png",
-                            "page_uuid": "50947ac8-c62a-4663-a65e-8ac5a45b133e"
+                            "uuid": "309fdc87-7634-4315-86ff-d7d101d9bc62"
                         },
                         {
                             "pageNum": 56,
@@ -1009,14 +1009,14 @@
                             "id": 89,
                             "user": "M1998",
                             "icon": "icons/Chap2-pg51-Icon.png",
-                            "page_uuid": "434d60b9-2f87-4dda-a27c-85a3ec4840b8"
+                            "uuid": "fb5483a1-4400-4a57-92fb-c92c45be8500"
                         }
                     ]
                 },
                 {
                     "chapterName": "Chapter Three",
                     "folderName": "chapter3",
-                    "numOfPages": 5,
+                    "numOfPages": 11,
                     "id": 4,
                     "pages": [
                         {
@@ -1028,7 +1028,7 @@
                             "id": 90,
                             "user": "N1995",
                             "icon": "icons/Chapter3-Icon.png",
-                            "page_uuid": "75e586d9-376c-46d0-b771-fd88b35bb562"
+                            "uuid": "ce028594-e41f-43dd-8c06-0760d3e2a0db"
                         },
                         {
                             "pageNum": 2,
@@ -1039,7 +1039,7 @@
                             "id": 91,
                             "user": "M1998",
                             "icon": "icons/Chp3-Pg1-Icon.png",
-                            "page_uuid": "fdd58e36-9955-4bf5-8da2-e02420836352"
+                            "uuid": "2faf6043-2a18-48e0-a8da-e4988197b29b"
                         },
                         {
                             "pageNum": 3,
@@ -1050,7 +1050,7 @@
                             "id": 92,
                             "user": "M1998",
                             "icon": "icons/Chp3-Pg2-Icon.png",
-                            "page_uuid": "9ceba897-0a34-46f3-b674-e3a57acd76fa"
+                            "uuid": "4476b890-3615-4222-8de9-e659bad15877"
                         },
                         {
                             "pageNum": 4,
@@ -1061,7 +1061,7 @@
                             "id": 93,
                             "user": "N1995",
                             "icon": "icons/Chp3-Pg3-Icon.png",
-                            "page_uuid": "338c4ad6-a0eb-47de-b8b0-4e7e387e94ac"
+                            "uuid": "9d8be4cd-f461-40cb-82fb-08ba6cb55ad0"
                         },
                         {
                             "pageNum": 5,
@@ -1072,7 +1072,73 @@
                             "id": 94,
                             "user": "N1995",
                             "icon": "icons/Chp3-Pg4-Icon.png",
-                            "page_uuid": "1ae6b75c-93f0-432d-8a94-382a238cb00e"
+                            "uuid": "80e105e0-936e-4da1-9e86-1e394b4be654"
+                        },
+                        {
+                            "pageNum": 6,
+                            "filename": "Chp3-Pg5.jpg",
+                            "title": "Girl's still waiting for her undead cat",
+                            "message": "Girl's still waiting for her undead cat! Get on that, good sir!",
+                            "datetime": "2022-10-24 11:17:16",
+                            "id": 95,
+                            "user": "M1998",
+                            "icon": "icons/Chp3-Pg5-Icon.png",
+                            "uuid": "58269205-a043-45f8-9272-e12b709e8abf"
+                        },
+                        {
+                            "pageNum": 7,
+                            "filename": "Chp3-Pg6.jpg",
+                            "title": "Here enters Mr. Barr in the ink",
+                            "message": "For all those who are worried for Mr. Barr's well-being and for the people sending me messages like 'Is Mr. Barr okay? He looks like a limp noodle' and 'We want more souls of doughy old men!' the wait is over! Presenting Mr. Barr, in the flesh -err... black goo.",
+                            "datetime": "2022-10-24 11:25:24",
+                            "id": 96,
+                            "user": "M1998",
+                            "icon": "icons/Chp3-Pg6-Icon.png",
+                            "uuid": "0ff90545-8be9-447d-b887-ed90b3244134"
+                        },
+                        {
+                            "pageNum": 8,
+                            "filename": "Chp3-Pg7.jpg",
+                            "title": "Mr. Barr goes to hell",
+                            "message": "The River Styx needed a fresh, new look for the modern age...thus the banker drawer dating early 1900s.",
+                            "datetime": "2022-10-31 14:57:42",
+                            "id": 97,
+                            "user": "M1998",
+                            "icon": "icons/Chp3-Pg7-Icon.png",
+                            "uuid": "f58aeb6d-8a17-4e6c-8823-44be42e3dd99"
+                        },
+                        {
+                            "pageNum": 9,
+                            "filename": "Chp3-Pg8.jpg",
+                            "title": "Contract out for Farmer Findley's soul",
+                            "message": "A skeleton and a young girl  //  Talk murder as coffee steam swirls  //  Alone in a van  //  With dangers at hand  //  That later next week will unfurl  //  I'm not the poet, she is. Happy Halloween 🎃",
+                            "datetime": "2022-10-31 15:10:48",
+                            "id": 98,
+                            "user": "M1998",
+                            "icon": "icons/Chp3-Pg8-Icon.png",
+                            "uuid": "6c097b46-10d9-438e-ba72-9bfa996a15e1"
+                        },
+                        {
+                            "pageNum": 10,
+                            "filename": "Chp3-Pg09.jpg",
+                            "title": "Millie signs the contract for Farmer Finley",
+                            "message": "The truly scariest thing about this page is the contract's eerie resemblance to a tax return form...",
+                            "datetime": "2022-11-07 14:43:03",
+                            "id": 99,
+                            "user": "M1998",
+                            "icon": "icons/Chp3-Pg09-Icon.png",
+                            "uuid": "42c439a7-fc18-43e3-94b0-ea16f129607f"
+                        },
+                        {
+                            "pageNum": 11,
+                            "filename": "Chp3-Pg10.jpg",
+                            "title": "Chuck runs past Millie with a gun",
+                            "message": "Who says \"JEEPERS!\" these days, you may be asking yourself. It's me, I am the source material for Millie's exclamations.",
+                            "datetime": "2022-11-07 14:46:01",
+                            "id": 100,
+                            "user": "M1998",
+                            "icon": "icons/Chp3-Pg10-Icon.png",
+                            "uuid": "fb07403d-f701-48c2-a5f6-d405ab51233c"
                         }
                     ]
                 }

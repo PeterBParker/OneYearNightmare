@@ -1,9 +1,9 @@
 import PageDetailsCard from '../PageDetailsCard';
-import SupportUsCard from '../../generic/SupportUs/SupportUsCard';
+import Comments from '../../comments/Comments';
 
 export default function MobileReadPageCards(props) {
     return ([
-        <PageDetailsCard pageId={props.pageId} key="mobileReadPageDetailsCard"/>,
-        <SupportUsCard key="mobileReadPageSupportUsCard"/>
+        <PageDetailsCard page={props.page} chapter={props.chapter} key="mobileReadPageDetailsCard"/>,
+        <Comments slug={props.page.uuid} key="mobileCommentCard"/>
     ])
 }

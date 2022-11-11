@@ -22,8 +22,8 @@ export default function ComicRouter(props) {
                 <Route exact path={COMIC_VIEWER_PATH}>
                     <Redirect to={bookmarkedPageUrl} />
                 </Route>
-                <Route path="/read/:pageId/:focus" component={ComicViewer} />
-                <Route path="/read/:pageId" component={ComicViewer} />
+                <Route path="/read/:pageNum/:focus" component={ComicViewer}/>
+                <Route path="/read/:pageNum" component={ComicViewer}/>
             </Switch>
         </div>
     );
