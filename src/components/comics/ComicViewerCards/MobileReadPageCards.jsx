@@ -3,7 +3,7 @@ import CommentCard from '../../generic/CommentCard';
 
 export default function MobileReadPageCards(props) {
     return ([
-        <PageDetailsCard pageId={props.pageId} key="mobileReadPageDetailsCard"/>,
-        <CommentCard />
+        <PageDetailsCard page={props.page} chapter={props.chapter} key="mobileReadPageDetailsCard"/>,
+        <CommentCard page={props.page} key="mobileCommentCard"/>
     ])
 }

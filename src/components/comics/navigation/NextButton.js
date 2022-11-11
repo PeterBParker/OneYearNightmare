@@ -7,13 +7,12 @@ export default function NextButton(props) {
     const disabledButton = <div className="navButton"><img src={disabledNextIcon} width={30} alt="disabled navigation next page button"/></div>;
     const nextPageId = props.pageId+1;
 
-    let isValidId = ComicPageAPI.validatePageId(nextPageId);
+    let isValidId = ComicPageAPI.validatePageNum(nextPageId);
     if(!isValidId) {
         return (disabledButton);
     }
 
-    const pageInfo = ComicPageAPI.getPage(nextPageId);
-    if(pageInfo) {
+    if(isValidId) {
         const pageFilePath = '/read/' + nextPageId;
         return(
             <div className="navButton" onClick={props.clickEffects}><Link to={pageFilePath}><img src={activeNextIcon} width={30} alt="enabled navigation next page button"/></Link></div>

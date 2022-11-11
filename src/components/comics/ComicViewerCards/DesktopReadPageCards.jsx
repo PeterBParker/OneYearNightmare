@@ -8,11 +8,11 @@ export default function DesktopReadPageCards(props) {
         <>
         <div className="desktopReadPageCardsWrapper mx-8 mt-12">
             <div className="desktopReadPageCardsDetails bg-white">
-                <PageDetailsCard pageId={props.pageId} />
+                <PageDetailsCard pageId={props.pageId} page={props.page} chapter={props.chapter}/>
                 <img src={discordBanner} width={120} className="readPageDiscordBannerImage ml-8" alt="discord link banner"/>
             </div>
             <div className="desktopReadPageCardsSupport bg-white">
-                <CommentCard />
+                <CommentCard page={props.page}/>
             </div>
             <div className="desktopReadPageDiscordBanner mt-6 justify-between py-6 items-center">
                 <div className="desktopReadPageDiscordBannerText text-left ">
