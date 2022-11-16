@@ -9,6 +9,7 @@
     - add like button and display to comments
     - Retrieve top three comments by likes, and the rest sorted by date newest first
   - Add Authentication/User data
+    - Force Display name to be set if not set
     - Style User profile
     - Add View Profile/Login Link to main menu
     - get terms and conditions

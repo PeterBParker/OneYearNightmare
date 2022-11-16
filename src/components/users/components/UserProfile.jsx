@@ -3,7 +3,7 @@ import { signOut, updateProfile } from "firebase/auth";
 import { auth } from "../../..";
 import { db } from "../../../index";
 import { collection, setDoc, doc, Timestamp } from "firebase/firestore";
-import { getDisplayName } from "../utils";
+import { getDisplayName, validateDisplayName } from "../utils";
 
 const UserProfile = () => {
   const [notInitialized, setNotInitialized] = useState(auth.currentUser.displayName === null)
@@ -15,6 +15,12 @@ const InitializeInfo = (props) => {
   const [name, setName] = useState("");
 
   const changeDisplayName = async (new_name) => {
+    // First validate the display name doesn't already exist
+    let is_valid = await validateDisplayName(new_name);
+    if (is_valid == false) {
+      throw "Display name already exists. :(";
+    }
+    // Add it if not
     let userDoc = {
       display_name: new_name,
       last_updated: Timestamp.fromDate(new Date()),
@@ -35,7 +41,17 @@ const InitializeInfo = (props) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await changeDisplayName(name);
+    let emsgBox = document.getElementById("dNameEmsg")
+    let field = document.getElementById("dName")
+    try {
+      field.classList.remove("input-error");
+      emsgBox.innerHTML = ""
+      await changeDisplayName(name);
+    } catch (error) {
+      field.classList.add("input-error");
+      emsgBox.innerHTML = error
+    }
+    
   };
   return (
     <div>
@@ -49,6 +65,7 @@ const InitializeInfo = (props) => {
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
+        <div id="dNameEmsg" className="emsg"></div>
         <button type="submit" className="btn text-center px-4 py-2">
           Save
         </button>
@@ -65,7 +82,7 @@ const DisplayInfo = () => {
     getDisplayName(auth.currentUser.uid).then((name) => {
       setDisplayName(name);
     });
-  }, [auth.currentUser]);
+  }, []);
 
   return (
     <div>
