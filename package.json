@@ -31,7 +31,8 @@
     "prebuild": "npm run build:tailwind",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "stop": "npx kill-port 9099 8080 9000 5000 9199"
   },
   "eslintConfig": {
     "extends": [
