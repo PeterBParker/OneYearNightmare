@@ -18,7 +18,7 @@ const InitializeInfo = (props) => {
     // First validate the display name doesn't already exist
     let is_valid = await validateDisplayName(new_name);
     if (is_valid == false) {
-      throw "Display name already exists. :(";
+      throw new Error("Display name already exists. 😭");
     }
     // Add it if not
     let userDoc = {
