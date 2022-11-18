@@ -25,6 +25,7 @@ import querySizes from '../../styling/breakpoints.json';
 import HorizontalShare from './HorizontalShare';
 import SimpleNavBar from '../comics/navigation/desktop/SimpleNavBar';
 import { useRef, useEffect } from 'react';
+import ReadPageCards from './ComicViewerCards/ReadPageCards';
 
 export default function ComicViewer(props) {
     const params = useParams();
@@ -88,7 +89,7 @@ export default function ComicViewer(props) {
                 {isDesktop ? <DesktopPageView pageImageUrl={pageImageUrl} sharePageUrl={sharePageUrl} title={title} topOfPageRef={topOfPageRef}/> : <MobilePageView pageImageUrl={pageImageUrl} topOfPageRef={topOfPageRef}/>}
                 {isDesktop ? <DesktopNavBar pageId={pageNum} clickEffects={loadNextPageEffects}/> : <MobileNavBar pageId={pageNum} clickEffects={loadNextPageEffects}/>}
                 {isDesktop ? '' : <HorizontalShare sharePageUrl={sharePageUrl} shareImageUrl={shareImageUrl} title={title} />}
-                {isDesktop ? <DesktopReadPageCards pageId={pageNum} page={relaventObjects.pageObj} chapter={relaventObjects.chapterObj}/> : <MobileReadPageCards pageId={pageNum} page={relaventObjects.pageObj} chapter={relaventObjects.chapterObj}/>}
+                <ReadPageCards page={relaventObjects.pageObj} chapter={relaventObjects.chapterObj} isDesktop={isDesktop}/>
             </div>
         :
 

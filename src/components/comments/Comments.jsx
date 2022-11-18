@@ -47,7 +47,7 @@ export default function Comments(props) {
               );
             })}
       </div>
-      {authUser ? (
+      {authUser && authUser.displayName != null ? (
         showCommentSubmit ? (
           <div className="mx-4 my-4">
             <CreateNewCommentForm

@@ -63,6 +63,8 @@ const InitializeInfo = (props) => {
           id="dName"
           name="dName"
           value={name}
+          required
+          pattern="\S(.*\S)?"
           onChange={(e) => setName(e.target.value)}
         />
         <div id="dNameEmsg" className="emsg"></div>
