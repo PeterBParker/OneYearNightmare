@@ -4,6 +4,8 @@ import { auth } from "../../index";
 import { collection, addDoc, Timestamp } from "firebase/firestore";
 import { useState } from "react";
 import {PAGE_COMMENTS_TABLE} from "./utils/constants"
+import { Link } from "react-router-dom";
+import { SIGNIN_PAGE_PATH } from "../Main";
 
 function CreateNewCommentForm(props) {
     const [content, setContent] = useState("");
@@ -24,7 +26,7 @@ function CreateNewCommentForm(props) {
       };
     return (
       <>
-        {auth.currentUser != null ?
+        {auth.currentUser != null && auth.currentUser.displayName != null ?
           <CommentForm 
             onSubmitAction={createNewComment}
             slug={props.slug}
@@ -33,7 +35,12 @@ function CreateNewCommentForm(props) {
             setContent={(a) => setContent(a)}
           />
         :
-        <div>Please sign in.</div>
+        <Link
+          to={SIGNIN_PAGE_PATH}
+          className="bg-eggshell px-4 w-full font-medium"
+        >
+          Log in
+        </Link>
       }
       </>
     );

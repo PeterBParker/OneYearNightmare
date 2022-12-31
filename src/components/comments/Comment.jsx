@@ -1,10 +1,7 @@
 import moment from "moment";
 import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
-import CommentForm from "./CommentForm";
 import { auth } from "../..";
-import { db } from "../../index";
-import { doc, getDoc } from "firebase/firestore";
 import { getDisplayName } from "../users/utils";
 import EditCommentForm from "./EditCommentForm";
 import CreateNewCommentForm from "./CreateNewCommentForm";
@@ -26,7 +23,7 @@ export function SingleComment(props) {
 
   useEffect(() => {
     setBelongsToCurrUser(auth.currentUser ? auth.currentUser.uid === props.comment.author_uid : false)
-  }, [auth.currentUser])
+  }, [props.comment.author_uid])
 
   return (
     <div>
@@ -71,12 +68,12 @@ export function SingleComment(props) {
                   className="cancel-btn btn text-left font-medium text-green-dark"
                   onClick={() => setShowReplyBox(false)}
                 >
-                  Cancel Reply
+                  Cancel
                 </span>
               ) : (
                 <div className="w-full">
                   {
-                    props.isTopLevel && auth.currentUser != null ?
+                    props.isTopLevel ?
                       <span
                         className="reply-btn btn text-left font-medium text-green-dark float-left"
                         onClick={() => setShowReplyBox(true)}
