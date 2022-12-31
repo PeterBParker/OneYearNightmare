@@ -54,11 +54,6 @@ export default function MobileMenu(props) {
                 Support Us
               </Link>
             </div>
-            <div className="loginNavLink">
-              <Link to={SIGNIN_PAGE_PATH} onClick={props.onMenuChange}>
-                {auth.currentUser ? "User" : "Login"}
-              </Link>
-            </div>
           </div>
         </div>
         <div className="mobileMenuFooterImage w-full">

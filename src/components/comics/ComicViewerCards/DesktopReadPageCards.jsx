@@ -4,12 +4,11 @@ import Comments from "../../comments/Comments";
 import discordBanner from "../../../assets/FINAL-ASSETS-072821/final assets/discord-banner-ill-CROPPED.png";
 
 export default function DesktopReadPageCards(props) {
-
   return (
     <>
       <div className="desktopReadPageCardsWrapper mx-8 mt-12">
         <div className="desktopReadPageCardsDetails bg-white">
-          <PageDetailsCard page={props.page} chapter={props.chapter}/>
+          <PageDetailsCard page={props.page} chapter={props.chapter} />
           <img
             src={discordBanner}
             width={120}
@@ -18,11 +17,7 @@ export default function DesktopReadPageCards(props) {
           />
         </div>
         <div className="desktopReadPageCardsSupport bg-white ">
-          {props.page_uuid ? (
-            <Comments slug={props.page_uuid} comments={props.comments} />
-          ) : (
-            <SupportUsCard />
-          )}
+          <SupportUsCard />
         </div>
         <div className="desktopReadPageDiscordBanner mt-6 justify-between py-6 items-center">
           <div className="desktopReadPageDiscordBannerText text-left ">
