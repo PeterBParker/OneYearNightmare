@@ -1,0 +1,1 @@
+export const PAGE_COMMENTS_TABLE = "page_comments"

@@ -1,6 +1,24 @@
 # TODO
 
-- Integrate Comment Service
+- Make Comments
+  - Hook up to Database
+    - add error handling if comment submission failed
+      - add visual state to indicate pending server write
+      - add visual state to indicate completed server write
+    - add pagination
+    - add like button and display to comments
+    - Retrieve top three comments by likes, and the rest sorted by date newest first
+  - Add Authentication/User data
+    - Show display name pattern reqs somewhere
+    - get terms and conditions
+      - add display module for terms and conditions
+    - add database enforcement of editing only comments owned by the currently signed in user
+    - populate comment data with user info
+  - Style
+      - Style User Profile Page
+      - Style Set Display Name Page
+      - Style Comments box (mobile)
+      - Get new avatars
 - Integrate email service and start mailing list
 - Add infinite scroll instead of button navigation
 - Add tap on either side of page to navigate

@@ -33,3 +33,8 @@ src/styling/tailwind.output.css
 *.pyc
 *.cache
 .env
+*.log
+ui-debug.log
+package-lock.json
+database-debug.log
+

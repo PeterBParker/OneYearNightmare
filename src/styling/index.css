@@ -31,6 +31,31 @@ body {
   width: 33px;
 }
 
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+  background: #393d36;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f4f1ed;
+}
+::-webkit-scrollbar-track-piece {
+	background: rgba(0,0,0,0);
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
 .volTextContainer {
   width: 33%;
 }
@@ -48,6 +73,11 @@ body {
 }
 .desktopDefaultBg {
   background-image: url(../assets/Background-negative-FINAL-2024px.jpg);
+}
+.single-comment-container {
+  display: grid;
+  grid-template-columns: 70px auto;
+  grid-template-rows: 1.5rem auto;
 }
 .footerMobileGrid {
   display: grid;
@@ -223,7 +253,10 @@ body {
   grid-column-start: 5;
   grid-column-end: 6;
 }
-
+.comment-list {
+  overflow-y: scroll;
+  max-height: 500px;
+}
 .aboutTheComicContainer {
   display: grid;
   grid-template-columns: 100%;
@@ -290,6 +323,9 @@ body {
   grid-row-start: 2;
   grid-row-end: 3;
 }
+.submit-btn {
+  word-break: keep-all;
+}
 
 .iconCardHeader {
   background: linear-gradient(180deg, #f4f1ed 50%, #fff 50%);
@@ -337,6 +373,13 @@ body {
   border-color: #998f7e;
   border-width: 2px 1px 2px 2px;
 }
+.desktopPageCommentsContainer {
+  border: solid;
+  border-color: #998f7e;
+  border-width: 2px 2px 2px 1px;
+  height: 100%;
+}
+
 .desktopPageDetailsTitle {
   grid-row-start: 1;
   grid-row-end: 2;
@@ -648,12 +691,84 @@ body {
   height: 337px;
 }
 
-::-webkit-scrollbar { 
-  display: none; 
-}
-
 .whiteBackgroundColorFade {
   background-image: linear-gradient(to bottom, rgba(255,255,255,1) 60%, rgba(255,255,255,0));
+}
+
+.comments-title {
+  position: sticky;
+  top: 0;
+}
+
+.comment-box {
+  border-bottom: 1px solid #e0dcd1;
+}
+
+.comment-avatar {
+  border-radius: 4rem;
+  border: solid #e0dcd1; 
+  border-width: 1px;
+}
+
+.comment-avatar-container {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+.comment-data-header {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+
+.btn {
+  cursor: pointer;
+}
+
+.grow-btn {
+  transition: all .1s ease-in-out;
+}
+
+.grow-btn:hover {
+  transform: scale(1.03);
+}
+
+.comment-content-input {
+  width: 100%;
+  padding: 8px 12px;
+  box-sizing:border-box;
+  border: solid #000;
+  border-width: 1px;
+  border-radius: 0.5rem;
+}
+
+.comment-content {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  -ms-word-break: break-all;
+  word-break: break-word;
+
+  /* Adds a hyphen where the word breaks, if supported (No Blink) */
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+.comment-interaction-container {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 3;
+  grid-row-end: 4;
+}
+
+.input-error {
+  background: red;
 }
 
 /*
