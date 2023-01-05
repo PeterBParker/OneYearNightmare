@@ -42,18 +42,18 @@ body {
   background: #f4f1ed;
 }
 ::-webkit-scrollbar-track-piece {
-	background: rgba(0,0,0,0);
+  background: rgba(0, 0, 0, 0);
 }
- 
+
 /* Handle */
 ::-webkit-scrollbar-thumb {
   background: #888;
-  border-radius: 10px; 
+  border-radius: 10px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #555; 
+  background: #555;
 }
 
 .volTextContainer {
@@ -692,7 +692,11 @@ body {
 }
 
 .whiteBackgroundColorFade {
-  background-image: linear-gradient(to bottom, rgba(255,255,255,1) 60%, rgba(255,255,255,0));
+  background-image: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 1) 60%,
+    rgba(255, 255, 255, 0)
+  );
 }
 
 .comments-title {
@@ -706,7 +710,7 @@ body {
 
 .comment-avatar {
   border-radius: 4rem;
-  border: solid #e0dcd1; 
+  border: solid #e0dcd1;
   border-width: 1px;
 }
 
@@ -728,7 +732,7 @@ body {
 }
 
 .grow-btn {
-  transition: all .1s ease-in-out;
+  transition: all 0.1s ease-in-out;
 }
 
 .grow-btn:hover {
@@ -738,7 +742,7 @@ body {
 .comment-content-input {
   width: 100%;
   padding: 8px 12px;
-  box-sizing:border-box;
+  box-sizing: border-box;
   border: solid #000;
   border-width: 1px;
   border-radius: 0.5rem;
@@ -776,7 +780,7 @@ body {
  *
  */
 .grow {
-  transition: all .2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 .grow:hover {
@@ -854,7 +858,6 @@ body {
 
 .shimmerMask {
   color: grey;
-  display: inline-block;
   -webkit-mask: linear-gradient(-60deg, #000 30%, #0005, #000 70%) right/300%
     100%;
   mask: linear-gradient(-60deg, #000 30%, #0005, #000 70%) right/300% 100%;
@@ -874,8 +877,12 @@ body {
 }
 
 @keyframes slide-up {
-  0% {top:20px;}
-  100% {top:0px;}
+  0% {
+    top: 20px;
+  }
+  100% {
+    top: 0px;
+  }
 }
 
 /* accordion Effect for Archive Page */
