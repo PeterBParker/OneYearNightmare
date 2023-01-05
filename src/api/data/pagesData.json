@@ -1,6 +1,6 @@
 {
-    "maxDisplayPage": "fb07403d-f701-48c2-a5f6-d405ab51233c",
-    "pageCount": 100,
+    "maxDisplayPage": "2a3096d3-9f0a-457c-87ef-05d7e00e3f74",
+    "pageCount": 108,
     "seasonCount": 1,
     "seasons": [
         {
@@ -26,7 +26,8 @@
                             "icon": "icons/PRO1-Icon.png",
                             "uuid": "92870370-64f8-4278-bc19-bf32fb6de9fc",
                             "nextPageUuid": "e6a51887-3d17-4fa2-94f4-128c1d0018a0",
-                            "prevPageUuid": null
+                            "prevPageUuid": null,
+                            "globalPageNum": 0
                         },
                         {
                             "pageNum": 2,
@@ -38,7 +39,8 @@
                             "icon": "icons/PRO2-Icon.png",
                             "uuid": "e6a51887-3d17-4fa2-94f4-128c1d0018a0",
                             "nextPageUuid": "fbda255f-c1bc-46bd-b0b9-df1d4f1a67eb",
-                            "prevPageUuid": "92870370-64f8-4278-bc19-bf32fb6de9fc"
+                            "prevPageUuid": "92870370-64f8-4278-bc19-bf32fb6de9fc",
+                            "globalPageNum": 1
                         },
                         {
                             "pageNum": 3,
@@ -50,7 +52,8 @@
                             "icon": "icons/PRO3-Icon.png",
                             "uuid": "fbda255f-c1bc-46bd-b0b9-df1d4f1a67eb",
                             "nextPageUuid": "de0e4507-b363-4eca-81fc-19931550ae13",
-                            "prevPageUuid": "e6a51887-3d17-4fa2-94f4-128c1d0018a0"
+                            "prevPageUuid": "e6a51887-3d17-4fa2-94f4-128c1d0018a0",
+                            "globalPageNum": 2
                         },
                         {
                             "pageNum": 4,
@@ -62,7 +65,8 @@
                             "icon": "icons/PRO4-Icon.png",
                             "uuid": "de0e4507-b363-4eca-81fc-19931550ae13",
                             "nextPageUuid": "8fe6873d-7ba5-40dd-9d24-e7ed416916f9",
-                            "prevPageUuid": "fbda255f-c1bc-46bd-b0b9-df1d4f1a67eb"
+                            "prevPageUuid": "fbda255f-c1bc-46bd-b0b9-df1d4f1a67eb",
+                            "globalPageNum": 3
                         },
                         {
                             "pageNum": 5,
@@ -74,7 +78,8 @@
                             "icon": "icons/PRO5-Icon.png",
                             "uuid": "8fe6873d-7ba5-40dd-9d24-e7ed416916f9",
                             "nextPageUuid": "20dd6244-bfe5-4deb-ab8d-0a499590782c",
-                            "prevPageUuid": "de0e4507-b363-4eca-81fc-19931550ae13"
+                            "prevPageUuid": "de0e4507-b363-4eca-81fc-19931550ae13",
+                            "globalPageNum": 4
                         },
                         {
                             "pageNum": 6,
@@ -86,7 +91,8 @@
                             "icon": "icons/PRO6-Icon.png",
                             "uuid": "20dd6244-bfe5-4deb-ab8d-0a499590782c",
                             "nextPageUuid": "be6bf3b5-5f0b-4367-9f6e-7af196786e0e",
-                            "prevPageUuid": "8fe6873d-7ba5-40dd-9d24-e7ed416916f9"
+                            "prevPageUuid": "8fe6873d-7ba5-40dd-9d24-e7ed416916f9",
+                            "globalPageNum": 5
                         },
                         {
                             "pageNum": 7,
@@ -98,7 +104,8 @@
                             "icon": "icons/PRO7-2.0-Icon.png",
                             "uuid": "be6bf3b5-5f0b-4367-9f6e-7af196786e0e",
                             "nextPageUuid": "e302ab51-9b0f-4ada-b9fb-869a5082a2a2",
-                            "prevPageUuid": "20dd6244-bfe5-4deb-ab8d-0a499590782c"
+                            "prevPageUuid": "20dd6244-bfe5-4deb-ab8d-0a499590782c",
+                            "globalPageNum": 6
                         }
                     ]
                 },
@@ -118,7 +125,8 @@
                             "icon": "icons/Chapter1_NEW-Icon.png",
                             "uuid": "e302ab51-9b0f-4ada-b9fb-869a5082a2a2",
                             "nextPageUuid": "4919794c-70e2-4c09-9826-bb865702ec60",
-                            "prevPageUuid": "be6bf3b5-5f0b-4367-9f6e-7af196786e0e"
+                            "prevPageUuid": "be6bf3b5-5f0b-4367-9f6e-7af196786e0e",
+                            "globalPageNum": 7
                         },
                         {
                             "pageNum": 2,
@@ -130,7 +138,8 @@
                             "icon": "icons/Chap1-Pg1-Icon.png",
                             "uuid": "4919794c-70e2-4c09-9826-bb865702ec60",
                             "nextPageUuid": "31816435-e400-4727-b025-f264288e6a20",
-                            "prevPageUuid": "e302ab51-9b0f-4ada-b9fb-869a5082a2a2"
+                            "prevPageUuid": "e302ab51-9b0f-4ada-b9fb-869a5082a2a2",
+                            "globalPageNum": 8
                         },
                         {
                             "pageNum": 3,
@@ -142,7 +151,8 @@
                             "icon": "icons/Chap1-Pg2-Icon.png",
                             "uuid": "31816435-e400-4727-b025-f264288e6a20",
                             "nextPageUuid": "39f3a834-d890-45dc-aed8-a1c111fcf997",
-                            "prevPageUuid": "4919794c-70e2-4c09-9826-bb865702ec60"
+                            "prevPageUuid": "4919794c-70e2-4c09-9826-bb865702ec60",
+                            "globalPageNum": 9
                         },
                         {
                             "pageNum": 4,
@@ -154,7 +164,8 @@
                             "icon": "icons/Chap1-Pg3-Icon.png",
                             "uuid": "39f3a834-d890-45dc-aed8-a1c111fcf997",
                             "nextPageUuid": "bb590549-f8c4-4577-8121-3a73638e1917",
-                            "prevPageUuid": "31816435-e400-4727-b025-f264288e6a20"
+                            "prevPageUuid": "31816435-e400-4727-b025-f264288e6a20",
+                            "globalPageNum": 10
                         },
                         {
                             "pageNum": 5,
@@ -166,7 +177,8 @@
                             "icon": "icons/Chap1-Pg4-Icon.png",
                             "uuid": "bb590549-f8c4-4577-8121-3a73638e1917",
                             "nextPageUuid": "5ba58b25-864d-48d5-94c7-576861e672ec",
-                            "prevPageUuid": "39f3a834-d890-45dc-aed8-a1c111fcf997"
+                            "prevPageUuid": "39f3a834-d890-45dc-aed8-a1c111fcf997",
+                            "globalPageNum": 11
                         },
                         {
                             "pageNum": 6,
@@ -178,7 +190,8 @@
                             "icon": "icons/Chap1-Pg5-Icon.png",
                             "uuid": "5ba58b25-864d-48d5-94c7-576861e672ec",
                             "nextPageUuid": "d001e3ec-915d-47a7-be54-ba2f2ea55d29",
-                            "prevPageUuid": "bb590549-f8c4-4577-8121-3a73638e1917"
+                            "prevPageUuid": "bb590549-f8c4-4577-8121-3a73638e1917",
+                            "globalPageNum": 12
                         },
                         {
                             "pageNum": 7,
@@ -190,7 +203,8 @@
                             "icon": "icons/Chap1-Pg6-Icon.png",
                             "uuid": "d001e3ec-915d-47a7-be54-ba2f2ea55d29",
                             "nextPageUuid": "05009c26-2bf4-4df9-8315-88e7694ff5e4",
-                            "prevPageUuid": "5ba58b25-864d-48d5-94c7-576861e672ec"
+                            "prevPageUuid": "5ba58b25-864d-48d5-94c7-576861e672ec",
+                            "globalPageNum": 13
                         },
                         {
                             "pageNum": 8,
@@ -202,7 +216,8 @@
                             "icon": "icons/Chap1-Pg7-Icon.png",
                             "uuid": "05009c26-2bf4-4df9-8315-88e7694ff5e4",
                             "nextPageUuid": "ed45a559-6208-407d-8439-e71ebb4d7c97",
-                            "prevPageUuid": "d001e3ec-915d-47a7-be54-ba2f2ea55d29"
+                            "prevPageUuid": "d001e3ec-915d-47a7-be54-ba2f2ea55d29",
+                            "globalPageNum": 14
                         },
                         {
                             "pageNum": 9,
@@ -214,7 +229,8 @@
                             "icon": "icons/Chap1-Pg8-Icon.png",
                             "uuid": "ed45a559-6208-407d-8439-e71ebb4d7c97",
                             "nextPageUuid": "39741c5e-a7a1-435c-9a35-91cd1c989a0a",
-                            "prevPageUuid": "05009c26-2bf4-4df9-8315-88e7694ff5e4"
+                            "prevPageUuid": "05009c26-2bf4-4df9-8315-88e7694ff5e4",
+                            "globalPageNum": 15
                         },
                         {
                             "pageNum": 10,
@@ -226,7 +242,8 @@
                             "icon": "icons/Chap1-Pg9-Icon.png",
                             "uuid": "39741c5e-a7a1-435c-9a35-91cd1c989a0a",
                             "nextPageUuid": "3a73c11d-c734-4dbc-a34f-887ee0b0fcec",
-                            "prevPageUuid": "ed45a559-6208-407d-8439-e71ebb4d7c97"
+                            "prevPageUuid": "ed45a559-6208-407d-8439-e71ebb4d7c97",
+                            "globalPageNum": 16
                         },
                         {
                             "pageNum": 11,
@@ -238,7 +255,8 @@
                             "icon": "icons/Chap1-Pg10-Icon.png",
                             "uuid": "3a73c11d-c734-4dbc-a34f-887ee0b0fcec",
                             "nextPageUuid": "c6ed1f05-ac62-4bfa-97c4-7ac19091f190",
-                            "prevPageUuid": "39741c5e-a7a1-435c-9a35-91cd1c989a0a"
+                            "prevPageUuid": "39741c5e-a7a1-435c-9a35-91cd1c989a0a",
+                            "globalPageNum": 17
                         },
                         {
                             "pageNum": 12,
@@ -250,7 +268,8 @@
                             "icon": "icons/Chap1-Pg11-Icon.png",
                             "uuid": "c6ed1f05-ac62-4bfa-97c4-7ac19091f190",
                             "nextPageUuid": "cb038fa4-46dc-45f1-91af-cf956b09fe1e",
-                            "prevPageUuid": "3a73c11d-c734-4dbc-a34f-887ee0b0fcec"
+                            "prevPageUuid": "3a73c11d-c734-4dbc-a34f-887ee0b0fcec",
+                            "globalPageNum": 18
                         },
                         {
                             "pageNum": 13,
@@ -262,7 +281,8 @@
                             "icon": "icons/Chap1-Pg12-Icon.png",
                             "uuid": "cb038fa4-46dc-45f1-91af-cf956b09fe1e",
                             "nextPageUuid": "53a1b3de-07b6-4a3d-9443-c022bc53c910",
-                            "prevPageUuid": "c6ed1f05-ac62-4bfa-97c4-7ac19091f190"
+                            "prevPageUuid": "c6ed1f05-ac62-4bfa-97c4-7ac19091f190",
+                            "globalPageNum": 19
                         },
                         {
                             "pageNum": 14,
@@ -274,7 +294,8 @@
                             "icon": "icons/Chap1-Pg13-Icon.png",
                             "uuid": "53a1b3de-07b6-4a3d-9443-c022bc53c910",
                             "nextPageUuid": "b0ab22dc-0acd-4423-b8c9-58901f551b70",
-                            "prevPageUuid": "cb038fa4-46dc-45f1-91af-cf956b09fe1e"
+                            "prevPageUuid": "cb038fa4-46dc-45f1-91af-cf956b09fe1e",
+                            "globalPageNum": 20
                         },
                         {
                             "pageNum": 15,
@@ -286,7 +307,8 @@
                             "icon": "icons/Moved_To_Wisconsin-Icon.png",
                             "uuid": "b0ab22dc-0acd-4423-b8c9-58901f551b70",
                             "nextPageUuid": "811dcb55-9e31-43d5-aaf3-ac2ea1033c9c",
-                            "prevPageUuid": "53a1b3de-07b6-4a3d-9443-c022bc53c910"
+                            "prevPageUuid": "53a1b3de-07b6-4a3d-9443-c022bc53c910",
+                            "globalPageNum": 21
                         },
                         {
                             "pageNum": 16,
@@ -298,7 +320,8 @@
                             "icon": "icons/Chap1-Pg14-Icon.png",
                             "uuid": "811dcb55-9e31-43d5-aaf3-ac2ea1033c9c",
                             "nextPageUuid": "bd7d5432-df04-4ed3-953d-ae93a100fde3",
-                            "prevPageUuid": "b0ab22dc-0acd-4423-b8c9-58901f551b70"
+                            "prevPageUuid": "b0ab22dc-0acd-4423-b8c9-58901f551b70",
+                            "globalPageNum": 22
                         },
                         {
                             "pageNum": 17,
@@ -310,7 +333,8 @@
                             "icon": "icons/Chap1-Pg15-Icon.png",
                             "uuid": "bd7d5432-df04-4ed3-953d-ae93a100fde3",
                             "nextPageUuid": "9544b748-0888-4afc-93f1-2ba73fd27b42",
-                            "prevPageUuid": "811dcb55-9e31-43d5-aaf3-ac2ea1033c9c"
+                            "prevPageUuid": "811dcb55-9e31-43d5-aaf3-ac2ea1033c9c",
+                            "globalPageNum": 23
                         },
                         {
                             "pageNum": 18,
@@ -322,7 +346,8 @@
                             "icon": "icons/Chap1-Pg16-Icon.png",
                             "uuid": "9544b748-0888-4afc-93f1-2ba73fd27b42",
                             "nextPageUuid": "0580da8a-ed1e-45a3-a2e6-89eb1b0e44e8",
-                            "prevPageUuid": "bd7d5432-df04-4ed3-953d-ae93a100fde3"
+                            "prevPageUuid": "bd7d5432-df04-4ed3-953d-ae93a100fde3",
+                            "globalPageNum": 24
                         },
                         {
                             "pageNum": 19,
@@ -334,7 +359,8 @@
                             "icon": "icons/Chap1-Pg17-Icon.png",
                             "uuid": "0580da8a-ed1e-45a3-a2e6-89eb1b0e44e8",
                             "nextPageUuid": "790f2161-f952-4210-ae5e-61dc7e0ee9c1",
-                            "prevPageUuid": "9544b748-0888-4afc-93f1-2ba73fd27b42"
+                            "prevPageUuid": "9544b748-0888-4afc-93f1-2ba73fd27b42",
+                            "globalPageNum": 25
                         },
                         {
                             "pageNum": 20,
@@ -346,7 +372,8 @@
                             "icon": "icons/Chap1-Pg18-Icon.png",
                             "uuid": "790f2161-f952-4210-ae5e-61dc7e0ee9c1",
                             "nextPageUuid": "e80361c8-fa41-4fb2-93f7-44c1dba59859",
-                            "prevPageUuid": "0580da8a-ed1e-45a3-a2e6-89eb1b0e44e8"
+                            "prevPageUuid": "0580da8a-ed1e-45a3-a2e6-89eb1b0e44e8",
+                            "globalPageNum": 26
                         },
                         {
                             "pageNum": 21,
@@ -358,7 +385,8 @@
                             "icon": "icons/Chap1-Pg19-Icon.png",
                             "uuid": "e80361c8-fa41-4fb2-93f7-44c1dba59859",
                             "nextPageUuid": "c94109cd-27e6-4b98-ba07-e07809cbfc27",
-                            "prevPageUuid": "790f2161-f952-4210-ae5e-61dc7e0ee9c1"
+                            "prevPageUuid": "790f2161-f952-4210-ae5e-61dc7e0ee9c1",
+                            "globalPageNum": 27
                         },
                         {
                             "pageNum": 22,
@@ -370,7 +398,8 @@
                             "icon": "icons/Chap1-Pg20-Icon.png",
                             "uuid": "c94109cd-27e6-4b98-ba07-e07809cbfc27",
                             "nextPageUuid": "becd99ef-9d28-4fec-b3af-a988d4ee8aa2",
-                            "prevPageUuid": "e80361c8-fa41-4fb2-93f7-44c1dba59859"
+                            "prevPageUuid": "e80361c8-fa41-4fb2-93f7-44c1dba59859",
+                            "globalPageNum": 28
                         },
                         {
                             "pageNum": 23,
@@ -382,7 +411,8 @@
                             "icon": "icons/Chap1-Pg21-Icon.png",
                             "uuid": "becd99ef-9d28-4fec-b3af-a988d4ee8aa2",
                             "nextPageUuid": "40bf0c31-d69b-439e-9d68-df53d38abf81",
-                            "prevPageUuid": "c94109cd-27e6-4b98-ba07-e07809cbfc27"
+                            "prevPageUuid": "c94109cd-27e6-4b98-ba07-e07809cbfc27",
+                            "globalPageNum": 29
                         },
                         {
                             "pageNum": 24,
@@ -394,7 +424,8 @@
                             "icon": "icons/Chap1-Pg22-Icon.png",
                             "uuid": "40bf0c31-d69b-439e-9d68-df53d38abf81",
                             "nextPageUuid": "eac2edce-2ed6-4ed3-8790-3615ca26f81b",
-                            "prevPageUuid": "becd99ef-9d28-4fec-b3af-a988d4ee8aa2"
+                            "prevPageUuid": "becd99ef-9d28-4fec-b3af-a988d4ee8aa2",
+                            "globalPageNum": 30
                         },
                         {
                             "pageNum": 25,
@@ -406,7 +437,8 @@
                             "icon": "icons/Chap1-Pg23-Icon.png",
                             "uuid": "eac2edce-2ed6-4ed3-8790-3615ca26f81b",
                             "nextPageUuid": "717bb5a7-6ba4-4560-8375-d348618302d5",
-                            "prevPageUuid": "40bf0c31-d69b-439e-9d68-df53d38abf81"
+                            "prevPageUuid": "40bf0c31-d69b-439e-9d68-df53d38abf81",
+                            "globalPageNum": 31
                         },
                         {
                             "pageNum": 26,
@@ -418,7 +450,8 @@
                             "icon": "icons/Chap1-Pg24-Icon.png",
                             "uuid": "717bb5a7-6ba4-4560-8375-d348618302d5",
                             "nextPageUuid": "a7640e97-32aa-485c-8eaf-9c051db102c2",
-                            "prevPageUuid": "eac2edce-2ed6-4ed3-8790-3615ca26f81b"
+                            "prevPageUuid": "eac2edce-2ed6-4ed3-8790-3615ca26f81b",
+                            "globalPageNum": 32
                         }
                     ]
                 },
@@ -438,7 +471,8 @@
                             "icon": "icons/Chapter2_NEW-Icon.png",
                             "uuid": "a7640e97-32aa-485c-8eaf-9c051db102c2",
                             "nextPageUuid": "188c2485-a664-4b27-bde2-cfbbffc404d7",
-                            "prevPageUuid": "717bb5a7-6ba4-4560-8375-d348618302d5"
+                            "prevPageUuid": "717bb5a7-6ba4-4560-8375-d348618302d5",
+                            "globalPageNum": 33
                         },
                         {
                             "pageNum": 2,
@@ -450,7 +484,8 @@
                             "icon": "icons/Holidays2022-Icon.png",
                             "uuid": "188c2485-a664-4b27-bde2-cfbbffc404d7",
                             "nextPageUuid": "98db6468-da42-4f6b-b8d2-47c113f14d0d",
-                            "prevPageUuid": "a7640e97-32aa-485c-8eaf-9c051db102c2"
+                            "prevPageUuid": "a7640e97-32aa-485c-8eaf-9c051db102c2",
+                            "globalPageNum": 34
                         },
                         {
                             "pageNum": 3,
@@ -462,7 +497,8 @@
                             "icon": "icons/Chap2-Pg1-Icon.png",
                             "uuid": "98db6468-da42-4f6b-b8d2-47c113f14d0d",
                             "nextPageUuid": "445b223f-7819-4f54-8216-883e2374f98b",
-                            "prevPageUuid": "188c2485-a664-4b27-bde2-cfbbffc404d7"
+                            "prevPageUuid": "188c2485-a664-4b27-bde2-cfbbffc404d7",
+                            "globalPageNum": 35
                         },
                         {
                             "pageNum": 4,
@@ -474,7 +510,8 @@
                             "icon": "icons/Chap2-pg2-Icon.png",
                             "uuid": "445b223f-7819-4f54-8216-883e2374f98b",
                             "nextPageUuid": "669789c5-4537-4674-93f3-2a210d1ff6cf",
-                            "prevPageUuid": "98db6468-da42-4f6b-b8d2-47c113f14d0d"
+                            "prevPageUuid": "98db6468-da42-4f6b-b8d2-47c113f14d0d",
+                            "globalPageNum": 36
                         },
                         {
                             "pageNum": 5,
@@ -486,7 +523,8 @@
                             "icon": "icons/Chap2-pg03-Icon.png",
                             "uuid": "669789c5-4537-4674-93f3-2a210d1ff6cf",
                             "nextPageUuid": "af428072-0404-4468-bea7-35024cf31269",
-                            "prevPageUuid": "445b223f-7819-4f54-8216-883e2374f98b"
+                            "prevPageUuid": "445b223f-7819-4f54-8216-883e2374f98b",
+                            "globalPageNum": 37
                         },
                         {
                             "pageNum": 6,
@@ -498,7 +536,8 @@
                             "icon": "icons/Chap2-pg04-Icon.png",
                             "uuid": "af428072-0404-4468-bea7-35024cf31269",
                             "nextPageUuid": "b2efadd1-136b-41fa-91da-dc1c1990ce47",
-                            "prevPageUuid": "669789c5-4537-4674-93f3-2a210d1ff6cf"
+                            "prevPageUuid": "669789c5-4537-4674-93f3-2a210d1ff6cf",
+                            "globalPageNum": 38
                         },
                         {
                             "pageNum": 7,
@@ -510,7 +549,8 @@
                             "icon": "icons/Chap2-pg05-Icon.png",
                             "uuid": "b2efadd1-136b-41fa-91da-dc1c1990ce47",
                             "nextPageUuid": "f7f9d73b-eade-4249-845c-71073452b5dd",
-                            "prevPageUuid": "af428072-0404-4468-bea7-35024cf31269"
+                            "prevPageUuid": "af428072-0404-4468-bea7-35024cf31269",
+                            "globalPageNum": 39
                         },
                         {
                             "pageNum": 8,
@@ -522,7 +562,8 @@
                             "icon": "icons/Chap2-pg06-Icon.png",
                             "uuid": "f7f9d73b-eade-4249-845c-71073452b5dd",
                             "nextPageUuid": "6f8357f4-b5c7-43ca-a0b7-b31275f32e02",
-                            "prevPageUuid": "b2efadd1-136b-41fa-91da-dc1c1990ce47"
+                            "prevPageUuid": "b2efadd1-136b-41fa-91da-dc1c1990ce47",
+                            "globalPageNum": 40
                         },
                         {
                             "pageNum": 9,
@@ -534,7 +575,8 @@
                             "icon": "icons/Chap2-pg07-Icon.png",
                             "uuid": "6f8357f4-b5c7-43ca-a0b7-b31275f32e02",
                             "nextPageUuid": "4bcef01f-ccc1-4c2b-afc6-3302261a01b0",
-                            "prevPageUuid": "f7f9d73b-eade-4249-845c-71073452b5dd"
+                            "prevPageUuid": "f7f9d73b-eade-4249-845c-71073452b5dd",
+                            "globalPageNum": 41
                         },
                         {
                             "pageNum": 10,
@@ -546,7 +588,8 @@
                             "icon": "icons/Chap2-pg08-Icon.png",
                             "uuid": "4bcef01f-ccc1-4c2b-afc6-3302261a01b0",
                             "nextPageUuid": "2fe27ba6-3b39-449f-8f97-09aaf6908c9a",
-                            "prevPageUuid": "6f8357f4-b5c7-43ca-a0b7-b31275f32e02"
+                            "prevPageUuid": "6f8357f4-b5c7-43ca-a0b7-b31275f32e02",
+                            "globalPageNum": 42
                         },
                         {
                             "pageNum": 11,
@@ -558,7 +601,8 @@
                             "icon": "icons/Chap2-pg9-Icon.png",
                             "uuid": "2fe27ba6-3b39-449f-8f97-09aaf6908c9a",
                             "nextPageUuid": "822799da-a509-418b-bd08-0dfeb65a9006",
-                            "prevPageUuid": "4bcef01f-ccc1-4c2b-afc6-3302261a01b0"
+                            "prevPageUuid": "4bcef01f-ccc1-4c2b-afc6-3302261a01b0",
+                            "globalPageNum": 43
                         },
                         {
                             "pageNum": 12,
@@ -570,7 +614,8 @@
                             "icon": "icons/Chap2-pg10-Icon.png",
                             "uuid": "822799da-a509-418b-bd08-0dfeb65a9006",
                             "nextPageUuid": "e5df8eb0-3cc6-4dc5-a1e3-60e6af7d4ade",
-                            "prevPageUuid": "2fe27ba6-3b39-449f-8f97-09aaf6908c9a"
+                            "prevPageUuid": "2fe27ba6-3b39-449f-8f97-09aaf6908c9a",
+                            "globalPageNum": 44
                         },
                         {
                             "pageNum": 13,
@@ -582,7 +627,8 @@
                             "icon": "icons/Chap2-pg11-Icon.png",
                             "uuid": "e5df8eb0-3cc6-4dc5-a1e3-60e6af7d4ade",
                             "nextPageUuid": "9b2f3f3d-56d0-42bb-bc47-65024c559eb4",
-                            "prevPageUuid": "822799da-a509-418b-bd08-0dfeb65a9006"
+                            "prevPageUuid": "822799da-a509-418b-bd08-0dfeb65a9006",
+                            "globalPageNum": 45
                         },
                         {
                             "pageNum": 14,
@@ -594,7 +640,8 @@
                             "icon": "icons/Chap2-pg12-Icon.png",
                             "uuid": "9b2f3f3d-56d0-42bb-bc47-65024c559eb4",
                             "nextPageUuid": "d5473a7a-c74f-41e8-856a-5088a70f7c17",
-                            "prevPageUuid": "e5df8eb0-3cc6-4dc5-a1e3-60e6af7d4ade"
+                            "prevPageUuid": "e5df8eb0-3cc6-4dc5-a1e3-60e6af7d4ade",
+                            "globalPageNum": 46
                         },
                         {
                             "pageNum": 15,
@@ -606,7 +653,8 @@
                             "icon": "icons/Chap2-Pg13-Icon.png",
                             "uuid": "d5473a7a-c74f-41e8-856a-5088a70f7c17",
                             "nextPageUuid": "db77a9ec-38ce-48df-b963-2d643c4f6d44",
-                            "prevPageUuid": "9b2f3f3d-56d0-42bb-bc47-65024c559eb4"
+                            "prevPageUuid": "9b2f3f3d-56d0-42bb-bc47-65024c559eb4",
+                            "globalPageNum": 47
                         },
                         {
                             "pageNum": 16,
@@ -618,7 +666,8 @@
                             "icon": "icons/Chap2-pg14-Icon.png",
                             "uuid": "db77a9ec-38ce-48df-b963-2d643c4f6d44",
                             "nextPageUuid": "403b5d3b-f9fb-4922-8be9-3dc23e4958a9",
-                            "prevPageUuid": "d5473a7a-c74f-41e8-856a-5088a70f7c17"
+                            "prevPageUuid": "d5473a7a-c74f-41e8-856a-5088a70f7c17",
+                            "globalPageNum": 48
                         },
                         {
                             "pageNum": 17,
@@ -630,7 +679,8 @@
                             "icon": "icons/Chap2-pg15-Icon.png",
                             "uuid": "403b5d3b-f9fb-4922-8be9-3dc23e4958a9",
                             "nextPageUuid": "ae6620d2-4f7e-4721-a3ed-f679809d1645",
-                            "prevPageUuid": "db77a9ec-38ce-48df-b963-2d643c4f6d44"
+                            "prevPageUuid": "db77a9ec-38ce-48df-b963-2d643c4f6d44",
+                            "globalPageNum": 49
                         },
                         {
                             "pageNum": 18,
@@ -642,7 +692,8 @@
                             "icon": "icons/Chap2-pg16-Icon.png",
                             "uuid": "ae6620d2-4f7e-4721-a3ed-f679809d1645",
                             "nextPageUuid": "204a0365-d907-43ec-bd73-fd8657f758d1",
-                            "prevPageUuid": "403b5d3b-f9fb-4922-8be9-3dc23e4958a9"
+                            "prevPageUuid": "403b5d3b-f9fb-4922-8be9-3dc23e4958a9",
+                            "globalPageNum": 50
                         },
                         {
                             "pageNum": 19,
@@ -654,7 +705,8 @@
                             "icon": "icons/Chap2-pg17-Icon.png",
                             "uuid": "204a0365-d907-43ec-bd73-fd8657f758d1",
                             "nextPageUuid": "b6aebe7b-2554-4c4b-a62a-d72e5e6b5fe2",
-                            "prevPageUuid": "ae6620d2-4f7e-4721-a3ed-f679809d1645"
+                            "prevPageUuid": "ae6620d2-4f7e-4721-a3ed-f679809d1645",
+                            "globalPageNum": 51
                         },
                         {
                             "pageNum": 20,
@@ -666,7 +718,8 @@
                             "icon": "icons/Chap2-pg18-Icon.png",
                             "uuid": "b6aebe7b-2554-4c4b-a62a-d72e5e6b5fe2",
                             "nextPageUuid": "7e595a8d-cb2d-4275-8cc0-84792e45d48e",
-                            "prevPageUuid": "204a0365-d907-43ec-bd73-fd8657f758d1"
+                            "prevPageUuid": "204a0365-d907-43ec-bd73-fd8657f758d1",
+                            "globalPageNum": 52
                         },
                         {
                             "pageNum": 21,
@@ -678,7 +731,8 @@
                             "icon": "icons/Chap2-pg19-Icon.png",
                             "uuid": "7e595a8d-cb2d-4275-8cc0-84792e45d48e",
                             "nextPageUuid": "977bbbac-b82b-4f05-b6ec-8188797cf9b2",
-                            "prevPageUuid": "b6aebe7b-2554-4c4b-a62a-d72e5e6b5fe2"
+                            "prevPageUuid": "b6aebe7b-2554-4c4b-a62a-d72e5e6b5fe2",
+                            "globalPageNum": 53
                         },
                         {
                             "pageNum": 22,
@@ -690,7 +744,8 @@
                             "icon": "icons/Chap2-pg20-Icon.png",
                             "uuid": "977bbbac-b82b-4f05-b6ec-8188797cf9b2",
                             "nextPageUuid": "b27732de-479f-4f45-aa32-8c6c28f412c9",
-                            "prevPageUuid": "7e595a8d-cb2d-4275-8cc0-84792e45d48e"
+                            "prevPageUuid": "7e595a8d-cb2d-4275-8cc0-84792e45d48e",
+                            "globalPageNum": 54
                         },
                         {
                             "pageNum": 23,
@@ -702,7 +757,8 @@
                             "icon": "icons/Chap2-pg21-Icon.png",
                             "uuid": "b27732de-479f-4f45-aa32-8c6c28f412c9",
                             "nextPageUuid": "bf585724-89ff-49a8-a7aa-2bf535557cce",
-                            "prevPageUuid": "977bbbac-b82b-4f05-b6ec-8188797cf9b2"
+                            "prevPageUuid": "977bbbac-b82b-4f05-b6ec-8188797cf9b2",
+                            "globalPageNum": 55
                         },
                         {
                             "pageNum": 24,
@@ -714,7 +770,8 @@
                             "icon": "icons/Chap2-pg22-Icon.png",
                             "uuid": "bf585724-89ff-49a8-a7aa-2bf535557cce",
                             "nextPageUuid": "75fd0c26-d72a-406a-b2c2-0a698e02fd77",
-                            "prevPageUuid": "b27732de-479f-4f45-aa32-8c6c28f412c9"
+                            "prevPageUuid": "b27732de-479f-4f45-aa32-8c6c28f412c9",
+                            "globalPageNum": 56
                         },
                         {
                             "pageNum": 25,
@@ -726,7 +783,8 @@
                             "icon": "icons/Chap2-pg23-Icon.png",
                             "uuid": "75fd0c26-d72a-406a-b2c2-0a698e02fd77",
                             "nextPageUuid": "853e4c0c-812e-414a-a20d-a5ccba5f6c28",
-                            "prevPageUuid": "bf585724-89ff-49a8-a7aa-2bf535557cce"
+                            "prevPageUuid": "bf585724-89ff-49a8-a7aa-2bf535557cce",
+                            "globalPageNum": 57
                         },
                         {
                             "pageNum": 26,
@@ -738,7 +796,8 @@
                             "icon": "icons/Chap2-Pg24-Icon.png",
                             "uuid": "853e4c0c-812e-414a-a20d-a5ccba5f6c28",
                             "nextPageUuid": "1e9f4d8d-1b9b-445f-b906-3bfeaf2cbae8",
-                            "prevPageUuid": "75fd0c26-d72a-406a-b2c2-0a698e02fd77"
+                            "prevPageUuid": "75fd0c26-d72a-406a-b2c2-0a698e02fd77",
+                            "globalPageNum": 58
                         },
                         {
                             "pageNum": 27,
@@ -750,7 +809,8 @@
                             "icon": "icons/Chap2-Pg25-Icon.png",
                             "uuid": "1e9f4d8d-1b9b-445f-b906-3bfeaf2cbae8",
                             "nextPageUuid": "bd48d977-a4a2-43b0-bc79-27a0c0644c5a",
-                            "prevPageUuid": "853e4c0c-812e-414a-a20d-a5ccba5f6c28"
+                            "prevPageUuid": "853e4c0c-812e-414a-a20d-a5ccba5f6c28",
+                            "globalPageNum": 59
                         },
                         {
                             "pageNum": 28,
@@ -762,7 +822,8 @@
                             "icon": "icons/Chap2-Pg26-Icon.png",
                             "uuid": "bd48d977-a4a2-43b0-bc79-27a0c0644c5a",
                             "nextPageUuid": "2753e850-fdd8-450f-83ca-df8a8fa9c7a7",
-                            "prevPageUuid": "1e9f4d8d-1b9b-445f-b906-3bfeaf2cbae8"
+                            "prevPageUuid": "1e9f4d8d-1b9b-445f-b906-3bfeaf2cbae8",
+                            "globalPageNum": 60
                         },
                         {
                             "pageNum": 29,
@@ -774,7 +835,8 @@
                             "icon": "icons/Memorial_Day1-Icon.png",
                             "uuid": "2753e850-fdd8-450f-83ca-df8a8fa9c7a7",
                             "nextPageUuid": "29013ad6-faf5-484a-bc83-4ae8a9210371",
-                            "prevPageUuid": "bd48d977-a4a2-43b0-bc79-27a0c0644c5a"
+                            "prevPageUuid": "bd48d977-a4a2-43b0-bc79-27a0c0644c5a",
+                            "globalPageNum": 61
                         },
                         {
                             "pageNum": 30,
@@ -786,7 +848,8 @@
                             "icon": "icons/Chap2-pg27-Icon.png",
                             "uuid": "29013ad6-faf5-484a-bc83-4ae8a9210371",
                             "nextPageUuid": "9fd7c9a1-69af-4f97-9a3b-e408f0feaefd",
-                            "prevPageUuid": "2753e850-fdd8-450f-83ca-df8a8fa9c7a7"
+                            "prevPageUuid": "2753e850-fdd8-450f-83ca-df8a8fa9c7a7",
+                            "globalPageNum": 62
                         },
                         {
                             "pageNum": 31,
@@ -798,7 +861,8 @@
                             "icon": "icons/Chap2-pg28-Icon.png",
                             "uuid": "9fd7c9a1-69af-4f97-9a3b-e408f0feaefd",
                             "nextPageUuid": "bf1e051e-144e-4bc1-ae2a-cbe6c38f7220",
-                            "prevPageUuid": "29013ad6-faf5-484a-bc83-4ae8a9210371"
+                            "prevPageUuid": "29013ad6-faf5-484a-bc83-4ae8a9210371",
+                            "globalPageNum": 63
                         },
                         {
                             "pageNum": 32,
@@ -810,7 +874,8 @@
                             "icon": "icons/Chap2-pg29-Icon.png",
                             "uuid": "bf1e051e-144e-4bc1-ae2a-cbe6c38f7220",
                             "nextPageUuid": "41e455be-c56d-4016-a37f-b696bfd753e6",
-                            "prevPageUuid": "9fd7c9a1-69af-4f97-9a3b-e408f0feaefd"
+                            "prevPageUuid": "9fd7c9a1-69af-4f97-9a3b-e408f0feaefd",
+                            "globalPageNum": 64
                         },
                         {
                             "pageNum": 33,
@@ -822,7 +887,8 @@
                             "icon": "icons/Chap2-Pg30-Icon.png",
                             "uuid": "41e455be-c56d-4016-a37f-b696bfd753e6",
                             "nextPageUuid": "bf3dedec-1da9-46ad-a235-297a5fe502ae",
-                            "prevPageUuid": "bf1e051e-144e-4bc1-ae2a-cbe6c38f7220"
+                            "prevPageUuid": "bf1e051e-144e-4bc1-ae2a-cbe6c38f7220",
+                            "globalPageNum": 65
                         },
                         {
                             "pageNum": 34,
@@ -834,7 +900,8 @@
                             "icon": "icons/Chap2-Pg31-Icon.png",
                             "uuid": "bf3dedec-1da9-46ad-a235-297a5fe502ae",
                             "nextPageUuid": "29d009c4-4faf-47c2-b365-c267c24af0ce",
-                            "prevPageUuid": "41e455be-c56d-4016-a37f-b696bfd753e6"
+                            "prevPageUuid": "41e455be-c56d-4016-a37f-b696bfd753e6",
+                            "globalPageNum": 66
                         },
                         {
                             "pageNum": 35,
@@ -846,7 +913,8 @@
                             "icon": "icons/Chap2-Pg32-Icon.png",
                             "uuid": "29d009c4-4faf-47c2-b365-c267c24af0ce",
                             "nextPageUuid": "381b619c-6e77-4b10-812f-4890d3362a09",
-                            "prevPageUuid": "bf3dedec-1da9-46ad-a235-297a5fe502ae"
+                            "prevPageUuid": "bf3dedec-1da9-46ad-a235-297a5fe502ae",
+                            "globalPageNum": 67
                         },
                         {
                             "pageNum": 36,
@@ -858,7 +926,8 @@
                             "icon": "icons/Chap2-Pg33-Icon.png",
                             "uuid": "381b619c-6e77-4b10-812f-4890d3362a09",
                             "nextPageUuid": "89ec94cf-3b11-4d5b-ae12-e50657f6b034",
-                            "prevPageUuid": "29d009c4-4faf-47c2-b365-c267c24af0ce"
+                            "prevPageUuid": "29d009c4-4faf-47c2-b365-c267c24af0ce",
+                            "globalPageNum": 68
                         },
                         {
                             "pageNum": 37,
@@ -870,7 +939,8 @@
                             "icon": "icons/Chap2-Pg34-Icon.png",
                             "uuid": "89ec94cf-3b11-4d5b-ae12-e50657f6b034",
                             "nextPageUuid": "b907930f-4904-4e60-8439-f496ff86178c",
-                            "prevPageUuid": "381b619c-6e77-4b10-812f-4890d3362a09"
+                            "prevPageUuid": "381b619c-6e77-4b10-812f-4890d3362a09",
+                            "globalPageNum": 69
                         },
                         {
                             "pageNum": 38,
@@ -882,7 +952,8 @@
                             "icon": "icons/Chap2-Pg35-Icon.png",
                             "uuid": "b907930f-4904-4e60-8439-f496ff86178c",
                             "nextPageUuid": "418b458d-0c39-48a1-948a-22e0e3a16c3e",
-                            "prevPageUuid": "89ec94cf-3b11-4d5b-ae12-e50657f6b034"
+                            "prevPageUuid": "89ec94cf-3b11-4d5b-ae12-e50657f6b034",
+                            "globalPageNum": 70
                         },
                         {
                             "pageNum": 39,
@@ -894,7 +965,8 @@
                             "icon": "icons/Chap2-Pg36-Icon.png",
                             "uuid": "418b458d-0c39-48a1-948a-22e0e3a16c3e",
                             "nextPageUuid": "b564d950-fe0c-4c55-8f93-2e78921a98c6",
-                            "prevPageUuid": "b907930f-4904-4e60-8439-f496ff86178c"
+                            "prevPageUuid": "b907930f-4904-4e60-8439-f496ff86178c",
+                            "globalPageNum": 71
                         },
                         {
                             "pageNum": 40,
@@ -906,7 +978,8 @@
                             "icon": "icons/Chap2-Pg37-Icon.png",
                             "uuid": "b564d950-fe0c-4c55-8f93-2e78921a98c6",
                             "nextPageUuid": "9c6f7776-6255-48ee-8086-942df9073ae2",
-                            "prevPageUuid": "418b458d-0c39-48a1-948a-22e0e3a16c3e"
+                            "prevPageUuid": "418b458d-0c39-48a1-948a-22e0e3a16c3e",
+                            "globalPageNum": 72
                         },
                         {
                             "pageNum": 41,
@@ -918,7 +991,8 @@
                             "icon": "icons/Chap2-Pg38-Icon.png",
                             "uuid": "9c6f7776-6255-48ee-8086-942df9073ae2",
                             "nextPageUuid": "6d05b4a9-111f-4d3d-a7e3-ca808047603b",
-                            "prevPageUuid": "b564d950-fe0c-4c55-8f93-2e78921a98c6"
+                            "prevPageUuid": "b564d950-fe0c-4c55-8f93-2e78921a98c6",
+                            "globalPageNum": 73
                         },
                         {
                             "pageNum": 42,
@@ -930,7 +1004,8 @@
                             "icon": "icons/Chap2-Pg39-Icon.png",
                             "uuid": "6d05b4a9-111f-4d3d-a7e3-ca808047603b",
                             "nextPageUuid": "800abbd9-347f-482b-ae22-e42dfe6dbaff",
-                            "prevPageUuid": "9c6f7776-6255-48ee-8086-942df9073ae2"
+                            "prevPageUuid": "9c6f7776-6255-48ee-8086-942df9073ae2",
+                            "globalPageNum": 74
                         },
                         {
                             "pageNum": 43,
@@ -942,7 +1017,8 @@
                             "icon": "icons/Chap2-pg40-Icon.png",
                             "uuid": "800abbd9-347f-482b-ae22-e42dfe6dbaff",
                             "nextPageUuid": "019ed8bb-9b99-4c23-add0-eb8c6020975b",
-                            "prevPageUuid": "6d05b4a9-111f-4d3d-a7e3-ca808047603b"
+                            "prevPageUuid": "6d05b4a9-111f-4d3d-a7e3-ca808047603b",
+                            "globalPageNum": 75
                         },
                         {
                             "pageNum": 44,
@@ -954,7 +1030,8 @@
                             "icon": "icons/Chap2-pg41-Icon.png",
                             "uuid": "019ed8bb-9b99-4c23-add0-eb8c6020975b",
                             "nextPageUuid": "1492da4d-addb-4dfa-9732-837055e0b90b",
-                            "prevPageUuid": "800abbd9-347f-482b-ae22-e42dfe6dbaff"
+                            "prevPageUuid": "800abbd9-347f-482b-ae22-e42dfe6dbaff",
+                            "globalPageNum": 76
                         },
                         {
                             "pageNum": 45,
@@ -966,7 +1043,8 @@
                             "icon": "icons/Chap2-pg42-Icon.png",
                             "uuid": "1492da4d-addb-4dfa-9732-837055e0b90b",
                             "nextPageUuid": "027cf736-b143-4c39-a2ae-9f46976e1efa",
-                            "prevPageUuid": "019ed8bb-9b99-4c23-add0-eb8c6020975b"
+                            "prevPageUuid": "019ed8bb-9b99-4c23-add0-eb8c6020975b",
+                            "globalPageNum": 77
                         },
                         {
                             "pageNum": 46,
@@ -978,7 +1056,8 @@
                             "icon": "icons/Chap2-pg43-Icon.png",
                             "uuid": "027cf736-b143-4c39-a2ae-9f46976e1efa",
                             "nextPageUuid": "2e4773bd-e9e1-40ae-92a0-ac873635111e",
-                            "prevPageUuid": "1492da4d-addb-4dfa-9732-837055e0b90b"
+                            "prevPageUuid": "1492da4d-addb-4dfa-9732-837055e0b90b",
+                            "globalPageNum": 78
                         },
                         {
                             "pageNum": 47,
@@ -990,7 +1069,8 @@
                             "icon": "icons/Chap2-pg44-Icon.png",
                             "uuid": "2e4773bd-e9e1-40ae-92a0-ac873635111e",
                             "nextPageUuid": "42df162e-55ad-44a0-9ba9-a9dbc54130ef",
-                            "prevPageUuid": "027cf736-b143-4c39-a2ae-9f46976e1efa"
+                            "prevPageUuid": "027cf736-b143-4c39-a2ae-9f46976e1efa",
+                            "globalPageNum": 79
                         },
                         {
                             "pageNum": 48,
@@ -1002,7 +1082,8 @@
                             "icon": "icons/Chap2-pg45-Icon.png",
                             "uuid": "42df162e-55ad-44a0-9ba9-a9dbc54130ef",
                             "nextPageUuid": "11cbe105-8539-4eda-be42-5e042d0dd8c5",
-                            "prevPageUuid": "2e4773bd-e9e1-40ae-92a0-ac873635111e"
+                            "prevPageUuid": "2e4773bd-e9e1-40ae-92a0-ac873635111e",
+                            "globalPageNum": 80
                         },
                         {
                             "pageNum": 49,
@@ -1014,7 +1095,8 @@
                             "icon": "icons/Chap2-Pg46-Icon.png",
                             "uuid": "11cbe105-8539-4eda-be42-5e042d0dd8c5",
                             "nextPageUuid": "413a3de0-2961-40d7-b57e-937bfa567a20",
-                            "prevPageUuid": "42df162e-55ad-44a0-9ba9-a9dbc54130ef"
+                            "prevPageUuid": "42df162e-55ad-44a0-9ba9-a9dbc54130ef",
+                            "globalPageNum": 81
                         },
                         {
                             "pageNum": 50,
@@ -1026,7 +1108,8 @@
                             "icon": "icons/Labor_Day-Icon.png",
                             "uuid": "413a3de0-2961-40d7-b57e-937bfa567a20",
                             "nextPageUuid": "97c76b36-f5a2-4b7e-899b-e25bb7ce7abb",
-                            "prevPageUuid": "11cbe105-8539-4eda-be42-5e042d0dd8c5"
+                            "prevPageUuid": "11cbe105-8539-4eda-be42-5e042d0dd8c5",
+                            "globalPageNum": 82
                         },
                         {
                             "pageNum": 51,
@@ -1038,7 +1121,8 @@
                             "icon": "icons/Chap2-pg47-Icon.png",
                             "uuid": "97c76b36-f5a2-4b7e-899b-e25bb7ce7abb",
                             "nextPageUuid": "681c399d-a3fc-46ed-9802-d4b51eb576ed",
-                            "prevPageUuid": "413a3de0-2961-40d7-b57e-937bfa567a20"
+                            "prevPageUuid": "413a3de0-2961-40d7-b57e-937bfa567a20",
+                            "globalPageNum": 83
                         },
                         {
                             "pageNum": 52,
@@ -1050,7 +1134,8 @@
                             "icon": "icons/Chap2-pg48-Icon.png",
                             "uuid": "681c399d-a3fc-46ed-9802-d4b51eb576ed",
                             "nextPageUuid": "3215f553-5874-4e6a-b626-481e92e77863",
-                            "prevPageUuid": "97c76b36-f5a2-4b7e-899b-e25bb7ce7abb"
+                            "prevPageUuid": "97c76b36-f5a2-4b7e-899b-e25bb7ce7abb",
+                            "globalPageNum": 84
                         },
                         {
                             "pageNum": 53,
@@ -1062,7 +1147,8 @@
                             "icon": "icons/Under_Construction-09122022-Icon.png",
                             "uuid": "3215f553-5874-4e6a-b626-481e92e77863",
                             "nextPageUuid": "9a27b867-96d6-47e1-8334-fede6881c46c",
-                            "prevPageUuid": "681c399d-a3fc-46ed-9802-d4b51eb576ed"
+                            "prevPageUuid": "681c399d-a3fc-46ed-9802-d4b51eb576ed",
+                            "globalPageNum": 85
                         },
                         {
                             "pageNum": 54,
@@ -1074,7 +1160,8 @@
                             "icon": "icons/Chap2-pg49-Icon.png",
                             "uuid": "9a27b867-96d6-47e1-8334-fede6881c46c",
                             "nextPageUuid": "309fdc87-7634-4315-86ff-d7d101d9bc62",
-                            "prevPageUuid": "3215f553-5874-4e6a-b626-481e92e77863"
+                            "prevPageUuid": "3215f553-5874-4e6a-b626-481e92e77863",
+                            "globalPageNum": 86
                         },
                         {
                             "pageNum": 55,
@@ -1086,7 +1173,8 @@
                             "icon": "icons/Chap2-pg50-Icon.png",
                             "uuid": "309fdc87-7634-4315-86ff-d7d101d9bc62",
                             "nextPageUuid": "fb5483a1-4400-4a57-92fb-c92c45be8500",
-                            "prevPageUuid": "9a27b867-96d6-47e1-8334-fede6881c46c"
+                            "prevPageUuid": "9a27b867-96d6-47e1-8334-fede6881c46c",
+                            "globalPageNum": 87
                         },
                         {
                             "pageNum": 56,
@@ -1098,14 +1186,15 @@
                             "icon": "icons/Chap2-pg51-Icon.png",
                             "uuid": "fb5483a1-4400-4a57-92fb-c92c45be8500",
                             "nextPageUuid": "ce028594-e41f-43dd-8c06-0760d3e2a0db",
-                            "prevPageUuid": "309fdc87-7634-4315-86ff-d7d101d9bc62"
+                            "prevPageUuid": "309fdc87-7634-4315-86ff-d7d101d9bc62",
+                            "globalPageNum": 88
                         }
                     ]
                 },
                 {
                     "chapterName": "Chapter Three",
                     "folderName": "chapter3",
-                    "numOfPages": 11,
+                    "numOfPages": 19,
                     "id": 4,
                     "pages": [
                         {
@@ -1118,7 +1207,8 @@
                             "icon": "icons/Chapter3-Icon.png",
                             "uuid": "ce028594-e41f-43dd-8c06-0760d3e2a0db",
                             "nextPageUuid": "2faf6043-2a18-48e0-a8da-e4988197b29b",
-                            "prevPageUuid": "fb5483a1-4400-4a57-92fb-c92c45be8500"
+                            "prevPageUuid": "fb5483a1-4400-4a57-92fb-c92c45be8500",
+                            "globalPageNum": 89
                         },
                         {
                             "pageNum": 2,
@@ -1130,7 +1220,8 @@
                             "icon": "icons/Chp3-Pg1-Icon.png",
                             "uuid": "2faf6043-2a18-48e0-a8da-e4988197b29b",
                             "nextPageUuid": "4476b890-3615-4222-8de9-e659bad15877",
-                            "prevPageUuid": "ce028594-e41f-43dd-8c06-0760d3e2a0db"
+                            "prevPageUuid": "ce028594-e41f-43dd-8c06-0760d3e2a0db",
+                            "globalPageNum": 90
                         },
                         {
                             "pageNum": 3,
@@ -1142,7 +1233,8 @@
                             "icon": "icons/Chp3-Pg2-Icon.png",
                             "uuid": "4476b890-3615-4222-8de9-e659bad15877",
                             "nextPageUuid": "9d8be4cd-f461-40cb-82fb-08ba6cb55ad0",
-                            "prevPageUuid": "2faf6043-2a18-48e0-a8da-e4988197b29b"
+                            "prevPageUuid": "2faf6043-2a18-48e0-a8da-e4988197b29b",
+                            "globalPageNum": 91
                         },
                         {
                             "pageNum": 4,
@@ -1154,7 +1246,8 @@
                             "icon": "icons/Chp3-Pg3-Icon.png",
                             "uuid": "9d8be4cd-f461-40cb-82fb-08ba6cb55ad0",
                             "nextPageUuid": "80e105e0-936e-4da1-9e86-1e394b4be654",
-                            "prevPageUuid": "4476b890-3615-4222-8de9-e659bad15877"
+                            "prevPageUuid": "4476b890-3615-4222-8de9-e659bad15877",
+                            "globalPageNum": 92
                         },
                         {
                             "pageNum": 5,
@@ -1166,7 +1259,8 @@
                             "icon": "icons/Chp3-Pg4-Icon.png",
                             "uuid": "80e105e0-936e-4da1-9e86-1e394b4be654",
                             "nextPageUuid": "58269205-a043-45f8-9272-e12b709e8abf",
-                            "prevPageUuid": "9d8be4cd-f461-40cb-82fb-08ba6cb55ad0"
+                            "prevPageUuid": "9d8be4cd-f461-40cb-82fb-08ba6cb55ad0",
+                            "globalPageNum": 93
                         },
                         {
                             "pageNum": 6,
@@ -1178,7 +1272,8 @@
                             "icon": "icons/Chp3-Pg5-Icon.png",
                             "uuid": "58269205-a043-45f8-9272-e12b709e8abf",
                             "nextPageUuid": "0ff90545-8be9-447d-b887-ed90b3244134",
-                            "prevPageUuid": "80e105e0-936e-4da1-9e86-1e394b4be654"
+                            "prevPageUuid": "80e105e0-936e-4da1-9e86-1e394b4be654",
+                            "globalPageNum": 94
                         },
                         {
                             "pageNum": 7,
@@ -1190,7 +1285,8 @@
                             "icon": "icons/Chp3-Pg6-Icon.png",
                             "uuid": "0ff90545-8be9-447d-b887-ed90b3244134",
                             "nextPageUuid": "f58aeb6d-8a17-4e6c-8823-44be42e3dd99",
-                            "prevPageUuid": "58269205-a043-45f8-9272-e12b709e8abf"
+                            "prevPageUuid": "58269205-a043-45f8-9272-e12b709e8abf",
+                            "globalPageNum": 95
                         },
                         {
                             "pageNum": 8,
@@ -1202,7 +1298,8 @@
                             "icon": "icons/Chp3-Pg7-Icon.png",
                             "uuid": "f58aeb6d-8a17-4e6c-8823-44be42e3dd99",
                             "nextPageUuid": "6c097b46-10d9-438e-ba72-9bfa996a15e1",
-                            "prevPageUuid": "0ff90545-8be9-447d-b887-ed90b3244134"
+                            "prevPageUuid": "0ff90545-8be9-447d-b887-ed90b3244134",
+                            "globalPageNum": 96
                         },
                         {
                             "pageNum": 9,
@@ -1214,7 +1311,8 @@
                             "icon": "icons/Chp3-Pg8-Icon.png",
                             "uuid": "6c097b46-10d9-438e-ba72-9bfa996a15e1",
                             "nextPageUuid": "42c439a7-fc18-43e3-94b0-ea16f129607f",
-                            "prevPageUuid": "f58aeb6d-8a17-4e6c-8823-44be42e3dd99"
+                            "prevPageUuid": "f58aeb6d-8a17-4e6c-8823-44be42e3dd99",
+                            "globalPageNum": 97
                         },
                         {
                             "pageNum": 10,
@@ -1226,7 +1324,8 @@
                             "icon": "icons/Chp3-Pg09-Icon.png",
                             "uuid": "42c439a7-fc18-43e3-94b0-ea16f129607f",
                             "nextPageUuid": "fb07403d-f701-48c2-a5f6-d405ab51233c",
-                            "prevPageUuid": "6c097b46-10d9-438e-ba72-9bfa996a15e1"
+                            "prevPageUuid": "6c097b46-10d9-438e-ba72-9bfa996a15e1",
+                            "globalPageNum": 98
                         },
                         {
                             "pageNum": 11,
@@ -1237,8 +1336,113 @@
                             "user": "M1998",
                             "icon": "icons/Chp3-Pg10-Icon.png",
                             "uuid": "fb07403d-f701-48c2-a5f6-d405ab51233c",
+                            "nextPageUuid": "4e2c7740-0fe0-4048-bca6-0f744bc07140",
+                            "prevPageUuid": "42c439a7-fc18-43e3-94b0-ea16f129607f",
+                            "globalPageNum": 99
+                        },
+                        {
+                            "pageNum": 12,
+                            "filename": "Chp3-Pg11.jpg",
+                            "title": "Casper gets yeeted",
+                            "message": "The tender young age of... of what? Will Millie's ambiguous age forever remain a mystery? 😱",
+                            "datetime": "2022-11-14 14:50:31",
+                            "user": "M1998",
+                            "icon": "icons/Chp3-Pg11-Icon.png",
+                            "uuid": "4e2c7740-0fe0-4048-bca6-0f744bc07140",
+                            "prevPageUuid": "fb07403d-f701-48c2-a5f6-d405ab51233c",
+                            "nextPageUuid": "35ac3641-d5f2-4250-b22d-03fce0847df2",
+                            "globalPageNum": 100
+                        },
+                        {
+                            "pageNum": 13,
+                            "filename": "Chp3-Pg12.jpg",
+                            "title": "Millie to the rescue!",
+                            "message": "...but at least the name of our grim skeleton friend has finally come to light.",
+                            "datetime": "2022-11-14 14:53:14",
+                            "user": "M1998",
+                            "icon": "icons/Chp3-Pg12-Icon.png",
+                            "uuid": "35ac3641-d5f2-4250-b22d-03fce0847df2",
+                            "prevPageUuid": "4e2c7740-0fe0-4048-bca6-0f744bc07140",
+                            "nextPageUuid": "c71dcf4b-627b-4fa6-ac4f-946a7e22d51e",
+                            "globalPageNum": 101
+                        },
+                        {
+                            "pageNum": 14,
+                            "filename": "Chp3-Pg13.jpg",
+                            "title": "The gangs all here...",
+                            "message": "One of these memories is not like the others... on another note! This is not only the first panel but the first PAGE that has all five of our kiddos together! Ready to get this party started!!",
+                            "datetime": "2022-11-28 17:19:37",
+                            "user": "M1998",
+                            "icon": "icons/Chp3-Pg13-Icon.png",
+                            "uuid": "c71dcf4b-627b-4fa6-ac4f-946a7e22d51e",
+                            "prevPageUuid": "35ac3641-d5f2-4250-b22d-03fce0847df2",
+                            "nextPageUuid": "23f10697-e22b-49d4-9534-8377e6069179",
+                            "globalPageNum": 102
+                        },
+                        {
+                            "pageNum": 15,
+                            "filename": "Chp3-Pg14.jpg",
+                            "title": "Millie sees Casper all bloodied up",
+                            "message": "Oh funny haha, is that Casper's watch? The one I definitely didn't forget to draw for the last 45 or so pages? Hahaha weird.",
+                            "datetime": "2022-11-28 17:24:24",
+                            "user": "M1998",
+                            "icon": "icons/Chp3-Pg14-Icon.png",
+                            "uuid": "23f10697-e22b-49d4-9534-8377e6069179",
+                            "prevPageUuid": "c71dcf4b-627b-4fa6-ac4f-946a7e22d51e",
+                            "nextPageUuid": "7278eca8-cfaf-4a07-90d4-4fa7559bef25",
+                            "globalPageNum": 103
+                        },
+                        {
+                            "pageNum": 16,
+                            "filename": "Chp3-Pg15.jpg",
+                            "title": "Millie exits as quickly as she entered",
+                            "message": "Millie seen fleeing the scene of the crime...I'm starting to think that this just might be her thing 🏃‍♀️",
+                            "datetime": "2022-12-05 15:24:38",
+                            "user": "M1998",
+                            "icon": "icons/Chp3-Pg15-Icon.png",
+                            "uuid": "7278eca8-cfaf-4a07-90d4-4fa7559bef25",
+                            "prevPageUuid": "23f10697-e22b-49d4-9534-8377e6069179",
+                            "nextPageUuid": "6ad5a3fa-293e-4c97-b3a0-aa2f1591a825",
+                            "globalPageNum": 104
+                        },
+                        {
+                            "pageNum": 17,
+                            "filename": "Chp3-pg16.jpg",
+                            "title": "A beginner's course in making mud plasters",
+                            "message": "A beginner's guide to making mud plasters. Step 1: GET SOME LEAVES!!! ...any other Brian Regan fans? Just me, yup, okay 👍 coooool.",
+                            "datetime": "2022-12-05 15:36:03",
+                            "user": "M1998",
+                            "icon": "icons/Chp3-pg16-Icon.png",
+                            "uuid": "6ad5a3fa-293e-4c97-b3a0-aa2f1591a825",
+                            "prevPageUuid": "7278eca8-cfaf-4a07-90d4-4fa7559bef25",
+                            "nextPageUuid": "4e9d89ad-468f-422f-a06d-561f401cdf0c",
+                            "globalPageNum": 105
+                        },
+                        {
+                            "pageNum": 18,
+                            "filename": "Chp3-Pg17.jpg",
+                            "title": "Here enters van with a bang",
+                            "message": "Zylo just having a crisis in the background.",
+                            "datetime": "2022-12-12 18:42:39",
+                            "user": "M1998",
+                            "icon": "icons/Chp3-Pg17-Icon.png",
+                            "uuid": "4e9d89ad-468f-422f-a06d-561f401cdf0c",
+                            "prevPageUuid": "6ad5a3fa-293e-4c97-b3a0-aa2f1591a825",
+                            "nextPageUuid": "2a3096d3-9f0a-457c-87ef-05d7e00e3f74",
+                            "globalPageNum": 106
+                        },
+                        {
+                            "pageNum": 19,
+                            "filename": "Chp3-Pg18.jpg",
+                            "title": "Packing into the van for some good local radio stations",
+                            "message": "I don't know man... if I had to pick, I think I would want something that goes a little harder than midwestern emo covers 🎸 ...assuming that's what's hot on Shen FM. Also, oh my gosh guys it's our 100th page!!! 🥳🎉 I'm so so so thankful Nathan and I get to share this story with you guys! Thank you for all of the love and support!!",
+                            "datetime": "2022-12-12 18:46:14",
+                            "user": "M1998",
+                            "icon": "icons/Chp3-Pg18-Icon.png",
+                            "uuid": "2a3096d3-9f0a-457c-87ef-05d7e00e3f74",
+                            "prevPageUuid": "4e9d89ad-468f-422f-a06d-561f401cdf0c",
                             "nextPageUuid": null,
-                            "prevPageUuid": "42c439a7-fc18-43e3-94b0-ea16f129607f"
+                            "globalPageNum": 107
                         }
                     ]
                 }
@@ -1745,6 +1949,46 @@
             "seasonIndex": 0,
             "chapterIndex": 3,
             "pageIndex": 10
+        },
+        "4e2c7740-0fe0-4048-bca6-0f744bc07140": {
+            "seasonIndex": 0,
+            "chapterIndex": 3,
+            "pageIndex": 11
+        },
+        "35ac3641-d5f2-4250-b22d-03fce0847df2": {
+            "seasonIndex": 0,
+            "chapterIndex": 3,
+            "pageIndex": 12
+        },
+        "c71dcf4b-627b-4fa6-ac4f-946a7e22d51e": {
+            "seasonIndex": 0,
+            "chapterIndex": 3,
+            "pageIndex": 13
+        },
+        "23f10697-e22b-49d4-9534-8377e6069179": {
+            "seasonIndex": 0,
+            "chapterIndex": 3,
+            "pageIndex": 14
+        },
+        "7278eca8-cfaf-4a07-90d4-4fa7559bef25": {
+            "seasonIndex": 0,
+            "chapterIndex": 3,
+            "pageIndex": 15
+        },
+        "6ad5a3fa-293e-4c97-b3a0-aa2f1591a825": {
+            "seasonIndex": 0,
+            "chapterIndex": 3,
+            "pageIndex": 16
+        },
+        "4e9d89ad-468f-422f-a06d-561f401cdf0c": {
+            "seasonIndex": 0,
+            "chapterIndex": 3,
+            "pageIndex": 17
+        },
+        "2a3096d3-9f0a-457c-87ef-05d7e00e3f74": {
+            "seasonIndex": 0,
+            "chapterIndex": 3,
+            "pageIndex": 18
         }
     }
 }

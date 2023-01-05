@@ -1,4 +1,4 @@
-import addPage as api
+from addPage import PageManager
 import sys
 
 def main(attribute):
@@ -6,7 +6,8 @@ def main(attribute):
 
     Must be run before every deployment to ensure the index object is up-to-date.
     """
-    data = api.getData(api._DATA_FILENAME, "r")
+    api = PageManager()
+    data = api.get_data(api._DATA_FILENAME, "r")
     for seasonIndex in range(0, len(data["seasons"])):
         season = data["seasons"][seasonIndex]
         for chapterIndex in range(0, len(season["chapters"])):
@@ -15,7 +16,7 @@ def main(attribute):
                 page = chapter["pages"][pageIndex]
                 # Add global page num
                 del page[attribute]
-    api.writeToFile(data, api._DATA_FILENAME)
+    api.write_to_file(data, api._DATA_FILENAME)
 
 if __name__ == "__main__":
     if len(sys.argv) == 2:

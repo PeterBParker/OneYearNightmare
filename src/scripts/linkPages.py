@@ -1,8 +1,9 @@
 from uuid import uuid4
-import addPage as api
+from addPage import PageManager
 
 def main():
-    data = api.getData(api._DATA_FILENAME, "r")
+    api = PageManager()
+    data = api.get_data(api._DATA_FILENAME, "r")
     last_page = None
     curr_page = None
     for season in data["seasons"]:
@@ -17,7 +18,7 @@ def main():
     # Set last page's next to null
     curr_page["nextPageUuid"] = None
 
-    api.writeToFile(data, api._DATA_FILENAME)
+    api.write_to_file(data, api._DATA_FILENAME)
 
 if __name__ == "__main__":
     main()

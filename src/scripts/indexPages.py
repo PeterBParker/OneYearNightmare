@@ -1,11 +1,12 @@
-import addPage as api
+from addPage import PageManager
 
 def main():
     """ Creates a mapping of each page to its address in the object. Writes this to the main object
 
     Must be run before every deployment to ensure the index object is up-to-date.
     """
-    data = api.getData(api._DATA_FILENAME, "r")
+    api = PageManager()
+    data = api.get_data(api._DATA_FILENAME, "r")
     index_mapping = {}
     global_page_num = 0
     for seasonIndex in range(0, len(data["seasons"])):
@@ -24,7 +25,7 @@ def main():
                     "pageIndex": pageIndex
                 }
     data["pageIndex"] = index_mapping
-    api.writeToFile(data, api._DATA_FILENAME)
+    api.write_to_file(data, api._DATA_FILENAME)
 
 if __name__ == "__main__":
     main()

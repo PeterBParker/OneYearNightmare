@@ -1,13 +1,14 @@
 from uuid import uuid4
-import addPage as api
+from addPage import PageManager
 
 def main():
-    data = api.getData(api._DATA_FILENAME, "r")
+    api = PageManager()
+    data = api.get_data(api._DATA_FILENAME, "r")
     for season in data["seasons"]:
         for chapter in season["chapters"]:
             for page in chapter["pages"]:
                 page["uuid"] = str(uuid4())
-    api.writeToFile(data, api._DATA_FILENAME)
+    api.write_to_file(data, api._DATA_FILENAME)
 
 if __name__ == "__main__":
     main()
