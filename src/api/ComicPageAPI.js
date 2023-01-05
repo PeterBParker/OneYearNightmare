@@ -135,6 +135,19 @@ const ComicPageAPI = {
     }
     return pages;
   },
+  getFirstPage: function () {
+    let seasons = this.getSeasons();
+    for (let seasonIndex in seasons) {
+      let season = seasons[seasonIndex];
+      for (let chapterIndex in season.chapters) {
+        let chapter = season.chapters[chapterIndex];
+        for (let pageIndex in chapter.pages) {
+          let page = chapter.pages[pageIndex];
+          return page;
+        }
+      }
+    }
+  },
   getSeasons: function () {
     return pagesData.seasons;
   },

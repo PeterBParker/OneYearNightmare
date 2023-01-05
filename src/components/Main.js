@@ -1,4 +1,5 @@
 import { Switch, Route, useLocation } from "react-router-dom";
+import ComicPageAPI from "../api/ComicPageAPI";
 import Archive from "./comics/archive/Archive";
 import ComicRouter from "./comics/ComicRouter";
 import Creators from "./creators/about/Creators";
@@ -13,8 +14,9 @@ export const DOMAIN = "https://monstersandmyriads.com";
 export const BASE_PATH = "/MnMPages/";
 export const JOINT_SIG = "Mo and Nate";
 
-export const COMIC_VIEWER_DEFAULT_PATH = "/read/1";
 export const COMIC_VIEWER_PATH = "/read";
+export const COMIC_VIEWER_DEFAULT_PATH =
+  COMIC_VIEWER_PATH + ComicPageAPI.getLatestPage().uuid;
 export const SUPPORT_PAGE_PATH = "/support";
 export const ARCHIVE_PAGE_PATH = "/archive";
 export const CREATIVES_PAGE_PATH = "/creatives";
