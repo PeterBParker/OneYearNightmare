@@ -10,6 +10,6 @@ export default function MobileReadPageCards(props) {
       chapter={props.chapter}
       key="mobileReadPageDetailsCard"
     />,
-    <SupportUsCard />,
+    <SupportUsCard key="mobileReadPageSupportUsCard" />,
   ];
 }

@@ -16,7 +16,7 @@ export const JOINT_SIG = "Mo and Nate";
 
 export const COMIC_VIEWER_PATH = "/read";
 export const COMIC_VIEWER_DEFAULT_PATH =
-  COMIC_VIEWER_PATH + ComicPageAPI.getLatestPage().uuid;
+  COMIC_VIEWER_PATH + "/" + ComicPageAPI.getFirstPage().uuid;
 export const SUPPORT_PAGE_PATH = "/support";
 export const ARCHIVE_PAGE_PATH = "/archive";
 export const CREATIVES_PAGE_PATH = "/creatives";
