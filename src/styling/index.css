@@ -219,7 +219,10 @@ body {
   grid-row-start: 3;
   grid-row-end: 4;
 }
-
+#gracefulComicPage {
+  margin-left: auto;
+  margin-right: auto;
+}
 .mobileNavButtonsContainer {
   display: grid;
   grid-template-columns: 17.5% 17.5% 30% 17.5% 17.5%;
