@@ -1,158 +1,164 @@
-import pagesData from './data/pagesData.json';
-import users from './data/users.json';
+import pagesData from "./data/pagesData.json";
+import users from "./data/users.json";
+
+// Refactor getFilePaths to use pageUuid
+
+function createPath(...pathNodes) {
+  let path = "";
+  for (let nodeIndex in pathNodes) {
+    path += pathNodes[nodeIndex];
+    // only append a slash if it's not the final element
+    if (nodeIndex < pathNodes.length - 1) {
+      path += "/";
+    }
+  }
+  return path;
+}
 
 const ComicPageAPI = {
-    getFilePaths: function (pageNum) {
-        const releventObjs = this.getRelValidObjs(pageNum);
-        if (releventObjs) {
-            return {
-                "seasonPath": releventObjs.seasonObj.folderName,
-                "chapterPath": releventObjs.chapterObj.folderName,
-                "pagePath": releventObjs.pageObj.filename,
-            };
+  getFilePath: function (releventObjs) {
+    /* This function returns the path relative to the public/MnMPages directory to a page
+
+        Returns a string
+    */
+    let path = createPath(
+      releventObjs.seasonObj.folderName,
+      releventObjs.chapterObj.folderName,
+      releventObjs.pageObj.filename
+    );
+    return path;
+  },
+  getFirstPage: function () {
+    if (0 in pagesData.seasons) {
+      let season = pagesData.seasons[0];
+      if (0 in season.chapters) {
+        let chapter = season.chapters[0];
+        if (0 in chapter.pages) {
+          return chapter.pages[0];
         }
-        return null;
-    },
-    getPageObj: function(pageNum) {
-        const releventObjs = this.getRelValidObjs(pageNum);
-        if(releventObjs) {
-            return releventObjs.pageObj;
-        }
-        return null;
-    },
-    getPageUuid: function(pageId) {
-        const pageObj = this.getPageObj(pageId);
-        if(pageObj) {
-            return pageObj.page_uuid;
-        }
-        return null;
-    },
-    getChaptersInSeason: function (seasonName) {
-        const isSeason = p => p.seasonName === seasonName;
-        let seasons = this.getSeasons();
-        let seasonObj = seasons.find(isSeason);
-        if (seasonObj == null) {
-            //return error about invalid seasonName
-            throw ("Invalid season data regarding season: ", seasonName);
-        }
-        return seasonObj.chapters;
-    },
-    getSeason: function (seasons, seasonName) {
-        /* This function gets a season object
+      }
+    }
+    return null;
+  },
+  getChaptersInSeason: function (seasonName) {
+    const isSeason = (p) => p.seasonName === seasonName;
+    let seasons = this.getSeasons();
+    let seasonObj = seasons.find(isSeason);
+    if (seasonObj == null) {
+      //return error about invalid seasonName
+      throw ("Invalid season data regarding season: ", seasonName);
+    }
+    return seasonObj.chapters;
+  },
+  getSeason: function (seasons, seasonName) {
+    /* This function gets a season object
         
             Parameters:
             seasons - an array of season objects
             seasonName - a string of the season name
         */
-        const isSeason = p => p.seasonName === seasonName;
-        return seasons.find(isSeason);
-    },
-    getSeasonNum: function (pageId) {
-        const relObjs = this.getRelValidObjs(pageId);
-        if(relObjs) {
-            return relObjs.seasonObj.id-1;
-        }
-        return null;
-    },
-    getChapterNum: function (pageId) {
-        const relObjs = this.getRelValidObjs(pageId);
-        if(relObjs) {
-            return relObjs.chapterObj.id-1;
-        }
-        return null;
-    },
-    getSeasonOrder: function (seasonName) {
-        const isSeason = p => p.seasonName === seasonName;
-        let seasons = this.getSeasons();
-        let season = seasons.find(isSeason);
-        return season.order;
-    },
-    getRelValidObjs: function (pageNum) {
-        /* This function checks if the page number is valid, and if so
-            it returns the relevent Season object, Chapter object, and Page object.
-
-            Parameters:
-            pageNum - An integer of the page number       
-        */
-
-        if (!this.validatePageNum(pageNum)) {
-            return null;
-        }
-
-        let validObjs = {}
-        let seasons = this.getSeasons();
-        let pageCount = 0;
-
-        for (let seasonIndex in seasons) {
-            let season = seasons[seasonIndex];
-            // Checks if the page we're looking for is within the block of the season
-            if (pageNum > pageCount && pageNum <= pageCount + season.numOfPages) {
-                validObjs.seasonObj = season;
-                let chapters = this.getChaptersInSeason(season.seasonName);
-                for (let chapterIndex in chapters) {
-                    let chapter = chapters[chapterIndex];
-                    //Checks if the page we're looking for is within the block of the chapter
-                    if (pageNum > pageCount && pageNum <= pageCount + chapter.numOfPages) {
-                        validObjs.chapterObj = chapter;
-                        let pages = chapter.pages;
-                        for (let pageIndex in pages) {
-                            let page = pages[pageIndex];
-                            if (page.id === pageNum) {
-                                validObjs.pageObj = page
-                                return validObjs;
-                            }
-                        }
-                    } else {
-                        pageCount += chapter.numOfPages;
-                    }
-                }
-            } else {
-                pageCount += season.numOfPages;
-            }
-        }
-        return null;
-    },
-    validatePageNum: function (pageNum) {
-        let pageCount = this.getMaxDisplayPage();
-        if (pageNum > 0 && pageNum <= pageCount) {
-            return true;
-        } else {
-            return false;
-        }
-    },
-    getTotalPageCount: function () {
-        return pagesData.pageCount;
-    },
-    getMaxDisplayPage: function () {
-        return pagesData.maxDisplayPage;
-    },
-    getAllPages: function () {
-        let pages = [];
-        try {
-            let seasons = this.getSeasons();
-            for (var seasonIndex in seasons) {
-                const chapters = this.getChaptersInSeason(seasons[seasonIndex].seasonName);
-                for (var chapterIndex in chapters) {
-                    chapters[chapterIndex].pages.forEach(p => pages.push(p));
-                }
-            }
-        }
-        catch (err) {
-            throw (err);
-        }
-        return pages;
-    },
-    getSeasons: function () {
-        return pagesData.seasons;
-    },
-    getAdminDisplayName: function(userId) {
-        for (let user in users.admins) {
-            if (users.admins[user].id === userId) {
-                return users.admins[user].displayName;
-            }
-        }
-        return "Mo and Nate"
+    const isSeason = (p) => p.seasonName === seasonName;
+    return seasons.find(isSeason);
+  },
+  getSeasonNum: function (pageId) {
+    const relObjs = this.getRelValidObjs(pageId);
+    if (relObjs) {
+      return relObjs.seasonObj.id - 1;
     }
-}
+    return null;
+  },
+  getChapterNum: function (pageId) {
+    const relObjs = this.getRelValidObjs(pageId);
+    if (relObjs) {
+      return relObjs.chapterObj.id - 1;
+    }
+    return null;
+  },
+  getSeasonOrder: function (seasonName) {
+    const isSeason = (p) => p.seasonName === seasonName;
+    let seasons = this.getSeasons();
+    let season = seasons.find(isSeason);
+    return season.order;
+  },
+  getRelValidObjs: function (pageUuid) {
+    /* This function checks if the page number is valid, and if so
+        it returns the relevent Season object, Chapter object, and Page object.
 
-export default ComicPageAPI
+        Parameters:
+        pageUuid - The string uuid4 slug of the page       
+    */
+
+    let validObjs = {};
+    if (pageUuid in pagesData.pageIndex) {
+      let pageAddress = pagesData.pageIndex[pageUuid];
+      if (pageAddress.seasonIndex in pagesData.seasons) {
+        validObjs.seasonObj = pagesData.seasons[pageAddress.seasonIndex];
+      } else {
+        return null;
+      }
+      if (pageAddress.chapterIndex in validObjs.seasonObj.chapters) {
+        validObjs.chapterObj =
+          validObjs.seasonObj.chapters[pageAddress.chapterIndex];
+      } else {
+        return null;
+      }
+      if (pageAddress.pageIndex in validObjs.chapterObj.pages) {
+        validObjs.pageObj = validObjs.chapterObj.pages[pageAddress.pageIndex];
+      } else {
+        return null;
+      }
+      return validObjs;
+    } else {
+      return null;
+    }
+  },
+  getTotalPageCount: function () {
+    return pagesData.pageCount;
+  },
+  getMaxDisplayPage: function () {
+    return pagesData.maxDisplayPage;
+  },
+  getAllPages: function () {
+    let pages = [];
+    try {
+      let seasons = this.getSeasons();
+      for (var seasonIndex in seasons) {
+        const chapters = this.getChaptersInSeason(
+          seasons[seasonIndex].seasonName
+        );
+        for (var chapterIndex in chapters) {
+          chapters[chapterIndex].pages.forEach((p) => pages.push(p));
+        }
+      }
+    } catch (err) {
+      throw err;
+    }
+    return pages;
+  },
+  getFirstPage: function () {
+    let seasons = this.getSeasons();
+    for (let seasonIndex in seasons) {
+      let season = seasons[seasonIndex];
+      for (let chapterIndex in season.chapters) {
+        let chapter = season.chapters[chapterIndex];
+        for (let pageIndex in chapter.pages) {
+          let page = chapter.pages[pageIndex];
+          return page;
+        }
+      }
+    }
+  },
+  getSeasons: function () {
+    return pagesData.seasons;
+  },
+  getAdminDisplayName: function (userId) {
+    for (let user in users.admins) {
+      if (users.admins[user].id === userId) {
+        return users.admins[user].displayName;
+      }
+    }
+    return "Mo and Nate";
+  },
+};
+
+export default ComicPageAPI;

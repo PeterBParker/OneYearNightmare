@@ -1,12 +1,10 @@
 import { Link } from "react-router-dom";
 import Pages from "./Pages";
-import { auth } from "../../../../index"
 import {
   COMIC_VIEWER_PATH,
   SUPPORT_PAGE_PATH,
   ARCHIVE_PAGE_PATH,
   CREATIVES_PAGE_PATH,
-  SIGNIN_PAGE_PATH,
 } from "../../../Main";
 
 export default function NavBarLinks(props) {
@@ -50,16 +48,6 @@ export default function NavBarLinks(props) {
       key="supportNavBarLink"
     >
       <Link to={SUPPORT_PAGE_PATH}>Support</Link>
-    </div>,
-    <div
-      className={`${
-        props.page.name === Pages.SIGNIN.name
-          ? "desktopNavLinkSelected"
-          : "desktopNavLink"
-      } text-grey-light mr-8 font-medium `}
-      key="signinNavBarLink"
-    >
-      <Link to={SIGNIN_PAGE_PATH}>{auth.currentUser == null ? "Login" : "User"}</Link>
     </div>,
   ];
 }
