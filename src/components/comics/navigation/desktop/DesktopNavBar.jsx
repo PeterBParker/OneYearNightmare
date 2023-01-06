@@ -50,7 +50,7 @@ export default function DesktopNavBar(props) {
         onClick={() =>
           setCookie("mxmBookmarkedPage", props.pageId.toString(), {
             path: "/",
-            sameSite: "lax",
+            sameSite: "strict",
             expires: addYearToToday(),
           })
         }

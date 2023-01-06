@@ -895,6 +895,8 @@ body {
 .accordion__banner {
   position: relative;
   cursor: pointer;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: 0.5s ease-in-out;
 }
 .accordion__content {
   max-height: 0;
@@ -903,6 +905,8 @@ body {
   transition-timing-function: ease-out;
   transition-duration: 0.2s;
   opacity: 1;
+  background-color: #f4f1ed;
+  border-radius: 0 0 10px 10px;
 }
 .accordion__active {
   opacity: 1;
