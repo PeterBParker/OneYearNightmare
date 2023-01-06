@@ -60,7 +60,7 @@ function BuildChapterPagesDisplay(chapter, chapterPath) {
         pageId={page["uuid"]}
         pageNum={page["pageNum"]}
         altText={page["title"]}
-        key={`archiveThumbnailPage${page["id"]}`}
+        key={`archiveThumbnailPage${page["uuid"]}`}
       />
     );
   }
