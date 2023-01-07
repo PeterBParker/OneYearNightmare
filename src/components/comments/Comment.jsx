@@ -13,7 +13,9 @@ export function SingleComment(props) {
   const [showReplyBox, setShowReplyBox] = useState(false);
   const [displayName, setDisplayName] = useState("");
   const [editComment, setEditComment] = useState(false);
-  const [belongsToCurrUser, setBelongsToCurrUser] = useState(auth.currentUser ? auth.currentUser.uid === props.comment.author_uid : false)
+  const [belongsToCurrUser, setBelongsToCurrUser] = useState(
+    auth.currentUser ? auth.currentUser.uid === props.comment.author_uid : false
+  );
 
   useEffect(() => {
     getDisplayName(props.comment.author_uid).then((display_name) => {
@@ -22,8 +24,12 @@ export function SingleComment(props) {
   });
 
   useEffect(() => {
-    setBelongsToCurrUser(auth.currentUser ? auth.currentUser.uid === props.comment.author_uid : false)
-  }, [props.comment.author_uid])
+    setBelongsToCurrUser(
+      auth.currentUser
+        ? auth.currentUser.uid === props.comment.author_uid
+        : false
+    );
+  }, [props.comment.author_uid]);
 
   return (
     <div>
@@ -32,7 +38,7 @@ export function SingleComment(props) {
           <div>
             {
               <img
-                src={`https://avatars.dicebear.com/api/big-smile/${displayName}}.svg`}
+                src={`https://avatars.dicebear.com/api/avataaars/${displayName}}.svg`}
                 alt="avatar"
                 width={70}
                 className="comment-avatar"
@@ -41,9 +47,7 @@ export function SingleComment(props) {
           </div>
         </div>
         <div className="flex comment-data-header justify-between">
-          <p className="comment-author font-medium text-left">
-            {displayName}
-          </p>
+          <p className="comment-author font-medium text-left">{displayName}</p>
           <div className="comment-time mr-2 text-mocha-dark">
             {props.comment.time && (
               <time>
@@ -52,16 +56,17 @@ export function SingleComment(props) {
             )}
           </div>
         </div>
-        {editComment && belongsToCurrUser ?
+        {editComment && belongsToCurrUser ? (
           <EditCommentForm
             initialContent={props.comment.content}
             slug={props.slug}
             callback={() => setEditComment(false)}
-            comment={props.comment} />
-          :
+            comment={props.comment}
+          />
+        ) : (
           <div className="comment-content text-left">
             {props.comment.content}
-          
+
             <div className="flex justify-start comment-interaction-container">
               {showReplyBox ? (
                 <span
@@ -72,30 +77,24 @@ export function SingleComment(props) {
                 </span>
               ) : (
                 <div className="w-full">
-                  {
-                    props.isTopLevel ?
-                      <span
-                        className="reply-btn btn text-left font-medium text-green-dark float-left"
-                        onClick={() => setShowReplyBox(true)}
-                      >
-                        Reply
-                      </span>
-                      :
-                      null
-                  }
+                  {props.isTopLevel ? (
+                    <span
+                      className="reply-btn btn text-left font-medium text-green-dark float-left"
+                      onClick={() => setShowReplyBox(true)}
+                    >
+                      Reply
+                    </span>
+                  ) : null}
 
-                  {belongsToCurrUser ?
+                  {belongsToCurrUser ? (
                     <span
                       className="reply-btn btn text-left font-medium text-green-dark float-right"
                       onClick={() => setEditComment(true)}
                     >
                       Edit
                     </span>
-                    :
-                    null
-                  }
+                  ) : null}
                 </div>
-
               )}
             </div>
             {showReplyBox ? (
@@ -106,7 +105,7 @@ export function SingleComment(props) {
               />
             ) : null}
           </div>
-        }
+        )}
       </div>
     </div>
   );

@@ -175,6 +175,9 @@ body {
   grid-row-end: 3;
 }
 
+.blur-bottom-dark-header {
+  box-shadow: 0 10px 10px 10px #e0dcd1;
+}
 .mobileMenuOverlay {
   height: 100%;
   width: 100%;

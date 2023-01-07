@@ -4,11 +4,19 @@ import { auth } from "../../..";
 import { db } from "../../../index";
 import { collection, setDoc, doc, Timestamp } from "firebase/firestore";
 import { getDisplayName, validateDisplayName } from "../utils";
+import DisplayNameForm from "../../settings/DisplayNameForm";
+import EmailForm from "../../settings/EmailForm";
 
 const UserProfile = () => {
-  const [notInitialized, setNotInitialized] = useState(auth.currentUser.displayName === null)
+  const [notInitialized, setNotInitialized] = useState(
+    auth.currentUser.displayName === null
+  );
 
-  return notInitialized ? <InitializeInfo setNotInitialized={setNotInitialized} /> : <DisplayInfo />;
+  return notInitialized ? (
+    <InitializeInfo setNotInitialized={setNotInitialized} />
+  ) : (
+    <DisplayInfo />
+  );
 };
 
 const InitializeInfo = (props) => {
@@ -41,17 +49,16 @@ const InitializeInfo = (props) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    let emsgBox = document.getElementById("dNameEmsg")
-    let field = document.getElementById("dName")
+    let emsgBox = document.getElementById("dNameEmsg");
+    let field = document.getElementById("dName");
     try {
       field.classList.remove("input-error");
-      emsgBox.innerHTML = ""
+      emsgBox.innerHTML = "";
       await changeDisplayName(name);
     } catch (error) {
       field.classList.add("input-error");
-      emsgBox.innerHTML = error
+      emsgBox.innerHTML = error;
     }
-    
   };
   return (
     <div>
@@ -88,13 +95,20 @@ const DisplayInfo = () => {
 
   return (
     <div>
-      <div className="cardHeader">User Profile</div>
-      <div className="grid">
+      <div className="max-w-lg ml-auto mr-auto px-2">
+        <div className="text-left text-lg font-bold ml-2 my-4">
+          User Settings
+        </div>
         <div>Profile Picture Placeholder</div>
-        <div>Display Name: {displayName}</div>
-        <div>Delete Account</div>
+        <DisplayNameForm />
+        <EmailForm />
+        <div className="flex justify-between my-12">
+          <div className="rounded bg-red-bad btn text-center px-4 py-2 basis-1/4 font-medium text-lg">
+            Delete Account
+          </div>
+          <SignOutButton />
+        </div>
       </div>
-      <SignOutButton />
     </div>
   );
 };
@@ -102,6 +116,7 @@ const DisplayInfo = () => {
 const SignOutButton = () => {
   return (
     <button
+      className="rounded bg-grey-light text-eggshell btn text-center px-4 py-2 basis-1/4 font-medium text-lg"
       onClick={() =>
         signOut(auth)
           .then(() => {

@@ -2,6 +2,8 @@
 
 - Make Comments
   - Hook up to Database
+    - When user is created, create avatar and store it in Cloud Storage
+    - When a comment is displayed, fetch the image from the cloud storage
     - add error handling if comment submission failed
       - add visual state to indicate pending server write
       - add visual state to indicate completed server write
@@ -15,10 +17,10 @@
     - add database enforcement of editing only comments owned by the currently signed in user
     - populate comment data with user info
   - Style
-      - Style User Profile Page
-      - Style Set Display Name Page
-      - Style Comments box (mobile)
-      - Get new avatars
+    - Style User Profile Page
+    - Style Set Display Name Page
+    - Style Comments box (mobile)
+    - Get new avatars
 - Integrate email service and start mailing list
 - Add infinite scroll instead of button navigation
 - Add tap on either side of page to navigate
@@ -27,3 +29,4 @@
   - Use svgo to optimize svg's
     - `svgo -f ./path/to/svgFolder -o ./path/to/output`
   - Scan with Lighthouse and GTmetrix
+- Introduce logging and log all errors
