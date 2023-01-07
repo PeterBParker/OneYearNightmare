@@ -17,7 +17,7 @@ export default function DesktopReadPageCards(props) {
           />
         </div>
         <div className="desktopReadPageCardsSupport bg-white ">
-          <SupportUsCard />
+          <Comments slug={props.page.uuid} comments={props.comments} />
         </div>
         <div className="desktopReadPageDiscordBanner mt-6 justify-between py-6 items-center">
           <div className="desktopReadPageDiscordBannerText text-left ">
