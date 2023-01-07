@@ -1,9 +1,13 @@
 import { useState } from "react";
 import { getDisplayName } from "../users/utils";
-import { setAuthDisplayName, setCommentDisplayName } from "../users/utils";
+import {
+  setAuthDisplayName,
+  setCommentDisplayName,
+  validateDisplayName,
+} from "../users/utils";
 import GenericSingleInputForm from "./GenericSingleInputForm";
 
-export default function DisplayNameForm() {
+export default function DisplayNameForm(props) {
   const [placeholder, setPlaceholder] = useState("");
 
   const placeholderUpdate = (user) => {
@@ -12,27 +16,26 @@ export default function DisplayNameForm() {
     });
   };
 
-  const onSubmit = async (formName) => {
-    const auth_success = await setAuthDisplayName(formName);
-    const comment_success = await setCommentDisplayName(formName);
+  const changeDisplayName = async (newName) => {
+    // First validate the display name doesn't already exist
+    await validateDisplayName(newName);
+    // Add it if not
+    const auth_success = await setAuthDisplayName(newName);
+    const comment_success = await setCommentDisplayName(newName);
     if (auth_success && comment_success) {
       alert("Updated Display Name!");
+      if (props.onSubmitAction != undefined) {
+        props.onSubmitAction();
+      }
     } else {
-      alert(
-        "Oops! There was an error in changing your display name. Please try again later."
-      );
-      console.log(
-        "Error Updating Display Name:\n\t Location A Success: " +
-          auth_success +
-          "\n\t Location B Success: " +
-          comment_success
-      );
+      throw new Error("Oops! Something went wrong. Please try again later.");
     }
   };
+
   return (
     <GenericSingleInputForm
       placeholderUpdate={placeholderUpdate}
-      onSubmitAction={onSubmit}
+      onSubmitAction={changeDisplayName}
       inputId="displayNameInput"
       inputName="display-name-input"
       maxLength={20}

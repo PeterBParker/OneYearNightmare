@@ -20,65 +20,12 @@ const UserProfile = () => {
 };
 
 const InitializeInfo = (props) => {
-  const [name, setName] = useState("");
-
-  const changeDisplayName = async (new_name) => {
-    // First validate the display name doesn't already exist
-    let is_valid = await validateDisplayName(new_name);
-    if (is_valid == false) {
-      throw new Error("Display name already exists. 😭");
-    }
-    // Add it if not
-    let userDoc = {
-      display_name: new_name,
-      last_updated: Timestamp.fromDate(new Date()),
-    };
-    await setDoc(doc(collection(db, "users"), auth.currentUser.uid), userDoc);
-    updateProfile(auth.currentUser, {
-      displayName: name,
-    }).then(
-      () => {
-        setName("");
-        props.setNotInitialized(false);
-      },
-      function (error) {
-        console.log("An error occured while updating profile:", error);
-      }
-    );
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    let emsgBox = document.getElementById("dNameEmsg");
-    let field = document.getElementById("dName");
-    try {
-      field.classList.remove("input-error");
-      emsgBox.innerHTML = "";
-      await changeDisplayName(name);
-    } catch (error) {
-      field.classList.add("input-error");
-      emsgBox.innerHTML = error;
-    }
-  };
   return (
-    <div>
-      <div className="cardHeader">Set Up Profile</div>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="dName">Display Name:</label>
-        <input
-          type="text"
-          id="dName"
-          name="dName"
-          value={name}
-          required
-          pattern="\S(.*\S)?"
-          onChange={(e) => setName(e.target.value)}
-        />
-        <div id="dNameEmsg" className="emsg"></div>
-        <button type="submit" className="btn text-center px-4 py-2">
-          Save
-        </button>
-      </form>
+    <div className="max-w-lg ml-auto mr-auto px-2">
+      <div className="text-left text-xl font-header font-bold ml-2 my-4">
+        Set Up Profile
+      </div>
+      <DisplayNameForm onSubmitAction={() => props.setNotInitialized(false)} />
       <SignOutButton />
     </div>
   );
@@ -96,13 +43,13 @@ const DisplayInfo = () => {
   return (
     <div>
       <div className="max-w-lg ml-auto mr-auto px-2">
-        <div className="text-left text-lg font-bold ml-2 my-4">
+        <div className="text-left text-xl font-header font-bold ml-2 my-4">
           User Settings
         </div>
         <div>Profile Picture Placeholder</div>
         <DisplayNameForm />
         <EmailForm />
-        <div className="flex justify-between my-12">
+        <div className="flex justify-between my-12 px-2">
           <div className="rounded bg-red-bad btn text-center px-4 py-2 basis-1/4 font-medium text-lg">
             Delete Account
           </div>

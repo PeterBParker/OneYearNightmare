@@ -10,7 +10,7 @@ import {
 } from "firebase/firestore";
 import { auth } from "../../index";
 import { Timestamp } from "firebase/firestore";
-import { onAuthStateChanged, updateProfile } from "firebase/auth";
+import { updateProfile, updateEmail } from "firebase/auth";
 
 export const getDisplayName = async (uid) => {
   const docRef = doc(db, "users", uid);
@@ -62,16 +62,56 @@ export const setAuthDisplayName = async (new_name) => {
   return success;
 };
 
-export const validateDisplayName = async (display_name) => {
+export const validateDisplayName = async (displayName) => {
+  let isValid = displayNameValid(displayName);
+  if (!isValid) {
+    throw new Error("Error: Not a valid display name. 😧");
+  }
+  let doesExist = await displayNameExists(displayName);
+  if (!doesExist) {
+    throw new Error("Error: Display name already exists. 😥");
+  }
+};
+
+export const displayNameExists = async (displayName) => {
   const q = query(
     collection(db, "users"),
-    where("display_name", "==", display_name)
+    where("display_name", "==", displayName)
   );
 
   const querySnapshot = await getDocs(q);
-  if (querySnapshot.empty) {
+  if (querySnapshot.empty && displayName.replace(/\s/g, "").length != 0) {
     return true;
   } else {
     return false;
   }
+};
+export const displayNameValid = (displayName) => {
+  if (displayName.replace(/\s/g, "").length != 0) {
+    return true;
+  } else {
+    return false;
+  }
+};
+
+export const getEmail = async () => {
+  let email = null;
+  if (auth.currentUser != null) {
+    email = auth.currentUser.email;
+  }
+  return email;
+};
+
+export const setEmail = async (newEmail) => {
+  let success = false;
+  if (auth.currentUser != null) {
+    await updateEmail(auth.currentUser, newEmail)
+      .then(() => {
+        success = true;
+      })
+      .catch((error) => {
+        throw new Error(error);
+      });
+  }
+  return success;
 };

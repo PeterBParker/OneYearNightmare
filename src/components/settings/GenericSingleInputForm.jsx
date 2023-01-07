@@ -5,12 +5,22 @@ import { useAuthState } from "react-firebase-hooks/auth";
 export default function GenericSingleInputForm(props) {
   const [formData, setFormName] = useState("");
   const [user, loading, auth_error] = useAuthState(auth);
+  const eMsgId = props.inputId + "-error-message";
   useEffect(() => {
     props.placeholderUpdate(user);
   }, []);
   const handleSubmit = async (e) => {
     e.preventDefault();
-    props.onSubmitAction(formData);
+    let emsgBox = document.getElementById(eMsgId);
+    let field = document.getElementById(props.inputId);
+    field.classList.remove("input-error");
+    emsgBox.innerHTML = "";
+    try {
+      await props.onSubmitAction(formData);
+    } catch (error) {
+      field.classList.add("input-error");
+      emsgBox.innerHTML = error;
+    }
   };
 
   if (user) {
@@ -29,6 +39,7 @@ export default function GenericSingleInputForm(props) {
               placeholder={props.placeholder}
               className="w-full py-4 px-2 my-2"
             />
+            <div id={eMsgId} className="emsg"></div>
           </div>
           <div className="flex justify-end ">
             <button
