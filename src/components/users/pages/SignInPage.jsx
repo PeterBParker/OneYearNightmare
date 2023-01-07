@@ -11,9 +11,9 @@ const SignInPage = () => {
 
   return (
     <React.Fragment>
-      <Header defaultBg={true} />
+      <Header defaultBg={false} />
       {isDesktop ? <SimpleNavBar page={Pages.SIGNIN} /> : ""}
-      <div className="my-12" id="user-signed-out">
+      <div className="mb-12" id="user-signed-out">
         <SignInToUserProfile />
       </div>
       <div id="user-signed-in"></div>
