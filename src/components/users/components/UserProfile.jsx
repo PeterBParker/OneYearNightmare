@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { signOut, updateProfile } from "firebase/auth";
+import SignOutButton from "./SignOutButton";
 import { auth } from "../../..";
-import { db } from "../../../index";
-import { collection, setDoc, doc, Timestamp } from "firebase/firestore";
-import { getDisplayName, validateDisplayName } from "../utils";
+import { getDisplayName } from "../utils";
 import DisplayNameForm from "../../settings/DisplayNameForm";
 import EmailForm from "../../settings/EmailForm";
+import DeleteAccountButton from "./DeleteAccountButton";
 
 const UserProfile = () => {
   const [notInitialized, setNotInitialized] = useState(
@@ -32,14 +31,6 @@ const InitializeInfo = (props) => {
 };
 
 const DisplayInfo = () => {
-  const [displayName, setDisplayName] = useState("");
-
-  useEffect(() => {
-    getDisplayName(auth.currentUser.uid).then((name) => {
-      setDisplayName(name);
-    });
-  }, []);
-
   return (
     <div>
       <div className="max-w-lg ml-auto mr-auto px-2">
@@ -50,32 +41,11 @@ const DisplayInfo = () => {
         <DisplayNameForm />
         <EmailForm />
         <div className="flex justify-between my-12 px-2">
-          <div className="rounded bg-red-bad btn text-center px-4 py-2 basis-1/4 font-medium text-lg">
-            Delete Account
-          </div>
+          <DeleteAccountButton />
           <SignOutButton />
         </div>
       </div>
     </div>
-  );
-};
-
-const SignOutButton = () => {
-  return (
-    <button
-      className="rounded bg-grey-light text-eggshell btn text-center px-4 py-2 basis-1/4 font-medium text-lg"
-      onClick={() =>
-        signOut(auth)
-          .then(() => {
-            console.log("Successfully Signed Out!");
-          })
-          .catch((error) => {
-            console.log("Failed to Sign Out. Error:", error);
-          })
-      }
-    >
-      Sign Out
-    </button>
   );
 };
 

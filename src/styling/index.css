@@ -778,7 +778,21 @@ body {
 }
 
 .input-error {
-  background: red;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #f27b57;
+}
+
+.modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /*

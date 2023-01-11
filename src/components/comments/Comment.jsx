@@ -16,11 +16,17 @@ export function SingleComment(props) {
   const [belongsToCurrUser, setBelongsToCurrUser] = useState(
     auth.currentUser ? auth.currentUser.uid === props.comment.author_uid : false
   );
+  const accountDeletedDisplay = "Account Deleted";
+  const commentDeletedContent = "This comment has been deleted.";
 
   useEffect(() => {
-    getDisplayName(props.comment.author_uid).then((display_name) => {
-      setDisplayName(display_name);
-    });
+    if (props.comment.author_uid == null) {
+      setDisplayName(accountDeletedDisplay);
+    } else {
+      getDisplayName(props.comment.author_uid).then((display_name) => {
+        setDisplayName(display_name);
+      });
+    }
   });
 
   useEffect(() => {
@@ -47,7 +53,13 @@ export function SingleComment(props) {
           </div>
         </div>
         <div className="flex comment-data-header justify-between">
-          <p className="comment-author font-medium text-left">{displayName}</p>
+          <p
+            className={`comment-author font-medium text-left ${
+              displayName == accountDeletedDisplay ? "italic" : ""
+            }`}
+          >
+            {displayName}
+          </p>
           <div className="comment-time mr-2 text-mocha-dark">
             {props.comment.time && (
               <time>
@@ -64,8 +76,14 @@ export function SingleComment(props) {
             comment={props.comment}
           />
         ) : (
-          <div className="comment-content text-left">
-            {props.comment.content}
+          <div
+            className={`comment-content text-left ${
+              props.comment.content == null ? "italic" : ""
+            }`}
+          >
+            {props.comment.content != null
+              ? props.comment.content
+              : commentDeletedContent}
 
             <div className="flex justify-start comment-interaction-container">
               {showReplyBox ? (

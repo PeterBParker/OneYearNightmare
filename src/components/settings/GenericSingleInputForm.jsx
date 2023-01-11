@@ -3,6 +3,18 @@ import { auth } from "../..";
 import { useAuthState } from "react-firebase-hooks/auth";
 
 export default function GenericSingleInputForm(props) {
+  /**
+   * A class to abstract a single input field's functionality and styling
+   *
+   * Expects the props:
+   * placholderUpdate: an async function that updates the field's placeholder text
+   * placeholder: a value to use as the placeholder text
+   * onSubmitAction: an async function that takes the field's input when the "Save" button is pressed
+   * inputId: the html id to set for the input field
+   * inputName: the html name to set for the input field
+   * maxLength: the max length of characters to limit in the input field
+   * inputTitle: The field's label
+   */
   const [formData, setFormName] = useState("");
   const [user, loading, auth_error] = useAuthState(auth);
   const eMsgId = props.inputId + "-error-message";
@@ -28,7 +40,7 @@ export default function GenericSingleInputForm(props) {
       <div className="my-2 mx-2">
         <div className="text-left font-medium">{props.inputTitle}</div>
         <form onSubmit={handleSubmit}>
-          <div>
+          <div className="mt-2">
             <input
               type="text"
               id={props.inputId}
@@ -37,9 +49,12 @@ export default function GenericSingleInputForm(props) {
               name={props.inputName}
               maxLength={props.maxLength}
               placeholder={props.placeholder}
-              className="w-full py-4 px-2 my-2"
+              className="w-full py-4 px-2"
             />
-            <div id={eMsgId} className="emsg"></div>
+            <div
+              id={eMsgId}
+              className="emsg text-left text-red-bright italic"
+            ></div>
           </div>
           <div className="flex justify-end ">
             <button

@@ -46,6 +46,7 @@ module.exports = {
       },
       red: {
         bad: "#d16a46",
+        bright: "#f27b57",
       },
     },
     variants: {},

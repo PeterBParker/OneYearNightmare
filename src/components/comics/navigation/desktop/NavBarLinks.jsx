@@ -56,7 +56,7 @@ export default function NavBarLinks(props) {
         props.page.name === Pages.SIGNIN.name
           ? "desktopNavLinkSelected"
           : "desktopNavLink"
-      } text-grey-light mr-8 font-medium `}
+      } text-grey-light font-medium `}
       key="signinNavBarLink"
     >
       <Link to={SIGNIN_PAGE_PATH}>

@@ -20,7 +20,7 @@ export default function EmailForm() {
     if (success) {
       alert("Email updated!");
     } else {
-      throw new Error("Oops! Email updated failed. 🙀");
+      throw new Error("Oops! Email updated failed.");
     }
   };
 

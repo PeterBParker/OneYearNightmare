@@ -7,10 +7,13 @@ import {
   where,
   collection,
   getDocs,
+  deleteDoc,
+  updateDoc,
+  writeBatch,
 } from "firebase/firestore";
 import { auth } from "../../index";
 import { Timestamp } from "firebase/firestore";
-import { updateProfile, updateEmail } from "firebase/auth";
+import { updateProfile, updateEmail, deleteUser } from "firebase/auth";
 
 export const getDisplayName = async (uid) => {
   const docRef = doc(db, "users", uid);
@@ -65,11 +68,11 @@ export const setAuthDisplayName = async (new_name) => {
 export const validateDisplayName = async (displayName) => {
   let isValid = displayNameValid(displayName);
   if (!isValid) {
-    throw new Error("Error: Not a valid display name. 😧");
+    throw new Error("Not a valid display name.");
   }
   let doesExist = await displayNameExists(displayName);
   if (!doesExist) {
-    throw new Error("Error: Display name already exists. 😥");
+    throw new Error("Display name already exists.");
   }
 };
 
@@ -111,6 +114,56 @@ export const setEmail = async (newEmail) => {
       })
       .catch((error) => {
         throw new Error(error);
+      });
+  }
+  return success;
+};
+
+export const deleteComments = async () => {
+  let success = false;
+  if (auth.currentUser != null) {
+    const q = query(
+      collection(db, "page_comments"),
+      where("author_uid", "==", auth.currentUser.uid)
+    );
+    let querySnapshot = await getDocs(q).catch((error) => {
+      throw new Error(error);
+    });
+    const batch = writeBatch(db);
+    querySnapshot.forEach((doc) => {
+      batch.update(doc.ref, { author_uid: null, content: null });
+    });
+    await batch.commit();
+    success = true;
+  }
+  return success;
+};
+
+export const deleteUserWrapper = async () => {
+  let success = false;
+  if (auth.currentUser != null) {
+    deleteUser(auth.currentUser)
+      .then(() => {
+        success = true;
+      })
+      .catch((error) => {
+        throw new Error(error);
+      });
+    success = true;
+  }
+  return success;
+};
+
+export const deleteUserCommentId = async () => {
+  let success = false;
+  if (auth.currentUser != null) {
+    deleteDoc(doc(db, "users", auth.currentUser.uid))
+      .then(() => {
+        success = true;
+      })
+      .catch((error) => {
+        //throw new Error(error);
+        console.log(error);
       });
   }
   return success;
