@@ -21,8 +21,7 @@ export default function ReadPageCards(props) {
     const commentsQuery = query(
       collection(db, PAGE_COMMENTS_TABLE),
       where("page_id", "==", page_uuid),
-      orderBy("time_created"),
-      orderBy("num_likes")
+      orderBy("time_created")
     );
 
     const unsub = onSnapshot(commentsQuery, (snapshot) => {

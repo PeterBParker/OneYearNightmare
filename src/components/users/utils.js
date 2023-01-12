@@ -15,6 +15,7 @@ import {
 import { auth } from "../../index";
 import { Timestamp } from "firebase/firestore";
 import { updateProfile, updateEmail, deleteUser } from "firebase/auth";
+import { FirebaseError } from "firebase/app";
 
 export const getDisplayName = async (uid) => {
   const docRef = doc(db, "users", uid);
@@ -40,7 +41,13 @@ export const setCommentDisplayName = async (new_name) => {
         success = true;
       })
       .catch((error) => {
-        console.log(error);
+        if (error.code == "permission-denied") {
+          console.log(error.message);
+          throw new Error(
+            "Invalid display name. A valid display name uses less than 20 alphanumeric characters."
+          );
+        }
+        throw new Error(error.code);
       });
   } else {
     console.log(
@@ -84,18 +91,19 @@ export const displayNameExists = async (displayName) => {
   );
 
   const querySnapshot = await getDocs(q);
-  if (querySnapshot.empty && displayName.replace(/\s/g, "").length != 0) {
+  if (querySnapshot.empty) {
     return true;
   } else {
     return false;
   }
 };
 export const displayNameValid = (displayName) => {
-  if (displayName.replace(/\s/g, "").length != 0) {
-    return true;
-  } else {
-    return false;
-  }
+  return true;
+  // if (/^[a-z|A-Z|0-9|\-|\_|\.]+$/.test(displayName)) {
+  //   return true;
+  // } else {
+  //   return false;
+  // }
 };
 
 export const getEmail = async () => {
@@ -114,6 +122,9 @@ export const setEmail = async (newEmail) => {
         success = true;
       })
       .catch((error) => {
+        if (error.name == "FirebaseError") {
+          throw new Error(error.code);
+        }
         throw new Error(error);
       });
   }

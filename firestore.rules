@@ -1,0 +1,52 @@
+rules_version = '2';
+service cloud.firestore {
+    // Rule 1: Users cannot write  or read from any other table
+    match /databases/(default)/documents/page_comments/{comment} {
+      // Rule 2: User can Read all comments even if not logged in
+      allow read;
+      allow list;
+      // Rule 3: User can Write comments only if they are logged in and if their write 
+      //         is attributed TO the user that is logged in
+      // Rule 4: User can only edit comments they wrote if they are logged in
+      // Rule 6: Users can only delete their own comments
+      allow write: if isSignedIn() 
+                    && isUser(resource.data.author_uid);
+      // TODO Rule 5: Users cannot change their own comment like value but can only increment others if they haven't already liked their own
+      // allow write: if isSignedIn() 
+      //               && (
+      //                 (isUser(resource.data.author_uid) && notChangingLikeValue()) 
+      //                 ||
+      //                 (onlyIncrementingLikeValue() && hasntLikedYet())
+      //               );
+
+    }
+
+    match /databases/(default)/documents/users/{userId} {
+      allow create: if isSignedIn()
+                    && validDisplayName();
+                    // && notChangingCommentsLiked(); For when adding likes
+      allow update: if isSignedIn()
+                    && isUser(userId)
+                    && validDisplayName();
+                    // && notChangingCommentsLiked(); For when adding likes
+      allow delete: if isSignedIn()
+                    && isUser(resource.data.uid);
+      allow read;
+      allow list;
+    }
+    function validDisplayName() {
+      return validDisplayNameLength() && validDisplayNameContent();
+    }
+    function validDisplayNameLength() {
+      return request.resource.data.display_name.size() > 0 && request.resource.data.display_name.size() < 21;
+    }
+    function validDisplayNameContent() {
+      return request.resource.data.display_name.matches('^[a-z|A-Z|0-9|-|_]+$')
+    }
+    function isUser(userId) {
+      return request.auth.uid == userId
+    }
+    function isSignedIn() {
+      return request.auth != null;
+    }
+}

@@ -14,13 +14,9 @@
     - Show display name pattern reqs somewhere
     - get terms and conditions
       - add display module for terms and conditions
-    - add database enforcement of editing only comments owned by the currently signed in user
     - populate comment data with user info
   - Style
-    - Style User Profile Page
-    - Style Set Display Name Page
     - Style Comments box (mobile)
-    - Get new avatars
 - Integrate email service and start mailing list
 - Add infinite scroll instead of button navigation
 - Add tap on either side of page to navigate
@@ -30,3 +26,5 @@
     - `svgo -f ./path/to/svgFolder -o ./path/to/output`
   - Scan with Lighthouse and GTmetrix
 - Introduce logging and log all errors
+- Bug fixes
+  - When a user comments and then replies to their own comment and no one else does, when they go to delete their account, the original comment will persist as a "This comment was deleted." It would be nice if the database updated whether or not the comment has children as each comment is deleted.
