@@ -18,7 +18,7 @@ export default function EmailForm() {
   const onSubmit = async (email) => {
     let success = await setEmail(email);
     if (success) {
-      alert("Email updated!");
+      // TODO display success
     } else {
       throw new Error("Oops! Email updated failed.");
     }

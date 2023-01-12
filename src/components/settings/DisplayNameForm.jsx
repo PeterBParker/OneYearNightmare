@@ -20,10 +20,9 @@ export default function DisplayNameForm(props) {
     // First validate the display name doesn't already exist
     await validateDisplayName(newName);
     // Add it if not
-    const auth_success = await setAuthDisplayName(newName);
     const comment_success = await setCommentDisplayName(newName);
+    const auth_success = await setAuthDisplayName(newName);
     if (auth_success && comment_success) {
-      alert("Updated Display Name!");
       if (props.onSubmitAction != undefined) {
         props.onSubmitAction();
       }
