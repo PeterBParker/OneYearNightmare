@@ -10,6 +10,7 @@ import {
   deleteDoc,
   updateDoc,
   writeBatch,
+  orderBy,
 } from "firebase/firestore";
 import { auth } from "../../index";
 import { Timestamp } from "firebase/firestore";
@@ -124,14 +125,18 @@ export const deleteComments = async () => {
   if (auth.currentUser != null) {
     const q = query(
       collection(db, "page_comments"),
-      where("author_uid", "==", auth.currentUser.uid)
+      where("author_uid", "==", auth.currentUser.uid),
+      orderBy("has_children")
     );
     let querySnapshot = await getDocs(q).catch((error) => {
       throw new Error(error);
     });
     const batch = writeBatch(db);
     querySnapshot.forEach((doc) => {
-      batch.update(doc.ref, { author_uid: null, content: null });
+      console.log(doc.data());
+      if (doc.data().has_children == true) {
+        batch.update(doc.ref, { author_uid: null, content: null });
+      } else batch.delete(doc.ref);
     });
     await batch.commit();
     success = true;

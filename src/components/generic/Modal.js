@@ -3,8 +3,11 @@ export default function Modal(props) {
     return null;
   }
   return (
-    <div className="modal">
-      <div className="modal-content bg-white rounded p-4">
+    <div className="modal" onClick={props.onClose}>
+      <div
+        className="modal-content bg-white rounded p-4"
+        onClick={(e) => e.stopPropagation()}
+      >
         <div className="modal-header">
           <div className="modal-title">{props.title}</div>
         </div>

@@ -21,9 +21,6 @@ export default function DeleteAccountButton() {
       await deleteUserWrapper();
     } catch (error) {
       console.log(error);
-      //   setModalBodyText(
-      //     <div className="width-md text-left text-red-bright italic">{error}</div>
-      //   );
     }
   };
 
@@ -67,6 +64,7 @@ export default function DeleteAccountButton() {
         title={modalTitle}
         body={modalBodyText}
         footer={modalFooter}
+        onClose={() => setShowModal(false)}
       />
     </div>
   );
