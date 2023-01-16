@@ -5,6 +5,8 @@ import DisplayNameForm from "../../settings/DisplayNameForm";
 import EmailForm from "../../settings/EmailForm";
 import DeleteAccountButton from "./DeleteAccountButton";
 import ProfilePicture from "./ProfilePicture";
+import { getAvatarUrl } from "../avatarHelpers";
+import { useAuthState } from "react-firebase-hooks/auth";
 
 const UserProfile = () => {
   const [notInitialized, setNotInitialized] = useState(
@@ -31,6 +33,14 @@ const InitializeInfo = (props) => {
 };
 
 const DisplayInfo = () => {
+  const [avatarUrl, setAvatarUrl] = useState("");
+  const [user, loading, auth_error] = useAuthState(auth);
+
+  const updateAvatarOnDisplayNameSave = async () => {
+    let url = await getAvatarUrl(user.uid);
+    setAvatarUrl(url);
+  };
+
   return (
     <div className="max-w-2xl ml-auto mr-auto">
       <div className="px-2 mr-auto ml-auto">
@@ -38,9 +48,11 @@ const DisplayInfo = () => {
           User Settings
         </div>
         <div className="flex flex-wrap justify-center md:justify-between">
-          <ProfilePicture width="200" height="200" />
+          <ProfilePicture width="200" height="200" avatarUrl={avatarUrl} />
           <div className="w-full md:w-3/5 min-w-max max-w-xl">
-            <DisplayNameForm />
+            <DisplayNameForm
+              asyncOnSubmitAction={updateAvatarOnDisplayNameSave}
+            />
             <EmailForm />
             <div className="flex justify-between my-12 px-2">
               <DeleteAccountButton />

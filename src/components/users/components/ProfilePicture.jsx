@@ -8,15 +8,23 @@ export default function ProfilePicture(props) {
   const [user, loading, auth_error] = useAuthState(auth);
 
   useEffect(() => {
+    let isMounted = true;
     async function updateAvatar() {
       // We haven't gotten this user's avatar url yet so let's do that now
       if (user) {
         let url = await getAvatarUrl(user.uid);
-        setAvatarUrl(url);
+        if (isMounted) {
+          setAvatarUrl(url);
+        }
       }
     }
-    updateAvatar();
-  }, [user.displayName]);
+    if (props.avatarUrl && props.avatarUrl.length != 0) {
+      setAvatarUrl(props.avatarUrl);
+    } else {
+      updateAvatar();
+    }
+    return () => (isMounted = false);
+  }, [user.displayName, props.avatarUrl]);
 
   return (
     <div className="mr-8">

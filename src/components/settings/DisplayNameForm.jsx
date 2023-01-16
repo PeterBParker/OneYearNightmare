@@ -24,18 +24,20 @@ export default function DisplayNameForm(props) {
     // Add it if not
     const comment_success = await setCommentDisplayName(newName);
     const auth_success = await setAuthDisplayName(newName);
+    //Update user avatar
+    if (auth.currentUser != null) {
+      //check if avatar already exists
+      await storeUserAvatar(auth.currentUser.uid, newName);
+    }
     if (auth_success && comment_success) {
       if (props.onSubmitAction != undefined) {
         props.onSubmitAction();
       }
+      if (props.asyncOnSubmitAction != undefined) {
+        await props.asyncOnSubmitAction();
+      }
     } else {
       throw new Error("Oops! Something went wrong. Please try again later.");
-    }
-
-    //Update user avatar
-    if (auth.currentUser != null) {
-      //check if avatar already exists
-      storeUserAvatar(auth.currentUser.uid, newName);
     }
   };
 

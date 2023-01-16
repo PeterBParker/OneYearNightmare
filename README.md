@@ -1,9 +1,9 @@
 # TODO
 
 - Make Comments
+  - Add character limit to comments
+  - On User Profile add the ability to dynamically update the avatar
   - Hook up to Database
-    - When user is created, create avatar and store it in Cloud Storage
-    - When a comment is displayed, fetch the image from the cloud storage
     - add error handling if comment submission failed
       - add visual state to indicate pending server write
       - add visual state to indicate completed server write
