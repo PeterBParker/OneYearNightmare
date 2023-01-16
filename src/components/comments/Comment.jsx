@@ -108,7 +108,7 @@ export function SingleComment(props) {
               ? props.comment.content
               : commentDeletedContent}
 
-            <div className="flex justify-start comment-interaction-container">
+            <div className="flex not-italic justify-start comment-interaction-container">
               {showReplyBox ? (
                 <span
                   className="cancel-btn btn text-left font-medium text-green-dark"
