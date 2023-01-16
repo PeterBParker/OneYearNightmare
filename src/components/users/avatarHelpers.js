@@ -7,6 +7,7 @@ import {
 import { storage, AVATARS_PATH } from "../../index";
 import { createAvatar } from "@dicebear/core";
 import { lorelei } from "@dicebear/collection";
+import { NO_USER_ID } from "../Main";
 
 export const storeUserAvatar = async (userId, displayName) => {
   let success = false;
@@ -56,11 +57,23 @@ export const getAvatarUrl = async (userId) => {
    * and sets the src attribute of them with the image url
    */
   let avatarUrl = "";
-  const avatarRef = getAvatarRef(userId);
+  let avatarRef = "";
+  if (userId) {
+    avatarRef = getAvatarRef(userId);
+  } else {
+    avatarRef = getAvatarRef(NO_USER_ID);
+  }
   try {
     avatarUrl = await getDownloadURL(avatarRef);
   } catch (error) {
-    console.log(error.code);
+    switch (error.code) {
+      case "storage/object-not-found":
+        // An avatar does not exist for it, and we need to get a default avatar
+        return "https://api.dicebear.com/5.x/lorelei/svg";
+        break;
+      default:
+        console.log(error.code);
+    }
   }
 
   return avatarUrl;

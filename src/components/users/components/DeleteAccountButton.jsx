@@ -1,5 +1,7 @@
 import { useState } from "react";
 import Modal from "../../generic/Modal";
+import { NO_USER_ID } from "../../Main";
+import { storeUserAvatar } from "../avatarHelpers";
 import {
   deleteComments,
   deleteUserCommentId,
@@ -19,6 +21,7 @@ export default function DeleteAccountButton() {
       await deleteComments();
       await deleteUserCommentId();
       await deleteUserWrapper();
+      await storeUserAvatar(NO_USER_ID, "");
     } catch (error) {
       console.log(error);
     }

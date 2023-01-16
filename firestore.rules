@@ -16,6 +16,8 @@ service cloud.firestore {
                       addingChildComment()
                     ); //gotta figure out how to allow users who comment on a comment to update that comment's "is_parent" field
       allow create: if isSignedIn();
+
+      allow delete: if isSignedIn() && isUser(resource.data.author_uid)
       // TODO Rule 5: Users cannot change their own comment like value but can only increment others if they haven't already liked their own
       // allow write: if isSignedIn() 
       //               && (
@@ -55,6 +57,6 @@ service cloud.firestore {
       return request.auth != null;
     }
     function addingChildComment() {
-      return debug(request.resource.data.diff(resource.data).affectedKeys()) == debug(["has_children"].toSet())
+      return ((request.resource.data.diff(resource.data).affectedKeys() == ["has_children"].toSet()) || (request.resource.data.diff(resource.data).affectedKeys() == [].toSet()))
     }
 }

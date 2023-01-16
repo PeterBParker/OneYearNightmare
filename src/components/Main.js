@@ -12,7 +12,6 @@ import querySizes from "../styling/breakpoints.json";
 
 export const DOMAIN = "https://monstersandmyriads.com";
 export const BASE_PATH = "/MnMPages/";
-export const JOINT_SIG = "Mo and Nate";
 
 export const COMIC_VIEWER_PATH = "/read";
 export const COMIC_VIEWER_DEFAULT_PATH =
@@ -22,6 +21,8 @@ export const ARCHIVE_PAGE_PATH = "/archive";
 export const CREATIVES_PAGE_PATH = "/creatives";
 export const SIGNIN_PAGE_PATH = "/login";
 
+export const JOINT_SIG = "Mo and Nate";
+export const NO_USER_ID = "null";
 export const SNAP_TO_PAGE_PATH = "snap-to-page";
 
 export default function Main(props) {
