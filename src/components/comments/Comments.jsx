@@ -28,9 +28,7 @@ export default function Comments(props) {
           props.comments
             .filter((comment) => !comment.parent_comment_id)
             .map((comment) => {
-              {
-                /* Get comments replying to it.*/
-              }
+              /* Get comments replying to it.*/
               let children;
               if (comment.id) {
                 children = props.comments.filter(

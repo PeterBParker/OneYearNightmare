@@ -5,6 +5,7 @@ import { auth } from "../..";
 import { getDisplayName } from "../users/utils";
 import EditCommentForm from "./EditCommentForm";
 import CreateNewCommentForm from "./CreateNewCommentForm";
+import { getAvatarUrl } from "../users/avatarHelpers";
 
 /**
  * Renders a single comment with basic author information
@@ -16,18 +17,40 @@ export function SingleComment(props) {
   const [belongsToCurrUser, setBelongsToCurrUser] = useState(
     auth.currentUser ? auth.currentUser.uid === props.comment.author_uid : false
   );
+  const [avatarUrl, setAvatarUrl] = useState("");
   const accountDeletedDisplay = "Account Deleted";
   const commentDeletedContent = "This comment has been deleted.";
 
   useEffect(() => {
-    if (props.comment.author_uid == null) {
+    let isMounted = true;
+    if (props.comment.author_uid == null && isMounted) {
       setDisplayName(accountDeletedDisplay);
     } else {
       getDisplayName(props.comment.author_uid).then((display_name) => {
-        setDisplayName(display_name);
+        if (isMounted) {
+          setDisplayName(display_name);
+        }
       });
     }
+    return () => {
+      isMounted = false;
+    };
   });
+
+  useEffect(() => {
+    let isMounted = true;
+    async function updateAvatar() {
+      // We haven't gotten this user's avatar url yet so let's do that now
+      let url = await getAvatarUrl(props.comment.author_uid);
+      if (isMounted) {
+        setAvatarUrl(url);
+      }
+    }
+    updateAvatar();
+    return () => {
+      isMounted = false;
+    };
+  }, [props.comment.author_uid]);
 
   useEffect(() => {
     setBelongsToCurrUser(
@@ -44,7 +67,7 @@ export function SingleComment(props) {
           <div>
             {
               <img
-                src={`https://avatars.dicebear.com/api/avataaars/${displayName}}.svg`}
+                src={avatarUrl}
                 alt="avatar"
                 width={70}
                 className="comment-avatar"

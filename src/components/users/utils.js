@@ -8,14 +8,13 @@ import {
   collection,
   getDocs,
   deleteDoc,
-  updateDoc,
   writeBatch,
   orderBy,
 } from "firebase/firestore";
+
 import { auth } from "../../index";
 import { Timestamp } from "firebase/firestore";
 import { updateProfile, updateEmail, deleteUser } from "firebase/auth";
-import { FirebaseError } from "firebase/app";
 
 export const getDisplayName = async (uid) => {
   const docRef = doc(db, "users", uid);
@@ -98,12 +97,11 @@ export const displayNameExists = async (displayName) => {
   }
 };
 export const displayNameValid = (displayName) => {
-  return true;
-  // if (/^[a-z|A-Z|0-9|\-|\_|\.]+$/.test(displayName)) {
-  //   return true;
-  // } else {
-  //   return false;
-  // }
+  if (/^[a-z|A-Z|0-9|\-|\_|\.]+$/.test(displayName)) {
+    return true;
+  } else {
+    return false;
+  }
 };
 
 export const getEmail = async () => {

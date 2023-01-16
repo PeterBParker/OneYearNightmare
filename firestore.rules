@@ -9,8 +9,13 @@ service cloud.firestore {
       //         is attributed TO the user that is logged in
       // Rule 4: User can only edit comments they wrote if they are logged in
       // Rule 6: Users can only delete their own comments
-      allow write: if isSignedIn() 
-                    && isUser(resource.data.author_uid);
+      allow update: if isSignedIn() 
+                    && (
+                      isUser(resource.data.author_uid)
+                      ||
+                      addingChildComment()
+                    ); //gotta figure out how to allow users who comment on a comment to update that comment's "is_parent" field
+      allow create: if isSignedIn();
       // TODO Rule 5: Users cannot change their own comment like value but can only increment others if they haven't already liked their own
       // allow write: if isSignedIn() 
       //               && (
@@ -48,5 +53,8 @@ service cloud.firestore {
     }
     function isSignedIn() {
       return request.auth != null;
+    }
+    function addingChildComment() {
+      return debug(request.resource.data.diff(resource.data).affectedKeys()) == debug(["has_children"].toSet())
     }
 }

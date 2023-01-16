@@ -18,9 +18,13 @@ export default function GenericSingleInputForm(props) {
   const [formData, setFormName] = useState("");
   const [user, loading, auth_error] = useAuthState(auth);
   const eMsgId = props.inputId + "-error-message";
+
   useEffect(() => {
-    props.placeholderUpdate(user);
-  }, []);
+    if (user) {
+      props.placeholderUpdate(user);
+    }
+  }, [user.displayName]);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     let emsgBox = document.getElementById(eMsgId);
@@ -29,6 +33,7 @@ export default function GenericSingleInputForm(props) {
     emsgBox.innerHTML = "";
     try {
       await props.onSubmitAction(formData);
+      setFormName("");
     } catch (error) {
       field.classList.add("input-error");
       emsgBox.innerHTML = error;
@@ -59,7 +64,7 @@ export default function GenericSingleInputForm(props) {
           <div className="flex justify-end ">
             <button
               type="submit"
-              className="rounded submit-btn btn text-center px-4 py-2 basis-1/4 font-medium text-lg bg-green-confirm"
+              className="rounded submit-btn btn text-center px-4 py-2 my-2 basis-1/4 font-medium text-lg bg-green-confirm"
             >
               Save
             </button>

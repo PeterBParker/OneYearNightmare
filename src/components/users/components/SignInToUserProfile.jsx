@@ -5,17 +5,7 @@ import { useEffect } from "react";
 import { auth } from "../../..";
 import useFirebaseAuth from "../hooks/useFirebaseAuth";
 import UserProfile from "./UserProfile";
-
-/**
- *
- * @param {firebase.auth.User} user
- */
-const handleSignedInUser = (user) => {};
-
-const handleSignedOutUser = () => {
-  document.getElementById("user-signed-in").style.display = "none";
-  document.getElementById("user-signed-out").style.display = "block";
-};
+import { storeUserAvatar } from "../avatarHelpers";
 
 const getUiConfig = () => {
   var uiConfig = {

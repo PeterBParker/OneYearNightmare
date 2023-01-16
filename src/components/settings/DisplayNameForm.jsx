@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { auth } from "../..";
+import { storeUserAvatar } from "../users/avatarHelpers";
 import { getDisplayName } from "../users/utils";
 import {
   setAuthDisplayName,
@@ -28,6 +30,12 @@ export default function DisplayNameForm(props) {
       }
     } else {
       throw new Error("Oops! Something went wrong. Please try again later.");
+    }
+
+    //Update user avatar
+    if (auth.currentUser != null) {
+      //check if avatar already exists
+      storeUserAvatar(auth.currentUser.uid, newName);
     }
   };
 

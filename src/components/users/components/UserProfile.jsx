@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import SignOutButton from "./SignOutButton";
 import { auth } from "../../..";
-import { getDisplayName } from "../utils";
 import DisplayNameForm from "../../settings/DisplayNameForm";
 import EmailForm from "../../settings/EmailForm";
 import DeleteAccountButton from "./DeleteAccountButton";
+import ProfilePicture from "./ProfilePicture";
 
 const UserProfile = () => {
   const [notInitialized, setNotInitialized] = useState(
@@ -32,17 +32,21 @@ const InitializeInfo = (props) => {
 
 const DisplayInfo = () => {
   return (
-    <div>
-      <div className="max-w-lg ml-auto mr-auto px-2">
+    <div className="max-w-2xl ml-auto mr-auto">
+      <div className="px-2 mr-auto ml-auto">
         <div className="text-left text-xl font-header font-bold ml-2 my-4">
           User Settings
         </div>
-        <div>Profile Picture Placeholder</div>
-        <DisplayNameForm />
-        <EmailForm />
-        <div className="flex justify-between my-12 px-2">
-          <DeleteAccountButton />
-          <SignOutButton />
+        <div className="flex flex-wrap justify-center md:justify-between">
+          <ProfilePicture width="200" height="200" />
+          <div className="w-full md:w-3/5 min-w-max max-w-xl">
+            <DisplayNameForm />
+            <EmailForm />
+            <div className="flex justify-between my-12 px-2">
+              <DeleteAccountButton />
+              <SignOutButton />
+            </div>
+          </div>
         </div>
       </div>
     </div>
