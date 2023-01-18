@@ -17,7 +17,7 @@ export default function Comments(props) {
   const authUser = useFirebaseAuth(auth);
 
   return (
-    <div className="comments-container desktopPageCommentsContainer ">
+    <div className="comments-container border-b border-mocha-dark lg:border-t-2 lg:border-r-2 lg:border-b-2 lg:border-l">
       <div className="py-4 px-8 bg-eggshell text-left flex flex-row items-center comments-title">
         <Title text="Comments //" />
       </div>

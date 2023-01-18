@@ -2,12 +2,10 @@
 
 - 1. BASIC COMMENTS
 
-  - Add character limit to comments
   - Add display name pattern reqs
   - get terms and conditions
     - add display module for terms and conditions
   - add datetime to comment display
-  - Remove border from mobile comments box
   - Add loading animations/states for server data
     - add error handling if comment submission failed
     - add visual state to indicate pending server write

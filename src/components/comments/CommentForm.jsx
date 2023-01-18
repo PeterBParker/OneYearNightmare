@@ -22,7 +22,7 @@ export default function CommentForm(props) {
               value={props.content}
               name="comment-content-input"
               required="required"
-              maxLength={500}
+              maxLength={350}
             />
           </div>
           <button

@@ -379,12 +379,6 @@ body {
   border-color: #998f7e;
   border-width: 2px 1px 2px 2px;
 }
-.desktopPageCommentsContainer {
-  border: solid;
-  border-color: #998f7e;
-  border-width: 2px 2px 2px 1px;
-  height: 100%;
-}
 
 .desktopPageDetailsTitle {
   grid-row-start: 1;

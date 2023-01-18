@@ -24,6 +24,7 @@ export const SIGNIN_PAGE_PATH = "/login";
 export const JOINT_SIG = "Mo and Nate";
 export const NO_USER_ID = "null";
 export const SNAP_TO_PAGE_PATH = "snap-to-page";
+export const MAX_COMMENT_CHARS = 350;
 
 export default function Main(props) {
   const location = useLocation();

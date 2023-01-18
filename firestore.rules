@@ -14,8 +14,9 @@ service cloud.firestore {
                       isUser(resource.data.author_uid)
                       ||
                       addingChildComment()
-                    ); //gotta figure out how to allow users who comment on a comment to update that comment's "is_parent" field
-      allow create: if isSignedIn();
+                    ) 
+                    && commentNotTooLong(); //gotta figure out how to allow users who comment on a comment to update that comment's "is_parent" field
+      allow create: if isSignedIn() && commentNotTooLong();
 
       allow delete: if isSignedIn() && isUser(resource.data.author_uid)
       // TODO Rule 5: Users cannot change their own comment like value but can only increment others if they haven't already liked their own
@@ -58,5 +59,8 @@ service cloud.firestore {
     }
     function addingChildComment() {
       return ((request.resource.data.diff(resource.data).affectedKeys() == ["has_children"].toSet()) || (request.resource.data.diff(resource.data).affectedKeys() == [].toSet()))
+    }
+    function commentNotTooLong() {
+      return request.resource.data.content.size() <= 350
     }
 }
