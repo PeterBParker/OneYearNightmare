@@ -9,7 +9,7 @@ service cloud.firestore {
       //         is attributed TO the user that is logged in
       // Rule 4: User can only edit comments they wrote if they are logged in
       // Rule 6: Users can only delete their own comments
-      allow update: if isSignedIn() 
+      allow update: if isSignedIn()
                     && (
                       isUser(resource.data.author_uid)
                       ||
@@ -61,6 +61,6 @@ service cloud.firestore {
       return ((request.resource.data.diff(resource.data).affectedKeys() == ["has_children"].toSet()) || (request.resource.data.diff(resource.data).affectedKeys() == [].toSet()))
     }
     function commentNotTooLong() {
-      return request.resource.data.content.size() <= 350
+      return request.resource.data.content == null || request.resource.data.content.size() <= 350
     }
 }

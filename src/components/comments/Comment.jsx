@@ -109,13 +109,16 @@ export function SingleComment(props) {
           </div>
         </div>
         <div className="flex comment-data-header justify-between">
-          <div className="flex flex-col">
+          <div className="flex flex-col md:flex-row">
             <div
               className={`comment-author font-medium text-left leading-5 ${
                 displayName == accountDeletedDisplay ? "italic" : ""
               }`}
             >
               {displayName}
+            </div>
+            <div className="hidden md:block text-mocha-dark md:mr-2 md:ml-2 leading-5">
+              •
             </div>
             <div className="comment-time mr-2 text-mocha-dark text-xs leading-4 md:text-sm md:leading-5 text-left">
               {getTimeString(props.comment.time_created)}
