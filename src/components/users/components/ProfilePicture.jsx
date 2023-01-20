@@ -5,7 +5,9 @@ import { useAuthState } from "react-firebase-hooks/auth";
 
 export default function ProfilePicture(props) {
   const [avatarUrl, setAvatarUrl] = useState("");
+  const [fetchedAvatar, setFetchedAvatar] = useState(false);
   const [user, loading, auth_error] = useAuthState(auth);
+  const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
     let isMounted = true;
@@ -15,11 +17,13 @@ export default function ProfilePicture(props) {
         let url = await getAvatarUrl(user.uid);
         if (isMounted) {
           setAvatarUrl(url);
+          setFetchedAvatar(true);
         }
       }
     }
     if (props.avatarUrl && props.avatarUrl.length != 0) {
       setAvatarUrl(props.avatarUrl);
+      setFetchedAvatar(true);
     } else {
       updateAvatar();
     }
@@ -32,8 +36,24 @@ export default function ProfilePicture(props) {
         width={props.width}
         height={props.height}
         src={avatarUrl}
+        style={{
+          display: fetchedAvatar && loaded ? "block" : "none",
+          opacity: fetchedAvatar && loaded ? "100%" : "0%",
+          animation: "fade-in 0.25s linear",
+        }}
         className="bg-white rounded-full"
+        onLoad={() => {
+          setLoaded(true);
+        }}
       />
+      <div
+        style={{
+          display: !fetchedAvatar || !loaded ? "block" : "none",
+          width: props.width + "px",
+          height: props.height + "px",
+        }}
+        className="loader"
+      ></div>
     </div>
   );
 }
