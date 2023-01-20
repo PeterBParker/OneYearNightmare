@@ -33,12 +33,18 @@ const InitializeInfo = (props) => {
 };
 
 const DisplayInfo = () => {
-  const [avatarUrl, setAvatarUrl] = useState("");
   const [user, loading, auth_error] = useAuthState(auth);
+  const [avatarUrl, setAvatarUrl] = useState("");
+  const [fetchedAvatar, setFetchedAvatar] = useState(null);
 
   const updateAvatarOnDisplayNameSave = async () => {
     let url = await getAvatarUrl(user.uid);
     setAvatarUrl(url);
+    setFetchedAvatar(true);
+  };
+
+  const setPendingState = () => {
+    setFetchedAvatar(false);
   };
 
   return (
@@ -48,10 +54,16 @@ const DisplayInfo = () => {
           User Settings
         </div>
         <div className="flex flex-wrap justify-center md:justify-between">
-          <ProfilePicture width="200" height="200" avatarUrl={avatarUrl} />
+          <ProfilePicture
+            width="200"
+            height="200"
+            avatarUrl={avatarUrl}
+            fetchedAvatar={fetchedAvatar}
+          />
           <div className="w-full md:w-3/5 min-w-max max-w-xl">
             <DisplayNameForm
-              asyncOnSubmitAction={updateAvatarOnDisplayNameSave}
+              asyncOnSuccessAction={updateAvatarOnDisplayNameSave}
+              onChangeAction={setPendingState}
             />
             <EmailForm />
             <div className="flex justify-between my-12 px-2">

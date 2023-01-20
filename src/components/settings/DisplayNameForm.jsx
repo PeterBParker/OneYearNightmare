@@ -19,6 +19,9 @@ export default function DisplayNameForm(props) {
   };
 
   const changeDisplayName = async (newName) => {
+    if (props.onChangeAction != undefined) {
+      props.onChangeAction();
+    }
     // First validate the display name doesn't already exist
     await validateDisplayName(newName);
     // Add it if not
@@ -30,11 +33,11 @@ export default function DisplayNameForm(props) {
       await storeUserAvatar(auth.currentUser.uid, newName);
     }
     if (auth_success && comment_success) {
-      if (props.onSubmitAction != undefined) {
-        props.onSubmitAction();
+      if (props.onSuccessAction != undefined) {
+        props.onSuccessAction();
       }
-      if (props.asyncOnSubmitAction != undefined) {
-        await props.asyncOnSubmitAction();
+      if (props.asyncOnSuccessAction != undefined) {
+        await props.asyncOnSuccessAction();
       }
     } else {
       throw new Error("Oops! Something went wrong. Please try again later.");

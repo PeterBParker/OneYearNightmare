@@ -12,7 +12,7 @@ export default function ProfilePicture(props) {
   useEffect(() => {
     let isMounted = true;
     async function updateAvatar() {
-      // We haven't gotten this user's avatar url yet so let's do that now
+      // Get the user's avatar ourself
       if (user) {
         let url = await getAvatarUrl(user.uid);
         if (isMounted) {
@@ -21,12 +21,15 @@ export default function ProfilePicture(props) {
         }
       }
     }
+
+    // If we are receiving the avatar url, use that. Otherwise, get it ourselves.
     if (props.avatarUrl && props.avatarUrl.length != 0) {
+      setLoaded(false);
       setAvatarUrl(props.avatarUrl);
-      setFetchedAvatar(true);
     } else {
       updateAvatar();
     }
+
     return () => (isMounted = false);
   }, [user.displayName, props.avatarUrl]);
 
@@ -37,7 +40,11 @@ export default function ProfilePicture(props) {
         height={props.height}
         src={avatarUrl}
         style={{
-          display: fetchedAvatar && loaded ? "block" : "none",
+          display:
+            (props.fetchedAvatar && loaded) ||
+            (props.fetchedAvatar == null && fetchedAvatar && loaded)
+              ? "block"
+              : "none",
           opacity: fetchedAvatar && loaded ? "100%" : "0%",
           animation: "fade-in 0.25s linear",
         }}
@@ -48,7 +55,11 @@ export default function ProfilePicture(props) {
       />
       <div
         style={{
-          display: !fetchedAvatar || !loaded ? "block" : "none",
+          display:
+            (!props.fetchedAvatar || !loaded) &&
+            (props.fetchedAvatar != null || !fetchedAvatar || !loaded)
+              ? "block"
+              : "none",
           width: props.width + "px",
           height: props.height + "px",
         }}
