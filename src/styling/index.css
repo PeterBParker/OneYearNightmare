@@ -77,7 +77,6 @@ body {
 .single-comment-container {
   display: grid;
   grid-template-columns: 70px auto;
-  grid-template-rows: 1.5rem auto;
 }
 .footerMobileGrid {
   display: grid;

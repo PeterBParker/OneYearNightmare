@@ -50,6 +50,7 @@ export default function DisplayNameForm(props) {
       maxLength={20}
       placeholder={placeholder}
       inputTitle="Display Name"
+      helperText="Valid names consist only of a-Z, 0-9, -, and _"
     />
   );
 }

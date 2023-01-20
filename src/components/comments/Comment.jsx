@@ -6,6 +6,7 @@ import { getDisplayName } from "../users/utils";
 import EditCommentForm from "./EditCommentForm";
 import CreateNewCommentForm from "./CreateNewCommentForm";
 import { getAvatarUrl } from "../users/avatarHelpers";
+import { Timestamp } from "firebase/firestore";
 
 /**
  * Renders a single comment with basic author information
@@ -60,6 +61,38 @@ export function SingleComment(props) {
     );
   }, [props.comment.author_uid]);
 
+  function getTimeString(commentTime) {
+    const secondsInMin = 60;
+    const secondsInHour = 60 * 60;
+    const secondsInDay = 60 * 60 * 24;
+
+    // get the difference between current time and the timestamp, then print the
+    let now = Timestamp.fromDate(new Date());
+    let timeDiff = now.seconds - commentTime.seconds;
+
+    if (timeDiff < secondsInMin) {
+      // If time diff is less than a minute print "A few seconds ago"
+      return "A few seconds ago";
+    } else if (timeDiff < secondsInHour) {
+      // If time diff is less than an hour print "x minutes ago"
+      let numMin = Math.ceil(timeDiff / secondsInMin);
+      return numMin + " minutes ago";
+    } else if (timeDiff < secondsInDay) {
+      // If time diff is less than a day print "x hours ago"
+      let numHours = Math.ceil(timeDiff / secondsInHour);
+      return numHours + " hours ago";
+    } else {
+      // Else print the numeric date string. Example: "Jan 18, 2022"
+      let commentDate = commentTime.toDate();
+      let formattedDate = new Intl.DateTimeFormat("default", {
+        year: "numeric",
+        month: "short",
+        day: "2-digit",
+      }).format(commentDate);
+      return formattedDate;
+    }
+  }
+
   return (
     <div>
       <div className="mb-2 single-comment-container">
@@ -76,19 +109,17 @@ export function SingleComment(props) {
           </div>
         </div>
         <div className="flex comment-data-header justify-between">
-          <p
-            className={`comment-author font-medium text-left ${
-              displayName == accountDeletedDisplay ? "italic" : ""
-            }`}
-          >
-            {displayName}
-          </p>
-          <div className="comment-time mr-2 text-mocha-dark">
-            {props.comment.time && (
-              <time>
-                {moment(props.comment.time.toDateString()).calendar()}
-              </time>
-            )}
+          <div className="flex flex-col">
+            <div
+              className={`comment-author font-medium text-left leading-5 ${
+                displayName == accountDeletedDisplay ? "italic" : ""
+              }`}
+            >
+              {displayName}
+            </div>
+            <div className="comment-time mr-2 text-mocha-dark text-xs leading-4 md:text-sm md:leading-5 text-left">
+              {getTimeString(props.comment.time_created)}
+            </div>
           </div>
         </div>
         {editComment && belongsToCurrUser ? (

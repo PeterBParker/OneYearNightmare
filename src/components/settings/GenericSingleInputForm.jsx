@@ -44,6 +44,9 @@ export default function GenericSingleInputForm(props) {
     return (
       <div className="my-2 mx-2">
         <div className="text-left font-medium">{props.inputTitle}</div>
+        <div className="italic text-left text-sm">
+          {props.helperText ? props.helperText : ""}
+        </div>
         <form onSubmit={handleSubmit}>
           <div className="mt-2">
             <input
