@@ -10,7 +10,6 @@ import {
   deleteDoc,
   writeBatch,
   orderBy,
-  QuerySnapshot,
 } from "firebase/firestore";
 
 import { auth } from "../../index";
