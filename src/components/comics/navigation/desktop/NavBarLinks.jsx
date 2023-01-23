@@ -13,7 +13,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 
 export default function NavBarLinks(props) {
   const [user, loading, error] = useAuthState(auth);
-  const [userPage, setUserPage] = useState(auth ? "User Settings" : "Login");
+  const [userPage, setUserPage] = useState(user ? "User Settings" : "Login");
 
   useEffect(() => {
     if (user == null) {

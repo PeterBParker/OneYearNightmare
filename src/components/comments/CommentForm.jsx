@@ -49,10 +49,10 @@ export default function CommentForm(props) {
             isErrored ? "comment-input-error" : ""
           }`}
         >
-          <div className="bg-eggshell py-2 px-2 basis-3/4 w-full">
+          <div className="basis-3/4 w-full">
             <textarea
               id="comment"
-              className={"comment-content-input"}
+              className={"comment-content-input mr-2"}
               onChange={(e) => {
                 if (isErrored) {
                   setIsErrored(false);
@@ -70,10 +70,10 @@ export default function CommentForm(props) {
             type="submit"
             id={submitId}
             style={{ width: 91, height: 88, wordBreak: "keep-all" }}
-            className={`text-center basis-1/4 font-medium text-lg bg-cream-dark ${
+            className={`text-center basis-1/4 font-medium text-lg bg-cream-dark transition-all ${
               isDisabled || isErrored
                 ? "cursor-default"
-                : "hover:text-green-confirm"
+                : "hover:text-white hover:bg-green-confirm"
             }`}
           >
             {isDisabled ? (

@@ -747,7 +747,8 @@ body {
   box-sizing: border-box;
   border: solid #000;
   border-width: 1px;
-  border-radius: 0.5rem;
+  border-radius: 0.5rem 0rem 0rem 0.5rem;
+  height: 88px;
 }
 
 .comment-content {

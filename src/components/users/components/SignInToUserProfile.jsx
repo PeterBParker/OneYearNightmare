@@ -6,6 +6,8 @@ import { auth } from "../../..";
 import useFirebaseAuth from "../hooks/useFirebaseAuth";
 import UserProfile from "./UserProfile";
 import { storeUserAvatar } from "../avatarHelpers";
+import loginIllo from "../../../assets/login-explanation.png";
+import loginExplain from "../../../assets/login-explanation-2.png";
 
 const getUiConfig = () => {
   var uiConfig = {
@@ -59,7 +61,20 @@ const SignInToUserProfile = () => {
   // TODO Fix the first render of the sign in page before displaying the user profile
   return (
     <React.Fragment>
-      {authUser ? <UserProfile user={authUser} /> : <SignIn />}
+      {authUser ? (
+        <UserProfile user={authUser} />
+      ) : (
+        <div className="flex flex-col justify-center justify-items-center content-center">
+          <div className="ml-auto mr-auto">
+            <img src={loginIllo} width={400} className="mr-8" />
+          </div>
+
+          <SignIn />
+          <div className="mr-auto ml-auto mt-4">
+            <img src={loginExplain} width={200} className="ml-32 md:ml-56" />
+          </div>
+        </div>
+      )}
     </React.Fragment>
   );
 };
