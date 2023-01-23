@@ -2,6 +2,8 @@
 
 - 1. BASIC COMMENTS
 
+  - add explanation in logon screen
+
 - 2. BUILD EMAIL LIST
 
   - Integrate email service and start mailing list
@@ -9,10 +11,10 @@
 
 - 3. POLISHED COMMENTS
 
-  - On User Profile add the ability to dynamically update the avatar
   - add pagination
   - add like button and display to comments
   - Retrieve top three comments by likes, and the rest sorted by date newest first
+  - On User Profile add the ability to dynamically update the avatar
 
 - 4. POLISH NAVIGATION
 

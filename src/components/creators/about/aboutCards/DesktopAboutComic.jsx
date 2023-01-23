@@ -6,6 +6,7 @@ import DesktopAboutCreators from "./DesktopAboutCreators";
 import SimpleNavBar from "../../../comics/navigation/desktop/SimpleNavBar";
 import Pages from "../../../comics/navigation/desktop/Pages";
 import aboutComicCardImage from "../../../../assets/Phase3-Assets1/1x/SkullBird-white-edge-CROPPED.png";
+import LinkButton from "../../../generic/LinkButton";
 
 export default function DesktopAboutComic(props) {
   return (
@@ -20,8 +21,12 @@ export default function DesktopAboutComic(props) {
           <div className="textAndImageCardText">
             <TextBody content={props.comicText} isDesktop={true} />
             <div className="readButtonContainer justify-contents-start clearfix mb-12">
-              <div className="readButton transition duration-500 ease-in-out bg-cream-dark hover:bg-eggshell font-body font-medium text-xl bg-cream-light rounded-xl px-4 py-2 float-left ml-8">
-                <Link to="/read">START READING →</Link>
+              <div className="">
+                <LinkButton
+                  to="/read"
+                  styles="readButton transition duration-500 ease-in-out bg-cream-dark grow-btn font-body font-medium text-xl bg-cream-light rounded-xl px-4 py-2 float-left ml-8"
+                  buttonContent="START READING"
+                ></LinkButton>
               </div>
             </div>
           </div>

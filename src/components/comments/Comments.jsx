@@ -70,7 +70,7 @@ export default function Comments(props) {
       ) : (
         <LinkButton
           to={SIGNIN_PAGE_PATH}
-          styles="grow-btn btn my-4 py-2 mx-4 btn bg-eggshell font-medium"
+          styles="grow-btn btn my-4 py-2 mx-4 btn  bg-cream-dark font-medium not-italic rounded"
           buttonContent="Log In"
         />
       )}

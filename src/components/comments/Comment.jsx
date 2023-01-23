@@ -8,6 +8,12 @@ import CreateNewCommentForm from "./CreateNewCommentForm";
 import { getAvatarUrl } from "../users/avatarHelpers";
 import { Timestamp } from "firebase/firestore";
 import CommentAvatar from "./CommentAvatar";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faReply,
+  faTrash,
+  faPenToSquare,
+} from "@fortawesome/free-solid-svg-icons";
 
 /**
  * Renders a single comment with basic author information
@@ -20,7 +26,7 @@ export function SingleComment(props) {
     auth.currentUser ? auth.currentUser.uid === props.comment.author_uid : false
   );
   const [avatarUrl, setAvatarUrl] = useState("");
-  const accountDeletedDisplay = "Account Deleted";
+  const accountDeletedDisplay = "Deleted";
   const commentDeletedContent = "This comment has been deleted.";
 
   useEffect(() => {
@@ -102,7 +108,12 @@ export function SingleComment(props) {
           height={70}
           width={70}
         >
-          <CommentAvatar avatarUrl={avatarUrl} wdith={70} height={70} />
+          <CommentAvatar
+            avatarUrl={avatarUrl}
+            wdith={70}
+            height={70}
+            isDeleted={displayName == accountDeletedDisplay}
+          />
         </div>
         <div className="flex comment-data-header justify-between">
           <div className="flex flex-col md:flex-row">
@@ -150,27 +161,29 @@ export function SingleComment(props) {
                 <div className="w-full flex justify-between">
                   {props.isTopLevel ? (
                     <span
-                      className="reply-btn btn text-left font-medium text-green-dark float-left"
+                      className="reply-btn btn text-left text-sm flex content-center font-medium text-green-dark hover:text-green-confirm float-left "
                       onClick={() => setShowReplyBox(true)}
                     >
-                      Reply
+                      <div className="mt-auto mb-auto">
+                        Reply <FontAwesomeIcon icon={faReply} />
+                      </div>
                     </span>
                   ) : null}
 
                   {belongsToCurrUser ? (
                     <div className="flex inline">
                       <div
-                        className="reply-btn btn text-left font-medium text-green-dark mr-1"
+                        className="reply-btn btn text-left text-lg font-medium text-green-dark hover:text-red-bad mr-2"
                         onClick={() => deleteComment(props.comment.id)}
                       >
-                        Delete
+                        <FontAwesomeIcon icon={faTrash} />
                       </div>
                       <div>|</div>
                       <div
-                        className="reply-btn btn text-left font-medium text-green-dark ml-1 "
+                        className="reply-btn btn text-left text-lg font-medium text-green-dark hover:text-green-confirm ml-2 "
                         onClick={() => setEditComment(true)}
                       >
-                        Edit
+                        <FontAwesomeIcon icon={faPenToSquare} />
                       </div>
                     </div>
                   ) : null}

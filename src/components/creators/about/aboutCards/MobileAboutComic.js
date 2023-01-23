@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import Header from "../../../header/Header";
 import TextCard from "../../../generic/TextCard";
 import MobileAboutCreators from "./MobileAboutCreators";
+import LinkButton from "../../../generic/LinkButton";
 
 export default function MobileAboutComic(props) {
   return (
@@ -16,8 +17,12 @@ export default function MobileAboutComic(props) {
           />
         </div>
         <div className="readButtonContainer justify-contents-start clearfix mb-12">
-          <div className="readButton font-body font-medium text-xl bg-cream-light rounded-xl px-4 py-2 float-left ml-8">
-            <Link to="/read">START READING →</Link>
+          <div className="">
+            <LinkButton
+              to="/read"
+              styles="readButton font-body font-medium text-xl bg-cream-light rounded-xl px-4 py-2 float-left ml-8"
+              buttonContent="START READING"
+            />
           </div>
         </div>
       </div>

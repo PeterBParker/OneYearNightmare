@@ -64,7 +64,7 @@ function CreateNewCommentForm(props) {
       ) : (
         <LinkButton
           to={SIGNIN_PAGE_PATH}
-          styles=" btn bg-eggshell px-4 py-2 my-1 w-full font-medium grow-btn text-center font-medium"
+          styles=" btn bg-cream-dark px-4 py-2 my-1 w-full font-medium grow-btn text-center not-italic rounded"
           buttonContent="Log In"
         />
       )}

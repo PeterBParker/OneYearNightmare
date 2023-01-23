@@ -71,7 +71,9 @@ export default function CommentForm(props) {
             id={submitId}
             style={{ width: 91, height: 88, wordBreak: "keep-all" }}
             className={`text-center basis-1/4 font-medium text-lg bg-cream-dark ${
-              isDisabled || isErrored ? "cursor-default" : null
+              isDisabled || isErrored
+                ? "cursor-default"
+                : "hover:text-green-confirm"
             }`}
           >
             {isDisabled ? (
@@ -79,7 +81,10 @@ export default function CommentForm(props) {
             ) : isErrored ? (
               <div style={{ fontSize: "1.5rem" }}>⨉</div>
             ) : (
-              "Submit"
+              <i
+                style={{ fontSize: "1.7rem" }}
+                className="fa-regular fa-circle-check"
+              ></i>
             )}
           </button>
         </div>

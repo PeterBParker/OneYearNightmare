@@ -13,7 +13,7 @@ export default function CommentAvatar(props) {
         className="comment-avatar"
         style={{
           display: loaded ? "block" : "none",
-          opacity: loaded ? "100%" : "0%",
+          opacity: loaded ? (props.isDeleted ? "50%" : "100%") : "0%",
           animation: "fade-in 0.25s linear",
         }}
         onLoad={() => {

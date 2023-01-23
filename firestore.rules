@@ -49,7 +49,7 @@ service cloud.firestore {
       return request.resource.data.display_name.size() > 0 && request.resource.data.display_name.size() < 21;
     }
     function validDisplayNameContent() {
-      return request.resource.data.display_name.matches('^[a-z|A-Z|0-9|-|_]+$')
+      return request.resource.data.display_name.matches('^[a-z|A-Z|0-9|\\-|_]+$')
     }
     function isUser(userId) {
       return request.auth.uid == userId
