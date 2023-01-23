@@ -53,7 +53,7 @@ export default function Comments(props) {
               callback={() => setShowCommentSubmit(false)}
             />
             <div
-              className="cancel-comment-btn btn"
+              className="cancel-comment-btn btn font-medium py-1 bg-eggshell grow-btn rounded-lg mt-2"
               onClick={(e) => setShowCommentSubmit(false)}
             >
               Cancel

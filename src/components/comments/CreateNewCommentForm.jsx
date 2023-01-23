@@ -1,6 +1,7 @@
 import CommentForm from "./CommentForm";
 import { db } from "../../index";
 import { auth } from "../../index";
+import LinkButton from "../generic/LinkButton";
 import {
   collection,
   addDoc,
@@ -58,12 +59,11 @@ function CreateNewCommentForm(props) {
           setContent={(a) => setContent(a)}
         />
       ) : (
-        <Link
+        <LinkButton
           to={SIGNIN_PAGE_PATH}
-          className="bg-eggshell px-4 w-full font-medium"
-        >
-          Log in
-        </Link>
+          styles=" btn bg-eggshell px-4 py-2 my-1 w-full font-medium grow-btn text-center font-medium"
+          buttonContent="Log In"
+        />
       )}
     </>
   );

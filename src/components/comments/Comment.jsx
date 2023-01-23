@@ -7,6 +7,7 @@ import EditCommentForm from "./EditCommentForm";
 import CreateNewCommentForm from "./CreateNewCommentForm";
 import { getAvatarUrl } from "../users/avatarHelpers";
 import { Timestamp } from "firebase/firestore";
+import CommentAvatar from "./CommentAvatar";
 
 /**
  * Renders a single comment with basic author information
@@ -96,17 +97,12 @@ export function SingleComment(props) {
   return (
     <div>
       <div className="mb-2 single-comment-container">
-        <div className="flex mr-2 justify-start comment-avatar-container">
-          <div>
-            {
-              <img
-                src={avatarUrl}
-                alt="avatar"
-                width={70}
-                className="comment-avatar"
-              />
-            }
-          </div>
+        <div
+          className="flex mr-2 justify-start comment-avatar-container"
+          height={70}
+          width={70}
+        >
+          <CommentAvatar avatarUrl={avatarUrl} wdith={70} height={70} />
         </div>
         <div className="flex comment-data-header justify-between">
           <div className="flex flex-col md:flex-row">
@@ -134,7 +130,7 @@ export function SingleComment(props) {
           />
         ) : (
           <div
-            className={`comment-content text-left ${
+            className={`comment-content font-body text-left ${
               props.comment.content == null ? "italic" : ""
             }`}
           >

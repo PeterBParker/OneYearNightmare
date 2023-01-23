@@ -26,7 +26,7 @@ const InitializeInfo = (props) => {
       <div className="text-left text-xl font-header font-bold ml-2 my-4">
         Set Up Profile
       </div>
-      <DisplayNameForm onSubmitAction={() => props.setNotInitialized(false)} />
+      <DisplayNameForm onSuccessAction={() => props.setNotInitialized(false)} />
       <SignOutButton />
     </div>
   );

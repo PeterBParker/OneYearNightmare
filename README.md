@@ -2,15 +2,6 @@
 
 - 1. BASIC COMMENTS
 
-  - Add display name pattern reqs
-  - get terms and conditions
-    - add display module for terms and conditions
-  - add datetime to comment display
-  - Add loading animations/states for server data
-    - add error handling if comment submission failed
-    - add visual state to indicate pending server write
-    - add visual state to indicate completed server write
-
 - 2. BUILD EMAIL LIST
 
   - Integrate email service and start mailing list

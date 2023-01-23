@@ -18,25 +18,47 @@ export default function GenericSingleInputForm(props) {
   const [formData, setFormName] = useState("");
   const [user, loading, auth_error] = useAuthState(auth);
   const eMsgId = props.inputId + "-error-message";
+  const submitBtnId = props.inputId + "-submit-btn";
+  const [isDisabled, setIsDisabled] = useState(false);
 
   useEffect(() => {
     if (user) {
       props.placeholderUpdate(user);
     }
-  }, [user.displayName]);
+  }, [user.displayName, user.email]);
+
+  const submitBtnPending = (submitBtn) => {
+    // Set loading icon in Save button and disable it until action is resolved
+    submitBtn.disabled = true;
+    setIsDisabled(true);
+    submitBtn.classList.add("disabled");
+  };
+  const submitBtnFinished = (submitBtn) => {
+    submitBtn.disabled = false;
+    setIsDisabled(false);
+    submitBtn.classList.remove("disabled");
+  };
+  const printError = (errorMsg) => {
+    document.getElementById(props.inputId).classList.add("input-error");
+    document.getElementById(eMsgId).innerHTML = errorMsg;
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    let emsgBox = document.getElementById(eMsgId);
-    let field = document.getElementById(props.inputId);
-    field.classList.remove("input-error");
-    emsgBox.innerHTML = "";
-    try {
-      await props.onSubmitAction(formData);
-      setFormName("");
-    } catch (error) {
-      field.classList.add("input-error");
-      emsgBox.innerHTML = error;
+    if (formData.length > 0) {
+      let submitBtn = document.getElementById(submitBtnId);
+      submitBtnPending(submitBtn);
+      let emsgBox = document.getElementById(eMsgId);
+      let field = document.getElementById(props.inputId);
+      field.classList.remove("input-error");
+      emsgBox.innerHTML = "";
+      try {
+        await props.onSubmitAction(formData);
+        setFormName("");
+      } catch (error) {
+        printError(error);
+      }
+      submitBtnFinished(submitBtn);
     }
   };
 
@@ -64,12 +86,17 @@ export default function GenericSingleInputForm(props) {
               className="emsg text-left text-red-bright italic"
             ></div>
           </div>
-          <div className="flex justify-end ">
+          <div className="flex justify-end">
             <button
               type="submit"
-              className="rounded submit-btn btn text-center px-4 py-2 my-2 basis-1/4 font-medium text-lg bg-green-confirm"
+              id={submitBtnId}
+              className="rounded save-btn btn text-center px-4 py-2 my-2 basis-1/4 font-medium text-lg bg-green-confirm"
             >
-              Save
+              {isDisabled ? (
+                <div className="loader" style={{ width: 28, height: 28 }}></div>
+              ) : (
+                "Save"
+              )}
             </button>
           </div>
         </form>

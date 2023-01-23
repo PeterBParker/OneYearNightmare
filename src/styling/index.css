@@ -328,8 +328,10 @@ body {
   grid-row-start: 2;
   grid-row-end: 3;
 }
-.submit-btn {
-  word-break: keep-all;
+.save-btn {
+  transition: all 0.15s;
+  height: 44px;
+  width: 70px;
 }
 
 .iconCardHeader {
@@ -728,6 +730,7 @@ body {
 
 .btn {
   cursor: pointer;
+  word-break: keep-all;
 }
 
 .grow-btn {
@@ -776,6 +779,12 @@ body {
   border-color: #f27b57;
 }
 
+.comment-input-error {
+  border-style: solid;
+  border-width: 2px;
+  border-color: #d16a46;
+}
+
 .modal {
   position: fixed;
   left: 0;
@@ -786,6 +795,14 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.disabled {
+  cursor: default !important;
+}
+
+.cancel-comment-btn {
+  letter-spacing: 0.2rem;
 }
 
 /*
@@ -934,6 +951,16 @@ body {
   box-sizing: border-box;
   animation: rotation 1s linear infinite;
 }
+
+.loader-dark {
+  border-radius: 50%;
+  display: inline-block;
+  border-top: 3px solid #afa694;
+  border-right: 3px solid transparent;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
 @keyframes rotation {
   0% {
     transform: rotate(0deg);

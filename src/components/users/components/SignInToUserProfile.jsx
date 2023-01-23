@@ -42,9 +42,13 @@ const getUiConfig = () => {
       },
     ],
     // Terms of service url.
-    tosUrl: "<your-tos-url>",
+    tosUrl: encodeURI(
+      process.env.PUBLIC_URL + "/compliance/termsofservice.html"
+    ),
     // Privacy policy url.
-    privacyPolicyUrl: "<your-privacy-policy-url>",
+    privacyPolicyUrl: encodeURI(
+      process.env.PUBLIC_URL + "/compliance/privacypolicy.html"
+    ),
   };
   return uiConfig;
 };

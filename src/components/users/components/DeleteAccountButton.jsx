@@ -7,6 +7,7 @@ import {
   deleteUserCommentId,
   deleteUserWrapper,
 } from "../utils";
+
 export default function DeleteAccountButton() {
   const [showModal, setShowModal] = useState(false);
   const [modalBodyText, setModalBodyText] = useState(
@@ -15,6 +16,8 @@ export default function DeleteAccountButton() {
       all your comments.
     </div>
   );
+  const deleteBtnId = "delete-me-confirmation-btn";
+  const [isDisabled, setIsDisabled] = useState(false);
 
   const deleteAccount = async () => {
     try {
@@ -35,12 +38,24 @@ export default function DeleteAccountButton() {
   let modalFooter = (
     <div className="flex justify-between">
       <button
+        style={{ width: 116, height: 44 }}
+        id={deleteBtnId}
         className="rounded bg-red-bad btn text-center px-4 py-2 basis-1/4 font-medium text-lg"
         onClick={async () => {
+          let deleteBtn = document.getElementById(deleteBtnId);
+          deleteBtn.disabled = true;
+          setIsDisabled(true);
           await deleteAccount();
+          // We don't update the state because React will sign the user out in deleteAccount()
+          // deleteBtn.disabled = false;
+          // setIsDisabled(false);
         }}
       >
-        Delete Me
+        {isDisabled ? (
+          <div className="loader" style={{ width: 28, height: 28 }}></div>
+        ) : (
+          "Delete Me"
+        )}
       </button>
       <button
         className="rounded bg-grey-light btn text-center px-4 py-2 basis-1/4 font-medium text-white text-lg"
