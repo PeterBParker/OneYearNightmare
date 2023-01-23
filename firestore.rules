@@ -38,7 +38,7 @@ service cloud.firestore {
                     && validDisplayName();
                     // && notChangingCommentsLiked(); For when adding likes
       allow delete: if isSignedIn()
-                    && isUser(resource.data.uid);
+                    && isUser(resource.id);
       allow read;
       allow list;
     }

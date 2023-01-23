@@ -2,7 +2,7 @@ import moment from "moment";
 import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import { auth } from "../..";
-import { getDisplayName } from "../users/utils";
+import { deleteComments, deleteComment, getDisplayName } from "../users/utils";
 import EditCommentForm from "./EditCommentForm";
 import CreateNewCommentForm from "./CreateNewCommentForm";
 import { getAvatarUrl } from "../users/avatarHelpers";
@@ -147,7 +147,7 @@ export function SingleComment(props) {
                   Cancel
                 </span>
               ) : (
-                <div className="w-full">
+                <div className="w-full flex justify-between">
                   {props.isTopLevel ? (
                     <span
                       className="reply-btn btn text-left font-medium text-green-dark float-left"
@@ -158,12 +158,21 @@ export function SingleComment(props) {
                   ) : null}
 
                   {belongsToCurrUser ? (
-                    <span
-                      className="reply-btn btn text-left font-medium text-green-dark float-right"
-                      onClick={() => setEditComment(true)}
-                    >
-                      Edit
-                    </span>
+                    <div className="flex inline">
+                      <div
+                        className="reply-btn btn text-left font-medium text-green-dark mr-1"
+                        onClick={() => deleteComment(props.comment.id)}
+                      >
+                        Delete
+                      </div>
+                      <div>|</div>
+                      <div
+                        className="reply-btn btn text-left font-medium text-green-dark ml-1 "
+                        onClick={() => setEditComment(true)}
+                      >
+                        Edit
+                      </div>
+                    </div>
                   ) : null}
                 </div>
               )}

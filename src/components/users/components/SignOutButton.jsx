@@ -15,14 +15,9 @@ export default function SignOutButton() {
         let thisButton = document.getElementById(buttonId);
         thisButton.disabled = true;
         setIsDisabled(true);
-        signOut(auth)
-          .then(() => {
-            console.log("Successfully Signed Out!");
-            setIsDisabled(false);
-          })
-          .catch((error) => {
-            console.log("Failed to Sign Out. Error:", error);
-          });
+        signOut(auth).then(() => {
+          setIsDisabled(false);
+        });
         setIsDisabled(false);
         thisButton.disabled = false;
       }}

@@ -18,9 +18,12 @@ function CreateNewCommentForm(props) {
   const [content, setContent] = useState("");
 
   const createNewComment = async (e) => {
+    if (content.trim().length == 0) {
+      throw new Error("Cannot create a comment with only whitespace");
+    }
     let comment = {
       author_uid: auth.currentUser.uid,
-      content: content,
+      content: content.trim(),
       page_id: props.slug,
       num_likes: 0,
       parent_comment_id: props.parentId || null,

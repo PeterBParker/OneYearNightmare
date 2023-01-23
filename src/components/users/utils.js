@@ -10,6 +10,7 @@ import {
   deleteDoc,
   writeBatch,
   orderBy,
+  QuerySnapshot,
 } from "firebase/firestore";
 
 import { auth } from "../../index";
@@ -22,7 +23,6 @@ export const getDisplayName = async (uid) => {
     if (docSnap.exists()) {
       return docSnap.data().display_name;
     } else {
-      console.log("No user found for the uid.");
       return null;
     }
   });
@@ -142,7 +142,6 @@ export const deleteComments = async () => {
     });
     const batch = writeBatch(db);
     querySnapshot.forEach((doc) => {
-      console.log(doc.data());
       if (doc.data().has_children == true) {
         batch.update(doc.ref, { author_uid: null, content: null });
       } else batch.delete(doc.ref);
@@ -151,6 +150,21 @@ export const deleteComments = async () => {
     success = true;
   }
   return success;
+};
+
+export const deleteComment = async (commentId) => {
+  if (auth.currentUser != null) {
+    let commentDoc = await getDoc(doc(db, "page_comments", commentId)).catch(
+      (error) => {
+        throw new Error(error);
+      }
+    );
+    const batch = writeBatch(db);
+    if (commentDoc.data().has_children == true) {
+      batch.update(commentDoc.ref, { author_uid: null, content: null });
+    } else batch.delete(commentDoc.ref);
+    await batch.commit();
+  }
 };
 
 export const deleteUserWrapper = async () => {

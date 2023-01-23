@@ -35,10 +35,10 @@ export default function CommentForm(props) {
       // show error state
       setIsErrored(true);
       setErrorMessage(e.toString());
+      thisButton.disabled = false;
+      setIsDisabled(false);
+      thisButton.classList.remove("disabled");
     });
-    thisButton.disabled = false;
-    setIsDisabled(false);
-    thisButton.classList.remove("disabled");
   };
 
   return (
@@ -69,7 +69,7 @@ export default function CommentForm(props) {
           <button
             type="submit"
             id={submitId}
-            style={{ width: 91, height: 88 }}
+            style={{ width: 91, height: 88, wordBreak: "keep-all" }}
             className={`text-center basis-1/4 font-medium text-lg bg-cream-dark ${
               isDisabled || isErrored ? "cursor-default" : null
             }`}
