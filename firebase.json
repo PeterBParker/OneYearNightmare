@@ -8,11 +8,7 @@
       }
     ],
     "cleanUrls": true,
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
-    ]
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"]
   },
   "emulators": {
     "database": {
@@ -46,9 +42,6 @@
       ".git",
       "firebase-debug.log",
       "firebase-debug.*.log"
-    ],
-    "predeploy": [
-      "npm --prefix \"$RESOURCE_DIR\" run lint"
     ]
   }
 }
