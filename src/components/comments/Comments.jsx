@@ -17,7 +17,7 @@ export default function Comments(props) {
   const authUser = useFirebaseAuth(auth);
 
   return (
-    <div className="comments-container desktopPageCommentsContainer ">
+    <div className="comments-container border-b border-mocha-dark lg:border-t-2 lg:border-r-2 lg:border-b-2 lg:border-l">
       <div className="py-4 px-8 bg-eggshell text-left flex flex-row items-center comments-title">
         <Title text="Comments //" />
       </div>
@@ -28,9 +28,7 @@ export default function Comments(props) {
           props.comments
             .filter((comment) => !comment.parent_comment_id)
             .map((comment) => {
-              {
-                /* Get comments replying to it.*/
-              }
+              /* Get comments replying to it.*/
               let children;
               if (comment.id) {
                 children = props.comments.filter(
@@ -55,7 +53,7 @@ export default function Comments(props) {
               callback={() => setShowCommentSubmit(false)}
             />
             <div
-              className="cancel-comment-btn btn"
+              className="cancel-comment-btn btn font-medium py-1 bg-eggshell grow-btn rounded-lg mt-2"
               onClick={(e) => setShowCommentSubmit(false)}
             >
               Cancel
@@ -72,7 +70,7 @@ export default function Comments(props) {
       ) : (
         <LinkButton
           to={SIGNIN_PAGE_PATH}
-          styles="grow-btn btn my-4 py-2 mx-4 btn bg-eggshell font-medium"
+          styles="grow-btn btn my-4 py-2 mx-4 btn  bg-cream-dark font-medium not-italic rounded"
           buttonContent="Log In"
         />
       )}

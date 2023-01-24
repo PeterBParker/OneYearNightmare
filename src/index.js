@@ -8,6 +8,7 @@ import "./styling/tailwind.output.css";
 
 import { initializeApp } from "firebase/app";
 import { connectFirestoreEmulator, getFirestore } from "firebase/firestore";
+import { connectStorageEmulator, getStorage } from "firebase/storage";
 import { getAuth, connectAuthEmulator } from "firebase/auth";
 import { getAnalytics } from "firebase/analytics";
 import { initializeAppCheck, ReCaptchaV3Provider } from "firebase/app-check";
@@ -17,10 +18,10 @@ var firebaseConfig = {
   apiKey: "AIzaSyDwiYUN-zDZBeAc8QaH9WFDftkqW1XXDdQ",
   authDomain: "oneyearnightmarefirstsite.firebaseapp.com",
   projectId: "oneyearnightmarefirstsite",
-  storageBucket: "oneyearnightmarefirstsite.appspot.com",
   messagingSenderId: "81199581232",
   appId: "1:81199581232:web:c391d9d9ab5aaed20745f5",
   measurementId: "G-DKRZFY2R89",
+  storageBucket: "gs://oneyearnightmarefirstsite.appspot.com/",
 };
 const firebaseApp = initializeApp(firebaseConfig);
 
@@ -38,10 +39,13 @@ const appCheck = initializeAppCheck(firebaseApp, {
 export const analytics = getAnalytics(firebaseApp);
 export const db = getFirestore(firebaseApp);
 export const auth = getAuth(firebaseApp);
+export const storage = getStorage(firebaseApp);
+export const AVATARS_PATH = "user_avatars/";
 
 if (window.location.hostname == "localhost") {
   connectAuthEmulator(auth, "http://localhost:9099"); // to use the emulator run "firebase emulators:start"
   connectFirestoreEmulator(db, "localhost", 8080);
+  connectStorageEmulator(storage, "localhost", "9199");
 }
 
 ReactDOM.render(

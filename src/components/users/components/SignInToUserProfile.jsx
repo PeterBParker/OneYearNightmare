@@ -5,17 +5,9 @@ import { useEffect } from "react";
 import { auth } from "../../..";
 import useFirebaseAuth from "../hooks/useFirebaseAuth";
 import UserProfile from "./UserProfile";
-
-/**
- *
- * @param {firebase.auth.User} user
- */
-const handleSignedInUser = (user) => {};
-
-const handleSignedOutUser = () => {
-  document.getElementById("user-signed-in").style.display = "none";
-  document.getElementById("user-signed-out").style.display = "block";
-};
+import { storeUserAvatar } from "../avatarHelpers";
+import loginIllo from "../../../assets/login-explanation.png";
+import loginExplain from "../../../assets/login-explanation-2.png";
 
 const getUiConfig = () => {
   var uiConfig = {
@@ -52,9 +44,13 @@ const getUiConfig = () => {
       },
     ],
     // Terms of service url.
-    tosUrl: "<your-tos-url>",
+    tosUrl: encodeURI(
+      process.env.PUBLIC_URL + "/compliance/termsofservice.html"
+    ),
     // Privacy policy url.
-    privacyPolicyUrl: "<your-privacy-policy-url>",
+    privacyPolicyUrl: encodeURI(
+      process.env.PUBLIC_URL + "/compliance/privacypolicy.html"
+    ),
   };
   return uiConfig;
 };
@@ -65,7 +61,20 @@ const SignInToUserProfile = () => {
   // TODO Fix the first render of the sign in page before displaying the user profile
   return (
     <React.Fragment>
-      {authUser ? <UserProfile user={authUser} /> : <SignIn />}
+      {authUser ? (
+        <UserProfile user={authUser} />
+      ) : (
+        <div className="flex flex-col justify-center justify-items-center content-center">
+          <div className="ml-auto mr-auto">
+            <img src={loginIllo} width={400} className="mr-8" />
+          </div>
+
+          <SignIn />
+          <div className="mr-auto ml-auto mt-4">
+            <img src={loginExplain} width={200} className="ml-32 md:ml-56" />
+          </div>
+        </div>
+      )}
     </React.Fragment>
   );
 };

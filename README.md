@@ -1,29 +1,34 @@
 # TODO
 
-- Make Comments
-  - Hook up to Database
-    - add error handling if comment submission failed
-      - add visual state to indicate pending server write
-      - add visual state to indicate completed server write
-    - add pagination
-    - add like button and display to comments
-    - Retrieve top three comments by likes, and the rest sorted by date newest first
-  - Add Authentication/User data
-    - Show display name pattern reqs somewhere
-    - get terms and conditions
-      - add display module for terms and conditions
-    - add database enforcement of editing only comments owned by the currently signed in user
-    - populate comment data with user info
-  - Style
-      - Style User Profile Page
-      - Style Set Display Name Page
-      - Style Comments box (mobile)
-      - Get new avatars
-- Integrate email service and start mailing list
-- Add infinite scroll instead of button navigation
-- Add tap on either side of page to navigate
-- Move/animate bookmark icon to top right of comic page.
-- Optimize performance
-  - Use svgo to optimize svg's
-    - `svgo -f ./path/to/svgFolder -o ./path/to/output`
-  - Scan with Lighthouse and GTmetrix
+- 1. BASIC COMMENTS
+
+  - add explanation in logon screen
+
+- 2. BUILD EMAIL LIST
+
+  - Integrate email service and start mailing list
+  - Add email settings to User page
+
+- 3. POLISHED COMMENTS
+
+  - add pagination
+  - add like button and display to comments
+  - Retrieve top three comments by likes, and the rest sorted by date newest first
+  - On User Profile add the ability to dynamically update the avatar
+
+- 4. POLISH NAVIGATION
+
+  - Add infinite scroll instead of button navigation
+  - Add tap on either side of page to navigate
+
+- 5. MISC
+
+  - Move/animate bookmark icon to top right of comic page.
+  - Optimize performance
+    - Use svgo to optimize svg's
+      - `svgo -f ./path/to/svgFolder -o ./path/to/output`
+    - Scan with Lighthouse and GTmetrix
+  - Introduce logging and log all errors
+
+- BUG FIXES
+  - When a user comments and then replies to their own comment and no one else does, when they go to delete their account, the original comment will persist as a "This comment was deleted." It would be nice if the database updated whether or not the comment has children as each comment is deleted.

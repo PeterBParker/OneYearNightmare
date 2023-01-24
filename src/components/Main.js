@@ -12,7 +12,6 @@ import querySizes from "../styling/breakpoints.json";
 
 export const DOMAIN = "https://monstersandmyriads.com";
 export const BASE_PATH = "/MnMPages/";
-export const JOINT_SIG = "Mo and Nate";
 
 export const COMIC_VIEWER_PATH = "/read";
 export const COMIC_VIEWER_DEFAULT_PATH =
@@ -22,7 +21,10 @@ export const ARCHIVE_PAGE_PATH = "/archive";
 export const CREATIVES_PAGE_PATH = "/creatives";
 export const SIGNIN_PAGE_PATH = "/login";
 
+export const JOINT_SIG = "Mo and Nate";
+export const NO_USER_ID = "null";
 export const SNAP_TO_PAGE_PATH = "snap-to-page";
+export const MAX_COMMENT_CHARS = 350;
 
 export default function Main(props) {
   const location = useLocation();
@@ -37,22 +39,24 @@ export default function Main(props) {
 
   let headerColorClassNames = desktopDarkBg;
 
-  if (location.pathname.startsWith(COMIC_VIEWER_PATH)) {
-    if (isDesktop) {
-      headerColorClassNames = desktopDarkBg;
-    } else {
-      headerColorClassNames = mobileDarkBg;
-    }
-  } else {
-    if (isDesktop) {
-      headerColorClassNames = desktopLightBg;
-    } else {
-      headerColorClassNames = mobileLightBg;
-    }
-  }
+  // if (location.pathname.startsWith(COMIC_VIEWER_PATH)) {
+  //   if (isDesktop) {
+  //     headerColorClassNames = desktopDarkBg;
+  //   } else {
+  //     headerColorClassNames = mobileDarkBg;
+  //   }
+  // } else {
+  //   if (isDesktop) {
+  //     headerColorClassNames = desktopLightBg;
+  //   } else {
+  //     headerColorClassNames = mobileLightBg;
+  //   }
+  // }
 
   return (
-    <div className={`main backgroundTransition ${headerColorClassNames}`}>
+    <div
+      className={`main flex-grow backgroundTransition ${headerColorClassNames}`}
+    >
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path={CREATIVES_PAGE_PATH}>

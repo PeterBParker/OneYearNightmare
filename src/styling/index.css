@@ -77,7 +77,6 @@ body {
 .single-comment-container {
   display: grid;
   grid-template-columns: 70px auto;
-  grid-template-rows: 1.5rem auto;
 }
 .footerMobileGrid {
   display: grid;
@@ -175,6 +174,9 @@ body {
   grid-row-end: 3;
 }
 
+.blur-bottom-dark-header {
+  box-shadow: 0 10px 10px 10px #e0dcd1;
+}
 .mobileMenuOverlay {
   height: 100%;
   width: 100%;
@@ -326,8 +328,10 @@ body {
   grid-row-start: 2;
   grid-row-end: 3;
 }
-.submit-btn {
-  word-break: keep-all;
+.save-btn {
+  transition: all 0.15s;
+  height: 44px;
+  width: 70px;
 }
 
 .iconCardHeader {
@@ -375,12 +379,6 @@ body {
   border: solid;
   border-color: #998f7e;
   border-width: 2px 1px 2px 2px;
-}
-.desktopPageCommentsContainer {
-  border: solid;
-  border-color: #998f7e;
-  border-width: 2px 2px 2px 1px;
-  height: 100%;
 }
 
 .desktopPageDetailsTitle {
@@ -732,6 +730,7 @@ body {
 
 .btn {
   cursor: pointer;
+  word-break: keep-all;
 }
 
 .grow-btn {
@@ -748,7 +747,8 @@ body {
   box-sizing: border-box;
   border: solid #000;
   border-width: 1px;
-  border-radius: 0.5rem;
+  border-radius: 0.5rem 0rem 0rem 0.5rem;
+  height: 88px;
 }
 
 .comment-content {
@@ -775,7 +775,35 @@ body {
 }
 
 .input-error {
-  background: red;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #f27b57;
+}
+
+.comment-input-error {
+  border-style: solid;
+  border-width: 2px;
+  border-color: #d16a46;
+}
+
+.modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.disabled {
+  cursor: default !important;
+}
+
+.cancel-comment-btn {
+  letter-spacing: 0.2rem;
 }
 
 /*
@@ -914,4 +942,39 @@ body {
 
 .backgroundTransition {
   transition: background-image 0.5s ease-in-out;
+}
+
+.loader {
+  border-radius: 50%;
+  display: inline-block;
+  border-top: 3px solid #fff;
+  border-right: 3px solid transparent;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+.loader-dark {
+  border-radius: 50%;
+  display: inline-block;
+  border-top: 3px solid #afa694;
+  border-right: 3px solid transparent;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100;
+  }
 }

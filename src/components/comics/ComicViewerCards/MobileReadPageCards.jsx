@@ -10,6 +10,10 @@ export default function MobileReadPageCards(props) {
       chapter={props.chapter}
       key="mobileReadPageDetailsCard"
     />,
-    <SupportUsCard key="mobileReadPageSupportUsCard" />,
+    <Comments
+      slug={props.page.uuid}
+      comments={props.comments}
+      key="mobileCommentCard"
+    />,
   ];
 }

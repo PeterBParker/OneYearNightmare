@@ -1,13 +1,19 @@
 import moment from "moment";
 import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
-import CommentForm from "./CommentForm";
 import { auth } from "../..";
-import { db } from "../../index";
-import { doc, getDoc } from "firebase/firestore";
-import { getDisplayName } from "../users/utils";
+import { deleteComments, deleteComment, getDisplayName } from "../users/utils";
 import EditCommentForm from "./EditCommentForm";
 import CreateNewCommentForm from "./CreateNewCommentForm";
+import { getAvatarUrl } from "../users/avatarHelpers";
+import { Timestamp } from "firebase/firestore";
+import CommentAvatar from "./CommentAvatar";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faReply,
+  faTrash,
+  faPenToSquare,
+} from "@fortawesome/free-solid-svg-icons";
 
 /**
  * Renders a single comment with basic author information
@@ -16,89 +22,172 @@ export function SingleComment(props) {
   const [showReplyBox, setShowReplyBox] = useState(false);
   const [displayName, setDisplayName] = useState("");
   const [editComment, setEditComment] = useState(false);
-  const [belongsToCurrUser, setBelongsToCurrUser] = useState(auth.currentUser ? auth.currentUser.uid === props.comment.author_uid : false)
+  const [belongsToCurrUser, setBelongsToCurrUser] = useState(
+    auth.currentUser ? auth.currentUser.uid === props.comment.author_uid : false
+  );
+  const [avatarUrl, setAvatarUrl] = useState("");
+  const accountDeletedDisplay = "Deleted";
+  const commentDeletedContent = "This comment has been deleted.";
 
   useEffect(() => {
-    getDisplayName(props.comment.author_uid).then((display_name) => {
-      setDisplayName(display_name);
-    });
+    let isMounted = true;
+    if (props.comment.author_uid == null && isMounted) {
+      setDisplayName(accountDeletedDisplay);
+    } else {
+      getDisplayName(props.comment.author_uid).then((display_name) => {
+        if (isMounted) {
+          setDisplayName(display_name);
+        }
+      });
+    }
+    return () => {
+      isMounted = false;
+    };
   });
 
   useEffect(() => {
-    setBelongsToCurrUser(auth.currentUser ? auth.currentUser.uid === props.comment.author_uid : false)
-  }, [auth.currentUser])
+    let isMounted = true;
+    async function updateAvatar() {
+      // We haven't gotten this user's avatar url yet so let's do that now
+      let url = await getAvatarUrl(props.comment.author_uid);
+      if (isMounted) {
+        setAvatarUrl(url);
+      }
+    }
+    updateAvatar();
+    return () => {
+      isMounted = false;
+    };
+  }, [props.comment.author_uid]);
+
+  useEffect(() => {
+    setBelongsToCurrUser(
+      auth.currentUser
+        ? auth.currentUser.uid === props.comment.author_uid
+        : false
+    );
+  }, [props.comment.author_uid]);
+
+  function getTimeString(commentTime) {
+    const secondsInMin = 60;
+    const secondsInHour = 60 * 60;
+    const secondsInDay = 60 * 60 * 24;
+
+    // get the difference between current time and the timestamp, then print the
+    let now = Timestamp.fromDate(new Date());
+    let timeDiff = now.seconds - commentTime.seconds;
+
+    if (timeDiff < secondsInMin) {
+      // If time diff is less than a minute print "A few seconds ago"
+      return "A few seconds ago";
+    } else if (timeDiff < secondsInHour) {
+      // If time diff is less than an hour print "x minutes ago"
+      let numMin = Math.ceil(timeDiff / secondsInMin);
+      return numMin + " minutes ago";
+    } else if (timeDiff < secondsInDay) {
+      // If time diff is less than a day print "x hours ago"
+      let numHours = Math.ceil(timeDiff / secondsInHour);
+      return numHours + " hours ago";
+    } else {
+      // Else print the numeric date string. Example: "Jan 18, 2022"
+      let commentDate = commentTime.toDate();
+      let formattedDate = new Intl.DateTimeFormat("default", {
+        year: "numeric",
+        month: "short",
+        day: "2-digit",
+      }).format(commentDate);
+      return formattedDate;
+    }
+  }
 
   return (
     <div>
       <div className="mb-2 single-comment-container">
-        <div className="flex mr-2 justify-start comment-avatar-container">
-          <div>
-            {
-              <img
-                src={`https://avatars.dicebear.com/api/big-smile/${displayName}}.svg`}
-                alt="avatar"
-                width={70}
-                className="comment-avatar"
-              />
-            }
-          </div>
+        <div
+          className="flex mr-2 justify-start comment-avatar-container"
+          height={70}
+          width={70}
+        >
+          <CommentAvatar
+            avatarUrl={avatarUrl}
+            wdith={70}
+            height={70}
+            isDeleted={displayName == accountDeletedDisplay}
+          />
         </div>
         <div className="flex comment-data-header justify-between">
-          <p className="comment-author font-medium text-left">
-            {displayName}
-          </p>
-          <div className="comment-time mr-2 text-mocha-dark">
-            {props.comment.time && (
-              <time>
-                {moment(props.comment.time.toDateString()).calendar()}
-              </time>
-            )}
+          <div className="flex flex-col md:flex-row">
+            <div
+              className={`comment-author font-medium text-left leading-5 ${
+                displayName == accountDeletedDisplay ? "italic" : ""
+              }`}
+            >
+              {displayName}
+            </div>
+            <div className="hidden md:block text-mocha-dark md:mr-2 md:ml-2 leading-5">
+              •
+            </div>
+            <div className="comment-time mr-2 text-mocha-dark text-xs leading-4 md:text-sm md:leading-5 text-left">
+              {getTimeString(props.comment.time_created)}
+            </div>
           </div>
         </div>
-        {editComment && belongsToCurrUser ?
+        {editComment && belongsToCurrUser ? (
           <EditCommentForm
             initialContent={props.comment.content}
             slug={props.slug}
             callback={() => setEditComment(false)}
-            comment={props.comment} />
-          :
-          <div className="comment-content text-left">
-            {props.comment.content}
-          
-            <div className="flex justify-start comment-interaction-container">
+            comment={props.comment}
+          />
+        ) : (
+          <div
+            className={`comment-content font-body text-left ${
+              props.comment.content == null ? "italic" : ""
+            }`}
+          >
+            {props.comment.content != null
+              ? props.comment.content
+              : commentDeletedContent}
+
+            <div className="flex not-italic justify-start comment-interaction-container">
               {showReplyBox ? (
                 <span
                   className="cancel-btn btn text-left font-medium text-green-dark"
                   onClick={() => setShowReplyBox(false)}
                 >
-                  Cancel Reply
+                  Cancel
                 </span>
               ) : (
-                <div className="w-full">
-                  {
-                    props.isTopLevel && auth.currentUser != null ?
-                      <span
-                        className="reply-btn btn text-left font-medium text-green-dark float-left"
-                        onClick={() => setShowReplyBox(true)}
-                      >
-                        Reply
-                      </span>
-                      :
-                      null
-                  }
-
-                  {belongsToCurrUser ?
+                <div className="w-full flex justify-between">
+                  {props.isTopLevel ? (
                     <span
-                      className="reply-btn btn text-left font-medium text-green-dark float-right"
-                      onClick={() => setEditComment(true)}
+                      className="reply-btn btn text-left text-sm flex content-center font-medium text-green-dark hover:text-green-confirm float-left "
+                      onClick={() => setShowReplyBox(true)}
                     >
-                      Edit
+                      <div className="mt-auto mb-auto">
+                        Reply <FontAwesomeIcon icon={faReply} />
+                      </div>
                     </span>
-                    :
-                    null
-                  }
-                </div>
+                  ) : null}
 
+                  {belongsToCurrUser ? (
+                    <div className="flex inline">
+                      <div
+                        className="reply-btn btn text-left text-lg font-medium text-green-dark hover:text-red-bad mr-2"
+                        onClick={() => deleteComment(props.comment.id)}
+                      >
+                        <FontAwesomeIcon icon={faTrash} />
+                      </div>
+                      <div>|</div>
+                      <div
+                        className="reply-btn btn text-left text-lg font-medium text-green-dark hover:text-green-confirm ml-2 "
+                        onClick={() => setEditComment(true)}
+                      >
+                        <FontAwesomeIcon icon={faPenToSquare} />
+                      </div>
+                    </div>
+                  ) : null}
+                </div>
               )}
             </div>
             {showReplyBox ? (
@@ -109,7 +198,7 @@ export function SingleComment(props) {
               />
             ) : null}
           </div>
-        }
+        )}
       </div>
     </div>
   );

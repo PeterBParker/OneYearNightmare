@@ -29,7 +29,7 @@ export default function MobileHeader(props) {
         <HamburgerMenu />
       </div>
       <div
-        className={`publishDaysMobile text-mocha-dark self-end pb-2 font-medium h-full ${
+        className={`publishDaysMobile text-mocha-dark self-end pb-2 blur-bottom-dark-header font-medium h-full ${
           props.defaultBg ? "bg-white" : "bg-cream-dark"
         }`}
       >
