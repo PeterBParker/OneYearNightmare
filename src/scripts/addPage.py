@@ -599,7 +599,6 @@ class PageManager():
         self.write_increment_season_page(season["id"])
         self.write_increment_book_page_count()
         self.write_page_insert(season_index, chapter_index, page_index, new_page_data)
-        self.write_new_max_display_page(new_page_data["uuid"])
 
         return True
 

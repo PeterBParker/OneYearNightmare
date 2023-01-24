@@ -70,6 +70,7 @@ const ComicPageAPI = {
   getChapterNum: function (pageId) {
     const relObjs = this.getRelValidObjs(pageId);
     if (relObjs) {
+      console.log(relObjs);
       return relObjs.chapterObj.id - 1;
     }
     return null;
