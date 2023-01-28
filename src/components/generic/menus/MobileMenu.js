@@ -44,7 +44,7 @@ export default function MobileMenu(props) {
                 Archive
               </Link>
             </div>
-            <div className="creatorsNavLink">
+            {/* <div className="creatorsNavLink">
               <Link to={CREATIVES_PAGE_PATH} onClick={props.onMenuChange}>
                 About Us
               </Link>
@@ -53,7 +53,7 @@ export default function MobileMenu(props) {
               <Link to={SUPPORT_PAGE_PATH} onClick={props.onMenuChange}>
                 Support Us
               </Link>
-            </div>
+            </div> */}
             <div className="signinNavLink">
               <Link to={SIGNIN_PAGE_PATH} onClick={props.onMenuChange}>
                 {auth.currentUser == null ? "Login" : "User"}

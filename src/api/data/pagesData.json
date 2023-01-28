@@ -1081,22 +1081,9 @@
                             "user": "M1998",
                             "icon": "icons/Chap2-pg48-Icon.png",
                             "uuid": "681c399d-a3fc-46ed-9802-d4b51eb576ed",
-                            "nextPageUuid": "3215f553-5874-4e6a-b626-481e92e77863",
+                            "nextPageUuid": "9a27b867-96d6-47e1-8334-fede6881c46c",
                             "prevPageUuid": "97c76b36-f5a2-4b7e-899b-e25bb7ce7abb",
                             "globalPageNum": 80
-                        },
-                        {
-                            "pageNum": 53,
-                            "filename": "Under_Construction-09122022.jpg",
-                            "title": "Pages Under Construction",
-                            "message": "Hey! New pages aren't done yet but we have some glorious rainy overcast days on the horizon which is ideal art-making weather for my little pluviophile heart.<3 Join us back here next Monday as we get ready to close out Chapter 2!!!",
-                            "datetime": "2022-09-12 11:42:35",
-                            "user": "M1998",
-                            "icon": "icons/Under_Construction-09122022-Icon.png",
-                            "uuid": "3215f553-5874-4e6a-b626-481e92e77863",
-                            "nextPageUuid": "9a27b867-96d6-47e1-8334-fede6881c46c",
-                            "prevPageUuid": "681c399d-a3fc-46ed-9802-d4b51eb576ed",
-                            "globalPageNum": 81
                         },
                         {
                             "pageNum": 54,
@@ -1108,8 +1095,8 @@
                             "icon": "icons/Chap2-pg49-Icon.png",
                             "uuid": "9a27b867-96d6-47e1-8334-fede6881c46c",
                             "nextPageUuid": "309fdc87-7634-4315-86ff-d7d101d9bc62",
-                            "prevPageUuid": "3215f553-5874-4e6a-b626-481e92e77863",
-                            "globalPageNum": 82
+                            "prevPageUuid": "681c399d-a3fc-46ed-9802-d4b51eb576ed",
+                            "globalPageNum": 81
                         },
                         {
                             "pageNum": 55,
@@ -1122,7 +1109,7 @@
                             "uuid": "309fdc87-7634-4315-86ff-d7d101d9bc62",
                             "nextPageUuid": "fb5483a1-4400-4a57-92fb-c92c45be8500",
                             "prevPageUuid": "9a27b867-96d6-47e1-8334-fede6881c46c",
-                            "globalPageNum": 83
+                            "globalPageNum": 82
                         },
                         {
                             "pageNum": 56,
@@ -1135,7 +1122,7 @@
                             "uuid": "fb5483a1-4400-4a57-92fb-c92c45be8500",
                             "nextPageUuid": "ce028594-e41f-43dd-8c06-0760d3e2a0db",
                             "prevPageUuid": "309fdc87-7634-4315-86ff-d7d101d9bc62",
-                            "globalPageNum": 84
+                            "globalPageNum": 83
                         }
                     ]
                 },
@@ -1156,7 +1143,7 @@
                             "uuid": "ce028594-e41f-43dd-8c06-0760d3e2a0db",
                             "nextPageUuid": "2faf6043-2a18-48e0-a8da-e4988197b29b",
                             "prevPageUuid": "fb5483a1-4400-4a57-92fb-c92c45be8500",
-                            "globalPageNum": 85
+                            "globalPageNum": 84
                         },
                         {
                             "pageNum": 2,
@@ -1169,7 +1156,7 @@
                             "uuid": "2faf6043-2a18-48e0-a8da-e4988197b29b",
                             "nextPageUuid": "4476b890-3615-4222-8de9-e659bad15877",
                             "prevPageUuid": "ce028594-e41f-43dd-8c06-0760d3e2a0db",
-                            "globalPageNum": 86
+                            "globalPageNum": 85
                         },
                         {
                             "pageNum": 3,
@@ -1182,7 +1169,7 @@
                             "uuid": "4476b890-3615-4222-8de9-e659bad15877",
                             "nextPageUuid": "9d8be4cd-f461-40cb-82fb-08ba6cb55ad0",
                             "prevPageUuid": "2faf6043-2a18-48e0-a8da-e4988197b29b",
-                            "globalPageNum": 87
+                            "globalPageNum": 86
                         },
                         {
                             "pageNum": 4,
@@ -1195,7 +1182,7 @@
                             "uuid": "9d8be4cd-f461-40cb-82fb-08ba6cb55ad0",
                             "nextPageUuid": "80e105e0-936e-4da1-9e86-1e394b4be654",
                             "prevPageUuid": "4476b890-3615-4222-8de9-e659bad15877",
-                            "globalPageNum": 88
+                            "globalPageNum": 87
                         },
                         {
                             "pageNum": 5,
@@ -1208,7 +1195,7 @@
                             "uuid": "80e105e0-936e-4da1-9e86-1e394b4be654",
                             "nextPageUuid": "58269205-a043-45f8-9272-e12b709e8abf",
                             "prevPageUuid": "9d8be4cd-f461-40cb-82fb-08ba6cb55ad0",
-                            "globalPageNum": 89
+                            "globalPageNum": 88
                         },
                         {
                             "pageNum": 6,
@@ -1221,7 +1208,7 @@
                             "uuid": "58269205-a043-45f8-9272-e12b709e8abf",
                             "nextPageUuid": "0ff90545-8be9-447d-b887-ed90b3244134",
                             "prevPageUuid": "80e105e0-936e-4da1-9e86-1e394b4be654",
-                            "globalPageNum": 90
+                            "globalPageNum": 89
                         },
                         {
                             "pageNum": 7,
@@ -1234,7 +1221,7 @@
                             "uuid": "0ff90545-8be9-447d-b887-ed90b3244134",
                             "nextPageUuid": "f58aeb6d-8a17-4e6c-8823-44be42e3dd99",
                             "prevPageUuid": "58269205-a043-45f8-9272-e12b709e8abf",
-                            "globalPageNum": 91
+                            "globalPageNum": 90
                         },
                         {
                             "pageNum": 8,
@@ -1247,7 +1234,7 @@
                             "uuid": "f58aeb6d-8a17-4e6c-8823-44be42e3dd99",
                             "nextPageUuid": "6c097b46-10d9-438e-ba72-9bfa996a15e1",
                             "prevPageUuid": "0ff90545-8be9-447d-b887-ed90b3244134",
-                            "globalPageNum": 92
+                            "globalPageNum": 91
                         },
                         {
                             "pageNum": 9,
@@ -1260,7 +1247,7 @@
                             "uuid": "6c097b46-10d9-438e-ba72-9bfa996a15e1",
                             "nextPageUuid": "42c439a7-fc18-43e3-94b0-ea16f129607f",
                             "prevPageUuid": "f58aeb6d-8a17-4e6c-8823-44be42e3dd99",
-                            "globalPageNum": 93
+                            "globalPageNum": 92
                         },
                         {
                             "pageNum": 10,
@@ -1273,7 +1260,7 @@
                             "uuid": "42c439a7-fc18-43e3-94b0-ea16f129607f",
                             "nextPageUuid": "fb07403d-f701-48c2-a5f6-d405ab51233c",
                             "prevPageUuid": "6c097b46-10d9-438e-ba72-9bfa996a15e1",
-                            "globalPageNum": 94
+                            "globalPageNum": 93
                         },
                         {
                             "pageNum": 11,
@@ -1286,7 +1273,7 @@
                             "uuid": "fb07403d-f701-48c2-a5f6-d405ab51233c",
                             "nextPageUuid": "4e2c7740-0fe0-4048-bca6-0f744bc07140",
                             "prevPageUuid": "42c439a7-fc18-43e3-94b0-ea16f129607f",
-                            "globalPageNum": 95
+                            "globalPageNum": 94
                         },
                         {
                             "pageNum": 12,
@@ -1299,7 +1286,7 @@
                             "uuid": "4e2c7740-0fe0-4048-bca6-0f744bc07140",
                             "prevPageUuid": "fb07403d-f701-48c2-a5f6-d405ab51233c",
                             "nextPageUuid": "35ac3641-d5f2-4250-b22d-03fce0847df2",
-                            "globalPageNum": 96
+                            "globalPageNum": 95
                         },
                         {
                             "pageNum": 13,
@@ -1312,7 +1299,7 @@
                             "uuid": "35ac3641-d5f2-4250-b22d-03fce0847df2",
                             "prevPageUuid": "4e2c7740-0fe0-4048-bca6-0f744bc07140",
                             "nextPageUuid": "c71dcf4b-627b-4fa6-ac4f-946a7e22d51e",
-                            "globalPageNum": 97
+                            "globalPageNum": 96
                         },
                         {
                             "pageNum": 14,
@@ -1325,7 +1312,7 @@
                             "uuid": "c71dcf4b-627b-4fa6-ac4f-946a7e22d51e",
                             "prevPageUuid": "35ac3641-d5f2-4250-b22d-03fce0847df2",
                             "nextPageUuid": "23f10697-e22b-49d4-9534-8377e6069179",
-                            "globalPageNum": 98
+                            "globalPageNum": 97
                         },
                         {
                             "pageNum": 15,
@@ -1338,7 +1325,7 @@
                             "uuid": "23f10697-e22b-49d4-9534-8377e6069179",
                             "prevPageUuid": "c71dcf4b-627b-4fa6-ac4f-946a7e22d51e",
                             "nextPageUuid": "7278eca8-cfaf-4a07-90d4-4fa7559bef25",
-                            "globalPageNum": 99
+                            "globalPageNum": 98
                         },
                         {
                             "pageNum": 16,
@@ -1351,7 +1338,7 @@
                             "uuid": "7278eca8-cfaf-4a07-90d4-4fa7559bef25",
                             "prevPageUuid": "23f10697-e22b-49d4-9534-8377e6069179",
                             "nextPageUuid": "6ad5a3fa-293e-4c97-b3a0-aa2f1591a825",
-                            "globalPageNum": 100
+                            "globalPageNum": 99
                         },
                         {
                             "pageNum": 17,
@@ -1364,7 +1351,7 @@
                             "uuid": "6ad5a3fa-293e-4c97-b3a0-aa2f1591a825",
                             "prevPageUuid": "7278eca8-cfaf-4a07-90d4-4fa7559bef25",
                             "nextPageUuid": "4e9d89ad-468f-422f-a06d-561f401cdf0c",
-                            "globalPageNum": 101
+                            "globalPageNum": 100
                         },
                         {
                             "pageNum": 18,
@@ -1377,7 +1364,7 @@
                             "uuid": "4e9d89ad-468f-422f-a06d-561f401cdf0c",
                             "prevPageUuid": "6ad5a3fa-293e-4c97-b3a0-aa2f1591a825",
                             "nextPageUuid": "2a3096d3-9f0a-457c-87ef-05d7e00e3f74",
-                            "globalPageNum": 102
+                            "globalPageNum": 101
                         },
                         {
                             "pageNum": 19,
@@ -1390,7 +1377,7 @@
                             "uuid": "2a3096d3-9f0a-457c-87ef-05d7e00e3f74",
                             "prevPageUuid": "4e9d89ad-468f-422f-a06d-561f401cdf0c",
                             "nextPageUuid": null,
-                            "globalPageNum": 103
+                            "globalPageNum": 102
                         }
                     ]
                 }
@@ -1803,25 +1790,20 @@
             "chapterIndex": 2,
             "pageIndex": 51
         },
-        "3215f553-5874-4e6a-b626-481e92e77863": {
+        "9a27b867-96d6-47e1-8334-fede6881c46c": {
             "seasonIndex": 0,
             "chapterIndex": 2,
             "pageIndex": 52
         },
-        "9a27b867-96d6-47e1-8334-fede6881c46c": {
+        "309fdc87-7634-4315-86ff-d7d101d9bc62": {
             "seasonIndex": 0,
             "chapterIndex": 2,
             "pageIndex": 53
         },
-        "309fdc87-7634-4315-86ff-d7d101d9bc62": {
-            "seasonIndex": 0,
-            "chapterIndex": 2,
-            "pageIndex": 54
-        },
         "fb5483a1-4400-4a57-92fb-c92c45be8500": {
             "seasonIndex": 0,
             "chapterIndex": 2,
-            "pageIndex": 55
+            "pageIndex": 54
         },
         "ce028594-e41f-43dd-8c06-0760d3e2a0db": {
             "seasonIndex": 0,

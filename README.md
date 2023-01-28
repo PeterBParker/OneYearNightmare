@@ -1,27 +1,23 @@
 # TODO
 
-- 1. BASIC COMMENTS
-
-  - add explanation in logon screen
-
-- 2. BUILD EMAIL LIST
+- 1. BUILD EMAIL LIST
 
   - Integrate email service and start mailing list
   - Add email settings to User page
 
-- 3. POLISHED COMMENTS
+- 2. POLISHED COMMENTS
 
-  - add pagination
   - add like button and display to comments
   - Retrieve top three comments by likes, and the rest sorted by date newest first
+  - add pagination
   - On User Profile add the ability to dynamically update the avatar
 
-- 4. POLISH NAVIGATION
+- 3. POLISH NAVIGATION
 
   - Add infinite scroll instead of button navigation
   - Add tap on either side of page to navigate
 
-- 5. MISC
+- 4. MISC
 
   - Move/animate bookmark icon to top right of comic page.
   - Optimize performance

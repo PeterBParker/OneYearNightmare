@@ -100,7 +100,7 @@ const SignInToUserProfile = () => {
 
           <SignIn />
           <div className="mr-auto ml-auto mt-4">
-            <img src={loginExplain} width={200} className="ml-32 md:ml-56" />
+            <img src={loginExplain} width={300} className="" />
           </div>
         </div>
       )}
