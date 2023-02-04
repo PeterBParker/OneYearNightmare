@@ -13,6 +13,8 @@ import { getAuth, connectAuthEmulator } from "firebase/auth";
 import { getAnalytics } from "firebase/analytics";
 import { initializeAppCheck, ReCaptchaV3Provider } from "firebase/app-check";
 
+const mailchimp = require("@mailchimp/mailchimp_marketing");
+
 // Initialize the Firebase Application
 var firebaseConfig = {
   apiKey: "AIzaSyDwiYUN-zDZBeAc8QaH9WFDftkqW1XXDdQ",
@@ -47,6 +49,18 @@ if (window.location.hostname == "localhost") {
   connectFirestoreEmulator(db, "localhost", 8080);
   connectStorageEmulator(storage, "localhost", "9199");
 }
+
+mailchimp.setConfig({
+  apiKey: process.env.MAILCHIMP_API_KEY,
+  server: "us11",
+});
+
+async function test_mailchimp() {
+  const response = await mailchimp.ping.get();
+  console.log(response);
+}
+
+test_mailchimp();
 
 ReactDOM.render(
   <React.StrictMode>
