@@ -1,5 +1,4 @@
 import PageDetailsCard from "../PageDetailsCard";
-import SupportUsCard from "../../generic/SupportUs/SupportUsCard";
 import Comments from "../../comments/Comments";
 import discordBanner from "../../../assets/FINAL-ASSETS-072821/final assets/discord-banner-ill-CROPPED.png";
 

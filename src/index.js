@@ -42,7 +42,7 @@ export const auth = getAuth(firebaseApp);
 export const storage = getStorage(firebaseApp);
 export const AVATARS_PATH = "user_avatars/";
 
-if (window.location.hostname == "localhost") {
+if (window.location.hostname === "localhost") {
   connectAuthEmulator(auth, "http://localhost:9099"); // to use the emulator run "firebase emulators:start"
   connectFirestoreEmulator(db, "localhost", 8080);
   connectStorageEmulator(storage, "localhost", "9199");

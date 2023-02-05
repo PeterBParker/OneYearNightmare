@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import Header from "../../../header/Header";
 import TextCard from "../../../generic/TextCard";
 import MobileAboutCreators from "./MobileAboutCreators";
