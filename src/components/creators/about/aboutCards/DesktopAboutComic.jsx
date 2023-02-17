@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import Header from "../../../header/Header";
 import TextBody from "../../../generic/TextBody";
 import CardHeader from "../../../generic/CardHeader";
@@ -31,7 +30,12 @@ export default function DesktopAboutComic(props) {
             </div>
           </div>
           <div className="textAndImageCardImage w-full self-center birdMonsterImage">
-            <img className="mx-auto" src={aboutComicCardImage} width={"100%"} />
+            <img
+              className="mx-auto"
+              src={aboutComicCardImage}
+              width={"100%"}
+              alt=""
+            />
           </div>
         </div>
       </div>

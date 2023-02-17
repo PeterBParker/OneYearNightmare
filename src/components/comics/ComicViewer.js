@@ -58,10 +58,10 @@ export default function ComicViewer(props) {
 
   // Snaps the display to the top of the page
   useEffect(() => {
-    if (params.focus == SNAP_TO_PAGE_PATH) {
+    if (params.focus === SNAP_TO_PAGE_PATH) {
       scrollToTopOfPage();
     }
-  }, []);
+  }, [params.focus]);
 
   // Fetches the data we need to display the page and navigate.
   let releventObjs = ComicPageAPI.getRelValidObjs(params.pageUuid);

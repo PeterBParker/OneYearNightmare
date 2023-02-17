@@ -1,9 +1,4 @@
-import {
-  getDownloadURL,
-  ref,
-  uploadBytesResumable,
-  uploadString,
-} from "firebase/storage";
+import { getDownloadURL, ref, uploadString } from "firebase/storage";
 import { storage, AVATARS_PATH } from "../../index";
 import { createAvatar } from "@dicebear/core";
 import { lorelei } from "@dicebear/collection";
@@ -70,7 +65,6 @@ export const getAvatarUrl = async (userId) => {
       case "storage/object-not-found":
         // An avatar does not exist for it, and we need to get a default avatar
         return "https://api.dicebear.com/5.x/lorelei/svg";
-        break;
       default:
         console.log(error.code);
     }
@@ -78,11 +72,3 @@ export const getAvatarUrl = async (userId) => {
 
   return avatarUrl;
 };
-
-function b64EncodeUnicode(str) {
-  return btoa(encodeURIComponent(str));
-}
-
-function UnicodeDecodeB64(str) {
-  return decodeURIComponent(atob(str));
-}

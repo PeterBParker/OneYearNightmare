@@ -32,7 +32,7 @@ export default function Comments(props) {
               let children;
               if (comment.id) {
                 children = props.comments.filter(
-                  (c) => comment.id == c.parent_comment_id
+                  (c) => comment.id === c.parent_comment_id
                 );
               }
               return (

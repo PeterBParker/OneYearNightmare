@@ -7,7 +7,7 @@ export default function ChapterNumIcon() {
   const params = useParams();
   const [currPage, setCurrPage] = useState(pageData.maxDisplayPage);
 
-  if (params.pageUuid != null && params.pageUuid != currPage) {
+  if (params.pageUuid != null && params.pageUuid !== currPage) {
     setCurrPage(params.pageUuid);
   }
 

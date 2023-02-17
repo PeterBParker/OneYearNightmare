@@ -5,9 +5,7 @@ import React, { useRef } from "react";
 import { auth } from "../../..";
 import {
   COMIC_VIEWER_PATH,
-  SUPPORT_PAGE_PATH,
   ARCHIVE_PAGE_PATH,
-  CREATIVES_PAGE_PATH,
   SIGNIN_PAGE_PATH,
 } from "../../Main";
 
@@ -44,16 +42,6 @@ export default function MobileMenu(props) {
                 Archive
               </Link>
             </div>
-            {/* <div className="creatorsNavLink">
-              <Link to={CREATIVES_PAGE_PATH} onClick={props.onMenuChange}>
-                About Us
-              </Link>
-            </div>
-            <div className="supportNavLink">
-              <Link to={SUPPORT_PAGE_PATH} onClick={props.onMenuChange}>
-                Support Us
-              </Link>
-            </div> */}
             <div className="signinNavLink">
               <Link to={SIGNIN_PAGE_PATH} onClick={props.onMenuChange}>
                 {auth.currentUser == null ? "Login" : "User"}

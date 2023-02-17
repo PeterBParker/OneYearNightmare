@@ -1,6 +1,5 @@
 import DesktopReadPageCards from "./DesktopReadPageCards";
 import MobileReadPageCards from "./MobileReadPageCards";
-import ComicPageAPI from "../../../api/ComicPageAPI";
 import { useEffect, useState } from "react";
 import { db } from "../../../index";
 import {
