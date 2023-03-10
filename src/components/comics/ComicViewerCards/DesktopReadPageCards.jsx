@@ -1,6 +1,7 @@
-import PageDetailsCard from "../PageDetailsCard";
-import Comments from "../../comments/Comments";
 import discordBanner from "../../../assets/FINAL-ASSETS-072821/final assets/discord-banner-ill-CROPPED.png";
+import loadable from "@loadable/component";
+const PageDetailsCard = loadable(() => import("../PageDetailsCard"));
+const Comments = loadable(() => import("../../comments/Comments"));
 
 export default function DesktopReadPageCards(props) {
   return (

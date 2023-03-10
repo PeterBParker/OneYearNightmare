@@ -1,13 +1,16 @@
 import PropTypes from "prop-types";
+import loadable from "@loadable/component";
 
 import Comment from "./Comment";
-import Title from "../generic/Title";
 import { useState } from "react";
 import { SIGNIN_PAGE_PATH } from "../Main";
-import LinkButton from "../generic/LinkButton";
 import { auth } from "../../index";
 import useFirebaseAuth from "../users/hooks/useFirebaseAuth";
-import CreateNewCommentForm from "./CreateNewCommentForm";
+
+//const Comment = loadable(() => import("./Comment"));
+const Title = loadable(() => import("../generic/Title"));
+const LinkButton = loadable(() => import("../generic/LinkButton"));
+const CreateNewCommentForm = loadable(() => import("./CreateNewCommentForm"));
 
 /**
  * Renders supplied comment data.

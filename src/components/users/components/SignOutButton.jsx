@@ -18,8 +18,7 @@ export default function SignOutButton() {
         signOut(auth).then(() => {
           setIsDisabled(false);
         });
-        setIsDisabled(false);
-        thisButton.disabled = false;
+        window.location.reload();
       }}
     >
       {isDisabled ? (
