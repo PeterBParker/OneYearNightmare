@@ -25,7 +25,6 @@ import { useRef, useEffect } from "react";
 const ReadPageCards = loadable(() =>
   import("./ComicViewerCards/ReadPageCards")
 );
-//import ReadPageCards from "./ComicViewerCards/ReadPageCards";
 
 export default function ComicViewer(props) {
   const params = useParams();

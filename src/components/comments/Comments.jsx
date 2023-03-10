@@ -7,7 +7,6 @@ import { SIGNIN_PAGE_PATH } from "../Main";
 import { auth } from "../../index";
 import useFirebaseAuth from "../users/hooks/useFirebaseAuth";
 
-//const Comment = loadable(() => import("./Comment"));
 const Title = loadable(() => import("../generic/Title"));
 const LinkButton = loadable(() => import("../generic/LinkButton"));
 const CreateNewCommentForm = loadable(() => import("./CreateNewCommentForm"));
