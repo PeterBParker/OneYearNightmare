@@ -1,24 +1,36 @@
-import PageNavButtons from './PageNavButtons';
-import {useCookies} from 'react-cookie';
-import {useState} from 'react';
-import { useEffect } from 'react';
+import PageNavButtons from "./PageNavButtons";
+import { useState } from "react";
+import { useEffect } from "react";
+import { BOOKMARK_KEY } from "../../../index";
 
-import bookmarkOutline from '../../../assets/bookies/bookies/bookie-short-line-40px.png';
-import bookmarkFilled from '../../../assets/bookies/bookies/bookie-short-fill-40px.png';
+import bookmarkOutline from "../../../assets/bookies/bookies/bookie-short-line-40px.png";
+import bookmarkFilled from "../../../assets/bookies/bookies/bookie-short-fill-40px.png";
 
 export default function MobileNavBar(props) {
-    const [cookies, setCookie] = useCookies(['mxmBookmarkedPage'])
-    const [bookmarkIcon, setBookmarkIcon] = useState(bookmarkOutline);
+  const [bookmarkIcon, setBookmarkIcon] = useState(bookmarkOutline);
+  const [bookmarkId, setBookmarkId] = useState(
+    localStorage.getItem(BOOKMARK_KEY)
+  );
 
-    useEffect(() => {
-        if (props.pageId.toString() === cookies.mxmBookmarkedPage) {
-            setBookmarkIcon(bookmarkFilled);
-        } else {
-            setBookmarkIcon(bookmarkOutline);
-        }
-    }, [cookies.mxmBookmarkedPage, props.pageId]);
+  useEffect(() => {
+    localStorage.setItem(BOOKMARK_KEY, bookmarkId);
+  }, [bookmarkId]);
 
-    return (
-        <PageNavButtons pageId={props.pageId} isMobile={true} bookmarkIcon={bookmarkIcon} setBookmark={setCookie} clickEffects={props.clickEffects}/>
-    );
+  useEffect(() => {
+    if (props.pageId.toString() === bookmarkId) {
+      setBookmarkIcon(bookmarkFilled);
+    } else {
+      setBookmarkIcon(bookmarkOutline);
+    }
+  }, [bookmarkId, props.pageId]);
+
+  return (
+    <PageNavButtons
+      pageId={props.pageId}
+      isMobile={true}
+      bookmarkIcon={bookmarkIcon}
+      setBookmark={setBookmarkId}
+      clickEffects={props.clickEffects}
+    />
+  );
 }
