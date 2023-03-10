@@ -19,7 +19,7 @@ export default function DisplayNameForm(props) {
   };
 
   const changeDisplayName = async (newName) => {
-    if (props.onChangeAction != undefined) {
+    if (props.onChangeAction !== undefined) {
       props.onChangeAction();
     }
     // First validate the display name doesn't already exist
@@ -33,10 +33,10 @@ export default function DisplayNameForm(props) {
       await storeUserAvatar(auth.currentUser.uid, newName);
     }
     if (auth_success && comment_success) {
-      if (props.onSuccessAction != undefined) {
+      if (props.onSuccessAction !== undefined) {
         props.onSuccessAction();
       }
-      if (props.asyncOnSuccessAction != undefined) {
+      if (props.asyncOnSuccessAction !== undefined) {
         await props.asyncOnSuccessAction();
       }
     } else {

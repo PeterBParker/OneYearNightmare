@@ -11,14 +11,13 @@ import {
 } from "firebase/firestore";
 import { useState } from "react";
 import { PAGE_COMMENTS_TABLE } from "./utils/constants";
-import { Link } from "react-router-dom";
 import { SIGNIN_PAGE_PATH } from "../Main";
 
 function CreateNewCommentForm(props) {
   const [content, setContent] = useState("");
 
   const createNewComment = async (e) => {
-    if (content.trim().length == 0) {
+    if (content.trim().length === 0) {
       throw new Error("Cannot create a comment with only whitespace");
     }
     let comment = {

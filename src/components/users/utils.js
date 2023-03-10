@@ -39,7 +39,7 @@ export const setCommentDisplayName = async (new_name) => {
         success = true;
       })
       .catch((error) => {
-        if (error.code == "permission-denied") {
+        if (error.code === "permission-denied") {
           console.log(error.message);
           throw new Error(
             "Invalid display name. A valid display name uses less than 20 alphanumeric characters."
@@ -96,7 +96,7 @@ export const displayNameExists = async (displayName) => {
   }
 };
 export const displayNameValid = (displayName) => {
-  if (/^[a-z|A-Z|0-9|\-|\_|\.]+$/.test(displayName)) {
+  if (/^[a-z|A-Z|0-9|\-|_|.]+$/.test(displayName)) {
     return true;
   } else {
     return false;
@@ -119,7 +119,7 @@ export const setEmail = async (newEmail) => {
         success = true;
       })
       .catch((error) => {
-        if (error.name == "FirebaseError") {
+        if (error.name === "FirebaseError") {
           throw new Error(error.code);
         }
         throw new Error(error);
@@ -141,7 +141,7 @@ export const deleteComments = async () => {
     });
     const batch = writeBatch(db);
     querySnapshot.forEach((doc) => {
-      if (doc.data().has_children == true) {
+      if (doc.data().has_children === true) {
         batch.update(doc.ref, { author_uid: null, content: null });
       } else batch.delete(doc.ref);
     });
@@ -159,7 +159,7 @@ export const deleteComment = async (commentId) => {
       }
     );
     const batch = writeBatch(db);
-    if (commentDoc.data().has_children == true) {
+    if (commentDoc.data().has_children === true) {
       batch.update(commentDoc.ref, { author_uid: null, content: null });
     } else batch.delete(commentDoc.ref);
     await batch.commit();

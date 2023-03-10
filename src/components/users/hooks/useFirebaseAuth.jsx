@@ -10,7 +10,7 @@ const useFirebaseAuth = (auth) => {
     return () => {
       unlisten();
     };
-  }, []);
+  });
 
   return authUser;
 };

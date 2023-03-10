@@ -23,7 +23,7 @@ export default function MobileHeader(props) {
         </div>
         <div className="headerLogoMobile justify-self-center self-start">
           <Link to={COMIC_VIEWER_DEFAULT_PATH}>
-            <img src={logo} width="170" />
+            <img src={logo} width="170" alt="home link" />
           </Link>
         </div>
         <HamburgerMenu />
