@@ -1,3 +1,4 @@
+import loadable from "@loadable/component";
 import ComicPageAPI from "../../api/ComicPageAPI";
 import MobileNavBar from "./navigation/MobileNavBar";
 import DesktopNavBar from "./navigation/desktop/DesktopNavBar";
@@ -20,7 +21,10 @@ import querySizes from "../../styling/breakpoints.json";
 import HorizontalShare from "./HorizontalShare";
 import SimpleNavBar from "../comics/navigation/desktop/SimpleNavBar";
 import { useRef, useEffect } from "react";
-import ReadPageCards from "./ComicViewerCards/ReadPageCards";
+
+const ReadPageCards = loadable(() =>
+  import("./ComicViewerCards/ReadPageCards")
+);
 
 export default function ComicViewer(props) {
   const params = useParams();
