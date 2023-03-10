@@ -1,3 +1,11 @@
+# See it in Action!
+
+https://www.monstersandmyriads.com/read
+
+# About
+
+This is a custom, serial-image hosting website for a graphic-novel I'm writing and my wife is illustrating. There aren't many great off-the-shelf products for supporting page-style webcomic publishing, so this was started as a simple image hosting site that has evolved over time. It's a passion project that I might one day generalize for others to easily start their own custom graphic-novel site. If you would like help with your own site, please reach out and I'd love to talk! You can reach me on [LinkedIn](https://www.linkedin.com/in/nathaneharris/) or [Email](mailto:harrihaven2@gmail.com).
+
 # TODO
 
 - 1. BUILD EMAIL LIST
@@ -25,6 +33,3 @@
       - `svgo -f ./path/to/svgFolder -o ./path/to/output`
     - Scan with Lighthouse and GTmetrix
   - Introduce logging and log all errors
-
-- BUG FIXES
-  - When a user comments and then replies to their own comment and no one else does, when they go to delete their account, the original comment will persist as a "This comment was deleted." It would be nice if the database updated whether or not the comment has children as each comment is deleted.
