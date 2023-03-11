@@ -779,6 +779,9 @@ body {
 .cancel-comment-btn {
   letter-spacing: 0.2rem;
 }
+.mobileComicPageContainer {
+  box-shadow: 0 30px 20px 2px rgba(224, 220, 209, 1);
+}
 
 @media only screen and (min-width: 807px) {
   .frosted-glass-gradient {
