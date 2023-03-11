@@ -28,17 +28,8 @@ const ComicPageAPI = {
     );
     return path;
   },
-  getFirstPage: function () {
-    if (0 in pagesData.seasons) {
-      let season = pagesData.seasons[0];
-      if (0 in season.chapters) {
-        let chapter = season.chapters[0];
-        if (0 in chapter.pages) {
-          return chapter.pages[0];
-        }
-      }
-    }
-    return null;
+  getFirstPageId: function () {
+    return pagesData.firstDisplayPage;
   },
   getChaptersInSeason: function (seasonName) {
     const isSeason = (p) => p.seasonName === seasonName;

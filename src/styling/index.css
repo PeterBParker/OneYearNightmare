@@ -225,38 +225,8 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
-.mobileNavButtonsContainer {
-  display: grid;
-  grid-template-columns: 17.5% 17.5% 30% 17.5% 17.5%;
-  grid-template-rows: 100%;
-}
-.desktopNavButtonsContainer {
-  display: grid;
-  grid-template-columns: 20% 20% 20% 20% 20%;
-  grid-template-rows: 100%;
-}
 .bookmarkEmpty {
   cursor: pointer;
-}
-.firstPageButton {
-  grid-column-start: 1;
-  grid-column-end: 2;
-}
-.prevPageButton {
-  grid-column-start: 2;
-  grid-column-end: 3;
-}
-.mysteryButton {
-  grid-column-start: 3;
-  grid-column-end: 4;
-}
-.nextButton {
-  grid-column-start: 4;
-  grid-column-end: 5;
-}
-.lastPageButton {
-  grid-column-start: 5;
-  grid-column-end: 6;
 }
 .comment-list {
   overflow-y: scroll;
@@ -502,8 +472,6 @@ body {
   position: sticky;
   bottom: 0;
   display: grid;
-  grid-template-columns: 33% 33% 33%;
-  grid-template-rows: 100%;
   width: 829px;
   z-index: 10;
 }
@@ -559,13 +527,16 @@ body {
 .comicViewerVertShare {
   grid-column-start: 3;
   grid-column-end: 4;
-  max-width: 128px;
+  max-width: 85px;
 }
 .vertShare {
   position: -webkit-sticky;
   position: sticky;
-  top: 2em;
+  top: 0em;
   transition: all 0.5s 0s;
+}
+.font-scribble {
+  font-family: "Caveat", cursive;
 }
 
 .supportCards {
@@ -801,9 +772,50 @@ body {
 .disabled {
   cursor: default !important;
 }
-
+.bookmarkBtnDims {
+  height: 78px;
+  width: 78px;
+}
 .cancel-comment-btn {
   letter-spacing: 0.2rem;
+}
+
+@media only screen and (min-width: 807px) {
+  .frosted-glass-gradient {
+    z-index: 1;
+    width: 807px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+.frosted-glass-gradient {
+  z-index: 1;
+
+  margin-left: auto;
+  margin-right: auto;
+}
+.frosted-glass-gradient:before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 126px;
+  backdrop-filter: blur(20px);
+  mask: linear-gradient(transparent, black 60%);
+}
+
+.hover-bump-right:hover {
+  animation: bump-right 0.5s ease-in-out 0s 1;
+}
+
+.hover-bump-left:hover {
+  animation: bump-left 0.5s ease-in-out 0s 1;
+}
+
+.hover-wiggle:hover {
+  animation: wiggle 0.5s ease-in-out 0s 1;
 }
 
 /*
@@ -976,5 +988,149 @@ body {
   }
   100% {
     opacity: 100;
+  }
+}
+
+@-webkit-keyframes wiggle {
+  0% {
+    -webkit-transform: rotate(10deg);
+  }
+  25% {
+    -webkit-transform: rotate(-10deg);
+  }
+  50% {
+    -webkit-transform: rotate(20deg);
+  }
+  75% {
+    -webkit-transform: rotate(-5deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+  }
+}
+
+@-ms-keyframes wiggle {
+  0% {
+    -ms-transform: rotate(1deg);
+  }
+  25% {
+    -ms-transform: rotate(-1deg);
+  }
+  50% {
+    -ms-transform: rotate(1.5deg);
+  }
+  75% {
+    -ms-transform: rotate(-5deg);
+  }
+  100% {
+    -ms-transform: rotate(0deg);
+  }
+}
+
+@keyframes wiggle {
+  0% {
+    transform: rotate(10deg);
+  }
+  25% {
+    transform: rotate(-10deg);
+  }
+  50% {
+    transform: rotate(20deg);
+  }
+  75% {
+    transform: rotate(-5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes bump-right {
+  0% {
+    transform: translateX(0px);
+  }
+  25% {
+    transform: translateX(-4px);
+  }
+  75% {
+    transform: translateX(7px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+@-ms-keyframes bump-right {
+  0% {
+    -ms-transform: translateX(0px);
+  }
+  25% {
+    -ms-transform: translateX(-4px);
+  }
+  75% {
+    -ms-transform: translateX(7px);
+  }
+  100% {
+    -ms-transform: translateX(0px);
+  }
+}
+
+@-webkit-keyframes bump-right {
+  0% {
+    -webkit-keyframes: translateX(0px);
+  }
+  25% {
+    -webkit-keyframes: translateX(-4px);
+  }
+  75% {
+    -webkit-keyframes: translateX(7px);
+  }
+  100% {
+    -webkit-keyframes: translateX(0px);
+  }
+}
+
+@keyframes bump-left {
+  0% {
+    transform: translateX(0px);
+  }
+  25% {
+    transform: translateX(4px);
+  }
+  75% {
+    transform: translateX(-7px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+@-ms-keyframes bump-left {
+  0% {
+    -ms-transform: translateX(0px);
+  }
+  25% {
+    -ms-transform: translateX(4px);
+  }
+  75% {
+    -ms-transform: translateX(-7px);
+  }
+  100% {
+    -ms-transform: translateX(0px);
+  }
+}
+
+@-webkit-keyframes bump-left {
+  0% {
+    -webkit-keyframes: translateX(0px);
+  }
+  25% {
+    -webkit-keyframes: translateX(4px);
+  }
+  75% {
+    -webkit-keyframes: translateX(-7px);
+  }
+  100% {
+    -webkit-keyframes: translateX(0px);
   }
 }
