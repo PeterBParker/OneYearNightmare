@@ -1,7 +1,6 @@
 import loadable from "@loadable/component";
 import ComicPageAPI from "../../api/ComicPageAPI";
-import MobileNavBar from "./navigation/MobileNavBar";
-import DesktopNavBar from "./navigation/desktop/DesktopNavBar";
+import NavBar from "./navigation/NavBar";
 import DesktopPageView from "./ComicViewerCards/DesktopPageView";
 import MobilePageView from "./ComicViewerCards/MobilePageView";
 import Header from "../header/Header";
@@ -91,26 +90,17 @@ export default function ComicViewer(props) {
       {isDesktop ? <SimpleNavBar page={Pages.READ} /> : ""}
       {isDesktop ? (
         <DesktopPageView
-          pageImageUrl={pageImageUrl}
-          sharePageUrl={sharePageUrl}
-          title={title}
+          pageId={params.pageUuid}
           topOfPageRef={topOfPageRef}
+          clickEffects={loadNextPageEffects}
+          pageImageUrl={pageImageUrl}
         />
       ) : (
         <MobilePageView
           pageImageUrl={pageImageUrl}
           topOfPageRef={topOfPageRef}
-        />
-      )}
-      {isDesktop ? (
-        <DesktopNavBar
-          pageId={params.pageUuid}
           clickEffects={loadNextPageEffects}
-        />
-      ) : (
-        <MobileNavBar
           pageId={params.pageUuid}
-          clickEffects={loadNextPageEffects}
         />
       )}
       {isDesktop ? (

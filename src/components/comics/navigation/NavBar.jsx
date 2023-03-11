@@ -1,12 +1,13 @@
 import PageNavButtons from "./PageNavButtons";
-import { useState } from "react";
 import { useEffect } from "react";
 import { BOOKMARK_KEY } from "../../../index";
 
 import bookmarkOutline from "../../../assets/bookies/bookies/bookie-short-line-40px.png";
 import bookmarkFilled from "../../../assets/bookies/bookies/bookie-short-fill-40px.png";
+import { useState } from "react";
+import { bool, func, string } from "prop-types";
 
-export default function MobileNavBar(props) {
+export default function NavBar(props) {
   const [bookmarkIcon, setBookmarkIcon] = useState(bookmarkOutline);
   const [bookmarkId, setBookmarkId] = useState(
     localStorage.getItem(BOOKMARK_KEY)
@@ -27,10 +28,16 @@ export default function MobileNavBar(props) {
   return (
     <PageNavButtons
       pageId={props.pageId}
-      isMobile={true}
+      isMobile={props.isMobile}
+      clickEffects={props.clickEffects}
       bookmarkIcon={bookmarkIcon}
       setBookmark={setBookmarkId}
-      clickEffects={props.clickEffects}
     />
   );
 }
+
+NavBar.propTypes = {
+  pageId: string.isRequired,
+  isMobile: bool.isRequired,
+  clickEffects: func.isRequired,
+};
