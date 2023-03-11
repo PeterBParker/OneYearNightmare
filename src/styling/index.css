@@ -790,7 +790,6 @@ body {
 }
 .frosted-glass-gradient {
   z-index: 1;
-
   margin-left: auto;
   margin-right: auto;
 }
@@ -801,7 +800,7 @@ body {
   top: 0;
   left: 0;
   right: 0;
-  height: 126px;
+  height: 94px;
   backdrop-filter: blur(20px);
   mask: linear-gradient(transparent, black 60%);
 }
