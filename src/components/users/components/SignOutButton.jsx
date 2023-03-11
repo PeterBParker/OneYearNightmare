@@ -10,7 +10,7 @@ export default function SignOutButton() {
     <button
       id={buttonId}
       style={{ width: 104, height: 44 }}
-      className="rounded bg-grey-light text-eggshell btn text-center px-4 py-2 basis-1/4 font-medium text-lg"
+      className="rounded bg-grey-light hover-bump-center text-eggshell btn text-center px-4 py-2 basis-1/4 font-medium text-lg"
       onClick={async () => {
         let thisButton = document.getElementById(buttonId);
         thisButton.disabled = true;

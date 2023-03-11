@@ -55,7 +55,7 @@ export default function Comments(props) {
               callback={() => setShowCommentSubmit(false)}
             />
             <div
-              className="cancel-comment-btn btn font-medium py-1 bg-eggshell grow-btn rounded-lg mt-2"
+              className="cancel-comment-btn btn font-medium py-1 bg-eggshell hover-bump-center rounded-lg mt-2"
               onClick={(e) => setShowCommentSubmit(false)}
             >
               Cancel
@@ -63,7 +63,7 @@ export default function Comments(props) {
           </div>
         ) : (
           <div
-            className="grow-btn my-4 py-2 mx-4 btn bg-eggshell font-medium"
+            className="hover-bump-center my-4 py-2 mx-4 btn bg-eggshell font-medium"
             onClick={(e) => setShowCommentSubmit(true)}
           >
             Add Comment
@@ -72,7 +72,7 @@ export default function Comments(props) {
       ) : (
         <LinkButton
           to={SIGNIN_PAGE_PATH}
-          styles="grow-btn btn my-4 py-2 mx-4 btn  bg-cream-dark font-medium not-italic rounded"
+          styles="hover-bump-center btn my-4 py-2 mx-4 btn  bg-cream-dark font-medium not-italic rounded"
           buttonContent="Log In"
         />
       )}

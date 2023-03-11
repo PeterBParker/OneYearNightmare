@@ -28,7 +28,7 @@ export default function DesktopReadPageCards(props) {
               {"new page notifications | comment & hang"}
             </div>
           </div>
-          <div className="transition duration-500 ease-in-out bg-cream-dark grow-btn rounded text-2xl font-medium px-4 py-2 mr-8">
+          <div className="transition duration-500 ease-in-out bg-cream-dark hover-bump-center rounded text-2xl font-medium px-4 py-2 mr-8">
             <a href="https://discord.gg/47DQVUnbD6" className="">
               JOIN <i className="fa-solid fa-arrow-right"></i>
             </a>
