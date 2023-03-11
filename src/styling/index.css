@@ -818,6 +818,10 @@ body {
   animation: wiggle 0.5s ease-in-out 0s 1;
 }
 
+.hover-bump-center:hover {
+  animation: bump-center 0.3s ease-in-out 0s 1;
+}
+
 /*
  * Effects
  *
@@ -1132,5 +1136,41 @@ body {
   }
   100% {
     -webkit-keyframes: translateX(0px);
+  }
+}
+
+@keyframes bump-center {
+  0% {
+    transform: scale(0.98);
+  }
+  50% {
+    transform: scale(1.03);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@-ms-keyframes bump-center {
+  0% {
+    -ms-keyframes: scale(0.98);
+  }
+  50% {
+    -ms-keyframes: scale(1.03);
+  }
+  100% {
+    -ms-keyframes: scale(1);
+  }
+}
+
+@-webkit-keyframes bump-center {
+  0% {
+    -webkit-keyframes: scale(0.98);
+  }
+  50% {
+    -webkit-keyframes: scale(1.03);
+  }
+  100% {
+    -webkit-keyframes: scale(1);
   }
 }
