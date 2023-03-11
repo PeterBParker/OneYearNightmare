@@ -1,33 +1,36 @@
 import ComicPageAPI from "../../../api/ComicPageAPI";
-import { Link } from "react-router-dom";
-import activeFirstIcon from "../../../assets/FINAL-ASSETS-072821/final assets/left-skip-30px.png";
-import disabledFirstIcon from "../../../assets/FINAL-ASSETS-072821/final assets/left-skip-light-30px.png";
+import activeFirstIcon from "../../../assets/FINAL-ASSETS-072821/final assets/left-skip-line-30px.png";
+import disabledFirstIcon from "../../../assets/FINAL-ASSETS-072821/final assets/left-skip-line-light-30px.png";
+import { useState, useEffect } from "react";
+import NavButton from "./NavButton";
+import { func, string } from "prop-types";
 
 export default function FirstPageButton(props) {
-  const disabledButton = (
-    <div className="navButton">
-      <img
-        src={disabledFirstIcon}
-        width={30}
-        alt="disabled navigation first page button"
-      />
-    </div>
-  );
-  const firstPageId = ComicPageAPI.getFirstPage().uuid;
+  const firstPageId = ComicPageAPI.getFirstPageId();
+  const [disabled, setDisabled] = useState(props.pageId === firstPageId);
 
-  if (props.pageId === firstPageId) {
-    return disabledButton;
-  }
+  useEffect(() => {
+    if (props.pageId === firstPageId) {
+      setDisabled(true);
+    } else {
+      setDisabled(false);
+    }
+  }, [props.pageId]);
+
   const pageFilePath = "/read/" + firstPageId;
   return (
-    <div className="navButton" onClick={props.clickEffects}>
-      <Link to={pageFilePath}>
-        <img
-          src={activeFirstIcon}
-          width={30}
-          alt="enabled navigation first page button"
-        />
-      </Link>
-    </div>
+    <NavButton
+      disabled={disabled}
+      pageFilePath={pageFilePath}
+      clickEffects={props.clickEffects}
+      activeIcon={activeFirstIcon}
+      disabledIcon={disabledFirstIcon}
+      animationClass="hover-bump-left"
+    />
   );
 }
+
+FirstPageButton.propTypes = {
+  pageId: string.isRequired,
+  clickEffects: func.isRequired,
+};

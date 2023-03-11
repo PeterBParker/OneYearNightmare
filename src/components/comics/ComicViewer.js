@@ -1,6 +1,6 @@
+import loadable from "@loadable/component";
 import ComicPageAPI from "../../api/ComicPageAPI";
-import MobileNavBar from "./navigation/MobileNavBar";
-import DesktopNavBar from "./navigation/desktop/DesktopNavBar";
+import NavBar from "./navigation/NavBar";
 import DesktopPageView from "./ComicViewerCards/DesktopPageView";
 import MobilePageView from "./ComicViewerCards/MobilePageView";
 import Header from "../header/Header";
@@ -20,7 +20,10 @@ import querySizes from "../../styling/breakpoints.json";
 import HorizontalShare from "./HorizontalShare";
 import SimpleNavBar from "../comics/navigation/desktop/SimpleNavBar";
 import { useRef, useEffect } from "react";
-import ReadPageCards from "./ComicViewerCards/ReadPageCards";
+
+const ReadPageCards = loadable(() =>
+  import("./ComicViewerCards/ReadPageCards")
+);
 
 export default function ComicViewer(props) {
   const params = useParams();
@@ -58,10 +61,10 @@ export default function ComicViewer(props) {
 
   // Snaps the display to the top of the page
   useEffect(() => {
-    if (params.focus == SNAP_TO_PAGE_PATH) {
+    if (params.focus === SNAP_TO_PAGE_PATH) {
       scrollToTopOfPage();
     }
-  }, []);
+  }, [params.focus]);
 
   // Fetches the data we need to display the page and navigate.
   let releventObjs = ComicPageAPI.getRelValidObjs(params.pageUuid);
@@ -87,26 +90,17 @@ export default function ComicViewer(props) {
       {isDesktop ? <SimpleNavBar page={Pages.READ} /> : ""}
       {isDesktop ? (
         <DesktopPageView
-          pageImageUrl={pageImageUrl}
-          sharePageUrl={sharePageUrl}
-          title={title}
+          pageId={params.pageUuid}
           topOfPageRef={topOfPageRef}
+          clickEffects={loadNextPageEffects}
+          pageImageUrl={pageImageUrl}
         />
       ) : (
         <MobilePageView
           pageImageUrl={pageImageUrl}
           topOfPageRef={topOfPageRef}
-        />
-      )}
-      {isDesktop ? (
-        <DesktopNavBar
-          pageId={params.pageUuid}
           clickEffects={loadNextPageEffects}
-        />
-      ) : (
-        <MobileNavBar
           pageId={params.pageUuid}
-          clickEffects={loadNextPageEffects}
         />
       )}
       {isDesktop ? (

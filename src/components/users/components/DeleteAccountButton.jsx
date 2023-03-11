@@ -68,7 +68,7 @@ export default function DeleteAccountButton() {
   return (
     <div>
       <button
-        className="rounded bg-red-bad btn text-center px-4 py-2 basis-1/4 font-medium text-lg"
+        className="rounded hover-bump-center bg-red-bad btn text-center px-4 py-2 basis-1/4 font-medium text-lg"
         onClick={() => {
           setShowModal(true);
         }}

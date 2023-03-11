@@ -3,7 +3,6 @@ import ReactDOM from "react-dom";
 import App from "./components/App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
-import { CookiesProvider } from "react-cookie";
 import "./styling/tailwind.output.css";
 
 import { initializeApp } from "firebase/app";
@@ -43,8 +42,9 @@ export const db = getFirestore(firebaseApp);
 export const auth = getAuth(firebaseApp);
 export const storage = getStorage(firebaseApp);
 export const AVATARS_PATH = "user_avatars/";
+export const BOOKMARK_KEY = "mxmBookmarkedPage";
 
-if (window.location.hostname == "localhost") {
+if (window.location.hostname === "localhost") {
   connectAuthEmulator(auth, "http://localhost:9099"); // to use the emulator run "firebase emulators:start"
   connectFirestoreEmulator(db, "localhost", 8080);
   connectStorageEmulator(storage, "localhost", "9199");
@@ -65,9 +65,7 @@ test_mailchimp();
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-      <CookiesProvider>
-        <App />
-      </CookiesProvider>
+      <App />
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById("root")

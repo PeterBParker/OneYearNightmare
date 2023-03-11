@@ -1,15 +1,10 @@
 import * as firebaseui from "firebaseui";
-import {
-  EmailAuthProvider,
-  isSignInWithEmailLink,
-  signInWithEmailLink,
-} from "firebase/auth";
+import { EmailAuthProvider } from "firebase/auth";
 import React from "react";
 import { useEffect } from "react";
 import { auth } from "../../..";
 import useFirebaseAuth from "../hooks/useFirebaseAuth";
 import UserProfile from "./UserProfile";
-import { storeUserAvatar } from "../avatarHelpers";
 import loginIllo from "../../../assets/login-explanation.png";
 import loginExplain from "../../../assets/login-explanation-2.png";
 
@@ -17,15 +12,7 @@ const getUiConfig = () => {
   var uiConfig = {
     callbacks: {
       signInSuccessWithAuthResult: function (authResult, redirectUrl) {
-        var user = authResult.user;
-        var credential = authResult.credential;
-        var isNewUser = authResult.additionalUserInfo.isNewUser;
-        var providerId = authResult.additionalUserInfo.providerId;
-        var operationType = authResult.operationType;
-        // User successfully signed in.
-        // Return type determines whether we continue the redirect automatically
-        // or whether we leave that to developer to handle.
-        return false;
+        return true;
       },
       uiShown: function () {
         // The widget is rendered.
@@ -44,12 +31,6 @@ const getUiConfig = () => {
         // Allow the user the ability to complete sign-in cross device, including
         // the mobile apps specified in the ActionCodeSettings object below.
         forceSameDevice: false,
-        emailLinkSignIn: function () {
-          return {
-            url: "https://www.monstersandmyriads.com/login",
-            handleCodeInApp: true,
-          };
-        },
       },
     ],
     // Terms of service url.
@@ -66,26 +47,6 @@ const getUiConfig = () => {
 
 const SignInToUserProfile = () => {
   const authUser = useFirebaseAuth(auth);
-  if (isSignInWithEmailLink(auth, window.location.href)) {
-    let email = window.localStorage.getItem("emailForSignIn");
-    if (!email) {
-      email = window.prompt("Please provide your email for confirmation");
-    }
-    signInWithEmailLink(auth, email, window.location.href)
-      .then((result) => {
-        // Clear email from storage.
-        window.localStorage.removeItem("emailForSignIn");
-        // You can access the new user via result.user
-        // Additional user info profile not available via:
-        // result.additionalUserInfo.profile == null
-        // You can check if the user is new or existing:
-        // result.additionalUserInfo.isNewUser
-      })
-      .catch((error) => {
-        // Some error occurred, you can inspect the code: error.code
-        // Common errors could be invalid email and invalid or expired OTPs.
-      });
-  }
 
   // TODO Fix the first render of the sign in page before displaying the user profile
   return (
@@ -95,12 +56,22 @@ const SignInToUserProfile = () => {
       ) : (
         <div className="flex flex-col justify-center justify-items-center content-center">
           <div className="ml-auto mr-auto">
-            <img src={loginIllo} width={400} className="mr-8" />
+            <img
+              src={loginIllo}
+              width={400}
+              className="mr-8"
+              alt="explanation that we will never sell your email or data."
+            />
           </div>
 
           <SignIn />
           <div className="mr-auto ml-auto mt-4">
-            <img src={loginExplain} width={300} className="" />
+            <img
+              src={loginExplain}
+              width={300}
+              className=""
+              alt="explanation that we will send you an email with a login link instead of using a username and password."
+            />
           </div>
         </div>
       )}

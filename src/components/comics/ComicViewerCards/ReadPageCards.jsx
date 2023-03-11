@@ -1,6 +1,4 @@
-import DesktopReadPageCards from "./DesktopReadPageCards";
-import MobileReadPageCards from "./MobileReadPageCards";
-import ComicPageAPI from "../../../api/ComicPageAPI";
+import loadable from "@loadable/component";
 import { useEffect, useState } from "react";
 import { db } from "../../../index";
 import {
@@ -11,7 +9,8 @@ import {
   onSnapshot,
 } from "firebase/firestore";
 import { PAGE_COMMENTS_TABLE } from "../../comments/utils/constants";
-
+const DesktopReadPageCards = loadable(() => import("./DesktopReadPageCards"));
+const MobileReadPageCards = loadable(() => import("./MobileReadPageCards"));
 export default function ReadPageCards(props) {
   const [comments, setComments] = useState([]);
 

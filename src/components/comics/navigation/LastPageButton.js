@@ -1,33 +1,36 @@
 import ComicPageAPI from "../../../api/ComicPageAPI";
-import { Link } from "react-router-dom";
-import activeLastIcon from "../../../assets/FINAL-ASSETS-072821/final assets/right-skip-30px.png";
-import disabledLastIcon from "../../../assets/FINAL-ASSETS-072821/final assets/right-skip-light-30px.png";
+import activeLastIcon from "../../../assets/FINAL-ASSETS-072821/final assets/right-skip-line-30px.png";
+import disabledLastIcon from "../../../assets/FINAL-ASSETS-072821/final assets/right-skip-line-light-30px.png";
+import NavButton from "./NavButton";
+import { useState, useEffect } from "react";
+import { func, string } from "prop-types";
 
 export default function LastPageButton(props) {
-  const disabledButton = (
-    <div className="navButton">
-      <img
-        src={disabledLastIcon}
-        width={30}
-        alt="disabled navigation last page button"
-      />
-    </div>
-  );
   const lastPageId = ComicPageAPI.getMaxDisplayPage();
+  const [disabled, setDisabled] = useState(props.pageId === lastPageId);
 
-  if (props.pageId === lastPageId) {
-    return disabledButton;
-  }
+  useEffect(() => {
+    if (props.pageId === lastPageId) {
+      setDisabled(true);
+    } else {
+      setDisabled(false);
+    }
+  }, [props.pageId]);
+
   const pageFilePath = "/read/" + lastPageId;
   return (
-    <div className="navButton" onClick={props.clickEffects}>
-      <Link to={pageFilePath}>
-        <img
-          src={activeLastIcon}
-          width={30}
-          alt="enabled navigation last page button"
-        />
-      </Link>
-    </div>
+    <NavButton
+      disabled={disabled}
+      pageFilePath={pageFilePath}
+      clickEffects={props.clickEffects}
+      activeIcon={activeLastIcon}
+      disabledIcon={disabledLastIcon}
+      animationClass="hover-bump-right"
+    />
   );
 }
+
+LastPageButton.propTypes = {
+  pageId: string.isRequired,
+  clickEffects: func.isRequired,
+};

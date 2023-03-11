@@ -1,4 +1,4 @@
-import { Switch, Route, useLocation } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 import ComicPageAPI from "../api/ComicPageAPI";
 import Archive from "./comics/archive/Archive";
 import ComicRouter from "./comics/ComicRouter";
@@ -7,15 +7,12 @@ import Support from "./creators/supportUsCards/Support";
 import Home from "./Home";
 import SignInPage from "./users/pages/SignInPage";
 
-import { useMediaQuery } from "react-responsive";
-import querySizes from "../styling/breakpoints.json";
-
 export const DOMAIN = "https://monstersandmyriads.com";
 export const BASE_PATH = "/MnMPages/";
 
 export const COMIC_VIEWER_PATH = "/read";
 export const COMIC_VIEWER_DEFAULT_PATH =
-  COMIC_VIEWER_PATH + "/" + ComicPageAPI.getFirstPage().uuid;
+  COMIC_VIEWER_PATH + "/" + ComicPageAPI.getFirstPageId();
 export const SUPPORT_PAGE_PATH = "/support";
 export const ARCHIVE_PAGE_PATH = "/archive";
 export const CREATIVES_PAGE_PATH = "/creatives";
@@ -26,32 +23,10 @@ export const NO_USER_ID = "null";
 export const SNAP_TO_PAGE_PATH = "snap-to-page";
 export const MAX_COMMENT_CHARS = 350;
 
-export default function Main(props) {
-  const location = useLocation();
-  const isDesktop = useMediaQuery({ query: querySizes["lg"] });
-
-  // TODO The idea is to render the header outside of the switch and then use the currentPage to determine the header color
-  // the main downside to this idea is that I need to provide a default color
-  let desktopLightBg = "desktopDefaultBg desktopBg";
+export default function Main() {
   let desktopDarkBg = "comicViewerDesktop desktopBg";
-  let mobileLightBg = "bg-cream-light lightHeaderBg headerBg mobileHeaderBg";
-  let mobileDarkBg = "bg-white darkHeaderBg headerBg mobileHeaderBg";
 
   let headerColorClassNames = desktopDarkBg;
-
-  // if (location.pathname.startsWith(COMIC_VIEWER_PATH)) {
-  //   if (isDesktop) {
-  //     headerColorClassNames = desktopDarkBg;
-  //   } else {
-  //     headerColorClassNames = mobileDarkBg;
-  //   }
-  // } else {
-  //   if (isDesktop) {
-  //     headerColorClassNames = desktopLightBg;
-  //   } else {
-  //     headerColorClassNames = mobileLightBg;
-  //   }
-  // }
 
   return (
     <div

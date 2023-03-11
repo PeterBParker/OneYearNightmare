@@ -1,8 +1,7 @@
-import moment from "moment";
 import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import { auth } from "../..";
-import { deleteComments, deleteComment, getDisplayName } from "../users/utils";
+import { deleteComment, getDisplayName } from "../users/utils";
 import EditCommentForm from "./EditCommentForm";
 import CreateNewCommentForm from "./CreateNewCommentForm";
 import { getAvatarUrl } from "../users/avatarHelpers";
@@ -43,7 +42,7 @@ export function SingleComment(props) {
     return () => {
       isMounted = false;
     };
-  });
+  }, [props.comment.author_uid]);
 
   useEffect(() => {
     let isMounted = true;
@@ -112,14 +111,14 @@ export function SingleComment(props) {
             avatarUrl={avatarUrl}
             wdith={70}
             height={70}
-            isDeleted={displayName == accountDeletedDisplay}
+            isDeleted={displayName === accountDeletedDisplay}
           />
         </div>
         <div className="flex comment-data-header justify-between">
           <div className="flex flex-col md:flex-row">
             <div
               className={`comment-author font-medium text-left leading-5 ${
-                displayName == accountDeletedDisplay ? "italic" : ""
+                displayName === accountDeletedDisplay ? "italic" : ""
               }`}
             >
               {displayName}

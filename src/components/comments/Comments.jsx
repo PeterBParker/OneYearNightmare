@@ -1,13 +1,15 @@
 import PropTypes from "prop-types";
+import loadable from "@loadable/component";
 
 import Comment from "./Comment";
-import Title from "../generic/Title";
 import { useState } from "react";
 import { SIGNIN_PAGE_PATH } from "../Main";
-import LinkButton from "../generic/LinkButton";
 import { auth } from "../../index";
 import useFirebaseAuth from "../users/hooks/useFirebaseAuth";
-import CreateNewCommentForm from "./CreateNewCommentForm";
+
+const Title = loadable(() => import("../generic/Title"));
+const LinkButton = loadable(() => import("../generic/LinkButton"));
+const CreateNewCommentForm = loadable(() => import("./CreateNewCommentForm"));
 
 /**
  * Renders supplied comment data.
@@ -32,7 +34,7 @@ export default function Comments(props) {
               let children;
               if (comment.id) {
                 children = props.comments.filter(
-                  (c) => comment.id == c.parent_comment_id
+                  (c) => comment.id === c.parent_comment_id
                 );
               }
               return (
@@ -53,7 +55,7 @@ export default function Comments(props) {
               callback={() => setShowCommentSubmit(false)}
             />
             <div
-              className="cancel-comment-btn btn font-medium py-1 bg-eggshell grow-btn rounded-lg mt-2"
+              className="cancel-comment-btn btn font-medium py-1 bg-eggshell hover-bump-center rounded-lg mt-2"
               onClick={(e) => setShowCommentSubmit(false)}
             >
               Cancel
@@ -61,7 +63,7 @@ export default function Comments(props) {
           </div>
         ) : (
           <div
-            className="grow-btn my-4 py-2 mx-4 btn bg-eggshell font-medium"
+            className="hover-bump-center my-4 py-2 mx-4 btn bg-eggshell font-medium"
             onClick={(e) => setShowCommentSubmit(true)}
           >
             Add Comment
@@ -70,7 +72,7 @@ export default function Comments(props) {
       ) : (
         <LinkButton
           to={SIGNIN_PAGE_PATH}
-          styles="grow-btn btn my-4 py-2 mx-4 btn  bg-cream-dark font-medium not-italic rounded"
+          styles="hover-bump-center btn my-4 py-2 mx-4 btn  bg-cream-dark font-medium not-italic rounded"
           buttonContent="Log In"
         />
       )}

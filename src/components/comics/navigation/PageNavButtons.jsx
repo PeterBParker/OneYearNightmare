@@ -1,37 +1,31 @@
-import BackButton from './BackButton';
-import NextButton from './NextButton';
-import FirstPageButton from './FirstPageButton';
-import LastPageButton from './LastPageButton';
+import BackButton from "./BackButton";
+import NextButton from "./NextButton";
+import FirstPageButton from "./FirstPageButton";
+import LastPageButton from "./LastPageButton";
+import BookmarkButton from "./BookmarkButton";
 
 export default function PageNavButtons(props) {
-
-    function addYearToToday() {
-        let d = new Date();
-        let y = d.getFullYear();
-        return new Date(d.setFullYear(y+1));
-    }
-
-    let middleButton = null
-    if (props.isMobile) {
-        middleButton =  <div className="bookmarkButton justify-self-center self-center" onClick={() => props.setBookmark('mxmBookmarkedPage', props.pageId.toString(), {path: '/', expires: addYearToToday()})}>
-                            <img src={props.bookmarkIcon} width={40} alt="bookmark button"/>
-                        </div>
-    }
-    return (
-        <div className={`${props.isMobile ? 'mobileNavButtonsContainer' : 'desktopNavButtonsContainer'} py-3`}>
-            <div className="firstPageButton justify-self-end self-center">
-                <FirstPageButton pageId={props.pageId} clickEffects={props.clickEffects}/>
-            </div>
-            <div className="prevPageButton justify-self-end self-center">
-                <BackButton pageId={props.pageId} clickEffects={props.clickEffects}/>
-            </div>
-            {middleButton}
-            <div className="nextButton justify-self-start self-center">
-                <NextButton pageId={props.pageId} clickEffects={props.clickEffects}/>
-            </div>
-            <div className="lastPageButton justify-self-start self-center">
-                <LastPageButton pageId={props.pageId} clickEffects={props.clickEffects}/>
-            </div>
-        </div>
-    );
+  return (
+    <div
+      className={`${
+        props.isMobile
+          ? "flex flex-row content-center justify-center sticky bottom-0 frosted-glass-gradient"
+          : "flex flex-col sticky top-0 content-center justify-center"
+      }`}
+    >
+      <FirstPageButton
+        pageId={props.pageId}
+        clickEffects={props.clickEffects}
+      />
+      <BackButton pageId={props.pageId} clickEffects={props.clickEffects} />
+      <BookmarkButton
+        setBookmark={props.setBookmark}
+        pageId={props.pageId}
+        bookmarkIcon={props.bookmarkIcon}
+        isMobile={props.isMobile}
+      />
+      <NextButton pageId={props.pageId} clickEffects={props.clickEffects} />
+      <LastPageButton pageId={props.pageId} clickEffects={props.clickEffects} />
+    </div>
+  );
 }
