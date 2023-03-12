@@ -1,24 +1,23 @@
 import { useState } from "react";
-import { getEmail, setEmail } from "../users/utils";
+import { setEmail } from "../users/utils";
 import GenericSingleInputForm from "./GenericSingleInputForm";
 
 export default function EmailForm() {
   const [placeholder, setPlaceholder] = useState("");
 
-  const placeholderUpdate = async (user) => {
-    // get Email
-    let email = await getEmail();
-    if (email != null) {
-      setPlaceholder(email);
-    } else {
-      setPlaceholder("Please set an email.");
-    }
-  };
-
   const onSubmit = async (email) => {
-    let success = await setEmail(email);
+    try {
+      var success = await setEmail(email);
+    } catch (error) {
+      throw new Error(error.message);
+    }
+
     if (success) {
-      // TODO display success
+      if (email != null) {
+        setPlaceholder(email);
+      } else {
+        setPlaceholder("Please set an email.");
+      }
     } else {
       throw new Error("Oops! Email updated failed.");
     }
@@ -26,7 +25,6 @@ export default function EmailForm() {
 
   return (
     <GenericSingleInputForm
-      placeholderUpdate={placeholderUpdate}
       onSubmitAction={onSubmit}
       inputId="emailInput"
       inputName="email-input"

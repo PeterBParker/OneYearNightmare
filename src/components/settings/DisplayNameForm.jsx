@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { auth } from "../..";
 import { storeUserAvatar } from "../users/avatarHelpers";
 import { getDisplayName } from "../users/utils";
+import { useAuthState } from "react-firebase-hooks/auth";
 import {
   setAuthDisplayName,
   setCommentDisplayName,
@@ -12,12 +13,6 @@ import GenericSingleInputForm from "./GenericSingleInputForm";
 export default function DisplayNameForm(props) {
   const [placeholder, setPlaceholder] = useState("");
 
-  const placeholderUpdate = (user) => {
-    getDisplayName(user.uid).then((display_name) => {
-      setPlaceholder(display_name);
-    });
-  };
-
   const changeDisplayName = async (newName) => {
     if (props.onChangeAction !== undefined) {
       props.onChangeAction();
@@ -27,6 +22,7 @@ export default function DisplayNameForm(props) {
     // Add it if not
     const comment_success = await setCommentDisplayName(newName);
     const auth_success = await setAuthDisplayName(newName);
+    setPlaceholder(newName);
     //Update user avatar
     if (auth.currentUser != null) {
       //check if avatar already exists
@@ -46,7 +42,6 @@ export default function DisplayNameForm(props) {
 
   return (
     <GenericSingleInputForm
-      placeholderUpdate={placeholderUpdate}
       onSubmitAction={changeDisplayName}
       inputId="displayNameInput"
       inputName="display-name-input"
