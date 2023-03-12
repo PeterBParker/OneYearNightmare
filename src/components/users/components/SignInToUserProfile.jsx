@@ -7,12 +7,22 @@ import useFirebaseAuth from "../hooks/useFirebaseAuth";
 import UserProfile from "./UserProfile";
 import loginIllo from "../../../assets/login-explanation.png";
 import loginExplain from "../../../assets/login-explanation-2.png";
+import { functions } from "../../..";
+import { httpsCallable } from "@firebase/functions";
 
 const getUiConfig = () => {
   var uiConfig = {
     callbacks: {
       signInSuccessWithAuthResult: function (authResult, redirectUrl) {
-        return true;
+        const addUserToList = httpsCallable(functions, "addUserToList");
+        addUserToList({ text: "test1" })
+          .then((result) => {
+            console.log(result.data?.text);
+          })
+          .catch((error) => {
+            console.log(error.code);
+          });
+        return false;
       },
       uiShown: function () {
         // The widget is rendered.
@@ -22,7 +32,7 @@ const getUiConfig = () => {
     },
     // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
     signInFlow: "popup",
-    signInSuccessUrl: "<url-to-redirect-to-on-success>",
+    //signInSuccessUrl: {"<url-to-redirect-to-on-success>"},
     signInOptions: [
       // Leave the lines as is for the providers you want to offer your users.
       {

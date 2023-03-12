@@ -298,11 +298,6 @@ body {
   grid-row-start: 2;
   grid-row-end: 3;
 }
-.save-btn {
-  transition: all 0.15s;
-  height: 44px;
-  width: 70px;
-}
 
 .iconCardHeader {
   background: linear-gradient(180deg, #f4f1ed 50%, #fff 50%);
@@ -767,6 +762,15 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.emailHeroImage {
+  background-image: url("../assets/FB-banner-1.jpg");
+  height: 200px;
+  background-position: center center;
+  background-size: cover;
+}
+.emailModalContent {
+  width: 400px;
 }
 
 .disabled {

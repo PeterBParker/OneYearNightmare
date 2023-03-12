@@ -54,6 +54,8 @@ export default function DisplayNameForm(props) {
       placeholder={placeholder}
       inputTitle="Display Name"
       helperText="Valid names consist only of a-Z, 0-9, -, and _"
+      confirmText="Save"
+      confirmClasses="bg-green-confirm"
     />
   );
 }

@@ -11,7 +11,7 @@ import {
 export default function DeleteAccountButton() {
   const [showModal, setShowModal] = useState(false);
   const [modalBodyText, setModalBodyText] = useState(
-    <div className="width-md">
+    <div className="width-md pl-4 pr-4">
       Are you absolutely sure you want to delete your account? This will remove
       all your comments.
     </div>
@@ -31,12 +31,12 @@ export default function DeleteAccountButton() {
   };
 
   let modalTitle = (
-    <div className="text-left text-xl font-header font-bold my-4">
+    <div className="text-left text-xl font-header font-bold my-4 pt-4 pl-4 pr-4">
       Delete Account?
     </div>
   );
   let modalFooter = (
-    <div className="flex justify-between">
+    <div className="flex justify-between pb-4 pl-4 pr-4">
       <button
         style={{ width: 116, height: 44 }}
         id={deleteBtnId}
@@ -83,6 +83,7 @@ export default function DeleteAccountButton() {
         body={modalBodyText}
         footer={modalFooter}
         onClose={() => setShowModal(false)}
+        bodyClasses="mb-6"
       />
     </div>
   );

@@ -33,6 +33,8 @@ export default function EmailForm() {
       maxLength={30}
       placeholder={placeholder}
       inputTitle="Login Email"
+      confirmText="Save"
+      confirmClasses="bg-green-confirm"
     />
   );
 }
