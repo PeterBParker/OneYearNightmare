@@ -2,10 +2,19 @@ import PropTypes from "prop-types";
 import loadable from "@loadable/component";
 
 import Comment from "./Comment";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { SIGNIN_PAGE_PATH } from "../Main";
 import { auth } from "../../index";
 import useFirebaseAuth from "../users/hooks/useFirebaseAuth";
+import { db } from "../../index";
+import {
+  collection,
+  query,
+  where,
+  orderBy,
+  onSnapshot,
+} from "firebase/firestore";
+import { PAGE_COMMENTS_TABLE } from "./utils/constants";
 
 const Title = loadable(() => import("../generic/Title"));
 const LinkButton = loadable(() => import("../generic/LinkButton"));
@@ -17,6 +26,28 @@ const CreateNewCommentForm = loadable(() => import("./CreateNewCommentForm"));
 export default function Comments(props) {
   const [showCommentSubmit, setShowCommentSubmit] = useState(false);
   const authUser = useFirebaseAuth(auth);
+  const [comments, setComments] = useState([]);
+
+  const page_uuid = props.page.uuid;
+
+  useEffect(() => {
+    const commentsQuery = query(
+      collection(db, PAGE_COMMENTS_TABLE),
+      where("page_id", "==", page_uuid),
+      orderBy("time_created")
+    );
+
+    const unsub = onSnapshot(commentsQuery, (snapshot) => {
+      let commentData = [];
+      snapshot.forEach((doc) => {
+        commentData.push({ id: doc.id, ...doc.data() });
+      });
+      setComments(commentData);
+    });
+    return function cleanup() {
+      unsub();
+    };
+  }, [page_uuid]);
 
   return (
     <div className="comments-container border-b border-mocha-dark lg:border-t-2 lg:border-r-2 lg:border-b-2 lg:border-l">
@@ -26,14 +57,14 @@ export default function Comments(props) {
 
       <div className="comment-list">
         {/* If there are comments, create a Comment component for each */}
-        {props.comments.length > 0 &&
-          props.comments
+        {comments.length > 0 &&
+          comments
             .filter((comment) => !comment.parent_comment_id)
             .map((comment) => {
               /* Get comments replying to it.*/
               let children;
               if (comment.id) {
-                children = props.comments.filter(
+                children = comments.filter(
                   (c) => comment.id === c.parent_comment_id
                 );
               }
