@@ -10,8 +10,8 @@ export default function MobileReadPageCards(props) {
     />,
     <Comments
       slug={props.page.uuid}
-      comments={props.comments}
       key="mobileCommentCard"
+      page={props.page}
     />,
   ];
 }

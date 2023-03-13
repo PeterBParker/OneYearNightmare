@@ -94,6 +94,9 @@ export default function ComicViewer(props) {
           topOfPageRef={topOfPageRef}
           clickEffects={loadNextPageEffects}
           pageImageUrl={pageImageUrl}
+          isDesktop={isDesktop}
+          chapter={releventObjs.chapterObj}
+          page={releventObjs.pageObj}
         />
       ) : (
         <MobilePageView
@@ -101,22 +104,19 @@ export default function ComicViewer(props) {
           topOfPageRef={topOfPageRef}
           clickEffects={loadNextPageEffects}
           pageId={params.pageUuid}
-        />
-      )}
-      {isDesktop ? (
-        ""
-      ) : (
-        <HorizontalShare
           sharePageUrl={sharePageUrl}
           shareImageUrl={shareImageUrl}
           title={title}
+          isDesktop={isDesktop}
+          chapter={releventObjs.chapterObj}
+          page={releventObjs.pageObj}
         />
       )}
-      <ReadPageCards
+      {/* <ReadPageCards
         page={releventObjs.pageObj}
         chapter={releventObjs.chapterObj}
         isDesktop={isDesktop}
-      />
+      /> */}
     </div>
   ) : (
     <div className={`${isDesktop ? "" : ""} pb-24`}>

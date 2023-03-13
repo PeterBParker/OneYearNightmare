@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { auth } from "../..";
 import { storeUserAvatar } from "../users/avatarHelpers";
 import { getDisplayName } from "../users/utils";
+import { useAuthState } from "react-firebase-hooks/auth";
 import {
   setAuthDisplayName,
   setCommentDisplayName,
@@ -10,13 +11,14 @@ import {
 import GenericSingleInputForm from "./GenericSingleInputForm";
 
 export default function DisplayNameForm(props) {
+  const [user, loading, error] = useAuthState(auth);
   const [placeholder, setPlaceholder] = useState("");
 
-  const placeholderUpdate = (user) => {
-    getDisplayName(user.uid).then((display_name) => {
-      setPlaceholder(display_name);
+  if (user) {
+    getDisplayName(user.uid).then((displayName) => {
+      setPlaceholder(displayName);
     });
-  };
+  }
 
   const changeDisplayName = async (newName) => {
     if (props.onChangeAction !== undefined) {
@@ -27,6 +29,7 @@ export default function DisplayNameForm(props) {
     // Add it if not
     const comment_success = await setCommentDisplayName(newName);
     const auth_success = await setAuthDisplayName(newName);
+    setPlaceholder(newName);
     //Update user avatar
     if (auth.currentUser != null) {
       //check if avatar already exists
@@ -46,14 +49,16 @@ export default function DisplayNameForm(props) {
 
   return (
     <GenericSingleInputForm
-      placeholderUpdate={placeholderUpdate}
       onSubmitAction={changeDisplayName}
       inputId="displayNameInput"
       inputName="display-name-input"
       maxLength={20}
       placeholder={placeholder}
       inputTitle="Display Name"
+      inputClasses="rounded-lg border border-slate-900 border-solid"
       helperText="Valid names consist only of a-Z, 0-9, -, and _"
+      confirmText="Save"
+      confirmClasses="bg-green-confirm mt-4"
     />
   );
 }

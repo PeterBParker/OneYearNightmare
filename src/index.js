@@ -10,6 +10,7 @@ import { connectFirestoreEmulator, getFirestore } from "firebase/firestore";
 import { connectStorageEmulator, getStorage } from "firebase/storage";
 import { getAuth, connectAuthEmulator } from "firebase/auth";
 import { getAnalytics } from "firebase/analytics";
+import { getFunctions, connectFunctionsEmulator } from "firebase/functions";
 import { initializeAppCheck, ReCaptchaV3Provider } from "firebase/app-check";
 
 // Initialize the Firebase Application
@@ -39,6 +40,7 @@ export const analytics = getAnalytics(firebaseApp);
 export const db = getFirestore(firebaseApp);
 export const auth = getAuth(firebaseApp);
 export const storage = getStorage(firebaseApp);
+export const functions = getFunctions(firebaseApp, "us-central1");
 export const AVATARS_PATH = "user_avatars/";
 export const BOOKMARK_KEY = "mxmBookmarkedPage";
 
@@ -46,6 +48,7 @@ if (window.location.hostname === "localhost") {
   connectAuthEmulator(auth, "http://localhost:9099"); // to use the emulator run "firebase emulators:start"
   connectFirestoreEmulator(db, "localhost", 8080);
   connectStorageEmulator(storage, "localhost", "9199");
+  connectFunctionsEmulator(functions, "localhost", 5001);
 }
 
 ReactDOM.render(

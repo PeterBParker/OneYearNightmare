@@ -11,7 +11,7 @@ import {
 export default function DeleteAccountButton() {
   const [showModal, setShowModal] = useState(false);
   const [modalBodyText, setModalBodyText] = useState(
-    <div className="width-md">
+    <div className="width-md pl-4 pr-4">
       Are you absolutely sure you want to delete your account? This will remove
       all your comments.
     </div>
@@ -31,21 +31,22 @@ export default function DeleteAccountButton() {
   };
 
   let modalTitle = (
-    <div className="text-left text-xl font-header font-bold my-4">
+    <div className="text-left text-xl font-header font-bold my-4 pt-4 pl-4 pr-4">
       Delete Account?
     </div>
   );
   let modalFooter = (
-    <div className="flex justify-between">
+    <div className="flex justify-between pb-4 pl-4 pr-4">
       <button
         style={{ width: 116, height: 44 }}
         id={deleteBtnId}
-        className="rounded bg-red-bad btn text-center px-4 py-2 basis-1/4 font-medium text-lg"
+        className="rounded bg-red-bad btn btn-std-hover text-center px-4 py-2 basis-1/4 font-medium text-lg"
         onClick={async () => {
           let deleteBtn = document.getElementById(deleteBtnId);
           deleteBtn.disabled = true;
           setIsDisabled(true);
           await deleteAccount();
+          window.location.reload();
           // We don't update the state because React will sign the user out in deleteAccount()
           // deleteBtn.disabled = false;
           // setIsDisabled(false);
@@ -58,7 +59,7 @@ export default function DeleteAccountButton() {
         )}
       </button>
       <button
-        className="rounded bg-grey-light btn text-center px-4 py-2 basis-1/4 font-medium text-white text-lg"
+        className="rounded bg-grey-light btn btn-std-hover text-center px-4 py-2 basis-1/4 font-medium text-white text-lg"
         onClick={() => setShowModal(false)}
       >
         Cancel
@@ -68,7 +69,7 @@ export default function DeleteAccountButton() {
   return (
     <div>
       <button
-        className="rounded hover-bump-center bg-red-bad btn text-center px-4 py-2 basis-1/4 font-medium text-lg"
+        className="rounded btn-std-hover bg-red-bad btn text-center px-4 py-2 basis-1/4 font-medium text-lg"
         onClick={() => {
           setShowModal(true);
         }}
@@ -83,6 +84,7 @@ export default function DeleteAccountButton() {
         body={modalBodyText}
         footer={modalFooter}
         onClose={() => setShowModal(false)}
+        bodyClasses="mb-6"
       />
     </div>
   );

@@ -14,18 +14,13 @@ export default function GenericSingleInputForm(props) {
    * inputName: the html name to set for the input field
    * maxLength: the max length of characters to limit in the input field
    * inputTitle: The field's label
+   * confirmClasses: string of classes for the confirm button
+   * confirmText: string to display inside the confirm button
    */
   const [formData, setFormName] = useState("");
-  const [user, loading, auth_error] = useAuthState(auth);
   const eMsgId = props.inputId + "-error-message";
   const submitBtnId = props.inputId + "-submit-btn";
   const [isDisabled, setIsDisabled] = useState(false);
-
-  useEffect(() => {
-    if (user) {
-      props.placeholderUpdate(user);
-    }
-  }, [user.displayName, user.email]);
 
   const submitBtnPending = (submitBtn) => {
     // Set loading icon in Save button and disable it until action is resolved
@@ -62,47 +57,43 @@ export default function GenericSingleInputForm(props) {
     }
   };
 
-  if (user) {
-    return (
-      <div className="my-2 mx-2">
-        <div className="text-left font-medium">{props.inputTitle}</div>
-        <div className="italic text-left text-sm">
-          {props.helperText ? props.helperText : ""}
-        </div>
-        <form onSubmit={handleSubmit}>
-          <div className="mt-2">
-            <input
-              type="text"
-              id={props.inputId}
-              onChange={(e) => setFormName(e.target.value)}
-              value={formData}
-              name={props.inputName}
-              maxLength={props.maxLength}
-              placeholder={props.placeholder}
-              className="w-full py-4 px-2"
-            />
-            <div
-              id={eMsgId}
-              className="emsg text-left text-red-bright italic"
-            ></div>
-          </div>
-          <div className="flex justify-end">
-            <button
-              type="submit"
-              id={submitBtnId}
-              className="rounded hover-bump-center save-btn btn text-center px-4 py-2 my-2 basis-1/4 font-medium text-lg bg-green-confirm"
-            >
-              {isDisabled ? (
-                <div className="loader" style={{ width: 28, height: 28 }}></div>
-              ) : (
-                "Save"
-              )}
-            </button>
-          </div>
-        </form>
+  return (
+    <div className="my-2 mx-2">
+      <div className="text-left font-medium">{props.inputTitle}</div>
+      <div className="italic text-left text-sm">
+        {props.helperText ? props.helperText : ""}
       </div>
-    );
-  } else {
-    return "User is not signed in.";
-  }
+      <form onSubmit={handleSubmit}>
+        <div className="mt-2">
+          <input
+            type="text"
+            id={props.inputId}
+            onChange={(e) => setFormName(e.target.value)}
+            value={formData}
+            name={props.inputName}
+            maxLength={props.maxLength}
+            placeholder={props.placeholder}
+            className={`w-full py-4 px-2 ${props.inputClasses}`}
+          />
+          <div
+            id={eMsgId}
+            className="emsg text-left text-red-bright italic"
+          ></div>
+        </div>
+        <div className="flex justify-end w-full">
+          <button
+            type="submit"
+            id={submitBtnId}
+            className={`rounded btn-std-hover btn text-center px-4 py-2 my-2 basis-1/4 font-medium text-lg ${props.confirmClasses}`}
+          >
+            {isDisabled ? (
+              <div className="loader" style={{ width: 28, height: 28 }}></div>
+            ) : (
+              props.confirmText
+            )}
+          </button>
+        </div>
+      </form>
+    </div>
+  );
 }
