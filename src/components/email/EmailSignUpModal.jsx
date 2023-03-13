@@ -26,7 +26,8 @@ export default function EmailSignUpModal(props) {
     <>
       <div className="text-left px-2 leading-5 font-body font-medium">
         <p>
-          We add new pages once a week, and you can be the first to know when!
+          We add new pages every Monday, and you can be the first to know when
+          they're live!
         </p>
       </div>
       <GenericSingleInputForm
