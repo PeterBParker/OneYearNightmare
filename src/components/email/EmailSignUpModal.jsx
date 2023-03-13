@@ -24,9 +24,9 @@ export default function EmailSignUpModal(props) {
 
   const [callToAction, setCallToAction] = useState(
     <>
-      <div className="text-left px-2 leading-5 font-body">
+      <div className="text-left px-2 leading-5 font-body font-medium">
         <p>
-          We add new pages once a week, and you'll be the first to know when!
+          We add new pages once a week, and you can be the first to know when!
         </p>
       </div>
       <GenericSingleInputForm
@@ -97,7 +97,7 @@ export default function EmailSignUpModal(props) {
   );
   const modalFooter = (
     <p className="font-body text-sm">
-      P.S. We don't sell any of your data, and it's easy to unsubscribe.
+      P.S. We don't sell your data, and it's easy to unsubscribe.
     </p>
   );
 
