@@ -46,6 +46,7 @@ export default function DeleteAccountButton() {
           deleteBtn.disabled = true;
           setIsDisabled(true);
           await deleteAccount();
+          window.location.reload();
           // We don't update the state because React will sign the user out in deleteAccount()
           // deleteBtn.disabled = false;
           // setIsDisabled(false);
