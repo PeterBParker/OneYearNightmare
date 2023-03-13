@@ -84,7 +84,7 @@ export default function GenericSingleInputForm(props) {
           <button
             type="submit"
             id={submitBtnId}
-            className={`rounded hover-bump-center btn text-center px-4 py-2 my-2 basis-1/4 font-medium text-lg ${props.confirmClasses}`}
+            className={`rounded btn-std-hover btn text-center px-4 py-2 my-2 basis-1/4 font-medium text-lg ${props.confirmClasses}`}
           >
             {isDisabled ? (
               <div className="loader" style={{ width: 28, height: 28 }}></div>

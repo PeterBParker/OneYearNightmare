@@ -40,7 +40,7 @@ export default function DeleteAccountButton() {
       <button
         style={{ width: 116, height: 44 }}
         id={deleteBtnId}
-        className="rounded bg-red-bad btn text-center px-4 py-2 basis-1/4 font-medium text-lg"
+        className="rounded bg-red-bad btn btn-std-hover text-center px-4 py-2 basis-1/4 font-medium text-lg"
         onClick={async () => {
           let deleteBtn = document.getElementById(deleteBtnId);
           deleteBtn.disabled = true;
@@ -58,7 +58,7 @@ export default function DeleteAccountButton() {
         )}
       </button>
       <button
-        className="rounded bg-grey-light btn text-center px-4 py-2 basis-1/4 font-medium text-white text-lg"
+        className="rounded bg-grey-light btn btn-std-hover text-center px-4 py-2 basis-1/4 font-medium text-white text-lg"
         onClick={() => setShowModal(false)}
       >
         Cancel
@@ -68,7 +68,7 @@ export default function DeleteAccountButton() {
   return (
     <div>
       <button
-        className="rounded hover-bump-center bg-red-bad btn text-center px-4 py-2 basis-1/4 font-medium text-lg"
+        className="rounded btn-std-hover bg-red-bad btn text-center px-4 py-2 basis-1/4 font-medium text-lg"
         onClick={() => {
           setShowModal(true);
         }}

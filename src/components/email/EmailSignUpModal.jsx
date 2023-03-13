@@ -37,8 +37,8 @@ export default function EmailSignUpModal(props) {
         maxLength={76}
         inputTitle="Email"
         confirmText="I'm in!"
-        confirmClasses="w-full mt-4 bg-grey-dark text-white"
-        inputClasses="rounded-lg border-2 border-slate-900 border-solid pl-4"
+        confirmClasses="w-full mt-4 bg-green-confirm text-grey-dark font-semibold"
+        inputClasses="rounded-lg border border-slate-900 border-solid pl-4"
       />
     </>
   );
@@ -115,7 +115,7 @@ export default function EmailSignUpModal(props) {
     <button
       key="comicViewerPageEmailSignUpButton"
       onClick={() => setShowModal(true)}
-      className="transition duration-500 ease-in-out bg-cream-dark hover-bump-center rounded text-2xl font-medium px-4 py-2 ml-4 text-grey-dark font-body"
+      className="btn bg-cream-dark btn-std-hover rounded text-2xl font-medium px-4 py-2 ml-4 text-grey-dark font-body"
     >
       Email <i className="fa-solid fa-envelope"></i>
     </button>,

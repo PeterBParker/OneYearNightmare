@@ -688,14 +688,32 @@ body {
 .btn {
   cursor: pointer;
   word-break: keep-all;
+  border-radius: 1.5rem;
 }
 
-.grow-btn {
-  transition: all 0.1s ease-in-out;
+.btn-std-hover {
+  transition: transform 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7),
+    box-shadow 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7),
+    -webkit-transform 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7),
+    -webkit-box-shadow 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7);
+  transform: translateY(0);
+  box-shadow: 0 0 0 0.0625rem #2d302a;
 }
 
-.grow-btn:hover {
-  transform: scale(1.03);
+.btn-std-hover:hover {
+  -webkit-box-shadow: 0 0 0 0.0625rem #2d302a, 0 0.375em 0 0 #2d302a;
+  box-shadow: 0 0 0 0.0625rem #2d302a, 0 0.375em 0 0 #2d302a;
+  -webkit-transform: translateY(calc(-1 * 0.375em));
+  -ms-transform: translateY(calc(-1 * 0.375em));
+  transform: translateY(calc(-1 * 0.375em));
+}
+
+.btn:hover .fa-envelope {
+  color: #00a2ed;
+}
+
+.btn:hover .fa-discord {
+  color: #6a5acd;
 }
 
 .comment-content-input {

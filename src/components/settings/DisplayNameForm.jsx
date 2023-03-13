@@ -11,7 +11,14 @@ import {
 import GenericSingleInputForm from "./GenericSingleInputForm";
 
 export default function DisplayNameForm(props) {
+  const [user, loading, error] = useAuthState(auth);
   const [placeholder, setPlaceholder] = useState("");
+
+  if (user) {
+    getDisplayName(user.uid).then((displayName) => {
+      setPlaceholder(displayName);
+    });
+  }
 
   const changeDisplayName = async (newName) => {
     if (props.onChangeAction !== undefined) {
@@ -48,9 +55,10 @@ export default function DisplayNameForm(props) {
       maxLength={20}
       placeholder={placeholder}
       inputTitle="Display Name"
+      inputClasses="rounded-lg border border-slate-900 border-solid"
       helperText="Valid names consist only of a-Z, 0-9, -, and _"
       confirmText="Save"
-      confirmClasses="bg-green-confirm"
+      confirmClasses="bg-green-confirm mt-4"
     />
   );
 }
