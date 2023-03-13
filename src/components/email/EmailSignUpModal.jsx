@@ -23,17 +23,24 @@ export default function EmailSignUpModal(props) {
   }
 
   const [callToAction, setCallToAction] = useState(
-    <GenericSingleInputForm
-      placeholder=""
-      onSubmitAction={callAddGuestToEmailList}
-      inputId="modalEmailInputField"
-      inputName="Email"
-      maxLength={76}
-      inputTitle="Email"
-      confirmText="Subscribe"
-      confirmClasses="w-full mt-4 bg-grey-dark text-white"
-      inputClasses="rounded-lg border-2 border-slate-900 border-solid pl-4"
-    />
+    <>
+      <div className="text-left px-2 leading-5 font-body">
+        <p>
+          We add new pages once a week, and you'll be the first to know when!
+        </p>
+      </div>
+      <GenericSingleInputForm
+        placeholder=""
+        onSubmitAction={callAddGuestToEmailList}
+        inputId="modalEmailInputField"
+        inputName="Email"
+        maxLength={76}
+        inputTitle="Email"
+        confirmText="I'm in!"
+        confirmClasses="w-full mt-4 bg-grey-dark text-white"
+        inputClasses="rounded-lg border-2 border-slate-900 border-solid pl-4"
+      />
+    </>
   );
 
   useEffect(async () => {

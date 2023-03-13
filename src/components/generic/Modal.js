@@ -5,7 +5,7 @@ export default function Modal(props) {
     return null;
   }
   return (
-    <div className="modal backdrop-blur-sm" onClick={props.onClose}>
+    <div className="modal backdrop-blur-sm z-50" onClick={props.onClose}>
       <div
         className={`modal-content bg-white rounded-lg overflow-hidden ${props.contentClasses}`}
         onClick={(e) => e.stopPropagation()}
