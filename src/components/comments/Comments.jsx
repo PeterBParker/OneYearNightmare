@@ -1,4 +1,4 @@
-import PropTypes from "prop-types";
+import PropTypes, { object } from "prop-types";
 import loadable from "@loadable/component";
 
 import Comment from "./Comment";
@@ -113,5 +113,5 @@ export default function Comments(props) {
 
 Comments.propTypes = {
   slug: PropTypes.string.isRequired,
-  comments: PropTypes.array.isRequired,
+  page: object.isRequired,
 };

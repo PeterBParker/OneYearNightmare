@@ -47,28 +47,28 @@ export default function EmailSignUpModal(props) {
     if (subscribed) {
       setCallToAction(
         <div className="mb-4 text-lg text-left mx-2">
-          <div class="checkmark-wrapper py-1">
+          <div className="checkmark-wrapper py-1">
             <svg
-              class="checkmark"
+              className="checkmark"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 52 52"
             >
               <circle
-                class="checkmark__circle"
+                className="checkmark__circle"
                 cx="26"
                 cy="26"
                 r="25"
                 fill="none"
               />
               <path
-                class="checkmark__check"
+                className="checkmark__check"
                 fill="none"
                 d="M14.1 27.2l7.1 7.2 16.7-16.8"
               />
             </svg>
           </div>
           Nice! Next time we post, we'll send a heads-up to your inbox. 👍
-          <i class="fa-solid fa-mailbox"></i>
+          <i className="fa-solid fa-mailbox"></i>
         </div>
       );
       // Sleep for five seconds
@@ -83,7 +83,7 @@ export default function EmailSignUpModal(props) {
         className="float-right px-4 pt-2  hover:text-red-bad"
         onClick={() => setShowModal(false)}
       >
-        <i class="fa-solid fa-xmark fa-2x close-btn transition-all"></i>
+        <i className="fa-solid fa-xmark fa-2x close-btn transition-all"></i>
       </button>
     </div>
   );
@@ -115,9 +115,9 @@ export default function EmailSignUpModal(props) {
     <button
       key="comicViewerPageEmailSignUpButton"
       onClick={() => setShowModal(true)}
-      className="transition duration-500 ease-in-out bg-cream-dark hover-bump-center rounded text-2xl font-medium px-4 py-2 mr-8"
+      className="transition duration-500 ease-in-out bg-cream-dark hover-bump-center rounded text-2xl font-medium px-4 py-2 ml-4 text-grey-dark font-body"
     >
-      Join Email <i className="fa-solid fa-arrow-right"></i>
+      Email <i className="fa-solid fa-envelope"></i>
     </button>,
   ];
 }

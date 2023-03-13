@@ -767,10 +767,6 @@ body {
   grid-column-start: 2;
   grid-column-end: 3;
   width: 100%;
-  border: solid;
-  border-color: #998f7e;
-  border-width: 2px;
-
   display: flex;
   flex-direction: row;
 }
