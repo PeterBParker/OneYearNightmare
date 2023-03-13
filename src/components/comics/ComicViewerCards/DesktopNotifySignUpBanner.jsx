@@ -1,8 +1,8 @@
 import EmailSignUpModal from "../../email/EmailSignUpModal";
 export default function DesktopNotifySignUpBanner() {
   return (
-    <div className="notification-signup-banner ml-auto mr-auto mb-4 justify-center py-6 items-center">
-      <div className="ml-8 text-left ">
+    <div className="notification-signup-banner ml-auto mr-auto justify-center py-6 items-center">
+      <div className="text-left ">
         <div className="font-bold text-2xl mr-4 text-grey-dark font-header">
           {"Get Notified of New Pages!"}
         </div>

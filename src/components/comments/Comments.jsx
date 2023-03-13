@@ -1,6 +1,7 @@
 import PropTypes, { object } from "prop-types";
 import loadable from "@loadable/component";
 
+import beTheFirst from "../../assets/Be_the_first.webp";
 import Comment from "./Comment";
 import { useState, useEffect } from "react";
 import { SIGNIN_PAGE_PATH } from "../Main";
@@ -50,14 +51,14 @@ export default function Comments(props) {
   }, [page_uuid]);
 
   return (
-    <div className="comments-container border-b border-mocha-dark lg:border-t-2 lg:border-r-2 lg:border-b-2 lg:border-l">
+    <div className="comments-container h-full border-b border-mocha-dark lg:border-t-2 lg:border-r-2 lg:border-b-2 lg:border-l flex flex-col justify-between">
       <div className="py-4 px-8 bg-eggshell text-left flex flex-row items-center comments-title">
         <Title text="Comments //" />
       </div>
 
       <div className="comment-list">
         {/* If there are comments, create a Comment component for each */}
-        {comments.length > 0 &&
+        {comments.length > 0 ? (
           comments
             .filter((comment) => !comment.parent_comment_id)
             .map((comment) => {
@@ -76,7 +77,10 @@ export default function Comments(props) {
                   slug={props.slug}
                 />
               );
-            })}
+            })
+        ) : (
+          <img src={beTheFirst} width={414} />
+        )}
       </div>
       {authUser && authUser.displayName != null ? (
         showCommentSubmit ? (
