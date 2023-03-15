@@ -9,7 +9,7 @@ export default function ComicRouter(props) {
 
   let bookmarkedPageUrl = COMIC_VIEWER_PATH + "/";
   let bookmarkedPageId = localStorage.getItem(BOOKMARK_KEY);
-  if (bookmarkedPageId) {
+  if (bookmarkedPageId && bookmarkedPageId != "null") {
     bookmarkedPageUrl = bookmarkedPageUrl.concat(bookmarkedPageId);
   } else {
     // If there is no value stored, we send the reader to the first page on the latest update
