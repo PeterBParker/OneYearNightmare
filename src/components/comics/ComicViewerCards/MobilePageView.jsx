@@ -1,12 +1,11 @@
 import GracefulImage from "../GracefulImage";
 import NavBar from "../navigation/NavBar";
-import HorizontalShare from "../HorizontalShare";
 import MobileReadPageCards from "./MobileReadPageCards";
 
 export default function MobilePageView(props) {
   return (
     <>
-      <div className={"mobileComicPageContainer bg-cream-dark"}>
+      <div>
         <GracefulImage
           src={props.pageImageUrl}
           className="ml-auto mr-auto"
