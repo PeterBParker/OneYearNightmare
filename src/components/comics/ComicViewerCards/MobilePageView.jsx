@@ -19,11 +19,6 @@ export default function MobilePageView(props) {
           clickEffects={props.clickEffects}
         />
       </div>
-      <HorizontalShare
-        sharePageUrl={props.sharePageUrl}
-        shareImageUrl={props.shareImageUrl}
-        title={props.title}
-      />
       <MobileReadPageCards
         page={props.page}
         chapter={props.chapter}

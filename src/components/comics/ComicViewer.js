@@ -17,7 +17,6 @@ import {
 import Pages from "./navigation/desktop/Pages";
 import { useMediaQuery } from "react-responsive";
 import querySizes from "../../styling/breakpoints.json";
-import HorizontalShare from "./HorizontalShare";
 import SimpleNavBar from "../comics/navigation/desktop/SimpleNavBar";
 import { useRef, useEffect } from "react";
 
