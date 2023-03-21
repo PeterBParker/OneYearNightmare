@@ -4,6 +4,7 @@ import ComicPageAPI from "../api/ComicPageAPI";
 import ComicRouter from "./comics/ComicRouter";
 import { useMediaQuery } from "react-responsive";
 import querySizes from "../styling/breakpoints.json";
+import Home from "./Home";
 
 const Archive = loadable(() => {
   import("./comics/archive/Archive");
@@ -13,9 +14,6 @@ const Creators = loadable(() => {
 });
 const Support = loadable(() => {
   import("./creators/supportUsCards/Support");
-});
-const Home = loadable(() => {
-  import("./Home");
 });
 const SignInPage = loadable(() => {
   import("./users/pages/SignInPage");

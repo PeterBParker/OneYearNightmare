@@ -51,7 +51,7 @@ export default function Comments(props) {
   }, [page_uuid]);
 
   return (
-    <div className="comments-container h-full border-b border-mocha-dark lg:border-t-2 lg:border-r-2 lg:border-b-2 lg:border-l flex flex-col justify-between">
+    <div className="comments-container h-full border-b border-mocha-dark lg:border-t-2 lg:border-r-2 lg:border-b-2 lg:border-l lg:pb-1 pb-4 flex flex-col justify-between">
       <div className="py-4 px-8 bg-eggshell text-left flex flex-row items-center comments-title">
         <Title text="Comments //" />
       </div>
@@ -79,7 +79,7 @@ export default function Comments(props) {
               );
             })
         ) : (
-          <img src={beTheFirst} width={414} />
+          <img src={beTheFirst} width={414} className="ml-auto mr-auto" />
         )}
       </div>
       {authUser && authUser.displayName != null ? (
