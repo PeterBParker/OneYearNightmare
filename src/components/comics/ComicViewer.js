@@ -20,10 +20,6 @@ import querySizes from "../../styling/breakpoints.json";
 import SimpleNavBar from "../comics/navigation/desktop/SimpleNavBar";
 import { useRef, useEffect } from "react";
 
-const ReadPageCards = loadable(() =>
-  import("./ComicViewerCards/ReadPageCards")
-);
-
 export default function ComicViewer(props) {
   const params = useParams();
   const isDesktop = useMediaQuery({ query: querySizes["lg"] });

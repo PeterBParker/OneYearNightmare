@@ -1,3 +1,7 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
 .hover-bump-right:hover {
   animation: bump-right 0.3s ease-in-out 0s 1;
 }
@@ -300,7 +304,7 @@
   stroke-dashoffset: 166;
   stroke-width: 2;
   stroke-miterlimit: 10;
-  stroke: theme("colors.green.confirm");
+  stroke: #a6ba68;
   fill: none;
   animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
 }
@@ -312,7 +316,7 @@
   stroke-width: 2;
   stroke: #fff;
   stroke-miterlimit: 10;
-  box-shadow: inset 0px 0px 0px theme("colors.green.confirm");
+  box-shadow: inset 0px 0px 0px #a6ba68;
   animation: fill 0.4s ease-in-out 0.4s forwards,
     scale 0.3s ease-in-out 0.9s both;
 }
@@ -338,6 +342,6 @@
 }
 @keyframes fill {
   100% {
-    box-shadow: inset 0px 0px 0px 30px theme("colors.green.confirm");
+    box-shadow: inset 0px 0px 0px 30px #a6ba68;
   }
 }

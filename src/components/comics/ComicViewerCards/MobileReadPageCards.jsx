@@ -7,7 +7,10 @@ import querySizes from "../../.././styling/breakpoints.json";
 export default function MobileReadPageCards(props) {
   const isDesktopOrTablet = useMediaQuery({ query: querySizes["md"] });
   return [
-    <NotifySignUpBanner isDesktop={isDesktopOrTablet} />,
+    <NotifySignUpBanner
+      isDesktop={isDesktopOrTablet}
+      key="mobileEmailNotifySignUpBanner"
+    />,
     <PageDetailsCard
       page={props.page}
       chapter={props.chapter}
