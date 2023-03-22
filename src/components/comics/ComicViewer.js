@@ -17,7 +17,6 @@ import {
 import Pages from "./navigation/desktop/Pages";
 import { useMediaQuery } from "react-responsive";
 import querySizes from "../../styling/breakpoints.json";
-import HorizontalShare from "./HorizontalShare";
 import SimpleNavBar from "../comics/navigation/desktop/SimpleNavBar";
 import { useRef, useEffect } from "react";
 
@@ -85,7 +84,7 @@ export default function ComicViewer(props) {
   const sharePageUrl = DOMAIN + "/read/" + params.pageUuid;
   // TODO 6/10 Before deploying, implement these security measures: https://stackoverflow.com/questions/21110130/protect-image-download/21110248
   return pageImageUrl ? (
-    <div className={`${isDesktop ? "pb-24" : "pb-16"}`}>
+    <div className={`${isDesktop ? "pb-24" : null}`}>
       <Header defaultBg={false} />
       {isDesktop ? <SimpleNavBar page={Pages.READ} /> : ""}
       {isDesktop ? (

@@ -51,6 +51,10 @@ module.exports = {
       },
     },
     variants: {},
-    plugins: [],
+    plugins: {
+      "postcss-import": {},
+      "tailwindcss/nesting": {},
+      tailwindcss: {},
+    },
   },
 };

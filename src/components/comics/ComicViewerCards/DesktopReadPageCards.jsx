@@ -1,5 +1,5 @@
 import loadable from "@loadable/component";
-import DesktopNotifySignUpBanner from "./DesktopNotifySignUpBanner";
+import NotifySignUpBanner from "./NotifySignUpBanner";
 
 const PageDetailsCard = loadable(() => import("../PageDetailsCard"));
 const Comments = loadable(() => import("../../comments/Comments"));
@@ -7,7 +7,7 @@ const Comments = loadable(() => import("../../comments/Comments"));
 export default function DesktopReadPageCards(props) {
   return (
     <>
-      <DesktopNotifySignUpBanner />
+      <NotifySignUpBanner isDesktop={true} />
       <div className="desktopReadPageCardsWrapper mx-8">
         <PageDetailsCard page={props.page} chapter={props.chapter} />
         <div className="desktopReadPageCardsSupport bg-white ">

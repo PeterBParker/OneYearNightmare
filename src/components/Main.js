@@ -1,10 +1,12 @@
 import { Switch, Route } from "react-router-dom";
 import ComicPageAPI from "../api/ComicPageAPI";
-import Archive from "./comics/archive/Archive";
 import ComicRouter from "./comics/ComicRouter";
+import { useMediaQuery } from "react-responsive";
+import querySizes from "../styling/breakpoints.json";
+import Home from "./Home";
+import Archive from "./comics/archive/Archive";
 import Creators from "./creators/about/Creators";
 import Support from "./creators/supportUsCards/Support";
-import Home from "./Home";
 import SignInPage from "./users/pages/SignInPage";
 
 export const DOMAIN = "https://monstersandmyriads.com";
@@ -24,13 +26,13 @@ export const SNAP_TO_PAGE_PATH = "snap-to-page";
 export const MAX_COMMENT_CHARS = 350;
 
 export default function Main() {
-  let desktopDarkBg = "comicViewerDesktop desktopBg";
-
-  let headerColorClassNames = desktopDarkBg;
+  const isDesktop = useMediaQuery({ query: querySizes["lg"] });
 
   return (
     <div
-      className={`main flex-grow backgroundTransition ${headerColorClassNames}`}
+      className={`main flex-grow backgroundTransition desktopBg ${
+        isDesktop ? "comicViewerDesktop" : null
+      }`}
     >
       <Switch>
         <Route exact path="/" component={Home} />
