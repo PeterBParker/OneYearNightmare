@@ -25,8 +25,8 @@ export default function NavBarLinks(props) {
       className={`${
         props.page.name === Pages.READ.name
           ? "desktopNavLinkSelected"
-          : "desktopNavLink"
-      } text-grey-light mr-8 font-medium `}
+          : "desktopNavLink desktop-nav-hover"
+      } text-grey-light mr-8 font-medium`}
       key="readNavBarLink"
     >
       <Link to={COMIC_VIEWER_PATH}>Read</Link>
@@ -35,8 +35,8 @@ export default function NavBarLinks(props) {
       className={`${
         props.page.name === Pages.ARCHIVE.name
           ? "desktopNavLinkSelected"
-          : "desktopNavLink"
-      } text-grey-light mr-8 font-medium `}
+          : "desktopNavLink desktop-nav-hover"
+      } text-grey-light mr-8 font-medium`}
       key="archiveNavBarLink"
     >
       <Link to={ARCHIVE_PAGE_PATH}>Archive</Link>
@@ -45,8 +45,8 @@ export default function NavBarLinks(props) {
       className={`${
         props.page.name === Pages.SIGNIN.name
           ? "desktopNavLinkSelected"
-          : "desktopNavLink"
-      } text-grey-light font-medium `}
+          : "desktopNavLink desktop-nav-hover"
+      } text-grey-light font-medium`}
       key="signinNavBarLink"
     >
       <Link to={SIGNIN_PAGE_PATH}>{userPage}</Link>
