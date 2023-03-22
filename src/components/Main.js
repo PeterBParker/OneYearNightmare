@@ -1,23 +1,13 @@
-import loadable from "@loadable/component";
 import { Switch, Route } from "react-router-dom";
 import ComicPageAPI from "../api/ComicPageAPI";
 import ComicRouter from "./comics/ComicRouter";
 import { useMediaQuery } from "react-responsive";
 import querySizes from "../styling/breakpoints.json";
 import Home from "./Home";
-
-const Archive = loadable(() => {
-  import("./comics/archive/Archive");
-});
-const Creators = loadable(() => {
-  import("./creators/about/Creators");
-});
-const Support = loadable(() => {
-  import("./creators/supportUsCards/Support");
-});
-const SignInPage = loadable(() => {
-  import("./users/pages/SignInPage");
-});
+import Archive from "./comics/archive/Archive";
+import Creators from "./creators/about/Creators";
+import Support from "./creators/supportUsCards/Support";
+import SignInPage from "./users/pages/SignInPage";
 
 export const DOMAIN = "https://monstersandmyriads.com";
 export const BASE_PATH = "/MnMPages/";
