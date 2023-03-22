@@ -5,9 +5,9 @@ import { useMediaQuery } from "react-responsive";
 import querySizes from "../../.././styling/breakpoints.json";
 
 export default function MobileReadPageCards(props) {
-  const isDesktop = useMediaQuery({ query: querySizes["md"] });
+  const isDesktopOrTablet = useMediaQuery({ query: querySizes["md"] });
   return [
-    <NotifySignUpBanner isDesktop={isDesktop} />,
+    <NotifySignUpBanner isDesktop={isDesktopOrTablet} />,
     <PageDetailsCard
       page={props.page}
       chapter={props.chapter}
