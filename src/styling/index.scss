@@ -478,14 +478,14 @@ body {
   border-width: 0px 0px 2px 0px;
   margin-bottom: -2px;
 }
-.desktopNavLink:hover {
+/* .desktopNavLink:hover {
   font-size: 1.4rem;
   color: #393d36;
   cursor: pointer;
   border: solid #393d36;
   border-width: 0px 0px 2px 0px;
   margin-bottom: -2px;
-}
+} */
 
 .desktopComicPageContainer {
   display: grid;
@@ -841,6 +841,23 @@ body {
  * Effects
  *
  */
+.desktop-nav-hover::after {
+  content: "";
+  position: relative;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 3px;
+  transform: scaleX(0);
+  background-color: #a1a14c;
+  transition: transform 0.3s;
+}
+
+.desktop-nav-hover:hover:after {
+  transform: scaleX(1);
+}
+
 .checkmark-wrapper {
   display: flex;
   justify-content: center;
