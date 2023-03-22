@@ -137,6 +137,10 @@ const ComicPageAPI = {
     }
     return "Mo and Nate";
   },
+  isExistingPage: function (id) {
+    /* Checks if an id correlates to an existing page */
+    return id in pagesData.pageIndex;
+  },
 };
 
 export default ComicPageAPI;
