@@ -1,0 +1,343 @@
+.hover-bump-right:hover {
+  animation: bump-right 0.3s ease-in-out 0s 1;
+}
+
+.hover-bump-left:hover {
+  animation: bump-left 0.3s ease-in-out 0s 1;
+}
+
+.hover-wiggle:hover {
+  animation: wiggle 0.5s ease-in-out 0s 1;
+}
+
+.loader {
+  border-radius: 50%;
+  display: inline-block;
+  border-top: 3px solid #fff;
+  border-right: 3px solid transparent;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+.loader-dark {
+  border-radius: 50%;
+  display: inline-block;
+  border-top: 3px solid #afa694;
+  border-right: 3px solid transparent;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100;
+  }
+}
+
+/* Bookmark hover effect */
+@-webkit-keyframes wiggle {
+  0% {
+    -webkit-transform: rotate(10deg);
+  }
+  25% {
+    -webkit-transform: rotate(-10deg);
+  }
+  50% {
+    -webkit-transform: rotate(20deg);
+  }
+  75% {
+    -webkit-transform: rotate(-5deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+  }
+}
+
+@-ms-keyframes wiggle {
+  0% {
+    -ms-transform: rotate(1deg);
+  }
+  25% {
+    -ms-transform: rotate(-1deg);
+  }
+  50% {
+    -ms-transform: rotate(1.5deg);
+  }
+  75% {
+    -ms-transform: rotate(-5deg);
+  }
+  100% {
+    -ms-transform: rotate(0deg);
+  }
+}
+
+@keyframes wiggle {
+  0% {
+    transform: rotate(10deg);
+  }
+  25% {
+    transform: rotate(-10deg);
+  }
+  50% {
+    transform: rotate(20deg);
+  }
+  75% {
+    transform: rotate(-5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+/* Next/Last Nav Buttons hover effect */
+@keyframes bump-right {
+  0% {
+    transform: translateX(0px);
+  }
+  25% {
+    transform: translateX(-4px);
+  }
+  75% {
+    transform: translateX(7px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+@-ms-keyframes bump-right {
+  0% {
+    -ms-transform: translateX(0px);
+  }
+  25% {
+    -ms-transform: translateX(-4px);
+  }
+  75% {
+    -ms-transform: translateX(7px);
+  }
+  100% {
+    -ms-transform: translateX(0px);
+  }
+}
+
+@-webkit-keyframes bump-right {
+  0% {
+    -webkit-keyframes: translateX(0px);
+  }
+  25% {
+    -webkit-keyframes: translateX(-4px);
+  }
+  75% {
+    -webkit-keyframes: translateX(7px);
+  }
+  100% {
+    -webkit-keyframes: translateX(0px);
+  }
+}
+
+/* Nav button prev/first hover effect */
+@keyframes bump-left {
+  0% {
+    transform: translateX(0px);
+  }
+  25% {
+    transform: translateX(4px);
+  }
+  75% {
+    transform: translateX(-7px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+@-ms-keyframes bump-left {
+  0% {
+    -ms-transform: translateX(0px);
+  }
+  25% {
+    -ms-transform: translateX(4px);
+  }
+  75% {
+    -ms-transform: translateX(-7px);
+  }
+  100% {
+    -ms-transform: translateX(0px);
+  }
+}
+
+@-webkit-keyframes bump-left {
+  0% {
+    -webkit-keyframes: translateX(0px);
+  }
+  25% {
+    -webkit-keyframes: translateX(4px);
+  }
+  75% {
+    -webkit-keyframes: translateX(-7px);
+  }
+  100% {
+    -webkit-keyframes: translateX(0px);
+  }
+}
+
+/* Shimmer is the Page Loading Effect */
+.shimmerFill {
+  background: #e4e0d4;
+  background-image: linear-gradient(
+    to right,
+    #e4e0d4 0%,
+    #e0dbcb 20%,
+    #e4e0d4 40%,
+    #e4e0d4 100%
+  );
+  background-repeat: no-repeat;
+  display: inline-block;
+  position: relative;
+
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-name: placeholderShimmer;
+  animation-name: placeholderShimmer;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+}
+
+.shimmerFillHighContrast {
+  background: #e4e0d4;
+  background-image: linear-gradient(
+    to right,
+    #e4e0d4 0%,
+    #ccc5ad 20%,
+    #e4e0d4 40%,
+    #e4e0d4 100%
+  );
+  background-repeat: no-repeat;
+  display: inline-block;
+  position: relative;
+
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-name: placeholderShimmer;
+  animation-name: placeholderShimmer;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+}
+
+@-webkit-keyframes placeholderShimmer {
+  0% {
+    background-position: -468px 0;
+  }
+
+  100% {
+    background-position: 468px 0;
+  }
+}
+@keyframes placeholderShimmer {
+  0% {
+    background-position: -468px 0;
+  }
+
+  100% {
+    background-position: 468px 0;
+  }
+}
+
+.shimmerMask {
+  color: grey;
+  -webkit-mask: linear-gradient(-60deg, #000 30%, #0005, #000 70%) right/300%
+    100%;
+  mask: linear-gradient(-60deg, #000 30%, #0005, #000 70%) right/300% 100%;
+  background-repeat: no-repeat;
+  animation: shimmer 2.5s infinite;
+}
+
+@keyframes shimmer {
+  100% {
+    -webkit-mask-position: left;
+  }
+}
+
+.loaded-animation {
+  animation-name: slide-up;
+  animation-duration: 300ms;
+}
+
+@keyframes slide-up {
+  0% {
+    top: 20px;
+  }
+  100% {
+    top: 0px;
+  }
+}
+
+.checkmark-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.checkmark__circle {
+  stroke-dasharray: 166;
+  stroke-dashoffset: 166;
+  stroke-width: 2;
+  stroke-miterlimit: 10;
+  stroke: theme("colors.green.confirm");
+  fill: none;
+  animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+}
+.checkmark {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: block;
+  stroke-width: 2;
+  stroke: #fff;
+  stroke-miterlimit: 10;
+  box-shadow: inset 0px 0px 0px theme("colors.green.confirm");
+  animation: fill 0.4s ease-in-out 0.4s forwards,
+    scale 0.3s ease-in-out 0.9s both;
+}
+.checkmark__check {
+  transform-origin: 50% 50%;
+  stroke-dasharray: 48;
+  stroke-dashoffset: 48;
+  animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+}
+@keyframes stroke {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes scale {
+  0%,
+  100% {
+    transform: none;
+  }
+  50% {
+    transform: scale3d(1.1, 1.1, 1);
+  }
+}
+@keyframes fill {
+  100% {
+    box-shadow: inset 0px 0px 0px 30px theme("colors.green.confirm");
+  }
+}
