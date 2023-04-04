@@ -13,6 +13,7 @@ exports.addGuestToEmailList = functions
     }
     const requestData = {
       contacts: [{ email: data.text }],
+      list_ids: ["887040bc-71a4-489a-874a-c4cc0391f890"], //This is the Monsters and Myriads Contact List ID
     };
     const request = {
       url: "/v3/marketing/contacts",
