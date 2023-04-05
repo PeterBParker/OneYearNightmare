@@ -44,7 +44,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "stop": "npx kill-port 9099 8080 9000 5000 9199"
+    "stop": "npx kill-port 9099 8080 9000 5000 9199",
+    "notify": "cd src/scripts && python notifyEmailSubscribers.py"
   },
   "eslintConfig": {
     "extends": [
