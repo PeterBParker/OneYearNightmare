@@ -1,20 +1,20 @@
 {
     "maxDisplayPage": "2a3096d3-9f0a-457c-87ef-05d7e00e3f74",
     "firstDisplayPage": "92004427-5249-4fa3-80f1-0a67f93ba559",
-    "pageCount": 121,
+    "pageCount": 123,
     "seasonCount": 1,
     "seasons": [
         {
             "seasonName": "First Blood",
             "folderName": "first blood",
-            "numOfPages": 121,
+            "numOfPages": 123,
             "numOfChapters": 4,
             "id": 1,
             "chapters": [
                 {
                     "chapterName": "Prologue",
                     "folderName": "prologue",
-                    "numOfPages": 20,
+                    "numOfPages": 22,
                     "id": 1,
                     "pages": [
                         {
@@ -260,12 +260,36 @@
                             "user": "M1998",
                             "icon": "icons/PRO-new18-Icon.png",
                             "uuid": "8775a160-082c-4f78-9ad2-c9267cb3f8b0",
-                            "nextPageUuid": "079fb5aa-beba-415d-89e0-5bc9e0ec3f81",
+                            "nextPageUuid": "0ff52acd-338a-493f-897b-f3dfb3428dfa",
                             "prevPageUuid": "24c8f222-7e6e-49e6-a430-51eb695b88fa",
                             "globalPageNum": 18
                         },
                         {
                             "pageNum": 20,
+                            "filename": "PRO-new19.webp",
+                            "title": "Pizza Man Released",
+                            "message": "As an avid fan of my wife's art, I can't stop admiring the pointing hand in the second panel. If I had attempted that it probably would have looked like something else...",
+                            "datetime": "2023-04-04 21:35:23",
+                            "user": "N1995",
+                            "icon": "icons/PRO-new19-Icon.png",
+                            "uuid": "0ff52acd-338a-493f-897b-f3dfb3428dfa",
+                            "nextPageUuid": "8b614fa2-72a6-457f-85b5-1d7734b1c0ef",
+                            "prevPageUuid": "8775a160-082c-4f78-9ad2-c9267cb3f8b0"
+                        },
+                        {
+                            "pageNum": 21,
+                            "filename": "PRO-new20.webp",
+                            "title": "Pizza Man Can't Catch a Break",
+                            "message": "I hate it when nights go to heck. Street-puddle soaked pizza? Ugh. Almost as bad as the tax hikes for installing gun turrets on top of these night buses.",
+                            "datetime": "2023-04-04 21:38:02",
+                            "user": "N1995",
+                            "icon": "icons/PRO-new20-Icon.png",
+                            "uuid": "8b614fa2-72a6-457f-85b5-1d7734b1c0ef",
+                            "nextPageUuid": "079fb5aa-beba-415d-89e0-5bc9e0ec3f81",
+                            "prevPageUuid": "0ff52acd-338a-493f-897b-f3dfb3428dfa"
+                        },
+                        {
+                            "pageNum": 22,
                             "filename": "Under_Construction-PROLOGUE.webp",
                             "title": "Prologue Under Construction",
                             "message": "We're updating the prologue one more time! We really think we've got something awesome in the works with this revision. As one reader (@TheRealNGothman) who got a sneak peek said, \"It's 100 times better.\" ",
@@ -274,7 +298,7 @@
                             "icon": "icons/Under_Construction-PROLOGUE-Icon.png",
                             "uuid": "079fb5aa-beba-415d-89e0-5bc9e0ec3f81",
                             "nextPageUuid": "e302ab51-9b0f-4ada-b9fb-869a5082a2a2",
-                            "prevPageUuid": "8775a160-082c-4f78-9ad2-c9267cb3f8b0",
+                            "prevPageUuid": "8b614fa2-72a6-457f-85b5-1d7734b1c0ef",
                             "globalPageNum": 19
                         }
                     ]
