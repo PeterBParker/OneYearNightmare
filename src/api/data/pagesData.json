@@ -1,13 +1,13 @@
 {
-    "maxDisplayPage": "2a3096d3-9f0a-457c-87ef-05d7e00e3f74",
+    "maxDisplayPage": "03b1d91c-d1ab-432a-a3e1-38f481ac8cef",
     "firstDisplayPage": "92004427-5249-4fa3-80f1-0a67f93ba559",
-    "pageCount": 123,
+    "pageCount": 124,
     "seasonCount": 1,
     "seasons": [
         {
             "seasonName": "First Blood",
             "folderName": "first blood",
-            "numOfPages": 123,
+            "numOfPages": 124,
             "numOfChapters": 4,
             "id": 1,
             "chapters": [
@@ -1377,7 +1377,7 @@
                 {
                     "chapterName": "Chapter Three",
                     "folderName": "chapter3",
-                    "numOfPages": 19,
+                    "numOfPages": 20,
                     "id": 4,
                     "pages": [
                         {
@@ -1624,8 +1624,21 @@
                             "icon": "icons/Chp3-Pg18-Icon.png",
                             "uuid": "2a3096d3-9f0a-457c-87ef-05d7e00e3f74",
                             "prevPageUuid": "4e9d89ad-468f-422f-a06d-561f401cdf0c",
-                            "nextPageUuid": null,
+                            "nextPageUuid": "03b1d91c-d1ab-432a-a3e1-38f481ac8cef",
                             "globalPageNum": 121
+                        },
+                        {
+                            "pageNum": 20,
+                            "filename": "Chp3-Pg22.webp",
+                            "title": "Zylo Sees Monsters",
+                            "message": "Zylo's hands rated E for everybody. He'll square up no matter your chromosomes......or monstrous deformities....",
+                            "datetime": "2023-06-05 15:54:33",
+                            "user": "N1995",
+                            "icon": "icons/Chp3-Pg22-Icon.png",
+                            "uuid": "03b1d91c-d1ab-432a-a3e1-38f481ac8cef",
+                            "nextPageUuid": null,
+                            "prevPageUuid": "2a3096d3-9f0a-457c-87ef-05d7e00e3f74",
+                            "globalPageNum": 122
                         }
                     ]
                 }
@@ -2242,6 +2255,11 @@
             "seasonIndex": 0,
             "chapterIndex": 3,
             "pageIndex": 18
+        },
+        "03b1d91c-d1ab-432a-a3e1-38f481ac8cef": {
+            "seasonIndex": 0,
+            "chapterIndex": 3,
+            "pageIndex": 19
         }
     }
 }
