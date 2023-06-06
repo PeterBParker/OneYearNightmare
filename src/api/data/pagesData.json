@@ -1,13 +1,13 @@
 {
-    "maxDisplayPage": "2a3096d3-9f0a-457c-87ef-05d7e00e3f74",
+    "maxDisplayPage": "f0f779db-8461-47b2-a614-5654a9b30e83",
     "firstDisplayPage": "92004427-5249-4fa3-80f1-0a67f93ba559",
-    "pageCount": 124,
+    "pageCount": 128,
     "seasonCount": 1,
     "seasons": [
         {
             "seasonName": "First Blood",
             "folderName": "first blood",
-            "numOfPages": 124,
+            "numOfPages": 128,
             "numOfChapters": 4,
             "id": 1,
             "chapters": [
@@ -321,7 +321,7 @@
                 {
                     "chapterName": "Chapter One",
                     "folderName": "chapter1",
-                    "numOfPages": 26,
+                    "numOfPages": 27,
                     "id": 2,
                     "pages": [
                         {
@@ -333,12 +333,25 @@
                             "user": "N1995",
                             "icon": "icons/Chapter1_NEW-Icon.png",
                             "uuid": "e302ab51-9b0f-4ada-b9fb-869a5082a2a2",
-                            "nextPageUuid": "4919794c-70e2-4c09-9826-bb865702ec60",
+                            "nextPageUuid": "3a217725-92d6-4b81-a97e-e8869ca031c1",
                             "prevPageUuid": "d83487b7-5d4b-4382-844d-cc06430707a2",
                             "globalPageNum": 23
                         },
                         {
                             "pageNum": 2,
+                            "filename": "Chap1-Pg0.webp",
+                            "title": "Horse-pulled dumptruck carting around large unnamed monster feet",
+                            "message": "Reporting live from downtown Shenee, WI: horse-pulled garbagetruck transporting large, unnamed monster feet. Not the only peculiar sighting this Sunday morning...",
+                            "datetime": "2023-04-24 17:47:33",
+                            "user": "M1998",
+                            "icon": "icons/Chap1-Pg0-Icon.png",
+                            "uuid": "3a217725-92d6-4b81-a97e-e8869ca031c1",
+                            "nextPageUuid": "4919794c-70e2-4c09-9826-bb865702ec60",
+                            "prevPageUuid": "e302ab51-9b0f-4ada-b9fb-869a5082a2a2",
+                            "globalPageNum": 24
+                        },
+                        {
+                            "pageNum": 3,
                             "filename": "Chap1-Pg1.jpg",
                             "title": "Rose finds drugs?",
                             "message": "Season 1 starting off with a happy dance! What do you think is in the bottle??? Comment your guess in our discord chat!",
@@ -347,11 +360,11 @@
                             "icon": "icons/Chap1-Pg1-Icon.png",
                             "uuid": "4919794c-70e2-4c09-9826-bb865702ec60",
                             "nextPageUuid": "31816435-e400-4727-b025-f264288e6a20",
-                            "prevPageUuid": "e302ab51-9b0f-4ada-b9fb-869a5082a2a2",
-                            "globalPageNum": 24
+                            "prevPageUuid": "3a217725-92d6-4b81-a97e-e8869ca031c1",
+                            "globalPageNum": 25
                         },
                         {
-                            "pageNum": 3,
+                            "pageNum": 4,
                             "filename": "Chap1-Pg2.jpg",
                             "title": "Rose escapes her mother's room",
                             "message": "From butchering beasts in high heels to jumping out of windows in flip flops...we need to get these girls some sneakers!",
@@ -361,10 +374,10 @@
                             "uuid": "31816435-e400-4727-b025-f264288e6a20",
                             "nextPageUuid": "39f3a834-d890-45dc-aed8-a1c111fcf997",
                             "prevPageUuid": "4919794c-70e2-4c09-9826-bb865702ec60",
-                            "globalPageNum": 25
+                            "globalPageNum": 26
                         },
                         {
-                            "pageNum": 4,
+                            "pageNum": 5,
                             "filename": "Chap1-Pg3.jpg",
                             "title": "Donny discovers Rose's escape measures",
                             "message": "Don't know what Jean usually listens to on her ipod, but it's \"ffmmping!\"",
@@ -374,10 +387,10 @@
                             "uuid": "39f3a834-d890-45dc-aed8-a1c111fcf997",
                             "nextPageUuid": "bb590549-f8c4-4577-8121-3a73638e1917",
                             "prevPageUuid": "31816435-e400-4727-b025-f264288e6a20",
-                            "globalPageNum": 26
+                            "globalPageNum": 27
                         },
                         {
-                            "pageNum": 5,
+                            "pageNum": 6,
                             "filename": "Chap1-Pg4.jpg",
                             "title": "Rose embarrasses herself in front of cats",
                             "message": "Them cats know a good purple manicure when they see it. ",
@@ -387,10 +400,10 @@
                             "uuid": "bb590549-f8c4-4577-8121-3a73638e1917",
                             "nextPageUuid": "5ba58b25-864d-48d5-94c7-576861e672ec",
                             "prevPageUuid": "39f3a834-d890-45dc-aed8-a1c111fcf997",
-                            "globalPageNum": 27
+                            "globalPageNum": 28
                         },
                         {
-                            "pageNum": 6,
+                            "pageNum": 7,
                             "filename": "Chap1-Pg5.jpg",
                             "title": "Who is the Penguin man?",
                             "message": "New page and lots of new faces! But the most important face of all...this elusive Mr. Freezy Cee...",
@@ -400,10 +413,10 @@
                             "uuid": "5ba58b25-864d-48d5-94c7-576861e672ec",
                             "nextPageUuid": "d001e3ec-915d-47a7-be54-ba2f2ea55d29",
                             "prevPageUuid": "bb590549-f8c4-4577-8121-3a73638e1917",
-                            "globalPageNum": 28
+                            "globalPageNum": 29
                         },
                         {
-                            "pageNum": 7,
+                            "pageNum": 8,
                             "filename": "Chap1-Pg6.jpg",
                             "title": "Zylo is seeing things, and those things have a lot of teeth",
                             "message": "I could have sworn she had less teeth in the last pannel.",
@@ -413,10 +426,10 @@
                             "uuid": "d001e3ec-915d-47a7-be54-ba2f2ea55d29",
                             "nextPageUuid": "05009c26-2bf4-4df9-8315-88e7694ff5e4",
                             "prevPageUuid": "5ba58b25-864d-48d5-94c7-576861e672ec",
-                            "globalPageNum": 29
+                            "globalPageNum": 30
                         },
                         {
-                            "pageNum": 8,
+                            "pageNum": 9,
                             "filename": "Chap1-Pg7.jpg",
                             "title": "He DEFINITELY likes me...",
                             "message": "You may have wondered if penguin boy has flippers for hands or if it's just part of his costume. Well now you know, you're welcome.",
@@ -426,10 +439,10 @@
                             "uuid": "05009c26-2bf4-4df9-8315-88e7694ff5e4",
                             "nextPageUuid": "ed45a559-6208-407d-8439-e71ebb4d7c97",
                             "prevPageUuid": "d001e3ec-915d-47a7-be54-ba2f2ea55d29",
-                            "globalPageNum": 30
+                            "globalPageNum": 31
                         },
                         {
-                            "pageNum": 9,
+                            "pageNum": 10,
                             "filename": "Chap1-Pg8.jpg",
                             "title": "Rose coming in hot",
                             "message": "Poor Mr. \"Definitely Not Mr. Freezy Cee\" can't catch a break.",
@@ -439,10 +452,10 @@
                             "uuid": "ed45a559-6208-407d-8439-e71ebb4d7c97",
                             "nextPageUuid": "39741c5e-a7a1-435c-9a35-91cd1c989a0a",
                             "prevPageUuid": "05009c26-2bf4-4df9-8315-88e7694ff5e4",
-                            "globalPageNum": 31
+                            "globalPageNum": 32
                         },
                         {
-                            "pageNum": 10,
+                            "pageNum": 11,
                             "filename": "Chap1-Pg9.jpg",
                             "title": "Rose and Casper Collision",
                             "message": "And that, kids, was how I met your mother. Hahaha just kidding...unless...",
@@ -452,10 +465,10 @@
                             "uuid": "39741c5e-a7a1-435c-9a35-91cd1c989a0a",
                             "nextPageUuid": "3a73c11d-c734-4dbc-a34f-887ee0b0fcec",
                             "prevPageUuid": "ed45a559-6208-407d-8439-e71ebb4d7c97",
-                            "globalPageNum": 32
+                            "globalPageNum": 33
                         },
                         {
-                            "pageNum": 11,
+                            "pageNum": 12,
                             "filename": "Chap1-Pg10.jpg",
                             "title": "Oh nononono Rose got God Blood on her blood",
                             "message": "Oh nononono, Rose got \"God Blood\" on her blood. I'm sure everything's fine.",
@@ -465,10 +478,10 @@
                             "uuid": "3a73c11d-c734-4dbc-a34f-887ee0b0fcec",
                             "nextPageUuid": "c6ed1f05-ac62-4bfa-97c4-7ac19091f190",
                             "prevPageUuid": "39741c5e-a7a1-435c-9a35-91cd1c989a0a",
-                            "globalPageNum": 33
+                            "globalPageNum": 34
                         },
                         {
-                            "pageNum": 12,
+                            "pageNum": 13,
                             "filename": "Chap1-Pg11.jpg",
                             "title": "He's Bouncy like Rubber, BOING!",
                             "message": "It's okay dude, we know what One Piece is and WE think you're cool.",
@@ -478,10 +491,10 @@
                             "uuid": "c6ed1f05-ac62-4bfa-97c4-7ac19091f190",
                             "nextPageUuid": "cb038fa4-46dc-45f1-91af-cf956b09fe1e",
                             "prevPageUuid": "3a73c11d-c734-4dbc-a34f-887ee0b0fcec",
-                            "globalPageNum": 34
+                            "globalPageNum": 35
                         },
                         {
-                            "pageNum": 13,
+                            "pageNum": 14,
                             "filename": "Chap1-Pg12.jpg",
                             "title": "Blush Overload and Jealous Rage",
                             "message": "Someone may be jealous... but jury is still out on that.",
@@ -491,10 +504,10 @@
                             "uuid": "cb038fa4-46dc-45f1-91af-cf956b09fe1e",
                             "nextPageUuid": "53a1b3de-07b6-4a3d-9443-c022bc53c910",
                             "prevPageUuid": "c6ed1f05-ac62-4bfa-97c4-7ac19091f190",
-                            "globalPageNum": 35
+                            "globalPageNum": 36
                         },
                         {
-                            "pageNum": 14,
+                            "pageNum": 15,
                             "filename": "Chap1-Pg13.jpg",
                             "title": "A hero is needed, and Casper will have to do",
                             "message": "When that rando kid thinks they are the main character.",
@@ -504,10 +517,10 @@
                             "uuid": "53a1b3de-07b6-4a3d-9443-c022bc53c910",
                             "nextPageUuid": "b0ab22dc-0acd-4423-b8c9-58901f551b70",
                             "prevPageUuid": "cb038fa4-46dc-45f1-91af-cf956b09fe1e",
-                            "globalPageNum": 36
+                            "globalPageNum": 37
                         },
                         {
-                            "pageNum": 15,
+                            "pageNum": 16,
                             "filename": "Moved_To_Wisconsin.jpg",
                             "title": "We Moved to Wisconsin",
                             "message": "Hey guys! So you may have heard we were buying a house. The house is no more! In the mean time, we are setting up camp in Wisconsin (the home of the Monsters and Myriads comic ironically). We're just now getting settled in and figuring out our future adventures. So no new page today, however, pages will continue this Thursday (November 4th). Also, Happy Belated Halloween, you spooky hooligans!",
@@ -517,10 +530,10 @@
                             "uuid": "b0ab22dc-0acd-4423-b8c9-58901f551b70",
                             "nextPageUuid": "811dcb55-9e31-43d5-aaf3-ac2ea1033c9c",
                             "prevPageUuid": "53a1b3de-07b6-4a3d-9443-c022bc53c910",
-                            "globalPageNum": 37
+                            "globalPageNum": 38
                         },
                         {
-                            "pageNum": 16,
+                            "pageNum": 17,
                             "filename": "Chap1-Pg14.jpg",
                             "title": "Your....Vanilla Cones",
                             "message": "I don't know which part made me happier to draw, the icecream on the kitty's nose, or Casper vrooooming off into the sunset. Or maybe the phantom newcomer in the depths of the Freezy Cee's custard shack...",
@@ -530,10 +543,10 @@
                             "uuid": "811dcb55-9e31-43d5-aaf3-ac2ea1033c9c",
                             "nextPageUuid": "bd7d5432-df04-4ed3-953d-ae93a100fde3",
                             "prevPageUuid": "b0ab22dc-0acd-4423-b8c9-58901f551b70",
-                            "globalPageNum": 38
+                            "globalPageNum": 39
                         },
                         {
-                            "pageNum": 17,
+                            "pageNum": 18,
                             "filename": "Chap1-Pg15.jpg",
                             "title": "Here enters the Elusive Mr. Freezy Cee",
                             "message": "The man, the myth, the legend, Mr. Freezy Cee!! Dropping some hot takes and hard facts. Posting from Colorado Springs this morning (my concept of time has been severely crippled between moving from Ohio to Wisconsin to Colorado, during a daylight savings no less 🙀).",
@@ -543,10 +556,10 @@
                             "uuid": "bd7d5432-df04-4ed3-953d-ae93a100fde3",
                             "nextPageUuid": "9544b748-0888-4afc-93f1-2ba73fd27b42",
                             "prevPageUuid": "811dcb55-9e31-43d5-aaf3-ac2ea1033c9c",
-                            "globalPageNum": 39
+                            "globalPageNum": 40
                         },
                         {
-                            "pageNum": 18,
+                            "pageNum": 19,
                             "filename": "Chap1-Pg16.jpg",
                             "title": "Mr Freezy Cee on the philosophy of penguin pajamas",
                             "message": "This just in: Mr. Freezy Cee on the philosophy of penguin pajamas.",
@@ -556,10 +569,10 @@
                             "uuid": "9544b748-0888-4afc-93f1-2ba73fd27b42",
                             "nextPageUuid": "0580da8a-ed1e-45a3-a2e6-89eb1b0e44e8",
                             "prevPageUuid": "bd7d5432-df04-4ed3-953d-ae93a100fde3",
-                            "globalPageNum": 40
+                            "globalPageNum": 41
                         },
                         {
-                            "pageNum": 19,
+                            "pageNum": 20,
                             "filename": "Chap1-Pg17.jpg",
                             "title": "Just about anything can make you interesting",
                             "message": "Zylo \"unmasked\", not a penguin after all.",
@@ -569,10 +582,10 @@
                             "uuid": "0580da8a-ed1e-45a3-a2e6-89eb1b0e44e8",
                             "nextPageUuid": "790f2161-f952-4210-ae5e-61dc7e0ee9c1",
                             "prevPageUuid": "9544b748-0888-4afc-93f1-2ba73fd27b42",
-                            "globalPageNum": 41
+                            "globalPageNum": 42
                         },
                         {
-                            "pageNum": 20,
+                            "pageNum": 21,
                             "filename": "Chap1-Pg18.jpg",
                             "title": "Hacker Chick and her Nut Cracker immerges",
                             "message": "Little known hallmark film coming out this season...Hacker and the NuT Cracker. Buy your tickets today!",
@@ -582,10 +595,10 @@
                             "uuid": "790f2161-f952-4210-ae5e-61dc7e0ee9c1",
                             "nextPageUuid": "e80361c8-fa41-4fb2-93f7-44c1dba59859",
                             "prevPageUuid": "0580da8a-ed1e-45a3-a2e6-89eb1b0e44e8",
-                            "globalPageNum": 42
+                            "globalPageNum": 43
                         },
                         {
-                            "pageNum": 21,
+                            "pageNum": 22,
                             "filename": "Chap1-Pg19.jpg",
                             "title": "I'm sure your deserted little twin brothers are fine...",
                             "message": "I'm sure your deserted little twin brothers are fine, Casper. I mean, they had icecream and an absurd lack of supervision to keep them company.",
@@ -595,10 +608,10 @@
                             "uuid": "e80361c8-fa41-4fb2-93f7-44c1dba59859",
                             "nextPageUuid": "c94109cd-27e6-4b98-ba07-e07809cbfc27",
                             "prevPageUuid": "790f2161-f952-4210-ae5e-61dc7e0ee9c1",
-                            "globalPageNum": 43
+                            "globalPageNum": 44
                         },
                         {
-                            "pageNum": 22,
+                            "pageNum": 23,
                             "filename": "Chap1-Pg20.jpg",
                             "title": "Rose may be tripping afterall",
                             "message": "Well Rose is certainly tripping on something.",
@@ -608,10 +621,10 @@
                             "uuid": "c94109cd-27e6-4b98-ba07-e07809cbfc27",
                             "nextPageUuid": "becd99ef-9d28-4fec-b3af-a988d4ee8aa2",
                             "prevPageUuid": "e80361c8-fa41-4fb2-93f7-44c1dba59859",
-                            "globalPageNum": 44
+                            "globalPageNum": 45
                         },
                         {
-                            "pageNum": 23,
+                            "pageNum": 24,
                             "filename": "Chap1-Pg21.jpg",
                             "title": "Maybe we're both high?",
                             "message": "Have I been playing too much Pikmin Bloom, or does Quill's ghost need a name? I'm leaning towards Reginald but I am open to suggestions.",
@@ -621,10 +634,10 @@
                             "uuid": "becd99ef-9d28-4fec-b3af-a988d4ee8aa2",
                             "nextPageUuid": "40bf0c31-d69b-439e-9d68-df53d38abf81",
                             "prevPageUuid": "c94109cd-27e6-4b98-ba07-e07809cbfc27",
-                            "globalPageNum": 45
+                            "globalPageNum": 46
                         },
                         {
-                            "pageNum": 24,
+                            "pageNum": 25,
                             "filename": "Chap1-Pg22.jpg",
                             "title": "Uncle Dan finds the kiddos with a broken window",
                             "message": "All things considered, both Uncle Dan and Rose are taking it all rather well. (⊙_⊙;)",
@@ -634,10 +647,10 @@
                             "uuid": "40bf0c31-d69b-439e-9d68-df53d38abf81",
                             "nextPageUuid": "eac2edce-2ed6-4ed3-8790-3615ca26f81b",
                             "prevPageUuid": "becd99ef-9d28-4fec-b3af-a988d4ee8aa2",
-                            "globalPageNum": 46
+                            "globalPageNum": 47
                         },
                         {
-                            "pageNum": 25,
+                            "pageNum": 26,
                             "filename": "Chap1-Pg23.jpg",
                             "title": "Uncle Dan to the rescue",
                             "message": "Typical.",
@@ -647,10 +660,10 @@
                             "uuid": "eac2edce-2ed6-4ed3-8790-3615ca26f81b",
                             "nextPageUuid": "717bb5a7-6ba4-4560-8375-d348618302d5",
                             "prevPageUuid": "40bf0c31-d69b-439e-9d68-df53d38abf81",
-                            "globalPageNum": 47
+                            "globalPageNum": 48
                         },
                         {
-                            "pageNum": 26,
+                            "pageNum": 27,
                             "filename": "Chap1-Pg24.jpg",
                             "title": "Rose isn't crazy, and Quill is gonna help her",
                             "message": "I didn't grow up with cousins my age, but I imagine this is how general cousinly bickering would go.",
@@ -660,7 +673,7 @@
                             "uuid": "717bb5a7-6ba4-4560-8375-d348618302d5",
                             "nextPageUuid": "a7640e97-32aa-485c-8eaf-9c051db102c2",
                             "prevPageUuid": "eac2edce-2ed6-4ed3-8790-3615ca26f81b",
-                            "globalPageNum": 48
+                            "globalPageNum": 49
                         }
                     ]
                 },
@@ -681,7 +694,7 @@
                             "uuid": "a7640e97-32aa-485c-8eaf-9c051db102c2",
                             "nextPageUuid": "188c2485-a664-4b27-bde2-cfbbffc404d7",
                             "prevPageUuid": "717bb5a7-6ba4-4560-8375-d348618302d5",
-                            "globalPageNum": 49
+                            "globalPageNum": 50
                         },
                         {
                             "pageNum": 2,
@@ -694,7 +707,7 @@
                             "uuid": "188c2485-a664-4b27-bde2-cfbbffc404d7",
                             "nextPageUuid": "98db6468-da42-4f6b-b8d2-47c113f14d0d",
                             "prevPageUuid": "a7640e97-32aa-485c-8eaf-9c051db102c2",
-                            "globalPageNum": 50
+                            "globalPageNum": 51
                         },
                         {
                             "pageNum": 3,
@@ -707,7 +720,7 @@
                             "uuid": "98db6468-da42-4f6b-b8d2-47c113f14d0d",
                             "nextPageUuid": "445b223f-7819-4f54-8216-883e2374f98b",
                             "prevPageUuid": "188c2485-a664-4b27-bde2-cfbbffc404d7",
-                            "globalPageNum": 51
+                            "globalPageNum": 52
                         },
                         {
                             "pageNum": 4,
@@ -720,7 +733,7 @@
                             "uuid": "445b223f-7819-4f54-8216-883e2374f98b",
                             "nextPageUuid": "669789c5-4537-4674-93f3-2a210d1ff6cf",
                             "prevPageUuid": "98db6468-da42-4f6b-b8d2-47c113f14d0d",
-                            "globalPageNum": 52
+                            "globalPageNum": 53
                         },
                         {
                             "pageNum": 5,
@@ -733,7 +746,7 @@
                             "uuid": "669789c5-4537-4674-93f3-2a210d1ff6cf",
                             "nextPageUuid": "af428072-0404-4468-bea7-35024cf31269",
                             "prevPageUuid": "445b223f-7819-4f54-8216-883e2374f98b",
-                            "globalPageNum": 53
+                            "globalPageNum": 54
                         },
                         {
                             "pageNum": 6,
@@ -746,7 +759,7 @@
                             "uuid": "af428072-0404-4468-bea7-35024cf31269",
                             "nextPageUuid": "b2efadd1-136b-41fa-91da-dc1c1990ce47",
                             "prevPageUuid": "669789c5-4537-4674-93f3-2a210d1ff6cf",
-                            "globalPageNum": 54
+                            "globalPageNum": 55
                         },
                         {
                             "pageNum": 7,
@@ -759,7 +772,7 @@
                             "uuid": "b2efadd1-136b-41fa-91da-dc1c1990ce47",
                             "nextPageUuid": "f7f9d73b-eade-4249-845c-71073452b5dd",
                             "prevPageUuid": "af428072-0404-4468-bea7-35024cf31269",
-                            "globalPageNum": 55
+                            "globalPageNum": 56
                         },
                         {
                             "pageNum": 8,
@@ -772,7 +785,7 @@
                             "uuid": "f7f9d73b-eade-4249-845c-71073452b5dd",
                             "nextPageUuid": "6f8357f4-b5c7-43ca-a0b7-b31275f32e02",
                             "prevPageUuid": "b2efadd1-136b-41fa-91da-dc1c1990ce47",
-                            "globalPageNum": 56
+                            "globalPageNum": 57
                         },
                         {
                             "pageNum": 9,
@@ -785,7 +798,7 @@
                             "uuid": "6f8357f4-b5c7-43ca-a0b7-b31275f32e02",
                             "nextPageUuid": "4bcef01f-ccc1-4c2b-afc6-3302261a01b0",
                             "prevPageUuid": "f7f9d73b-eade-4249-845c-71073452b5dd",
-                            "globalPageNum": 57
+                            "globalPageNum": 58
                         },
                         {
                             "pageNum": 10,
@@ -798,7 +811,7 @@
                             "uuid": "4bcef01f-ccc1-4c2b-afc6-3302261a01b0",
                             "nextPageUuid": "2fe27ba6-3b39-449f-8f97-09aaf6908c9a",
                             "prevPageUuid": "6f8357f4-b5c7-43ca-a0b7-b31275f32e02",
-                            "globalPageNum": 58
+                            "globalPageNum": 59
                         },
                         {
                             "pageNum": 11,
@@ -811,7 +824,7 @@
                             "uuid": "2fe27ba6-3b39-449f-8f97-09aaf6908c9a",
                             "nextPageUuid": "822799da-a509-418b-bd08-0dfeb65a9006",
                             "prevPageUuid": "4bcef01f-ccc1-4c2b-afc6-3302261a01b0",
-                            "globalPageNum": 59
+                            "globalPageNum": 60
                         },
                         {
                             "pageNum": 12,
@@ -824,7 +837,7 @@
                             "uuid": "822799da-a509-418b-bd08-0dfeb65a9006",
                             "nextPageUuid": "e5df8eb0-3cc6-4dc5-a1e3-60e6af7d4ade",
                             "prevPageUuid": "2fe27ba6-3b39-449f-8f97-09aaf6908c9a",
-                            "globalPageNum": 60
+                            "globalPageNum": 61
                         },
                         {
                             "pageNum": 13,
@@ -837,7 +850,7 @@
                             "uuid": "e5df8eb0-3cc6-4dc5-a1e3-60e6af7d4ade",
                             "nextPageUuid": "9b2f3f3d-56d0-42bb-bc47-65024c559eb4",
                             "prevPageUuid": "822799da-a509-418b-bd08-0dfeb65a9006",
-                            "globalPageNum": 61
+                            "globalPageNum": 62
                         },
                         {
                             "pageNum": 14,
@@ -850,7 +863,7 @@
                             "uuid": "9b2f3f3d-56d0-42bb-bc47-65024c559eb4",
                             "nextPageUuid": "d5473a7a-c74f-41e8-856a-5088a70f7c17",
                             "prevPageUuid": "e5df8eb0-3cc6-4dc5-a1e3-60e6af7d4ade",
-                            "globalPageNum": 62
+                            "globalPageNum": 63
                         },
                         {
                             "pageNum": 15,
@@ -863,7 +876,7 @@
                             "uuid": "d5473a7a-c74f-41e8-856a-5088a70f7c17",
                             "nextPageUuid": "db77a9ec-38ce-48df-b963-2d643c4f6d44",
                             "prevPageUuid": "9b2f3f3d-56d0-42bb-bc47-65024c559eb4",
-                            "globalPageNum": 63
+                            "globalPageNum": 64
                         },
                         {
                             "pageNum": 16,
@@ -876,7 +889,7 @@
                             "uuid": "db77a9ec-38ce-48df-b963-2d643c4f6d44",
                             "nextPageUuid": "403b5d3b-f9fb-4922-8be9-3dc23e4958a9",
                             "prevPageUuid": "d5473a7a-c74f-41e8-856a-5088a70f7c17",
-                            "globalPageNum": 64
+                            "globalPageNum": 65
                         },
                         {
                             "pageNum": 17,
@@ -889,7 +902,7 @@
                             "uuid": "403b5d3b-f9fb-4922-8be9-3dc23e4958a9",
                             "nextPageUuid": "ae6620d2-4f7e-4721-a3ed-f679809d1645",
                             "prevPageUuid": "db77a9ec-38ce-48df-b963-2d643c4f6d44",
-                            "globalPageNum": 65
+                            "globalPageNum": 66
                         },
                         {
                             "pageNum": 18,
@@ -902,7 +915,7 @@
                             "uuid": "ae6620d2-4f7e-4721-a3ed-f679809d1645",
                             "nextPageUuid": "204a0365-d907-43ec-bd73-fd8657f758d1",
                             "prevPageUuid": "403b5d3b-f9fb-4922-8be9-3dc23e4958a9",
-                            "globalPageNum": 66
+                            "globalPageNum": 67
                         },
                         {
                             "pageNum": 19,
@@ -915,7 +928,7 @@
                             "uuid": "204a0365-d907-43ec-bd73-fd8657f758d1",
                             "nextPageUuid": "b6aebe7b-2554-4c4b-a62a-d72e5e6b5fe2",
                             "prevPageUuid": "ae6620d2-4f7e-4721-a3ed-f679809d1645",
-                            "globalPageNum": 67
+                            "globalPageNum": 68
                         },
                         {
                             "pageNum": 20,
@@ -928,7 +941,7 @@
                             "uuid": "b6aebe7b-2554-4c4b-a62a-d72e5e6b5fe2",
                             "nextPageUuid": "7e595a8d-cb2d-4275-8cc0-84792e45d48e",
                             "prevPageUuid": "204a0365-d907-43ec-bd73-fd8657f758d1",
-                            "globalPageNum": 68
+                            "globalPageNum": 69
                         },
                         {
                             "pageNum": 21,
@@ -941,7 +954,7 @@
                             "uuid": "7e595a8d-cb2d-4275-8cc0-84792e45d48e",
                             "nextPageUuid": "977bbbac-b82b-4f05-b6ec-8188797cf9b2",
                             "prevPageUuid": "b6aebe7b-2554-4c4b-a62a-d72e5e6b5fe2",
-                            "globalPageNum": 69
+                            "globalPageNum": 70
                         },
                         {
                             "pageNum": 22,
@@ -954,7 +967,7 @@
                             "uuid": "977bbbac-b82b-4f05-b6ec-8188797cf9b2",
                             "nextPageUuid": "b27732de-479f-4f45-aa32-8c6c28f412c9",
                             "prevPageUuid": "7e595a8d-cb2d-4275-8cc0-84792e45d48e",
-                            "globalPageNum": 70
+                            "globalPageNum": 71
                         },
                         {
                             "pageNum": 23,
@@ -967,7 +980,7 @@
                             "uuid": "b27732de-479f-4f45-aa32-8c6c28f412c9",
                             "nextPageUuid": "bf585724-89ff-49a8-a7aa-2bf535557cce",
                             "prevPageUuid": "977bbbac-b82b-4f05-b6ec-8188797cf9b2",
-                            "globalPageNum": 71
+                            "globalPageNum": 72
                         },
                         {
                             "pageNum": 24,
@@ -980,7 +993,7 @@
                             "uuid": "bf585724-89ff-49a8-a7aa-2bf535557cce",
                             "nextPageUuid": "75fd0c26-d72a-406a-b2c2-0a698e02fd77",
                             "prevPageUuid": "b27732de-479f-4f45-aa32-8c6c28f412c9",
-                            "globalPageNum": 72
+                            "globalPageNum": 73
                         },
                         {
                             "pageNum": 25,
@@ -993,7 +1006,7 @@
                             "uuid": "75fd0c26-d72a-406a-b2c2-0a698e02fd77",
                             "nextPageUuid": "853e4c0c-812e-414a-a20d-a5ccba5f6c28",
                             "prevPageUuid": "bf585724-89ff-49a8-a7aa-2bf535557cce",
-                            "globalPageNum": 73
+                            "globalPageNum": 74
                         },
                         {
                             "pageNum": 26,
@@ -1006,7 +1019,7 @@
                             "uuid": "853e4c0c-812e-414a-a20d-a5ccba5f6c28",
                             "nextPageUuid": "1e9f4d8d-1b9b-445f-b906-3bfeaf2cbae8",
                             "prevPageUuid": "75fd0c26-d72a-406a-b2c2-0a698e02fd77",
-                            "globalPageNum": 74
+                            "globalPageNum": 75
                         },
                         {
                             "pageNum": 27,
@@ -1019,7 +1032,7 @@
                             "uuid": "1e9f4d8d-1b9b-445f-b906-3bfeaf2cbae8",
                             "nextPageUuid": "bd48d977-a4a2-43b0-bc79-27a0c0644c5a",
                             "prevPageUuid": "853e4c0c-812e-414a-a20d-a5ccba5f6c28",
-                            "globalPageNum": 75
+                            "globalPageNum": 76
                         },
                         {
                             "pageNum": 28,
@@ -1032,7 +1045,7 @@
                             "uuid": "bd48d977-a4a2-43b0-bc79-27a0c0644c5a",
                             "nextPageUuid": "2753e850-fdd8-450f-83ca-df8a8fa9c7a7",
                             "prevPageUuid": "1e9f4d8d-1b9b-445f-b906-3bfeaf2cbae8",
-                            "globalPageNum": 76
+                            "globalPageNum": 77
                         },
                         {
                             "pageNum": 29,
@@ -1045,7 +1058,7 @@
                             "uuid": "2753e850-fdd8-450f-83ca-df8a8fa9c7a7",
                             "nextPageUuid": "29013ad6-faf5-484a-bc83-4ae8a9210371",
                             "prevPageUuid": "bd48d977-a4a2-43b0-bc79-27a0c0644c5a",
-                            "globalPageNum": 77
+                            "globalPageNum": 78
                         },
                         {
                             "pageNum": 30,
@@ -1058,7 +1071,7 @@
                             "uuid": "29013ad6-faf5-484a-bc83-4ae8a9210371",
                             "nextPageUuid": "9fd7c9a1-69af-4f97-9a3b-e408f0feaefd",
                             "prevPageUuid": "2753e850-fdd8-450f-83ca-df8a8fa9c7a7",
-                            "globalPageNum": 78
+                            "globalPageNum": 79
                         },
                         {
                             "pageNum": 31,
@@ -1071,7 +1084,7 @@
                             "uuid": "9fd7c9a1-69af-4f97-9a3b-e408f0feaefd",
                             "nextPageUuid": "bf1e051e-144e-4bc1-ae2a-cbe6c38f7220",
                             "prevPageUuid": "29013ad6-faf5-484a-bc83-4ae8a9210371",
-                            "globalPageNum": 79
+                            "globalPageNum": 80
                         },
                         {
                             "pageNum": 32,
@@ -1084,7 +1097,7 @@
                             "uuid": "bf1e051e-144e-4bc1-ae2a-cbe6c38f7220",
                             "nextPageUuid": "41e455be-c56d-4016-a37f-b696bfd753e6",
                             "prevPageUuid": "9fd7c9a1-69af-4f97-9a3b-e408f0feaefd",
-                            "globalPageNum": 80
+                            "globalPageNum": 81
                         },
                         {
                             "pageNum": 33,
@@ -1097,7 +1110,7 @@
                             "uuid": "41e455be-c56d-4016-a37f-b696bfd753e6",
                             "nextPageUuid": "bf3dedec-1da9-46ad-a235-297a5fe502ae",
                             "prevPageUuid": "bf1e051e-144e-4bc1-ae2a-cbe6c38f7220",
-                            "globalPageNum": 81
+                            "globalPageNum": 82
                         },
                         {
                             "pageNum": 34,
@@ -1110,7 +1123,7 @@
                             "uuid": "bf3dedec-1da9-46ad-a235-297a5fe502ae",
                             "nextPageUuid": "29d009c4-4faf-47c2-b365-c267c24af0ce",
                             "prevPageUuid": "41e455be-c56d-4016-a37f-b696bfd753e6",
-                            "globalPageNum": 82
+                            "globalPageNum": 83
                         },
                         {
                             "pageNum": 35,
@@ -1123,7 +1136,7 @@
                             "uuid": "29d009c4-4faf-47c2-b365-c267c24af0ce",
                             "nextPageUuid": "381b619c-6e77-4b10-812f-4890d3362a09",
                             "prevPageUuid": "bf3dedec-1da9-46ad-a235-297a5fe502ae",
-                            "globalPageNum": 83
+                            "globalPageNum": 84
                         },
                         {
                             "pageNum": 36,
@@ -1136,7 +1149,7 @@
                             "uuid": "381b619c-6e77-4b10-812f-4890d3362a09",
                             "nextPageUuid": "89ec94cf-3b11-4d5b-ae12-e50657f6b034",
                             "prevPageUuid": "29d009c4-4faf-47c2-b365-c267c24af0ce",
-                            "globalPageNum": 84
+                            "globalPageNum": 85
                         },
                         {
                             "pageNum": 37,
@@ -1149,7 +1162,7 @@
                             "uuid": "89ec94cf-3b11-4d5b-ae12-e50657f6b034",
                             "nextPageUuid": "b907930f-4904-4e60-8439-f496ff86178c",
                             "prevPageUuid": "381b619c-6e77-4b10-812f-4890d3362a09",
-                            "globalPageNum": 85
+                            "globalPageNum": 86
                         },
                         {
                             "pageNum": 38,
@@ -1162,7 +1175,7 @@
                             "uuid": "b907930f-4904-4e60-8439-f496ff86178c",
                             "nextPageUuid": "418b458d-0c39-48a1-948a-22e0e3a16c3e",
                             "prevPageUuid": "89ec94cf-3b11-4d5b-ae12-e50657f6b034",
-                            "globalPageNum": 86
+                            "globalPageNum": 87
                         },
                         {
                             "pageNum": 39,
@@ -1175,7 +1188,7 @@
                             "uuid": "418b458d-0c39-48a1-948a-22e0e3a16c3e",
                             "nextPageUuid": "b564d950-fe0c-4c55-8f93-2e78921a98c6",
                             "prevPageUuid": "b907930f-4904-4e60-8439-f496ff86178c",
-                            "globalPageNum": 87
+                            "globalPageNum": 88
                         },
                         {
                             "pageNum": 40,
@@ -1188,7 +1201,7 @@
                             "uuid": "b564d950-fe0c-4c55-8f93-2e78921a98c6",
                             "nextPageUuid": "9c6f7776-6255-48ee-8086-942df9073ae2",
                             "prevPageUuid": "418b458d-0c39-48a1-948a-22e0e3a16c3e",
-                            "globalPageNum": 88
+                            "globalPageNum": 89
                         },
                         {
                             "pageNum": 41,
@@ -1201,7 +1214,7 @@
                             "uuid": "9c6f7776-6255-48ee-8086-942df9073ae2",
                             "nextPageUuid": "6d05b4a9-111f-4d3d-a7e3-ca808047603b",
                             "prevPageUuid": "b564d950-fe0c-4c55-8f93-2e78921a98c6",
-                            "globalPageNum": 89
+                            "globalPageNum": 90
                         },
                         {
                             "pageNum": 42,
@@ -1214,7 +1227,7 @@
                             "uuid": "6d05b4a9-111f-4d3d-a7e3-ca808047603b",
                             "nextPageUuid": "800abbd9-347f-482b-ae22-e42dfe6dbaff",
                             "prevPageUuid": "9c6f7776-6255-48ee-8086-942df9073ae2",
-                            "globalPageNum": 90
+                            "globalPageNum": 91
                         },
                         {
                             "pageNum": 43,
@@ -1227,7 +1240,7 @@
                             "uuid": "800abbd9-347f-482b-ae22-e42dfe6dbaff",
                             "nextPageUuid": "019ed8bb-9b99-4c23-add0-eb8c6020975b",
                             "prevPageUuid": "6d05b4a9-111f-4d3d-a7e3-ca808047603b",
-                            "globalPageNum": 91
+                            "globalPageNum": 92
                         },
                         {
                             "pageNum": 44,
@@ -1240,7 +1253,7 @@
                             "uuid": "019ed8bb-9b99-4c23-add0-eb8c6020975b",
                             "nextPageUuid": "1492da4d-addb-4dfa-9732-837055e0b90b",
                             "prevPageUuid": "800abbd9-347f-482b-ae22-e42dfe6dbaff",
-                            "globalPageNum": 92
+                            "globalPageNum": 93
                         },
                         {
                             "pageNum": 45,
@@ -1253,7 +1266,7 @@
                             "uuid": "1492da4d-addb-4dfa-9732-837055e0b90b",
                             "nextPageUuid": "027cf736-b143-4c39-a2ae-9f46976e1efa",
                             "prevPageUuid": "019ed8bb-9b99-4c23-add0-eb8c6020975b",
-                            "globalPageNum": 93
+                            "globalPageNum": 94
                         },
                         {
                             "pageNum": 46,
@@ -1266,7 +1279,7 @@
                             "uuid": "027cf736-b143-4c39-a2ae-9f46976e1efa",
                             "nextPageUuid": "2e4773bd-e9e1-40ae-92a0-ac873635111e",
                             "prevPageUuid": "1492da4d-addb-4dfa-9732-837055e0b90b",
-                            "globalPageNum": 94
+                            "globalPageNum": 95
                         },
                         {
                             "pageNum": 47,
@@ -1279,7 +1292,7 @@
                             "uuid": "2e4773bd-e9e1-40ae-92a0-ac873635111e",
                             "nextPageUuid": "42df162e-55ad-44a0-9ba9-a9dbc54130ef",
                             "prevPageUuid": "027cf736-b143-4c39-a2ae-9f46976e1efa",
-                            "globalPageNum": 95
+                            "globalPageNum": 96
                         },
                         {
                             "pageNum": 48,
@@ -1292,7 +1305,7 @@
                             "uuid": "42df162e-55ad-44a0-9ba9-a9dbc54130ef",
                             "nextPageUuid": "11cbe105-8539-4eda-be42-5e042d0dd8c5",
                             "prevPageUuid": "2e4773bd-e9e1-40ae-92a0-ac873635111e",
-                            "globalPageNum": 96
+                            "globalPageNum": 97
                         },
                         {
                             "pageNum": 49,
@@ -1305,7 +1318,7 @@
                             "uuid": "11cbe105-8539-4eda-be42-5e042d0dd8c5",
                             "nextPageUuid": "413a3de0-2961-40d7-b57e-937bfa567a20",
                             "prevPageUuid": "42df162e-55ad-44a0-9ba9-a9dbc54130ef",
-                            "globalPageNum": 97
+                            "globalPageNum": 98
                         },
                         {
                             "pageNum": 50,
@@ -1318,7 +1331,7 @@
                             "uuid": "413a3de0-2961-40d7-b57e-937bfa567a20",
                             "nextPageUuid": "97c76b36-f5a2-4b7e-899b-e25bb7ce7abb",
                             "prevPageUuid": "11cbe105-8539-4eda-be42-5e042d0dd8c5",
-                            "globalPageNum": 98
+                            "globalPageNum": 99
                         },
                         {
                             "pageNum": 51,
@@ -1331,7 +1344,7 @@
                             "uuid": "97c76b36-f5a2-4b7e-899b-e25bb7ce7abb",
                             "nextPageUuid": "681c399d-a3fc-46ed-9802-d4b51eb576ed",
                             "prevPageUuid": "413a3de0-2961-40d7-b57e-937bfa567a20",
-                            "globalPageNum": 99
+                            "globalPageNum": 100
                         },
                         {
                             "pageNum": 52,
@@ -1344,7 +1357,7 @@
                             "uuid": "681c399d-a3fc-46ed-9802-d4b51eb576ed",
                             "nextPageUuid": "9a27b867-96d6-47e1-8334-fede6881c46c",
                             "prevPageUuid": "97c76b36-f5a2-4b7e-899b-e25bb7ce7abb",
-                            "globalPageNum": 100
+                            "globalPageNum": 101
                         },
                         {
                             "pageNum": 54,
@@ -1357,7 +1370,7 @@
                             "uuid": "9a27b867-96d6-47e1-8334-fede6881c46c",
                             "nextPageUuid": "309fdc87-7634-4315-86ff-d7d101d9bc62",
                             "prevPageUuid": "681c399d-a3fc-46ed-9802-d4b51eb576ed",
-                            "globalPageNum": 101
+                            "globalPageNum": 102
                         },
                         {
                             "pageNum": 55,
@@ -1370,7 +1383,7 @@
                             "uuid": "309fdc87-7634-4315-86ff-d7d101d9bc62",
                             "nextPageUuid": "fb5483a1-4400-4a57-92fb-c92c45be8500",
                             "prevPageUuid": "9a27b867-96d6-47e1-8334-fede6881c46c",
-                            "globalPageNum": 102
+                            "globalPageNum": 103
                         },
                         {
                             "pageNum": 56,
@@ -1383,14 +1396,14 @@
                             "uuid": "fb5483a1-4400-4a57-92fb-c92c45be8500",
                             "nextPageUuid": "ce028594-e41f-43dd-8c06-0760d3e2a0db",
                             "prevPageUuid": "309fdc87-7634-4315-86ff-d7d101d9bc62",
-                            "globalPageNum": 103
+                            "globalPageNum": 104
                         }
                     ]
                 },
                 {
                     "chapterName": "Chapter Three",
                     "folderName": "chapter3",
-                    "numOfPages": 19,
+                    "numOfPages": 22,
                     "id": 4,
                     "pages": [
                         {
@@ -1404,7 +1417,7 @@
                             "uuid": "ce028594-e41f-43dd-8c06-0760d3e2a0db",
                             "nextPageUuid": "2faf6043-2a18-48e0-a8da-e4988197b29b",
                             "prevPageUuid": "fb5483a1-4400-4a57-92fb-c92c45be8500",
-                            "globalPageNum": 104
+                            "globalPageNum": 105
                         },
                         {
                             "pageNum": 2,
@@ -1417,7 +1430,7 @@
                             "uuid": "2faf6043-2a18-48e0-a8da-e4988197b29b",
                             "nextPageUuid": "4476b890-3615-4222-8de9-e659bad15877",
                             "prevPageUuid": "ce028594-e41f-43dd-8c06-0760d3e2a0db",
-                            "globalPageNum": 105
+                            "globalPageNum": 106
                         },
                         {
                             "pageNum": 3,
@@ -1430,7 +1443,7 @@
                             "uuid": "4476b890-3615-4222-8de9-e659bad15877",
                             "nextPageUuid": "9d8be4cd-f461-40cb-82fb-08ba6cb55ad0",
                             "prevPageUuid": "2faf6043-2a18-48e0-a8da-e4988197b29b",
-                            "globalPageNum": 106
+                            "globalPageNum": 107
                         },
                         {
                             "pageNum": 4,
@@ -1443,7 +1456,7 @@
                             "uuid": "9d8be4cd-f461-40cb-82fb-08ba6cb55ad0",
                             "nextPageUuid": "80e105e0-936e-4da1-9e86-1e394b4be654",
                             "prevPageUuid": "4476b890-3615-4222-8de9-e659bad15877",
-                            "globalPageNum": 107
+                            "globalPageNum": 108
                         },
                         {
                             "pageNum": 5,
@@ -1456,7 +1469,7 @@
                             "uuid": "80e105e0-936e-4da1-9e86-1e394b4be654",
                             "nextPageUuid": "58269205-a043-45f8-9272-e12b709e8abf",
                             "prevPageUuid": "9d8be4cd-f461-40cb-82fb-08ba6cb55ad0",
-                            "globalPageNum": 108
+                            "globalPageNum": 109
                         },
                         {
                             "pageNum": 6,
@@ -1469,7 +1482,7 @@
                             "uuid": "58269205-a043-45f8-9272-e12b709e8abf",
                             "nextPageUuid": "0ff90545-8be9-447d-b887-ed90b3244134",
                             "prevPageUuid": "80e105e0-936e-4da1-9e86-1e394b4be654",
-                            "globalPageNum": 109
+                            "globalPageNum": 110
                         },
                         {
                             "pageNum": 7,
@@ -1482,7 +1495,7 @@
                             "uuid": "0ff90545-8be9-447d-b887-ed90b3244134",
                             "nextPageUuid": "f58aeb6d-8a17-4e6c-8823-44be42e3dd99",
                             "prevPageUuid": "58269205-a043-45f8-9272-e12b709e8abf",
-                            "globalPageNum": 110
+                            "globalPageNum": 111
                         },
                         {
                             "pageNum": 8,
@@ -1495,7 +1508,7 @@
                             "uuid": "f58aeb6d-8a17-4e6c-8823-44be42e3dd99",
                             "nextPageUuid": "6c097b46-10d9-438e-ba72-9bfa996a15e1",
                             "prevPageUuid": "0ff90545-8be9-447d-b887-ed90b3244134",
-                            "globalPageNum": 111
+                            "globalPageNum": 112
                         },
                         {
                             "pageNum": 9,
@@ -1508,7 +1521,7 @@
                             "uuid": "6c097b46-10d9-438e-ba72-9bfa996a15e1",
                             "nextPageUuid": "42c439a7-fc18-43e3-94b0-ea16f129607f",
                             "prevPageUuid": "f58aeb6d-8a17-4e6c-8823-44be42e3dd99",
-                            "globalPageNum": 112
+                            "globalPageNum": 113
                         },
                         {
                             "pageNum": 10,
@@ -1521,7 +1534,7 @@
                             "uuid": "42c439a7-fc18-43e3-94b0-ea16f129607f",
                             "nextPageUuid": "fb07403d-f701-48c2-a5f6-d405ab51233c",
                             "prevPageUuid": "6c097b46-10d9-438e-ba72-9bfa996a15e1",
-                            "globalPageNum": 113
+                            "globalPageNum": 114
                         },
                         {
                             "pageNum": 11,
@@ -1534,7 +1547,7 @@
                             "uuid": "fb07403d-f701-48c2-a5f6-d405ab51233c",
                             "nextPageUuid": "4e2c7740-0fe0-4048-bca6-0f744bc07140",
                             "prevPageUuid": "42c439a7-fc18-43e3-94b0-ea16f129607f",
-                            "globalPageNum": 114
+                            "globalPageNum": 115
                         },
                         {
                             "pageNum": 12,
@@ -1547,7 +1560,7 @@
                             "uuid": "4e2c7740-0fe0-4048-bca6-0f744bc07140",
                             "prevPageUuid": "fb07403d-f701-48c2-a5f6-d405ab51233c",
                             "nextPageUuid": "35ac3641-d5f2-4250-b22d-03fce0847df2",
-                            "globalPageNum": 115
+                            "globalPageNum": 116
                         },
                         {
                             "pageNum": 13,
@@ -1560,7 +1573,7 @@
                             "uuid": "35ac3641-d5f2-4250-b22d-03fce0847df2",
                             "prevPageUuid": "4e2c7740-0fe0-4048-bca6-0f744bc07140",
                             "nextPageUuid": "c71dcf4b-627b-4fa6-ac4f-946a7e22d51e",
-                            "globalPageNum": 116
+                            "globalPageNum": 117
                         },
                         {
                             "pageNum": 14,
@@ -1573,7 +1586,7 @@
                             "uuid": "c71dcf4b-627b-4fa6-ac4f-946a7e22d51e",
                             "prevPageUuid": "35ac3641-d5f2-4250-b22d-03fce0847df2",
                             "nextPageUuid": "23f10697-e22b-49d4-9534-8377e6069179",
-                            "globalPageNum": 117
+                            "globalPageNum": 118
                         },
                         {
                             "pageNum": 15,
@@ -1586,7 +1599,7 @@
                             "uuid": "23f10697-e22b-49d4-9534-8377e6069179",
                             "prevPageUuid": "c71dcf4b-627b-4fa6-ac4f-946a7e22d51e",
                             "nextPageUuid": "7278eca8-cfaf-4a07-90d4-4fa7559bef25",
-                            "globalPageNum": 118
+                            "globalPageNum": 119
                         },
                         {
                             "pageNum": 16,
@@ -1599,7 +1612,7 @@
                             "uuid": "7278eca8-cfaf-4a07-90d4-4fa7559bef25",
                             "prevPageUuid": "23f10697-e22b-49d4-9534-8377e6069179",
                             "nextPageUuid": "6ad5a3fa-293e-4c97-b3a0-aa2f1591a825",
-                            "globalPageNum": 119
+                            "globalPageNum": 120
                         },
                         {
                             "pageNum": 17,
@@ -1612,7 +1625,7 @@
                             "uuid": "6ad5a3fa-293e-4c97-b3a0-aa2f1591a825",
                             "prevPageUuid": "7278eca8-cfaf-4a07-90d4-4fa7559bef25",
                             "nextPageUuid": "4e9d89ad-468f-422f-a06d-561f401cdf0c",
-                            "globalPageNum": 120
+                            "globalPageNum": 121
                         },
                         {
                             "pageNum": 18,
@@ -1625,7 +1638,7 @@
                             "uuid": "4e9d89ad-468f-422f-a06d-561f401cdf0c",
                             "prevPageUuid": "6ad5a3fa-293e-4c97-b3a0-aa2f1591a825",
                             "nextPageUuid": "2a3096d3-9f0a-457c-87ef-05d7e00e3f74",
-                            "globalPageNum": 121
+                            "globalPageNum": 122
                         },
                         {
                             "pageNum": 19,
@@ -1637,8 +1650,47 @@
                             "icon": "icons/Chp3-Pg18-Icon.png",
                             "uuid": "2a3096d3-9f0a-457c-87ef-05d7e00e3f74",
                             "prevPageUuid": "4e9d89ad-468f-422f-a06d-561f401cdf0c",
+                            "nextPageUuid": "6a1bad05-a803-498a-993b-4d2280472719",
+                            "globalPageNum": 123
+                        },
+                        {
+                            "pageNum": 20,
+                            "filename": "Chp3-Pg19.webp",
+                            "title": "Van cruising off into the sunset",
+                            "message": "It's probably the monster fur that makes them so soft....at least her hands don't have extra wriggly fingers like the van's bumper pal.",
+                            "datetime": "2023-05-01 15:01:09",
+                            "user": "M1998",
+                            "icon": "icons/Chp3-Pg19-Icon.png",
+                            "uuid": "6a1bad05-a803-498a-993b-4d2280472719",
+                            "nextPageUuid": "01c0d555-7ede-47fc-9bae-6e8750083288",
+                            "prevPageUuid": "2a3096d3-9f0a-457c-87ef-05d7e00e3f74",
+                            "globalPageNum": 124
+                        },
+                        {
+                            "pageNum": 21,
+                            "filename": "Chp3-Pg20.webp",
+                            "title": "Casper slumps, Zylo grumps",
+                            "message": "Page Summary: Casper slumps and Zylo grumps, but also, John Bender?",
+                            "datetime": "2023-05-08 10:36:35",
+                            "user": "M1998",
+                            "icon": "icons/Chp3-Pg20-Icon.png",
+                            "uuid": "01c0d555-7ede-47fc-9bae-6e8750083288",
+                            "nextPageUuid": "f0f779db-8461-47b2-a614-5654a9b30e83",
+                            "prevPageUuid": "6a1bad05-a803-498a-993b-4d2280472719",
+                            "globalPageNum": 125
+                        },
+                        {
+                            "pageNum": 22,
+                            "filename": "Chp3-Pg21.webp",
+                            "title": "Zylo calls Millie skeleton girl",
+                            "message": "Throw back to Zylo's \"penguin boy\" era. 🐧",
+                            "datetime": "2023-05-15 16:13:56",
+                            "user": "M1998",
+                            "icon": "icons/Chp3-Pg21-Icon.png",
+                            "uuid": "f0f779db-8461-47b2-a614-5654a9b30e83",
                             "nextPageUuid": null,
-                            "globalPageNum": 122
+                            "prevPageUuid": "01c0d555-7ede-47fc-9bae-6e8750083288",
+                            "globalPageNum": 126
                         }
                     ]
                 }
@@ -1766,130 +1818,135 @@
             "chapterIndex": 1,
             "pageIndex": 0
         },
-        "4919794c-70e2-4c09-9826-bb865702ec60": {
+        "3a217725-92d6-4b81-a97e-e8869ca031c1": {
             "seasonIndex": 0,
             "chapterIndex": 1,
             "pageIndex": 1
         },
-        "31816435-e400-4727-b025-f264288e6a20": {
+        "4919794c-70e2-4c09-9826-bb865702ec60": {
             "seasonIndex": 0,
             "chapterIndex": 1,
             "pageIndex": 2
         },
-        "39f3a834-d890-45dc-aed8-a1c111fcf997": {
+        "31816435-e400-4727-b025-f264288e6a20": {
             "seasonIndex": 0,
             "chapterIndex": 1,
             "pageIndex": 3
         },
-        "bb590549-f8c4-4577-8121-3a73638e1917": {
+        "39f3a834-d890-45dc-aed8-a1c111fcf997": {
             "seasonIndex": 0,
             "chapterIndex": 1,
             "pageIndex": 4
         },
-        "5ba58b25-864d-48d5-94c7-576861e672ec": {
+        "bb590549-f8c4-4577-8121-3a73638e1917": {
             "seasonIndex": 0,
             "chapterIndex": 1,
             "pageIndex": 5
         },
-        "d001e3ec-915d-47a7-be54-ba2f2ea55d29": {
+        "5ba58b25-864d-48d5-94c7-576861e672ec": {
             "seasonIndex": 0,
             "chapterIndex": 1,
             "pageIndex": 6
         },
-        "05009c26-2bf4-4df9-8315-88e7694ff5e4": {
+        "d001e3ec-915d-47a7-be54-ba2f2ea55d29": {
             "seasonIndex": 0,
             "chapterIndex": 1,
             "pageIndex": 7
         },
-        "ed45a559-6208-407d-8439-e71ebb4d7c97": {
+        "05009c26-2bf4-4df9-8315-88e7694ff5e4": {
             "seasonIndex": 0,
             "chapterIndex": 1,
             "pageIndex": 8
         },
-        "39741c5e-a7a1-435c-9a35-91cd1c989a0a": {
+        "ed45a559-6208-407d-8439-e71ebb4d7c97": {
             "seasonIndex": 0,
             "chapterIndex": 1,
             "pageIndex": 9
         },
-        "3a73c11d-c734-4dbc-a34f-887ee0b0fcec": {
+        "39741c5e-a7a1-435c-9a35-91cd1c989a0a": {
             "seasonIndex": 0,
             "chapterIndex": 1,
             "pageIndex": 10
         },
-        "c6ed1f05-ac62-4bfa-97c4-7ac19091f190": {
+        "3a73c11d-c734-4dbc-a34f-887ee0b0fcec": {
             "seasonIndex": 0,
             "chapterIndex": 1,
             "pageIndex": 11
         },
-        "cb038fa4-46dc-45f1-91af-cf956b09fe1e": {
+        "c6ed1f05-ac62-4bfa-97c4-7ac19091f190": {
             "seasonIndex": 0,
             "chapterIndex": 1,
             "pageIndex": 12
         },
-        "53a1b3de-07b6-4a3d-9443-c022bc53c910": {
+        "cb038fa4-46dc-45f1-91af-cf956b09fe1e": {
             "seasonIndex": 0,
             "chapterIndex": 1,
             "pageIndex": 13
         },
-        "b0ab22dc-0acd-4423-b8c9-58901f551b70": {
+        "53a1b3de-07b6-4a3d-9443-c022bc53c910": {
             "seasonIndex": 0,
             "chapterIndex": 1,
             "pageIndex": 14
         },
-        "811dcb55-9e31-43d5-aaf3-ac2ea1033c9c": {
+        "b0ab22dc-0acd-4423-b8c9-58901f551b70": {
             "seasonIndex": 0,
             "chapterIndex": 1,
             "pageIndex": 15
         },
-        "bd7d5432-df04-4ed3-953d-ae93a100fde3": {
+        "811dcb55-9e31-43d5-aaf3-ac2ea1033c9c": {
             "seasonIndex": 0,
             "chapterIndex": 1,
             "pageIndex": 16
         },
-        "9544b748-0888-4afc-93f1-2ba73fd27b42": {
+        "bd7d5432-df04-4ed3-953d-ae93a100fde3": {
             "seasonIndex": 0,
             "chapterIndex": 1,
             "pageIndex": 17
         },
-        "0580da8a-ed1e-45a3-a2e6-89eb1b0e44e8": {
+        "9544b748-0888-4afc-93f1-2ba73fd27b42": {
             "seasonIndex": 0,
             "chapterIndex": 1,
             "pageIndex": 18
         },
-        "790f2161-f952-4210-ae5e-61dc7e0ee9c1": {
+        "0580da8a-ed1e-45a3-a2e6-89eb1b0e44e8": {
             "seasonIndex": 0,
             "chapterIndex": 1,
             "pageIndex": 19
         },
-        "e80361c8-fa41-4fb2-93f7-44c1dba59859": {
+        "790f2161-f952-4210-ae5e-61dc7e0ee9c1": {
             "seasonIndex": 0,
             "chapterIndex": 1,
             "pageIndex": 20
         },
-        "c94109cd-27e6-4b98-ba07-e07809cbfc27": {
+        "e80361c8-fa41-4fb2-93f7-44c1dba59859": {
             "seasonIndex": 0,
             "chapterIndex": 1,
             "pageIndex": 21
         },
-        "becd99ef-9d28-4fec-b3af-a988d4ee8aa2": {
+        "c94109cd-27e6-4b98-ba07-e07809cbfc27": {
             "seasonIndex": 0,
             "chapterIndex": 1,
             "pageIndex": 22
         },
-        "40bf0c31-d69b-439e-9d68-df53d38abf81": {
+        "becd99ef-9d28-4fec-b3af-a988d4ee8aa2": {
             "seasonIndex": 0,
             "chapterIndex": 1,
             "pageIndex": 23
         },
-        "eac2edce-2ed6-4ed3-8790-3615ca26f81b": {
+        "40bf0c31-d69b-439e-9d68-df53d38abf81": {
             "seasonIndex": 0,
             "chapterIndex": 1,
             "pageIndex": 24
         },
-        "717bb5a7-6ba4-4560-8375-d348618302d5": {
+        "eac2edce-2ed6-4ed3-8790-3615ca26f81b": {
             "seasonIndex": 0,
             "chapterIndex": 1,
             "pageIndex": 25
+        },
+        "717bb5a7-6ba4-4560-8375-d348618302d5": {
+            "seasonIndex": 0,
+            "chapterIndex": 1,
+            "pageIndex": 26
         },
         "a7640e97-32aa-485c-8eaf-9c051db102c2": {
             "seasonIndex": 0,
@@ -2260,6 +2317,21 @@
             "seasonIndex": 0,
             "chapterIndex": 3,
             "pageIndex": 18
+        },
+        "6a1bad05-a803-498a-993b-4d2280472719": {
+            "seasonIndex": 0,
+            "chapterIndex": 3,
+            "pageIndex": 19
+        },
+        "01c0d555-7ede-47fc-9bae-6e8750083288": {
+            "seasonIndex": 0,
+            "chapterIndex": 3,
+            "pageIndex": 20
+        },
+        "f0f779db-8461-47b2-a614-5654a9b30e83": {
+            "seasonIndex": 0,
+            "chapterIndex": 3,
+            "pageIndex": 21
         }
     }
 }
