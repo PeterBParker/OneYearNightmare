@@ -1,13 +1,13 @@
 {
-  "maxDisplayPage": "03b1d91c-d1ab-432a-a3e1-38f481ac8cef",
+  "maxDisplayPage": "3bfa7278-6365-4b28-b80c-778eecef65c6",
   "firstDisplayPage": "92004427-5249-4fa3-80f1-0a67f93ba559",
-  "pageCount": 128,
+  "pageCount": 130,
   "seasonCount": 1,
   "seasons": [
     {
       "seasonName": "First Blood",
       "folderName": "first blood",
-      "numOfPages": 128,
+      "numOfPages": 130,
       "numOfChapters": 4,
       "id": 1,
       "chapters": [
@@ -1403,7 +1403,7 @@
         {
           "chapterName": "Chapter Three",
           "folderName": "chapter3",
-          "numOfPages": 23,
+          "numOfPages": 24,
           "id": 4,
           "pages": [
             {
@@ -1688,22 +1688,35 @@
               "user": "M1998",
               "icon": "icons/Chp3-Pg21-Icon.png",
               "uuid": "f0f779db-8461-47b2-a614-5654a9b30e83",
-              "nextPageUuid": "03b1d91c-d1ab-432a-a3e1-38f481ac8cef",
+              "nextPageUuid": "3c2b580b-d2e6-41fa-980a-ffe93630bcc8",
               "prevPageUuid": "01c0d555-7ede-47fc-9bae-6e8750083288",
               "globalPageNum": 126
             },
             {
               "pageNum": 23,
               "filename": "Chp3-Pg22.webp",
-              "title": "Zylo Sees Monsters",
+              "title": "Zylo Sees Girls as Monsters",
               "message": "Zylo's hands rated E for everybody. He'll square up no matter your chromosomes......or monstrous deformities....",
-              "datetime": "2023-06-05 15:54:33",
+              "datetime": "2023-06-12 17:35:34",
               "user": "N1995",
               "icon": "icons/Chp3-Pg22-Icon.png",
-              "uuid": "03b1d91c-d1ab-432a-a3e1-38f481ac8cef",
-              "nextPageUuid": null,
+              "uuid": "3c2b580b-d2e6-41fa-980a-ffe93630bcc8",
+              "nextPageUuid": "3bfa7278-6365-4b28-b80c-778eecef65c6",
               "prevPageUuid": "f0f779db-8461-47b2-a614-5654a9b30e83",
               "globalPageNum": 127
+            },
+            {
+              "pageNum": 24,
+              "filename": "Chp3-Pg23.webp",
+              "title": "Girls think Zylo's Crazy",
+              "message": "Dang bro. That's craaaaazy. No really, that's insane. You should probably go see a doctor or surgeon or something...",
+              "datetime": "2023-06-12 17:30:19",
+              "user": "N1995",
+              "icon": "icons/Chp3-Pg23-Icon.png",
+              "uuid": "3bfa7278-6365-4b28-b80c-778eecef65c6",
+              "nextPageUuid": null,
+              "prevPageUuid": "3c2b580b-d2e6-41fa-980a-ffe93630bcc8",
+              "globalPageNum": 128
             }
           ]
         }

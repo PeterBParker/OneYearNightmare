@@ -99,7 +99,7 @@ class EmailNotifier:
     
     def notify_subscribers(self):
         """The main function of this class. Builds and sends the template email."""
-        to_emails = self.subscriber_emails()
+        to_emails = map(To, self.subscriber_emails())
         message = self.make_template_message(to_emails)
         response = self.sg.send(message=message)
         if response.status_code == 202:
