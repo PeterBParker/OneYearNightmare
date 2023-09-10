@@ -212,7 +212,7 @@ body {
   grid-row-end: 3;
   display: grid;
   grid-template-columns: 100%;
-  grid-template-rows: 20% 60% 20%;
+  grid-template-rows: 10% 80% 10%;
 }
 .mobileMenuLinksSpacer {
   grid-row-start: 2;
@@ -513,7 +513,7 @@ body {
   transform: scaleX(1);
 }
 .navbar-width {
-  max-width: 350px;
+  max-width: 450px;
 }
 
 .desktopComicPageContainer {
