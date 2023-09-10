@@ -1,14 +1,14 @@
 {
-    "maxDisplayPage": "3bfa7278-6365-4b28-b80c-778eecef65c6",
+    "maxDisplayPage": "aaaec519-4729-472b-9f06-4cf2b88dfa61",
     "firstDisplayPage": "92004427-5249-4fa3-80f1-0a67f93ba559",
-    "pageCount": 130,
+    "pageCount": 141,
     "seasonCount": 1,
     "seasons": [
         {
             "seasonName": "First Blood",
             "folderName": "first blood",
-            "numOfPages": 130,
-            "numOfChapters": 4,
+            "numOfPages": 141,
+            "numOfChapters": 5,
             "id": 1,
             "chapters": [
                 {
@@ -1403,7 +1403,7 @@
                 {
                     "chapterName": "Chapter Three",
                     "folderName": "chapter3",
-                    "numOfPages": 24,
+                    "numOfPages": 27,
                     "id": 4,
                     "pages": [
                         {
@@ -1714,9 +1714,160 @@
                             "user": "N1995",
                             "icon": "icons/Chp3-Pg23-Icon.png",
                             "uuid": "3bfa7278-6365-4b28-b80c-778eecef65c6",
-                            "nextPageUuid": null,
+                            "nextPageUuid": "4e85c432-a1b1-43ca-aad2-dcdfa8211750",
                             "prevPageUuid": "3c2b580b-d2e6-41fa-980a-ffe93630bcc8",
                             "globalPageNum": 128
+                        },
+                        {
+                            "pageNum": 25,
+                            "filename": "Chp3-Pg24.webp",
+                            "title": "Zylo Peaces Out",
+                            "message": "Out of context this page looks kinda like Rose asked Zylo to join them for girls night out, but he high-key hates her friends.",
+                            "datetime": "2023-06-19 20:32:59",
+                            "user": "N1995",
+                            "icon": "icons/Chp3-Pg24-Icon.png",
+                            "uuid": "4e85c432-a1b1-43ca-aad2-dcdfa8211750",
+                            "nextPageUuid": "bcbe30b2-aa22-41ab-b320-71d797339228",
+                            "prevPageUuid": "3bfa7278-6365-4b28-b80c-778eecef65c6",
+                            "globalPageNum": 129
+                        },
+                        {
+                            "pageNum": 26,
+                            "filename": "Chp3-Pg25.webp",
+                            "title": "Is Zylo Crazy?",
+                            "message": "You know what they say! The surest cure for rejection is gaslighting. I mean, not MANY people say that now, but it'll catch on. Forget Gen Z, it's a Gen Alpha thing.",
+                            "datetime": "2023-06-26 21:15:41",
+                            "user": "N1995",
+                            "icon": "icons/Chp3-Pg25-Icon.png",
+                            "uuid": "bcbe30b2-aa22-41ab-b320-71d797339228",
+                            "nextPageUuid": "939e4d53-2efd-47ab-91f1-3d4e69aeab17",
+                            "prevPageUuid": "4e85c432-a1b1-43ca-aad2-dcdfa8211750",
+                            "globalPageNum": 130
+                        },
+                        {
+                            "pageNum": 27,
+                            "filename": "Chp3-Pg26.webp",
+                            "title": "Arrived at Findley's Farm",
+                            "message": "Rose and Quill obviously don't get it, but if you have a number of younger siblings that eat snacks, you know what Millie's talking about. Flopping on your bed and finding it littered with scratchy, sticky crumbs is enough to make you want to KILL somebody...figuratively speaking of course! Of course...",
+                            "datetime": "2023-07-03 15:08:41",
+                            "user": "N1995",
+                            "icon": "icons/Chp3-Pg26-Icon.png",
+                            "uuid": "939e4d53-2efd-47ab-91f1-3d4e69aeab17",
+                            "nextPageUuid": "043cd8ea-bdeb-4f06-936c-c120848f64ee",
+                            "prevPageUuid": "bcbe30b2-aa22-41ab-b320-71d797339228",
+                            "globalPageNum": 131
+                        }
+                    ]
+                },
+                {
+                    "chapterName": "Chapter Four",
+                    "folderName": "chapter4",
+                    "numOfPages": 8,
+                    "id": 5,
+                    "pages": [
+                        {
+                            "pageNum": 1,
+                            "filename": "Chapter4.webp",
+                            "title": "Chapter 4 Cover Page",
+                            "message": "In which a bunch of kids break the first rule of surviving horror movies and investigate the creepy, broken-down farm.",
+                            "datetime": "2023-07-10 16:14:53",
+                            "user": "N1995",
+                            "icon": "icons/Chapter4-Icon.png",
+                            "uuid": "043cd8ea-bdeb-4f06-936c-c120848f64ee",
+                            "nextPageUuid": "d7e2b690-1969-4967-998a-541531a8f376",
+                            "prevPageUuid": "939e4d53-2efd-47ab-91f1-3d4e69aeab17",
+                            "globalPageNum": 132
+                        },
+                        {
+                            "pageNum": 2,
+                            "filename": "Chp4-Pg1.webp",
+                            "title": "Farmer Findley's got some dark secrets...",
+                            "message": "Or...hear me out, Mrs. Findley is just really bad at corn mazes 🌽🌽🌽",
+                            "datetime": "2023-07-17 15:07:17",
+                            "user": "M1998",
+                            "icon": "icons/Chp4-Pg1-Icon.png",
+                            "uuid": "d7e2b690-1969-4967-998a-541531a8f376",
+                            "nextPageUuid": "73ccbc36-f917-488d-8ced-cd2da380de44",
+                            "prevPageUuid": "043cd8ea-bdeb-4f06-936c-c120848f64ee",
+                            "globalPageNum": 133
+                        },
+                        {
+                            "pageNum": 3,
+                            "filename": "Chp4-Pg2.webp",
+                            "title": "Millie Dips to Kill a Man",
+                            "message": "Turns out the secret to getting a sick watch tattoo that's equally functional as it is aesthetic is to use weird, animate ink from a contract with death incarnate.",
+                            "datetime": "2023-07-24 19:42:47",
+                            "user": "N1995",
+                            "icon": "icons/Chp4-Pg2-Icon.png",
+                            "uuid": "73ccbc36-f917-488d-8ced-cd2da380de44",
+                            "nextPageUuid": "10fa72de-fcf5-45ec-9568-bfcafa9bda6d",
+                            "prevPageUuid": "d7e2b690-1969-4967-998a-541531a8f376",
+                            "globalPageNum": 134
+                        },
+                        {
+                            "pageNum": 4,
+                            "filename": "Chp4-Pg3.webp",
+                            "title": "Quill vs Denial",
+                            "message": "Unfortunately, I've been on all three sides of this conversation at least once in my life: the well-meaning friend, the wistful one in denial, and guy casually dying in the background.",
+                            "datetime": "2023-07-31 09:42:43",
+                            "user": "N1995",
+                            "icon": "icons/Chp4-Pg3-Icon.png",
+                            "uuid": "10fa72de-fcf5-45ec-9568-bfcafa9bda6d",
+                            "nextPageUuid": "56139b03-893a-436b-919a-83243d3d46e2",
+                            "prevPageUuid": "73ccbc36-f917-488d-8ced-cd2da380de44",
+                            "globalPageNum": 135
+                        },
+                        {
+                            "pageNum": 5,
+                            "filename": "Chp4-Pg4.webp",
+                            "title": "Oh yeah, there's a body here",
+                            "message": "Not gonna lie. Today was genuinely a rough one for me. Thankfully, it wasn't \"bleed out forgotten in the backseat of a minivan\" rough. Now THAT'S a rough day. Right, Casper? Uhhhh Casper?",
+                            "datetime": "2023-08-07 20:49:29",
+                            "user": "N1995",
+                            "icon": "icons/Chp4-Pg4-Icon.png",
+                            "uuid": "56139b03-893a-436b-919a-83243d3d46e2",
+                            "nextPageUuid": "4c477cc4-48e2-4ebf-861f-82821943816e",
+                            "prevPageUuid": "10fa72de-fcf5-45ec-9568-bfcafa9bda6d",
+                            "globalPageNum": 136
+                        },
+                        {
+                            "pageNum": 6,
+                            "filename": "Chp4-Pg5.webp",
+                            "title": "Quill chases Millie",
+                            "message": "Dang. The Department of Tourism even has swag for their horses. That's how you know they're legit and putting those sweet, sweet taxpayer dollars to work. It's alllll about branding...and monster slaying...",
+                            "datetime": "2023-08-14 16:20:27",
+                            "user": "N1995",
+                            "icon": "icons/Chp4-Pg5-Icon.png",
+                            "uuid": "4c477cc4-48e2-4ebf-861f-82821943816e",
+                            "nextPageUuid": "1e2989c9-f165-4634-86c5-4f7b0b009557",
+                            "prevPageUuid": "56139b03-893a-436b-919a-83243d3d46e2",
+                            "globalPageNum": 137
+                        },
+                        {
+                            "pageNum": 7,
+                            "filename": "baby_announcemntxcf.webp",
+                            "title": "Baby Announcement",
+                            "message": "WE HAD A BABY!! 30 hours ago life was noraml and now it is absolutely insane. Morghan's still in recovery, but we should be able to resume pages in two weeks. Sleep has been precious and little, much like our sweet, hungry little girl, so I'll see ya'll on the other side of parental initiation!",
+                            "datetime": "2023-08-21 18:25:12",
+                            "user": "N1995",
+                            "icon": "icons/baby_announcemntxcf-Icon.png",
+                            "uuid": "1e2989c9-f165-4634-86c5-4f7b0b009557",
+                            "nextPageUuid": "aaaec519-4729-472b-9f06-4cf2b88dfa61",
+                            "prevPageUuid": "4c477cc4-48e2-4ebf-861f-82821943816e",
+                            "globalPageNum": 138
+                        },
+                        {
+                            "pageNum": 8,
+                            "filename": "Chp4-Pg6.webp",
+                            "title": "Hiding in Plain Sight",
+                            "message": "Sorry this page is dropping so late in the day! With our first baby, Mo and I have entered a state of altered time perception where the entirety of the last two weeks has felt like a single day and night cycle. It wasn't until one of our many truly top-notch readers reached out asking about the page that we realized this sucker still needed to be posted!",
+                            "datetime": "2023-09-04 20:38:32",
+                            "user": "N1995",
+                            "icon": "icons/Chp4-Pg6-Icon.png",
+                            "uuid": "aaaec519-4729-472b-9f06-4cf2b88dfa61",
+                            "nextPageUuid": null,
+                            "prevPageUuid": "1e2989c9-f165-4634-86c5-4f7b0b009557",
+                            "globalPageNum": 139
                         }
                     ]
                 }
@@ -2368,6 +2519,61 @@
             "seasonIndex": 0,
             "chapterIndex": 3,
             "pageIndex": 23
+        },
+        "4e85c432-a1b1-43ca-aad2-dcdfa8211750": {
+            "seasonIndex": 0,
+            "chapterIndex": 3,
+            "pageIndex": 24
+        },
+        "bcbe30b2-aa22-41ab-b320-71d797339228": {
+            "seasonIndex": 0,
+            "chapterIndex": 3,
+            "pageIndex": 25
+        },
+        "939e4d53-2efd-47ab-91f1-3d4e69aeab17": {
+            "seasonIndex": 0,
+            "chapterIndex": 3,
+            "pageIndex": 26
+        },
+        "043cd8ea-bdeb-4f06-936c-c120848f64ee": {
+            "seasonIndex": 0,
+            "chapterIndex": 4,
+            "pageIndex": 0
+        },
+        "d7e2b690-1969-4967-998a-541531a8f376": {
+            "seasonIndex": 0,
+            "chapterIndex": 4,
+            "pageIndex": 1
+        },
+        "73ccbc36-f917-488d-8ced-cd2da380de44": {
+            "seasonIndex": 0,
+            "chapterIndex": 4,
+            "pageIndex": 2
+        },
+        "10fa72de-fcf5-45ec-9568-bfcafa9bda6d": {
+            "seasonIndex": 0,
+            "chapterIndex": 4,
+            "pageIndex": 3
+        },
+        "56139b03-893a-436b-919a-83243d3d46e2": {
+            "seasonIndex": 0,
+            "chapterIndex": 4,
+            "pageIndex": 4
+        },
+        "4c477cc4-48e2-4ebf-861f-82821943816e": {
+            "seasonIndex": 0,
+            "chapterIndex": 4,
+            "pageIndex": 5
+        },
+        "1e2989c9-f165-4634-86c5-4f7b0b009557": {
+            "seasonIndex": 0,
+            "chapterIndex": 4,
+            "pageIndex": 6
+        },
+        "aaaec519-4729-472b-9f06-4cf2b88dfa61": {
+            "seasonIndex": 0,
+            "chapterIndex": 4,
+            "pageIndex": 7
         }
     }
 }
