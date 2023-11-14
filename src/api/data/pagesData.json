@@ -1,13 +1,13 @@
 {
-    "maxDisplayPage": "aaaec519-4729-472b-9f06-4cf2b88dfa61",
+    "maxDisplayPage": "a223e67a-0e41-4bf6-be46-92dda045f785",
     "firstDisplayPage": "92004427-5249-4fa3-80f1-0a67f93ba559",
-    "pageCount": 141,
+    "pageCount": 150,
     "seasonCount": 1,
     "seasons": [
         {
             "seasonName": "First Blood",
             "folderName": "first blood",
-            "numOfPages": 141,
+            "numOfPages": 150,
             "numOfChapters": 5,
             "id": 1,
             "chapters": [
@@ -1762,7 +1762,7 @@
                 {
                     "chapterName": "Chapter Four",
                     "folderName": "chapter4",
-                    "numOfPages": 8,
+                    "numOfPages": 17,
                     "id": 5,
                     "pages": [
                         {
@@ -1865,9 +1865,126 @@
                             "user": "N1995",
                             "icon": "icons/Chp4-Pg6-Icon.png",
                             "uuid": "aaaec519-4729-472b-9f06-4cf2b88dfa61",
-                            "nextPageUuid": null,
+                            "nextPageUuid": "b7179b51-348e-41e6-87e4-4cf4ab2a151a",
                             "prevPageUuid": "1e2989c9-f165-4634-86c5-4f7b0b009557",
                             "globalPageNum": 139
+                        },
+                        {
+                            "pageNum": 9,
+                            "filename": "Chp4-Pg7.webp",
+                            "title": "Galaxy Brain Hiding Spot",
+                            "message": "There's big brain hiding spots, and then there's Quill brain hiding spots.",
+                            "datetime": "2023-09-12 10:34:12",
+                            "user": "N1995",
+                            "icon": "icons/Chp4-Pg7-Icon.png",
+                            "uuid": "b7179b51-348e-41e6-87e4-4cf4ab2a151a",
+                            "nextPageUuid": "9024d43a-6d58-4ad3-b1a7-d3ce67d66454",
+                            "prevPageUuid": "aaaec519-4729-472b-9f06-4cf2b88dfa61",
+                            "globalPageNum": 140
+                        },
+                        {
+                            "pageNum": 10,
+                            "filename": "Chp4-Pg8.webp",
+                            "title": "Findley Roasts the D.O.T.",
+                            "message": "Big gym muscles are one thing, but hardened farmer strength? That's bowling to marbles. Throw some \"you interrupted my dinner\" rage in there, and there's not a man or woman alive who could take the heat.",
+                            "datetime": "2023-09-18 16:45:12",
+                            "user": "N1995",
+                            "icon": "icons/Chp4-Pg8-Icon.png",
+                            "uuid": "9024d43a-6d58-4ad3-b1a7-d3ce67d66454",
+                            "nextPageUuid": "3ded1b14-5bc4-4302-ad40-b85f808d7835",
+                            "prevPageUuid": "b7179b51-348e-41e6-87e4-4cf4ab2a151a",
+                            "globalPageNum": 141
+                        },
+                        {
+                            "pageNum": 11,
+                            "filename": "Chp4-Pg9.webp",
+                            "title": "Principle Masters is wet and angry",
+                            "message": "Lowkey really hard to draw rain 🤷‍♀",
+                            "datetime": "2023-09-25 20:04:40",
+                            "user": "M1998",
+                            "icon": "icons/Chp4-Pg9-Icon.png",
+                            "uuid": "3ded1b14-5bc4-4302-ad40-b85f808d7835",
+                            "nextPageUuid": "0702c804-6e13-4f69-b2c4-3776d96524cf",
+                            "prevPageUuid": "9024d43a-6d58-4ad3-b1a7-d3ce67d66454",
+                            "globalPageNum": 142
+                        },
+                        {
+                            "pageNum": 12,
+                            "filename": "Chp4-Pg10.webp",
+                            "title": "Findley Offends Masters",
+                            "message": "Not sponsored by the NFL or any affiliated team. The G stands for...something else.",
+                            "datetime": "2023-10-02 15:12:17",
+                            "user": "N1995",
+                            "icon": "icons/Chp4-Pg10-Icon.png",
+                            "uuid": "0702c804-6e13-4f69-b2c4-3776d96524cf",
+                            "nextPageUuid": "ad671cb2-2c9b-48c8-bc5b-cee310399d9c",
+                            "prevPageUuid": "3ded1b14-5bc4-4302-ad40-b85f808d7835",
+                            "globalPageNum": 143
+                        },
+                        {
+                            "pageNum": 13,
+                            "filename": "Chp4-Pg11.webp",
+                            "title": "Donny blocks purple pewpews",
+                            "message": "I didn't realize until JUST NOW how this page could look like an alternate universe Qui-Gon Jinn blocking alternate universe laser blasts from an alternate universe Emperor Palpatine. *Sigh*",
+                            "datetime": "2023-10-16 18:04:14",
+                            "user": "N1995",
+                            "icon": "icons/Chp4-Pg11-Icon.png",
+                            "uuid": "ad671cb2-2c9b-48c8-bc5b-cee310399d9c",
+                            "nextPageUuid": "99d46552-c1a7-4f28-81f6-99ddcc23599a",
+                            "prevPageUuid": "0702c804-6e13-4f69-b2c4-3776d96524cf",
+                            "globalPageNum": 144
+                        },
+                        {
+                            "pageNum": 14,
+                            "filename": "Chp4-Pg12.webp",
+                            "title": "Masters Runs out of Shots",
+                            "message": " Don't you hate when you get outvoted on the name of the grassroots cult dedicated to the Old God and her Dreaming? And then they order t-shirts? guhhhhhhhhh the WORST",
+                            "datetime": "2023-10-23 14:25:21",
+                            "user": "N1995",
+                            "icon": "icons/Chp4-Pg12-Icon.png",
+                            "uuid": "99d46552-c1a7-4f28-81f6-99ddcc23599a",
+                            "nextPageUuid": "5d8cb84a-0be0-4ecc-8ddf-aa4c4216adcf",
+                            "prevPageUuid": "ad671cb2-2c9b-48c8-bc5b-cee310399d9c",
+                            "globalPageNum": 145
+                        },
+                        {
+                            "pageNum": 15,
+                            "filename": "Chp4-Pg13.webp",
+                            "title": "Master Threatens With the Advisory Council",
+                            "message": "Imagine a Town Hall meeting and you accidently take one of the Advisory Council's reserved parking spots. Awkwarrrrrrrrd! And also death.",
+                            "datetime": "2023-10-30 21:13:08",
+                            "user": "N1995",
+                            "icon": "icons/Chp4-Pg13-Icon.png",
+                            "uuid": "5d8cb84a-0be0-4ecc-8ddf-aa4c4216adcf",
+                            "nextPageUuid": "cefe215a-87e3-4438-91b9-d7fee7a32c24",
+                            "prevPageUuid": "99d46552-c1a7-4f28-81f6-99ddcc23599a",
+                            "globalPageNum": 146
+                        },
+                        {
+                            "pageNum": 16,
+                            "filename": "Chp4-Pg14.webp",
+                            "title": "Principal Masters Rage Quits",
+                            "message": "Who would've guessed I'd be binge-drawing angry old men at this point in my art career...not me, but also not disappointed.",
+                            "datetime": "2023-11-06 18:50:53",
+                            "user": "M1998",
+                            "icon": "icons/Chp4-Pg14-Icon.png",
+                            "uuid": "cefe215a-87e3-4438-91b9-d7fee7a32c24",
+                            "nextPageUuid": "a223e67a-0e41-4bf6-be46-92dda045f785",
+                            "prevPageUuid": "5d8cb84a-0be0-4ecc-8ddf-aa4c4216adcf",
+                            "globalPageNum": 147
+                        },
+                        {
+                            "pageNum": 17,
+                            "filename": "Chp4-Pg15.webp",
+                            "title": "WHAT HAVE YOU DONE, OLD MAN?",
+                            "message": "Quill's done with games. Execute Order 66.",
+                            "datetime": "2023-11-13 11:34:51",
+                            "user": "N1995",
+                            "icon": "icons/Chp4-Pg15-Icon.png",
+                            "uuid": "a223e67a-0e41-4bf6-be46-92dda045f785",
+                            "nextPageUuid": null,
+                            "prevPageUuid": "cefe215a-87e3-4438-91b9-d7fee7a32c24",
+                            "globalPageNum": 148
                         }
                     ]
                 }
@@ -2574,6 +2691,51 @@
             "seasonIndex": 0,
             "chapterIndex": 4,
             "pageIndex": 7
+        },
+        "b7179b51-348e-41e6-87e4-4cf4ab2a151a": {
+            "seasonIndex": 0,
+            "chapterIndex": 4,
+            "pageIndex": 8
+        },
+        "9024d43a-6d58-4ad3-b1a7-d3ce67d66454": {
+            "seasonIndex": 0,
+            "chapterIndex": 4,
+            "pageIndex": 9
+        },
+        "3ded1b14-5bc4-4302-ad40-b85f808d7835": {
+            "seasonIndex": 0,
+            "chapterIndex": 4,
+            "pageIndex": 10
+        },
+        "0702c804-6e13-4f69-b2c4-3776d96524cf": {
+            "seasonIndex": 0,
+            "chapterIndex": 4,
+            "pageIndex": 11
+        },
+        "ad671cb2-2c9b-48c8-bc5b-cee310399d9c": {
+            "seasonIndex": 0,
+            "chapterIndex": 4,
+            "pageIndex": 12
+        },
+        "99d46552-c1a7-4f28-81f6-99ddcc23599a": {
+            "seasonIndex": 0,
+            "chapterIndex": 4,
+            "pageIndex": 13
+        },
+        "5d8cb84a-0be0-4ecc-8ddf-aa4c4216adcf": {
+            "seasonIndex": 0,
+            "chapterIndex": 4,
+            "pageIndex": 14
+        },
+        "cefe215a-87e3-4438-91b9-d7fee7a32c24": {
+            "seasonIndex": 0,
+            "chapterIndex": 4,
+            "pageIndex": 15
+        },
+        "a223e67a-0e41-4bf6-be46-92dda045f785": {
+            "seasonIndex": 0,
+            "chapterIndex": 4,
+            "pageIndex": 16
         }
     }
 }
