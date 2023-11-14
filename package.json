@@ -41,7 +41,7 @@
     "start:react": "react-scripts start",
     "prebuild": "npm run build:tailwind && npm run build:indexPages",
     "build:indexPages": "cd src/scripts && python indexPages.py",
-    "build": "react-scripts build",
+    "build": "react-scripts build && cd src/scripts && python ./rssManager.py",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "stop": "npx kill-port 9099 8080 9000 5000 9199",

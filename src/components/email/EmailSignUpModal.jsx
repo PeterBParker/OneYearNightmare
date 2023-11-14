@@ -116,7 +116,7 @@ export default function EmailSignUpModal(props) {
     <button
       key="comicViewerPageEmailSignUpButton"
       onClick={() => setShowModal(true)}
-      className="btn bg-cream-dark btn-std-hover rounded text-2xl font-medium px-4 py-2 ml-4 text-grey-dark font-body"
+      className="btn bg-cream-dark btn-std-hover rounded text-2xl font-medium px-4 py-2 ml-4 text-grey-dark font-body shrink-0"
     >
       Email <i className="fa-solid fa-envelope"></i>
     </button>,

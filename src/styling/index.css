@@ -743,6 +743,10 @@ body {
   color: #6a5acd;
 }
 
+.btn:hover .fa-rss {
+  color: #ea7819;
+}
+
 .comment-content-input {
   width: 100%;
   padding: 8px 12px;
