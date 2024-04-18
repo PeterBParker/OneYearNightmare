@@ -88,7 +88,7 @@ export default function DesktopFooter(props) {
               </a>
             </div>
             <div className="instagramIcon mr-4 flex-shrink-0 footerNavLink">
-              <a href="https://www.instagram.com/monxmyr/">
+              <a href="https://www.instagram.com/monsters_and_myriads/">
                 <img
                   src={props.instagramIcon}
                   width={50}

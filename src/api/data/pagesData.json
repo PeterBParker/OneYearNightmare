@@ -1,13 +1,13 @@
 {
-    "maxDisplayPage": "a223e67a-0e41-4bf6-be46-92dda045f785",
+    "maxDisplayPage": "7a7dbfa3-298b-4cda-bd68-32ae108bf724",
     "firstDisplayPage": "92004427-5249-4fa3-80f1-0a67f93ba559",
-    "pageCount": 150,
+    "pageCount": 162,
     "seasonCount": 1,
     "seasons": [
         {
             "seasonName": "First Blood",
             "folderName": "first blood",
-            "numOfPages": 150,
+            "numOfPages": 162,
             "numOfChapters": 5,
             "id": 1,
             "chapters": [
@@ -1762,7 +1762,7 @@
                 {
                     "chapterName": "Chapter Four",
                     "folderName": "chapter4",
-                    "numOfPages": 17,
+                    "numOfPages": 29,
                     "id": 5,
                     "pages": [
                         {
@@ -1982,9 +1982,165 @@
                             "user": "N1995",
                             "icon": "icons/Chp4-Pg15-Icon.png",
                             "uuid": "a223e67a-0e41-4bf6-be46-92dda045f785",
-                            "nextPageUuid": null,
+                            "nextPageUuid": "54d15125-b0d6-469b-8b84-e56a92914c69",
                             "prevPageUuid": "cefe215a-87e3-4438-91b9-d7fee7a32c24",
                             "globalPageNum": 148
+                        },
+                        {
+                            "pageNum": 18,
+                            "filename": "Chp4-Pg16.webp",
+                            "title": "Death By Garden Trowel",
+                            "message": "RIP Old Plan™",
+                            "datetime": "2023-11-20 11:00:29",
+                            "user": "N1995",
+                            "icon": "icons/Chp4-Pg16-Icon.png",
+                            "uuid": "54d15125-b0d6-469b-8b84-e56a92914c69",
+                            "nextPageUuid": "c981420b-7988-4faf-9aa1-37cce3646ed1",
+                            "prevPageUuid": "a223e67a-0e41-4bf6-be46-92dda045f785",
+                            "globalPageNum": 149
+                        },
+                        {
+                            "pageNum": 19,
+                            "filename": "Chp4-Pg17.webp",
+                            "title": "Millie Jumps the Death Time",
+                            "message": "I just love when a plan is flawlessly executed. I love it a little less when the execution is premature and it maybe ruins everything.",
+                            "datetime": "2023-11-27 17:20:58",
+                            "user": "N1995",
+                            "icon": "icons/Chp4-Pg17-Icon.png",
+                            "uuid": "c981420b-7988-4faf-9aa1-37cce3646ed1",
+                            "nextPageUuid": "b4f0532b-118e-45fe-80a0-8a231ddfddad",
+                            "prevPageUuid": "54d15125-b0d6-469b-8b84-e56a92914c69",
+                            "globalPageNum": 150
+                        },
+                        {
+                            "pageNum": 20,
+                            "filename": "Chp4-Pg18.webp",
+                            "title": "Donny Accidentally Threatens a Child",
+                            "message": "Curiosity? ✅  Attention? ❓",
+                            "datetime": "2023-12-04 08:59:53",
+                            "user": "N1995",
+                            "icon": "icons/Chp4-Pg18-Icon.png",
+                            "uuid": "b4f0532b-118e-45fe-80a0-8a231ddfddad",
+                            "nextPageUuid": "baeb4bbd-2466-4ed3-a156-eadc33b569f9",
+                            "prevPageUuid": "c981420b-7988-4faf-9aa1-37cce3646ed1",
+                            "globalPageNum": 151
+                        },
+                        {
+                            "pageNum": 21,
+                            "filename": "Chp4-Pg19.webp",
+                            "title": "Millie DUNKS ON THE MAN!!",
+                            "message": "I've been so hyped for this page for like the last month and a half.",
+                            "datetime": "2023-12-11 17:30:45",
+                            "user": "N1995",
+                            "icon": "icons/Chp4-Pg19-Icon.png",
+                            "uuid": "baeb4bbd-2466-4ed3-a156-eadc33b569f9",
+                            "nextPageUuid": "86fcb3dd-3cc7-4c8a-b135-2a8af7476999",
+                            "prevPageUuid": "b4f0532b-118e-45fe-80a0-8a231ddfddad",
+                            "globalPageNum": 152
+                        },
+                        {
+                            "pageNum": 22,
+                            "filename": "Chp4-Pg20.webp",
+                            "title": "Millie Takes Out Donny",
+                            "message": "Cats are adorable and soft and graceful, but they absolutely suck at avenging their peasants. Wait sorry, their OWNERS. Mistype there..heh... ಥ_ಥ",
+                            "datetime": "2023-12-18 15:39:42",
+                            "user": "N1995",
+                            "icon": "icons/Chp4-Pg20-Icon.png",
+                            "uuid": "86fcb3dd-3cc7-4c8a-b135-2a8af7476999",
+                            "nextPageUuid": "32fd1894-7762-4de6-aa7b-de36c1c9efce",
+                            "prevPageUuid": "baeb4bbd-2466-4ed3-a156-eadc33b569f9",
+                            "globalPageNum": 153
+                        },
+                        {
+                            "pageNum": 23,
+                            "filename": "Christmas_2023-pg.webp",
+                            "title": "Holiday Break 2023-2024",
+                            "message": "Happy Holidays everyone! We're doing our annual winter break to build up some backlog and take a breather!",
+                            "datetime": "2023-12-27 13:50:56",
+                            "user": "N1995",
+                            "icon": "icons/Christmas_2023-pg2-Icon.png",
+                            "uuid": "32fd1894-7762-4de6-aa7b-de36c1c9efce",
+                            "nextPageUuid": "d5f0340a-1e78-4aa4-9915-f2c974b4e294",
+                            "prevPageUuid": "86fcb3dd-3cc7-4c8a-b135-2a8af7476999",
+                            "globalPageNum": 154
+                        },
+                        {
+                            "pageNum": 24,
+                            "filename": "Chp4-Pg21.webp",
+                            "title": "The Surprise Intruder Gets a Surprise Intruder",
+                            "message": "Ugh. Don't you hate it when your boss drops in on a job you were JUST about to do and gets his bone dust all over your shoes? Every. time.",
+                            "datetime": "2024-02-05 14:55:20",
+                            "user": "N1995",
+                            "icon": "icons/Chp4-Pg21-Icon.png",
+                            "uuid": "d5f0340a-1e78-4aa4-9915-f2c974b4e294",
+                            "nextPageUuid": "1d5f5fc8-dc63-4b53-9cd8-53bfad7ad432",
+                            "prevPageUuid": "32fd1894-7762-4de6-aa7b-de36c1c9efce",
+                            "globalPageNum": 155
+                        },
+                        {
+                            "pageNum": 25,
+                            "filename": "Chp4-Pg22.webp",
+                            "title": "Millie Mocks the Grim Reaper",
+                            "message": "Just a casual interaction between Gen-Z and Millenial",
+                            "datetime": "2024-02-12 20:17:32",
+                            "user": "N1995",
+                            "icon": "icons/Chp4-Pg22-Icon.png",
+                            "uuid": "1d5f5fc8-dc63-4b53-9cd8-53bfad7ad432",
+                            "nextPageUuid": "a5348ddf-4fae-4083-be16-dec410f8b172",
+                            "prevPageUuid": "d5f0340a-1e78-4aa4-9915-f2c974b4e294",
+                            "globalPageNum": 156
+                        },
+                        {
+                            "pageNum": 26,
+                            "filename": "Chp4-Pg23.webp",
+                            "title": "Put up yer dukes, ya pansy!",
+                            "message": "It's time to get the band back together. And by \"band\" I mean the Grim Reaper, and by \"together\" I mean in an intimidating dark cloak.",
+                            "datetime": "2024-02-20 08:47:11",
+                            "user": "N1995",
+                            "icon": "icons/Chp4-Pg23-Icon.png",
+                            "uuid": "a5348ddf-4fae-4083-be16-dec410f8b172",
+                            "nextPageUuid": "5ce31c25-119d-4535-a58c-7cec90d16c92",
+                            "prevPageUuid": "1d5f5fc8-dc63-4b53-9cd8-53bfad7ad432",
+                            "globalPageNum": 157
+                        },
+                        {
+                            "pageNum": 27,
+                            "filename": "Chp4-Pg24.webp",
+                            "title": "Death Tax Man Threatens Girl",
+                            "message": "Ya'll ever have deadlines just hanging over your head? Chances are, things aren't as overwealming as they feel. Besides being decapitated and having your soul sucked out Dementor-style, what's REALLY the worst that could happen?",
+                            "datetime": "2024-02-26 10:43:52",
+                            "user": "N1995",
+                            "icon": "icons/Chp4-Pg24-Icon.png",
+                            "uuid": "5ce31c25-119d-4535-a58c-7cec90d16c92",
+                            "nextPageUuid": "2ed22dd6-4b01-40dd-b0e0-207da0d54805",
+                            "prevPageUuid": "a5348ddf-4fae-4083-be16-dec410f8b172",
+                            "globalPageNum": 158
+                        },
+                        {
+                            "pageNum": 28,
+                            "filename": "Chp4-Pg25.webp",
+                            "title": "Serial Killer Mask Time",
+                            "message": "Nothing like an ominous company motto to keep up morale...",
+                            "datetime": "2024-03-04 08:56:45",
+                            "user": "N1995",
+                            "icon": "icons/Chp4-Pg25-Icon.png",
+                            "uuid": "2ed22dd6-4b01-40dd-b0e0-207da0d54805",
+                            "nextPageUuid": "7a7dbfa3-298b-4cda-bd68-32ae108bf724",
+                            "prevPageUuid": "5ce31c25-119d-4535-a58c-7cec90d16c92",
+                            "globalPageNum": 159
+                        },
+                        {
+                            "pageNum": 29,
+                            "filename": "Chapter_5_Coming.webp",
+                            "title": "Chapter 5 Pre-Production Annoucement",
+                            "message": "It's times like these I have to remind myself that it's NOT better to be a unrelenting, page-producing, time-traveling machine of creativity. Flesh and blood and its weaknesses are a gift that I would be a fool to revoke in some dark cyber-cultic ceremony held ever other thursday in the basement of my local community center.",
+                            "datetime": "2024-03-11 12:47:57",
+                            "user": "N1995",
+                            "icon": "icons/Chapter_5_Coming-Icon.png",
+                            "uuid": "7a7dbfa3-298b-4cda-bd68-32ae108bf724",
+                            "nextPageUuid": null,
+                            "prevPageUuid": "2ed22dd6-4b01-40dd-b0e0-207da0d54805",
+                            "globalPageNum": 160
                         }
                     ]
                 }
@@ -2736,6 +2892,66 @@
             "seasonIndex": 0,
             "chapterIndex": 4,
             "pageIndex": 16
+        },
+        "54d15125-b0d6-469b-8b84-e56a92914c69": {
+            "seasonIndex": 0,
+            "chapterIndex": 4,
+            "pageIndex": 17
+        },
+        "c981420b-7988-4faf-9aa1-37cce3646ed1": {
+            "seasonIndex": 0,
+            "chapterIndex": 4,
+            "pageIndex": 18
+        },
+        "b4f0532b-118e-45fe-80a0-8a231ddfddad": {
+            "seasonIndex": 0,
+            "chapterIndex": 4,
+            "pageIndex": 19
+        },
+        "baeb4bbd-2466-4ed3-a156-eadc33b569f9": {
+            "seasonIndex": 0,
+            "chapterIndex": 4,
+            "pageIndex": 20
+        },
+        "86fcb3dd-3cc7-4c8a-b135-2a8af7476999": {
+            "seasonIndex": 0,
+            "chapterIndex": 4,
+            "pageIndex": 21
+        },
+        "32fd1894-7762-4de6-aa7b-de36c1c9efce": {
+            "seasonIndex": 0,
+            "chapterIndex": 4,
+            "pageIndex": 22
+        },
+        "d5f0340a-1e78-4aa4-9915-f2c974b4e294": {
+            "seasonIndex": 0,
+            "chapterIndex": 4,
+            "pageIndex": 23
+        },
+        "1d5f5fc8-dc63-4b53-9cd8-53bfad7ad432": {
+            "seasonIndex": 0,
+            "chapterIndex": 4,
+            "pageIndex": 24
+        },
+        "a5348ddf-4fae-4083-be16-dec410f8b172": {
+            "seasonIndex": 0,
+            "chapterIndex": 4,
+            "pageIndex": 25
+        },
+        "5ce31c25-119d-4535-a58c-7cec90d16c92": {
+            "seasonIndex": 0,
+            "chapterIndex": 4,
+            "pageIndex": 26
+        },
+        "2ed22dd6-4b01-40dd-b0e0-207da0d54805": {
+            "seasonIndex": 0,
+            "chapterIndex": 4,
+            "pageIndex": 27
+        },
+        "7a7dbfa3-298b-4cda-bd68-32ae108bf724": {
+            "seasonIndex": 0,
+            "chapterIndex": 4,
+            "pageIndex": 28
         }
     }
 }
