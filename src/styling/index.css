@@ -710,6 +710,11 @@ body {
   grid-row-end: 2;
 }
 
+.avatarModBtn {
+  width: 66px;
+  height: 40px;
+}
+
 .btn {
   cursor: pointer;
   word-break: keep-all;

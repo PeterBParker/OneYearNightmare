@@ -4,6 +4,7 @@ export default class Pages {
   static SUPPORT = new Pages("support");
   static ARCHIVE = new Pages("archive");
   static SIGNIN = new Pages("login");
+  static SCHEDULE = new Pages("schedule");
 
   constructor(name) {
     this.name = name;
