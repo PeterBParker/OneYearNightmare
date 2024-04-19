@@ -7,6 +7,10 @@ import DeleteAccountButton from "./DeleteAccountButton";
 import ProfilePicture from "./ProfilePicture";
 import { getAvatarUrl } from "../avatarHelpers";
 import { useAuthState } from "react-firebase-hooks/auth";
+import { v4 as uuidv4 } from "uuid";
+import { storeUserAvatar } from "../avatarHelpers";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowsRotate } from "@fortawesome/free-solid-svg-icons";
 
 const UserProfile = () => {
   const [notInitialized, setNotInitialized] = useState(
@@ -35,16 +39,14 @@ const InitializeInfo = (props) => {
 const DisplayInfo = () => {
   const [user, loading, auth_error] = useAuthState(auth);
   const [avatarUrl, setAvatarUrl] = useState("");
+  const [avatarSeed, setAvatarSeed] = useState("");
   const [fetchedAvatar, setFetchedAvatar] = useState(null);
+  const [avatarSaved, setAvatarSaved] = useState(true);
 
-  const updateAvatarOnDisplayNameSave = async () => {
-    let url = await getAvatarUrl(user.uid);
-    setAvatarUrl(url);
-    setFetchedAvatar(true);
-  };
-
-  const setPendingState = () => {
-    setFetchedAvatar(false);
+  const changeAvatar = () => {
+    let newSeed = uuidv4();
+    setAvatarSeed(newSeed);
+    setAvatarUrl(`https://api.dicebear.com/8.x/lorelei/svg?seed=${newSeed}`);
   };
 
   return (
@@ -54,17 +56,41 @@ const DisplayInfo = () => {
           User Settings
         </div>
         <div className="flex flex-wrap justify-center md:justify-between">
-          <ProfilePicture
-            width="200"
-            height="200"
-            avatarUrl={avatarUrl}
-            fetchedAvatar={fetchedAvatar}
-          />
-          <div className="w-full md:w-3/5 min-w-max max-w-xl">
-            <DisplayNameForm
-              asyncOnSuccessAction={updateAvatarOnDisplayNameSave}
-              onChangeAction={setPendingState}
+          <div className="flex flex-wrap flex-col">
+            <ProfilePicture
+              width="200"
+              height="200"
+              avatarUrl={avatarUrl}
+              fetchedAvatar={fetchedAvatar}
             />
+            <div className="flex flex-wrap flex-row mt-4 mr-8 justify-evenly">
+              <div
+                className="btn btn-std-hover bg-white px-4 py-2 avatarModBtn"
+                onClick={changeAvatar}
+              >
+                <FontAwesomeIcon icon={faArrowsRotate} />
+              </div>
+              <div
+                className="btn btn-std-hover bg-green-confirm px-4 py-2 font-medium avatarModBtn"
+                onClick={async () => {
+                  setAvatarSaved(false);
+                  await storeUserAvatar(user.uid, avatarSeed);
+                  setAvatarSaved(true);
+                }}
+              >
+                {avatarSaved ? (
+                  "Save"
+                ) : (
+                  <div
+                    className="loader"
+                    style={{ width: 28, height: 28 }}
+                  ></div>
+                )}
+              </div>
+            </div>
+          </div>
+          <div className="w-full md:w-3/5 min-w-max max-w-xl">
+            <DisplayNameForm />
             <EmailForm />
             <div className="flex justify-between my-12 px-2">
               <DeleteAccountButton />

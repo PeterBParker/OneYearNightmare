@@ -24,7 +24,6 @@ export default function ProfilePicture(props) {
 
     // If we are receiving the avatar url, use that. Otherwise, get it ourselves.
     if (props.avatarUrl && props.avatarUrl.length !== 0) {
-      setLoaded(false);
       setAvatarUrl(props.avatarUrl);
     } else {
       updateAvatar();

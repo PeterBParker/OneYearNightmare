@@ -53,7 +53,7 @@ export default function NavBarLinks(props) {
     </div>,
     <div
       className={`${
-        props.page.name === Pages.SIGNIN.name
+        props.page.name === Pages.SCHEDULE.name
           ? "desktopNavLinkSelected"
           : "desktopNavLink desktop-nav-hover"
       } text-grey-light font-medium`}

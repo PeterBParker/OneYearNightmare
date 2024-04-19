@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { auth } from "../..";
-import { storeUserAvatar } from "../users/avatarHelpers";
 import { getDisplayName } from "../users/utils";
 import { useAuthState } from "react-firebase-hooks/auth";
 import {
@@ -30,11 +29,7 @@ export default function DisplayNameForm(props) {
     const comment_success = await setCommentDisplayName(newName);
     const auth_success = await setAuthDisplayName(newName);
     setPlaceholder(newName);
-    //Update user avatar
-    if (auth.currentUser != null) {
-      //check if avatar already exists
-      await storeUserAvatar(auth.currentUser.uid, newName);
-    }
+
     if (auth_success && comment_success) {
       if (props.onSuccessAction !== undefined) {
         props.onSuccessAction();
