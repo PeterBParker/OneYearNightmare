@@ -48,7 +48,7 @@ export default function NavButton(props) {
 
 NavButton.propTypes = {
   disabled: bool.isRequired,
-  pageFilePath: string.isRequired,
+  pageFilePath: string,
   clickEffects: func.isRequired,
   activeIcon: string.isRequired,
   disabledIcon: string.isRequired,

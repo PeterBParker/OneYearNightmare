@@ -1,14 +1,14 @@
 {
-    "maxDisplayPage": "7a7dbfa3-298b-4cda-bd68-32ae108bf724",
+    "maxDisplayPage": "2652d480-5eab-4363-92d3-8f70dc37be79",
     "firstDisplayPage": "92004427-5249-4fa3-80f1-0a67f93ba559",
-    "pageCount": 162,
+    "pageCount": 165,
     "seasonCount": 1,
     "seasons": [
         {
             "seasonName": "First Blood",
             "folderName": "first blood",
-            "numOfPages": 162,
-            "numOfChapters": 5,
+            "numOfPages": 165,
+            "numOfChapters": 6,
             "id": 1,
             "chapters": [
                 {
@@ -2138,9 +2138,56 @@
                             "user": "N1995",
                             "icon": "icons/Chapter_5_Coming-Icon.png",
                             "uuid": "7a7dbfa3-298b-4cda-bd68-32ae108bf724",
-                            "nextPageUuid": null,
+                            "nextPageUuid": "2e8bf0bf-536b-48d0-a433-9dfaa2e14c6f",
                             "prevPageUuid": "2ed22dd6-4b01-40dd-b0e0-207da0d54805",
                             "globalPageNum": 160
+                        }
+                    ]
+                },
+                {
+                    "chapterName": "Chapter Five",
+                    "folderName": "chapter5",
+                    "numOfPages": 3,
+                    "id": 6,
+                    "pages": [
+                        {
+                            "pageNum": 1,
+                            "filename": "CHAP 5_001.webp",
+                            "title": "Chapter 5 Cover",
+                            "message": "Aaaand we're back! For a bit at least... parenting is tough ya'll",
+                            "datetime": "2024-05-20 16:13:35",
+                            "user": "N1995",
+                            "icon": "icons/CHAP 5_001-Icon.png",
+                            "uuid": "2e8bf0bf-536b-48d0-a433-9dfaa2e14c6f",
+                            "nextPageUuid": "27d1d9ab-c8c1-408a-9140-9e772b697407",
+                            "prevPageUuid": "7a7dbfa3-298b-4cda-bd68-32ae108bf724",
+                            "globalPageNum": 161
+                        },
+                        {
+                            "pageNum": 2,
+                            "filename": "CHAP 5_002.webp",
+                            "title": "Rose Left Alone to Tend Casper",
+                            "message": "20 minutes ago or roughly 21 pages in the past if that's how your watch runs",
+                            "datetime": "2024-05-20 16:19:45",
+                            "user": "N1995",
+                            "icon": "icons/CHAP 5_002-Icon.png",
+                            "uuid": "27d1d9ab-c8c1-408a-9140-9e772b697407",
+                            "nextPageUuid": "2652d480-5eab-4363-92d3-8f70dc37be79",
+                            "prevPageUuid": "2e8bf0bf-536b-48d0-a433-9dfaa2e14c6f",
+                            "globalPageNum": 162
+                        },
+                        {
+                            "pageNum": 3,
+                            "filename": "CHAP 5_003.webp",
+                            "title": "Hand Visitor Gets YOINKED",
+                            "message": "Cue the ominous music as mystery villain munches his hunted-and-gathered snack of fresh, warm fingers that rode in on the bumper of the van. Origin of a future Monster DoorDash? mebbe...",
+                            "datetime": "2024-06-03 20:56:38",
+                            "user": "N1995",
+                            "icon": "icons/CHAP 5_003-Icon.png",
+                            "uuid": "2652d480-5eab-4363-92d3-8f70dc37be79",
+                            "nextPageUuid": null,
+                            "prevPageUuid": "27d1d9ab-c8c1-408a-9140-9e772b697407",
+                            "globalPageNum": 163
                         }
                     ]
                 }
@@ -2952,6 +2999,21 @@
             "seasonIndex": 0,
             "chapterIndex": 4,
             "pageIndex": 28
+        },
+        "2e8bf0bf-536b-48d0-a433-9dfaa2e14c6f": {
+            "seasonIndex": 0,
+            "chapterIndex": 5,
+            "pageIndex": 0
+        },
+        "27d1d9ab-c8c1-408a-9140-9e772b697407": {
+            "seasonIndex": 0,
+            "chapterIndex": 5,
+            "pageIndex": 1
+        },
+        "2652d480-5eab-4363-92d3-8f70dc37be79": {
+            "seasonIndex": 0,
+            "chapterIndex": 5,
+            "pageIndex": 2
         }
     }
 }
