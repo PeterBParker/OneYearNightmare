@@ -5,10 +5,8 @@ To run, first activate the venv with:
 import firebase_admin
 import json
 import argparse
-import os
 
 from firebase_admin.firestore import client
-from firebase_admin import credentials
 
 
 class FirestoreImporter:
