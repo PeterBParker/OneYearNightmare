@@ -31,16 +31,6 @@ const ComicPageAPI = {
   getFirstPageId: function () {
     return pagesData.firstDisplayPage;
   },
-  getChaptersInSeason: function (seasonName) {
-    const isSeason = (p) => p.seasonName === seasonName;
-    let seasons = this.getSeasons();
-    let seasonObj = seasons.find(isSeason);
-    if (seasonObj == null) {
-      //return error about invalid seasonName
-      throw ("Invalid season data regarding season: ", seasonName);
-    }
-    return seasonObj.chapters;
-  },
   getSeason: function (seasons, seasonName) {
     /* This function gets a season object
         
@@ -51,25 +41,12 @@ const ComicPageAPI = {
     const isSeason = (p) => p.seasonName === seasonName;
     return seasons.find(isSeason);
   },
-  getSeasonNum: function (pageId) {
-    const relObjs = this.getRelValidObjs(pageId);
-    if (relObjs) {
-      return relObjs.seasonObj.id - 1;
-    }
-    return null;
-  },
   getChapterNum: function (pageId) {
     const relObjs = this.getRelValidObjs(pageId);
     if (relObjs) {
       return relObjs.chapterObj.id - 1;
     }
     return null;
-  },
-  getSeasonOrder: function (seasonName) {
-    const isSeason = (p) => p.seasonName === seasonName;
-    let seasons = this.getSeasons();
-    let season = seasons.find(isSeason);
-    return season.order;
   },
   getRelValidObjs: function (pageUuid) {
     /* This function checks if the page number is valid, and if so
@@ -103,28 +80,8 @@ const ComicPageAPI = {
       return null;
     }
   },
-  getTotalPageCount: function () {
-    return pagesData.pageCount;
-  },
   getMaxDisplayPage: function () {
     return pagesData.maxDisplayPage;
-  },
-  getAllPages: function () {
-    let pages = [];
-    try {
-      let seasons = this.getSeasons();
-      for (var seasonIndex in seasons) {
-        const chapters = this.getChaptersInSeason(
-          seasons[seasonIndex].seasonName
-        );
-        for (var chapterIndex in chapters) {
-          chapters[chapterIndex].pages.forEach((p) => pages.push(p));
-        }
-      }
-    } catch (err) {
-      throw err;
-    }
-    return pages;
   },
   getSeasons: function () {
     return pagesData.seasons;
