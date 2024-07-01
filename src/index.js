@@ -1,9 +1,11 @@
 import React from "react";
-import ReactDOM from "react-dom";
-import App from "./components/App";
-import reportWebVitals from "./reportWebVitals";
-import { BrowserRouter } from "react-router-dom";
-import "./styling/tailwind.output.css";
+import { createRoot } from "react-dom/client";
+import {
+  BrowserRouter,
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 
 import { initializeApp } from "firebase/app";
 import { connectFirestoreEmulator, getFirestore } from "firebase/firestore";
@@ -12,6 +14,13 @@ import { getAuth, connectAuthEmulator } from "firebase/auth";
 import { getAnalytics } from "firebase/analytics";
 import { getFunctions, connectFunctionsEmulator } from "firebase/functions";
 import { initializeAppCheck, ReCaptchaV3Provider } from "firebase/app-check";
+
+import App from "./routes/App";
+import reportWebVitals from "./reportWebVitals";
+import "./styling/tailwind.output.css";
+import ComicPageAPI from "./api/ComicPageAPI";
+import { BigSpinner } from "./components/generic/loading/Spinners";
+import GlobalErrorPage from "./components/generic/errors/GlobalErrorPage";
 
 // Initialize the Firebase Application
 var firebaseConfig = {
@@ -43,6 +52,7 @@ export const storage = getStorage(firebaseApp);
 export const functions = getFunctions(firebaseApp, "us-central1");
 export const AVATARS_PATH = "user_avatars/";
 export const BOOKMARK_KEY = "mxmBookmarkedPage";
+export const PageAPI = new ComicPageAPI(db, storage);
 
 if (window.location.hostname === "localhost") {
   connectAuthEmulator(auth, "http://localhost:9099"); // to use the emulator run "firebase emulators:start"
@@ -51,13 +61,24 @@ if (window.location.hostname === "localhost") {
   connectFunctionsEmulator(functions, "localhost", 5001);
 }
 
-ReactDOM.render(
+const queryClient = new QueryClient();
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <App />,
+    fallbackElement: <BigSpinner />,
+    errorElement: <GlobalErrorPage />,
+  },
+]);
+
+const container = document.getElementById("root");
+const root = createRoot(container);
+root.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  </React.StrictMode>,
-  document.getElementById("root")
+    <QueryClientProvider client={queryClient}>
+      <RouterProvider router={router} />
+    </QueryClientProvider>
+  </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function
