@@ -23,6 +23,8 @@ import Archive from "./routes/Archive";
 import SignInPage from "./routes/SignInPage";
 import ComicViewer from "./components/comics/ComicViewer";
 
+import { loader as comicLoader } from "./routes/ComicRouter";
+
 // Initialize the Firebase Application
 var firebaseConfig = {
   apiKey: "AIzaSyDwiYUN-zDZBeAc8QaH9WFDftkqW1XXDdQ",
@@ -78,6 +80,7 @@ export const MAX_COMMENT_CHARS = 350;
 export const COMIC_VIEWER_DEFAULT_PATH =
   COMIC_VIEWER_PATH + "/" + PageAPI.getFirstPageId();
 
+const queryClient = new QueryClient();
 const router = createBrowserRouter([
   {
     path: "/",
@@ -95,16 +98,17 @@ const router = createBrowserRouter([
       {
         path: COMIC_VIEWER_PATH,
         element: <ComicRouter />,
-        children: [
-          {
-            path: COMIC_VIEWER_PATH + "/:pageUuid",
-            element: <ComicViewer />,
-          },
-          {
-            path: COMIC_VIEWER_PATH + "/:pageUuid/:focus",
-            element: <ComicViewer />,
-          },
-        ],
+        loader: comicLoader(queryClient),
+        // children: [
+        //   {
+        //     path: COMIC_VIEWER_PATH + "/:pageUuid",
+        //     element: <ComicViewer />,
+        //   },
+        //   {
+        //     path: COMIC_VIEWER_PATH + "/:pageUuid/:focus",
+        //     element: <ComicViewer />,
+        //   },
+        // ],
       },
       {
         path: ARCHIVE_PAGE_PATH,
@@ -116,15 +120,7 @@ const router = createBrowserRouter([
       },
     ],
   },
-  // <Route exact path="/" element={<Home />} />
-  // <Route path={CREATIVES_PAGE_PATH} element={<Creators />}></Route>
-  // <Route path={SUPPORT_PAGE_PATH} element={<Support />}></Route>
-  // <Route path={COMIC_VIEWER_PATH} element={<ComicRouter />}></Route>
-  // <Route path={ARCHIVE_PAGE_PATH} element={<Archive />}></Route>
-  // <Route path={SIGNIN_PAGE_PATH} element={<SignInPage />}></Route>
 ]);
-
-const queryClient = new QueryClient();
 const container = document.getElementById("root");
 const root = createRoot(container);
 root.render(

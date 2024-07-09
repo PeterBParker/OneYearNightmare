@@ -44,17 +44,16 @@ export async function getDisplayData(key) {
     doc(collection(db, "book_data"), "display_data")
   );
   const displayData = docSnap.data();
-  console.log("this is the data: " + displayData[key]);
   return displayData[key];
 }
 
 export async function docFetcher({ queryKey }) {
   const [docKey, fieldKey] = queryKey;
   const ref = getRefForKey(docKey);
+  // TODO: This getDoc await call is not being cached by useQuery, so it's being called again and again. Find a way to cache this reference?
   const docSnap = await getDoc(ref);
   const data = docSnap.data();
   if (fieldKey != null && fieldKey.length > 0) {
-    console.log("this is the data: " + data[fieldKey]);
     return data[fieldKey];
   }
   return data;
