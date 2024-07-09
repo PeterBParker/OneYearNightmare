@@ -2,7 +2,7 @@ import { getDownloadURL, ref, uploadString } from "firebase/storage";
 import { storage, AVATARS_PATH } from "../../index";
 import { createAvatar } from "@dicebear/core";
 import { lorelei } from "@dicebear/collection";
-import { NO_USER_ID } from "../Main";
+import { NO_USER_ID } from "../../index";
 
 export const storeUserAvatar = async (userId, displayName) => {
   let success = false;

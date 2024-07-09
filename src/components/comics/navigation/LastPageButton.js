@@ -1,4 +1,4 @@
-import ComicPageAPI from "../../../api/ComicPageAPI";
+import { PageAPI } from "../../../index";
 import activeLastIcon from "../../../assets/FINAL-ASSETS-072821/final assets/right-skip-line-30px.png";
 import disabledLastIcon from "../../../assets/FINAL-ASSETS-072821/final assets/right-skip-line-light-30px.png";
 import NavButton from "./NavButton";
@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 import { func, string } from "prop-types";
 
 export default function LastPageButton(props) {
-  const lastPageId = ComicPageAPI.getMaxDisplayPage();
+  const lastPageId = PageAPI.getMaxDisplayPage();
   const [disabled, setDisabled] = useState(props.pageId === lastPageId);
 
   useEffect(() => {

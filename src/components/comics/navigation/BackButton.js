@@ -1,4 +1,4 @@
-import ComicPageAPI from "../../../api/ComicPageAPI";
+import { PageAPI } from "../../../index";
 import activeBackIcon from "../../../assets/FINAL-ASSETS-072821/final assets/left-arrow-30px.png";
 import disabledBackIcon from "../../../assets/FINAL-ASSETS-072821/final assets/left-arrow-light-30px.png";
 import NavButton from "./NavButton";
@@ -10,7 +10,7 @@ export default function BackButton(props) {
   const [prevPage, setPrevPage] = useState(null);
 
   useEffect(() => {
-    const relObjs = ComicPageAPI.getRelValidObjs(props.pageId);
+    const relObjs = PageAPI.getRelValidObjs(props.pageId);
     if (!relObjs.pageObj.prevPageUuid) {
       setPrevPage(null);
       setDisabled(true);

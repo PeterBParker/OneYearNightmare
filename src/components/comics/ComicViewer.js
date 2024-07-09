@@ -1,5 +1,5 @@
 import loadable from "@loadable/component";
-import ComicPageAPI from "../../api/ComicPageAPI";
+import { PageAPI } from "../../index";
 import NavBar from "./navigation/NavBar";
 import DesktopPageView from "./ComicViewerCards/DesktopPageView";
 import MobilePageView from "./ComicViewerCards/MobilePageView";
@@ -12,7 +12,7 @@ import {
   COMIC_VIEWER_DEFAULT_PATH,
   DOMAIN,
   SNAP_TO_PAGE_PATH,
-} from "../Main";
+} from "../../index";
 
 import Pages from "./navigation/desktop/Pages";
 import { useMediaQuery } from "react-responsive";
@@ -62,7 +62,7 @@ export default function ComicViewer(props) {
   }, [params.focus]);
 
   // Fetches the data we need to display the page and navigate.
-  let releventObjs = ComicPageAPI.getRelValidObjs(params.pageUuid);
+  let releventObjs = PageAPI.getRelValidObjs(params.pageUuid);
   if (!releventObjs) {
     return (
       <div className={`${isDesktop ? "comicViewerDesktop" : ""} pb-24`}>
@@ -72,7 +72,7 @@ export default function ComicViewer(props) {
       </div>
     );
   }
-  const path = ComicPageAPI.getFilePath(releventObjs);
+  const path = PageAPI.getFilePath(releventObjs);
 
   const pageImageUrl = encodeURI(process.env.PUBLIC_URL + BASE_PATH + path);
   let title = "Monsters and Myriads Page " + params.pageUuid;

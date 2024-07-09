@@ -1,4 +1,4 @@
-import ComicPageAPI from "../../api/ComicPageAPI";
+import { PageAPI } from "../../index";
 import moIcon from "../../assets/Phase4-Assets1/2x/profile-M-50px.png";
 import nathanIcon from "../../assets/Phase4-Assets1/2x/profile-N-50px.png";
 import { useMediaQuery } from "react-responsive";
@@ -22,7 +22,7 @@ export default function JointSignature(props) {
           isDesktop ? "text-2xl" : "text-xl"
         } text-left inline float-left text-gray-light mx-3 leading-8 self-center`}
       >
-        <p>{ComicPageAPI.getAdminDisplayName(props.userId)}</p>
+        <p>{PageAPI.getAdminDisplayName(props.userId)}</p>
       </div>
     </div>
   );

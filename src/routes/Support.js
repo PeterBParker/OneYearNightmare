@@ -1,8 +1,8 @@
-import SupportMobile from "./SupportMobile";
-import SupportDesktop from "./SupportDesktop";
+import SupportMobile from "../components/creators/supportUsCards/SupportMobile";
+import SupportDesktop from "../components/creators/supportUsCards/SupportDesktop";
 
 import { useMediaQuery } from "react-responsive";
-import querySizes from "../../../styling/breakpoints.json";
+import querySizes from "../styling/breakpoints.json";
 
 export default function Support() {
   const isTabletOrDesktop = useMediaQuery({ query: querySizes["lg"] });

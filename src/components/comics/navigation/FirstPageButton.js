@@ -1,4 +1,4 @@
-import ComicPageAPI from "../../../api/ComicPageAPI";
+import { PageAPI } from "../../../index";
 import activeFirstIcon from "../../../assets/FINAL-ASSETS-072821/final assets/left-skip-line-30px.png";
 import disabledFirstIcon from "../../../assets/FINAL-ASSETS-072821/final assets/left-skip-line-light-30px.png";
 import { useState, useEffect } from "react";
@@ -6,7 +6,7 @@ import NavButton from "./NavButton";
 import { func, string } from "prop-types";
 
 export default function FirstPageButton(props) {
-  const firstPageId = ComicPageAPI.getFirstPageId();
+  const firstPageId = PageAPI.getFirstPageId();
   const [disabled, setDisabled] = useState(props.pageId === firstPageId);
 
   useEffect(() => {

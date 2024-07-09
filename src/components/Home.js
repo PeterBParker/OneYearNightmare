@@ -1,8 +1,6 @@
-import {Redirect} from 'react-router-dom';
-import { COMIC_VIEWER_PATH } from './Main';
+import { Navigate } from "react-router-dom";
+import { COMIC_VIEWER_PATH } from "../index";
 
 export default function Home() {
-    return(
-        <Redirect to={COMIC_VIEWER_PATH}/>
-    );
+  return <Navigate to={COMIC_VIEWER_PATH} />;
 }

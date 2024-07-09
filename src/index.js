@@ -1,10 +1,6 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
-import {
-  BrowserRouter,
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 
 import { initializeApp } from "firebase/app";
@@ -19,8 +15,13 @@ import App from "./routes/App";
 import reportWebVitals from "./reportWebVitals";
 import "./styling/tailwind.output.css";
 import ComicPageAPI from "./api/ComicPageAPI";
-import { BigSpinner } from "./components/generic/loading/Spinners";
 import GlobalErrorPage from "./components/generic/errors/GlobalErrorPage";
+import Creators from "./routes/Creators";
+import Support from "./routes/Support";
+import ComicRouter from "./routes/ComicRouter";
+import Archive from "./routes/Archive";
+import SignInPage from "./routes/SignInPage";
+import ComicViewer from "./components/comics/ComicViewer";
 
 // Initialize the Firebase Application
 var firebaseConfig = {
@@ -61,16 +62,69 @@ if (window.location.hostname === "localhost") {
   connectFunctionsEmulator(functions, "localhost", 5001);
 }
 
-const queryClient = new QueryClient();
+// Declare site-wide constants
+export const COMIC_VIEWER_PATH = "/read";
+export const SUPPORT_PAGE_PATH = "/support";
+export const ARCHIVE_PAGE_PATH = "/archive";
+export const CREATIVES_PAGE_PATH = "/creatives";
+export const SIGNIN_PAGE_PATH = "/login";
+export const DOMAIN = "https://monstersandmyriads.com";
+export const BASE_PATH = "/MnMPages/";
+
+export const JOINT_SIG = "Mo and Nate";
+export const NO_USER_ID = "null";
+export const SNAP_TO_PAGE_PATH = "snap-to-page";
+export const MAX_COMMENT_CHARS = 350;
+export const COMIC_VIEWER_DEFAULT_PATH =
+  COMIC_VIEWER_PATH + "/" + PageAPI.getFirstPageId();
+
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
-    fallbackElement: <BigSpinner />,
     errorElement: <GlobalErrorPage />,
+    children: [
+      {
+        path: CREATIVES_PAGE_PATH,
+        element: <Creators />,
+      },
+      {
+        path: SUPPORT_PAGE_PATH,
+        element: <Support />,
+      },
+      {
+        path: COMIC_VIEWER_PATH,
+        element: <ComicRouter />,
+        children: [
+          {
+            path: COMIC_VIEWER_PATH + "/:pageUuid",
+            element: <ComicViewer />,
+          },
+          {
+            path: COMIC_VIEWER_PATH + "/:pageUuid/:focus",
+            element: <ComicViewer />,
+          },
+        ],
+      },
+      {
+        path: ARCHIVE_PAGE_PATH,
+        element: <Archive />,
+      },
+      {
+        path: SIGNIN_PAGE_PATH,
+        element: <SignInPage />,
+      },
+    ],
   },
+  // <Route exact path="/" element={<Home />} />
+  // <Route path={CREATIVES_PAGE_PATH} element={<Creators />}></Route>
+  // <Route path={SUPPORT_PAGE_PATH} element={<Support />}></Route>
+  // <Route path={COMIC_VIEWER_PATH} element={<ComicRouter />}></Route>
+  // <Route path={ARCHIVE_PAGE_PATH} element={<Archive />}></Route>
+  // <Route path={SIGNIN_PAGE_PATH} element={<SignInPage />}></Route>
 ]);
 
+const queryClient = new QueryClient();
 const container = document.getElementById("root");
 const root = createRoot(container);
 root.render(

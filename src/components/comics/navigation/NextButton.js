@@ -1,4 +1,4 @@
-import ComicPageAPI from "../../../api/ComicPageAPI";
+import { PageAPI } from "../../../index";
 import activeNextIcon from "../../../assets/FINAL-ASSETS-072821/final assets/right-arrow-30px.png";
 import disabledNextIcon from "../../../assets/FINAL-ASSETS-072821/final assets/right-arrow-light-30px.png";
 import NavButton from "./NavButton";
@@ -10,7 +10,7 @@ export default function NextButton(props) {
   const [nextPage, setNextPage] = useState(null);
 
   useEffect(() => {
-    const relObjs = ComicPageAPI.getRelValidObjs(props.pageId);
+    const relObjs = PageAPI.getRelValidObjs(props.pageId);
     if (!relObjs.pageObj.nextPageUuid) {
       setNextPage(null);
       setDisabled(true);

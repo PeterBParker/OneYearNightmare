@@ -1,4 +1,4 @@
-import ComicPageAPI from "../../api/ComicPageAPI";
+import { PageAPI } from "../../index";
 import pageData from "../../api/data/pagesData.json";
 import { useState } from "react";
 import { useParams } from "react-router-dom";
@@ -11,7 +11,7 @@ export default function ChapterNumIcon() {
     setCurrPage(params.pageUuid);
   }
 
-  let chapNum = ComicPageAPI.getChapterNum(currPage);
+  let chapNum = PageAPI.getChapterNum(currPage);
 
   return (
     <div className="volNumContainer ml-2 flex-shrink-0">

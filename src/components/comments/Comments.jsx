@@ -4,7 +4,7 @@ import loadable from "@loadable/component";
 import beTheFirst from "../../assets/Be_the_first.webp";
 import Comment from "./Comment";
 import { useState, useEffect } from "react";
-import { SIGNIN_PAGE_PATH } from "../Main";
+import { SIGNIN_PAGE_PATH } from "../../index";
 import { auth } from "../../index";
 import useFirebaseAuth from "../users/hooks/useFirebaseAuth";
 import { db } from "../../index";

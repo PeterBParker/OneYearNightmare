@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { BASE_PATH } from "../../Main";
+import { BASE_PATH } from "../../../index";
 import PageThumbnail from "./PageThumbnail";
 
 export default function ChapterBanner(props) {

@@ -7,7 +7,7 @@ import {
   COMIC_VIEWER_PATH,
   ARCHIVE_PAGE_PATH,
   SIGNIN_PAGE_PATH,
-} from "../../Main";
+} from "../../../index";
 
 export default function MobileMenu(props) {
   let mobileMenu = useRef(null);

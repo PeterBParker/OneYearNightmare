@@ -1,10 +1,10 @@
 import React from "react";
-import Header from "../../header/Header";
-import SignInToUserProfile from "../components/SignInToUserProfile";
-import SimpleNavBar from "../../comics/navigation/desktop/SimpleNavBar";
-import Pages from "../../comics/navigation/desktop/Pages";
+import Header from "../components/header/Header";
+import SignInToUserProfile from "../components/users/components/SignInToUserProfile";
+import SimpleNavBar from "../components/comics/navigation/desktop/SimpleNavBar";
+import Pages from "../components/comics/navigation/desktop/Pages";
 import { useMediaQuery } from "react-responsive";
-import querySizes from "../../../styling/breakpoints.json";
+import querySizes from "../styling/breakpoints.json";
 
 const SignInPage = () => {
   const isDesktop = useMediaQuery({ query: querySizes["lg"] });

@@ -1,7 +1,7 @@
 import CardHeader from "../../generic/CardHeader";
 import ChapterBanner from "./ChapterBanner";
 
-import ComicPageAPI from "../../../api/ComicPageAPI";
+import { PageAPI } from "../../../index";
 import { useMediaQuery } from "react-responsive";
 import querySizes from "../../../styling/breakpoints.json";
 import { v4 as uuidv4 } from "uuid";
@@ -9,7 +9,7 @@ import { v4 as uuidv4 } from "uuid";
 export default function ArchiveContent(props) {
   const isTabletOrDesktop = useMediaQuery({ query: querySizes["lg"] });
 
-  let seasons = ComicPageAPI.getSeasons();
+  let seasons = PageAPI.getSeasons();
   let displayBanners = [];
 
   for (let seasonIndex in seasons) {

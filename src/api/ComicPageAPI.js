@@ -50,9 +50,7 @@ export async function getDisplayData(key) {
 
 export async function docFetcher({ queryKey }) {
   const [docKey, fieldKey] = queryKey;
-  console.log("This is docKey: ", docKey, " this is fieldKey: ", fieldKey);
   const ref = getRefForKey(docKey);
-  console.log("This is the ref: ", ref);
   const docSnap = await getDoc(ref);
   const data = docSnap.data();
   if (fieldKey != null && fieldKey.length > 0) {

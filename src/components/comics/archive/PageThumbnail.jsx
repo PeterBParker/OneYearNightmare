@@ -1,4 +1,4 @@
-import { COMIC_VIEWER_PATH, SNAP_TO_PAGE_PATH } from "../../Main";
+import { COMIC_VIEWER_PATH, SNAP_TO_PAGE_PATH } from "../../../index";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 

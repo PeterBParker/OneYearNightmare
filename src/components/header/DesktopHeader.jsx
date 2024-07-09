@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import ChapterNumIcon from "./ChapterNumIcon";
 
-import { COMIC_VIEWER_DEFAULT_PATH } from "../Main";
+import { COMIC_VIEWER_DEFAULT_PATH } from "../../index";
 
 export default function DesktopHeader(props) {
   return (

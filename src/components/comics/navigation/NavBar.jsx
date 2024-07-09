@@ -6,7 +6,7 @@ import bookmarkOutline from "../../../assets/bookies/bookies/bookie-short-line-4
 import bookmarkFilled from "../../../assets/bookies/bookies/bookie-short-fill-40px.png";
 import { useState } from "react";
 import { bool, func, string } from "prop-types";
-import ComicPageAPI from "../../../api/ComicPageAPI";
+import { PageAPI } from "../../../index";
 
 export default function NavBar(props) {
   const [bookmarkIcon, setBookmarkIcon] = useState(bookmarkOutline);
@@ -15,7 +15,7 @@ export default function NavBar(props) {
   );
 
   useEffect(() => {
-    if (ComicPageAPI.isExistingPage(bookmarkId)) {
+    if (PageAPI.isExistingPage(bookmarkId)) {
       localStorage.setItem(BOOKMARK_KEY, bookmarkId);
     }
   }, [bookmarkId]);

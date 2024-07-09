@@ -5,7 +5,7 @@ import {
   COMIC_VIEWER_PATH,
   ARCHIVE_PAGE_PATH,
   SIGNIN_PAGE_PATH,
-} from "../../../Main";
+} from "../../../../index";
 import { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 
