@@ -1,5 +1,5 @@
 {
-    "maxDisplayPage": "2652d480-5eab-4363-92d3-8f70dc37be79",
+    "maxDisplayPage": "45ef5ad0-a96d-4996-bbd5-806053f8bdf1",
     "firstDisplayPage": "92004427-5249-4fa3-80f1-0a67f93ba559",
     "pageCount": 165,
     "seasonCount": 1,
@@ -2125,29 +2125,16 @@
                             "user": "N1995",
                             "icon": "icons/Chp4-Pg25-Icon.png",
                             "uuid": "2ed22dd6-4b01-40dd-b0e0-207da0d54805",
-                            "nextPageUuid": "7a7dbfa3-298b-4cda-bd68-32ae108bf724",
+                            "nextPageUuid": "2e8bf0bf-536b-48d0-a433-9dfaa2e14c6f",
                             "prevPageUuid": "5ce31c25-119d-4535-a58c-7cec90d16c92",
                             "globalPageNum": 159
-                        },
-                        {
-                            "pageNum": 29,
-                            "filename": "Chapter_5_Coming.webp",
-                            "title": "Chapter 5 Pre-Production Annoucement",
-                            "message": "It's times like these I have to remind myself that it's NOT better to be a unrelenting, page-producing, time-traveling machine of creativity. Flesh and blood and its weaknesses are a gift that I would be a fool to revoke in some dark cyber-cultic ceremony held ever other thursday in the basement of my local community center.",
-                            "datetime": "2024-03-11 12:47:57",
-                            "user": "N1995",
-                            "icon": "icons/Chapter_5_Coming-Icon.png",
-                            "uuid": "7a7dbfa3-298b-4cda-bd68-32ae108bf724",
-                            "nextPageUuid": "2e8bf0bf-536b-48d0-a433-9dfaa2e14c6f",
-                            "prevPageUuid": "2ed22dd6-4b01-40dd-b0e0-207da0d54805",
-                            "globalPageNum": 160
                         }
                     ]
                 },
                 {
                     "chapterName": "Chapter Five",
                     "folderName": "chapter5",
-                    "numOfPages": 3,
+                    "numOfPages": 4,
                     "id": 6,
                     "pages": [
                         {
@@ -2160,8 +2147,8 @@
                             "icon": "icons/CHAP 5_001-Icon.png",
                             "uuid": "2e8bf0bf-536b-48d0-a433-9dfaa2e14c6f",
                             "nextPageUuid": "27d1d9ab-c8c1-408a-9140-9e772b697407",
-                            "prevPageUuid": "7a7dbfa3-298b-4cda-bd68-32ae108bf724",
-                            "globalPageNum": 161
+                            "prevPageUuid": "2ed22dd6-4b01-40dd-b0e0-207da0d54805",
+                            "globalPageNum": 160
                         },
                         {
                             "pageNum": 2,
@@ -2174,7 +2161,7 @@
                             "uuid": "27d1d9ab-c8c1-408a-9140-9e772b697407",
                             "nextPageUuid": "2652d480-5eab-4363-92d3-8f70dc37be79",
                             "prevPageUuid": "2e8bf0bf-536b-48d0-a433-9dfaa2e14c6f",
-                            "globalPageNum": 162
+                            "globalPageNum": 161
                         },
                         {
                             "pageNum": 3,
@@ -2185,8 +2172,21 @@
                             "user": "N1995",
                             "icon": "icons/CHAP 5_003-Icon.png",
                             "uuid": "2652d480-5eab-4363-92d3-8f70dc37be79",
-                            "nextPageUuid": null,
+                            "nextPageUuid": "45ef5ad0-a96d-4996-bbd5-806053f8bdf1",
                             "prevPageUuid": "27d1d9ab-c8c1-408a-9140-9e772b697407",
+                            "globalPageNum": 162
+                        },
+                        {
+                            "pageNum": 4,
+                            "filename": "CHAP_5_004.webp",
+                            "title": "Casper's Bucket List",
+                            "message": "Thankfully Casper doesn't have sisters or he would spend less time lamenting Tokyo and more time asking questions about what Rose's first aid techniques.",
+                            "datetime": "2024-07-08 19:50:16",
+                            "user": "N1995",
+                            "icon": "icons/CHAP_5_004-Icon.png",
+                            "uuid": "45ef5ad0-a96d-4996-bbd5-806053f8bdf1",
+                            "nextPageUuid": null,
+                            "prevPageUuid": "2652d480-5eab-4363-92d3-8f70dc37be79",
                             "globalPageNum": 163
                         }
                     ]
@@ -2995,11 +2995,6 @@
             "chapterIndex": 4,
             "pageIndex": 27
         },
-        "7a7dbfa3-298b-4cda-bd68-32ae108bf724": {
-            "seasonIndex": 0,
-            "chapterIndex": 4,
-            "pageIndex": 28
-        },
         "2e8bf0bf-536b-48d0-a433-9dfaa2e14c6f": {
             "seasonIndex": 0,
             "chapterIndex": 5,
@@ -3014,6 +3009,11 @@
             "seasonIndex": 0,
             "chapterIndex": 5,
             "pageIndex": 2
+        },
+        "45ef5ad0-a96d-4996-bbd5-806053f8bdf1": {
+            "seasonIndex": 0,
+            "chapterIndex": 5,
+            "pageIndex": 3
         }
     }
 }
