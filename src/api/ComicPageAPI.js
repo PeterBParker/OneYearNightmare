@@ -1,8 +1,8 @@
 import pagesData from "./data/pagesData.json";
 import users from "./data/users.json";
 import { collection, doc, getDoc } from "firebase/firestore";
-import { db } from "../index";
-import { DISPLAY_DATA_DOC_KEY } from "../api/RefKeys";
+import { db, COMIC_VIEWER_PATH, BOOKMARK_KEY, PageAPI } from "../index";
+import { DISPLAY_DATA_DOC_KEY, MAX_PAGE_ID_KEY } from "../api/RefKeys";
 
 // RefKeyMap is a singleton that bridges serializable string constants that act as
 // query keys for react-query to firestore references. Using references as the keys
@@ -26,6 +26,18 @@ function getRefForKey(key) {
   return map[key];
 }
 
+export function getComicHomeURL(maxPageId) {
+  let bookmarkedPageUrl = COMIC_VIEWER_PATH + "/";
+  let bookmarkedPageId = localStorage.getItem(BOOKMARK_KEY);
+  if (bookmarkedPageId && PageAPI.isExistingPage(bookmarkedPageId)) {
+    bookmarkedPageUrl = bookmarkedPageUrl.concat(bookmarkedPageId);
+  } else {
+    // If there is no value stored, we send the reader to the first page on the latest update
+    bookmarkedPageUrl = bookmarkedPageUrl.concat(maxPageId);
+  }
+  return bookmarkedPageUrl;
+}
+
 // Refactor getFilePaths to use pageUuid
 function createPath(...pathNodes) {
   let path = "";
@@ -37,14 +49,6 @@ function createPath(...pathNodes) {
     }
   }
   return path;
-}
-
-export async function getDisplayData(key) {
-  const docSnap = await getDoc(
-    doc(collection(db, "book_data"), "display_data")
-  );
-  const displayData = docSnap.data();
-  return displayData[key];
 }
 
 export async function docFetcher({ queryKey }) {
@@ -71,6 +75,28 @@ class ComicPageAPI {
     this.pagesRef = collection(this.contentRef, "pages");
     this.displayRef = doc(this.bookDataRef, "display_data");
     this.countRef = doc(this.bookDataRef, "counts");
+  }
+
+  getMaxPageId() {
+    return this.getDisplayData(MAX_PAGE_ID_KEY)
+      .then((data) => {
+        return data;
+      })
+      .catch((err) => {
+        console.log(err);
+        return null;
+      });
+  }
+
+  getDisplayData(key) {
+    return getDoc(doc(collection(db, "book_data"), "display_data"))
+      .then((docSnap) => {
+        return docSnap.data()[key];
+      })
+      .catch((err) => {
+        console.log(err);
+        return null;
+      });
   }
 
   getFilePath(releventObjs) {

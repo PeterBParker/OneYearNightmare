@@ -3,6 +3,7 @@ import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 
+// Firebase Objects and Settings
 import { initializeApp } from "firebase/app";
 import { connectFirestoreEmulator, getFirestore } from "firebase/firestore";
 import { connectStorageEmulator, getStorage } from "firebase/storage";
@@ -11,19 +12,23 @@ import { getAnalytics } from "firebase/analytics";
 import { getFunctions, connectFunctionsEmulator } from "firebase/functions";
 import { initializeAppCheck, ReCaptchaV3Provider } from "firebase/app-check";
 
-import App from "./routes/App";
 import reportWebVitals from "./reportWebVitals";
 import "./styling/tailwind.output.css";
 import ComicPageAPI from "./api/ComicPageAPI";
 import GlobalErrorPage from "./components/generic/errors/GlobalErrorPage";
+
+// Routes
+import App from "./routes/App";
 import Creators from "./routes/Creators";
 import Support from "./routes/Support";
 import ComicRouter from "./routes/ComicRouter";
 import Archive from "./routes/Archive";
 import SignInPage from "./routes/SignInPage";
 import ComicViewer from "./components/comics/ComicViewer";
+import Home from "./routes/Home";
 
 import { loader as comicLoader } from "./routes/ComicRouter";
+import { getComicHomeURL } from "./api/ComicPageAPI";
 
 // Initialize the Firebase Application
 var firebaseConfig = {
@@ -99,16 +104,20 @@ const router = createBrowserRouter([
         path: COMIC_VIEWER_PATH,
         element: <ComicRouter />,
         loader: comicLoader(queryClient),
-        // children: [
-        //   {
-        //     path: COMIC_VIEWER_PATH + "/:pageUuid",
-        //     element: <ComicViewer />,
-        //   },
-        //   {
-        //     path: COMIC_VIEWER_PATH + "/:pageUuid/:focus",
-        //     element: <ComicViewer />,
-        //   },
-        // ],
+        children: [
+          {
+            path: COMIC_VIEWER_PATH,
+            element: <Home />,
+          },
+          {
+            path: COMIC_VIEWER_PATH + "/:pageUuid",
+            element: <ComicViewer />,
+          },
+          {
+            path: COMIC_VIEWER_PATH + "/:pageUuid/:focus",
+            element: <ComicViewer />,
+          },
+        ],
       },
       {
         path: ARCHIVE_PAGE_PATH,
