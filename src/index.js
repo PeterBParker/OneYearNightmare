@@ -21,14 +21,13 @@ import GlobalErrorPage from "./components/generic/errors/GlobalErrorPage";
 import App from "./routes/App";
 import Creators from "./routes/Creators";
 import Support from "./routes/Support";
-import ComicRouter from "./routes/ComicRouter";
 import Archive from "./routes/Archive";
 import SignInPage from "./routes/SignInPage";
 import ComicViewer from "./components/comics/ComicViewer";
 import Home from "./routes/Home";
 
-import { loader as comicLoader } from "./routes/ComicRouter";
-import { getComicHomeURL } from "./api/ComicPageAPI";
+// Loaders
+import { loader } from "./routes/Home";
 
 // Initialize the Firebase Application
 var firebaseConfig = {
@@ -102,22 +101,16 @@ const router = createBrowserRouter([
       },
       {
         path: COMIC_VIEWER_PATH,
-        element: <ComicRouter />,
-        loader: comicLoader(queryClient),
-        children: [
-          {
-            path: COMIC_VIEWER_PATH,
-            element: <Home />,
-          },
-          {
-            path: COMIC_VIEWER_PATH + "/:pageUuid",
-            element: <ComicViewer />,
-          },
-          {
-            path: COMIC_VIEWER_PATH + "/:pageUuid/:focus",
-            element: <ComicViewer />,
-          },
-        ],
+        element: <Home />,
+        loader: loader(queryClient),
+      },
+      {
+        path: COMIC_VIEWER_PATH + "/:pageUuid",
+        element: <ComicViewer />,
+      },
+      {
+        path: COMIC_VIEWER_PATH + "/:pageUuid/:focus",
+        element: <ComicViewer />,
       },
       {
         path: ARCHIVE_PAGE_PATH,

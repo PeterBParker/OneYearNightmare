@@ -5,7 +5,7 @@ import { useQuery } from "@tanstack/react-query";
 import { DISPLAY_DATA_DOC_KEY, MAX_PAGE_ID_KEY } from "../api/RefKeys";
 
 // Just returns an object useQuery expects
-const maxPageIdQuery = () => ({
+export const maxPageIdQuery = () => ({
   queryKey: [DISPLAY_DATA_DOC_KEY, MAX_PAGE_ID_KEY],
   queryFn: docFetcher,
 });
@@ -20,8 +20,7 @@ export function loader(queryClient) {
 }
 
 export default function Home() {
-  const { maxPageId, error, isLoading } = useQuery(maxPageIdQuery());
-  console.log("This is the max page id from Home! ", maxPageId);
-  const HOME_URL = getComicHomeURL(maxPageId);
+  const { data } = useQuery(maxPageIdQuery());
+  const HOME_URL = getComicHomeURL(data);
   return <Navigate to={HOME_URL} />;
 }
