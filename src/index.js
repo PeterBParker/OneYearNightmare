@@ -11,7 +11,10 @@ import { connectStorageEmulator, getStorage } from "firebase/storage";
 import { getAuth, connectAuthEmulator } from "firebase/auth";
 import { getAnalytics } from "firebase/analytics";
 import { getFunctions, connectFunctionsEmulator } from "firebase/functions";
-import { initializeAppCheck, ReCaptchaV3Provider } from "firebase/app-check";
+import {
+  initializeAppCheck,
+  ReCaptchaEnterpriseProvider,
+} from "firebase/app-check";
 
 // Initialize the Firebase Application
 var firebaseConfig = {
@@ -31,7 +34,9 @@ if (window.location.hostname === "localhost") {
 }
 
 const appCheck = initializeAppCheck(firebaseApp, {
-  provider: new ReCaptchaV3Provider("6Lc4Nx4fAAAAAAp7ZK-t2_1cMEZyfrhdTabLb8Tj"),
+  provider: new ReCaptchaEnterpriseProvider(
+    "6LeYjg4qAAAAANJsmggY0V_OqntdxwqMB3YaS21z"
+  ),
   isTokenAutoRefreshEnabled: true,
 });
 

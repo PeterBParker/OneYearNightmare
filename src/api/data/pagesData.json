@@ -1,13 +1,13 @@
 {
-    "maxDisplayPage": "45ef5ad0-a96d-4996-bbd5-806053f8bdf1",
+    "maxDisplayPage": "4903144a-4838-40ac-8e76-50e2c7d556cc",
     "firstDisplayPage": "92004427-5249-4fa3-80f1-0a67f93ba559",
-    "pageCount": 165,
+    "pageCount": 167,
     "seasonCount": 1,
     "seasons": [
         {
             "seasonName": "First Blood",
             "folderName": "first blood",
-            "numOfPages": 165,
+            "numOfPages": 167,
             "numOfChapters": 6,
             "id": 1,
             "chapters": [
@@ -2134,7 +2134,7 @@
                 {
                     "chapterName": "Chapter Five",
                     "folderName": "chapter5",
-                    "numOfPages": 4,
+                    "numOfPages": 6,
                     "id": 6,
                     "pages": [
                         {
@@ -2185,9 +2185,35 @@
                             "user": "N1995",
                             "icon": "icons/CHAP_5_004-Icon.png",
                             "uuid": "45ef5ad0-a96d-4996-bbd5-806053f8bdf1",
-                            "nextPageUuid": null,
+                            "nextPageUuid": "2d41bee4-dd1e-49fc-9a10-c551050acef6",
                             "prevPageUuid": "2652d480-5eab-4363-92d3-8f70dc37be79",
                             "globalPageNum": 163
+                        },
+                        {
+                            "pageNum": 5,
+                            "filename": "CHAP 5_005.webp",
+                            "title": "A New Challenger Approaches",
+                            "message": "Uh oh! Somebody forgot to feed Quill, and she's restorted to trash-goblin mode with raw finger snacking. Classic Quill.",
+                            "datetime": "2024-07-14 21:21:54",
+                            "user": "N1995",
+                            "icon": "icons/CHAP 5_005-Icon.png",
+                            "uuid": "2d41bee4-dd1e-49fc-9a10-c551050acef6",
+                            "nextPageUuid": "4903144a-4838-40ac-8e76-50e2c7d556cc",
+                            "prevPageUuid": "45ef5ad0-a96d-4996-bbd5-806053f8bdf1",
+                            "globalPageNum": 164
+                        },
+                        {
+                            "pageNum": 6,
+                            "filename": "CHAP 5_006.webp",
+                            "title": "Rose panics at Mr. Troll",
+                            "message": "Is this where we discover Rose's purse is like Thor's hammer? Mebbe! Or maybe it's just a plain 'ol regular purse and she's gonna have to do a lot of explaining to her mom as to why she needs a new one.",
+                            "datetime": "2024-07-21 21:22:07",
+                            "user": "N1995",
+                            "icon": "icons/CHAP 5_006-Icon.png",
+                            "uuid": "4903144a-4838-40ac-8e76-50e2c7d556cc",
+                            "nextPageUuid": null,
+                            "prevPageUuid": "2d41bee4-dd1e-49fc-9a10-c551050acef6",
+                            "globalPageNum": 165
                         }
                     ]
                 }
@@ -3014,6 +3040,16 @@
             "seasonIndex": 0,
             "chapterIndex": 5,
             "pageIndex": 3
+        },
+        "2d41bee4-dd1e-49fc-9a10-c551050acef6": {
+            "seasonIndex": 0,
+            "chapterIndex": 5,
+            "pageIndex": 4
+        },
+        "4903144a-4838-40ac-8e76-50e2c7d556cc": {
+            "seasonIndex": 0,
+            "chapterIndex": 5,
+            "pageIndex": 5
         }
     }
 }
