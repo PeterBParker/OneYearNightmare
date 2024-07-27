@@ -23,11 +23,12 @@ import Creators from "./routes/Creators";
 import Support from "./routes/Support";
 import Archive from "./routes/Archive";
 import SignInPage from "./routes/SignInPage";
-import ComicViewer from "./components/comics/ComicViewer";
-import Home from "./routes/Home";
+import ComicViewer from "./routes/ComicViewer";
+import Reader from "./routes/Reader";
 
 // Loaders
-import { loader } from "./routes/Home";
+import { loader as reader_loader } from "./routes/Reader";
+import { loader as page_loader } from "./routes/ComicViewer";
 
 // Initialize the Firebase Application
 var firebaseConfig = {
@@ -100,17 +101,24 @@ const router = createBrowserRouter([
         element: <Support />,
       },
       {
+        path: "/",
+        element: <Reader />,
+        loader: reader_loader(queryClient),
+      },
+      {
         path: COMIC_VIEWER_PATH,
-        element: <Home />,
-        loader: loader(queryClient),
+        element: <Reader />,
+        loader: reader_loader(queryClient),
       },
       {
         path: COMIC_VIEWER_PATH + "/:pageUuid",
         element: <ComicViewer />,
+        loader: page_loader(queryClient),
       },
       {
         path: COMIC_VIEWER_PATH + "/:pageUuid/:focus",
         element: <ComicViewer />,
+        loader: page_loader(queryClient),
       },
       {
         path: ARCHIVE_PAGE_PATH,

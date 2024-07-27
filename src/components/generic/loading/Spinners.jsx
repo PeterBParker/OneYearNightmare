@@ -5,3 +5,6 @@ export function BigSpinner() {
 export function MediumSpinner() {
   return <div className="text-2xl">Loading...</div>;
 }
+export function SmallSpinner() {
+  return <div className="text-sm">Loading...</div>;
+}

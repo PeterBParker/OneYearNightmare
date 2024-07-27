@@ -1,27 +1,46 @@
-import loadable from "@loadable/component";
-import { PageAPI } from "../../index";
-import NavBar from "./navigation/NavBar";
-import DesktopPageView from "./ComicViewerCards/DesktopPageView";
-import MobilePageView from "./ComicViewerCards/MobilePageView";
-import Header from "../header/Header";
-
+import { useRef, useEffect } from "react";
+import { useMediaQuery } from "react-responsive";
 import { useParams, Link } from "react-router-dom";
+import { useQuery } from "@tanstack/react-query";
 
 import {
   BASE_PATH,
   COMIC_VIEWER_DEFAULT_PATH,
   DOMAIN,
   SNAP_TO_PAGE_PATH,
-} from "../../index";
+  PageAPI,
+} from "../index";
 
-import Pages from "./navigation/desktop/Pages";
-import { useMediaQuery } from "react-responsive";
-import querySizes from "../../styling/breakpoints.json";
-import SimpleNavBar from "../comics/navigation/desktop/SimpleNavBar";
-import { useRef, useEffect } from "react";
+import DesktopPageView from "../components/comics/ComicViewerCards/DesktopPageView";
+import MobilePageView from "../components/comics/ComicViewerCards/MobilePageView";
+import Header from "../components/header/Header";
+import Pages from "../components/comics/navigation/desktop/Pages";
+import querySizes from "../styling/breakpoints.json";
+import SimpleNavBar from "../components/comics/navigation/desktop/SimpleNavBar";
+import { pageFetcher } from "../api/ComicPageAPI";
+import { PARAM_PAGE_UUID } from "../api/RefKeys";
+
+// Returns the query that encapsulates all the data we need for queryFn
+// to get the page specific data that is required
+export function pageDataQuery(pageId) {
+  console.log("this is the page id", pageId);
+  return {
+    queryKey: [pageId],
+    queryFn: pageFetcher,
+  };
+}
+
+export function loader(queryClient) {
+  return async ({ _, params }) => {
+    console.log(params);
+    const query = pageDataQuery(params[PARAM_PAGE_UUID]);
+    return queryClient.ensureQueryData(query);
+  };
+}
 
 export default function ComicViewer(props) {
   const params = useParams();
+  const { data, isLoading } = useQuery();
   const isDesktop = useMediaQuery({ query: querySizes["lg"] });
   const topOfPageRef = useRef(null);
 
@@ -39,6 +58,7 @@ export default function ComicViewer(props) {
     scrollToTopOfPage();
   };
 
+  // TODO replace this with the React Router's Errorelement in the index file on this route
   let unknownRequestContent = (
     <div className="invalidComicPage">
       <div className="text-3xl our-red ">No page found. :(</div>

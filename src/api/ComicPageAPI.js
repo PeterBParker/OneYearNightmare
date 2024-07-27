@@ -1,8 +1,9 @@
 import pagesData from "./data/pagesData.json";
 import users from "./data/users.json";
-import { collection, doc, getDoc } from "firebase/firestore";
+import { validate as isValidUUID } from "uuid";
+import { collection, doc, getDoc, where, query } from "firebase/firestore";
 import { db, COMIC_VIEWER_PATH, BOOKMARK_KEY, PageAPI } from "../index";
-import { DISPLAY_DATA_DOC_KEY, MAX_PAGE_ID_KEY } from "../api/RefKeys";
+import { DISPLAY_DATA_DOC_KEY } from "../api/RefKeys";
 
 // RefKeyMap is a singleton that bridges serializable string constants that act as
 // query keys for react-query to firestore references. Using references as the keys
@@ -52,14 +53,28 @@ function createPath(...pathNodes) {
 }
 
 export async function docFetcher({ queryKey }) {
-  const [docKey, fieldKey] = queryKey;
+  const [docKey] = queryKey;
   const ref = getRefForKey(docKey);
   // TODO: This getDoc await call is not being cached by useQuery, so it's being called again and again. Find a way to cache this reference?
   const docSnap = await getDoc(ref);
-  const data = docSnap.data();
-  if (fieldKey != null && fieldKey.length > 0) {
-    return data[fieldKey];
+  let data = docSnap.data();
+  return data;
+}
+
+export async function pageFetcher({ queryKey }) {
+  // Validate user provided string before blindly sticking it in my query
+  const [pageId] = queryKey;
+  console.log(pageId);
+  if (!isValidUUID(pageId)) {
+    console.log("Not a valid uuid: ", pageId);
+    return {};
   }
+  const pageRef = doc(
+    collection(doc(collection(db, "book_data"), "content"), "pages"),
+    pageId
+  );
+  const docSnap = await getDoc(pageRef);
+  let data = docSnap.data();
   return data;
 }
 
@@ -75,17 +90,6 @@ class ComicPageAPI {
     this.pagesRef = collection(this.contentRef, "pages");
     this.displayRef = doc(this.bookDataRef, "display_data");
     this.countRef = doc(this.bookDataRef, "counts");
-  }
-
-  getMaxPageId() {
-    return this.getDisplayData(MAX_PAGE_ID_KEY)
-      .then((data) => {
-        return data;
-      })
-      .catch((err) => {
-        console.log(err);
-        return null;
-      });
   }
 
   getDisplayData(key) {
@@ -110,10 +114,6 @@ class ComicPageAPI {
       releventObjs.pageObj.filename
     );
     return path;
-  }
-
-  getFirstPageId() {
-    return pagesData.firstDisplayPage;
   }
 
   getSeason(seasons, seasonName) {
