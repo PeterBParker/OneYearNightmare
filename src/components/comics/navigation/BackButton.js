@@ -1,29 +1,25 @@
-import { PageAPI } from "../../../index";
+import { useParams } from "react-router-dom/dist";
 import activeBackIcon from "../../../assets/FINAL-ASSETS-072821/final assets/left-arrow-30px.png";
 import disabledBackIcon from "../../../assets/FINAL-ASSETS-072821/final assets/left-arrow-light-30px.png";
 import NavButton from "./NavButton";
-import { useState, useEffect } from "react";
 import { func, string } from "prop-types";
+import { pageDataQuery } from "../../../routes/ComicViewer";
+import { PARAM_PAGE_UUID, PREV_PAGE_ID } from "../../../api/RefKeys";
+
+function shouldDisable(prevPageId) {
+  if (!prevPageId) {
+    return true;
+  }
+  return false;
+}
 
 export default function BackButton(props) {
-  const [disabled, setDisabled] = useState(true);
-  const [prevPage, setPrevPage] = useState(null);
-
-  useEffect(() => {
-    const relObjs = PageAPI.getRelValidObjs(props.pageId);
-    if (!relObjs.pageObj.prevPageUuid) {
-      setPrevPage(null);
-      setDisabled(true);
-    } else {
-      setPrevPage("/read/" + relObjs.pageObj.prevPageUuid);
-      setDisabled(false);
-    }
-  }, [props.pageId]);
-
+  const params = useParams();
   return (
     <NavButton
-      disabled={disabled}
-      pageFilePath={prevPage}
+      query={pageDataQuery(params[PARAM_PAGE_UUID])}
+      dataKey={PREV_PAGE_ID}
+      shouldDisable={shouldDisable}
       clickEffects={props.clickEffects}
       activeIcon={activeBackIcon}
       disabledIcon={disabledBackIcon}

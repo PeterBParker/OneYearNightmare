@@ -55,6 +55,7 @@ This is a custom, serial, image-hosting website for a graphic-novel I'm writing 
       - `svgo -f ./path/to/svgFolder -o ./path/to/output`
     - Scan with Lighthouse and GTmetrix
   - Introduce logging and log all errors
+  - Replace ComicViewer's error page to use the React Router's errorelement field on the route
   - Fix Scroll to Top of Page sometimes not working
     - Problem seems to be that the onClick function is not getting called?
       - is the onClick event not getting triggered?
@@ -70,7 +71,7 @@ This is a custom, serial, image-hosting website for a graphic-novel I'm writing 
     - Change `./src/api/ComicPageAPI.js` to query Firebase for the info that's in pagesData.json
       - Use the Suspense feature of React 18 which handles all the async and loading state nastiness for me. (https://swizec.com/blog/react-18-and-the-future-of-async-data/)
       - **DONE** Figure out how to asynchronously retrieve data without query waterfalls, effective caching, etc.
-    - Fix the ComicRouter. Upgrading the react-router lib has broken the website. doh.
+    - **DONE** Fix the ComicRouter. Upgrading the react-router lib has broken the website. doh.
     - Change `./src/components/comics/ComicViewer.js`
       - getRelValidObjs on line 65 should be changed to a function that returns if the page exists with the given uuid
       - getFilePath should return the image path in the Firebase Database given a page uuid
@@ -93,3 +94,14 @@ This is a custom, serial, image-hosting website for a graphic-novel I'm writing 
     - Implement Remove Page
 
 - 6. Add tests
+
+# Notes
+
+## Switching Feat Branches
+
+If a branch needs updated packages/updated version of npm:
+
+- Switch to required npm version
+- Delete node_modules/\*
+- Delete package-lock.json
+- Run `npm install`

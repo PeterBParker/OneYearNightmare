@@ -1,27 +1,25 @@
-import { PageAPI } from "../../../index";
+import { useParams } from "react-router-dom/dist";
 import activeLastIcon from "../../../assets/FINAL-ASSETS-072821/final assets/right-skip-line-30px.png";
 import disabledLastIcon from "../../../assets/FINAL-ASSETS-072821/final assets/right-skip-line-light-30px.png";
 import NavButton from "./NavButton";
-import { useState, useEffect } from "react";
 import { func, string } from "prop-types";
+import { displayQuery } from "../../../routes/Reader";
+import { MAX_PAGE_ID_KEY, PARAM_PAGE_UUID } from "../../../api/RefKeys";
 
 export default function LastPageButton(props) {
-  const lastPageId = PageAPI.getMaxDisplayPage();
-  const [disabled, setDisabled] = useState(props.pageId === lastPageId);
+  const params = useParams();
 
-  useEffect(() => {
-    if (props.pageId === lastPageId) {
-      setDisabled(true);
-    } else {
-      setDisabled(false);
+  function shouldDisable(lastPageId) {
+    if (lastPageId === params[PARAM_PAGE_UUID]) {
+      return true;
     }
-  }, [props.pageId]);
-
-  const pageFilePath = "/read/" + lastPageId;
+    return false;
+  }
   return (
     <NavButton
-      disabled={disabled}
-      pageFilePath={pageFilePath}
+      query={displayQuery()}
+      dataKey={MAX_PAGE_ID_KEY}
+      shouldDisable={shouldDisable}
       clickEffects={props.clickEffects}
       activeIcon={activeLastIcon}
       disabledIcon={disabledLastIcon}
