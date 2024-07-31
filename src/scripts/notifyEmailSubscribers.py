@@ -115,9 +115,8 @@ class EmailNotifier:
                 print("Notification successfully sent!")
             else:
                 print("Failed to send for email: ", email)
-        else:
-            print(response.status_code)
-            print(response.body)
+                print(response.status_code)
+                print(response.body)
 
 
 if __name__ == "__main__":

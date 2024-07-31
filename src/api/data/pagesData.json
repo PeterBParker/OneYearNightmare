@@ -1,13 +1,13 @@
 {
-    "maxDisplayPage": "4903144a-4838-40ac-8e76-50e2c7d556cc",
+    "maxDisplayPage": "c0c5245c-c6c6-4503-b04c-8cc6cf8ad952",
     "firstDisplayPage": "92004427-5249-4fa3-80f1-0a67f93ba559",
-    "pageCount": 167,
+    "pageCount": 168,
     "seasonCount": 1,
     "seasons": [
         {
             "seasonName": "First Blood",
             "folderName": "first blood",
-            "numOfPages": 167,
+            "numOfPages": 168,
             "numOfChapters": 6,
             "id": 1,
             "chapters": [
@@ -2134,7 +2134,7 @@
                 {
                     "chapterName": "Chapter Five",
                     "folderName": "chapter5",
-                    "numOfPages": 6,
+                    "numOfPages": 7,
                     "id": 6,
                     "pages": [
                         {
@@ -2211,9 +2211,22 @@
                             "user": "N1995",
                             "icon": "icons/CHAP 5_006-Icon.png",
                             "uuid": "4903144a-4838-40ac-8e76-50e2c7d556cc",
-                            "nextPageUuid": null,
+                            "nextPageUuid": "c0c5245c-c6c6-4503-b04c-8cc6cf8ad952",
                             "prevPageUuid": "2d41bee4-dd1e-49fc-9a10-c551050acef6",
                             "globalPageNum": 165
+                        },
+                        {
+                            "pageNum": 7,
+                            "filename": "CHAP 5_007.webp",
+                            "title": "Meet The Trash Boys",
+                            "message": "Oh. There's more of them. And Rose left quite the impression...with her purse...on the leader's face...",
+                            "datetime": "2024-07-31 17:01:48",
+                            "user": "N1995",
+                            "icon": "icons/CHAP 5_007-Icon.png",
+                            "uuid": "c0c5245c-c6c6-4503-b04c-8cc6cf8ad952",
+                            "nextPageUuid": null,
+                            "prevPageUuid": "4903144a-4838-40ac-8e76-50e2c7d556cc",
+                            "globalPageNum": 166
                         }
                     ]
                 }
@@ -3050,6 +3063,11 @@
             "seasonIndex": 0,
             "chapterIndex": 5,
             "pageIndex": 5
+        },
+        "c0c5245c-c6c6-4503-b04c-8cc6cf8ad952": {
+            "seasonIndex": 0,
+            "chapterIndex": 5,
+            "pageIndex": 6
         }
     }
 }
