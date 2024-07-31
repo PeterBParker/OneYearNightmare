@@ -3,8 +3,6 @@ import { Link } from "react-router-dom";
 import ChapterNumIcon from "./ChapterNumIcon";
 import HamburgerMenu from "./HamburgerMenu";
 
-import { COMIC_VIEWER_DEFAULT_PATH } from "../../index";
-
 export default function MobileHeader(props) {
   return (
     <div>
@@ -22,9 +20,7 @@ export default function MobileHeader(props) {
           </div>
         </div>
         <div className="headerLogoMobile justify-self-center self-start">
-          <Link to={COMIC_VIEWER_DEFAULT_PATH}>
-            <img src={logo} width="170" alt="home link" />
-          </Link>
+          <img src={logo} width="170" alt="home link" />
         </div>
         <HamburgerMenu />
       </div>

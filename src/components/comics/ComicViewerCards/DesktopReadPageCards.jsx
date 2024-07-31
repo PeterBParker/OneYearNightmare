@@ -9,9 +9,9 @@ export default function DesktopReadPageCards(props) {
     <>
       <NotifySignUpBanner isDesktop={true} />
       <div className="desktopReadPageCardsWrapper mx-8">
-        <PageDetailsCard page={props.page} chapter={props.chapter} />
+        <PageDetailsCard />
         <div className="desktopReadPageCardsSupport bg-white ">
-          <Comments slug={props.page.uuid} page={props.page} />
+          <Comments />
         </div>
       </div>
     </>

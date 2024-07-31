@@ -4,13 +4,22 @@ import disabledBackIcon from "../../../assets/FINAL-ASSETS-072821/final assets/l
 import NavButton from "./NavButton";
 import { func, string } from "prop-types";
 import { pageDataQuery } from "../../../routes/ComicViewer";
-import { PARAM_PAGE_UUID, PREV_PAGE_ID } from "../../../api/RefKeys";
+import {
+  PARAM_PAGE_UUID,
+  PAGE_PREV_PAGE_ID,
+  PAGE_KEY,
+} from "../../../api/RefKeys";
 
-function shouldDisable(prevPageId) {
-  if (!prevPageId) {
-    return true;
+function getPageIdToLinkTo(data) {
+  if (PAGE_KEY in data) {
+    if (PAGE_PREV_PAGE_ID in data[PAGE_KEY]) {
+      let prevPageId = data[PAGE_KEY][PAGE_PREV_PAGE_ID];
+      if (prevPageId != null) {
+        return prevPageId;
+      }
+    }
   }
-  return false;
+  return "";
 }
 
 export default function BackButton(props) {
@@ -18,8 +27,8 @@ export default function BackButton(props) {
   return (
     <NavButton
       query={pageDataQuery(params[PARAM_PAGE_UUID])}
-      dataKey={PREV_PAGE_ID}
-      shouldDisable={shouldDisable}
+      dataKey={PAGE_PREV_PAGE_ID}
+      getPageIdToLinkTo={getPageIdToLinkTo}
       clickEffects={props.clickEffects}
       activeIcon={activeBackIcon}
       disabledIcon={disabledBackIcon}
@@ -29,6 +38,5 @@ export default function BackButton(props) {
 }
 
 BackButton.propTypes = {
-  pageId: string.isRequired,
   clickEffects: func.isRequired,
 };

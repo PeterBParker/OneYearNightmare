@@ -4,13 +4,22 @@ import activeNextIcon from "../../../assets/FINAL-ASSETS-072821/final assets/rig
 import disabledNextIcon from "../../../assets/FINAL-ASSETS-072821/final assets/right-arrow-light-30px.png";
 import NavButton from "./NavButton";
 import { pageDataQuery } from "../../../routes/ComicViewer";
-import { PARAM_PAGE_UUID, NEXT_PAGE_ID } from "../../../api/RefKeys";
+import {
+  PARAM_PAGE_UUID,
+  PAGE_NEXT_PAGE_ID,
+  PAGE_KEY,
+} from "../../../api/RefKeys";
 
-function shouldDisable(nextPageId) {
-  if (!nextPageId) {
-    return true;
+function getPageIdToLinkTo(data) {
+  if (PAGE_KEY in data) {
+    if (PAGE_NEXT_PAGE_ID in data[PAGE_KEY]) {
+      let nextPageId = data[PAGE_KEY][PAGE_NEXT_PAGE_ID];
+      if (nextPageId != null) {
+        return nextPageId;
+      }
+    }
   }
-  return false;
+  return "";
 }
 
 export default function NextButton(props) {
@@ -18,8 +27,8 @@ export default function NextButton(props) {
   return (
     <NavButton
       query={pageDataQuery(params[PARAM_PAGE_UUID])}
-      dataKey={NEXT_PAGE_ID}
-      shouldDisable={shouldDisable}
+      dataKey={PAGE_NEXT_PAGE_ID}
+      getPageIdToLinkTo={getPageIdToLinkTo}
       clickEffects={props.clickEffects}
       activeIcon={activeNextIcon}
       disabledIcon={disabledNextIcon}
@@ -29,6 +38,5 @@ export default function NextButton(props) {
 }
 
 NextButton.propTypes = {
-  pageId: string.isRequired,
   clickEffects: func.isRequired,
 };

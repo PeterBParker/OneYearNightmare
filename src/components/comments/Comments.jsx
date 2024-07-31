@@ -16,6 +16,8 @@ import {
   onSnapshot,
 } from "firebase/firestore";
 import { PAGE_COMMENTS_TABLE } from "./utils/constants";
+import { useParams } from "react-router-dom/dist";
+import { PARAM_PAGE_UUID } from "../../api/RefKeys";
 
 const Title = loadable(() => import("../generic/Title"));
 const LinkButton = loadable(() => import("../generic/LinkButton"));
@@ -24,12 +26,13 @@ const CreateNewCommentForm = loadable(() => import("./CreateNewCommentForm"));
 /**
  * Renders supplied comment data.
  */
-export default function Comments(props) {
+export default function Comments() {
+  const params = useParams();
   const [showCommentSubmit, setShowCommentSubmit] = useState(false);
   const authUser = useFirebaseAuth(auth);
   const [comments, setComments] = useState([]);
 
-  const page_uuid = props.page.uuid;
+  const page_uuid = params[PARAM_PAGE_UUID];
 
   useEffect(() => {
     const commentsQuery = query(
@@ -74,7 +77,7 @@ export default function Comments(props) {
                   key={comment.id}
                   children={children}
                   comment={comment}
-                  slug={props.slug}
+                  slug={page_uuid}
                 />
               );
             })
@@ -86,7 +89,7 @@ export default function Comments(props) {
         showCommentSubmit ? (
           <div className="mx-4 my-4">
             <CreateNewCommentForm
-              slug={props.slug}
+              slug={page_uuid}
               callback={() => setShowCommentSubmit(false)}
             />
             <div
@@ -114,8 +117,3 @@ export default function Comments(props) {
     </div>
   );
 }
-
-Comments.propTypes = {
-  slug: PropTypes.string.isRequired,
-  page: object.isRequired,
-};

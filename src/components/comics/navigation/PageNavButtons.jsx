@@ -13,19 +13,15 @@ export default function PageNavButtons(props) {
           : "flex flex-col sticky top-0 content-center justify-center"
       }`}
     >
-      <FirstPageButton
-        pageId={props.pageId}
-        clickEffects={props.clickEffects}
-      />
-      <BackButton pageId={props.pageId} clickEffects={props.clickEffects} />
+      <FirstPageButton clickEffects={props.clickEffects} />
+      <BackButton clickEffects={props.clickEffects} />
       <BookmarkButton
         setBookmark={props.setBookmark}
-        pageId={props.pageId}
         bookmarkIcon={props.bookmarkIcon}
         isMobile={props.isMobile}
       />
-      <NextButton pageId={props.pageId} clickEffects={props.clickEffects} />
-      <LastPageButton pageId={props.pageId} clickEffects={props.clickEffects} />
+      <NextButton clickEffects={props.clickEffects} />
+      <LastPageButton clickEffects={props.clickEffects} />
     </div>
   );
 }

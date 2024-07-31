@@ -82,8 +82,6 @@ export const JOINT_SIG = "Mo and Nate";
 export const NO_USER_ID = "null";
 export const SNAP_TO_PAGE_PATH = "snap-to-page";
 export const MAX_COMMENT_CHARS = 350;
-export const COMIC_VIEWER_DEFAULT_PATH =
-  COMIC_VIEWER_PATH + "/" + PageAPI.getFirstPageId();
 
 const queryClient = new QueryClient();
 const router = createBrowserRouter([

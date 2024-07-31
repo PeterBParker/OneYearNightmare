@@ -2,16 +2,35 @@ import { PageAPI } from "../../index";
 import pageData from "../../api/data/pagesData.json";
 import { useState } from "react";
 import { useParams } from "react-router-dom";
+import { useQuery } from "@tanstack/react-query";
+import { pageDataQuery } from "../../routes/ComicViewer";
+import {
+  CHAP_KEY,
+  CHAP_ORDER_IN_BOOK,
+  PARAM_PAGE_UUID,
+} from "../../api/RefKeys";
 
 export default function ChapterNumIcon() {
   const params = useParams();
-  const [currPage, setCurrPage] = useState(pageData.maxDisplayPage);
+  const { data, isLoading } = useQuery(pageDataQuery(params[PARAM_PAGE_UUID]));
+  const [currPage, setCurrPage] = useState(null);
+  let chapNum = 0;
 
-  if (params.pageUuid != null && params.pageUuid !== currPage) {
-    setCurrPage(params.pageUuid);
+  if (isLoading) {
+    // TODO return tiny spinner
+    chapNum = 0;
+  } else {
+    if (params.pageUuid != null && params.pageUuid !== currPage) {
+      setCurrPage(params.pageUuid);
+    }
+
+    if (CHAP_KEY in data) {
+      if (CHAP_ORDER_IN_BOOK in data[CHAP_KEY]) {
+        // TODO move this subtraction into a central function
+        chapNum = data[CHAP_KEY][CHAP_ORDER_IN_BOOK] - 1;
+      }
+    }
   }
-
-  let chapNum = PageAPI.getChapterNum(currPage);
 
   return (
     <div className="volNumContainer ml-2 flex-shrink-0">

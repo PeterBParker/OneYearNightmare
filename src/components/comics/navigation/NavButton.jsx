@@ -10,9 +10,8 @@ import { useQuery } from "@tanstack/react-query";
  * such as disabledIcon (image to display when disabled) and animationClass (CSS class to add for an animation),
  * NavButton requires three less-inuitive props:
  *  1. a data query which is an React Query object for fetching the uuid of the page to link to
- *  2. the key that the page uuid is stored under in the returned data object of the query
- *  3. a function that takes as its first and only parameter the page uuid retrieved by 1&2 and returns a boolean
- *     for if the button should be disabled or not.
+ *  3. a function that takes as its first and only parameter the data that is returned from using 1 (the query)
+ *     and returns empty string if the button should be disabled or the page id to link to if not
  */
 export default function NavButton(props) {
   const params = useParams();
@@ -22,11 +21,12 @@ export default function NavButton(props) {
 
   useEffect(() => {
     if (!isLoading) {
-      if (props.shouldDisable(data[props.dataKey])) {
+      let id = props.getPageIdToLinkTo(data);
+      if (id === "") {
         setLinkedPage(null);
         setDisabled(true);
       } else {
-        setLinkedPage(COMIC_VIEWER_PATH + "/" + data[props.dataKey]);
+        setLinkedPage(COMIC_VIEWER_PATH + "/" + id);
         setDisabled(false);
       }
     }
@@ -78,7 +78,6 @@ export default function NavButton(props) {
 
 NavButton.propTypes = {
   query: object.isRequired,
-  dataKey: string.isRequired,
   clickEffects: func.isRequired,
   activeIcon: string.isRequired,
   disabledIcon: string.isRequired,

@@ -1,9 +1,22 @@
 import pagesData from "./data/pagesData.json";
 import users from "./data/users.json";
 import { validate as isValidUUID } from "uuid";
-import { collection, doc, getDoc, where, query } from "firebase/firestore";
-import { db, COMIC_VIEWER_PATH, BOOKMARK_KEY, PageAPI } from "../index";
-import { DISPLAY_DATA_DOC_KEY } from "../api/RefKeys";
+import { collection, doc, getDoc } from "firebase/firestore";
+import { ref, getDownloadURL } from "firebase/storage";
+import {
+  db,
+  COMIC_VIEWER_PATH,
+  BOOKMARK_KEY,
+  PageAPI,
+  storage,
+} from "../index";
+import {
+  DISPLAY_DATA_DOC_KEY,
+  CHAP_KEY,
+  PAGE_KEY,
+  PAGE_CHAP_KEY,
+  PAGE_FILENAME,
+} from "../api/RefKeys";
 
 // RefKeyMap is a singleton that bridges serializable string constants that act as
 // query keys for react-query to firestore references. Using references as the keys
@@ -64,7 +77,6 @@ export async function docFetcher({ queryKey }) {
 export async function pageFetcher({ queryKey }) {
   // Validate user provided string before blindly sticking it in my query
   const [pageId] = queryKey;
-  console.log(pageId);
   if (!isValidUUID(pageId)) {
     console.log("Not a valid uuid: ", pageId);
     return {};
@@ -73,8 +85,22 @@ export async function pageFetcher({ queryKey }) {
     collection(doc(collection(db, "book_data"), "content"), "pages"),
     pageId
   );
-  const docSnap = await getDoc(pageRef);
-  let data = docSnap.data();
+  const pageSnap = await getDoc(pageRef);
+  // Get URL for page
+  // let blobRef = ref(storage, "pages/" + pageSnap.data()[PAGE_FILENAME]);
+  // let url = await getDownloadURL(blobRef);
+  // Fetch the chapter data for this page
+  const chapRef = doc(
+    collection(doc(collection(db, "book_data"), "content"), "chapters"),
+    pageSnap.data()[PAGE_CHAP_KEY]
+  );
+  const chapSnap = await getDoc(chapRef);
+  let data = {
+    [PAGE_KEY]: pageSnap.data(),
+    [CHAP_KEY]: chapSnap.data(),
+  };
+  // data[PAGE_KEY]["new_url"] = url;
+
   return data;
 }
 
@@ -84,12 +110,12 @@ class ComicPageAPI {
     this.db = db;
     this.storage = storage;
     // Reference Constants
-    this.bookDataRef = collection(this.db, "book_data");
-    this.contentRef = doc(this.bookDataRef, "content");
-    this.chaptersRef = collection(this.contentRef, "chapters");
-    this.pagesRef = collection(this.contentRef, "pages");
-    this.displayRef = doc(this.bookDataRef, "display_data");
-    this.countRef = doc(this.bookDataRef, "counts");
+    // this.bookDataRef = collection(this.db, "book_data");
+    // this.contentRef = doc(this.bookDataRef, "content");
+    // this.chaptersRef = collection(this.contentRef, "chapters");
+    // this.pagesRef = collection(this.contentRef, "pages");
+    // this.displayRef = doc(this.bookDataRef, "display_data");
+    // this.countRef = doc(this.bookDataRef, "counts");
   }
 
   getDisplayData(key) {

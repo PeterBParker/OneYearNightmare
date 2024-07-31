@@ -20,6 +20,9 @@ This is a custom, serial, image-hosting website for a graphic-novel I'm writing 
 ### Do Once
 
 1. If missing test data, export the project data with `gcloud firestore export  gs://oneyearnightmarefirstsite.appspot.com/firestore_export`
+
+- You may need to remove the data from the Storage db before running the command if you've done this before.
+
 2. Downloaded the test data `gsutil -m cp -R gs://oneyearnightmarefirstsite.appspot.com/firestore_export .`
 
 ### Do every time
@@ -72,13 +75,18 @@ This is a custom, serial, image-hosting website for a graphic-novel I'm writing 
       - Use the Suspense feature of React 18 which handles all the async and loading state nastiness for me. (https://swizec.com/blog/react-18-and-the-future-of-async-data/)
       - **DONE** Figure out how to asynchronously retrieve data without query waterfalls, effective caching, etc.
     - **DONE** Fix the ComicRouter. Upgrading the react-router lib has broken the website. doh.
-    - Change `./src/components/comics/ComicViewer.js`
-      - getRelValidObjs on line 65 should be changed to a function that returns if the page exists with the given uuid
-      - getFilePath should return the image path in the Firebase Database given a page uuid
-      - The DesktopPageView and MobilePageView should be refactored to just take the page uuid and then make the relevant API calls to get the data they need rather than passing a big json object through.
-    - Change `./src/components/comics/PageDetailsCard.js` to call the API to get the data rather than using an object with the data passed into the props
-    - Do the same for `./src/components/comments/Comments.jsx`
+    - Change the components to pull from the server
+      - **DONE** Navigation buttons
+      - **DONE** Pages in the db are missing their chapter id (and season id?)
+      - **DONE** Augment data import script to generate and save public urls as a part of the page data
+      - Create development test data because page download urls
+        - Add avatars to the test data
+        - Remove actual user's comments and avatars from test data
+      - Add page info to the page cards
+      - Load the icons on the archive page
+      - Add loading animations
     - Figure out how to reduce the number of unnecessary queries
+    - Fix the styling
 
   - Add an "admin" type to user accounts
   - Add an nav button for admin accounts to "Page Management"
@@ -97,7 +105,26 @@ This is a custom, serial, image-hosting website for a graphic-novel I'm writing 
 
 # Notes
 
-## Switching Feat Branches
+## Importing Data from JSON to Firebase/Storage
+
+### Production
+
+```
+cd src/scripts
+python ./importPageData.py ../api/data/pagesData.json oneyearnightmarefirstsite
+```
+
+### Emulators
+
+Same as Production but with the env variable set:
+
+```
+export FIREBASE_STORAGE_EMULATOR_HOST="127.0.0.1:9199"
+cd src/scripts
+python ./importPageData.py ../api/data/pagesData.json oneyearnightmarefirstsite
+```
+
+## Switching Feature Branches
 
 If a branch needs updated packages/updated version of npm:
 

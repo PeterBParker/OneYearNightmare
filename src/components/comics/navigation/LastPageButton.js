@@ -9,17 +9,24 @@ import { MAX_PAGE_ID_KEY, PARAM_PAGE_UUID } from "../../../api/RefKeys";
 export default function LastPageButton(props) {
   const params = useParams();
 
-  function shouldDisable(lastPageId) {
-    if (lastPageId === params[PARAM_PAGE_UUID]) {
-      return true;
+  function getPageIdToLinkTo(data) {
+    if (MAX_PAGE_ID_KEY in data) {
+      let lastPageId = data[MAX_PAGE_ID_KEY];
+      // Check if we are on the first page
+      if (lastPageId === params[PARAM_PAGE_UUID]) {
+        return "";
+      }
+      return lastPageId;
     }
-    return false;
+    // The data hasn't loaded yet and we don't know
+    return "";
   }
+
   return (
     <NavButton
       query={displayQuery()}
       dataKey={MAX_PAGE_ID_KEY}
-      shouldDisable={shouldDisable}
+      getPageIdToLinkTo={getPageIdToLinkTo}
       clickEffects={props.clickEffects}
       activeIcon={activeLastIcon}
       disabledIcon={disabledLastIcon}
@@ -29,6 +36,5 @@ export default function LastPageButton(props) {
 }
 
 LastPageButton.propTypes = {
-  pageId: string.isRequired,
   clickEffects: func.isRequired,
 };

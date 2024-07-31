@@ -5,10 +5,13 @@ import { BOOKMARK_KEY } from "../../../index";
 import bookmarkOutline from "../../../assets/bookies/bookies/bookie-short-line-40px.png";
 import bookmarkFilled from "../../../assets/bookies/bookies/bookie-short-fill-40px.png";
 import { useState } from "react";
-import { bool, func, string } from "prop-types";
+import { bool, func } from "prop-types";
 import { PageAPI } from "../../../index";
+import { useParams } from "react-router-dom/dist";
+import { PARAM_PAGE_UUID } from "../../../api/RefKeys";
 
 export default function NavBar(props) {
+  const params = useParams();
   const [bookmarkIcon, setBookmarkIcon] = useState(bookmarkOutline);
   const [bookmarkId, setBookmarkId] = useState(
     localStorage.getItem(BOOKMARK_KEY)
@@ -21,16 +24,15 @@ export default function NavBar(props) {
   }, [bookmarkId]);
 
   useEffect(() => {
-    if (props.pageId.toString() === bookmarkId) {
+    if (params[PARAM_PAGE_UUID] === bookmarkId) {
       setBookmarkIcon(bookmarkFilled);
     } else {
       setBookmarkIcon(bookmarkOutline);
     }
-  }, [bookmarkId, props.pageId]);
+  }, [bookmarkId, params]);
 
   return (
     <PageNavButtons
-      pageId={props.pageId}
       isMobile={props.isMobile}
       clickEffects={props.clickEffects}
       bookmarkIcon={bookmarkIcon}
@@ -40,7 +42,6 @@ export default function NavBar(props) {
 }
 
 NavBar.propTypes = {
-  pageId: string.isRequired,
   isMobile: bool.isRequired,
   clickEffects: func.isRequired,
 };
