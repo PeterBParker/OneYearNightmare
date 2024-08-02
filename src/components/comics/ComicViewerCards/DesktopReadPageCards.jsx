@@ -4,7 +4,7 @@ import NotifySignUpBanner from "./NotifySignUpBanner";
 const PageDetailsCard = loadable(() => import("../PageDetailsCard"));
 const Comments = loadable(() => import("../../comments/Comments"));
 
-export default function DesktopReadPageCards(props) {
+export default function DesktopReadPageCards() {
   return (
     <>
       <NotifySignUpBanner isDesktop={true} />

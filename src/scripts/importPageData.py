@@ -13,7 +13,7 @@ from firebase_admin.storage import bucket
 
 
 class FirestoreImporter:
-    def __init__(self, projectId: str):
+    def __init__(self, projectId: str, nathan_id: str, mo_id: str):
         default_app = firebase_admin.initialize_app(
             options={"projectId": projectId})
         self.db = client(default_app)
@@ -21,6 +21,8 @@ class FirestoreImporter:
         self.blob_pages_prefix = "pages/"
         self.bucket = bucket(
             name="oneyearnightmarefirstsite.appspot.com", app=default_app)
+        self.NATHAN_ID = nathan_id
+        self.MORGHAN_ID = mo_id
 
     def get_page_ref(self, page):
         return self.db.collection("book_data").document("content").collection("pages").document(page["uuid"])
@@ -61,7 +63,7 @@ class FirestoreImporter:
                     if url is None:
                         continue
                     del_list = ["pageNum", "globalPageNum",
-                                "nextPageUuid", "prevPageUuid"]
+                                "nextPageUuid", "prevPageUuid", "user"]
                     ref = self.get_page_ref(page)
 
                     # Rename some var names to be consistent
@@ -73,6 +75,10 @@ class FirestoreImporter:
                     page["chapter_id"] = chap["uuid"]
                     page["season_id"] = season["uuid"]
                     page["public_url"] = url
+                    if page["user"] == "N1995":
+                        page["author"] = self.NATHAN_ID
+                    else:
+                        page["author"] = self.MORGHAN_ID
 
                     # Remove all the old var names
                     for key in del_list:
@@ -112,6 +118,8 @@ def initialize_argparser():
     )
     parser.add_argument("json_filepath")
     parser.add_argument("project_id")
+    parser.add_argument("nathan_id")
+    parser.add_argument("mo_id")
     return parser
 
 
@@ -126,7 +134,8 @@ if __name__ == "__main__":
         with open(args.json_filepath, "r", encoding="utf-8") as f:
             json_data = json.load(f)
 
-        importer = FirestoreImporter(args.project_id)
+        importer = FirestoreImporter(
+            args.project_id, args.nathan_id, args.mo_id)
         importer.run(json_data)
 
     except OSError as err:

@@ -15,7 +15,8 @@ import {
   CHAP_KEY,
   PAGE_KEY,
   PAGE_CHAP_KEY,
-  PAGE_FILENAME,
+  AUTHOR_KEY,
+  PAGE_AUTHOR,
 } from "../api/RefKeys";
 
 // RefKeyMap is a singleton that bridges serializable string constants that act as
@@ -86,20 +87,23 @@ export async function pageFetcher({ queryKey }) {
     pageId
   );
   const pageSnap = await getDoc(pageRef);
-  // Get URL for page
-  // let blobRef = ref(storage, "pages/" + pageSnap.data()[PAGE_FILENAME]);
-  // let url = await getDownloadURL(blobRef);
   // Fetch the chapter data for this page
   const chapRef = doc(
     collection(doc(collection(db, "book_data"), "content"), "chapters"),
     pageSnap.data()[PAGE_CHAP_KEY]
   );
-  const chapSnap = await getDoc(chapRef);
+  // Fetch the author data for this page
+  const userRef = doc(collection(db, "users"), pageSnap.data()[PAGE_AUTHOR]);
+  // Parallelize the async calls
+  let [chapSnap, userSnap] = await Promise.all([
+    getDoc(chapRef),
+    getDoc(userRef),
+  ]);
   let data = {
     [PAGE_KEY]: pageSnap.data(),
     [CHAP_KEY]: chapSnap.data(),
+    [AUTHOR_KEY]: userSnap.data(),
   };
-  // data[PAGE_KEY]["new_url"] = url;
 
   return data;
 }

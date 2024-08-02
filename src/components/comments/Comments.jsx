@@ -1,4 +1,3 @@
-import PropTypes, { object } from "prop-types";
 import loadable from "@loadable/component";
 
 import beTheFirst from "../../assets/Be_the_first.webp";

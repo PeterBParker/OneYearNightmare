@@ -11,6 +11,7 @@ import { v4 as uuidv4 } from "uuid";
 import { storeUserAvatar } from "../avatarHelpers";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowsRotate } from "@fortawesome/free-solid-svg-icons";
+import { useMutation } from "@tanstack/react-query";
 
 const UserProfile = () => {
   const [notInitialized, setNotInitialized] = useState(
@@ -42,6 +43,11 @@ const DisplayInfo = () => {
   const [avatarSeed, setAvatarSeed] = useState("");
   const [fetchedAvatar, setFetchedAvatar] = useState(null);
   const [avatarSaved, setAvatarSaved] = useState(true);
+  const mutation = useMutation({
+    mutationFn: (avatarData) => {
+      return storeUserAvatar(avatarData["userId"], avatarData["seed"]);
+    },
+  });
 
   const changeAvatar = () => {
     let newSeed = uuidv4();
@@ -74,7 +80,7 @@ const DisplayInfo = () => {
                 className="btn btn-std-hover bg-green-confirm px-4 py-2 font-medium avatarModBtn"
                 onClick={async () => {
                   setAvatarSaved(false);
-                  await storeUserAvatar(user.uid, avatarSeed);
+                  await mutation.mutate({ userId: user.uid, seed: avatarSeed });
                   setAvatarSaved(true);
                 }}
               >

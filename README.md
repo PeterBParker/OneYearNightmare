@@ -83,6 +83,10 @@ This is a custom, serial, image-hosting website for a graphic-novel I'm writing 
         - Add avatars to the test data
         - Remove actual user's comments and avatars from test data
       - Add page info to the page cards
+        - **DONE** Pull display name from server
+        - **DONE** Pull display icon from server
+          - **DONE??? Just have to test** Expand avatar helpers to store not just the image in the storage bucket, but also the public url of the image as a field in the user document
+          - Make fallback a joint avatar stored locally
       - Load the icons on the archive page
       - Add loading animations
     - Figure out how to reduce the number of unnecessary queries
@@ -120,6 +124,7 @@ Same as Production but with the env variable set:
 
 ```
 export FIREBASE_STORAGE_EMULATOR_HOST="127.0.0.1:9199"
+export FIRESTORE_EMULATOR_HOST="127.0.0.1:8080"
 cd src/scripts
 python ./importPageData.py ../api/data/pagesData.json oneyearnightmarefirstsite
 ```
