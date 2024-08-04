@@ -48,6 +48,7 @@ This is a custom, serial, image-hosting website for a graphic-novel I'm writing 
 
   - Add infinite scroll instead of button navigation
   - Add tap on either side of page to navigate
+  - Make buttons more contrasting with the rest of the site to draw the user's eye there quicker
 
 - 4. MISC
 
@@ -86,6 +87,11 @@ This is a custom, serial, image-hosting website for a graphic-novel I'm writing 
         - **DONE** Pull display name from server
         - **DONE** Pull display icon from server
           - **DONE??? Just have to test** Expand avatar helpers to store not just the image in the storage bucket, but also the public url of the image as a field in the user document
+            - The firebase auth UI isn't compatible with the firebase v9 SDK, so I have to build my own auth UI.
+              - Create a dedicated "Login" Page. Make it a form that collects the user's email and calls the function to send a sign in link. Make the url in the email direct to the "profile" page
+              - Create a dedicated "Profile" Page.
+              - In the root App route make a data loader to grab the signed-in user data
+              - In the nav bar render the Login nav button if no user data is found. If user data is found, render the Profile button. Default to Login, but make it essential so that the react router doesn't render the page until that data has been fetched.
           - Make fallback a joint avatar stored locally
       - Load the icons on the archive page
       - Add loading animations
