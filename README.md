@@ -96,7 +96,8 @@ This is a custom, serial, image-hosting website for a graphic-novel I'm writing 
       - Load the icons on the archive page
       - Add loading animations
     - Figure out how to reduce the number of unnecessary queries
-    - Fix the styling
+    - **DONE** Fix the styling
+    - Fix the mobile comments
 
   - Add an "admin" type to user accounts
   - Add an nav button for admin accounts to "Page Management"

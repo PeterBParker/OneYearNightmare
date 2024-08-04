@@ -1,10 +1,13 @@
 import "../styling/App.css";
 import { Outlet } from "react-router-dom";
+import { useMediaQuery } from "react-responsive";
+import querySizes from "../styling/breakpoints.json";
 import Footer from "../components/Footer";
 
 function App() {
+  const isDesktop = useMediaQuery({ query: querySizes["lg"] });
   return (
-    <div className="App">
+    <div className={`App${isDesktop ? " desktopBg comicViewerDesktop" : ""}`}>
       <Outlet />
       <Footer />
     </div>
