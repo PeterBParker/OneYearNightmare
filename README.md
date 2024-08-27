@@ -37,3 +37,4 @@ This branch requires node version 16.17.0 to install and build.
       - `svgo -f ./path/to/svgFolder -o ./path/to/output`
     - Scan with Lighthouse and GTmetrix
   - Introduce logging and log all errors
+  - Build Docker images for building and deploying the website
