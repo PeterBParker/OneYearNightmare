@@ -1,14 +1,14 @@
 {
-    "maxDisplayPage": "7a7dbfa3-298b-4cda-bd68-32ae108bf724",
+    "maxDisplayPage": "78c5582c-aff2-404f-9184-d95f7404416d",
     "firstDisplayPage": "92004427-5249-4fa3-80f1-0a67f93ba559",
-    "pageCount": 162,
+    "pageCount": 171,
     "seasonCount": 1,
     "seasons": [
         {
             "seasonName": "First Blood",
             "folderName": "first blood",
-            "numOfPages": 162,
-            "numOfChapters": 5,
+            "numOfPages": 171,
+            "numOfChapters": 6,
             "uuid": "44bd96b7-acec-4f01-9425-9bb3d59e29e4",
             "order": 1,
             "chapters": [
@@ -1431,7 +1431,7 @@
                             "message": "Chapter 3 baby!! You know who loooooves drawing backgrounds?!?! ....cause, like, if you know anyone, send them over my way, kay?",
                             "datetime": "2022-10-03 16:16:43",
                             "user": "M1998",
-                            "icon": "icons/Chp3-Pg1-Icon.png",
+                            "icon": "icons/Chp3-Pg01-Icon.png",
                             "uuid": "2faf6043-2a18-48e0-a8da-e4988197b29b",
                             "nextPageUuid": "4476b890-3615-4222-8de9-e659bad15877",
                             "prevPageUuid": "ce028594-e41f-43dd-8c06-0760d3e2a0db",
@@ -1444,7 +1444,7 @@
                             "message": "Now how many of you saw the beat-up van with a trail of smoke coming out of it on the last page and thought it was a blunt? Now be honest...",
                             "datetime": "2022-10-03 16:18:42",
                             "user": "M1998",
-                            "icon": "icons/Chp3-Pg2-Icon.png",
+                            "icon": "icons/Chp3-Pg02-Icon.png",
                             "uuid": "4476b890-3615-4222-8de9-e659bad15877",
                             "nextPageUuid": "9d8be4cd-f461-40cb-82fb-08ba6cb55ad0",
                             "prevPageUuid": "2faf6043-2a18-48e0-a8da-e4988197b29b",
@@ -1457,7 +1457,7 @@
                             "message": "Death isn't always ragged cloaks and bloody scythes. Sure there's that part, the fun bit everyone sees, but there's a lot of paperwork that has to happen behind-the-scenes, a lot of checks and balances that have to add up. With that much deskwork stacking up, the Grim Reaper practically had to invent accounting. Too bad he's too busy to refresh his wardrobe more than every hundred years or so. 🤓",
                             "datetime": "2022-10-10 16:44:49",
                             "user": "N1995",
-                            "icon": "icons/Chp3-Pg3-Icon.png",
+                            "icon": "icons/Chp3-Pg03-Icon.png",
                             "uuid": "9d8be4cd-f461-40cb-82fb-08ba6cb55ad0",
                             "nextPageUuid": "80e105e0-936e-4da1-9e86-1e394b4be654",
                             "prevPageUuid": "4476b890-3615-4222-8de9-e659bad15877",
@@ -1470,7 +1470,7 @@
                             "message": "We love to see a friend who laughs at terrible jokes. We much less love if they are death incarnate, but hey! Sometimes the puns are bad enough you can't be picky... 💀",
                             "datetime": "2022-10-10 16:51:47",
                             "user": "N1995",
-                            "icon": "icons/Chp3-Pg4-Icon.png",
+                            "icon": "icons/Chp3-Pg04-Icon.png",
                             "uuid": "80e105e0-936e-4da1-9e86-1e394b4be654",
                             "nextPageUuid": "58269205-a043-45f8-9272-e12b709e8abf",
                             "prevPageUuid": "9d8be4cd-f461-40cb-82fb-08ba6cb55ad0",
@@ -1483,7 +1483,7 @@
                             "message": "Girl's still waiting for her undead cat! Get on that, good sir!",
                             "datetime": "2022-10-24 11:17:16",
                             "user": "M1998",
-                            "icon": "icons/Chp3-Pg5-Icon.png",
+                            "icon": "icons/Chp3-Pg05-Icon.png",
                             "uuid": "58269205-a043-45f8-9272-e12b709e8abf",
                             "nextPageUuid": "0ff90545-8be9-447d-b887-ed90b3244134",
                             "prevPageUuid": "80e105e0-936e-4da1-9e86-1e394b4be654",
@@ -1496,7 +1496,7 @@
                             "message": "For all those who are worried for Mr. Barr's well-being and for the people sending me messages like 'Is Mr. Barr okay? He looks like a limp noodle' and 'We want more souls of doughy old men!' the wait is over! Presenting Mr. Barr, in the flesh -err... black goo.",
                             "datetime": "2022-10-24 11:25:24",
                             "user": "M1998",
-                            "icon": "icons/Chp3-Pg6-Icon.png",
+                            "icon": "icons/Chp3-Pg06-Icon.png",
                             "uuid": "0ff90545-8be9-447d-b887-ed90b3244134",
                             "nextPageUuid": "f58aeb6d-8a17-4e6c-8823-44be42e3dd99",
                             "prevPageUuid": "58269205-a043-45f8-9272-e12b709e8abf",
@@ -1509,7 +1509,7 @@
                             "message": "The River Styx needed a fresh, new look for the modern age...thus the banker drawer dating early 1900s.",
                             "datetime": "2022-10-31 14:57:42",
                             "user": "M1998",
-                            "icon": "icons/Chp3-Pg7-Icon.png",
+                            "icon": "icons/Chp3-Pg07-Icon.png",
                             "uuid": "f58aeb6d-8a17-4e6c-8823-44be42e3dd99",
                             "nextPageUuid": "6c097b46-10d9-438e-ba72-9bfa996a15e1",
                             "prevPageUuid": "0ff90545-8be9-447d-b887-ed90b3244134",
@@ -1522,7 +1522,7 @@
                             "message": "A skeleton and a young girl  //  Talk murder as coffee steam swirls  //  Alone in a van  //  With dangers at hand  //  That later next week will unfurl  //  I'm not the poet, she is. Happy Halloween 🎃",
                             "datetime": "2022-10-31 15:10:48",
                             "user": "M1998",
-                            "icon": "icons/Chp3-Pg8-Icon.png",
+                            "icon": "icons/Chp3-Pg08-Icon.png",
                             "uuid": "6c097b46-10d9-438e-ba72-9bfa996a15e1",
                             "nextPageUuid": "42c439a7-fc18-43e3-94b0-ea16f129607f",
                             "prevPageUuid": "f58aeb6d-8a17-4e6c-8823-44be42e3dd99",
@@ -2064,7 +2064,7 @@
                             "message": "Happy Holidays everyone! We're doing our annual winter break to build up some backlog and take a breather!",
                             "datetime": "2023-12-27 13:50:56",
                             "user": "N1995",
-                            "icon": "icons/Christmas_2023-pg2-Icon.png",
+                            "icon": "icons/Christmas_2023-pg-Icon.png",
                             "uuid": "32fd1894-7762-4de6-aa7b-de36c1c9efce",
                             "nextPageUuid": "d5f0340a-1e78-4aa4-9915-f2c974b4e294",
                             "prevPageUuid": "86fcb3dd-3cc7-4c8a-b135-2a8af7476999",
@@ -2131,22 +2131,147 @@
                             "user": "N1995",
                             "icon": "icons/Chp4-Pg25-Icon.png",
                             "uuid": "2ed22dd6-4b01-40dd-b0e0-207da0d54805",
-                            "nextPageUuid": "7a7dbfa3-298b-4cda-bd68-32ae108bf724",
+                            "nextPageUuid": "2e8bf0bf-536b-48d0-a433-9dfaa2e14c6f",
                             "prevPageUuid": "5ce31c25-119d-4535-a58c-7cec90d16c92",
                             "globalPageNum": 159
-                        },
+                        }
+                    ]
+                },
+                {
+                    "chapterName": "Chapter Five",
+                    "folderName": "chapter5",
+                    "numOfPages": 10,
+                    "id": 6,
+                    "pages": [
                         {
-                            "pageNum": 29,
-                            "filename": "Chapter_5_Coming.webp",
-                            "title": "Chapter 5 Pre-Production Annoucement",
-                            "message": "It's times like these I have to remind myself that it's NOT better to be a unrelenting, page-producing, time-traveling machine of creativity. Flesh and blood and its weaknesses are a gift that I would be a fool to revoke in some dark cyber-cultic ceremony held ever other thursday in the basement of my local community center.",
-                            "datetime": "2024-03-11 12:47:57",
+                            "pageNum": 1,
+                            "filename": "CHAP 5_001.webp",
+                            "title": "Chapter 5 Cover",
+                            "message": "Aaaand we're back! For a bit at least... parenting is tough ya'll",
+                            "datetime": "2024-05-20 16:13:35",
                             "user": "N1995",
-                            "icon": "icons/Chapter_5_Coming-Icon.png",
-                            "uuid": "7a7dbfa3-298b-4cda-bd68-32ae108bf724",
-                            "nextPageUuid": null,
+                            "icon": "icons/CHAP 5_001-Icon.png",
+                            "uuid": "2e8bf0bf-536b-48d0-a433-9dfaa2e14c6f",
+                            "nextPageUuid": "27d1d9ab-c8c1-408a-9140-9e772b697407",
                             "prevPageUuid": "2ed22dd6-4b01-40dd-b0e0-207da0d54805",
                             "globalPageNum": 160
+                        },
+                        {
+                            "pageNum": 2,
+                            "filename": "CHAP 5_002.webp",
+                            "title": "Rose Left Alone to Tend Casper",
+                            "message": "20 minutes ago or roughly 21 pages in the past if that's how your watch runs",
+                            "datetime": "2024-05-20 16:19:45",
+                            "user": "N1995",
+                            "icon": "icons/CHAP 5_002-Icon.png",
+                            "uuid": "27d1d9ab-c8c1-408a-9140-9e772b697407",
+                            "nextPageUuid": "2652d480-5eab-4363-92d3-8f70dc37be79",
+                            "prevPageUuid": "2e8bf0bf-536b-48d0-a433-9dfaa2e14c6f",
+                            "globalPageNum": 161
+                        },
+                        {
+                            "pageNum": 3,
+                            "filename": "CHAP 5_003.webp",
+                            "title": "Hand Visitor Gets YOINKED",
+                            "message": "Cue the ominous music as mystery villain munches his hunted-and-gathered snack of fresh, warm fingers that rode in on the bumper of the van. Origin of a future Monster DoorDash? mebbe...",
+                            "datetime": "2024-06-03 20:56:38",
+                            "user": "N1995",
+                            "icon": "icons/CHAP 5_003-Icon.png",
+                            "uuid": "2652d480-5eab-4363-92d3-8f70dc37be79",
+                            "nextPageUuid": "45ef5ad0-a96d-4996-bbd5-806053f8bdf1",
+                            "prevPageUuid": "27d1d9ab-c8c1-408a-9140-9e772b697407",
+                            "globalPageNum": 162
+                        },
+                        {
+                            "pageNum": 4,
+                            "filename": "CHAP_5_004.webp",
+                            "title": "Casper's Bucket List",
+                            "message": "Thankfully Casper doesn't have sisters or he would spend less time lamenting Tokyo and more time asking questions about what Rose's first aid techniques.",
+                            "datetime": "2024-07-08 19:50:16",
+                            "user": "N1995",
+                            "icon": "icons/CHAP_5_004-Icon.png",
+                            "uuid": "45ef5ad0-a96d-4996-bbd5-806053f8bdf1",
+                            "nextPageUuid": "2d41bee4-dd1e-49fc-9a10-c551050acef6",
+                            "prevPageUuid": "2652d480-5eab-4363-92d3-8f70dc37be79",
+                            "globalPageNum": 163
+                        },
+                        {
+                            "pageNum": 5,
+                            "filename": "CHAP 5_005.webp",
+                            "title": "A New Challenger Approaches",
+                            "message": "Uh oh! Somebody forgot to feed Quill, and she's restorted to trash-goblin mode with raw finger snacking. Classic Quill.",
+                            "datetime": "2024-07-14 21:21:54",
+                            "user": "N1995",
+                            "icon": "icons/CHAP 5_005-Icon.png",
+                            "uuid": "2d41bee4-dd1e-49fc-9a10-c551050acef6",
+                            "nextPageUuid": "4903144a-4838-40ac-8e76-50e2c7d556cc",
+                            "prevPageUuid": "45ef5ad0-a96d-4996-bbd5-806053f8bdf1",
+                            "globalPageNum": 164
+                        },
+                        {
+                            "pageNum": 6,
+                            "filename": "CHAP 5_006.webp",
+                            "title": "Rose panics at Mr. Troll",
+                            "message": "Is this where we discover Rose's purse is like Thor's hammer? Mebbe! Or maybe it's just a plain 'ol regular purse and she's gonna have to do a lot of explaining to her mom as to why she needs a new one.",
+                            "datetime": "2024-07-21 21:22:07",
+                            "user": "N1995",
+                            "icon": "icons/CHAP 5_006-Icon.png",
+                            "uuid": "4903144a-4838-40ac-8e76-50e2c7d556cc",
+                            "nextPageUuid": "c0c5245c-c6c6-4503-b04c-8cc6cf8ad952",
+                            "prevPageUuid": "2d41bee4-dd1e-49fc-9a10-c551050acef6",
+                            "globalPageNum": 165
+                        },
+                        {
+                            "pageNum": 7,
+                            "filename": "CHAP 5_007.webp",
+                            "title": "Meet The Trash Boys",
+                            "message": "Oh. There's more of them. And Rose left quite the impression...with her purse...on the leader's face...",
+                            "datetime": "2024-07-31 17:01:48",
+                            "user": "N1995",
+                            "icon": "icons/CHAP 5_007-Icon.png",
+                            "uuid": "c0c5245c-c6c6-4503-b04c-8cc6cf8ad952",
+                            "nextPageUuid": "a2252f50-6a9d-44ab-adc9-f09e62a67cc6",
+                            "prevPageUuid": "4903144a-4838-40ac-8e76-50e2c7d556cc",
+                            "globalPageNum": 166
+                        },
+                        {
+                            "pageNum": 8,
+                            "filename": "CHAP_5_008-1.webp",
+                            "title": "Good night Casper",
+                            "message": "Nothing wrong with taking a bit of a nap after a hard day! Even if your crush IS getting abducted by bloodthirsty trash gremlins.",
+                            "datetime": "2024-08-15 19:39:52",
+                            "user": "N1995",
+                            "icon": "icons/CHAP_5_008-1-Icon.png",
+                            "uuid": "a2252f50-6a9d-44ab-adc9-f09e62a67cc6",
+                            "nextPageUuid": "f576f243-5911-48d8-bc6c-caab70debe19",
+                            "prevPageUuid": "c0c5245c-c6c6-4503-b04c-8cc6cf8ad952",
+                            "globalPageNum": 167
+                        },
+                        {
+                            "pageNum": 9,
+                            "filename": "CHAP 5_009.webp",
+                            "title": "IT'S TIME TO D-D-DUAL!",
+                            "message": "Time for grieving fallen trash comrades will come later. Now is time to fight for their discarded trash armor.",
+                            "datetime": "2024-08-19 20:33:31",
+                            "user": "N1995",
+                            "icon": "icons/CHAP 5_009-Icon.png",
+                            "uuid": "f576f243-5911-48d8-bc6c-caab70debe19",
+                            "nextPageUuid": "78c5582c-aff2-404f-9184-d95f7404416d",
+                            "prevPageUuid": "a2252f50-6a9d-44ab-adc9-f09e62a67cc6",
+                            "globalPageNum": 168
+                        },
+                        {
+                            "pageNum": 10,
+                            "filename": "CHAP 5_010.webp",
+                            "title": "Rose Gets Wet",
+                            "message": "Oh look. There's more of them. The definitely-not-trash-Ewoks.",
+                            "datetime": "2024-08-26 19:21:53",
+                            "user": "N1995",
+                            "icon": "icons/CHAP 5_010-Icon.png",
+                            "uuid": "78c5582c-aff2-404f-9184-d95f7404416d",
+                            "nextPageUuid": null,
+                            "prevPageUuid": "f576f243-5911-48d8-bc6c-caab70debe19",
+                            "globalPageNum": 169
                         }
                     ]
                 }
@@ -2954,10 +3079,55 @@
             "chapterIndex": 4,
             "pageIndex": 27
         },
-        "7a7dbfa3-298b-4cda-bd68-32ae108bf724": {
+        "2e8bf0bf-536b-48d0-a433-9dfaa2e14c6f": {
             "seasonIndex": 0,
-            "chapterIndex": 4,
-            "pageIndex": 28
+            "chapterIndex": 5,
+            "pageIndex": 0
+        },
+        "27d1d9ab-c8c1-408a-9140-9e772b697407": {
+            "seasonIndex": 0,
+            "chapterIndex": 5,
+            "pageIndex": 1
+        },
+        "2652d480-5eab-4363-92d3-8f70dc37be79": {
+            "seasonIndex": 0,
+            "chapterIndex": 5,
+            "pageIndex": 2
+        },
+        "45ef5ad0-a96d-4996-bbd5-806053f8bdf1": {
+            "seasonIndex": 0,
+            "chapterIndex": 5,
+            "pageIndex": 3
+        },
+        "2d41bee4-dd1e-49fc-9a10-c551050acef6": {
+            "seasonIndex": 0,
+            "chapterIndex": 5,
+            "pageIndex": 4
+        },
+        "4903144a-4838-40ac-8e76-50e2c7d556cc": {
+            "seasonIndex": 0,
+            "chapterIndex": 5,
+            "pageIndex": 5
+        },
+        "c0c5245c-c6c6-4503-b04c-8cc6cf8ad952": {
+            "seasonIndex": 0,
+            "chapterIndex": 5,
+            "pageIndex": 6
+        },
+        "a2252f50-6a9d-44ab-adc9-f09e62a67cc6": {
+            "seasonIndex": 0,
+            "chapterIndex": 5,
+            "pageIndex": 7
+        },
+        "f576f243-5911-48d8-bc6c-caab70debe19": {
+            "seasonIndex": 0,
+            "chapterIndex": 5,
+            "pageIndex": 8
+        },
+        "78c5582c-aff2-404f-9184-d95f7404416d": {
+            "seasonIndex": 0,
+            "chapterIndex": 5,
+            "pageIndex": 9
         }
     }
 }

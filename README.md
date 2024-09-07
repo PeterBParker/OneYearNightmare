@@ -12,6 +12,7 @@ This is a custom, serial, image-hosting website for a graphic-novel I'm writing 
 2. Install gcloud CLI
 3. (Recommended) Create a virtual env
 4. Run `pip3 install -r ./requirements.txt`
+5. Use Node v18.18.0
 
 # Local Testing
 
@@ -59,6 +60,7 @@ This is a custom, serial, image-hosting website for a graphic-novel I'm writing 
       - `svgo -f ./path/to/svgFolder -o ./path/to/output`
     - Scan with Lighthouse and GTmetrix
   - Introduce logging and log all errors
+    <<<<<<< HEAD
   - Replace ComicViewer's error page to use the React Router's errorelement field on the route
   - Fix Scroll to Top of Page sometimes not working
     - Problem seems to be that the onClick function is not getting called?
@@ -143,4 +145,6 @@ If a branch needs updated packages/updated version of npm:
 - Switch to required npm version
 - Delete node_modules/\*
 - Delete package-lock.json
-- Run `npm install`
+- # Run `npm install`
+  - Build Docker images for building and deploying the website
+    > > > > > > > master

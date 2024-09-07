@@ -56,8 +56,10 @@ class EmailNotifier:
             emails = []
             for url in download_urls:
                 response = get(url)
-                out_file = decompress(response.content).decode('utf8')
-                pd = read_csv(StringIO(out_file), dtype=str)
+                # Commented out because the API no longer returns a gzipped file
+                # out_file = decompress(response.content).decode('utf8')
+                pd = read_csv(
+                    StringIO(response.content.decode('utf-8')), dtype=str)
                 emails.extend(pd["EMAIL"].tolist())
             return emails
 
@@ -75,6 +77,7 @@ class EmailNotifier:
             download_urls = self.get_email_export_urls(pending_export_id)
             return self.download_and_extract_emails(download_urls)
         except Exception as e:
+            print("error:", e)
             print(e.__dict__)
 
     def make_template_message(self, to_emails):
@@ -105,13 +108,15 @@ class EmailNotifier:
     def notify_subscribers(self):
         """The main function of this class. Builds and sends the template email."""
         to_emails = self.subscriber_emails()
-        message = self.make_template_message(to_emails)
-        response = self.sg.send(message=message)
-        if response.status_code == 202:
-            print("Notifications successfully sent!")
-        else:
-            print(response.status_code)
-            print(response.body)
+        for email in to_emails:
+            message = self.make_template_message(email)
+            response = self.sg.send(message=message)
+            if response.status_code == 202:
+                print("Notification successfully sent!")
+            else:
+                print("Failed to send for email: ", email)
+                print(response.status_code)
+                print(response.body)
 
 
 if __name__ == "__main__":
