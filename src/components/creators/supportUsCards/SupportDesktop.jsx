@@ -9,7 +9,6 @@ export default function SupportDesktop(props) {
 
     return(
         <div className="pb-24">
-            <Header/>
             <SimpleNavBar page={Pages.SUPPORT}/>
             <div className="supportCards mt-8">
                 <div className="childSupportCard patreonSupportCard bg-white" id="patreonSupportCard">

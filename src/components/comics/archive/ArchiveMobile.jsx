@@ -4,7 +4,6 @@ import Header from "../../header/Header";
 export default function ArchiveMobile(props) {
   return (
     <div className="archiveMobilePage">
-      <Header defaultBg={false} />
       <ArchiveContent />
     </div>
   );

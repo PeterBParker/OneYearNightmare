@@ -32,6 +32,7 @@ import Reader from "./routes/Reader";
 // Loaders
 import { loader as reader_loader } from "./routes/Reader";
 import { loader as page_loader } from "./routes/ComicViewer";
+import Login from "./routes/Login";
 
 // Initialize the Firebase Application
 var firebaseConfig = {

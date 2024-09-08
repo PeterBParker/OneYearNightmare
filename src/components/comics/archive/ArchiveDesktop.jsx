@@ -6,7 +6,6 @@ import ArchiveContent from "./ArchiveContent";
 export default function ArchiveDesktop(props) {
     return(
         <div className="pb-24">
-            <Header/>
             <SimpleNavBar page={Pages.ARCHIVE}/>
             <ArchiveContent/>
         </div>

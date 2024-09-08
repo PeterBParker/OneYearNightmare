@@ -11,7 +11,6 @@ const SignInPage = () => {
 
   return (
     <React.Fragment>
-      <Header defaultBg={false} />
       {/* TODO Move the navbar to the header and get what the current page is from the url */}
       {isDesktop ? <SimpleNavBar page={Pages.SIGNIN} /> : ""}
       <div className="mb-12" id="user-signed-out">

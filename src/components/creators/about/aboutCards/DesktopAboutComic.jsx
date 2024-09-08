@@ -10,7 +10,6 @@ import LinkButton from "../../../generic/LinkButton";
 export default function DesktopAboutComic(props) {
   return (
     <div className="">
-      <Header defaultBg={false} />
       <SimpleNavBar page={Pages.ABOUT} />
       <div className="desktopAboutTheComicContainer bg-white grid mx-auto mt-4 mb-12">
         <div className="aboutTheComicText">

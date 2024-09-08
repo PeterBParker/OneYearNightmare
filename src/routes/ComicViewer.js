@@ -58,7 +58,6 @@ export default function ComicViewer(props) {
   // TODO 6/10 Before deploying, implement these security measures: https://stackoverflow.com/questions/21110130/protect-image-download/21110248
   return (
     <div className={`${isDesktop ? "pb-24" : null}`}>
-      <Header defaultBg={false} />
       {isDesktop ? <SimpleNavBar page={Pages.READ} /> : ""}
       {isDesktop ? (
         <DesktopPageView

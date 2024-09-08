@@ -7,7 +7,6 @@ import custardIcon from "../../../assets/FINAL-ASSETS-072821/final assets/fill-w
 export default function SupportMobile(props) {
   return (
     <div className="supportPage">
-      <Header defaultBg={false} />
       <IconCard
         icon={patreonIcon}
         title="Patreon"
