@@ -1,13 +1,13 @@
 {
-    "maxDisplayPage": "78c5582c-aff2-404f-9184-d95f7404416d",
+    "maxDisplayPage": "4c0f400c-0442-49fc-a3b1-37dfabae2c29",
     "firstDisplayPage": "92004427-5249-4fa3-80f1-0a67f93ba559",
-    "pageCount": 171,
+    "pageCount": 172,
     "seasonCount": 1,
     "seasons": [
         {
             "seasonName": "First Blood",
             "folderName": "first blood",
-            "numOfPages": 171,
+            "numOfPages": 172,
             "numOfChapters": 6,
             "id": 1,
             "chapters": [
@@ -2134,7 +2134,7 @@
                 {
                     "chapterName": "Chapter Five",
                     "folderName": "chapter5",
-                    "numOfPages": 10,
+                    "numOfPages": 11,
                     "id": 6,
                     "pages": [
                         {
@@ -2263,9 +2263,22 @@
                             "user": "N1995",
                             "icon": "icons/CHAP 5_010-Icon.png",
                             "uuid": "78c5582c-aff2-404f-9184-d95f7404416d",
-                            "nextPageUuid": null,
+                            "nextPageUuid": "4c0f400c-0442-49fc-a3b1-37dfabae2c29",
                             "prevPageUuid": "f576f243-5911-48d8-bc6c-caab70debe19",
                             "globalPageNum": 169
+                        },
+                        {
+                            "pageNum": 11,
+                            "filename": "CHAP 5_011.webp",
+                            "title": "Soaked and Surrounded",
+                            "message": "So THAT'S why the ditch is so clean, or, at least, trash free.",
+                            "datetime": "2024-09-09 18:38:35",
+                            "user": "N1995",
+                            "icon": "icons/CHAP 5_011-Icon.png",
+                            "uuid": "4c0f400c-0442-49fc-a3b1-37dfabae2c29",
+                            "nextPageUuid": null,
+                            "prevPageUuid": "78c5582c-aff2-404f-9184-d95f7404416d",
+                            "globalPageNum": 170
                         }
                     ]
                 }
@@ -3122,6 +3135,11 @@
             "seasonIndex": 0,
             "chapterIndex": 5,
             "pageIndex": 9
+        },
+        "4c0f400c-0442-49fc-a3b1-37dfabae2c29": {
+            "seasonIndex": 0,
+            "chapterIndex": 5,
+            "pageIndex": 10
         }
     }
 }
