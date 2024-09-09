@@ -85,16 +85,19 @@ This is a custom, serial, image-hosting website for a graphic-novel I'm writing 
       - Create development test data because page download urls
         - Add avatars to the test data
         - Remove actual user's comments and avatars from test data
-      - Add page info to the page cards
+      - **DONE** Add page info to the page cards
         - **DONE** Pull display name from server
         - **DONE** Pull display icon from server
-          - **DONE??? Just have to test** Expand avatar helpers to store not just the image in the storage bucket, but also the public url of the image as a field in the user document
-            - The firebase auth UI isn't compatible with the firebase v9 SDK, so I have to build my own auth UI.
-              - Create a dedicated "Login" Page. Make it a form that collects the user's email and calls the function to send a sign in link. Make the url in the email direct to the "profile" page
-              - Create a dedicated "Profile" Page.
-              - In the root App route make a data loader to grab the signed-in user data
-              - In the nav bar render the Login nav button if no user data is found. If user data is found, render the Profile button. Default to Login, but make it essential so that the react router doesn't render the page until that data has been fetched.
+          - **DONE** Expand avatar helpers to store not just the image in the storage bucket, but also the public url of the image as a field in the user document
+      - The firebase auth UI isn't compatible with the firebase v9 SDK, so I have to build my own auth UI.
+        - Create a dedicated "Login" Page. Make it a form that collects the user's email and calls the function to send a sign in link. Make the url in the email direct to the "profile" page
+        - Create a dedicated "Profile" Page.
+        - In the root App route make a data loader to grab the signed-in user data
+        - In the nav bar render the Login nav button if no user data is found. If user data is found, render the Profile button. Default to Login, but make it essential so that the react router doesn't render the page until that data has been fetched.
           - Make fallback a joint avatar stored locally
+        - On Login button click, transform the card into a display saying "Check your email for the link!"
+        - Fix the layout on the Login and Display Name page
+        - Once the display name is set make the page auto re-render
       - Load the icons on the archive page
       - Add loading animations
     - Figure out how to reduce the number of unnecessary queries

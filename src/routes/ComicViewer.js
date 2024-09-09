@@ -6,10 +6,7 @@ import { SNAP_TO_PAGE_PATH } from "../index";
 
 import DesktopPageView from "../components/comics/ComicViewerCards/DesktopPageView";
 import MobilePageView from "../components/comics/ComicViewerCards/MobilePageView";
-import Header from "../components/header/Header";
-import Pages from "../components/comics/navigation/desktop/Pages";
 import querySizes from "../styling/breakpoints.json";
-import SimpleNavBar from "../components/comics/navigation/desktop/SimpleNavBar";
 import { pageFetcher } from "../api/ComicPageAPI";
 import { PARAM_PAGE_UUID } from "../api/RefKeys";
 
@@ -58,7 +55,6 @@ export default function ComicViewer(props) {
   // TODO 6/10 Before deploying, implement these security measures: https://stackoverflow.com/questions/21110130/protect-image-download/21110248
   return (
     <div className={`${isDesktop ? "pb-24" : null}`}>
-      {isDesktop ? <SimpleNavBar page={Pages.READ} /> : ""}
       {isDesktop ? (
         <DesktopPageView
           topOfPageRef={topOfPageRef}

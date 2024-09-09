@@ -1,16 +1,12 @@
-import Header from "../../../header/Header";
 import TextBody from "../../../generic/TextBody";
 import CardHeader from "../../../generic/CardHeader";
 import DesktopAboutCreators from "./DesktopAboutCreators";
-import SimpleNavBar from "../../../comics/navigation/desktop/SimpleNavBar";
-import Pages from "../../../comics/navigation/desktop/Pages";
 import aboutComicCardImage from "../../../../assets/Phase3-Assets1/1x/SkullBird-white-edge-CROPPED.png";
 import LinkButton from "../../../generic/LinkButton";
 
 export default function DesktopAboutComic(props) {
   return (
     <div className="">
-      <SimpleNavBar page={Pages.ABOUT} />
       <div className="desktopAboutTheComicContainer bg-white grid mx-auto mt-4 mb-12">
         <div className="aboutTheComicText">
           <CardHeader text="About the Comic" isDesktop={true} />
