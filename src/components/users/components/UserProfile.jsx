@@ -1,28 +1,35 @@
 import React, { useState } from "react";
+import { Navigate, redirect } from "react-router-dom";
 import SignOutButton from "./SignOutButton";
-import { auth } from "../../..";
+import { auth, SIGNIN_PAGE_PATH } from "../../..";
 import DisplayNameForm from "../../settings/DisplayNameForm";
 import EmailForm from "../../settings/EmailForm";
 import DeleteAccountButton from "./DeleteAccountButton";
 import ProfilePicture from "./ProfilePicture";
-import { getAvatarUrl } from "../avatarHelpers";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { v4 as uuidv4 } from "uuid";
 import { storeUserAvatar } from "../avatarHelpers";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowsRotate } from "@fortawesome/free-solid-svg-icons";
 import { useMutation } from "@tanstack/react-query";
+import { BigSpinner } from "../../generic/loading/Spinners";
 
 const UserProfile = () => {
-  const [notInitialized, setNotInitialized] = useState(
-    auth.currentUser.displayName === null
-  );
+  const [user, loading] = useAuthState(auth)
 
-  return notInitialized ? (
-    <InitializeInfo setNotInitialized={setNotInitialized} />
-  ) : (
-    <DisplayInfo />
-  );
+  if (loading) {
+    return(<BigSpinner/>)
+  }
+
+  if (user === null) {
+    return <Navigate to={SIGNIN_PAGE_PATH} />
+  }
+
+  if (user.displayName === null) {
+    return <InitializeInfo />
+  }
+
+  return <DisplayInfo />
 };
 
 const InitializeInfo = (props) => {
@@ -31,7 +38,7 @@ const InitializeInfo = (props) => {
       <div className="text-left text-xl font-header font-bold ml-2 my-4">
         Set Up Profile
       </div>
-      <DisplayNameForm onSuccessAction={() => props.setNotInitialized(false)} />
+      <DisplayNameForm onSuccessAction={() => {}} />
       <SignOutButton />
     </div>
   );

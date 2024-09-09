@@ -25,7 +25,6 @@ import App from "./routes/App";
 import Creators from "./routes/Creators";
 import Support from "./routes/Support";
 import Archive from "./routes/Archive";
-import SignInPage from "./routes/SignInPage";
 import ComicViewer from "./routes/ComicViewer";
 import Reader from "./routes/Reader";
 
@@ -33,6 +32,8 @@ import Reader from "./routes/Reader";
 import { loader as reader_loader } from "./routes/Reader";
 import { loader as page_loader } from "./routes/ComicViewer";
 import Login from "./routes/Login";
+import FinishLogin from "./routes/FinishLogin";
+import ProfilePage from "./routes/ProfilePage";
 
 // Initialize the Firebase Application
 var firebaseConfig = {
@@ -46,9 +47,11 @@ var firebaseConfig = {
 };
 const firebaseApp = initializeApp(firebaseConfig);
 
+export let DOMAIN = "https://monstersandmyriads.com";
 // Perform the App Check with ReCaptcha to prevent unauthorized usage of Firestore
 if (window.location.hostname === "localhost") {
   window.FIREBASE_APPCHECK_DEBUG_TOKEN = process.env.REACT_APP_DEV_TOKEN;
+  DOMAIN = "http://localhost:3000"
 }
 
 const appCheck = initializeAppCheck(firebaseApp, {
@@ -69,7 +72,7 @@ export const BOOKMARK_KEY = "mxmBookmarkedPage";
 export const PageAPI = new ComicPageAPI(db, storage);
 
 if (window.location.hostname === "localhost") {
-  connectAuthEmulator(auth, "http://localhost:9099"); // to use the emulator run "firebase emulators:start"
+  connectAuthEmulator(auth, "http://localhost:9099");
   connectFirestoreEmulator(db, "localhost", 8080);
   connectStorageEmulator(storage, "localhost", "9199");
   connectFunctionsEmulator(functions, "localhost", 5001);
@@ -81,7 +84,8 @@ export const SUPPORT_PAGE_PATH = "/support";
 export const ARCHIVE_PAGE_PATH = "/archive";
 export const CREATIVES_PAGE_PATH = "/creatives";
 export const SIGNIN_PAGE_PATH = "/login";
-export const DOMAIN = "https://monstersandmyriads.com";
+export const FINISH_SIGNIN_PAGE_PATH = "/finish-login"
+export const USER_PROFILE_PAGE_PATH = "/profile";
 export const BASE_PATH = "/MnMPages/";
 
 export const JOINT_SIG = "Mo and Nate";
@@ -130,8 +134,16 @@ const router = createBrowserRouter([
       },
       {
         path: SIGNIN_PAGE_PATH,
-        element: <SignInPage />,
+        element: <Login />,
       },
+      {
+        path: FINISH_SIGNIN_PAGE_PATH,
+        element: <FinishLogin />,
+      },
+      {
+        path: USER_PROFILE_PAGE_PATH,
+        element: <ProfilePage />
+      }
     ],
   },
 ]);
