@@ -2,8 +2,8 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 
 function LinkButton(props) {
-  let history = useNavigate();
-  const handleClick = () => history.push(props.to);
+  let navigate = useNavigate();
+  const handleClick = () => navigate(props.to);
 
   return (
     <div className={`btn ${props.styles}`} onClick={handleClick}>

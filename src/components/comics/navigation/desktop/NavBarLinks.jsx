@@ -40,7 +40,7 @@ export default function NavBarLinks(props) {
           ? "desktopNavLinkSelected"
           : "desktopNavLink desktop-nav-hover"
       } text-grey-light mr-8 font-medium`}
-      key="signinNavBarLink"
+      key={displayStr + "NavBarLink"}
     >
       <Link to={toPath}>{displayStr}</Link>
     </div>

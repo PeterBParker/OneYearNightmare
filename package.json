@@ -48,6 +48,7 @@
     "eject": "react-scripts eject",
     "stop": "npx kill-port 9099 8080 9000 5000 9199",
     "notify": "cd src/scripts && python notifyEmailSubscribers.py",
+    "emulators:start": "firebase emulators:start --import ./firestore_export",
     "emulators:stop": "npx kill-port 4000 8080 8085 9000"
   },
   "eslintConfig": {

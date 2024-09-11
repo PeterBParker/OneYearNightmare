@@ -60,7 +60,6 @@ This is a custom, serial, image-hosting website for a graphic-novel I'm writing 
       - `svgo -f ./path/to/svgFolder -o ./path/to/output`
     - Scan with Lighthouse and GTmetrix
   - Introduce logging and log all errors
-    <<<<<<< HEAD
   - Replace ComicViewer's error page to use the React Router's errorelement field on the route
   - Fix Scroll to Top of Page sometimes not working
     - Problem seems to be that the onClick function is not getting called?
@@ -89,15 +88,15 @@ This is a custom, serial, image-hosting website for a graphic-novel I'm writing 
         - **DONE** Pull display name from server
         - **DONE** Pull display icon from server
           - **DONE** Expand avatar helpers to store not just the image in the storage bucket, but also the public url of the image as a field in the user document
-      - The firebase auth UI isn't compatible with the firebase v9 SDK, so I have to build my own auth UI.
-        - Create a dedicated "Login" Page. Make it a form that collects the user's email and calls the function to send a sign in link. Make the url in the email direct to the "profile" page
-        - Create a dedicated "Profile" Page.
+      - **DONE** The firebase auth UI isn't compatible with the firebase v9 SDK, so I have to build my own auth UI.
+        - **DONE**Create a dedicated "Login" Page. Make it a form that collects the user's email and calls the function to send a sign in link. Make the url in the email direct to the "profile" page
+        - **DONE** Create a dedicated "Profile" Page.
         - In the root App route make a data loader to grab the signed-in user data
-        - In the nav bar render the Login nav button if no user data is found. If user data is found, render the Profile button. Default to Login, but make it essential so that the react router doesn't render the page until that data has been fetched.
+        - **DONE** In the nav bar render the Login nav button if no user data is found. If user data is found, render the Profile button. Default to Login, but make it essential so that the react router doesn't render the page until that data has been fetched.
           - Make fallback a joint avatar stored locally
-        - On Login button click, transform the card into a display saying "Check your email for the link!"
-        - Fix the layout on the Login and Display Name page
-        - Once the display name is set make the page auto re-render
+        - **DONE** On Login button click, transform the card into a display saying "Check your email for the link!"
+        - **DONE** Fix the layout on the Login and Display Name page
+        - **DONE** Once the display name is set make the page auto re-render
       - Load the icons on the archive page
       - Add loading animations
     - Figure out how to reduce the number of unnecessary queries

@@ -1,5 +1,5 @@
 export function BigSpinner() {
-  return <div class="text-4xl">Loading...</div>;
+  return <div className="bigSpinner"></div>;
 }
 
 export function MediumSpinner() {
