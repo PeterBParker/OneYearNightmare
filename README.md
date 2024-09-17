@@ -93,15 +93,18 @@ This is a custom, serial, image-hosting website for a graphic-novel I'm writing 
         - **DONE** Create a dedicated "Profile" Page.
         - In the root App route make a data loader to grab the signed-in user data
         - **DONE** In the nav bar render the Login nav button if no user data is found. If user data is found, render the Profile button. Default to Login, but make it essential so that the react router doesn't render the page until that data has been fetched.
-          - Make fallback a joint avatar stored locally
         - **DONE** On Login button click, transform the card into a display saying "Check your email for the link!"
         - **DONE** Fix the layout on the Login and Display Name page
         - **DONE** Once the display name is set make the page auto re-render
-      - Load the icons on the archive page
-      - Add loading animations
-    - Figure out how to reduce the number of unnecessary queries
-    - **DONE** Fix the styling
+        - **DONE** Test on mobile
+    - Load the icons on the archive page
+    - Add loading animations
+    - Fix auth appearance on mobile
+    - Make fallback a joint avatar stored locally
+    - **DONE** Figure out how to reduce the number of unnecessary queries
+    - **DONE** Fix the desktop styling
     - Fix the mobile comments
+    - Add error handling on login errors
 
   - Add an "admin" type to user accounts
   - Add an nav button for admin accounts to "Page Management"

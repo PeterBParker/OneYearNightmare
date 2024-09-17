@@ -6,6 +6,8 @@ import DisplayNameForm from "../../settings/DisplayNameForm";
 import EmailForm from "../../settings/EmailForm";
 import DeleteAccountButton from "./DeleteAccountButton";
 import { useAuthState } from "react-firebase-hooks/auth";
+import { useMediaQuery } from "react-responsive";
+import querySizes from "../../../styling/breakpoints.json"
 
 import { BigSpinner } from "../../generic/loading/Spinners";
 import ProfilePicEditor from "./ProfilePicEditor";
@@ -42,13 +44,14 @@ const InitializeInfo = (props) => {
 };
 
 const DisplayInfo = () => {
+  const isDesktop = useMediaQuery({ query: querySizes["lg"] });
   return (
     <div className=" ml-auto mr-auto">
       <div className="px-2 mr-auto ml-auto">
         <div className="text-left text-xl font-header font-bold ml-2 my-4">
           User Settings
         </div>
-        <div className="flex justify-center md:justify-between">
+        <div className={`flex ${isDesktop ? "" : "flex-wrap" } justify-center md:justify-between`}>
           <ProfilePicEditor />
           <div className="w-full md:w-3/5 min-w-max max-w-xl">
             <DisplayNameForm />
