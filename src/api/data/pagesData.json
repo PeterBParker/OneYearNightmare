@@ -1,13 +1,13 @@
 {
-    "maxDisplayPage": "4c0f400c-0442-49fc-a3b1-37dfabae2c29",
+    "maxDisplayPage": "691f59f5-ee35-4df4-bc4b-78c946a326f5",
     "firstDisplayPage": "92004427-5249-4fa3-80f1-0a67f93ba559",
-    "pageCount": 172,
+    "pageCount": 173,
     "seasonCount": 1,
     "seasons": [
         {
             "seasonName": "First Blood",
             "folderName": "first blood",
-            "numOfPages": 172,
+            "numOfPages": 173,
             "numOfChapters": 6,
             "id": 1,
             "chapters": [
@@ -2134,7 +2134,7 @@
                 {
                     "chapterName": "Chapter Five",
                     "folderName": "chapter5",
-                    "numOfPages": 11,
+                    "numOfPages": 12,
                     "id": 6,
                     "pages": [
                         {
@@ -2276,9 +2276,22 @@
                             "user": "N1995",
                             "icon": "icons/CHAP 5_011-Icon.png",
                             "uuid": "4c0f400c-0442-49fc-a3b1-37dfabae2c29",
-                            "nextPageUuid": null,
+                            "nextPageUuid": "691f59f5-ee35-4df4-bc4b-78c946a326f5",
                             "prevPageUuid": "78c5582c-aff2-404f-9184-d95f7404416d",
                             "globalPageNum": 170
+                        },
+                        {
+                            "pageNum": 12,
+                            "filename": "CHAP 5_012.webp",
+                            "title": "Rose Contemplates Murder",
+                            "message": "Morghan is The Queen of finding the silver lining, so if she was in Rose's place she might legitimately say something like, \"Well at least now I've got the perfect hands for piano\" or \"I've always wondered what it would feel like to kill a man with my bare hands.\" As her hubby I'm hoping for more of the former response than the latter...",
+                            "datetime": "2024-09-17 09:05:46",
+                            "user": "N1995",
+                            "icon": "icons/CHAP 5_012-Icon.png",
+                            "uuid": "691f59f5-ee35-4df4-bc4b-78c946a326f5",
+                            "nextPageUuid": null,
+                            "prevPageUuid": "4c0f400c-0442-49fc-a3b1-37dfabae2c29",
+                            "globalPageNum": 171
                         }
                     ]
                 }
@@ -3140,6 +3153,11 @@
             "seasonIndex": 0,
             "chapterIndex": 5,
             "pageIndex": 10
+        },
+        "691f59f5-ee35-4df4-bc4b-78c946a326f5": {
+            "seasonIndex": 0,
+            "chapterIndex": 5,
+            "pageIndex": 11
         }
     }
 }
