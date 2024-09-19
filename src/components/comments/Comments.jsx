@@ -1,6 +1,8 @@
 import loadable from "@loadable/component";
 
 import beTheFirst from "../../assets/Be_the_first.webp";
+import { useMediaQuery } from "react-responsive";
+import querySizes from "../../styling/breakpoints.json";
 import Comment from "./Comment";
 import { useState, useEffect } from "react";
 import { SIGNIN_PAGE_PATH } from "../../index";
@@ -30,6 +32,7 @@ export default function Comments() {
   const [showCommentSubmit, setShowCommentSubmit] = useState(false);
   const authUser = useFirebaseAuth(auth);
   const [comments, setComments] = useState([]);
+  const isDesktop = useMediaQuery({ query: querySizes["lg"] });
 
   const page_uuid = params[PARAM_PAGE_UUID];
 
@@ -53,7 +56,7 @@ export default function Comments() {
   }, [page_uuid]);
 
   return (
-    <div className="comments-container h-full border-b border-mocha-dark lg:border-t-2 lg:border-r-2 lg:border-b-2 lg:border-l lg:pb-1 pb-4 flex flex-col justify-between">
+    <div className={`${isDesktop ? "" : "bg-white"} comments-container h-full border-b border-mocha-dark lg:border-t-2 lg:border-r-2 lg:border-b-2 lg:border-l lg:pb-1 pb-4 flex flex-col justify-between`}>
       <div className="py-4 px-8 bg-eggshell text-left flex flex-row items-center comments-title">
         <Title text="Comments //" />
       </div>

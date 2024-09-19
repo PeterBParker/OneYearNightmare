@@ -8,10 +8,16 @@ import Header from "../components/header/Header";
 function App() {
   const isDesktop = useMediaQuery({ query: querySizes["lg"] });
   return (
-    <div className={`App${isDesktop ? " desktopBg comicViewerDesktop min-h-screen" : ""}`}>
-      <Header />
-      <Outlet />
-      <Footer />
+    <div className={`App ${isDesktop ? " desktopBg comicViewerDesktop" : ""}`}>
+      <div className="shrink-0">
+        <Header />
+      </div>
+      <div className="mxmContent">
+        <Outlet />
+      </div>
+      <div className="shrink-0">
+        <Footer />
+      </div>
     </div>
   );
 }

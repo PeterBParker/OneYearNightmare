@@ -11,9 +11,13 @@ body {
   height: 100%;
 }
 .App {
-  height: 100%;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
+}
+.mxmContent {
+  flex: 1 0 auto;
+  background-color: #e0dcd1;
 }
 
 .body {

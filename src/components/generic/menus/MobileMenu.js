@@ -47,16 +47,6 @@ export default function MobileMenu(props) {
                 {auth.currentUser == null ? "Login" : "User"}
               </Link>
             </div>
-            <div className="scheduleNavLink">
-              <a
-                href={
-                  "https://cosmic-marmoset-384.notion.site/34c6fb7629fe42599319f0b4adc8be7f?v=b0e4396668254195b01a305d1f6249eb"
-                }
-                onClick={props.onMenuChange}
-              >
-                Schedule
-              </a>
-            </div>
           </div>
         </div>
         <div className="mobileMenuFooterImage w-full">
