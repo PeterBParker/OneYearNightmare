@@ -1,36 +1,40 @@
 import CardHeader from "../../generic/CardHeader";
 import ChapterBanner from "./ChapterBanner";
 
-import { PageAPI } from "../../../index";
 import { useMediaQuery } from "react-responsive";
 import querySizes from "../../../styling/breakpoints.json";
 import { v4 as uuidv4 } from "uuid";
+import { useQuery } from "@tanstack/react-query";
+import { allPagesQuery } from "../../../routes/Archive";
+import { PageLoadingSpinner } from "../../generic/loading/Spinners";
 
 export default function ArchiveContent(props) {
   const isTabletOrDesktop = useMediaQuery({ query: querySizes["lg"] });
+  const {data, isLoading} = useQuery(allPagesQuery());
 
-  let seasons = PageAPI.getSeasons();
+  if (isLoading) {
+    return(
+      <PageLoadingSpinner />
+    )
+  }
+
+  let chapters = data["chapters"]
   let displayBanners = [];
 
-  for (let seasonIndex in seasons) {
-    let season = seasons[seasonIndex];
-    let chapters = season["chapters"];
-    let seasonPath = season["folderName"];
     for (let chapterIndex in chapters) {
       let chapter = chapters[chapterIndex];
-      let chapterPath = seasonPath + "/" + chapter["folderName"];
       let chapterBannerKey = uuidv4().replace(/-/g, "");
+      // only the pages in the chapter sorted by chapter order
+      let pagesContained = data["pages"][chapter["uuid"]]
       displayBanners.push(
         <ChapterBanner
-          chapter={chapter}
-          chapterPath={chapterPath}
-          chapterName={`${chapter["chapterName"]}`}
+          pages={pagesContained}
+          chapterName={`${chapter["chapter_name"]}`}
           key={chapterBannerKey}
           bannerId={chapterBannerKey}
         />
       );
     }
-  }
 
   return (
     <div

@@ -9,7 +9,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { useMediaQuery } from "react-responsive";
 import querySizes from "../../../styling/breakpoints.json"
 
-import { BigSpinner } from "../../generic/loading/Spinners";
+import { PageLoadingSpinner } from "../../generic/loading/Spinners";
 import ProfilePicEditor from "./ProfilePicEditor";
 
 const UserProfile = () => {
@@ -17,7 +17,7 @@ const UserProfile = () => {
   const [_, setIsInit] = useState(false);
 
   if (loading) {
-    return(<div className="my-32 flex justify-center"><BigSpinner/></div>)
+    return(<PageLoadingSpinner/>)
   }
 
   if (user === null) {

@@ -3,6 +3,7 @@ import { Navigate } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { DISPLAY_DATA_DOC_KEY } from "../api/RefKeys";
 import { MAX_PAGE_ID_KEY } from "../api/RefKeys";
+import { PageLoadingSpinner } from "../components/generic/loading/Spinners";
 
 // Just returns an object useQuery expects
 // This query should encapsulate all the data we need for the queryFn
@@ -22,7 +23,10 @@ export function loader(queryClient) {
 }
 
 export default function Reader() {
-  const { data } = useQuery(displayQuery());
+  const { data, isLoading } = useQuery(displayQuery());
+  if (isLoading){
+    return <PageLoadingSpinner/>
+  }
   const HOME_URL = getComicHomeURL(data[MAX_PAGE_ID_KEY]);
   return <Navigate to={HOME_URL} />;
 }

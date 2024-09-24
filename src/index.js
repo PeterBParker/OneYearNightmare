@@ -17,7 +17,6 @@ import {
 
 import reportWebVitals from "./reportWebVitals";
 import "./styling/tailwind.output.css";
-import ComicPageAPI from "./api/ComicPageAPI";
 import GlobalErrorPage from "./components/generic/errors/GlobalErrorPage";
 
 // Routes
@@ -31,6 +30,7 @@ import Reader from "./routes/Reader";
 // Loaders
 import { loader as reader_loader } from "./routes/Reader";
 import { loader as page_loader } from "./routes/ComicViewer";
+import { loader as book_loader } from "./routes/Archive";
 import Login from "./routes/Login";
 import FinishLogin from "./routes/FinishLogin";
 import ProfilePage from "./routes/ProfilePage";
@@ -69,7 +69,6 @@ export const storage = getStorage(firebaseApp);
 export const functions = getFunctions(firebaseApp, "us-central1");
 export const AVATARS_PATH = "user_avatars/";
 export const BOOKMARK_KEY = "mxmBookmarkedPage";
-export const PageAPI = new ComicPageAPI(db, storage);
 
 if (window.location.hostname === "localhost") {
   connectAuthEmulator(auth, "http://localhost:9099");
@@ -131,6 +130,7 @@ const router = createBrowserRouter([
       {
         path: ARCHIVE_PAGE_PATH,
         element: <Archive />,
+        loader: book_loader(queryClient),
       },
       {
         path: SIGNIN_PAGE_PATH,

@@ -19,6 +19,7 @@ class FirestoreImporter:
         self.db = client(default_app)
         self.pages_dir = Path("../../public/MnMPages/")
         self.blob_pages_prefix = "pages/"
+        self.blob_icons_prefix = self.blob_pages_prefix + "icons/"
         self.bucket = bucket(
             name="oneyearnightmarefirstsite.appspot.com", app=default_app)
         self.NATHAN_ID = nathan_id
@@ -35,19 +36,28 @@ class FirestoreImporter:
 
     def get_page_url(self, page, chap, season):
         name = self.blob_pages_prefix + page["filename"]
-        blob = self.bucket.get_blob(name)
-        blob.make_public()
+        page_path = self.pages_dir / \
+                season["folderName"] / chap["folderName"] / page["filename"]
+        return self.get_blob_url(name, page_path)
+
+    def get_blob_url(self, blob_name, file_path):
+        """ Creates a blob if it doesn't exist and upload the file provided to it """
+        blob = self.bucket.get_blob(blob_name)
         if blob is None:
             # Upload image from stored pages
-            print("Blob not found for:", name, "uploading now...")
-            new_blob = self.bucket.blob(name)
-            page_path = self.pages_dir / \
-                season["folderName"] / chap["folderName"] / page["filename"]
-            new_blob.upload_from_filename(page_path)
+            print("Blob not found for:", blob_name, "uploading now...")
+            new_blob = self.bucket.blob(blob_name)
+            new_blob.upload_from_filename(file_path)
             new_blob.make_public()
             return new_blob.public_url
         else:
+            blob.make_public()
             return blob.public_url
+
+    def get_icon_url(self, page, chap, season):
+        name = self.blob_icons_prefix + page["filename"]
+        icon_path = self.pages_dir / season["folderName"] / chap["folderName"] / page["icon"]
+        return self.get_blob_url(name, icon_path)
 
     def run(self, json_data: dict):
         batch = self.db.batch()
@@ -57,24 +67,25 @@ class FirestoreImporter:
                     url = None
                     try:
                         url = self.get_page_url(page, chap, season)
+                        icon_url = self.get_icon_url(page, chap, season)
                     except OSError as e:
                         print("Encountered error while trying to upload:",
                               page["filename"], e)
                     if url is None:
                         continue
                     del_list = ["pageNum", "globalPageNum",
-                                "nextPageUuid", "prevPageUuid", "user"]
+                                "nextPageUuid", "prevPageUuid", "user", "icon"]
                     ref = self.get_page_ref(page)
 
                     # Rename some var names to be consistent
                     page["chap_order"] = page["pageNum"]
-                    page["icon"] = page["icon"].split("/")[1]
                     page["global_order"] = page["globalPageNum"]
                     page["next_page_id"] = page["nextPageUuid"]
                     page["prev_page_id"] = page["prevPageUuid"]
                     page["chapter_id"] = chap["uuid"]
                     page["season_id"] = season["uuid"]
                     page["public_url"] = url
+                    page["icon_url"] = icon_url
                     if page["user"] == "N1995":
                         page["author"] = self.NATHAN_ID
                     else:

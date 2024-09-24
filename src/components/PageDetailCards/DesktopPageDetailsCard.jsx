@@ -4,7 +4,7 @@ import JointSignature from "../generic/JointSignature";
 
 export default function DesktopPageDetailsCard(props) {
   return (
-    <div className="desktopPageDetailsContainer flex flex-col justify-between">
+    <div className="desktopPageDetailsContainer  bg-white flex flex-col justify-between">
       <div className="flex flex-col">
         <div className="desktopPageDetailsTitle grow-0">
           <div className="text-left py-4 px-8">

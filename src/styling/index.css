@@ -17,7 +17,6 @@ body {
 }
 .mxmContent {
   flex: 1 0 auto;
-  background-color: #e0dcd1;
 }
 
 .body {
@@ -94,9 +93,6 @@ body {
 }
 .headerLogoImageDesktop {
   min-width: 175px;
-}
-.desktopDefaultBg {
-  background-image: url(../assets/Background-negative-FINAL-2024px.jpg);
 }
 .single-comment-container {
   display: grid;

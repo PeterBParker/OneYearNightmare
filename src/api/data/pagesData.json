@@ -2064,7 +2064,7 @@
                             "message": "Happy Holidays everyone! We're doing our annual winter break to build up some backlog and take a breather!",
                             "datetime": "2023-12-27 13:50:56",
                             "user": "N1995",
-                            "icon": "icons/Christmas_2023-pg-Icon.png",
+                            "icon": "icons/Christmas_2023-pg2-Icon.png",
                             "uuid": "32fd1894-7762-4de6-aa7b-de36c1c9efce",
                             "nextPageUuid": "d5f0340a-1e78-4aa4-9915-f2c974b4e294",
                             "prevPageUuid": "86fcb3dd-3cc7-4c8a-b135-2a8af7476999",
@@ -2141,6 +2141,7 @@
                     "chapterName": "Chapter Five",
                     "folderName": "chapter5",
                     "numOfPages": 10,
+                    "uuid": "5aa23909-b7aa-4177-bdba-25cb3a892ef0",
                     "id": 6,
                     "pages": [
                         {

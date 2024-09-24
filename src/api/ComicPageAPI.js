@@ -1,17 +1,14 @@
-import pagesData from "./data/pagesData.json";
-import users from "./data/users.json";
 import { validate as isValidUUID } from "uuid";
-import { collection, doc, getDoc } from "firebase/firestore";
-import { ref, getDownloadURL } from "firebase/storage";
+import { collection, doc, getDoc, getDocs, orderBy, query } from "firebase/firestore";
 import {
   db,
   COMIC_VIEWER_PATH,
   BOOKMARK_KEY,
-  PageAPI,
-  storage,
 } from "../index";
 import {
   DISPLAY_DATA_DOC_KEY,
+  CHAP_CONTENTS_KEY,
+  PAGES_CONTENTS_KEY,
   CHAP_KEY,
   PAGE_KEY,
   PAGE_CHAP_KEY,
@@ -29,6 +26,8 @@ function getRefKeyMap() {
     // Instatiate
     RefKeyMap = {
       [DISPLAY_DATA_DOC_KEY]: doc(collection(db, "book_data"), "display_data"),
+      [CHAP_CONTENTS_KEY]: collection(doc(collection(db, "book_data"), "content"), "chapters"),
+      [PAGES_CONTENTS_KEY]: collection(doc(collection(db, "book_data"), "content"), "pages"),
     };
     // Freeze It
     Object.freeze(RefKeyMap);
@@ -41,10 +40,27 @@ function getRefForKey(key) {
   return map[key];
 }
 
+function isExistingPage(pageId) {
+  let pagesRef = getRefForKey(PAGES_CONTENTS_KEY);
+  if (!isValidUUID(pageId)) {
+    return false;
+  }
+  let pageRef = doc(pagesRef, pageId);
+  return getDoc(pageRef).then((doc) => {
+    if (doc.id === pageId) {
+      return true;
+    }
+    return false;
+  }).catch(() => {
+    return false;
+  })
+
+}
+
 export function getComicHomeURL(maxPageId) {
   let bookmarkedPageUrl = COMIC_VIEWER_PATH + "/";
   let bookmarkedPageId = localStorage.getItem(BOOKMARK_KEY);
-  if (bookmarkedPageId && PageAPI.isExistingPage(bookmarkedPageId)) {
+  if (bookmarkedPageId && isExistingPage(bookmarkedPageId)) {
     bookmarkedPageUrl = bookmarkedPageUrl.concat(bookmarkedPageId);
   } else {
     // If there is no value stored, we send the reader to the first page on the latest update
@@ -53,26 +69,40 @@ export function getComicHomeURL(maxPageId) {
   return bookmarkedPageUrl;
 }
 
-// Refactor getFilePaths to use pageUuid
-function createPath(...pathNodes) {
-  let path = "";
-  for (let nodeIndex in pathNodes) {
-    path += pathNodes[nodeIndex];
-    // only append a slash if it's not the final element
-    if (nodeIndex < pathNodes.length - 1) {
-      path += "/";
-    }
-  }
-  return path;
-}
-
 export async function docFetcher({ queryKey }) {
   const [docKey] = queryKey;
   const ref = getRefForKey(docKey);
   // TODO: This getDoc await call is not being cached by useQuery, so it's being called again and again. Find a way to cache this reference?
   const docSnap = await getDoc(ref);
+  console.log(docSnap)
   let data = docSnap.data();
   return data;
+}
+
+export async function allPagesFetcher({queryKey}) {
+  let result = {"chapters": [], "pages": {}};
+  const chapsRef = getRefForKey(CHAP_CONTENTS_KEY);
+  const chapQuery = query(chapsRef, orderBy("order"))
+  
+  const pagesRef = getRefForKey(PAGES_CONTENTS_KEY);
+  const pagesQuery = query(pagesRef, orderBy("global_order"))
+  
+  let [pagesSnap, collSnap] = await Promise.all([
+    getDocs(pagesQuery),
+    getDocs(chapQuery),
+  ]);
+
+  pagesSnap.forEach((page) => {
+    let data = page.data()
+    if (!(data["chapter_id"] in result["pages"])) {
+      result["pages"][data["chapter_id"]] = []; 
+    }
+    result["pages"][data["chapter_id"]].push(data);
+  })
+  collSnap.forEach((doc) => {
+    result["chapters"].push(doc.data());
+  })
+  return result;
 }
 
 export async function pageFetcher({ queryKey }) {
@@ -107,114 +137,3 @@ export async function pageFetcher({ queryKey }) {
 
   return data;
 }
-
-class ComicPageAPI {
-  // Takes a Firebase Firestore object and a Firebase Storage object
-  constructor(db, storage) {
-    this.db = db;
-    this.storage = storage;
-    // Reference Constants
-    // this.bookDataRef = collection(this.db, "book_data");
-    // this.contentRef = doc(this.bookDataRef, "content");
-    // this.chaptersRef = collection(this.contentRef, "chapters");
-    // this.pagesRef = collection(this.contentRef, "pages");
-    // this.displayRef = doc(this.bookDataRef, "display_data");
-    // this.countRef = doc(this.bookDataRef, "counts");
-  }
-
-  getDisplayData(key) {
-    return getDoc(doc(collection(db, "book_data"), "display_data"))
-      .then((docSnap) => {
-        return docSnap.data()[key];
-      })
-      .catch((err) => {
-        console.log(err);
-        return null;
-      });
-  }
-
-  getFilePath(releventObjs) {
-    /* This function returns the path relative to the public/MnMPages directory to a page
-
-        Returns a string
-    */
-    let path = createPath(
-      releventObjs.seasonObj.folderName,
-      releventObjs.chapterObj.folderName,
-      releventObjs.pageObj.filename
-    );
-    return path;
-  }
-
-  getSeason(seasons, seasonName) {
-    /* This function gets a season object
-        
-            Parameters:
-            seasons - an array of season objects
-            seasonName - a string of the season name
-        */
-    const isSeason = (p) => p.seasonName === seasonName;
-    return seasons.find(isSeason);
-  }
-
-  getChapterNum(pageId) {
-    const relObjs = this.getRelValidObjs(pageId);
-    if (relObjs) {
-      return relObjs.chapterObj.id - 1;
-    }
-    return null;
-  }
-
-  getRelValidObjs(pageUuid) {
-    /* This function checks if the page number is valid, and if so
-        it returns the relevent Season object, Chapter object, and Page object.
-
-        Parameters:
-        pageUuid - The string uuid4 slug of the page       
-    */
-
-    let validObjs = {};
-    if (pageUuid in pagesData.pageIndex) {
-      let pageAddress = pagesData.pageIndex[pageUuid];
-      if (pageAddress.seasonIndex in pagesData.seasons) {
-        validObjs.seasonObj = pagesData.seasons[pageAddress.seasonIndex];
-      } else {
-        return null;
-      }
-      if (pageAddress.chapterIndex in validObjs.seasonObj.chapters) {
-        validObjs.chapterObj =
-          validObjs.seasonObj.chapters[pageAddress.chapterIndex];
-      } else {
-        return null;
-      }
-      if (pageAddress.pageIndex in validObjs.chapterObj.pages) {
-        validObjs.pageObj = validObjs.chapterObj.pages[pageAddress.pageIndex];
-      } else {
-        return null;
-      }
-      return validObjs;
-    } else {
-      return null;
-    }
-  }
-
-  getSeasons() {
-    return pagesData.seasons;
-  }
-
-  getAdminDisplayName(userId) {
-    for (let user in users.admins) {
-      if (users.admins[user].id === userId) {
-        return users.admins[user].displayName;
-      }
-    }
-    return "Mo and Nate";
-  }
-
-  isExistingPage(id) {
-    /* Checks if an id correlates to an existing page */
-    return id in pagesData.pageIndex;
-  }
-}
-
-export default ComicPageAPI;

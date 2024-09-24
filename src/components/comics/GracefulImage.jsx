@@ -12,7 +12,6 @@ export default function GracefulImage(props) {
     <BigSpinner />;
   }
 
-  // TODO fix this path issue
   const imageURL = data[PAGE_KEY][PAGE_URL];
 
   const loadedPageEffect = () => {

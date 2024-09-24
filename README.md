@@ -97,13 +97,13 @@ This is a custom, serial, image-hosting website for a graphic-novel I'm writing 
         - **DONE** Fix the layout on the Login and Display Name page
         - **DONE** Once the display name is set make the page auto re-render
         - **DONE** Test on mobile
-    - Load the icons on the archive page
-    - Add loading animations
-    - Fix auth appearance on mobile
+    - **DONE** Load the icons on the archive page
+    - **GOOD NUFF** Add loading animations
+    - **DONE** Fix auth appearance on mobile
     - Make fallback a joint avatar stored locally
     - **DONE** Figure out how to reduce the number of unnecessary queries
     - **DONE** Fix the desktop styling
-    - Fix the mobile comments
+    - **DONE** Fix the mobile comments
     - Add error handling on login errors
 
   - Add an "admin" type to user accounts

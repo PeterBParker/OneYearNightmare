@@ -6,7 +6,6 @@ import bookmarkOutline from "../../../assets/bookies/bookies/bookie-short-line-4
 import bookmarkFilled from "../../../assets/bookies/bookies/bookie-short-fill-40px.png";
 import { useState } from "react";
 import { bool, func } from "prop-types";
-import { PageAPI } from "../../../index";
 import { useParams } from "react-router-dom/dist";
 import { PARAM_PAGE_UUID } from "../../../api/RefKeys";
 
@@ -18,9 +17,7 @@ export default function NavBar(props) {
   );
 
   useEffect(() => {
-    if (PageAPI.isExistingPage(bookmarkId)) {
-      localStorage.setItem(BOOKMARK_KEY, bookmarkId);
-    }
+    localStorage.setItem(BOOKMARK_KEY, bookmarkId);
   }, [bookmarkId]);
 
   useEffect(() => {

@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react";
-import { BASE_PATH } from "../../../index";
 import PageThumbnail from "./PageThumbnail";
 
 export default function ChapterBanner(props) {
   const [isActive, setIsActive] = useState(false);
   // Not using hover because I only want the effect triggered once per mouse entry
   const [isMouseOver, setIsMouseOver] = useState(false);
-  let pagesDisplay = BuildChapterPagesDisplay(props.chapter, props.chapterPath);
+  let pagesDisplay = BuildChapterPagesDisplay(props.pages);
 
   useEffect(() => {
     const thisAccordion = document.getElementById(props.bannerId);
@@ -47,28 +46,20 @@ export default function ChapterBanner(props) {
   );
 }
 
-function BuildChapterPagesDisplay(chapter, chapterPath) {
+function BuildChapterPagesDisplay(pages) {
   let pagesDisplay = [];
-  for (let pageIndex in chapter["pages"]) {
-    let page = chapter["pages"][pageIndex];
-    let iconPath = encodeURI(
-      process.env.PUBLIC_URL + BASE_PATH + chapterPath + "/" + page["icon"]
-    );
+  for (let pageIndex in pages) {
+    let page = pages[pageIndex];
     pagesDisplay.push(
       <PageThumbnail
-        imageSrc={iconPath}
+        imageSrc={page["icon_url"]}
         pageId={page["uuid"]}
-        pageNum={page["pageNum"]}
+        pageNum={page["chap_order"]}
         altText={page["title"]}
         key={`archiveThumbnailPage${page["uuid"]}`}
       />
     );
   }
-  //Get the images
-
-  //Create icon/page details component
-
-  //Append to a display object
 
   return pagesDisplay;
 }
