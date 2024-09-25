@@ -1,13 +1,13 @@
 {
-    "maxDisplayPage": "691f59f5-ee35-4df4-bc4b-78c946a326f5",
+    "maxDisplayPage": "08710154-58b0-4010-be4a-a4496625d6de",
     "firstDisplayPage": "92004427-5249-4fa3-80f1-0a67f93ba559",
-    "pageCount": 173,
+    "pageCount": 174,
     "seasonCount": 1,
     "seasons": [
         {
             "seasonName": "First Blood",
             "folderName": "first blood",
-            "numOfPages": 173,
+            "numOfPages": 174,
             "numOfChapters": 6,
             "id": 1,
             "chapters": [
@@ -2134,7 +2134,7 @@
                 {
                     "chapterName": "Chapter Five",
                     "folderName": "chapter5",
-                    "numOfPages": 12,
+                    "numOfPages": 13,
                     "id": 6,
                     "pages": [
                         {
@@ -2289,9 +2289,22 @@
                             "user": "N1995",
                             "icon": "icons/CHAP 5_012-Icon.png",
                             "uuid": "691f59f5-ee35-4df4-bc4b-78c946a326f5",
-                            "nextPageUuid": null,
+                            "nextPageUuid": "08710154-58b0-4010-be4a-a4496625d6de",
                             "prevPageUuid": "4c0f400c-0442-49fc-a3b1-37dfabae2c29",
                             "globalPageNum": 171
+                        },
+                        {
+                            "pageNum": 13,
+                            "filename": "CHAP 5_013.webp",
+                            "title": "Screams From a Culvert Pipe",
+                            "message": "Disappointed in the potency of your venom? Insecure that you might only be producing an anaesthetic? Contact us today for a free trial of \"Toxic Traits\"! Guaranteed to kill any relationship worth fostering!",
+                            "datetime": "2024-09-24 19:39:32",
+                            "user": "N1995",
+                            "icon": "icons/CHAP 5_013-Icon.png",
+                            "uuid": "08710154-58b0-4010-be4a-a4496625d6de",
+                            "nextPageUuid": null,
+                            "prevPageUuid": "691f59f5-ee35-4df4-bc4b-78c946a326f5",
+                            "globalPageNum": 172
                         }
                     ]
                 }
@@ -3158,6 +3171,11 @@
             "seasonIndex": 0,
             "chapterIndex": 5,
             "pageIndex": 11
+        },
+        "08710154-58b0-4010-be4a-a4496625d6de": {
+            "seasonIndex": 0,
+            "chapterIndex": 5,
+            "pageIndex": 12
         }
     }
 }
