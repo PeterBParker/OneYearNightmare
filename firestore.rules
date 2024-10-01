@@ -1,5 +1,9 @@
 rules_version = '2';
 service cloud.firestore {
+    match /databases/(default)/documents/book_data/{multiSegment=**} {
+      allow read;
+      allow list;
+    }
     // Rule 1: Users cannot write  or read from any other table
     match /databases/(default)/documents/page_comments/{comment} {
       // Rule 2: User can Read all comments even if not logged in

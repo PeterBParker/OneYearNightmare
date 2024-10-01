@@ -1,15 +1,15 @@
-import MobileAboutComic from "./aboutCards/MobileAboutComic";
-import DesktopAboutComic from "./aboutCards/DesktopAboutComic";
+import MobileAboutComic from "../components/creators/about/aboutCards/MobileAboutComic";
+import DesktopAboutComic from "../components/creators/about/aboutCards/DesktopAboutComic";
 
-import nathanProfileIcon from "../../../assets/Phase2-Assets1/images/profile-pic-N3.jpg";
-import morghanProfileIcon from "../../../assets/Phase2-Assets1/images/profile-pic-M3.jpg";
-import githubIcon from "../../../assets/Phase3-Assets1/1x/32x-dark-cat.png";
-import linkedinIcon from "../../../assets/Phase3-Assets1/1x/32x-dark-twitter.png";
-import facebookIcon from "../../../assets/Phase3-Assets1/1x/32x-dark-fb.png";
-import instagramIcon from "../../../assets/Phase3-Assets1/1x/32x-dark-IG.png";
+import nathanProfileIcon from "../assets/Phase2-Assets1/images/profile-pic-N3.jpg";
+import morghanProfileIcon from "../assets/Phase2-Assets1/images/profile-pic-M3.jpg";
+import githubIcon from "../assets/Phase3-Assets1/1x/32x-dark-cat.png";
+import linkedinIcon from "../assets/Phase3-Assets1/1x/32x-dark-twitter.png";
+import facebookIcon from "../assets/Phase3-Assets1/1x/32x-dark-fb.png";
+import instagramIcon from "../assets/Phase3-Assets1/1x/32x-dark-IG.png";
 
 import { useMediaQuery } from "react-responsive";
-import querySizes from "../../../styling/breakpoints.json";
+import querySizes from "../styling/breakpoints.json";
 
 export default function Creators() {
   const isDesktop = useMediaQuery({ query: querySizes["lg"] });

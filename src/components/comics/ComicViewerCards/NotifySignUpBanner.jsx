@@ -5,7 +5,7 @@ export default function NotifySignUpBanner(props) {
   return (
     <div
       className={`notification-signup-banner ml-auto mr-auto justify-center ${
-        props.isDesktop ? "py-6" : "pb-6 pt-2"
+        props.isDesktop ? "py-6" : "pb-6 pt-2 bg-white"
       } items-center flex-wrap`}
     >
       <div className={` ${props.isDesktop ? "text-left" : null} `}>

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Modal from "../../generic/Modal";
-import { NO_USER_ID } from "../../Main";
+import { NO_USER_ID } from "../../../index";
 import { storeUserAvatar } from "../avatarHelpers";
 import {
   deleteComments,

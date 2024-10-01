@@ -4,14 +4,14 @@ import NotifySignUpBanner from "./NotifySignUpBanner";
 const PageDetailsCard = loadable(() => import("../PageDetailsCard"));
 const Comments = loadable(() => import("../../comments/Comments"));
 
-export default function DesktopReadPageCards(props) {
+export default function DesktopReadPageCards() {
   return (
     <>
       <NotifySignUpBanner isDesktop={true} />
       <div className="desktopReadPageCardsWrapper mx-8">
-        <PageDetailsCard page={props.page} chapter={props.chapter} />
+        <PageDetailsCard />
         <div className="desktopReadPageCardsSupport bg-white ">
-          <Comments slug={props.page.uuid} page={props.page} />
+          <Comments />
         </div>
       </div>
     </>

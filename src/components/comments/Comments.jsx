@@ -1,10 +1,11 @@
-import PropTypes, { object } from "prop-types";
 import loadable from "@loadable/component";
 
 import beTheFirst from "../../assets/Be_the_first.webp";
+import { useMediaQuery } from "react-responsive";
+import querySizes from "../../styling/breakpoints.json";
 import Comment from "./Comment";
 import { useState, useEffect } from "react";
-import { SIGNIN_PAGE_PATH } from "../Main";
+import { SIGNIN_PAGE_PATH } from "../../index";
 import { auth } from "../../index";
 import useFirebaseAuth from "../users/hooks/useFirebaseAuth";
 import { db } from "../../index";
@@ -16,6 +17,8 @@ import {
   onSnapshot,
 } from "firebase/firestore";
 import { PAGE_COMMENTS_TABLE } from "./utils/constants";
+import { useParams } from "react-router-dom/dist";
+import { PARAM_PAGE_UUID } from "../../api/RefKeys";
 
 const Title = loadable(() => import("../generic/Title"));
 const LinkButton = loadable(() => import("../generic/LinkButton"));
@@ -24,12 +27,14 @@ const CreateNewCommentForm = loadable(() => import("./CreateNewCommentForm"));
 /**
  * Renders supplied comment data.
  */
-export default function Comments(props) {
+export default function Comments() {
+  const params = useParams();
   const [showCommentSubmit, setShowCommentSubmit] = useState(false);
   const authUser = useFirebaseAuth(auth);
   const [comments, setComments] = useState([]);
+  const isDesktop = useMediaQuery({ query: querySizes["lg"] });
 
-  const page_uuid = props.page.uuid;
+  const page_uuid = params[PARAM_PAGE_UUID];
 
   useEffect(() => {
     const commentsQuery = query(
@@ -51,7 +56,7 @@ export default function Comments(props) {
   }, [page_uuid]);
 
   return (
-    <div className="comments-container h-full border-b border-mocha-dark lg:border-t-2 lg:border-r-2 lg:border-b-2 lg:border-l lg:pb-1 pb-4 flex flex-col justify-between">
+    <div className={`${isDesktop ? "" : "bg-white"} comments-container h-full border-b border-mocha-dark lg:border-t-2 lg:border-r-2 lg:border-b-2 lg:border-l lg:pb-1 pb-4 flex flex-col justify-between`}>
       <div className="py-4 px-8 bg-eggshell text-left flex flex-row items-center comments-title">
         <Title text="Comments //" />
       </div>
@@ -74,7 +79,7 @@ export default function Comments(props) {
                   key={comment.id}
                   children={children}
                   comment={comment}
-                  slug={props.slug}
+                  slug={page_uuid}
                 />
               );
             })
@@ -86,7 +91,7 @@ export default function Comments(props) {
         showCommentSubmit ? (
           <div className="mx-4 my-4">
             <CreateNewCommentForm
-              slug={props.slug}
+              slug={page_uuid}
               callback={() => setShowCommentSubmit(false)}
             />
             <div
@@ -114,8 +119,3 @@ export default function Comments(props) {
     </div>
   );
 }
-
-Comments.propTypes = {
-  slug: PropTypes.string.isRequired,
-  page: object.isRequired,
-};

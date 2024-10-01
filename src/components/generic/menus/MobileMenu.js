@@ -7,7 +7,7 @@ import {
   COMIC_VIEWER_PATH,
   ARCHIVE_PAGE_PATH,
   SIGNIN_PAGE_PATH,
-} from "../../Main";
+} from "../../../index";
 
 export default function MobileMenu(props) {
   let mobileMenu = useRef(null);
@@ -46,16 +46,6 @@ export default function MobileMenu(props) {
               <Link to={SIGNIN_PAGE_PATH} onClick={props.onMenuChange}>
                 {auth.currentUser == null ? "Login" : "User"}
               </Link>
-            </div>
-            <div className="scheduleNavLink">
-              <a
-                href={
-                  "https://cosmic-marmoset-384.notion.site/34c6fb7629fe42599319f0b4adc8be7f?v=b0e4396668254195b01a305d1f6249eb"
-                }
-                onClick={props.onMenuChange}
-              >
-                Schedule
-              </a>
             </div>
           </div>
         </div>

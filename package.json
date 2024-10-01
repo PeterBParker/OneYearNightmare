@@ -11,6 +11,8 @@
     "@loadable/component": "^5.15.3",
     "@mailchimp/mailchimp_marketing": "^3.0.80",
     "@resvg/resvg-js": "^2.0.0",
+    "@sendgrid/client": "^8.1.3",
+    "@tanstack/react-query": "^5.49.2",
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
@@ -23,12 +25,12 @@
     "path": "^0.12.7",
     "postcss-cli": "^9.1.0",
     "prop-types": "^15.8.1",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "react-firebase-hooks": "^5.1.1",
-    "react-responsive": "^8.2.0",
-    "react-router-dom": "^5.3.0",
-    "react-scripts": "^4.0.3",
+    "react-responsive": "^10.0.0",
+    "react-router-dom": "^6.24.0",
+    "react-scripts": "^5.0.1",
     "sharp": "^0.30.4",
     "tailwind": "^4.0.0",
     "uuid": "^8.3.2",
@@ -45,7 +47,9 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "stop": "npx kill-port 9099 8080 9000 5000 9199",
-    "notify": "cd src/scripts && python notifyEmailSubscribers.py"
+    "notify": "cd src/scripts && python notifyEmailSubscribers.py",
+    "emulators:start": "firebase emulators:start --import ./firestore_export",
+    "emulators:stop": "npx kill-port 4000 8080 8085 9000"
   },
   "eslintConfig": {
     "extends": [
@@ -66,7 +70,7 @@
     ]
   },
   "devDependencies": {
-    "@sendgrid/client": "^8.1.3",
+    "@tanstack/eslint-plugin-query": "^5.49.1",
     "autoprefixer": "^10.4.2",
     "chokidar-cli": "^2.1.0",
     "npm-run-all": "^4.1.5",
@@ -75,6 +79,7 @@
     "react-error-overlay": "^6.0.9",
     "react-share": "^4.4.0",
     "tailwindcss": "^3.0.21",
-    "webpack-cli": "^4.9.2"
+    "webpack-cli": "^4.9.2",
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.0"
   }
 }

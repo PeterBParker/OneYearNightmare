@@ -94,9 +94,6 @@ const SignIn = () => {
     var ui =
       firebaseui.auth.AuthUI.getInstance() || new firebaseui.auth.AuthUI(auth);
     ui.start("#firebaseui-auth-container", getUiConfig());
-    return () => {
-      ui.delete();
-    };
   }, []);
 
   return (

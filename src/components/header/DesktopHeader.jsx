@@ -3,9 +3,7 @@ import { Link } from "react-router-dom";
 
 import ChapterNumIcon from "./ChapterNumIcon";
 
-import { COMIC_VIEWER_DEFAULT_PATH } from "../Main";
-
-export default function DesktopHeader(props) {
+export default function DesktopHeader() {
   return (
     <div>
       <div className={`headerGridDesktop items-center w-full`}>
@@ -16,15 +14,13 @@ export default function DesktopHeader(props) {
             <p className="publishDaysTextDesktop text-right">Updates Mondays</p>
           </div>
           <div className="headerLogoDesktop justify-self-center self-center py-7 px-4 flex-shrink-0">
-            <Link to={COMIC_VIEWER_DEFAULT_PATH}>
-              <img
-                className="headerLogoImageDesktop mx-auto"
-                src={logo}
-                width="200px"
-                height="auto"
-                alt=""
-              />
-            </Link>
+            <img
+              className="headerLogoImageDesktop mx-auto"
+              src={logo}
+              width="200px"
+              height="auto"
+              alt=""
+            />
           </div>
           <div className="volDisplayDesktop desktopHeaderLogoWingData text-mocha-dark font-medium text-left ml-6 self-center justify-self-start">
             <div className="volTextContainer flex flex-row w-full">

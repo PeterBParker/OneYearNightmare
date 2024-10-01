@@ -8,6 +8,8 @@
 
 # testing
 /coverage
+/firestore_export
+/.venv
 
 # production
 /build

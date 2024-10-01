@@ -9,13 +9,15 @@
             "folderName": "first blood",
             "numOfPages": 174,
             "numOfChapters": 6,
-            "id": 1,
+            "uuid": "44bd96b7-acec-4f01-9425-9bb3d59e29e4",
+            "order": 1,
             "chapters": [
                 {
                     "chapterName": "Prologue",
                     "folderName": "prologue",
                     "numOfPages": 23,
-                    "id": 1,
+                    "uuid": "836abbc8-cf81-4cf8-b42f-d18d9ff9bdc5",
+                    "order": 1,
                     "pages": [
                         {
                             "pageNum": 1,
@@ -322,7 +324,8 @@
                     "chapterName": "Chapter One",
                     "folderName": "chapter1",
                     "numOfPages": 27,
-                    "id": 2,
+                    "uuid": "35883e4b-44e2-4a2b-b652-9f310e531db7",
+                    "order": 2,
                     "pages": [
                         {
                             "pageNum": 1,
@@ -681,7 +684,8 @@
                     "chapterName": "Chapter Two",
                     "folderName": "chapter2",
                     "numOfPages": 56,
-                    "id": 3,
+                    "uuid": "0227b9fd-4d99-41bb-9f28-a6fd277a5287",
+                    "order": 3,
                     "pages": [
                         {
                             "pageNum": 1,
@@ -1404,7 +1408,8 @@
                     "chapterName": "Chapter Three",
                     "folderName": "chapter3",
                     "numOfPages": 27,
-                    "id": 4,
+                    "uuid": "595444e1-c1a8-48dc-9adc-2936a8db3ff2",
+                    "order": 4,
                     "pages": [
                         {
                             "pageNum": 1,
@@ -1763,7 +1768,8 @@
                     "chapterName": "Chapter Four",
                     "folderName": "chapter4",
                     "numOfPages": 29,
-                    "id": 5,
+                    "uuid": "80a06a78-42dd-458e-9f77-b05293eeca00",
+                    "order": 5,
                     "pages": [
                         {
                             "pageNum": 1,
@@ -2058,7 +2064,7 @@
                             "message": "Happy Holidays everyone! We're doing our annual winter break to build up some backlog and take a breather!",
                             "datetime": "2023-12-27 13:50:56",
                             "user": "N1995",
-                            "icon": "icons/Christmas_2023-pg-Icon.png",
+                            "icon": "icons/Christmas_2023-pg2-Icon.png",
                             "uuid": "32fd1894-7762-4de6-aa7b-de36c1c9efce",
                             "nextPageUuid": "d5f0340a-1e78-4aa4-9915-f2c974b4e294",
                             "prevPageUuid": "86fcb3dd-3cc7-4c8a-b135-2a8af7476999",
@@ -2135,6 +2141,7 @@
                     "chapterName": "Chapter Five",
                     "folderName": "chapter5",
                     "numOfPages": 13,
+                    "uuid": "5aa23909-b7aa-4177-bdba-25cb3a892ef0",
                     "id": 6,
                     "pages": [
                         {

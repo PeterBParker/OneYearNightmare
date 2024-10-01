@@ -1,27 +1,32 @@
-import ComicPageAPI from "../../../api/ComicPageAPI";
+import { useParams } from "react-router-dom/dist";
 import activeFirstIcon from "../../../assets/FINAL-ASSETS-072821/final assets/left-skip-line-30px.png";
 import disabledFirstIcon from "../../../assets/FINAL-ASSETS-072821/final assets/left-skip-line-light-30px.png";
-import { useState, useEffect } from "react";
 import NavButton from "./NavButton";
 import { func, string } from "prop-types";
+import { displayQuery } from "../../../routes/Reader";
+import { FIRST_PAGE_ID_KEY, PARAM_PAGE_UUID } from "../../../api/RefKeys";
 
 export default function FirstPageButton(props) {
-  const firstPageId = ComicPageAPI.getFirstPageId();
-  const [disabled, setDisabled] = useState(props.pageId === firstPageId);
+  const params = useParams();
 
-  useEffect(() => {
-    if (props.pageId === firstPageId) {
-      setDisabled(true);
-    } else {
-      setDisabled(false);
+  function getPageIdToLinkTo(data) {
+    if (FIRST_PAGE_ID_KEY in data) {
+      let firstPageId = data[FIRST_PAGE_ID_KEY];
+      // Check if we are on the first page
+      if (firstPageId === params[PARAM_PAGE_UUID]) {
+        return "";
+      }
+      return firstPageId;
     }
-  }, [props.pageId]);
+    // The data hasn't loaded yet and we don't know
+    return "";
+  }
 
-  const pageFilePath = "/read/" + firstPageId;
   return (
     <NavButton
-      disabled={disabled}
-      pageFilePath={pageFilePath}
+      query={displayQuery()}
+      dataKey={FIRST_PAGE_ID_KEY}
+      getPageIdToLinkTo={getPageIdToLinkTo}
       clickEffects={props.clickEffects}
       activeIcon={activeFirstIcon}
       disabledIcon={disabledFirstIcon}
@@ -31,6 +36,5 @@ export default function FirstPageButton(props) {
 }
 
 FirstPageButton.propTypes = {
-  pageId: string.isRequired,
   clickEffects: func.isRequired,
 };
