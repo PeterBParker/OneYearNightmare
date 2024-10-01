@@ -34,6 +34,7 @@ import { loader as book_loader } from "./routes/Archive";
 import Login from "./routes/Login";
 import FinishLogin from "./routes/FinishLogin";
 import ProfilePage from "./routes/ProfilePage";
+import ContentManagement from "./routes/ContentManagement";
 
 // Initialize the Firebase Application
 var firebaseConfig = {
@@ -85,6 +86,7 @@ export const CREATIVES_PAGE_PATH = "/creatives";
 export const SIGNIN_PAGE_PATH = "/login";
 export const FINISH_SIGNIN_PAGE_PATH = "/finish-login"
 export const USER_PROFILE_PAGE_PATH = "/profile";
+export const CONTENT_MANAGEMENT_PATH = "/content-management";
 export const BASE_PATH = "/MnMPages/";
 
 export const JOINT_SIG = "Mo and Nate";
@@ -143,6 +145,10 @@ const router = createBrowserRouter([
       {
         path: USER_PROFILE_PAGE_PATH,
         element: <ProfilePage />
+      },
+      {
+        path: CONTENT_MANAGEMENT_PATH,
+        element: <ContentManagement />
       }
     ],
   },

@@ -1,7 +1,10 @@
 import { validate as isValidUUID } from "uuid";
-import { collection, doc, getDoc, getDocs, orderBy, query } from "firebase/firestore";
+import { v4 as uuidv4 } from 'uuid';
+import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import { collection, doc, where, setDoc, getDoc, getDocs, orderBy, query, limit } from "firebase/firestore";
 import {
   db,
+  storage,
   COMIC_VIEWER_PATH,
   BOOKMARK_KEY,
 } from "../index";
@@ -11,10 +14,24 @@ import {
   PAGES_CONTENTS_KEY,
   CHAP_KEY,
   PAGE_KEY,
+  PAGE_UUID,
   PAGE_CHAP_KEY,
   AUTHOR_KEY,
   PAGE_AUTHOR,
+  PAGE_TIME_POSTED,
+  PAGE_ORDER_IN_CHAP,
+  PAGE_ORDER_IN_BOOK,
+  COUNTS_DOC_KEY,
+  GLOBAL_PAGE_COUNT,
+  PAGE_NEXT_PAGE_ID,
+  PAGE_PREV_PAGE_ID,
+  PAGE_STORAGE_PATH,
+  ICON_STORAGE_PATH,
+  PAGE_ICON_FILENAME,
+  PAGE_URL,
 } from "../api/RefKeys";
+
+// *** GETTERS *** //
 
 // RefKeyMap is a singleton that bridges serializable string constants that act as
 // query keys for react-query to firestore references. Using references as the keys
@@ -28,6 +45,7 @@ function getRefKeyMap() {
       [DISPLAY_DATA_DOC_KEY]: doc(collection(db, "book_data"), "display_data"),
       [CHAP_CONTENTS_KEY]: collection(doc(collection(db, "book_data"), "content"), "chapters"),
       [PAGES_CONTENTS_KEY]: collection(doc(collection(db, "book_data"), "content"), "pages"),
+      [COUNTS_DOC_KEY]: doc(collection(db, "book_data"), "counts"),
     };
     // Freeze It
     Object.freeze(RefKeyMap);
@@ -136,4 +154,133 @@ export async function pageFetcher({ queryKey }) {
   };
 
   return data;
+}
+
+// *** SETTERS *** //
+
+// assume append
+// follow logic of python and call addChapter if need be
+// what data do we need to call setDoc?
+//   chapter order - calculated? (query for all pages with the chapter id and sorted by chap order, grab the last one off the array and check its value. add 1)
+
+//   icon url - generated
+//   next page uuid - null
+//   prev page uuid - calculated
+//   public url - generated
+//   page uuid - generated
+
+export async function appendPageToChapter(pageData, imageFile) {
+  try {
+    addRequiredFields(pageData, imageFile);
+    const PagesRef = getRefForKey(PAGES_CONTENTS_KEY);
+    let newPageRef = doc(PagesRef, pageData["uuid"])
+    //await setDoc(newPageRef, pageData); 
+    // TODO update chapter page count 
+    // TODO update global page count
+  } catch (err) {
+    return (false, err)
+  }
+  return (true, null)
+}
+
+export async function addRequiredFields(pageData, imageFile) {
+  addCurrentDatetime(pageData)
+  addNextPageUUID(pageData)
+  addPageUUID(pageData)
+  // TODO make all async functions simultaneous and wait for them to finish before returning
+  await addChapterOrder(pageData)
+  await addGlobalOrder(pageData)
+  await addIconURL(pageData, imageFile)
+  await addPrevPageUUID(pageData)
+  await addPublicURL(pageData, imageFile)
+  console.log(pageData)
+  
+}
+
+function addCurrentDatetime(pageData) {
+  let date = new Date();
+  let dateStr = date.getFullYear() + "-" + (date.getMonth()+1) + "-" + date.getDate() + " " + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+  pageData[PAGE_TIME_POSTED] = dateStr;
+}
+
+async function addChapterOrder(pageData) {
+  const data = await getLatestPageInChapter(pageData[PAGE_CHAP_KEY])
+  const numOfPages = data[PAGE_ORDER_IN_CHAP]
+  pageData[PAGE_ORDER_IN_CHAP] = numOfPages+1
+}
+
+async function getLatestPageInChapter(chapterId) {
+  // TODO try to get from cache and if null get from server OR figure out a different way to cache this query
+  let pagesRef = getRefForKey(PAGES_CONTENTS_KEY)
+  const q = query(pagesRef, where(PAGE_CHAP_KEY, "==", chapterId), orderBy(PAGE_ORDER_IN_CHAP, "desc"), limit(1))
+  const querySnapshot = await getDocs(q);
+  if (querySnapshot.docs.length !== 1) {
+    throw new Error("unexpected number of pages returned by latest page in chapter query:" + querySnapshot.docs.length)
+  }
+  return querySnapshot.docs[0].data();
+}
+
+async function addGlobalOrder(pageData) {
+  // TODO try and cache this query somehow
+  let displayRef = getRefForKey(COUNTS_DOC_KEY)
+  const docSnapshot = await getDoc(displayRef);
+  const data = docSnapshot.data();
+  pageData[PAGE_ORDER_IN_BOOK] = data[GLOBAL_PAGE_COUNT]+1;
+}
+
+async function addIconURL(pageData, file) {
+  var img = new Image();
+  img.src = file
+  const canvas = document.createElement("canvas");
+  const ctx = canvas.getContext("2d");
+
+  // Set width and height
+  canvas.width = 200;
+  canvas.height = 200;
+
+  // Draw image and export to a data-uri
+  ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+  const dataURI = canvas.toDataURL();
+  
+  // Upload to storage
+  const iconsStorageRef = ref(storage, ICON_STORAGE_PATH + file["name"])
+  await uploadBytes(iconsStorageRef, dataURI).then(() => {
+    getDownloadURL(iconsStorageRef).then((url) => {
+      pageData[PAGE_ICON_FILENAME] = url;
+    })
+    // make ref public and get download url
+    // apparently this can only be done with the admin SDK from the server?
+    // TODO: Figure out how to do that step via a cloud function
+    // idea 1: setup a cloud function to watch for new pages getting written and then create the public download url and update the document
+  }).catch((err) => {
+    throw new Error("something went wrong uploading the page: " + err)
+  })
+}
+
+function addNextPageUUID(pageData) {
+  pageData[PAGE_NEXT_PAGE_ID] = null;
+}
+
+async function addPrevPageUUID(pageData) {
+  const lastPageData = await getLatestPageInChapter(pageData[PAGE_CHAP_KEY])
+  pageData[PAGE_PREV_PAGE_ID] = lastPageData[PAGE_UUID]
+}
+
+async function addPublicURL(pageData, file) {
+  const pagesStorageRef = ref(storage, PAGE_STORAGE_PATH + file["name"])
+  await uploadBytes(pagesStorageRef, file).then(() => {
+    getDownloadURL(pagesStorageRef).then((url) => {
+      pageData[PAGE_URL] = url;
+    })
+    // make ref public and get download url
+    // apparently this can only be done with the admin SDK from the server?
+    // TODO: Figure out how to do that step via a cloud function
+    // idea 1: setup a cloud function to watch for new pages getting written and then create the public download url and update the document
+  }).catch((err) => {
+    throw new Error("something went wrong uploading the page: " + err)
+  })
+}
+
+function addPageUUID(pageData) {
+  pageData[PAGE_UUID] = uuidv4();
 }
