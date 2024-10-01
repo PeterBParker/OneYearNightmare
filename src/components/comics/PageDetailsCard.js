@@ -17,7 +17,7 @@ import {
   AUTHOR_KEY,
   USER_DISPLAY_NAME,
 } from "../../api/RefKeys";
-import { BigSpinner } from "../generic/loading/Spinners";
+import { PageLoadingSpinner } from "../generic/loading/Spinners";
 
 export default function PageDetailsCard() {
   const params = useParams();
@@ -25,7 +25,7 @@ export default function PageDetailsCard() {
   const isDesktop = useMediaQuery({ query: querySizes["lg"] });
 
   if (isLoading) {
-    return <BigSpinner />;
+    return <PageLoadingSpinner />;
   }
 
   // Create default values in case something goes wrong

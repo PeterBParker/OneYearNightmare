@@ -1,6 +1,6 @@
 import { SIGNIN_PAGE_PATH, USER_PROFILE_PAGE_PATH, auth } from "..";
 import { isSignInWithEmailLink, signInWithEmailLink } from "firebase/auth";
-import { BigSpinner } from "../components/generic/loading/Spinners";
+import { PageLoadingSpinner } from "../components/generic/loading/Spinners";
 import { useNavigate } from "react-router-dom/dist";
 
 export default function FinishLogin() {
@@ -35,6 +35,6 @@ export default function FinishLogin() {
         });
     }
   return(
-      <BigSpinner />
+      <PageLoadingSpinner />
   )
 }
