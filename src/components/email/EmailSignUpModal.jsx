@@ -44,7 +44,7 @@ export default function EmailSignUpModal(props) {
     </>
   );
 
-  useEffect(async () => {
+  useEffect(() => {
     if (subscribed) {
       setCallToAction(
         <div className="mb-4 text-lg text-left mx-2">
@@ -72,9 +72,6 @@ export default function EmailSignUpModal(props) {
           <i className="fa-solid fa-mailbox"></i>
         </div>
       );
-      // Sleep for five seconds
-      //   await new Promise((r) => setTimeout(r, 5000));
-      //   setShowModal(false);
     }
   }, [subscribed]);
 

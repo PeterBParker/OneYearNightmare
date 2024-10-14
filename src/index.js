@@ -1,10 +1,9 @@
 import React from "react";
-import ReactDOM from "react-dom";
-import App from "./components/App";
-import reportWebVitals from "./reportWebVitals";
-import { BrowserRouter } from "react-router-dom";
-import "./styling/tailwind.output.css";
+import { createRoot } from "react-dom/client";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 
+// Firebase Objects and Settings
 import { initializeApp } from "firebase/app";
 import { connectFirestoreEmulator, getFirestore } from "firebase/firestore";
 import { connectStorageEmulator, getStorage } from "firebase/storage";
@@ -15,6 +14,27 @@ import {
   initializeAppCheck,
   ReCaptchaEnterpriseProvider,
 } from "firebase/app-check";
+
+import reportWebVitals from "./reportWebVitals";
+import "./styling/tailwind.output.css";
+import GlobalErrorPage from "./components/generic/errors/GlobalErrorPage";
+
+// Routes
+import App from "./routes/App";
+import Creators from "./routes/Creators";
+import Support from "./routes/Support";
+import Archive from "./routes/Archive";
+import ComicViewer from "./routes/ComicViewer";
+import Reader from "./routes/Reader";
+
+// Loaders
+import { loader as reader_loader } from "./routes/Reader";
+import { loader as page_loader } from "./routes/ComicViewer";
+import { loader as book_loader } from "./routes/Archive";
+import Login from "./routes/Login";
+import FinishLogin from "./routes/FinishLogin";
+import ProfilePage from "./routes/ProfilePage";
+import ContentManagement from "./routes/ContentManagement";
 
 // Initialize the Firebase Application
 var firebaseConfig = {
@@ -28,9 +48,11 @@ var firebaseConfig = {
 };
 const firebaseApp = initializeApp(firebaseConfig);
 
+export let DOMAIN = "https://monstersandmyriads.com";
 // Perform the App Check with ReCaptcha to prevent unauthorized usage of Firestore
 if (window.location.hostname === "localhost") {
   window.FIREBASE_APPCHECK_DEBUG_TOKEN = process.env.REACT_APP_DEV_TOKEN;
+  DOMAIN = "http://localhost:3000"
 }
 
 const appCheck = initializeAppCheck(firebaseApp, {
@@ -50,19 +72,93 @@ export const AVATARS_PATH = "user_avatars/";
 export const BOOKMARK_KEY = "mxmBookmarkedPage";
 
 if (window.location.hostname === "localhost") {
-  connectAuthEmulator(auth, "http://localhost:9099"); // to use the emulator run "firebase emulators:start"
+  connectAuthEmulator(auth, "http://localhost:9099");
   connectFirestoreEmulator(db, "localhost", 8080);
   connectStorageEmulator(storage, "localhost", "9199");
   connectFunctionsEmulator(functions, "localhost", 5001);
 }
 
-ReactDOM.render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  </React.StrictMode>,
-  document.getElementById("root")
+// Declare site-wide constants
+export const COMIC_VIEWER_PATH = "/read";
+export const SUPPORT_PAGE_PATH = "/support";
+export const ARCHIVE_PAGE_PATH = "/archive";
+export const CREATIVES_PAGE_PATH = "/creatives";
+export const SIGNIN_PAGE_PATH = "/login";
+export const FINISH_SIGNIN_PAGE_PATH = "/finish-login"
+export const USER_PROFILE_PAGE_PATH = "/profile";
+export const CONTENT_MANAGEMENT_PATH = "/content-management";
+export const BASE_PATH = "/MnMPages/";
+
+export const JOINT_SIG = "Mo and Nate";
+export const NO_USER_ID = "null";
+export const SNAP_TO_PAGE_PATH = "snap-to-page";
+export const MAX_COMMENT_CHARS = 350;
+
+const queryClient = new QueryClient();
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <App />,
+    errorElement: <GlobalErrorPage />,
+    children: [
+      {
+        path: CREATIVES_PAGE_PATH,
+        element: <Creators />,
+      },
+      {
+        path: SUPPORT_PAGE_PATH,
+        element: <Support />,
+      },
+      {
+        path: "/",
+        element: <Reader />,
+        loader: reader_loader(queryClient),
+      },
+      {
+        path: COMIC_VIEWER_PATH,
+        element: <Reader />,
+        loader: reader_loader(queryClient),
+      },
+      {
+        path: COMIC_VIEWER_PATH + "/:pageUuid",
+        element: <ComicViewer />,
+        loader: page_loader(queryClient),
+      },
+      {
+        path: COMIC_VIEWER_PATH + "/:pageUuid/:focus",
+        element: <ComicViewer />,
+        loader: page_loader(queryClient),
+      },
+      {
+        path: ARCHIVE_PAGE_PATH,
+        element: <Archive />,
+        loader: book_loader(queryClient),
+      },
+      {
+        path: SIGNIN_PAGE_PATH,
+        element: <Login />,
+      },
+      {
+        path: FINISH_SIGNIN_PAGE_PATH,
+        element: <FinishLogin />,
+      },
+      {
+        path: USER_PROFILE_PAGE_PATH,
+        element: <ProfilePage />
+      },
+      {
+        path: CONTENT_MANAGEMENT_PATH,
+        element: <ContentManagement />
+      }
+    ],
+  },
+]);
+const container = document.getElementById("root");
+const root = createRoot(container);
+root.render(
+    <QueryClientProvider client={queryClient}>
+      <RouterProvider router={router} />
+    </QueryClientProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function

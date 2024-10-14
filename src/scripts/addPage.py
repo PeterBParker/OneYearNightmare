@@ -32,7 +32,7 @@ class PageManager():
             "chapterName": chapter_name,
             "folderName": folderName,
             "numOfPages": numOfPages,
-            "id": id,
+            "uuid": id,
             "pages": pages,
         }
         self.write_chapter_append(chapter_obj, season_name)
@@ -81,7 +81,7 @@ class PageManager():
             for chapter in season["chapters"]
             if chapter["folderName"] == chapter_dir.name
         )
-        page = next(page for page in chapter["pages"] if page["id"] == page_id)
+        page = next(page for page in chapter["pages"] if page["uuid"] == page_id)
         page["icon"] == str(Path(self._ICON_REL_DIR) / icon_path.name)
         self.write_to_file(data, db_filename)
 
@@ -127,13 +127,13 @@ class PageManager():
         new_page_data = self.create_new_page_data(new_page_num, filename, icon_path, title, message, user, None, latest_page["uuid"])
 
         self.write_latest_page_next_page(new_page_data["uuid"])
-        self.write_increment_chapter_page_count(season["id"], chapter["id"])
-        self.write_increment_season_page(season["id"])
+        self.write_increment_chapter_page_count(season["order"], chapter["order"])
+        self.write_increment_season_page(season["order"])
         self.write_increment_book_page_count()
         self.write_new_max_display_page(new_page_data["uuid"])
         
 
-        self.write_page_append(season["id"], chapter["id"], new_page_data)
+        self.write_page_append(season["order"], chapter["order"], new_page_data)
 
         return True
 
@@ -152,7 +152,7 @@ class PageManager():
         seasonObj["numOfPages"] = 0
         seasonObj["numOfChapters"] = 0
         data = self.get_data(self._WORKING_DATA_FILENAME, "r")
-        seasonObj["id"] = data["seasonCount"] + 1
+        seasonObj["order"] = data["seasonCount"] + 1
         seasonObj["chapters"] = []
 
         # This function has to come first to create the season the chapter is added to.
@@ -174,7 +174,7 @@ class PageManager():
         self.make_directory(self._DIR_PREFIX + season["folderName"] + "/" + folderName)
         lastChapName = self.get_last_chapter_name_in_season(season_name)
         lastChap = self.get_chapter_in_season(season_name, lastChapName)
-        self.add_chapter(season_name, chapter_name, folderName, 0, lastChap["id"]+1, [])
+        self.add_chapter(season_name, chapter_name, folderName, 0, lastChap["order"]+1, [])
         return chapter_name
 
 
@@ -211,7 +211,7 @@ class PageManager():
         data = self.get_data(self._WORKING_DATA_FILENAME, "r")
         if len(data["seasons"]) == 0:
             return None
-        latestSeason = max(data["seasons"], key=lambda x: x["id"])
+        latestSeason = max(data["seasons"], key=lambda x: x["order"])
         return latestSeason
 
     def get_latest_season_with_content(self):
@@ -225,14 +225,14 @@ class PageManager():
                 if len(chapters[0].get("pages")) > 0:
                     return True
             return False
-        latestSeason = max(filter(season_content_filter, data["seasons"]), key=lambda x: x["id"])
+        latestSeason = max(filter(season_content_filter, data["seasons"]), key=lambda x: x["order"])
         return latestSeason
 
     def get_latest_chapter_with_content(self):
         latestSeason = self.get_latest_season_with_content()
         if latestSeason is not None:
             # Of all the chapters that have pages, get the one with the highest id
-            latestChapter = max(filter(lambda x: len(x.get("pages")), latestSeason["chapters"]), key=lambda x: x["id"])
+            latestChapter = max(filter(lambda x: len(x.get("pages")), latestSeason["chapters"]), key=lambda x: x["order"])
             return latestChapter
         else:
             return None
@@ -264,7 +264,7 @@ class PageManager():
         data = self.get_data(self._WORKING_DATA_FILENAME, "r")
         for season in data["seasons"]:
             if season_name == season["seasonName"]:
-                return season["id"] - 1
+                return season["order"] - 1
         raise Exception("Season not found")
 
 
@@ -424,7 +424,7 @@ class PageManager():
         seasonObj = self.get_season(season_name)
         seasonObj["chapters"].append(chapterObj)
         seasonObj["numOfChapters"] += 1
-        seasonIndex = seasonObj["id"] - 1
+        seasonIndex = seasonObj["order"] - 1
         # Replace the proper season object with our newly created one.
         data["seasons"][seasonIndex] = seasonObj
 
@@ -595,8 +595,8 @@ class PageManager():
         new_page_data = self.create_new_page_data(new_page_num, filename, icon_path, title, message, user, new_next_page_uuid, new_prev_page_uuid)
 
         self.write_relink_page_pointers(new_prev_page_uuid, new_page_data["uuid"], new_next_page_uuid)
-        self.write_increment_chapter_page_count(season["id"], chapter["id"])
-        self.write_increment_season_page(season["id"])
+        self.write_increment_chapter_page_count(season["order"], chapter["order"])
+        self.write_increment_season_page(season["order"])
         self.write_increment_book_page_count()
         self.write_page_insert(season_index, chapter_index, page_index, new_page_data)
 

@@ -8,6 +8,8 @@
 
 # testing
 /coverage
+/firestore_export
+/.venv
 
 # production
 /build
@@ -20,6 +22,7 @@
 .env.production.local
 .vscode
 /.firebase/
+public/rss.xml
 
 npm-debug.log*
 firestore-debug.log*

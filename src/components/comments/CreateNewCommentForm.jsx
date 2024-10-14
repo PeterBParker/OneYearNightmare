@@ -11,7 +11,7 @@ import {
 } from "firebase/firestore";
 import { useState } from "react";
 import { PAGE_COMMENTS_TABLE } from "./utils/constants";
-import { SIGNIN_PAGE_PATH } from "../Main";
+import { SIGNIN_PAGE_PATH } from "../../index";
 
 function CreateNewCommentForm(props) {
   const [content, setContent] = useState("");

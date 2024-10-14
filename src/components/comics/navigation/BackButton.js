@@ -1,29 +1,34 @@
-import ComicPageAPI from "../../../api/ComicPageAPI";
+import { useParams } from "react-router-dom/dist";
 import activeBackIcon from "../../../assets/FINAL-ASSETS-072821/final assets/left-arrow-30px.png";
 import disabledBackIcon from "../../../assets/FINAL-ASSETS-072821/final assets/left-arrow-light-30px.png";
 import NavButton from "./NavButton";
-import { useState, useEffect } from "react";
 import { func, string } from "prop-types";
+import { pageDataQuery } from "../../../routes/ComicViewer";
+import {
+  PARAM_PAGE_UUID,
+  PAGE_PREV_PAGE_ID,
+  PAGE_KEY,
+} from "../../../api/RefKeys";
+
+function getPageIdToLinkTo(data) {
+  if (PAGE_KEY in data) {
+    if (PAGE_PREV_PAGE_ID in data[PAGE_KEY]) {
+      let prevPageId = data[PAGE_KEY][PAGE_PREV_PAGE_ID];
+      if (prevPageId != null) {
+        return prevPageId;
+      }
+    }
+  }
+  return "";
+}
 
 export default function BackButton(props) {
-  const [disabled, setDisabled] = useState(true);
-  const [prevPage, setPrevPage] = useState(null);
-
-  useEffect(() => {
-    const relObjs = ComicPageAPI.getRelValidObjs(props.pageId);
-    if (!relObjs.pageObj.prevPageUuid) {
-      setPrevPage(null);
-      setDisabled(true);
-    } else {
-      setPrevPage("/read/" + relObjs.pageObj.prevPageUuid);
-      setDisabled(false);
-    }
-  }, [props.pageId]);
-
+  const params = useParams();
   return (
     <NavButton
-      disabled={disabled}
-      pageFilePath={prevPage}
+      query={pageDataQuery(params[PARAM_PAGE_UUID])}
+      dataKey={PAGE_PREV_PAGE_ID}
+      getPageIdToLinkTo={getPageIdToLinkTo}
       clickEffects={props.clickEffects}
       activeIcon={activeBackIcon}
       disabledIcon={disabledBackIcon}
@@ -33,6 +38,5 @@ export default function BackButton(props) {
 }
 
 BackButton.propTypes = {
-  pageId: string.isRequired,
   clickEffects: func.isRequired,
 };

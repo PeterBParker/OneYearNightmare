@@ -6,7 +6,6 @@ import LinkButton from "../../../generic/LinkButton";
 export default function MobileAboutComic(props) {
   return (
     <div>
-      <Header defaultBg={false} />
       <div className="aboutTheComicContainer bg-white grid">
         <div className="aboutTheComicText">
           <TextCard
