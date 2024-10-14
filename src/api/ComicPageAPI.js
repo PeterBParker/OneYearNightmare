@@ -162,18 +162,18 @@ export async function pageFetcher({ queryKey }) {
   return data;
 }
 
+async function getLatestPageInChapter(chapterId) {
+  // TODO try to get from cache and if null get from server OR figure out a different way to cache this query
+  let pagesRef = getRefForKey(PAGES_CONTENTS_KEY)
+  const q = query(pagesRef, where(PAGE_CHAP_KEY, "==", chapterId), orderBy(PAGE_ORDER_IN_CHAP, "desc"), limit(1))
+  const querySnapshot = await getDocs(q);
+  if (querySnapshot.docs.length !== 1) {
+    throw new Error("unexpected number of pages returned by latest page in chapter query:" + querySnapshot.docs.length)
+  }
+  return querySnapshot.docs[0].data();
+}
+
 // *** SETTERS *** //
-
-// assume append
-// follow logic of python and call addChapter if need be
-// what data do we need to call setDoc?
-//   chapter order - calculated? (query for all pages with the chapter id and sorted by chap order, grab the last one off the array and check its value. add 1)
-
-//   icon url - generated
-//   next page uuid - null
-//   prev page uuid - calculated
-//   public url - generated
-//   page uuid - generated
 
 export async function appendPageToChapter(pageData, imageFile, iconBlob) {
   try {
@@ -244,7 +244,7 @@ async function setChapPageCount(chapID, newPageCount) {
   )
 }
 
-export async function addRequiredFields(pageData, imageFile, iconBlob) {
+async function addRequiredFields(pageData, imageFile, iconBlob) {
   addCurrentDatetime(pageData)
   addNextPageUUID(pageData)
   addPageUUID(pageData)
@@ -266,17 +266,6 @@ async function addChapterOrder(pageData) {
   const data = await getLatestPageInChapter(pageData[PAGE_CHAP_KEY])
   const numOfPages = data[PAGE_ORDER_IN_CHAP]
   pageData[PAGE_ORDER_IN_CHAP] = numOfPages+1
-}
-
-async function getLatestPageInChapter(chapterId) {
-  // TODO try to get from cache and if null get from server OR figure out a different way to cache this query
-  let pagesRef = getRefForKey(PAGES_CONTENTS_KEY)
-  const q = query(pagesRef, where(PAGE_CHAP_KEY, "==", chapterId), orderBy(PAGE_ORDER_IN_CHAP, "desc"), limit(1))
-  const querySnapshot = await getDocs(q);
-  if (querySnapshot.docs.length !== 1) {
-    throw new Error("unexpected number of pages returned by latest page in chapter query:" + querySnapshot.docs.length)
-  }
-  return querySnapshot.docs[0].data();
 }
 
 async function addGlobalOrder(pageData) {
