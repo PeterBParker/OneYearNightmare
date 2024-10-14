@@ -1,7 +1,7 @@
 import { validate as isValidUUID } from "uuid";
 import { v4 as uuidv4 } from 'uuid';
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
-import { collection, doc, where, setDoc, getDoc, getDocs, orderBy, query, limit } from "firebase/firestore";
+import { collection, doc, where, setDoc, getDoc, getDocs, orderBy, query, limit, updateDoc } from "firebase/firestore";
 import {
   db,
   storage,
@@ -13,6 +13,7 @@ import {
   CHAP_CONTENTS_KEY,
   PAGES_CONTENTS_KEY,
   CHAP_KEY,
+  CHAP_PAGE_COUNT,
   PAGE_KEY,
   PAGE_UUID,
   PAGE_CHAP_KEY,
@@ -26,9 +27,14 @@ import {
   PAGE_NEXT_PAGE_ID,
   PAGE_PREV_PAGE_ID,
   PAGE_STORAGE_PATH,
+  PAGE_SEASON_ID,
   ICON_STORAGE_PATH,
   PAGE_ICON_FILENAME,
   PAGE_URL,
+  PAGE_FILENAME,
+  SEASON_CONTENTS_KEY,
+  SEASON_PAGE_COUNT,
+  MAX_PAGE_ID_KEY,
 } from "../api/RefKeys";
 
 // *** GETTERS *** //
@@ -44,6 +50,7 @@ function getRefKeyMap() {
     RefKeyMap = {
       [DISPLAY_DATA_DOC_KEY]: doc(collection(db, "book_data"), "display_data"),
       [CHAP_CONTENTS_KEY]: collection(doc(collection(db, "book_data"), "content"), "chapters"),
+      [SEASON_CONTENTS_KEY]: collection(doc(collection(db, "book_data"), "content"), "seasons"),
       [PAGES_CONTENTS_KEY]: collection(doc(collection(db, "book_data"), "content"), "pages"),
       [COUNTS_DOC_KEY]: doc(collection(db, "book_data"), "counts"),
     };
@@ -92,7 +99,6 @@ export async function docFetcher({ queryKey }) {
   const ref = getRefForKey(docKey);
   // TODO: This getDoc await call is not being cached by useQuery, so it's being called again and again. Find a way to cache this reference?
   const docSnap = await getDoc(ref);
-  console.log(docSnap)
   let data = docSnap.data();
   return data;
 }
@@ -169,32 +175,85 @@ export async function pageFetcher({ queryKey }) {
 //   public url - generated
 //   page uuid - generated
 
-export async function appendPageToChapter(pageData, imageFile) {
+export async function appendPageToChapter(pageData, imageFile, iconBlob) {
   try {
-    addRequiredFields(pageData, imageFile);
+    await addRequiredFields(pageData, imageFile, iconBlob);
     const PagesRef = getRefForKey(PAGES_CONTENTS_KEY);
-    let newPageRef = doc(PagesRef, pageData["uuid"])
-    //await setDoc(newPageRef, pageData); 
-    // TODO update chapter page count 
-    // TODO update global page count
+    let newPageRef = doc(PagesRef, pageData[PAGE_UUID])
+    // update page counts and tell the website to display the new pag
+    await Promise.all([
+      setDoc(newPageRef, pageData),
+      setNextPageId(pageData[PAGE_PREV_PAGE_ID], pageData[PAGE_UUID]),
+      setChapPageCount(pageData[PAGE_CHAP_KEY], pageData[PAGE_ORDER_IN_CHAP]),
+      setSeasonPageCount(pageData[PAGE_SEASON_ID], pageData[PAGE_ORDER_IN_BOOK]), // TODO: change page data to track pages per season
+      setGlobalPageCount(pageData[PAGE_ORDER_IN_BOOK]),
+      updateMaxDisplayPage(pageData[PAGE_UUID]),
+    ]);
   } catch (err) {
-    return (false, err)
+    console.log(err)
+    return [false, err]
   }
-  return (true, null)
+  return [true, null]
 }
 
-export async function addRequiredFields(pageData, imageFile) {
+async function setNextPageId(currPageID, nextPageID) {
+  const pagesRef = getRefForKey(PAGES_CONTENTS_KEY)
+  const currPageRef = doc(pagesRef, currPageID)
+  await updateDoc(currPageRef,
+    {
+      [PAGE_NEXT_PAGE_ID]: nextPageID,
+    }
+  )
+}
+
+async function updateMaxDisplayPage(pageID) {
+  const displayDataRef = getRefForKey(DISPLAY_DATA_DOC_KEY);
+  await updateDoc(displayDataRef, 
+    {
+      [MAX_PAGE_ID_KEY]: pageID,
+    }
+  )
+}
+
+async function setSeasonPageCount(seasonID, newPageCount) {
+  const seasonsRef = getRefForKey(SEASON_CONTENTS_KEY)
+  const seasonRef = doc(seasonsRef, seasonID)
+  await updateDoc(seasonRef, 
+    {
+      [SEASON_PAGE_COUNT]: newPageCount,
+    }
+  )
+}
+
+async function setGlobalPageCount(newPageCount) {
+  const dataRef = getRefForKey(COUNTS_DOC_KEY)
+  await updateDoc(dataRef, 
+    {
+      [GLOBAL_PAGE_COUNT]: newPageCount,
+    }
+  )
+}
+
+async function setChapPageCount(chapID, newPageCount) {
+  const chapsRef = getRefForKey(CHAP_CONTENTS_KEY)
+  const chapRef = doc(chapsRef, chapID);
+  await updateDoc(chapRef,
+    {
+      [CHAP_PAGE_COUNT]: newPageCount,
+    }
+  )
+}
+
+export async function addRequiredFields(pageData, imageFile, iconBlob) {
   addCurrentDatetime(pageData)
   addNextPageUUID(pageData)
   addPageUUID(pageData)
   // TODO make all async functions simultaneous and wait for them to finish before returning
   await addChapterOrder(pageData)
   await addGlobalOrder(pageData)
-  await addIconURL(pageData, imageFile)
+  await addIconURL(pageData, iconBlob)
   await addPrevPageUUID(pageData)
   await addPublicURL(pageData, imageFile)
-  console.log(pageData)
-  
 }
 
 function addCurrentDatetime(pageData) {
@@ -228,33 +287,11 @@ async function addGlobalOrder(pageData) {
   pageData[PAGE_ORDER_IN_BOOK] = data[GLOBAL_PAGE_COUNT]+1;
 }
 
-async function addIconURL(pageData, file) {
-  var img = new Image();
-  img.src = file
-  const canvas = document.createElement("canvas");
-  const ctx = canvas.getContext("2d");
-
-  // Set width and height
-  canvas.width = 200;
-  canvas.height = 200;
-
-  // Draw image and export to a data-uri
-  ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-  const dataURI = canvas.toDataURL();
-  
-  // Upload to storage
-  const iconsStorageRef = ref(storage, ICON_STORAGE_PATH + file["name"])
-  await uploadBytes(iconsStorageRef, dataURI).then(() => {
-    getDownloadURL(iconsStorageRef).then((url) => {
-      pageData[PAGE_ICON_FILENAME] = url;
-    })
-    // make ref public and get download url
-    // apparently this can only be done with the admin SDK from the server?
-    // TODO: Figure out how to do that step via a cloud function
-    // idea 1: setup a cloud function to watch for new pages getting written and then create the public download url and update the document
-  }).catch((err) => {
-    throw new Error("something went wrong uploading the page: " + err)
-  })
+async function addIconURL(pageData, iconBlob) {
+  const iconsStorageRef = ref(storage, ICON_STORAGE_PATH + pageData[PAGE_FILENAME])
+  await uploadBytes(iconsStorageRef, iconBlob)
+  const url = await getDownloadURL(iconsStorageRef)
+  pageData[PAGE_ICON_FILENAME] = url;
 }
 
 function addNextPageUUID(pageData) {
@@ -268,17 +305,13 @@ async function addPrevPageUUID(pageData) {
 
 async function addPublicURL(pageData, file) {
   const pagesStorageRef = ref(storage, PAGE_STORAGE_PATH + file["name"])
-  await uploadBytes(pagesStorageRef, file).then(() => {
-    getDownloadURL(pagesStorageRef).then((url) => {
-      pageData[PAGE_URL] = url;
-    })
+  await uploadBytes(pagesStorageRef, file)
+  const url = await getDownloadURL(pagesStorageRef)
+  pageData[PAGE_URL] = url;
     // make ref public and get download url
     // apparently this can only be done with the admin SDK from the server?
     // TODO: Figure out how to do that step via a cloud function
     // idea 1: setup a cloud function to watch for new pages getting written and then create the public download url and update the document
-  }).catch((err) => {
-    throw new Error("something went wrong uploading the page: " + err)
-  })
 }
 
 function addPageUUID(pageData) {

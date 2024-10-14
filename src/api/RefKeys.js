@@ -14,7 +14,7 @@ export const PAGE_ORDER_IN_CHAP = "chap_order";
 export const PAGE_TIME_POSTED = "datetime";
 export const PAGE_FILENAME = "filename";
 export const PAGE_ORDER_IN_BOOK = "global_order";
-export const PAGE_ICON_FILENAME = "icon";
+export const PAGE_ICON_FILENAME = "icon_url";
 export const PAGE_MESSAGE = "message";
 export const PAGE_NEXT_PAGE_ID = "next_page_id";
 export const PAGE_PREV_PAGE_ID = "prev_page_id";
@@ -23,9 +23,14 @@ export const PAGE_AUTHOR = "author";
 export const PAGE_UUID = "uuid";
 export const PAGE_CHAP_KEY = "chapter_id";
 export const PAGE_URL = "public_url";
+export const PAGE_SEASON_ID = "season_id";
 
 export const CHAP_KEY = "chapter";
 export const CHAP_ORDER_IN_BOOK = "order";
+export const CHAP_PAGE_COUNT = "num_of_pages";
+
+export const SEASON_CONTENTS_KEY = "all_seasons"
+export const SEASON_PAGE_COUNT = "num_of_pages";
 
 export const AUTHOR_KEY = "author";
 

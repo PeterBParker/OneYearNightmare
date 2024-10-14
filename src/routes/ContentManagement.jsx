@@ -7,7 +7,6 @@ import { Navigate } from "react-router-dom"
 import { auth, SIGNIN_PAGE_PATH } from ".."
 import AddFileForm from "../components/management/AddFileForm"
 import { PageLoadingSpinner } from "../components/generic/loading/Spinners"
-import { addRequiredFields } from "../api/ComicPageAPI"
 
 export default function ContentManagement() {
     const [user, loading] = useAuthState(auth)
@@ -17,6 +16,7 @@ export default function ContentManagement() {
         return(<PageLoadingSpinner/>)
       }
 
+    // TODO: use custom token claims instead of a database lookup for this
     if (user === null) {
         return <Navigate to={SIGNIN_PAGE_PATH} />
     }
@@ -28,6 +28,7 @@ export default function ContentManagement() {
             <div>Edit your content here if ye be an admin!</div>
             <div className="my-8 max-w-lg ml-auto mr-auto">
                 <AddFileForm/>
+                <img alt="" id="iconDisplay"></img>
             </div>
         </React.Fragment>
         

@@ -20,7 +20,6 @@ export default function LoginForm() {
         thisButton.disabled = true;
         thisButton.classList.add("disabled");
         const email = content;
-        console.log(email)
         sendSignInLinkToEmail(auth, email, actionCodeSettings)
             .then(() => {
                 // The link was successfully sent. Inform the user.

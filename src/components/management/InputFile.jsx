@@ -1,6 +1,6 @@
 import React, { useRef } from "react"
 
-export default function ImageInput({ file, setFile }) {
+export default function ImageInput({ setFile }) {
     const fileInput = useRef(null);
 
     const onChange = async e => {
