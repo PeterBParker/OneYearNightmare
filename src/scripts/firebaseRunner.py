@@ -30,8 +30,7 @@ class FirebaseRunner:
         user_ref.update({"avatar_url": url})
 
     def run(self):
-        self.addIconDownloadURLToUser("HKxEXffkUIXb21Jk4lUIEKKyLYg1")
-        self.addIconDownloadURLToUser("d0C0IAlf47R4LsEqjC51ebV0fUD2")
+        pass
 
 
 def initialize_argparser():
