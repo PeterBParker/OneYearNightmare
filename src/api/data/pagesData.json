@@ -1,13 +1,13 @@
 {
-    "maxDisplayPage": "78c5582c-aff2-404f-9184-d95f7404416d",
+    "maxDisplayPage": "9c27d567-afd3-4956-8ee9-ae9c713ca532",
     "firstDisplayPage": "92004427-5249-4fa3-80f1-0a67f93ba559",
-    "pageCount": 171,
+    "pageCount": 175,
     "seasonCount": 1,
     "seasons": [
         {
             "seasonName": "First Blood",
             "folderName": "first blood",
-            "numOfPages": 171,
+            "numOfPages": 175,
             "numOfChapters": 6,
             "uuid": "44bd96b7-acec-4f01-9425-9bb3d59e29e4",
             "order": 1,
@@ -2140,9 +2140,9 @@
                 {
                     "chapterName": "Chapter Five",
                     "folderName": "chapter5",
-                    "numOfPages": 10,
+                    "numOfPages": 14,
                     "uuid": "5aa23909-b7aa-4177-bdba-25cb3a892ef0",
-                    "id": 6,
+                    "order": 6,
                     "pages": [
                         {
                             "pageNum": 1,
@@ -2270,9 +2270,61 @@
                             "user": "N1995",
                             "icon": "icons/CHAP 5_010-Icon.png",
                             "uuid": "78c5582c-aff2-404f-9184-d95f7404416d",
-                            "nextPageUuid": null,
+                            "nextPageUuid": "4c0f400c-0442-49fc-a3b1-37dfabae2c29",
                             "prevPageUuid": "f576f243-5911-48d8-bc6c-caab70debe19",
                             "globalPageNum": 169
+                        },
+                        {
+                            "pageNum": 11,
+                            "filename": "CHAP 5_011.webp",
+                            "title": "Soaked and Surrounded",
+                            "message": "So THAT'S why the ditch is so clean, or, at least, trash free.",
+                            "datetime": "2024-09-09 18:38:35",
+                            "user": "N1995",
+                            "icon": "icons/CHAP 5_011-Icon.png",
+                            "uuid": "4c0f400c-0442-49fc-a3b1-37dfabae2c29",
+                            "nextPageUuid": "691f59f5-ee35-4df4-bc4b-78c946a326f5",
+                            "prevPageUuid": "78c5582c-aff2-404f-9184-d95f7404416d",
+                            "globalPageNum": 170
+                        },
+                        {
+                            "pageNum": 12,
+                            "filename": "CHAP 5_012.webp",
+                            "title": "Rose Contemplates Murder",
+                            "message": "Morghan is The Queen of finding the silver lining, so if she was in Rose's place she might legitimately say something like, \"Well at least now I've got the perfect hands for piano\" or \"I've always wondered what it would feel like to kill a man with my bare hands.\" As her hubby I'm hoping for more of the former response than the latter...",
+                            "datetime": "2024-09-17 09:05:46",
+                            "user": "N1995",
+                            "icon": "icons/CHAP 5_012-Icon.png",
+                            "uuid": "691f59f5-ee35-4df4-bc4b-78c946a326f5",
+                            "nextPageUuid": "08710154-58b0-4010-be4a-a4496625d6de",
+                            "prevPageUuid": "4c0f400c-0442-49fc-a3b1-37dfabae2c29",
+                            "globalPageNum": 171
+                        },
+                        {
+                            "pageNum": 13,
+                            "filename": "CHAP 5_013.webp",
+                            "title": "Screams From a Culvert Pipe",
+                            "message": "Disappointed in the potency of your venom? Insecure that you might only be producing an anaesthetic? Contact us today for a free trial of \"Toxic Traits\"! Guaranteed to kill any relationship worth fostering!",
+                            "datetime": "2024-09-24 19:39:32",
+                            "user": "N1995",
+                            "icon": "icons/CHAP 5_013-Icon.png",
+                            "uuid": "08710154-58b0-4010-be4a-a4496625d6de",
+                            "nextPageUuid": "9c27d567-afd3-4956-8ee9-ae9c713ca532",
+                            "prevPageUuid": "691f59f5-ee35-4df4-bc4b-78c946a326f5",
+                            "globalPageNum": 172
+                        },
+                        {
+                            "pageNum": 14,
+                            "filename": "CHAP 5_014.webp",
+                            "title": "Rose Gets Splooshed",
+                            "message": "I looove the bordering Mo did on the water panel. Gives major sploosh. Big swim energy.",
+                            "datetime": "2024-09-30 22:35:05",
+                            "user": "N1995",
+                            "icon": "icons/CHAP 5_014-Icon.png",
+                            "uuid": "9c27d567-afd3-4956-8ee9-ae9c713ca532",
+                            "nextPageUuid": null,
+                            "prevPageUuid": "08710154-58b0-4010-be4a-a4496625d6de",
+                            "globalPageNum": 173
                         }
                     ]
                 }
@@ -3129,6 +3181,26 @@
             "seasonIndex": 0,
             "chapterIndex": 5,
             "pageIndex": 9
+        },
+        "4c0f400c-0442-49fc-a3b1-37dfabae2c29": {
+            "seasonIndex": 0,
+            "chapterIndex": 5,
+            "pageIndex": 10
+        },
+        "691f59f5-ee35-4df4-bc4b-78c946a326f5": {
+            "seasonIndex": 0,
+            "chapterIndex": 5,
+            "pageIndex": 11
+        },
+        "08710154-58b0-4010-be4a-a4496625d6de": {
+            "seasonIndex": 0,
+            "chapterIndex": 5,
+            "pageIndex": 12
+        },
+        "9c27d567-afd3-4956-8ee9-ae9c713ca532": {
+            "seasonIndex": 0,
+            "chapterIndex": 5,
+            "pageIndex": 13
         }
     }
 }
