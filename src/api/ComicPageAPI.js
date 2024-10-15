@@ -245,16 +245,21 @@ async function setChapPageCount(chapID, newPageCount) {
 }
 
 async function addRequiredFields(pageData, imageFile, iconBlob) {
+  addFilename(pageData, imageFile)
   addCurrentDatetime(pageData)
   addNextPageUUID(pageData)
   addPageUUID(pageData)
   await Promise.all([
     addChapterOrder(pageData),
     addGlobalOrder(pageData),
-    addIconURL(pageData, iconBlob),
+    addIconURL(pageData, iconBlob), // relies on addFilename being called before
     addPrevPageUUID(pageData),
     addPublicURL(pageData, imageFile),
   ])
+}
+
+function addFilename(pageData, imageFile) {
+  pageData[PAGE_FILENAME] = imageFile.name
 }
 
 function addCurrentDatetime(pageData) {
