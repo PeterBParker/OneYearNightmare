@@ -28,7 +28,6 @@ export default function ContentManagement() {
             <div>Edit your content here if ye be an admin!</div>
             <div className="my-8 max-w-lg ml-auto mr-auto">
                 <AddFileForm/>
-                <img alt="" id="iconDisplay"></img>
             </div>
         </React.Fragment>
         

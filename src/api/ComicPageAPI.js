@@ -248,12 +248,13 @@ async function addRequiredFields(pageData, imageFile, iconBlob) {
   addCurrentDatetime(pageData)
   addNextPageUUID(pageData)
   addPageUUID(pageData)
-  // TODO make all async functions simultaneous and wait for them to finish before returning
-  await addChapterOrder(pageData)
-  await addGlobalOrder(pageData)
-  await addIconURL(pageData, iconBlob)
-  await addPrevPageUUID(pageData)
-  await addPublicURL(pageData, imageFile)
+  await Promise.all([
+    addChapterOrder(pageData),
+    addGlobalOrder(pageData),
+    addIconURL(pageData, iconBlob),
+    addPrevPageUUID(pageData),
+    addPublicURL(pageData, imageFile),
+  ])
 }
 
 function addCurrentDatetime(pageData) {

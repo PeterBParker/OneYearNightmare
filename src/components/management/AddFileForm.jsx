@@ -59,6 +59,12 @@ export default function AddFileForm() {
             let [success, err] = await appendPageToChapter(providedPageData, file, iconBlob)
             if (success) {
                 setResult("Success!")
+                setTitle("")
+                setMessage("")
+                setFile("")
+                setIconBlob(null)
+                document.getElementById("pageAddForm").reset()
+                document.getElementById("iconDisplay").src = ""
             } else {
                 setResult("Failed. :(" + err)
             }
@@ -72,7 +78,7 @@ export default function AddFileForm() {
 
     return(
         <div>
-            <form onSubmit={handleSubmit}>
+            <form id="pageAddForm" onSubmit={handleSubmit}>
                 <input type="text" id="pageTitleInput" placeholder="Page Title" onChange={(e) => setTitle(e.target.value)} className="rounded-lg text-lg py-3 px-3 my-2 w-full"/>
                 <input type="text" id="pageMessageInput" placeholder="Witty caption here" onChange={(e) => setMessage(e.target.value)} className="rounded-lg text-lg my-2 py-3 px-3 w-full"/>
                 <div className="my-2">
@@ -80,6 +86,7 @@ export default function AddFileForm() {
                 </div>
                 <button type="submit" id={submitBtnId} disabled={disabled} className="btn-std-hover btn my-2 py-2 w-full text-lg bg-cream-dark font-medium not-italic rounded">Submit</button>
                 <div>{result}</div>
+                <img alt="" id="iconDisplay"></img>
             </form>
         </div>
     )
