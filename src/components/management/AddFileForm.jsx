@@ -1,6 +1,10 @@
 import { useEffect, useState } from "react";
+
+import { auth } from "../..";
 import ImageInput from "./InputFile";
 import { appendPageToChapter } from "../../api/ComicPageAPI";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { PageLoadingSpinner } from "../generic/loading/Spinners";
 
 export default function AddFileForm() {
     const [title, setTitle] = useState("");
@@ -9,8 +13,12 @@ export default function AddFileForm() {
     const [disabled, setIsDisabled] = useState(false);
     const [result, setResult] = useState("");
     const [iconBlob, setIconBlob] = useState(null);
+    const [user, loading, error] = useAuthState(auth);
     const submitBtnId = "addPageSubmitBtn";
 
+    if (loading) {
+        <PageLoadingSpinner />
+    }
     //useEffect(() => {
     //     //TODO disable btn unless all fields are filled
     // })
@@ -40,10 +48,9 @@ export default function AddFileForm() {
         setIsDisabled(false);
     }
 
-    // TODO grab the author id from the logged in user
     // TODO grab the chapter and season id from a selection
     let providedPageData = {
-        "author": "HKxEXffkUIXb21Jk4lUIEKKyLYg1",
+        "author": user.uid,
         "chapter_id": "5aa23909-b7aa-4177-bdba-25cb3a892ef0",
         "message": message,
         "season_id": "44bd96b7-acec-4f01-9425-9bb3d59e29e4",
