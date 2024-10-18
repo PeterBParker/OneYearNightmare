@@ -7,7 +7,8 @@ import {
   COMIC_VIEWER_PATH,
   ARCHIVE_PAGE_PATH,
   SIGNIN_PAGE_PATH,
-  USER_PROFILE_PAGE_PATH
+  USER_PROFILE_PAGE_PATH,
+  CONTENT_MANAGEMENT_PATH
 } from "../../../../index";
 import { useAuthState } from "react-firebase-hooks/auth";
 
@@ -15,6 +16,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 
 export default function NavBarLinks(props) {
   const [user, loading, error] = useAuthState(auth);
+  const [showAdminLinks, setShowAdminLinks] = useState(false)
   const [userPage, setUserPage] = useState(user ? "User Settings" : "Login");
   let location = useLocation();
   const [currPage, setCurrPage] = useState(Pages.READ)
@@ -29,6 +31,12 @@ export default function NavBarLinks(props) {
       setUserPage("Login");
     } else {
       setUserPage("User Settings");
+      console.log(user)
+      user.getIdTokenResult().then((token) => {
+        if (!!token.claims.admin) {
+          setShowAdminLinks(true)
+        }
+      })
     }
   }, [user]);
 
@@ -50,6 +58,7 @@ export default function NavBarLinks(props) {
   return [
     buildLink(COMIC_VIEWER_PATH, "Read"),
     buildLink(ARCHIVE_PAGE_PATH, "Archive"),
-    user === null ? buildLink(SIGNIN_PAGE_PATH, "Login") : buildLink(USER_PROFILE_PAGE_PATH, "Profile")
+    user === null ? buildLink(SIGNIN_PAGE_PATH, "Login") : buildLink(USER_PROFILE_PAGE_PATH, "Profile"),
+    showAdminLinks ? buildLink(CONTENT_MANAGEMENT_PATH, "Manage") : null,
   ];
 }
