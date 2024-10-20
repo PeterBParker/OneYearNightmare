@@ -71,6 +71,7 @@ service cloud.firestore {
     return request.resource.data.content == null || request.resource.data.content.size() <= 350
   }
   function isAdmin(uid) {
-    return exists(/databases/(default)/documents/is_admin/$(uid))
+    return request.auth.token.admin == true
+    //return exists(/databases/(default)/documents/is_admin/$(uid))
   }
 }

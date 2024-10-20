@@ -106,8 +106,13 @@ This is a custom, serial, image-hosting website for a graphic-novel I'm writing 
     - **DONE** Fix the mobile comments
     - Add error handling on login errors
 
-  - Add an "admin" type to user accounts
+  - **DONE** Add an "admin" type to user accounts
+    - Currently done manually via python script
   - Add an nav button for admin accounts to "Page Management"
+    - **DONE** Add a nav link to the desktop bar
+    - Add "Manage" link to mobile navigation menu if admin
+  - **DONE** Check for admin in firebase rules using claims instead of database
+  - Make author avatars load correctly
   - Translate the Python Data API to Javascript/Typescript
   - Add a Page Management page
     - Implement Add Page
