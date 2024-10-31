@@ -2,54 +2,80 @@ import { getDownloadURL, ref, uploadString } from "firebase/storage";
 import { storage, AVATARS_PATH } from "../../index";
 import { createAvatar } from "@dicebear/core";
 import { lorelei } from "@dicebear/collection";
-import { NO_USER_ID, db } from "../../index";
-import { updateDoc, doc, collection } from "firebase/firestore";
+import { getDoc } from "firebase/firestore";
 import { USER_URL } from "../../api/RefKeys";
+import { getUserRef } from "../../api/ComicPageAPI";
 
-export const storeUserAvatar = async (userId, displayName) => {
-  let success = false;
-  const avatarImageRef = getAvatarRef(userId);
+// Need a function that returns an object with an image string and metadata
+class AvatarData {
+  constructor(imageString, metadata) {
+    this.image = imageString
+    this.type = metadata
+  }
+}
 
+/**
+ * Takes a string and generates an svg avatar off of it
+ * @param {string} avatarSeed
+ * @returns AvatarData
+ */
+export function generateAvatarData(avatarSeed) {
   const metadata = {
     contentType: "image/svg+xml",
   };
 
   const avatarSvg = createAvatar(lorelei, {
-    seed: displayName,
+    seed: avatarSeed,
   }).toString();
 
-  success = await uploadString(avatarImageRef, avatarSvg, "raw", metadata)
-    .then((uploadResult) => {
-      success = true;
-    })
+  return new AvatarData(avatarSvg, metadata)
+}
+
+/**
+ * Takes an uploaded Image and processes it to produce AvatarData
+ * @param {Image} image 
+ * @returns AvatarData
+ */
+export function convertImageToAvatarData(image) {
+  return new AvatarData("placeholder", {contentType: "image/png"})
+}
+
+/**
+ * This takes information about an image and stores it as a user's avatar
+ * @param {string} userId - The ID of the user to store the URL of
+ * @param {AvatarData} avatarData - The information about the image
+ */
+export const storeUserAvatar = async (userId, avatarData) => {
+  const avatarImageRef = getAvatarRef(userId);
+
+   await uploadString(avatarImageRef, avatarData.image, "raw", avatarData.type)
     .catch((error) => {
       switch (error.code) {
         case "storage/unauthorized":
           console.log("Unauthorized upload.");
-          break;
+          throw error
         case "storage/canceled":
           console.log("Upload canceled.");
-          break;
+          throw error
         case "storage/unknown":
           console.log("Unknown error.");
-          break;
+          throw error
         default:
           console.log(error.code);
+          throw error
       }
     });
-
-  if (success) {
-    let url = await getDownloadURL(avatarImageRef);
-    // Store the url in the user
-    const userRef = doc(collection(db, "users"), userId);
-    updateDoc(userRef, { [USER_URL]: url });
-  }
-  return success;
+  let url = await getDownloadURL(avatarImageRef);
+  return url
 };
 
 export const getAvatarRef = (userId) => {
-  return ref(storage, AVATARS_PATH + userId + "_avatar.svg");
+  return ref(storage, AVATARS_PATH + userId);
 };
+
+export const getOldAvatarRef = (userId) => {
+  return ref(storage, AVATARS_PATH + userId + "_avatar.svg")
+}
 
 export const getAvatarUserClassname = (userId) => {
   return userId + "_avatar_container";
@@ -61,23 +87,20 @@ export const getAvatarUrl = async (userId) => {
    * and sets the src attribute of them with the image url
    */
   let avatarUrl = "";
-  let avatarRef = "";
   if (userId) {
-    avatarRef = getAvatarRef(userId);
-  } else {
-    avatarRef = getAvatarRef(NO_USER_ID);
-  }
-  try {
-    avatarUrl = await getDownloadURL(avatarRef);
-  } catch (error) {
-    switch (error.code) {
-      case "storage/object-not-found":
-        // An avatar does not exist for it, and we need to get a default avatar
-        return "https://api.dicebear.com/5.x/lorelei/svg";
-      default:
-        console.log(error.code);
+    const userRef = getUserRef(userId); 
+    const userSnap = await getDoc(userRef);
+    const data = userSnap.data()
+    if (data !== undefined && USER_URL in data) {
+      avatarUrl = data[USER_URL]
+    } else {
+      // TODO return an error so the user knows we're missing their avatar?
+      // An avatar does not exist for it, and we need to get a default avatar
+      avatarUrl = "https://api.dicebear.com/5.x/lorelei/svg";
     }
+  } else {
+    // An avatar does not exist for it, and we need to get a default avatar
+    avatarUrl = "https://api.dicebear.com/5.x/lorelei/svg";
   }
-
   return avatarUrl;
 };

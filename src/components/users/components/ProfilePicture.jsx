@@ -1,22 +1,26 @@
 import { useState, useEffect } from "react";
-import { auth } from "../../..";
-import { getAvatarUrl } from "../avatarHelpers";
+import { useQuery } from "@tanstack/react-query";
 import { useAuthState } from "react-firebase-hooks/auth";
+
+import { auth } from "../../..";
+import { authUserOptions } from "../../../api/ReactQueries";
+import { USER_URL } from "../../../api/RefKeys";
+
 
 export default function ProfilePicture(props) {
   const [avatarUrl, setAvatarUrl] = useState("");
   const [fetchedAvatar, setFetchedAvatar] = useState(false);
   const [user, loading, auth_error] = useAuthState(auth);
+  const { isPending, isError, data, error} = useQuery(authUserOptions(user))
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
     let isMounted = true;
     async function updateAvatar() {
       // Get the user's avatar ourself
-      if (user) {
-        let url = await getAvatarUrl(user.uid);
+      if (!isPending && !isError) {
         if (isMounted) {
-          setAvatarUrl(url);
+          setAvatarUrl(data[USER_URL]);
           setFetchedAvatar(true);
         }
       }
@@ -30,7 +34,7 @@ export default function ProfilePicture(props) {
     }
 
     return () => (isMounted = false);
-  }, [user.displayName, props.avatarUrl, user]);
+  }, [data, isError, isPending, props.avatarUrl]);
 
   return (
     <div className="mr-8">

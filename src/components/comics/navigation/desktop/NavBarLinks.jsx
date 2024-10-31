@@ -31,7 +31,6 @@ export default function NavBarLinks(props) {
       setUserPage("Login");
     } else {
       setUserPage("User Settings");
-      console.log(user)
       user.getIdTokenResult().then((token) => {
         if (!!token.claims.admin) {
           setShowAdminLinks(true)

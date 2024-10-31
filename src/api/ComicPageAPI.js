@@ -35,13 +35,24 @@ import {
   SEASON_CONTENTS_KEY,
   SEASON_PAGE_COUNT,
   MAX_PAGE_ID_KEY,
+  USERS_KEY,
 } from "../api/RefKeys";
+
+import { ADVERBS, ADJECTIVES, NOUNS } from "./data/words";
 
 // *** GETTERS *** //
 
 // RefKeyMap is a singleton that bridges serializable string constants that act as
 // query keys for react-query to firestore references. Using references as the keys
 // causes infinite revalidation triggers when passed into getDoc()
+
+export function generateDisplayName() {
+  const getRandomEntry = (arr) => {
+    return arr[Math.floor(Math.random() * arr.length)]
+  }
+  return getRandomEntry(ADVERBS) + getRandomEntry(ADJECTIVES) + getRandomEntry(NOUNS)
+}
+
 var RefKeyMap = null;
 
 function getRefKeyMap() {
@@ -53,6 +64,7 @@ function getRefKeyMap() {
       [SEASON_CONTENTS_KEY]: collection(doc(collection(db, "book_data"), "content"), "seasons"),
       [PAGES_CONTENTS_KEY]: collection(doc(collection(db, "book_data"), "content"), "pages"),
       [COUNTS_DOC_KEY]: doc(collection(db, "book_data"), "counts"),
+      [USERS_KEY]: collection(db, "users"),
     };
     // Freeze It
     Object.freeze(RefKeyMap);
@@ -63,6 +75,18 @@ function getRefKeyMap() {
 function getRefForKey(key) {
   const map = getRefKeyMap();
   return map[key];
+}
+
+export function getUserRef(uid) {
+  const users = getRefForKey(USERS_KEY);
+  const ref = doc(users, uid)
+  return ref
+}
+
+export async function getUserData(uid) {
+  const ref = getUserRef(uid);
+  const docSnap = await getDoc(ref);
+  return docSnap.data()
 }
 
 function isExistingPage(pageId) {
@@ -133,7 +157,6 @@ export async function pageFetcher({ queryKey }) {
   // Validate user provided string before blindly sticking it in my query
   const [pageId] = queryKey;
   if (!isValidUUID(pageId)) {
-    console.log("Not a valid uuid: ", pageId);
     return {};
   }
   const pageRef = doc(
@@ -174,6 +197,17 @@ async function getLatestPageInChapter(chapterId) {
 }
 
 // *** SETTERS *** //
+
+export async function setUserData(uid, data) {
+  const ref = getUserRef(uid);
+  await setDoc(ref, data);
+}
+
+export async function updateUserData(uid, data) {
+  const ref = getUserRef(uid);
+  await updateDoc(ref, data)
+}
+
 
 export async function appendPageToChapter(pageData, imageFile, iconBlob) {
   try {

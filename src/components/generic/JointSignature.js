@@ -25,11 +25,15 @@ export default function JointSignature(props) {
   let authorName = "Nate and Mo";
   if (
     AUTHOR_KEY in data &&
-    USER_URL in data[AUTHOR_KEY] &&
     USER_DISPLAY_NAME in data[AUTHOR_KEY]
   ) {
-    avatarURL = data[AUTHOR_KEY][USER_DISPLAY_NAME];
     authorName = data[AUTHOR_KEY][USER_DISPLAY_NAME];
+  }
+  if (
+    AUTHOR_KEY in data &&
+    USER_URL in data[AUTHOR_KEY]
+  ) {
+    avatarURL = data[AUTHOR_KEY][USER_URL];
   }
   return (
     <div className="inline-block flex flex-row">

@@ -1,12 +1,6 @@
 import { useState, useEffect } from "react";
+import { useQuery } from "@tanstack/react-query";
 import PropTypes from "prop-types";
-import { auth } from "../..";
-import { deleteComment, getDisplayName } from "../users/utils";
-import EditCommentForm from "./EditCommentForm";
-import CreateNewCommentForm from "./CreateNewCommentForm";
-import { getAvatarUrl } from "../users/avatarHelpers";
-import { Timestamp } from "firebase/firestore";
-import CommentAvatar from "./CommentAvatar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faReply,
@@ -14,10 +8,21 @@ import {
   faPenToSquare,
 } from "@fortawesome/free-solid-svg-icons";
 
+import { auth } from "../..";
+import { userIDOptions } from "../../api/ReactQueries";
+import { deleteComment } from "../users/utils";
+import EditCommentForm from "./EditCommentForm";
+import CreateNewCommentForm from "./CreateNewCommentForm";
+import { getAvatarUrl } from "../users/avatarHelpers";
+import { Timestamp } from "firebase/firestore";
+import CommentAvatar from "./CommentAvatar";
+import { USER_DISPLAY_NAME } from "../../api/RefKeys";
+
 /**
  * Renders a single comment with basic author information
  */
 export function SingleComment(props) {
+  const { isPending, isError, data, error} = useQuery(userIDOptions(props.comment.author_uid))
   const [showReplyBox, setShowReplyBox] = useState(false);
   const [displayName, setDisplayName] = useState("");
   const [editComment, setEditComment] = useState(false);
@@ -29,20 +34,10 @@ export function SingleComment(props) {
   const commentDeletedContent = "This comment has been deleted.";
 
   useEffect(() => {
-    let isMounted = true;
-    if (props.comment.author_uid == null && isMounted) {
-      setDisplayName(accountDeletedDisplay);
-    } else {
-      getDisplayName(props.comment.author_uid).then((display_name) => {
-        if (isMounted) {
-          setDisplayName(display_name);
-        }
-      });
+    if (!isPending && !isError) {
+      setDisplayName(data[USER_DISPLAY_NAME])
     }
-    return () => {
-      isMounted = false;
-    };
-  }, [props.comment.author_uid]);
+  }, [isPending, isError, data]);
 
   useEffect(() => {
     let isMounted = true;

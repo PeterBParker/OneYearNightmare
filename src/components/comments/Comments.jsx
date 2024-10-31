@@ -7,7 +7,6 @@ import Comment from "./Comment";
 import { useState, useEffect } from "react";
 import { SIGNIN_PAGE_PATH } from "../../index";
 import { auth } from "../../index";
-import useFirebaseAuth from "../users/hooks/useFirebaseAuth";
 import { db } from "../../index";
 import {
   collection,
@@ -19,6 +18,8 @@ import {
 import { PAGE_COMMENTS_TABLE } from "./utils/constants";
 import { useParams } from "react-router-dom/dist";
 import { PARAM_PAGE_UUID } from "../../api/RefKeys";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { BigSpinner } from "../generic/loading/Spinners";
 
 const Title = loadable(() => import("../generic/Title"));
 const LinkButton = loadable(() => import("../generic/LinkButton"));
@@ -30,7 +31,7 @@ const CreateNewCommentForm = loadable(() => import("./CreateNewCommentForm"));
 export default function Comments() {
   const params = useParams();
   const [showCommentSubmit, setShowCommentSubmit] = useState(false);
-  const authUser = useFirebaseAuth(auth);
+  const [user, loading, _] = useAuthState(auth)
   const [comments, setComments] = useState([]);
   const isDesktop = useMediaQuery({ query: querySizes["lg"] });
 
@@ -55,6 +56,9 @@ export default function Comments() {
     };
   }, [page_uuid]);
 
+  if (loading) {
+    return(<BigSpinner/>)
+  }
   return (
     <div className={`${isDesktop ? "" : "bg-white"} comments-container h-full border-b border-mocha-dark lg:border-t-2 lg:border-r-2 lg:border-b-2 lg:border-l lg:pb-1 pb-4 flex flex-col justify-between`}>
       <div className="py-4 px-8 bg-eggshell text-left flex flex-row items-center comments-title">
@@ -87,7 +91,7 @@ export default function Comments() {
           <img src={beTheFirst} width={414} className="ml-auto mr-auto" />
         )}
       </div>
-      {authUser && authUser.displayName != null ? (
+      {user ? (
         showCommentSubmit ? (
           <div className="mx-4 my-4">
             <CreateNewCommentForm
