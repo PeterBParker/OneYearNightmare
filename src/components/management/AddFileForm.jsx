@@ -87,7 +87,7 @@ export default function AddFileForm() {
         <div>
             <form id="pageAddForm" onSubmit={handleSubmit}>
                 <input type="text" id="pageTitleInput" placeholder="Page Title" onChange={(e) => setTitle(e.target.value)} className="rounded-lg text-lg py-3 px-3 my-2 w-full"/>
-                <input type="text" id="pageMessageInput" placeholder="Witty caption here" onChange={(e) => setMessage(e.target.value)} className="rounded-lg text-lg my-2 py-3 px-3 w-full"/>
+                <textarea id="pageMessageInput" rows="4" placeholder="Witty caption here" onChange={(e) => setMessage(e.target.value)} className="rounded-lg text-lg my-2 py-3 px-3 w-full"/>
                 <div className="my-2">
                     <ImageInput setFile={fileUploadCallback} />
                 </div>

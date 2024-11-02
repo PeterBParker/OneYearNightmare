@@ -108,15 +108,15 @@ This is a custom, serial, image-hosting website for a graphic-novel I'm writing 
 
   - **DONE** Add an "admin" type to user accounts
     - Currently done manually via python script
-  - Make it so multiple users can post on using the management page.
-    - We need to make avatar url available in user data
-      - For new users
+  - **DONE**Make it so multiple users can post on using the management page.
+    - **DONE**We need to make avatar url available in user data
+      - **DONE**For new users
         - **DONE** when a user is created, add that field to their doc
         - **DONE** when a user updates their image, upload the new image to the store, set the user's avatar url, and delete the old image
         - **DONE** update avatar helper utils to grab the image url from the user's doc instead of directly from storage
-        - Determine if we can consolidate the user's display name to one storage loc instead of using both firestore and auth
+        - **DONE** Determine if we can consolidate the user's display name to one storage loc instead of using both firestore and auth. Update: We can't because we need to query the display names of all the users, not just the logged in user.
         - **DONE**Don't show the display name set menu if display name is already set (on first login a placeholder is set and should count but doesn't)
-    - When a user deletes their account, delete their profile pic, user entry, and comments?
+    - **DONE** When a user deletes their account, delete their profile pic, user entry, and comments?
   - Add an nav button for admin accounts to "Page Management"
     - **DONE** Add a nav link to the desktop bar
     - **DONE** Add "Manage" link to mobile navigation menu if admin
@@ -131,8 +131,9 @@ This is a custom, serial, image-hosting website for a graphic-novel I'm writing 
         - **DONE**Page Title
         - **DONE**Page Image
         - **DONE**Page Description
-        - Make Page Desc a bigger text entry field
+        - **DONE** Make Page Desc a bigger text entry field
         - Page insert/append
+    - Expand interface UI to include an action selection
     - Implement Update Page Data
     - Implement Remove Page
 

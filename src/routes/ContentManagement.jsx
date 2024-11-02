@@ -25,7 +25,7 @@ export default function ContentManagement() {
 
     return (
         <React.Fragment>
-            <div>Edit your content here if ye be an admin!</div>
+            <div className="text-left text-xl font-header font-bold ml-2 my-4 ml-auto mr-auto max-w-lg">Page Management</div>
             <div className="my-8 max-w-lg ml-auto mr-auto">
                 <AddFileForm/>
             </div>

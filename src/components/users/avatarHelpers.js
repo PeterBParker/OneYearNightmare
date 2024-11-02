@@ -1,4 +1,4 @@
-import { getDownloadURL, ref, uploadString } from "firebase/storage";
+import { deleteObject, getDownloadURL, ref, uploadString } from "firebase/storage";
 import { storage, AVATARS_PATH } from "../../index";
 import { createAvatar } from "@dicebear/core";
 import { lorelei } from "@dicebear/collection";
@@ -104,3 +104,8 @@ export const getAvatarUrl = async (userId) => {
   }
   return avatarUrl;
 };
+
+export async function deleteUserAvatar(userID) {
+  let ref = getAvatarRef(userID)
+  await deleteObject(ref);
+}

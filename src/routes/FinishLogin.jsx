@@ -32,10 +32,11 @@ export default function FinishLogin() {
       // The client SDK will parse the code from the link for you.
       signInWithEmailLink(auth, email, window.location.href)
         .then((user) => {
+          let userID = user.user.uid
           // Clear email from storage.
           window.localStorage.removeItem('emailForSignIn');
           // Query for their data and then set values if none exist
-          getUserData(user.user.uid).then(async (data) => {
+          getUserData(userID).then(async (data) => {
             let placeholderUserData = {}
             // checks if there isn't a prexisting display name stored
             if ((data === undefined) || !(USER_DISPLAY_NAME in data) || (data[USER_DISPLAY_NAME] == null)) {
@@ -47,26 +48,25 @@ export default function FinishLogin() {
             // checks if there isn't a preexisting user url stored
             if ((data === undefined) || !(USER_URL in data) || (data[USER_URL] == null)) {
               // first check if they have an existing avatar and use that over the placeholder
-              const oldAvatarRef = await getOldAvatarRef(user.user.uid);
+              const oldAvatarRef = await getOldAvatarRef(userID);
               try {
                 placeholderUserData[USER_URL] = await getDownloadURL(oldAvatarRef);
               } catch (error) {
                 // generate placeholder avatar
                 const newSeed = generateDisplayName();
                 const avatarData = generateAvatarData(newSeed);
-                const placeholderURL = await storeUserAvatar(user.uid, avatarData);
+                const placeholderURL = await storeUserAvatar(userID, avatarData);
                 placeholderUserData[USER_URL] = placeholderURL;
               }
 
             }
             if (! isEmpty(placeholderUserData)) {
-              console.log("For user ", user.user.uid, " with data ", placeholderUserData)
               // if we have to set every attribute of the user because none of it existed, create a new user
               if (Object.keys(placeholderUserData).length === NUM_OF_USER_PROPERTIES) {
-                await setUserData(user.user.uid, placeholderUserData)
+                await setUserData(userID, placeholderUserData)
               } else {
                 // update the user with the new data
-                await updateUserData(user.user.uid, placeholderUserData)
+                await updateUserData(userID, placeholderUserData)
               }
               
             }
