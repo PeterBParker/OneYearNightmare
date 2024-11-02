@@ -13,7 +13,7 @@ import { USER_DISPLAY_NAME } from "../../api/RefKeys";
 import { authUserOptions } from "../../api/ReactQueries";
 
 export default function DisplayNameForm(props) {
-  const [user, loading, _] = useAuthState(auth);
+  const [user, loading] = useAuthState(auth);
   const [placeholder, setPlaceholder] = useState("");
   const { isPending, isError, data, error} = useQuery(authUserOptions(user))
 

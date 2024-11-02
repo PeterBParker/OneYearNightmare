@@ -117,7 +117,7 @@ This is a custom, serial, image-hosting website for a graphic-novel I'm writing 
         - **DONE** Determine if we can consolidate the user's display name to one storage loc instead of using both firestore and auth. Update: We can't because we need to query the display names of all the users, not just the logged in user.
         - **DONE**Don't show the display name set menu if display name is already set (on first login a placeholder is set and should count but doesn't)
     - **DONE** When a user deletes their account, delete their profile pic, user entry, and comments?
-  - Add an nav button for admin accounts to "Page Management"
+  - **DONE**Add an nav button for admin accounts to "Page Management"
     - **DONE** Add a nav link to the desktop bar
     - **DONE** Add "Manage" link to mobile navigation menu if admin
   - **DONE** Check for admin in firebase rules using claims instead of database

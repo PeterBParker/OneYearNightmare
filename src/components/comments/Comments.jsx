@@ -31,7 +31,7 @@ const CreateNewCommentForm = loadable(() => import("./CreateNewCommentForm"));
 export default function Comments() {
   const params = useParams();
   const [showCommentSubmit, setShowCommentSubmit] = useState(false);
-  const [user, loading, _] = useAuthState(auth)
+  const [user, loading] = useAuthState(auth)
   const [comments, setComments] = useState([]);
   const isDesktop = useMediaQuery({ query: querySizes["lg"] });
 

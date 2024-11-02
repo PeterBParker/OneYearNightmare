@@ -72,6 +72,5 @@ service cloud.firestore {
   }
   function isAdmin(uid) {
     return request.auth.token.admin == true
-    //return exists(/databases/(default)/documents/is_admin/$(uid))
   }
 }
