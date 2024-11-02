@@ -13,8 +13,7 @@ import { PageLoadingSpinner } from "../../generic/loading/Spinners";
 import ProfilePicEditor from "./ProfilePicEditor";
 
 const UserProfile = () => {
-  const [user, loading] = useAuthState(auth)
-  const [_, setIsInit] = useState(false);
+  const [user, loading] = useAuthState(auth);
 
   if (loading) {
     return(<PageLoadingSpinner/>)
@@ -24,26 +23,10 @@ const UserProfile = () => {
     return <Navigate to={SIGNIN_PAGE_PATH} />
   }
 
-  if (user.displayName === null) {
-    return <InitializeInfo onSubmit={() => setIsInit(true)}/>
-  }
-
   return <DisplayInfo />
 };
 
-const InitializeInfo = (props) => {
-  return (
-    <div className="max-w-lg ml-auto mr-auto px-2">
-      <div className="text-left text-xl font-header font-bold ml-2 my-4">
-        Set Up Profile
-      </div>
-      <DisplayNameForm onSuccessAction={() => {props.onSubmit()}} />
-      <SignOutButton />
-    </div>
-  );
-};
-
-const DisplayInfo = () => {
+const DisplayInfo = (props) => {
   const isDesktop = useMediaQuery({ query: querySizes["lg"] });
   return (
     <div className="max-w-2xl  ml-auto mr-auto">

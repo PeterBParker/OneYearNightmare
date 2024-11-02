@@ -4,6 +4,7 @@ import argparse
 
 from pathlib import Path
 
+from firebase_admin import auth
 from firebase_admin.firestore import client
 from firebase_admin.storage import bucket
 
@@ -17,6 +18,7 @@ class FirebaseRunner:
         default_app = firebase_admin.initialize_app(
             options={"projectId": projectId})
         self.db = client(default_app)
+        self.auth = auth.Client(default_app)
         self.pages_dir = Path("../../public/MnMPages/")
         self.blob_pages_prefix = "pages/"
         self.bucket = bucket(
@@ -29,14 +31,17 @@ class FirebaseRunner:
         user_ref = self.db.collection("users").document(user_id)
         user_ref.update({"avatar_url": url})
 
+    def addAdminToUser(self, user_id: str):
+        self.auth.set_custom_user_claims(user_id, {"admin":True})
+
     def run(self):
         pass
 
 
 def initialize_argparser():
     parser = argparse.ArgumentParser(
-        prog="Firestore Data Importer",
-        description="Imports JSON data into your firestore"
+        prog="Firestore Command Runner",
+        description="Runs a command from the admin SDK"
     )
     parser.add_argument("project_id")
     return parser

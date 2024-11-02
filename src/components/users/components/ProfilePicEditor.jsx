@@ -1,13 +1,18 @@
 import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
+import { useQuery } from "@tanstack/react-query";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowsRotate } from "@fortawesome/free-solid-svg-icons";
 import { useMutation } from "@tanstack/react-query";
 import { useAuthState } from "react-firebase-hooks/auth";
 
 import { auth } from "../../..";
-import { storeUserAvatar } from "../avatarHelpers";
+import { BigSpinner } from "../../generic/loading/Spinners";
+import { generateAvatarData, storeUserAvatar } from "../avatarHelpers";
 import ProfilePicture from "./ProfilePicture";
+import { updateUserData } from "../../../api/ComicPageAPI";
+import { USER_URL } from "../../../api/RefKeys";
+import { authUserOptions } from "../../../api/ReactQueries";
 
 export default function ProfilePicEditor() {
     const [user] = useAuthState(auth);
@@ -15,8 +20,9 @@ export default function ProfilePicEditor() {
     const [avatarSeed, setAvatarSeed] = useState("");
     const [avatarSaved, setAvatarSaved] = useState(true);
     const mutation = useMutation({
-      mutationFn: (avatarData) => {
-        return storeUserAvatar(avatarData["userId"], avatarData["seed"]);
+      mutationFn: async (avatarData) => {
+        const url = await storeUserAvatar(user.uid, avatarData);
+        return updateUserData(user.uid, {[USER_URL]: url})
       },
     });
   
@@ -44,7 +50,8 @@ export default function ProfilePicEditor() {
                 className="btn btn-std-hover bg-green-confirm px-4 py-2 font-medium avatarModBtn"
                 onClick={async () => {
                   setAvatarSaved(false);
-                  await mutation.mutate({ userId: user.uid, seed: avatarSeed });
+                  const avatarData = generateAvatarData(avatarSeed)
+                  await mutation.mutateAsync(avatarData);
                   setAvatarSaved(true);
                 }}
               >

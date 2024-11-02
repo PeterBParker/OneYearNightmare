@@ -12,6 +12,9 @@ export default function GracefulImage(props) {
     <PageLoadingSpinner />;
   }
 
+  if ((data === undefined) || !(PAGE_KEY in data) || !(PAGE_URL in data[PAGE_KEY])) {
+    return <div>No Page Found</div>
+  }
   const imageURL = data[PAGE_KEY][PAGE_URL];
 
   const loadedPageEffect = () => {

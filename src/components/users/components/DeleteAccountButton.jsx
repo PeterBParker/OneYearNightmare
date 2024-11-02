@@ -1,7 +1,8 @@
 import { useState } from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import Modal from "../../generic/Modal";
-import { NO_USER_ID } from "../../../index";
-import { storeUserAvatar } from "../avatarHelpers";
+import { auth } from "../../..";
+import { deleteUserAvatar } from "../avatarHelpers";
 import {
   deleteComments,
   deleteUserCommentId,
@@ -10,6 +11,7 @@ import {
 
 export default function DeleteAccountButton() {
   const [showModal, setShowModal] = useState(false);
+  const [user, loading] = useAuthState(auth);
   const [modalBodyText, setModalBodyText] = useState(
     <div className="width-md pl-4 pr-4">
       Are you absolutely sure you want to delete your account? This will remove
@@ -24,7 +26,7 @@ export default function DeleteAccountButton() {
       await deleteComments();
       await deleteUserCommentId();
       await deleteUserWrapper();
-      await storeUserAvatar(NO_USER_ID, "");
+      await deleteUserAvatar(user.uid);
     } catch (error) {
       console.log(error);
     }

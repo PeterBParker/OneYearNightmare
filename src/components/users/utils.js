@@ -2,7 +2,6 @@ import { db } from "../../index";
 import {
   doc,
   getDoc,
-  setDoc,
   query,
   where,
   collection,
@@ -10,6 +9,7 @@ import {
   deleteDoc,
   writeBatch,
   orderBy,
+  updateDoc,
 } from "firebase/firestore";
 
 import { auth } from "../../index";
@@ -31,7 +31,7 @@ export const setCommentDisplayName = async (new_name) => {
   let success = false;
   if (auth.currentUser != null) {
     const docRef = doc(db, "users", auth.currentUser.uid);
-    await setDoc(docRef, {
+    await updateDoc(docRef, {
       display_name: new_name,
       last_updated: Timestamp.fromDate(new Date()),
     })

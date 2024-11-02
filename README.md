@@ -106,18 +106,39 @@ This is a custom, serial, image-hosting website for a graphic-novel I'm writing 
     - **DONE** Fix the mobile comments
     - Add error handling on login errors
 
-  - Add an "admin" type to user accounts
-  - Add an nav button for admin accounts to "Page Management"
-  - Translate the Python Data API to Javascript/Typescript
+  - **DONE** Add an "admin" type to user accounts
+    - Currently done manually via python script
+  - **DONE**Make it so multiple users can post on using the management page.
+    - **DONE**We need to make avatar url available in user data
+      - **DONE**For new users
+        - **DONE** when a user is created, add that field to their doc
+        - **DONE** when a user updates their image, upload the new image to the store, set the user's avatar url, and delete the old image
+        - **DONE** update avatar helper utils to grab the image url from the user's doc instead of directly from storage
+        - **DONE** Determine if we can consolidate the user's display name to one storage loc instead of using both firestore and auth. Update: We can't because we need to query the display names of all the users, not just the logged in user.
+        - **DONE**Don't show the display name set menu if display name is already set (on first login a placeholder is set and should count but doesn't)
+    - **DONE** When a user deletes their account, delete their profile pic, user entry, and comments?
+  - **DONE**Add an nav button for admin accounts to "Page Management"
+    - **DONE** Add a nav link to the desktop bar
+    - **DONE** Add "Manage" link to mobile navigation menu if admin
+  - **DONE** Check for admin in firebase rules using claims instead of database
+  - **DONE** Make author avatars load correctly
+  - **DONE** Make sure comments work with new user data
+  - **DONE** Translate the Python Data API to Javascript/Typescript
   - Add a Page Management page
+
     - Implement Add Page
       - Create Form Components for Page Info
-        - Page Title
-        - Page Image
-        - Page Description
+        - **DONE**Page Title
+        - **DONE**Page Image
+        - **DONE**Page Description
+        - **DONE** Make Page Desc a bigger text entry field
         - Page insert/append
+    - Expand interface UI to include an action selection
     - Implement Update Page Data
     - Implement Remove Page
+
+  - Make the styling for the user profile on mobile not suck
+  - move the exit button of the mobile menu on top of the php banner
 
 - 6. Add tests
 

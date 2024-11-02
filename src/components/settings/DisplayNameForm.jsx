@@ -1,22 +1,35 @@
 import { useState, useEffect } from "react";
-import { auth } from "../..";
-import { getDisplayName } from "../users/utils";
 import { useAuthState } from "react-firebase-hooks/auth";
+import { useQuery } from "@tanstack/react-query";
+import { auth } from "../..";
 import {
   setAuthDisplayName,
   setCommentDisplayName,
   validateDisplayName,
 } from "../users/utils";
 import GenericSingleInputForm from "./GenericSingleInputForm";
+import { BigSpinner } from "../generic/loading/Spinners";
+import { USER_DISPLAY_NAME } from "../../api/RefKeys";
+import { authUserOptions } from "../../api/ReactQueries";
 
 export default function DisplayNameForm(props) {
-  const [user, loading, error] = useAuthState(auth);
+  const [user, loading] = useAuthState(auth);
   const [placeholder, setPlaceholder] = useState("");
+  const { isPending, isError, data, error} = useQuery(authUserOptions(user))
 
-  if (user) {
-    getDisplayName(user.uid).then((displayName) => {
-      setPlaceholder(displayName);
-    });
+  useEffect(() => {
+    if (!isPending && !isError) {
+      setPlaceholder(data[USER_DISPLAY_NAME])
+    }
+  }, [isError, isPending, data])
+
+  if (isPending) {
+    return <BigSpinner/>
+  }
+
+  if (isError) {
+    console.log("encountered error in getting the user data", error)
+    return <BigSpinner/>
   }
 
   const changeDisplayName = async (newName) => {
