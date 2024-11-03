@@ -4,7 +4,7 @@ import { createAvatar } from "@dicebear/core";
 import { lorelei } from "@dicebear/collection";
 import { getDoc } from "firebase/firestore";
 import { USER_URL } from "../../api/RefKeys";
-import { getUserRef } from "../../api/ComicPageAPI";
+import { getUserRef, updateUserData } from "../../api/ComicPageAPI";
 
 // Need a function that returns an object with an image string and metadata
 class AvatarData {
@@ -94,9 +94,17 @@ export const getAvatarUrl = async (userId) => {
     if (data !== undefined && USER_URL in data) {
       avatarUrl = data[USER_URL]
     } else {
-      // TODO return an error so the user knows we're missing their avatar?
-      // An avatar does not exist for it, and we need to get a default avatar
-      avatarUrl = "https://api.dicebear.com/5.x/lorelei/svg";
+      // Try again but use the old method of grabbing a user url
+      const oldAvatarRef = await getOldAvatarRef(userId);
+      avatarUrl = await getDownloadURL(oldAvatarRef);
+      if (!!avatarUrl) {
+        // update the user's data to use the new way of storing the avatar url with the user data
+        updateUserData(userId, {USER_URL: avatarUrl})
+      } else {
+        // TODO return an error so the user knows we're missing their avatar?
+        // An avatar does not exist for it, and we need to get a default avatar
+        avatarUrl = "https://api.dicebear.com/5.x/lorelei/svg";
+      }
     }
   } else {
     // An avatar does not exist for it, and we need to get a default avatar
