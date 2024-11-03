@@ -29,9 +29,9 @@ const UserProfile = () => {
 const DisplayInfo = (props) => {
   const isDesktop = useMediaQuery({ query: querySizes["lg"] });
   return (
-    <div className="max-w-2xl  ml-auto mr-auto">
+    <div className={`${isDesktop ? "" : "bg-cream-dark"} max-w-2xl  ml-auto mr-auto`}>
       <div className="px-2 mr-auto ml-auto">
-        <div className="text-left text-xl font-header font-bold ml-2 my-4">
+        <div className="text-left text-xl font-header font-bold ml-2 mb-4">
           User Settings
         </div>
         <div className={`flex ${isDesktop ? "" : "flex-wrap" } justify-center`}>

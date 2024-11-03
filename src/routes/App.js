@@ -8,7 +8,7 @@ import Header from "../components/header/Header";
 function App() {
   const isDesktop = useMediaQuery({ query: querySizes["lg"] });
   return (
-    <div className={`App ${isDesktop ? " desktopBg comicViewerDesktop" : ""}`}>
+    <div className={`App ${isDesktop ? " desktopBg comicViewerDesktop" : "mt-8"}`}>
       <div className="shrink-0">
         <Header />
       </div>

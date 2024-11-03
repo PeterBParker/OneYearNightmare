@@ -14,6 +14,11 @@ export default function MobileMenu(props) {
   let mobileMenu = useRef(null);
   const [showAdminLinks, setShowAdminLinks] = useState(false);
   const [user, loading, error] = useAuthState(auth);
+  let banner = document.getElementById("sfbanner");
+  if (!!banner) {
+    banner.style.position = "absolute";
+    banner.style.transition = "all 0.5s ease-in-out"
+  }
 
   useEffect(() => {
     if (!loading && !error && user !== null) {
@@ -26,9 +31,12 @@ export default function MobileMenu(props) {
   })
 
   if (props.showMenu && mobileMenu.current) {
+    // Get spider forest banner
+    banner.style.top = "-100%";
     mobileMenu.current.style.right = "0";
   } else if (!props.showMenu && mobileMenu.current) {
     mobileMenu.current.style.right = "-100%";
+    banner.style.top = "0";
   }
   return (
     <div className="mobileMenuOverlay" ref={mobileMenu}>
