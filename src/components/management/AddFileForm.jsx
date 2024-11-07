@@ -13,7 +13,7 @@ export default function AddFileForm() {
     const [disabled, setIsDisabled] = useState(false);
     const [result, setResult] = useState("");
     const [iconBlob, setIconBlob] = useState(null);
-    const [user, loading, error] = useAuthState(auth);
+    const [user, loading] = useAuthState(auth);
     const submitBtnId = "addPageSubmitBtn";
 
     if (loading) {
@@ -91,7 +91,7 @@ export default function AddFileForm() {
                 <div className="my-2">
                     <ImageInput setFile={fileUploadCallback} />
                 </div>
-                <button type="submit" id={submitBtnId} disabled={disabled} className="btn-std-hover btn my-2 py-2 w-full text-lg bg-cream-dark font-medium not-italic rounded">Submit</button>
+                <button type="submit" id={submitBtnId} disabled={disabled} className="btn-std-hover btn my-2 py-2 w-full text-lg bg-green-confirm font-medium not-italic rounded">Submit</button>
                 <div>{result}</div>
                 <img alt="" id="iconDisplay"></img>
             </form>

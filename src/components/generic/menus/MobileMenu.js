@@ -1,34 +1,23 @@
 import footerImage from "../../../assets/Website Assets - Phase 1/SVG/MOBILE-menu-image.svg";
 import exitButton from "../../../assets/Website Assets - Phase 1/SVG/MOBILE-x.svg";
 import { Link } from "react-router-dom";
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef } from "react";
 import { auth, CONTENT_MANAGEMENT_PATH, USER_PROFILE_PAGE_PATH } from "../../..";
 import {
   COMIC_VIEWER_PATH,
   ARCHIVE_PAGE_PATH,
   SIGNIN_PAGE_PATH,
 } from "../../../index";
-import { useAuthState } from "react-firebase-hooks/auth";
+import useAdminState from "../../../hooks/useAdminState";
 
 export default function MobileMenu(props) {
   let mobileMenu = useRef(null);
-  const [showAdminLinks, setShowAdminLinks] = useState(false);
-  const [user, loading, error] = useAuthState(auth);
+  const [isAdmin] = useAdminState();
   let banner = document.getElementById("sfbanner");
   if (!!banner) {
     banner.style.position = "absolute";
     banner.style.transition = "all 0.5s ease-in-out"
   }
-
-  useEffect(() => {
-    if (!loading && !error && user !== null) {
-      user.getIdTokenResult().then((token) => {
-        if(!!token.claims.admin) {
-          setShowAdminLinks(true)
-        }
-      })
-    }
-  })
 
   if (props.showMenu && mobileMenu.current) {
     // Get spider forest banner
@@ -77,7 +66,7 @@ export default function MobileMenu(props) {
                 </Link>
               </div>
             }
-            {showAdminLinks ?
+            {isAdmin ?
               <div className="cmsNavLink">
                 <Link to={CONTENT_MANAGEMENT_PATH} onClick={props.onMenuChange}>
                   Manage

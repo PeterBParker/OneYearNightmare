@@ -11,13 +11,13 @@ import {
   CONTENT_MANAGEMENT_PATH
 } from "../../../../index";
 import { useAuthState } from "react-firebase-hooks/auth";
+import useAdminState from "../../../../hooks/useAdminState";
 
 
 
 export default function NavBarLinks(props) {
-  const [user, loading, error] = useAuthState(auth);
-  const [showAdminLinks, setShowAdminLinks] = useState(false)
-  const [userPage, setUserPage] = useState(user ? "User Settings" : "Login");
+  const [user] = useAuthState(auth);
+  const [isAdmin] = useAdminState();
   let location = useLocation();
   const [currPage, setCurrPage] = useState(Pages.READ)
 
@@ -25,19 +25,6 @@ export default function NavBarLinks(props) {
     // Splitting the pathname because read page has page id's tailing its path
     setCurrPage(location.pathname.split("/")[1])
   }, [location.pathname])
-
-  useEffect(() => {
-    if (user == null) {
-      setUserPage("Login");
-    } else {
-      setUserPage("User Settings");
-      user.getIdTokenResult().then((token) => {
-        if (!!token.claims.admin) {
-          setShowAdminLinks(true)
-        }
-      })
-    }
-  }, [user]);
 
   function buildLink(toPath, displayStr) {
     return(
@@ -58,6 +45,6 @@ export default function NavBarLinks(props) {
     buildLink(COMIC_VIEWER_PATH, "Read"),
     buildLink(ARCHIVE_PAGE_PATH, "Archive"),
     user === null ? buildLink(SIGNIN_PAGE_PATH, "Login") : buildLink(USER_PROFILE_PAGE_PATH, "Profile"),
-    showAdminLinks ? buildLink(CONTENT_MANAGEMENT_PATH, "Manage") : null,
+    isAdmin ? buildLink(CONTENT_MANAGEMENT_PATH, "Manage") : null,
   ];
 }
