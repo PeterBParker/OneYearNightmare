@@ -124,6 +124,7 @@ This is a custom, serial, image-hosting website for a graphic-novel I'm writing 
   - **DONE** Make author avatars load correctly
   - **DONE** Make sure comments work with new user data
   - **DONE** Translate the Python Data API to Javascript/Typescript
+
   - Add a Page Management page
 
     - Implement Add Page
@@ -132,13 +133,15 @@ This is a custom, serial, image-hosting website for a graphic-novel I'm writing 
         - **DONE**Page Image
         - **DONE**Page Description
         - **DONE** Make Page Desc a bigger text entry field
-        - Page insert/append
-    - Expand interface UI to include an action selection
+        - **DONE** Chapter Select
+          - Add Chapter to the Select?
+        - Season Select
+    - **DONE** Expand interface UI to include an action selection
     - Implement Update Page Data
     - Implement Remove Page
 
-  - Make the styling for the user profile on mobile not suck
-  - move the exit button of the mobile menu on top of the php banner
+  - **DONE** Make the styling for the user profile on mobile not suck
+  - **DONE** move the exit button of the mobile menu on top of the php banner
 
 - 6. Add tests
 

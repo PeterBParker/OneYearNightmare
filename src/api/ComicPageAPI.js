@@ -153,6 +153,18 @@ export async function allPagesFetcher({queryKey}) {
   return result;
 }
 
+export async function justSinglePageData(pageID) {
+  if (!isValidUUID(pageID)) {
+    return {}
+  }
+  const pageRef = doc(
+    collection(doc(collection(db, "book_data"), "content"), "pages"),
+    pageID
+  );
+  const pageSnap = await getDoc(pageRef);
+  return pageSnap.data();
+}
+
 export async function pageFetcher({ queryKey }) {
   // Validate user provided string before blindly sticking it in my query
   const [pageId] = queryKey;
