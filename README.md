@@ -135,7 +135,7 @@ This is a custom, serial, image-hosting website for a graphic-novel I'm writing 
         - **DONE** Make Page Desc a bigger text entry field
         - **DONE** Chapter Select
           - "Add Chapter" to the Select Dropdown?
-        - Investigate why adding pages isn't expanding the archive
+        - **DONE** Investigate why adding pages isn't expanding the archive
     - **DONE** Expand interface UI to include an action selection
     - Implement Update Page Data
       - **DONE** Update title, message, icon, and page image
