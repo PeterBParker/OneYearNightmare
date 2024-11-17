@@ -134,10 +134,13 @@ This is a custom, serial, image-hosting website for a graphic-novel I'm writing 
         - **DONE**Page Description
         - **DONE** Make Page Desc a bigger text entry field
         - **DONE** Chapter Select
-          - Add Chapter to the Select?
-        - Season Select
+          - "Add Chapter" to the Select Dropdown?
+        - Investigate why adding pages isn't expanding the archive
     - **DONE** Expand interface UI to include an action selection
     - Implement Update Page Data
+      - **DONE** Update title, message, icon, and page image
+      - Add a confirmation modal
+      - Style it to not look like garbage
     - Implement Remove Page
 
   - **DONE** Make the styling for the user profile on mobile not suck

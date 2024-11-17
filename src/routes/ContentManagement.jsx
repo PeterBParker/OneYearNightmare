@@ -40,7 +40,7 @@ export default function ContentManagement() {
             <select onChange={(e) => {setSelectedAction(e.target.value)}}>
                 {Object.keys(ActionComponentMap).map((key, index) => {return <option key={"pageActionKey"+index} value={key}>{key}</option>})}
             </select>
-            <div className="my-8 max-w-lg ml-auto mr-auto">
+            <div className="my-8 max-w-3xl ml-auto mr-auto">
                 {ActionComponentMap[selectedAction]}
             </div>
         </div>

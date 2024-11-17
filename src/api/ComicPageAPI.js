@@ -36,6 +36,8 @@ import {
   SEASON_PAGE_COUNT,
   MAX_PAGE_ID_KEY,
   USERS_KEY,
+  PAGE_TITLE,
+  PAGE_MESSAGE,
 } from "../api/RefKeys";
 
 import { ADVERBS, ADJECTIVES, NOUNS } from "./data/words";
@@ -288,6 +290,27 @@ async function setChapPageCount(chapID, newPageCount) {
       [CHAP_PAGE_COUNT]: newPageCount,
     }
   )
+}
+
+export async function updatePageObj(uuid, title=null, message=null, file=null, blob=null) {
+  let pageUpdate = {}
+  if (title !== null) {
+    pageUpdate[PAGE_TITLE] = title
+  }
+  if (message !== null) {
+    pageUpdate[PAGE_MESSAGE] = message
+  }
+  if (file !== null) {
+    addFilename(pageUpdate, file)
+    await addPublicURL(pageUpdate, file)
+  }
+  if (blob !== null) {
+    await addIconURL(pageUpdate, blob)
+  }
+  // call updateDoc
+  let pagesRef = getRefForKey(PAGES_CONTENTS_KEY);
+  let pageRef = doc(pagesRef, uuid);
+  await updateDoc(pageRef, pageUpdate);
 }
 
 async function addRequiredFields(pageData, imageFile, iconBlob) {
