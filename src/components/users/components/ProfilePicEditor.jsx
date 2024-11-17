@@ -1,18 +1,15 @@
 import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
-import { useQuery } from "@tanstack/react-query";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowsRotate } from "@fortawesome/free-solid-svg-icons";
 import { useMutation } from "@tanstack/react-query";
 import { useAuthState } from "react-firebase-hooks/auth";
 
 import { auth } from "../../..";
-import { BigSpinner } from "../../generic/loading/Spinners";
 import { generateAvatarData, storeUserAvatar } from "../avatarHelpers";
 import ProfilePicture from "./ProfilePicture";
 import { updateUserData } from "../../../api/ComicPageAPI";
 import { USER_URL } from "../../../api/RefKeys";
-import { authUserOptions } from "../../../api/ReactQueries";
 
 export default function ProfilePicEditor() {
     const [user] = useAuthState(auth);

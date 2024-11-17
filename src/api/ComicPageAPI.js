@@ -36,6 +36,8 @@ import {
   SEASON_PAGE_COUNT,
   MAX_PAGE_ID_KEY,
   USERS_KEY,
+  PAGE_TITLE,
+  PAGE_MESSAGE,
 } from "../api/RefKeys";
 
 import { ADVERBS, ADJECTIVES, NOUNS } from "./data/words";
@@ -153,6 +155,18 @@ export async function allPagesFetcher({queryKey}) {
   return result;
 }
 
+export async function justSinglePageData(pageID) {
+  if (!isValidUUID(pageID)) {
+    return {}
+  }
+  const pageRef = doc(
+    collection(doc(collection(db, "book_data"), "content"), "pages"),
+    pageID
+  );
+  const pageSnap = await getDoc(pageRef);
+  return pageSnap.data();
+}
+
 export async function pageFetcher({ queryKey }) {
   // Validate user provided string before blindly sticking it in my query
   const [pageId] = queryKey;
@@ -164,6 +178,10 @@ export async function pageFetcher({ queryKey }) {
     pageId
   );
   const pageSnap = await getDoc(pageRef);
+  if (pageSnap.data() === undefined) {
+    // That page doesn't exist
+    return {}
+  }
   // Fetch the chapter data for this page
   const chapRef = doc(
     collection(doc(collection(db, "book_data"), "content"), "chapters"),
@@ -276,6 +294,27 @@ async function setChapPageCount(chapID, newPageCount) {
       [CHAP_PAGE_COUNT]: newPageCount,
     }
   )
+}
+
+export async function updatePageObj(uuid, title=null, message=null, file=null, blob=null) {
+  let pageUpdate = {}
+  if (title !== "") {
+    pageUpdate[PAGE_TITLE] = title
+  }
+  if (message !== "") {
+    pageUpdate[PAGE_MESSAGE] = message
+  }
+  if (file !== null) {
+    addFilename(pageUpdate, file)
+    await addPublicURL(pageUpdate, file)
+  }
+  if (blob !== null) {
+    await addIconURL(pageUpdate, blob)
+  }
+  // call updateDoc
+  let pagesRef = getRefForKey(PAGES_CONTENTS_KEY);
+  let pageRef = doc(pagesRef, uuid);
+  await updateDoc(pageRef, pageUpdate);
 }
 
 async function addRequiredFields(pageData, imageFile, iconBlob) {

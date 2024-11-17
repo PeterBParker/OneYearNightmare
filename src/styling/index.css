@@ -728,6 +728,10 @@ body {
   grid-row-start: 1;
   grid-row-end: 2;
 }
+#iconDisplay {
+  width: 200px;
+  height: 300.75px;
+}
 
 .avatarModBtn {
   width: 66px;

@@ -1,12 +1,17 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 import { auth } from "../..";
 import ImageInput from "./InputFile";
 import { appendPageToChapter } from "../../api/ComicPageAPI";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { PageLoadingSpinner } from "../generic/loading/Spinners";
+import { useQuery } from "@tanstack/react-query";
+import { allPagesQuery } from "../../routes/Archive";
+import { iconifyFileIntoBlob } from "./utils/iconHelpers";
+import SubmitButton from "./utils/SubmitButton";
 
 export default function AddFileForm() {
+    const {data, isLoading} = useQuery(allPagesQuery());
     const [title, setTitle] = useState("");
     const [message, setMessage] = useState("");
     const [file, setFile] = useState("");
@@ -14,54 +19,27 @@ export default function AddFileForm() {
     const [result, setResult] = useState("");
     const [iconBlob, setIconBlob] = useState(null);
     const [user, loading] = useAuthState(auth);
+    const [isSaving, setIsSaving] = useState(false);
     const submitBtnId = "addPageSubmitBtn";
+    const ICON_DISPLAY_ID = "iconDisplay";
 
-    if (loading) {
-        <PageLoadingSpinner />
-    }
-    //useEffect(() => {
-    //     //TODO disable btn unless all fields are filled
-    // })
-
-    // when I select an image on the form, I want the submit button to be disabled until the icon loads as a preview.
-    // then when the submit button is clicked, the image object on the canvas is passed to the appendPageToChapter and
-    // it uses the already loaded icon as the upload data. 
-    // in order to do this, I need to add an event that disables the submit button and renders the icon.
-    function fileUploadCallback(file) {
-        setIsDisabled(true);
-        setFile(file);
-        const canvas = document.createElement("canvas");
-        canvas.width = 200;
-        canvas.height = 300.75;
-        const ctx = canvas.getContext("2d");
-        var img = new Image();
-        img.addEventListener("load", () => {
-            ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-            const dataURI = canvas.toDataURL("image/webp");
-            
-            let testDisplay = document.getElementById("iconDisplay")
-            testDisplay.src = dataURI
-        
-            canvas.toBlob((dataBlob) => {setIconBlob(dataBlob)})
-        })
-        img.src = URL.createObjectURL(file) 
-        setIsDisabled(false);
+    if (loading || isLoading) {
+        return <PageLoadingSpinner />
     }
 
-    // TODO grab the chapter and season id from a selection
+    let latestChapter = data["chapters"].slice(-1).pop()
+    // TODO grab season id from a selection when there are multiple seasons
     let providedPageData = {
         "author": user.uid,
-        "chapter_id": "5aa23909-b7aa-4177-bdba-25cb3a892ef0",
+        "chapter_id": latestChapter["uuid"],
         "message": message,
         "season_id": "44bd96b7-acec-4f01-9425-9bb3d59e29e4",
         "title": title
     }
     const handleSubmit = async (e) => {
         e.preventDefault();
-        let submitBtn = document.getElementById(submitBtnId)
-        submitBtn.disabled = true;
-        submitBtn.classList.add("disabled");
         setIsDisabled(true);
+        setIsSaving(true);
         try {
             let [success, err] = await appendPageToChapter(providedPageData, file, iconBlob)
             if (success) {
@@ -78,22 +56,35 @@ export default function AddFileForm() {
         } catch(err) {
             console.log(err)
         } finally {
-            setIsDisabled(false);
+            setIsSaving(false);
         }
+    }
 
+    function uploadCallback(file) {
+        setIsDisabled(true);
+        setFile(file);
+        iconifyFileIntoBlob(file, setIconBlob, ICON_DISPLAY_ID)
+        setIsDisabled(false)
     }
 
     return(
         <div>
+            <div className="text-left text-lg font-header">Add Page</div>
             <form id="pageAddForm" onSubmit={handleSubmit}>
-                <input type="text" id="pageTitleInput" placeholder="Page Title" onChange={(e) => setTitle(e.target.value)} className="rounded-lg text-lg py-3 px-3 my-2 w-full"/>
-                <textarea id="pageMessageInput" rows="4" placeholder="Witty caption here" onChange={(e) => setMessage(e.target.value)} className="rounded-lg text-lg my-2 py-3 px-3 w-full"/>
-                <div className="my-2">
-                    <ImageInput setFile={fileUploadCallback} />
+                <div className="flex flex-row flex-wrap">
+                    <div className="flex flex-col" style={{"minWidth": "20rem"}}>
+                        <input type="text" id="pageTitleInput" placeholder="Page Title" onChange={(e) => setTitle(e.target.value)} className="rounded-lg text-lg py-3 px-3 my-2 w-full"/>
+                        <textarea id="pageMessageInput" rows="4" placeholder="Witty caption here" onChange={(e) => setMessage(e.target.value)} className="rounded-lg text-lg my-2 py-3 px-3 w-full"/>
+
+                    </div>
+                    <div className="my-2 mx-4">
+                        <ImageInput fileUploadCallback={uploadCallback}/>
+                        <img alt="" id={ICON_DISPLAY_ID}></img>
+                    </div>
                 </div>
-                <button type="submit" id={submitBtnId} disabled={disabled} className="btn-std-hover btn my-2 py-2 w-full text-lg bg-green-confirm font-medium not-italic rounded">Submit</button>
+                
+                <SubmitButton label="Save" buttonID={submitBtnId} isDisabled={disabled} isLoading={isSaving}/>
                 <div>{result}</div>
-                <img alt="" id="iconDisplay"></img>
             </form>
         </div>
     )

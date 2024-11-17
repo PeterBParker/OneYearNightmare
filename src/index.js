@@ -148,7 +148,8 @@ const router = createBrowserRouter([
       },
       {
         path: CONTENT_MANAGEMENT_PATH,
-        element: <ContentManagement />
+        element: <ContentManagement />,
+        loader: book_loader(queryClient),
       }
     ],
   },
