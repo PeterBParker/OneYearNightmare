@@ -178,6 +178,10 @@ export async function pageFetcher({ queryKey }) {
     pageId
   );
   const pageSnap = await getDoc(pageRef);
+  if (pageSnap.data() === undefined) {
+    // That page doesn't exist
+    return {}
+  }
   // Fetch the chapter data for this page
   const chapRef = doc(
     collection(doc(collection(db, "book_data"), "content"), "chapters"),
