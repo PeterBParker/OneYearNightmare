@@ -7,7 +7,7 @@ import { Navigate } from "react-router-dom"
 
 import { auth, SIGNIN_PAGE_PATH, USER_PROFILE_PAGE_PATH } from ".."
 import AddFileForm from "../components/management/AddFileForm"
-import UpdatePageForm from "../components/management/UpdatePageForm"
+import UpdatePage from "../components/management/UpdatePage"
 import { PageLoadingSpinner } from "../components/generic/loading/Spinners"
 import { useMediaQuery } from "react-responsive"
 import querySizes from "../styling/breakpoints.json"
@@ -18,7 +18,7 @@ export default function ContentManagement() {
     const UpdatePageAction = "Update Page";
     const ActionComponentMap = {
         [AddPageAction]: <AddFileForm/>,
-        [UpdatePageAction]: <UpdatePageForm />,
+        [UpdatePageAction]: <UpdatePage />,
     }
     const [user, loading] = useAuthState(auth)
     const [selectedAction, setSelectedAction] = useState(AddPageAction);

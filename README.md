@@ -141,8 +141,10 @@ This is a custom, serial, image-hosting website for a graphic-novel I'm writing 
       - **DONE** Update title, message, icon, and page image
       - Add a confirmation modal
       - Style it to not look like garbage
+      - **DONE** If a page doesn't exist handle that
     - Implement Remove Page
 
+  - Fix bug where a valid uuid that doesn't correlate to an existing page is provided to the read URL and the page crashes
   - **DONE** Make the styling for the user profile on mobile not suck
   - **DONE** move the exit button of the mobile menu on top of the php banner
 

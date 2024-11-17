@@ -8,22 +8,23 @@ import { PageLoadingSpinner } from "../generic/loading/Spinners";
 import { useQuery } from "@tanstack/react-query";
 import { allPagesQuery } from "../../routes/Archive";
 import { iconifyFileIntoBlob } from "./utils/iconHelpers";
+import SubmitButton from "./utils/SubmitButton";
 
 export default function AddFileForm() {
     const {data, isLoading} = useQuery(allPagesQuery());
     const [title, setTitle] = useState("");
-    const [chapID, setChapID] = useState("");
     const [message, setMessage] = useState("");
     const [file, setFile] = useState("");
     const [disabled, setIsDisabled] = useState(false);
     const [result, setResult] = useState("");
     const [iconBlob, setIconBlob] = useState(null);
     const [user, loading] = useAuthState(auth);
+    const [isSaving, setIsSaving] = useState(false);
     const submitBtnId = "addPageSubmitBtn";
     const ICON_DISPLAY_ID = "iconDisplay";
 
     if (loading || isLoading) {
-        <PageLoadingSpinner />
+        return <PageLoadingSpinner />
     }
 
     let latestChapter = data["chapters"].slice(-1).pop()
@@ -37,10 +38,8 @@ export default function AddFileForm() {
     }
     const handleSubmit = async (e) => {
         e.preventDefault();
-        let submitBtn = document.getElementById(submitBtnId)
-        submitBtn.disabled = true;
-        submitBtn.classList.add("disabled");
         setIsDisabled(true);
+        setIsSaving(true);
         try {
             let [success, err] = await appendPageToChapter(providedPageData, file, iconBlob)
             if (success) {
@@ -57,7 +56,7 @@ export default function AddFileForm() {
         } catch(err) {
             console.log(err)
         } finally {
-            setIsDisabled(false);
+            setIsSaving(false);
         }
     }
 
@@ -84,7 +83,7 @@ export default function AddFileForm() {
                     </div>
                 </div>
                 
-                <button type="submit" id={submitBtnId} disabled={disabled} className="btn-std-hover btn my-2 py-2 w-full text-lg bg-green-confirm font-medium not-italic rounded">Submit</button>
+                <SubmitButton label="Save" buttonID={submitBtnId} isDisabled={disabled} isLoading={isSaving}/>
                 <div>{result}</div>
             </form>
         </div>

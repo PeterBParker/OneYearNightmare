@@ -294,10 +294,10 @@ async function setChapPageCount(chapID, newPageCount) {
 
 export async function updatePageObj(uuid, title=null, message=null, file=null, blob=null) {
   let pageUpdate = {}
-  if (title !== null) {
+  if (title !== "") {
     pageUpdate[PAGE_TITLE] = title
   }
-  if (message !== null) {
+  if (message !== "") {
     pageUpdate[PAGE_MESSAGE] = message
   }
   if (file !== null) {
