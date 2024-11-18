@@ -1,7 +1,10 @@
-
+import { useEffect } from "react";
 
 export default function SubmitButton({label, buttonID, isDisabled, isLoading}) {
-
+    useEffect(() => {
+      let button = document.getElementById(buttonID);
+      button.disabled = isDisabled;
+    }, [isDisabled, buttonID])
     return (
         <button
             type="submit"

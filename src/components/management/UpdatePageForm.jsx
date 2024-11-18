@@ -39,7 +39,6 @@ export default function UpdatePageForm({ pageData, postUpdateHook }) {
         setIsDisabled(true);
         setFile(file)
         iconifyFileIntoBlob(file, setIconBlob, ICON_DISPLAY_ID)
-        setIsDisabled(false);
     }
 
     async function updatePage(e) {
