@@ -143,7 +143,7 @@ This is a custom, serial, image-hosting website for a graphic-novel I'm writing 
     - Add scheduled release
     - **DONE** Style the whole CMS section to not look like garbage
 
-    - Style typography across the whole site to be consistent and not hideous
+  - Style typography across the whole site to be consistent and not hideous
 
   - **DONE** Fix bug where a valid uuid that doesn't correlate to an existing page is provided to the read URL and the page crashes
   - **DONE** Make the styling for the user profile on mobile not suck
