@@ -69,11 +69,11 @@ This is a custom, serial, image-hosting website for a graphic-novel I'm writing 
 
 - 5. ADD ONLINE CMS FEATURES
 
-  - Refactor the entire website to pull pages from online db instead of statically built
+  - **DONE** Refactor the entire website to pull pages from online db instead of statically built
 
     - **DONE** Write a script to migrate all of the json data to the Firebase data solutions (Firestore for data, Database for images)
     - **SKIP** Update the "Add Page" script to push the data to the Firebase data solutions (intermediate solution until entire feature is done)
-    - Change `./src/api/ComicPageAPI.js` to query Firebase for the info that's in pagesData.json
+    - **SKIP**Change `./src/api/ComicPageAPI.js` to query Firebase for the info that's in pagesData.json
       - Use the Suspense feature of React 18 which handles all the async and loading state nastiness for me. (https://swizec.com/blog/react-18-and-the-future-of-async-data/)
       - **DONE** Figure out how to asynchronously retrieve data without query waterfalls, effective caching, etc.
     - **DONE** Fix the ComicRouter. Upgrading the react-router lib has broken the website. doh.
@@ -100,7 +100,6 @@ This is a custom, serial, image-hosting website for a graphic-novel I'm writing 
     - **DONE** Load the icons on the archive page
     - **GOOD NUFF** Add loading animations
     - **DONE** Fix auth appearance on mobile
-    - Make fallback a joint avatar stored locally
     - **DONE** Figure out how to reduce the number of unnecessary queries
     - **DONE** Fix the desktop styling
     - **DONE** Fix the mobile comments
@@ -140,9 +139,11 @@ This is a custom, serial, image-hosting website for a graphic-novel I'm writing 
     - Implement Update Page Data
       - **DONE** Update title, message, icon, and page image
       - Add a confirmation modal
-      - Style it to not look like garbage
       - **DONE** If a page doesn't exist handle that
-    - Implement Remove Page
+    - Add scheduled release
+    - **DONE** Style the whole CMS section to not look like garbage
+
+    - Style typography across the whole site to be consistent and not hideous
 
   - **DONE** Fix bug where a valid uuid that doesn't correlate to an existing page is provided to the read URL and the page crashes
   - **DONE** Make the styling for the user profile on mobile not suck
@@ -181,4 +182,3 @@ If a branch needs updated packages/updated version of npm:
 - Delete package-lock.json
 - # Run `npm install`
   - Build Docker images for building and deploying the website
-    > > > > > > > master

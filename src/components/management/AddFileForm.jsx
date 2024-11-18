@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
+import { useMediaQuery } from "react-responsive";
 
 import { auth } from "../..";
 import ImageInput from "./InputFile";
+import querySizes from "../../styling/breakpoints.json"
 import { appendPageToChapter } from "../../api/ComicPageAPI";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { PageLoadingSpinner } from "../generic/loading/Spinners";
@@ -17,10 +19,11 @@ export default function AddFileForm() {
     const [message, setMessage] = useState("");
     const [file, setFile] = useState("");
     const [disabled, setIsDisabled] = useState(false);
-    const [result, setResult] = useState("");
+    const [result, setResult] = useState("Save");
     const [iconBlob, setIconBlob] = useState(null);
     const [user, loading] = useAuthState(auth);
     const [isSaving, setIsSaving] = useState(false);
+    const isDesktop = useMediaQuery({ query: querySizes["lg"] });
     const submitBtnId = "addPageSubmitBtn";
     const ICON_DISPLAY_ID = "iconDisplay";
 
@@ -81,16 +84,17 @@ export default function AddFileForm() {
         <div>
             <form id="pageAddForm" onSubmit={handleSubmit}>
                 <div className="flex flex-row flex-wrap justify-between">
-                    <div className="flex flex-col" style={{"minWidth": "22rem"}}>
+                    <div className={`flex flex-col ${isDesktop ? null : "w-full"}`} style={{"minWidth": "22rem"}}>
                         <input required name="titleInput" type="text" id="pageTitleInput" placeholder="Page Title" onChange={(e) => setTitle(e.target.value)} className="rounded-lg text-lg py-3 px-3 my-2 w-full"/>
                         <textarea required id="pageMessageInput" placeholder="Witty caption here" onChange={(e) => setMessage(e.target.value)} className="rounded-lg text-lg my-2 py-3 px-3 w-full h-full"/>
-                        <SubmitButton label={result === null ? "Save" : result} buttonID={submitBtnId} isDisabled={disabled} isLoading={isSaving}/>
+                        {isDesktop ? <SubmitButton label={result === null ? "Save" : result} buttonID={submitBtnId} isDisabled={disabled} isLoading={isSaving}/> : null }
                     </div>
-                    <div className="my-2 ml-4" style={{"width": ICON_WIDTH}}>
+                    <div className={`my-2 ml-4 ${isDesktop ? null : "ml-auto mr-auto"}`} style={{"width": ICON_WIDTH}}>
                         <ImageInput required fileUploadCallback={uploadCallback}/>
-                        <img alt="" id={ICON_DISPLAY_ID} src={placeholderIcon}></img>
+                        <img className="rounded-sm border-2 border-grey" alt="" id={ICON_DISPLAY_ID} src={placeholderIcon}></img>
                     </div>
                 </div>
+                {isDesktop ? null : <div className="my-4"><SubmitButton label={result === null ? "Save" : result} buttonID={submitBtnId} isDisabled={disabled} isLoading={isSaving}/></div>}
             </form>
         </div>
     )

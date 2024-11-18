@@ -42,7 +42,7 @@ export default function ContentManagement() {
                     {Object.keys(ActionComponentMap).map((key, index) => {return <option key={"pageActionKey"+index} value={key}>{key}</option>})}
                 </select>
             </div>
-            <div className="mb-8 ml-auto mr-auto">
+            <div className="pb-8 ml-auto mr-auto">
                 {ActionComponentMap[selectedAction]}
             </div>
         </div>
