@@ -35,12 +35,14 @@ export default function ContentManagement() {
 
     return (
         isAdmin ?
-        <div className={`${isDesktop ? "" : "bg-cream-dark px-4"}`}>
-            <div className="text-left text-xl font-header font-bold ml-2 my-4 ml-auto mr-auto max-w-lg">Page Management</div>
-            <select onChange={(e) => {setSelectedAction(e.target.value)}}>
-                {Object.keys(ActionComponentMap).map((key, index) => {return <option key={"pageActionKey"+index} value={key}>{key}</option>})}
-            </select>
-            <div className="my-8 max-w-3xl ml-auto mr-auto">
+        <div className={`${isDesktop ? "max-w-xl ml-auto mr-auto" : "bg-cream-dark px-4"}`}>
+            <div className="text-left text-xl font-header font-bold ml-2 my-4 ml-auto mr-auto text-grey">Page Management</div>
+            <div className="flex justify-start">
+                <select className="text-lg py-2 bg-transparent border-2 border-grey rounded-lg w-full"  onChange={(e) => {setSelectedAction(e.target.value)}}>
+                    {Object.keys(ActionComponentMap).map((key, index) => {return <option key={"pageActionKey"+index} value={key}>{key}</option>})}
+                </select>
+            </div>
+            <div className="mb-8 ml-auto mr-auto">
                 {ActionComponentMap[selectedAction]}
             </div>
         </div>

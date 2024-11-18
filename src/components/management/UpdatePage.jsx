@@ -23,7 +23,6 @@ export default function UpdatePage() {
     // There will be a upload image button that will update the page icon display
     return (
         <div>
-            <div className="text-left text-lg font-header">Update Page</div>
             <form id="updatePageLookup" onSubmit={lookupPage}>
                 <input type="text" className="rounded-lg text-lg py-3 px-3 my-2 w-full" placeholder="XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX" onChange={(e) => setPageID(e.target.value)}></input>
                 <button type="submit" className="btn-std-hover btn my-2 py-2 w-full text-lg bg-cream-confirm font-medium not-italic rounded">Look Up Page</button>

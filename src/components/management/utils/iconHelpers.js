@@ -1,4 +1,4 @@
-const ICON_WIDTH = 200
+export const ICON_WIDTH = 200
 const ICON_HEIGHT = 300.75
 
 /**
