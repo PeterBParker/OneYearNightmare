@@ -62,9 +62,9 @@ export default function UpdatePageForm({ pageData, postUpdateHook }) {
             <div className="flex flex-row flex-wrap mt-4 justify-between">
                 <div className={`flex flex-col ${isDesktop ? null : "w-full"}`} style={{"minWidth": "20rem"}}>
                     <label className="text-left" htmlFor="pageTitle">Title</label>
-                    <input type="text" name="pageTitle" className="rounded-lg text-lg py-3 px-3 mb-2 w-full" placeholder={pageData["title"]} onChange={(e) => setTitle(e.target.value)}></input>
+                    <input type="text" name="pageTitle" className="rounded-lg text-lg py-3 px-3 mb-2 w-full" value={pageData["title"]} onChange={(e) => setTitle(e.target.value)}></input>
                     <label className="text-left" htmlFor="pageMessage">Message</label>
-                    <textarea name="pageMessage" className="h-full py-2 px-3" placeholder={pageData["message"]} onChange={(e) => setMessage(e.target.value)}></textarea>
+                    <textarea name="pageMessage" className="h-full py-2 px-3" value={pageData["message"]} onChange={(e) => setMessage(e.target.value)}></textarea>
                     <div className="mt-2">
                         {isDesktop ? <SubmitButton label={result} buttonID={SUBMIT_BTN_ID} isDisabled={isDisabled} isLoading={isLoading}/> : null}
                     </div>
