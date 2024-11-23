@@ -140,7 +140,15 @@ This is a custom, serial, image-hosting website for a graphic-novel I'm writing 
       - **DONE** Update title, message, icon, and page image
       - Add a confirmation modal
       - **DONE** If a page doesn't exist handle that
-    - Add scheduled release
+    - Add scheduled release functionality
+      - **DONE** Add datetime selector to the Add Page
+      - Add ability to schedule adding a page to the database
+        - Add a page to view the scheduled pages
+        - Add a new table in the database that stores the page data, date to be published, date requested to be published, required metadata for posting the page
+      - Add ability to view pages that are to be added
+        - Map onto a calendar view?
+      - Add ability to edit the pages that are to be added
+      - Add ability to remove pages that are to be added
     - **DONE** Style the whole CMS section to not look like garbage
 
   - Style typography across the whole site to be consistent and not hideous

@@ -233,6 +233,7 @@ export async function appendPageToChapter(pageData, imageFile, iconBlob) {
     const PagesRef = getRefForKey(PAGES_CONTENTS_KEY);
     let newPageRef = doc(PagesRef, pageData[PAGE_UUID])
     // update page counts and tell the website to display the new pag
+    // TODO Refactor these functions to return values instead of modify the object
     await Promise.all([
       setDoc(newPageRef, pageData),
       setNextPageId(pageData[PAGE_PREV_PAGE_ID], pageData[PAGE_UUID]),
@@ -355,7 +356,7 @@ async function addGlobalOrder(pageData) {
   pageData[PAGE_ORDER_IN_BOOK] = data[GLOBAL_PAGE_COUNT]+1;
 }
 
-async function addIconURL(pageData, iconBlob) {
+export async function addIconURL(pageData, iconBlob) {
   const iconsStorageRef = ref(storage, ICON_STORAGE_PATH + pageData[PAGE_FILENAME])
   await uploadBytes(iconsStorageRef, iconBlob)
   const url = await getDownloadURL(iconsStorageRef)
@@ -371,7 +372,7 @@ async function addPrevPageUUID(pageData) {
   pageData[PAGE_PREV_PAGE_ID] = lastPageData[PAGE_UUID]
 }
 
-async function addPublicURL(pageData, file) {
+export async function addPublicURL(pageData, file) {
   const pagesStorageRef = ref(storage, PAGE_STORAGE_PATH + file["name"])
   await uploadBytes(pagesStorageRef, file)
   const url = await getDownloadURL(pagesStorageRef)
