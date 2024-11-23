@@ -43,7 +43,33 @@ function validEmail(email) {
 }
 
 exports.publishPageAt = onRequest({cors: true}, (request, response) => {
+  const TIME_MARGIN_SECONDS = 30
   const {pageData, fileName, publishAt} = request.body.data
-  //if (request.body.data.)
-  response.send({"result": true})
+  // Check if the date to publish the page at is more than a margin number of secs in the future
+  let now = new Date()
+  if (Date.parse(publishAt) > new Date(now.getTime() + TIME_MARGIN_SECONDS * 1000) ) {
+    // Create the resources to track it as a page to be published in the future
+    try {
+      schedulePage(pageData, fileName)
+    } catch (err) {
+      response.status(500).send({status: false, error: error})
+    }
+    response.status(201).send({status: true})
+  } else {
+    // Publish the page now
+    try{
+      appendPage(pageData, fileName);
+    } catch(err) {
+      response.status(500).send({status: false, error: error})
+    }
+    response.status(201).send({status: true})
+  }
 })
+
+function schedulePage(pagedata, fileName) {
+  // TODO
+}
+
+function appendPage(pagedata, fileName) {
+  // TODO
+}

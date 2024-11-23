@@ -226,7 +226,6 @@ export async function updateUserData(uid, data) {
   await updateDoc(ref, data)
 }
 
-
 export async function appendPageToChapter(pageData, imageFile, iconBlob) {
   try {
     await addRequiredFields(pageData, imageFile, iconBlob);
