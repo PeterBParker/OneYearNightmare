@@ -9,7 +9,7 @@ const {
 } = require("firebase-admin/firestore");
 const client = require("@sendgrid/client");
 const { info, debug } = require("firebase-functions/logger");
-import { getStorage } from "firebase/storage";
+const { getStorage } = require("firebase/storage");
 const { onDocumentWritten } = require("firebase-functions/v2/firestore");
 
 // Initialize Sendgrid for email services
