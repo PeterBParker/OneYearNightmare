@@ -38,6 +38,7 @@ import ContentManagement from "./routes/ContentManagement";
 
 // Initialize the Firebase Application
 var firebaseConfig = {
+  // amazonq-ignore-next-line
   apiKey: "AIzaSyDwiYUN-zDZBeAc8QaH9WFDftkqW1XXDdQ",
   authDomain: "oneyearnightmarefirstsite.firebaseapp.com",
   projectId: "oneyearnightmarefirstsite",
@@ -52,7 +53,7 @@ export let DOMAIN = "https://monstersandmyriads.com";
 // Perform the App Check with ReCaptcha to prevent unauthorized usage of Firestore
 if (window.location.hostname === "localhost") {
   window.FIREBASE_APPCHECK_DEBUG_TOKEN = process.env.REACT_APP_DEV_TOKEN;
-  DOMAIN = "http://localhost:3000"
+  DOMAIN = "http://localhost:3000";
 }
 
 const appCheck = initializeAppCheck(firebaseApp, {
@@ -84,7 +85,7 @@ export const SUPPORT_PAGE_PATH = "/support";
 export const ARCHIVE_PAGE_PATH = "/archive";
 export const CREATIVES_PAGE_PATH = "/creatives";
 export const SIGNIN_PAGE_PATH = "/login";
-export const FINISH_SIGNIN_PAGE_PATH = "/finish-login"
+export const FINISH_SIGNIN_PAGE_PATH = "/finish-login";
 export const USER_PROFILE_PAGE_PATH = "/profile";
 export const CONTENT_MANAGEMENT_PATH = "/content-management";
 export const BASE_PATH = "/MnMPages/";
@@ -144,22 +145,22 @@ const router = createBrowserRouter([
       },
       {
         path: USER_PROFILE_PAGE_PATH,
-        element: <ProfilePage />
+        element: <ProfilePage />,
       },
       {
         path: CONTENT_MANAGEMENT_PATH,
         element: <ContentManagement />,
         loader: book_loader(queryClient),
-      }
+      },
     ],
   },
 ]);
 const container = document.getElementById("root");
 const root = createRoot(container);
 root.render(
-    <QueryClientProvider client={queryClient}>
-      <RouterProvider router={router} />
-    </QueryClientProvider>
+  <QueryClientProvider client={queryClient}>
+    <RouterProvider router={router} />
+  </QueryClientProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function

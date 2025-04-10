@@ -1,7 +1,26 @@
 import { bool } from "prop-types";
+import { getDownloadURL, ref } from "firebase/storage";
 import EmailSignUpModal from "../../email/EmailSignUpModal";
+import { storage } from "../../..";
+import { RSS_FILE_PATH } from "../../../api/RefKeys";
+import { useEffect } from "react";
 
 export default function NotifySignUpBanner(props) {
+  const RSS_LINK_ID = "rss-link";
+  let rssFileRef = ref(storage, RSS_FILE_PATH)
+
+  // Write a React Effect that fetches the RSS File Download url and updates the href of the RSS link
+  useEffect(() => {
+    getDownloadURL(rssFileRef).then((url) => {
+      let rssLink = document.getElementById(RSS_LINK_ID);
+      console.log("RSS Link: ", rssLink);
+      rssLink.href = url;
+    }).catch((error) => {
+      // Todo implement logging
+      console.log("Error getting RSS file download url: ", error);
+    });
+  }, [rssFileRef]);
+
   return (
     <div
       className={`notification-signup-banner ml-auto mr-auto justify-center ${
@@ -30,7 +49,8 @@ export default function NotifySignUpBanner(props) {
         </a>
         <EmailSignUpModal />
         <a
-          href="https://www.monstersandmyriads.com/rss.xml"
+          href=""
+          id={RSS_LINK_ID}
           className="btn bg-cream-dark btn-std-hover rounded text-2xl font-medium px-4 py-2 text-grey-dark ml-4 shrink-0"
         >
           RSS <i className="fa-solid fa-rss"></i>{" "}

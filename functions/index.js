@@ -1,6 +1,7 @@
 const { onRequest } = require("firebase-functions/v2/https");
 const RSS = require("rss");
-const { initializeApp } = require("firebase-admin/app");
+const admin = require("firebase-admin/app");
+const { getStorage } = require("firebase-admin/storage");
 const {
   getFirestore,
   Timestamp,
@@ -8,19 +9,19 @@ const {
   Filter,
 } = require("firebase-admin/firestore");
 const client = require("@sendgrid/client");
-const { info, debug } = require("firebase-functions/logger");
-const { getStorage } = require("firebase/storage");
+const { info, debug, warn } = require("firebase-functions/logger");
 const { onDocumentWritten } = require("firebase-functions/v2/firestore");
 
 // Initialize Sendgrid for email services
 client.setApiKey(process.env.SENDGRID_API_KEY);
 
 // Initialize Firestore services
-initializeApp();
+admin.initializeApp();
 const storage = getStorage();
 const db = getFirestore();
 
 const mxmContactListID = "887040bc-71a4-489a-874a-c4cc0391f890";
+const rssFilePath = "rss.xml";
 
 // Helper functions for email services
 function validEmail(email) {
@@ -102,42 +103,36 @@ exports.generateRSSFeed = onDocumentWritten(
         );
         return;
       }
-      // amazonq-ignore-next-line
-      const pages = pagesSnapshot.data();
       // Iterate through pages and add them to the feed
-      for (const page in pages) {
+      pagesSnapshot.forEach((doc) => {
+        let page = doc.data();
         try {
           feed.item({
-            description: page["description"],
+            title: page["title"],
             url: getMxMPageURL(page["uuid"]),
             guid: page["uuid"],
             date: page["datetime"],
           });
         } catch (pageError) {
-          info(`Error adding page to feed: ${pageError}`);
-          continue; // Skip this page but continue processing others
+          // Skip this page but continue processing others
+          warn(`Error adding page to feed: ${pageError}`);
         }
-      }
+      });
       // Convert the feed to xml
       const feedXML = feed.xml();
 
       // Write xml to a file in storage
       const bucket = storage.bucket();
-      const file = bucket.file("rss.xml");
+      const file = bucket.file(rssFilePath);
       await file.save(feedXML, {
         metadata: {
           contentType: "application/rss+xml",
+          cacheControl: "public, max-age=3600",
         },
       });
       await file.makePublic();
       let xmlFileLink = file.publicUrl();
-
       info(`RSS feed generated successfully: ${xmlFileLink}`);
-      // Save that url to firestore
-      await db
-        .collection("book_data")
-        .doc("display_data")
-        .update({ rss_feed_url: xmlFileLink });
     } catch (error) {
       warn(`Error generating RSS feed: ${error}`);
     }
