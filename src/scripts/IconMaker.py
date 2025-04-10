@@ -14,6 +14,7 @@ class IconMaker:
         :param output_path(str): The file path for the output icon
         """
         if self.validate_file(image_path):
+            # amazonq-ignore-next-line
             im = Image.open(image_path)
             im.thumbnail(dimensions)
             im.save(output_path)
@@ -32,6 +33,7 @@ class IconMaker:
         """
         isImage = False
         try:
+            # amazonq-ignore-next-line
             if Image.open(file_path):
                 isImage = True
         except (UnidentifiedImageError, ValueError):

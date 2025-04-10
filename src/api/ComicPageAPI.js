@@ -1,13 +1,19 @@
 import { validate as isValidUUID } from "uuid";
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from "uuid";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
-import { collection, doc, where, setDoc, getDoc, getDocs, orderBy, query, limit, updateDoc } from "firebase/firestore";
 import {
-  db,
-  storage,
-  COMIC_VIEWER_PATH,
-  BOOKMARK_KEY,
-} from "../index";
+  collection,
+  doc,
+  where,
+  setDoc,
+  getDoc,
+  getDocs,
+  orderBy,
+  query,
+  limit,
+  updateDoc,
+} from "firebase/firestore";
+import { db, storage, COMIC_VIEWER_PATH, BOOKMARK_KEY } from "../index";
 import {
   DISPLAY_DATA_DOC_KEY,
   CHAP_CONTENTS_KEY,
@@ -50,9 +56,11 @@ import { ADVERBS, ADJECTIVES, NOUNS } from "./data/words";
 
 export function generateDisplayName() {
   const getRandomEntry = (arr) => {
-    return arr[Math.floor(Math.random() * arr.length)]
-  }
-  return getRandomEntry(ADVERBS) + getRandomEntry(ADJECTIVES) + getRandomEntry(NOUNS)
+    return arr[Math.floor(Math.random() * arr.length)];
+  };
+  return (
+    getRandomEntry(ADVERBS) + getRandomEntry(ADJECTIVES) + getRandomEntry(NOUNS)
+  );
 }
 
 var RefKeyMap = null;
@@ -62,9 +70,18 @@ function getRefKeyMap() {
     // Instatiate
     RefKeyMap = {
       [DISPLAY_DATA_DOC_KEY]: doc(collection(db, "book_data"), "display_data"),
-      [CHAP_CONTENTS_KEY]: collection(doc(collection(db, "book_data"), "content"), "chapters"),
-      [SEASON_CONTENTS_KEY]: collection(doc(collection(db, "book_data"), "content"), "seasons"),
-      [PAGES_CONTENTS_KEY]: collection(doc(collection(db, "book_data"), "content"), "pages"),
+      [CHAP_CONTENTS_KEY]: collection(
+        doc(collection(db, "book_data"), "content"),
+        "chapters"
+      ),
+      [SEASON_CONTENTS_KEY]: collection(
+        doc(collection(db, "book_data"), "content"),
+        "seasons"
+      ),
+      [PAGES_CONTENTS_KEY]: collection(
+        doc(collection(db, "book_data"), "content"),
+        "pages"
+      ),
       [COUNTS_DOC_KEY]: doc(collection(db, "book_data"), "counts"),
       [USERS_KEY]: collection(db, "users"),
     };
@@ -81,14 +98,14 @@ function getRefForKey(key) {
 
 export function getUserRef(uid) {
   const users = getRefForKey(USERS_KEY);
-  const ref = doc(users, uid)
-  return ref
+  const ref = doc(users, uid);
+  return ref;
 }
 
 export async function getUserData(uid) {
   const ref = getUserRef(uid);
   const docSnap = await getDoc(ref);
-  return docSnap.data()
+  return docSnap.data();
 }
 
 function isExistingPage(pageId) {
@@ -97,15 +114,16 @@ function isExistingPage(pageId) {
     return false;
   }
   let pageRef = doc(pagesRef, pageId);
-  return getDoc(pageRef).then((doc) => {
-    if (doc.id === pageId) {
-      return true;
-    }
-    return false;
-  }).catch(() => {
-    return false;
-  })
-
+  return getDoc(pageRef)
+    .then((doc) => {
+      if (doc.id === pageId) {
+        return true;
+      }
+      return false;
+    })
+    .catch(() => {
+      return false;
+    });
 }
 
 export function getComicHomeURL(maxPageId) {
@@ -129,35 +147,35 @@ export async function docFetcher({ queryKey }) {
   return data;
 }
 
-export async function allPagesFetcher({queryKey}) {
-  let result = {"chapters": [], "pages": {}};
+export async function allPagesFetcher({ queryKey }) {
+  let result = { chapters: [], pages: {} };
   const chapsRef = getRefForKey(CHAP_CONTENTS_KEY);
-  const chapQuery = query(chapsRef, orderBy("order"))
-  
+  const chapQuery = query(chapsRef, orderBy("order"));
+
   const pagesRef = getRefForKey(PAGES_CONTENTS_KEY);
-  const pagesQuery = query(pagesRef, orderBy("global_order"))
-  
+  const pagesQuery = query(pagesRef, orderBy("global_order"));
+
   let [pagesSnap, collSnap] = await Promise.all([
     getDocs(pagesQuery),
     getDocs(chapQuery),
   ]);
 
   pagesSnap.forEach((page) => {
-    let data = page.data()
+    let data = page.data();
     if (!(data["chapter_id"] in result["pages"])) {
-      result["pages"][data["chapter_id"]] = []; 
+      result["pages"][data["chapter_id"]] = [];
     }
     result["pages"][data["chapter_id"]].push(data);
-  })
+  });
   collSnap.forEach((doc) => {
     result["chapters"].push(doc.data());
-  })
+  });
   return result;
 }
 
 export async function justSinglePageData(pageID) {
   if (!isValidUUID(pageID)) {
-    return {}
+    return {};
   }
   const pageRef = doc(
     collection(doc(collection(db, "book_data"), "content"), "pages"),
@@ -180,7 +198,7 @@ export async function pageFetcher({ queryKey }) {
   const pageSnap = await getDoc(pageRef);
   if (pageSnap.data() === undefined) {
     // That page doesn't exist
-    return {}
+    return {};
   }
   // Fetch the chapter data for this page
   const chapRef = doc(
@@ -205,11 +223,19 @@ export async function pageFetcher({ queryKey }) {
 
 async function getLatestPageInChapter(chapterId) {
   // TODO try to get from cache and if null get from server OR figure out a different way to cache this query
-  let pagesRef = getRefForKey(PAGES_CONTENTS_KEY)
-  const q = query(pagesRef, where(PAGE_CHAP_KEY, "==", chapterId), orderBy(PAGE_ORDER_IN_CHAP, "desc"), limit(1))
+  let pagesRef = getRefForKey(PAGES_CONTENTS_KEY);
+  const q = query(
+    pagesRef,
+    where(PAGE_CHAP_KEY, "==", chapterId),
+    orderBy(PAGE_ORDER_IN_CHAP, "desc"),
+    limit(1)
+  );
   const querySnapshot = await getDocs(q);
   if (querySnapshot.docs.length !== 1) {
-    throw new Error("unexpected number of pages returned by latest page in chapter query:" + querySnapshot.docs.length)
+    throw new Error(
+      "unexpected number of pages returned by latest page in chapter query:" +
+        querySnapshot.docs.length
+    );
   }
   return querySnapshot.docs[0].data();
 }
@@ -223,93 +249,91 @@ export async function setUserData(uid, data) {
 
 export async function updateUserData(uid, data) {
   const ref = getUserRef(uid);
-  await updateDoc(ref, data)
+  await updateDoc(ref, data);
 }
-
 
 export async function appendPageToChapter(pageData, imageFile, iconBlob) {
   try {
     await addRequiredFields(pageData, imageFile, iconBlob);
     const PagesRef = getRefForKey(PAGES_CONTENTS_KEY);
-    let newPageRef = doc(PagesRef, pageData[PAGE_UUID])
+    let newPageRef = doc(PagesRef, pageData[PAGE_UUID]);
     // update page counts and tell the website to display the new pag
     await Promise.all([
       setDoc(newPageRef, pageData),
       setNextPageId(pageData[PAGE_PREV_PAGE_ID], pageData[PAGE_UUID]),
       setChapPageCount(pageData[PAGE_CHAP_KEY], pageData[PAGE_ORDER_IN_CHAP]),
-      setSeasonPageCount(pageData[PAGE_SEASON_ID], pageData[PAGE_ORDER_IN_BOOK]), // TODO: change page data to track pages per season
+      setSeasonPageCount(
+        pageData[PAGE_SEASON_ID],
+        pageData[PAGE_ORDER_IN_BOOK]
+      ), // TODO: change page data to track pages per season
       setGlobalPageCount(pageData[PAGE_ORDER_IN_BOOK]),
       updateMaxDisplayPage(pageData[PAGE_UUID]),
     ]);
   } catch (err) {
-    console.log(err)
-    return [false, err]
+    console.log(err);
+    return [false, err];
   }
-  return [true, null]
+  return [true, null];
 }
 
 async function setNextPageId(currPageID, nextPageID) {
-  const pagesRef = getRefForKey(PAGES_CONTENTS_KEY)
-  const currPageRef = doc(pagesRef, currPageID)
-  await updateDoc(currPageRef,
-    {
-      [PAGE_NEXT_PAGE_ID]: nextPageID,
-    }
-  )
+  const pagesRef = getRefForKey(PAGES_CONTENTS_KEY);
+  const currPageRef = doc(pagesRef, currPageID);
+  await updateDoc(currPageRef, {
+    [PAGE_NEXT_PAGE_ID]: nextPageID,
+  });
 }
 
 async function updateMaxDisplayPage(pageID) {
   const displayDataRef = getRefForKey(DISPLAY_DATA_DOC_KEY);
-  await updateDoc(displayDataRef, 
-    {
-      [MAX_PAGE_ID_KEY]: pageID,
-    }
-  )
+  await updateDoc(displayDataRef, {
+    [MAX_PAGE_ID_KEY]: pageID,
+  });
 }
 
 async function setSeasonPageCount(seasonID, newPageCount) {
-  const seasonsRef = getRefForKey(SEASON_CONTENTS_KEY)
-  const seasonRef = doc(seasonsRef, seasonID)
-  await updateDoc(seasonRef, 
-    {
-      [SEASON_PAGE_COUNT]: newPageCount,
-    }
-  )
+  const seasonsRef = getRefForKey(SEASON_CONTENTS_KEY);
+  const seasonRef = doc(seasonsRef, seasonID);
+  await updateDoc(seasonRef, {
+    [SEASON_PAGE_COUNT]: newPageCount,
+  });
 }
 
 async function setGlobalPageCount(newPageCount) {
-  const dataRef = getRefForKey(COUNTS_DOC_KEY)
-  await updateDoc(dataRef, 
-    {
-      [GLOBAL_PAGE_COUNT]: newPageCount,
-    }
-  )
+  const dataRef = getRefForKey(COUNTS_DOC_KEY);
+  await updateDoc(dataRef, {
+    [GLOBAL_PAGE_COUNT]: newPageCount,
+  });
 }
 
 async function setChapPageCount(chapID, newPageCount) {
-  const chapsRef = getRefForKey(CHAP_CONTENTS_KEY)
+  const chapsRef = getRefForKey(CHAP_CONTENTS_KEY);
   const chapRef = doc(chapsRef, chapID);
-  await updateDoc(chapRef,
-    {
-      [CHAP_PAGE_COUNT]: newPageCount,
-    }
-  )
+  await updateDoc(chapRef, {
+    [CHAP_PAGE_COUNT]: newPageCount,
+  });
 }
 
-export async function updatePageObj(uuid, title=null, message=null, file=null, blob=null) {
-  let pageUpdate = {}
+export async function updatePageObj(
+  uuid,
+  title = null,
+  message = null,
+  file = null,
+  blob = null
+) {
+  let pageUpdate = {};
   if (title !== "") {
-    pageUpdate[PAGE_TITLE] = title
+    pageUpdate[PAGE_TITLE] = title;
   }
   if (message !== "") {
-    pageUpdate[PAGE_MESSAGE] = message
+    pageUpdate[PAGE_MESSAGE] = message;
   }
   if (file !== null) {
-    addFilename(pageUpdate, file)
-    await addPublicURL(pageUpdate, file)
+    addFilename(pageUpdate, file);
+    await addPublicURL(pageUpdate, file);
   }
   if (blob !== null) {
-    await addIconURL(pageUpdate, blob)
+    await addIconURL(pageUpdate, blob);
   }
   // call updateDoc
   let pagesRef = getRefForKey(PAGES_CONTENTS_KEY);
@@ -318,47 +342,61 @@ export async function updatePageObj(uuid, title=null, message=null, file=null, b
 }
 
 async function addRequiredFields(pageData, imageFile, iconBlob) {
-  addFilename(pageData, imageFile)
-  addCurrentDatetime(pageData)
-  addNextPageUUID(pageData)
-  addPageUUID(pageData)
+  addFilename(pageData, imageFile);
+  addCurrentDatetime(pageData);
+  addNextPageUUID(pageData);
+  addPageUUID(pageData);
   await Promise.all([
     addChapterOrder(pageData),
     addGlobalOrder(pageData),
     addIconURL(pageData, iconBlob), // relies on addFilename being called before
     addPrevPageUUID(pageData),
     addPublicURL(pageData, imageFile),
-  ])
+  ]);
 }
 
 function addFilename(pageData, imageFile) {
-  pageData[PAGE_FILENAME] = imageFile.name
+  pageData[PAGE_FILENAME] = imageFile.name;
 }
 
 function addCurrentDatetime(pageData) {
   let date = new Date();
-  let dateStr = date.getFullYear() + "-" + (date.getMonth()+1) + "-" + date.getDate() + " " + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+  let dateStr =
+    date.getFullYear() +
+    "-" +
+    (date.getMonth() + 1) +
+    "-" +
+    date.getDate() +
+    " " +
+    date.getHours() +
+    ":" +
+    date.getMinutes() +
+    ":" +
+    date.getSeconds();
   pageData[PAGE_TIME_POSTED] = dateStr;
 }
 
 async function addChapterOrder(pageData) {
-  const data = await getLatestPageInChapter(pageData[PAGE_CHAP_KEY])
-  const numOfPages = data[PAGE_ORDER_IN_CHAP]
-  pageData[PAGE_ORDER_IN_CHAP] = numOfPages+1
+  const data = await getLatestPageInChapter(pageData[PAGE_CHAP_KEY]);
+  const numOfPages = data[PAGE_ORDER_IN_CHAP];
+  pageData[PAGE_ORDER_IN_CHAP] = numOfPages + 1;
 }
 
 async function addGlobalOrder(pageData) {
   // TODO try and cache this query somehow
-  let displayRef = getRefForKey(COUNTS_DOC_KEY)
+  let displayRef = getRefForKey(COUNTS_DOC_KEY);
   const docSnapshot = await getDoc(displayRef);
   const data = docSnapshot.data();
-  pageData[PAGE_ORDER_IN_BOOK] = data[GLOBAL_PAGE_COUNT]+1;
+  pageData[PAGE_ORDER_IN_BOOK] = data[GLOBAL_PAGE_COUNT] + 1;
 }
 
 async function addIconURL(pageData, iconBlob) {
-  const iconsStorageRef = ref(storage, ICON_STORAGE_PATH + pageData[PAGE_FILENAME])
-  await uploadBytes(iconsStorageRef, iconBlob)
-  const url = await getDownloadURL(iconsStorageRef)
+  const iconsStorageRef = ref(
+    storage,
+    ICON_STORAGE_PATH + pageData[PAGE_FILENAME]
+  );
+  await uploadBytes(iconsStorageRef, iconBlob);
+  const url = await getDownloadURL(iconsStorageRef);
   pageData[PAGE_ICON_FILENAME] = url;
 }
 
@@ -367,19 +405,19 @@ function addNextPageUUID(pageData) {
 }
 
 async function addPrevPageUUID(pageData) {
-  const lastPageData = await getLatestPageInChapter(pageData[PAGE_CHAP_KEY])
-  pageData[PAGE_PREV_PAGE_ID] = lastPageData[PAGE_UUID]
+  const lastPageData = await getLatestPageInChapter(pageData[PAGE_CHAP_KEY]);
+  pageData[PAGE_PREV_PAGE_ID] = lastPageData[PAGE_UUID];
 }
 
 async function addPublicURL(pageData, file) {
-  const pagesStorageRef = ref(storage, PAGE_STORAGE_PATH + file["name"])
-  await uploadBytes(pagesStorageRef, file)
-  const url = await getDownloadURL(pagesStorageRef)
+  const pagesStorageRef = ref(storage, PAGE_STORAGE_PATH + file["name"]);
+  await uploadBytes(pagesStorageRef, file);
+  const url = await getDownloadURL(pagesStorageRef);
   pageData[PAGE_URL] = url;
-    // make ref public and get download url
-    // apparently this can only be done with the admin SDK from the server?
-    // TODO: Figure out how to do that step via a cloud function
-    // idea 1: setup a cloud function to watch for new pages getting written and then create the public download url and update the document
+  // make ref public and get download url
+  // apparently this can only be done with the admin SDK from the server?
+  // TODO: Figure out how to do that step via a cloud function
+  // idea 1: setup a cloud function to watch for new pages getting written and then create the public download url and update the document
 }
 
 function addPageUUID(pageData) {

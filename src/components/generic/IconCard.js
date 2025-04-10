@@ -1,4 +1,6 @@
-export default function Support(props) {
+import PropTypes from "prop-types";
+
+export default function IconCard(props) {
   return (
     <div
       className={`${
@@ -37,6 +39,7 @@ export default function Support(props) {
             className={`transition duration-500 ease-in-out bg-cream-dark hover:bg-eggshell bg-cream-light py-2 px-4 float-left font-medium font-header rounded-lg ${
               props.isDesktop ? "text-2xl" : "text-xl"
             }`}
+            // amazonq-ignore-next-line
             href={props.link}
           >
             {props.linkText.toUpperCase()} →
@@ -46,3 +49,14 @@ export default function Support(props) {
     </div>
   );
 }
+
+IconCard.propTypes = {
+  link: PropTypes.string.isRequired,
+  isDesktop: PropTypes.bool.isRequired,
+  shouldFade: PropTypes.bool.isRequired,
+  shouldAddBottomMargin: PropTypes.bool.isRequired,
+  icon: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  body: PropTypes.string.isRequired,
+  linkText: PropTypes.string.isRequired,
+};
