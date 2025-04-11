@@ -1,4 +1,4 @@
-const { onRequest } = require("firebase-functions/v2/https");
+const { onCall } = require("firebase-functions/v2/https");
 const RSS = require("rss");
 const admin = require("firebase-admin/app");
 const { getStorage } = require("firebase-admin/storage");
@@ -34,13 +34,14 @@ function validEmail(email) {
   }
 }
 
-exports.addGuestToEmailList = onRequest({ cors: true }, (request, response) => {
-  let newEmail = request.body.data.text;
+exports.addGuestToEmailList = onCall((data, context) => {
+  let newEmail = data.rawRequest.body.data.text;
   debug(newEmail, { structuredData: true });
   if (!validEmail(newEmail)) {
-    response
-      .status(400)
-      .send({ status: false, error: "The email provided is invalid" });
+    throw new functions.https.HttpsError(
+      "invalid-request",
+      "The email provided is invalid"
+    );
   }
   const requestData = {
     contacts: [{ email: newEmail }],
@@ -51,14 +52,16 @@ exports.addGuestToEmailList = onRequest({ cors: true }, (request, response) => {
     method: "PUT",
     body: requestData,
   };
+  debug("about to request to sendgrid...");
   return client
     .request(sendgridRequest)
     .then(([res, body]) => {
-      response.status(200).send({ status: true });
+      info(newEmail, "successfully subscribed!");
+      return { status: true };
     })
     .catch((error) => {
-      info(error);
-      response.status(500).send({ status: false, error: error });
+      error(error);
+      return { status: false, error: error };
     });
 });
 

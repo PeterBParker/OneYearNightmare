@@ -13,7 +13,10 @@ export default function NotifySignUpBanner(props) {
   useEffect(() => {
     getDownloadURL(rssFileRef).then((url) => {
       let rssLink = document.getElementById(RSS_LINK_ID);
-      console.log("RSS Link: ", rssLink);
+      if (rssLink == null) {
+        console.log("Error getting RSS link element");
+        return;
+      }
       rssLink.href = url;
     }).catch((error) => {
       // Todo implement logging
