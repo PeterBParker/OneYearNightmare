@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { sendSignInLinkToEmail } from "firebase/auth";
 import { auth, DOMAIN, FINISH_SIGNIN_PAGE_PATH } from "../..";
+import LoadingSpinner from "../generic/LoadingSpinner";
 
 export default function LoginForm() {
     const submitId = "loginSubmit";
@@ -56,13 +57,11 @@ function EmailForm(props) {
 
 function SubmittedDisplay(props) {
     const resendId = "resendButton";
+    const [loading, setLoading] = useState(false);
     const handleResend = (e) => {
-        let thisButton = document.getElementById(resendId);
-        thisButton.disabled = true;
-        thisButton.classList.add("disabled");
+        setLoading(true);
         setTimeout(() => {
-            thisButton.disabled = false;
-            thisButton.classList.remove("disabled");
+            setLoading(false);
         }, 3000);
         props.handleSubmit(e)
     }
@@ -70,7 +69,9 @@ function SubmittedDisplay(props) {
         <React.Fragment>
             <div className="text-2xl font-semibold pb-4">Check your email for a link <br/> to sign you in! <br/></div>
             <div className="text-lg italic">It may take a few minutes</div>
-            <button id={resendId} onClick={handleResend} className="btn btn-std-hover btn my-4 py-2 w-full text-lg bg-cream-dark font-medium not-italic rounded">Resend Login Email</button>
+            <button id={resendId} onClick={handleResend} disabled={loading} className="btn btn-std-hover btn my-4 py-2 w-full text-lg bg-cream-dark font-medium not-italic rounded">
+                {loading ? <LoadingSpinner /> : "Resend Login Email"}
+            </button>
         </React.Fragment>
 
     )
