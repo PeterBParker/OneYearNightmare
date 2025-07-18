@@ -15,10 +15,7 @@ export default function LoginForm() {
         handleCodeInApp: true,
       };
     const handleSubmit = async (e) => {
-        let thisButton = document.getElementById(submitId);
         e.preventDefault();
-        thisButton.disabled = true;
-        thisButton.classList.add("disabled");
         const email = content;
         sendSignInLinkToEmail(auth, email, actionCodeSettings)
             .then(() => {
@@ -37,7 +34,7 @@ export default function LoginForm() {
       };
     return(
         <div className="bg-mocha/50 border-2 border-eggshell rounded-lg max-w-2xl py-16 px-16 mb-24">
-        {!emailSubmitted ? <EmailForm handleSubmit={handleSubmit} setContent={setContent} submitId={submitId}/> : <SubmittedDisplay />}
+        {!emailSubmitted ? <EmailForm handleSubmit={handleSubmit} setContent={setContent} submitId={submitId}/> : <SubmittedDisplay handleSubmit={handleSubmit} email={content} />}
 
         </div>
     )
@@ -57,11 +54,23 @@ function EmailForm(props) {
     )
 }
 
-function SubmittedDisplay() {
+function SubmittedDisplay(props) {
+    const resendId = "resendButton";
+    const [loading, setLoading] = useState(false);
+    const handleResend = (e) => {
+        setLoading(true);
+        setTimeout(() => {
+            setLoading(false);
+        }, 3000);
+        props.handleSubmit(e)
+    }
     return(
         <React.Fragment>
             <div className="text-2xl font-semibold pb-4">Check your email for a link <br/> to sign you in! <br/></div>
-            <div className="text-lg italic">It may take a few minutes</div>
+            <div className="text-lg italic">It may take a few minutes <br/>and arrive in your spam folder</div>
+            <button id={resendId} onClick={handleResend} disabled={loading} className="btn btn-std-hover btn my-4 py-2 w-full text-lg bg-cream-dark font-medium not-italic rounded flex justify-center">
+                {loading ? <div className="loader" style={{width: 28, height: 28}}></div> : "Resend Login Email"}
+            </button>
         </React.Fragment>
 
     )
