@@ -37,7 +37,7 @@ export default function LoginForm() {
       };
     return(
         <div className="bg-mocha/50 border-2 border-eggshell rounded-lg max-w-2xl py-16 px-16 mb-24">
-        {!emailSubmitted ? <EmailForm handleSubmit={handleSubmit} setContent={setContent} submitId={submitId}/> : <SubmittedDisplay />}
+        {!emailSubmitted ? <EmailForm handleSubmit={handleSubmit} setContent={setContent} submitId={submitId}/> : <SubmittedDisplay handleSubmit={handleSubmit} email={content} />}
 
         </div>
     )
@@ -57,11 +57,16 @@ function EmailForm(props) {
     )
 }
 
-function SubmittedDisplay() {
+function SubmittedDisplay(props) {
+    const resendId = "resendButton";
+    const handleResend = (e) => {
+        props.handleSubmit(e)
+    }
     return(
         <React.Fragment>
             <div className="text-2xl font-semibold pb-4">Check your email for a link <br/> to sign you in! <br/></div>
             <div className="text-lg italic">It may take a few minutes</div>
+            <button id={resendId} onClick={handleResend} className="btn btn-std-hover btn my-4 py-2 w-full text-lg bg-cream-dark font-medium not-italic rounded">Resend Login Email</button>
         </React.Fragment>
 
     )
