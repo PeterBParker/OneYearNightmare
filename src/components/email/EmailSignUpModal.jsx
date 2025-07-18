@@ -38,7 +38,7 @@ export default function EmailSignUpModal(props) {
         maxLength={76}
         inputTitle="Email"
         confirmText="I'm in!"
-        confirmClasses="w-full mt-4 bg-green-confirm text-grey-dark font-semibold"
+        confirmClasses="mt-4 bg-green-confirm text-grey-dark font-semibold"
         inputClasses="rounded-lg border border-slate-900 border-solid pl-4"
       />
     </>
