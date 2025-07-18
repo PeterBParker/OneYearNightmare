@@ -6,10 +6,6 @@ export function PageLoadingSpinner() {
   return <div className="my-32 flex justify-center"><BigSpinner/></div>
 }
 
-export function ButtonSpinner() {
-  return <div className="flex justify-center"><BigSpinner/></div>
-}
-
 export function SmallSpinner() {
   return <div className="text-sm">Loading...</div>;
 }
