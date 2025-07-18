@@ -14,11 +14,7 @@ export default function LoginForm() {
         // This must be true.
         handleCodeInApp: true,
       };
-    const handleSubmit = async (e) => {
-        let thisButton = document.getElementById(submitId);
-        e.preventDefault();
-        thisButton.disabled = true;
-        thisButton.classList.add("disabled");
+    const sendLoginLink = async (e) => {
         const email = content;
         sendSignInLinkToEmail(auth, email, actionCodeSettings)
             .then(() => {
@@ -35,6 +31,11 @@ export default function LoginForm() {
             });
         setEmailSubmitted(true);
       };
+    
+    const handleSubmit = (e) => {
+      e.preventDefault();
+      sendLoginLink(e)
+    } 
     return(
         <div className="bg-mocha/50 border-2 border-eggshell rounded-lg max-w-2xl py-16 px-16 mb-24">
         {!emailSubmitted ? <EmailForm handleSubmit={handleSubmit} setContent={setContent} submitId={submitId}/> : <SubmittedDisplay handleSubmit={handleSubmit} email={content} />}
@@ -59,8 +60,15 @@ function EmailForm(props) {
 
 function SubmittedDisplay(props) {
     const resendId = "resendButton";
+    const disableBtn = (btnId) => {
+      let thisButton = document.getElementById(btnId);
+      
+      thisButton.disabled = true;
+      thisButton.classList.add("disabled");
+    }
     const handleResend = (e) => {
-        props.handleSubmit(e)
+      disableBtn(resendId) 
+      props.handleSubmit(e)
     }
     return(
         <React.Fragment>
