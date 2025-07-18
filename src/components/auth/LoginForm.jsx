@@ -15,7 +15,6 @@ export default function LoginForm() {
         handleCodeInApp: true,
       };
     const handleSubmit = async (e) => {
-        let thisButton = document.getElementById(submitId);
         e.preventDefault();
         const email = content;
         sendSignInLinkToEmail(auth, email, actionCodeSettings)
