@@ -345,12 +345,3 @@
     box-shadow: inset 0px 0px 0px 30px #a6ba68;
   }
 }
-
-.loading-spinner {
-    border: 4px solid rgba(0, 0, 0, 0.1);
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-    border-left-color: #09f;
-    animation: rotation 1s ease-in-out infinite;
-}

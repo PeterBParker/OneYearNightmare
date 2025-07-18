@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { sendSignInLinkToEmail } from "firebase/auth";
 import { auth, DOMAIN, FINISH_SIGNIN_PAGE_PATH } from "../..";
-import LoadingSpinner from "../generic/LoadingSpinner";
+import { ButtonSpinner } from "../generic/loading/Spinners";
 
 export default function LoginForm() {
     const submitId = "loginSubmit";
@@ -69,8 +69,8 @@ function SubmittedDisplay(props) {
         <React.Fragment>
             <div className="text-2xl font-semibold pb-4">Check your email for a link <br/> to sign you in! <br/></div>
             <div className="text-lg italic">It may take a few minutes</div>
-            <button id={resendId} onClick={handleResend} disabled={loading} className="btn btn-std-hover btn my-4 py-2 w-full text-lg bg-cream-dark font-medium not-italic rounded">
-                {loading ? <LoadingSpinner /> : "Resend Login Email"}
+            <button id={resendId} onClick={handleResend} disabled={loading} className="btn btn-std-hover btn my-4 py-2 w-full text-lg bg-cream-dark font-medium not-italic rounded flex justify-center">
+                {loading ? <ButtonSpinner /> : "Resend Login Email"}
             </button>
         </React.Fragment>
 
