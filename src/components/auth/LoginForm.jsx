@@ -17,8 +17,6 @@ export default function LoginForm() {
     const handleSubmit = async (e) => {
         let thisButton = document.getElementById(submitId);
         e.preventDefault();
-        thisButton.disabled = true;
-        thisButton.classList.add("disabled");
         const email = content;
         sendSignInLinkToEmail(auth, email, actionCodeSettings)
             .then(() => {
