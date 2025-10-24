@@ -19,6 +19,8 @@ export default function EmailSignUpModal(props) {
 
     if (result.data?.status === true) {
       setSubscribed(true);
+    } else {
+      throw new Error(result.data?.error?.message || "An unknown error occurred.");
     }
   }
 

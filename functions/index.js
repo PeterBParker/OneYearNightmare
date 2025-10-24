@@ -9,7 +9,7 @@ const {
   Filter,
 } = require("firebase-admin/firestore");
 const client = require("@sendgrid/client");
-const { info, debug, warn } = require("firebase-functions/logger");
+const { info, debug, warn, error } = require("firebase-functions/logger");
 const { onDocumentWritten } = require("firebase-functions/v2/firestore");
 
 // Initialize Sendgrid for email services
@@ -35,6 +35,7 @@ function validEmail(email) {
 }
 
 exports.addGuestToEmailList = onCall((data, context) => {
+  debug(data, { structuredData: true });
   let newEmail = data.rawRequest.body.data.text;
   debug(newEmail, { structuredData: true });
   if (!validEmail(newEmail)) {
@@ -52,16 +53,16 @@ exports.addGuestToEmailList = onCall((data, context) => {
     method: "PUT",
     body: requestData,
   };
-  debug("about to request to sendgrid...");
+  debug("about to request to sendgrid with email: " + newEmail);
   return client
     .request(sendgridRequest)
     .then(([res, body]) => {
       info(newEmail, "successfully subscribed!");
       return { status: true };
     })
-    .catch((error) => {
-      error(error);
-      return { status: false, error: error };
+    .catch((e) => {
+      error(e);
+      return { status: false, error: e };
     });
 });
 
