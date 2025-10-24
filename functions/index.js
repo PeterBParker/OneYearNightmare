@@ -8,19 +8,20 @@ const {
   FieldValue,
   Filter,
 } = require("firebase-admin/firestore");
-const client = require("@sendgrid/client");
 const { info, debug, warn, error } = require("firebase-functions/logger");
 const { onDocumentWritten } = require("firebase-functions/v2/firestore");
+const Mailgun = require("mailgun.js");
+const FormData = require("form-data");
 
-// Initialize Sendgrid for email services
-client.setApiKey(process.env.SENDGRID_API_KEY);
+// Initialize Mailgun for email services
+const mailgun = new Mailgun(FormData);
 
 // Initialize Firestore services
 admin.initializeApp();
 const storage = getStorage();
 const db = getFirestore();
 
-const mxmContactListID = "887040bc-71a4-489a-874a-c4cc0391f890";
+const mxmEmailListAddress = "mxm-page-updates@monstersandmyriads.com";
 const rssFilePath = "rss.xml";
 
 // Helper functions for email services
@@ -34,36 +35,34 @@ function validEmail(email) {
   }
 }
 
-exports.addGuestToEmailList = onCall((data, context) => {
-  debug(data, { structuredData: true });
+exports.addGuestToEmailList = onCall(
+  {
+    secrets: ["MAILGUN_API_KEY"],
+    regions: "us-central1",
+  },
+  async (data, context) => {
+  const mgClient = mailgun.client({username: 'api', key: process.env.MAILGUN_API_KEY});
   let newEmail = data.rawRequest.body.data.text;
-  debug(newEmail, { structuredData: true });
+  debug("About to add email to page update mailing list: "+ newEmail, { structuredData: true });
   if (!validEmail(newEmail)) {
     throw new functions.https.HttpsError(
       "invalid-request",
       "The email provided is invalid"
     );
   }
-  const requestData = {
-    contacts: [{ email: newEmail }],
-    list_ids: [mxmContactListID],
-  };
-  const sendgridRequest = {
-    url: "/v3/marketing/contacts",
-    method: "PUT",
-    body: requestData,
-  };
-  debug("about to request to sendgrid with email: " + newEmail);
-  return client
-    .request(sendgridRequest)
-    .then(([res, body]) => {
-      info(newEmail, "successfully subscribed!");
-      return { status: true };
+  let ret_err = null;
+  let result = false;
+  try {
+    let data = await mgClient.lists.members.createMember(mxmEmailListAddress, {
+      address: newEmail,
     })
-    .catch((e) => {
-      error(e);
-      return { status: false, error: e };
-    });
+    info(data)
+    info("Successfully added email to page update mailing list: "+ newEmail, { structuredData: true });
+    return {status: true, error: null};
+  } catch (err) {
+    error("Failed to add email to page update mailing list: " + err); 
+    return {status: false, error: err};
+  }
 });
 
 // Helper functions for rss services

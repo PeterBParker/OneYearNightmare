@@ -20,6 +20,7 @@
     "firebase-admin": "^13.2.0",
     "firebase-functions": "^6.3.1",
     "firebase-storage": "^1.1.4",
+    "mailgun.js": "^12.1.1",
     "rss": "^1.2.2"
   },
   "devDependencies": {
