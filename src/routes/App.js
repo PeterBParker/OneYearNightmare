@@ -1,4 +1,5 @@
 import "../styling/App.css";
+import { useEffect } from "react";
 import { Outlet } from "react-router-dom";
 import { useMediaQuery } from "react-responsive";
 import querySizes from "../styling/breakpoints.json";
@@ -7,6 +8,12 @@ import Header from "../components/header/Header";
 
 function App() {
   const isDesktop = useMediaQuery({ query: querySizes["lg"] });
+  useEffect(() => {
+    let loader = document.getElementById("siteLoadingScreen");
+    if (loader) {
+      loader.classList.add("hidden");
+    }
+  }, []);
   return (
     <div className={`App ${isDesktop ? " desktopBg comicViewerDesktop" : "mt-8"}`}>
       <div className="shrink-0">

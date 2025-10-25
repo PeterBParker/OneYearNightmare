@@ -32,5 +32,5 @@ export default function GracefulImage(props) {
     />
   );
 
-  return <div className="comicPage">{loadedImage}</div>;
+  return <div className="comicPage" id="comicPage">{loadedImage}</div>;
 }

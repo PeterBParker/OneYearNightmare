@@ -3,14 +3,15 @@
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.png" />
+    <script src="%PUBLIC_URL%/loader.js"></script>
+    <link rel="stylesheet" href="%PUBLIC_URL%/loader.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,800;1,400;1,500;1,600;1,800&display=swap" rel="stylesheet"></link>
     <script src="https://kit.fontawesome.com/6d90e40858.js" crossorigin="anonymous"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <title>Monsters x Myriads</title>
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link rel="image_src" href="https://www.monstersandmyriads.com/MnMPages/prologue/chapter1/Pg0-FILLER-cover.jpg" />
-    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/6.0.1/firebase-ui-auth.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,800;1,400;1,500;1,600;1,800&display=swap" rel="stylesheet"></link>
     <meta
       name="description"
       content="An online serial publishing that follows supernatural teenagers questing for super normal things like getting a date for homecoming, finding their missing friend, becoming the chosen one, and unraveling the conspiracy that threatens their midwestern town."
@@ -38,12 +39,17 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
     </script>
     <script type="text/javascript" src="https://spiderforest.com/widgets/top-banner.php?id=mam&attach=sfBanner&g=false&bg-color=262626" defer></script>
   </head>
   <body>
+    <div id="siteLoadingScreen">
+      <div>L</div><div>o</div><div>a</div><div>d</div><div>i</div><div>n</div><div>g</div><div>.</div><div>.</div><div>.</div>
+    </div>
     <div id="sfbanner"></div>
     <div id="root"></div>
+    <script>
+      loadingWiggle();
+    </script>
   </body>
 </html>

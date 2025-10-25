@@ -1,0 +1,36 @@
+#siteLoadingScreen {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f4f1ed;
+  font-family: Montserrat;
+  font-weight: 600;
+  font-size: 2rem;
+  z-index: 10000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: opacity 2s ease, visibility 2s ease, top 0.5s ease;
+}
+.hidden {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  top: -100% !important;
+}
+.wiggle {
+  transform: translateY(0px);
+  animation: wiggle 1.5s ease infinite alternate;
+  animation-delay: 2s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes wiggle {
+  from {
+    transform: translateY(-10px);
+  }
+  to {
+    transform: translateY(10px);
+  }
+}
