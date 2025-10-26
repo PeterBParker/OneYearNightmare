@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.png" />
-    <script src="%PUBLIC_URL%/loader.js"></script>
-    <link rel="stylesheet" href="%PUBLIC_URL%/loader.css" />
+    <script src="%PUBLIC_URL%/js/loader.js"></script>
+    <link rel="stylesheet" href="%PUBLIC_URL%/css/loader.css" />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,800;1,400;1,500;1,600;1,800&display=swap" rel="stylesheet"></link>
     <script src="https://kit.fontawesome.com/6d90e40858.js" crossorigin="anonymous"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -44,12 +44,21 @@
   </head>
   <body>
     <div id="siteLoadingScreen">
-      <div>L</div><div>o</div><div>a</div><div>d</div><div>i</div><div>n</div><div>g</div><div>.</div><div>.</div><div>.</div>
+      <div id="siteLoadingScreenContainer">
+        <div><img src="%PUBLIC_URL%/icons/LOGO-dark-2024.png" id="siteLoadingScreenLogo"></img></div>
+        <div id="siteLoadingIcons">
+          <div class="siteLoadingIcon"><img src="%PUBLIC_URL%/icons/ICON-laurel.svg"></img></div>
+          <div class="siteLoadingIcon"><img src="%PUBLIC_URL%/icons/ICON-cherry.svg"></img></div>
+          <div class="siteLoadingIcon"><img src="%PUBLIC_URL%/icons/ICON-eye.svg"></img></div>
+          <div class="siteLoadingIcon"><img src="%PUBLIC_URL%/icons/ICON-hand.svg"></img></div>
+          <div class="siteLoadingIcon"><img src="%PUBLIC_URL%/icons/ICON-skull.svg"></img></div>
+        </div>
+      </div>
     </div>
     <div id="sfbanner"></div>
     <div id="root"></div>
     <script>
-      loadingWiggle();
+      loadingAnimation();
     </script>
   </body>
 </html>
