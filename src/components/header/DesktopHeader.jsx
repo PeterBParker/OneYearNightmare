@@ -1,4 +1,4 @@
-import logo from "../../assets/Website Assets - Phase 1/SVG/LOGO-header.svg";
+import logo from "../../assets/LOGO-dark-2024.png";
 import { Link } from "react-router-dom";
 
 import ChapterNumIcon from "./ChapterNumIcon";

@@ -1,4 +1,4 @@
-import logo from "../../assets/Website Assets - Phase 1/SVG/LOGO-footer.svg";
+import logo from "../../assets/LOGO-ho-light-2024.png";
 import discordIcons from "../../assets/FINAL-ASSETS-072821/final assets/discord-banner-illo.png";
 import facebookIcon from "../../assets/Phase3-Assets1/1x/32x-footer-FB.png";
 import instagramIcon from "../../assets/Phase3-Assets1/1x/32x-footer-IG.png";

@@ -1,4 +1,4 @@
-import logo from "../../assets/Website Assets - Phase 1/SVG/LOGO-footer.svg";
+import logo from "../../assets/LOGO-ho-light-2024.png";
 import discordIcons from "../../assets/New-Icons_New-Nav/2x/discord_illo_1.png";
 
 import { Link } from "react-router-dom";
