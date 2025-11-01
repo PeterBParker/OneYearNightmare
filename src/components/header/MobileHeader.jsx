@@ -1,5 +1,6 @@
 import logo from "../../assets/LOGO-dark-2024.png";
 import { Link } from "react-router-dom";
+import { COMIC_VIEWER_PATH } from "../../index";
 import ChapterNumIcon from "./ChapterNumIcon";
 import HamburgerMenu from "./HamburgerMenu";
 
@@ -19,9 +20,9 @@ export default function MobileHeader(props) {
             <ChapterNumIcon />
           </div>
         </div>
-        <div className="headerLogoMobile justify-self-center self-start">
+        <Link to={COMIC_VIEWER_PATH} className="headerLogoMobile justify-self-center self-start">
           <img src={logo} width="170" alt="home link" />
-        </div>
+        </Link>
         <HamburgerMenu />
       </div>
       <div

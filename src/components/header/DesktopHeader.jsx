@@ -1,4 +1,5 @@
 import logo from "../../assets/LOGO-dark-2024.png";
+import { COMIC_VIEWER_PATH } from "../../index";
 import { Link } from "react-router-dom";
 
 import ChapterNumIcon from "./ChapterNumIcon";
@@ -13,7 +14,7 @@ export default function DesktopHeader() {
           >
             <p className="publishDaysTextDesktop text-right">Updates Mondays</p>
           </div>
-          <div className="headerLogoDesktop justify-self-center self-center py-7 px-4 flex-shrink-0">
+          <Link to={COMIC_VIEWER_PATH} className="headerLogoDesktop justify-self-center self-center py-7 px-4 flex-shrink-0">
             <img
               className="headerLogoImageDesktop mx-auto"
               src={logo}
@@ -21,7 +22,7 @@ export default function DesktopHeader() {
               height="auto"
               alt=""
             />
-          </div>
+          </Link>
           <div className="volDisplayDesktop desktopHeaderLogoWingData text-mocha-dark font-medium text-left ml-6 self-center justify-self-start">
             <div className="volTextContainer flex flex-row w-full">
               <div className="volText headerVolNumDesktop self-center text-md">
