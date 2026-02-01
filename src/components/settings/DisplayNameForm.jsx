@@ -11,11 +11,13 @@ import GenericSingleInputForm from "./GenericSingleInputForm";
 import { BigSpinner } from "../generic/loading/Spinners";
 import { USER_DISPLAY_NAME } from "../../api/RefKeys";
 import { authUserOptions } from "../../api/ReactQueries";
+import useCaptchaProtectedOperation from "../../hooks/useCaptchaProtectedOperation";
 
 export default function DisplayNameForm(props) {
   const [user, loading] = useAuthState(auth);
   const [placeholder, setPlaceholder] = useState("");
   const { isPending, isError, data, error} = useQuery(authUserOptions(user))
+  const { withCaptchaFallback } = useCaptchaProtectedOperation();
 
   useEffect(() => {
     if (!isPending && !isError) {
@@ -32,7 +34,7 @@ export default function DisplayNameForm(props) {
     return <BigSpinner/>
   }
 
-  const changeDisplayName = async (newName) => {
+  const changeDisplayName = withCaptchaFallback(async (newName) => {
     if (props.onChangeAction !== undefined) {
       props.onChangeAction();
     }
@@ -53,7 +55,7 @@ export default function DisplayNameForm(props) {
     } else {
       throw new Error("Oops! Something went wrong. Please try again later.");
     }
-  };
+  });
 
   return (
     <GenericSingleInputForm

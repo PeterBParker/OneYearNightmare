@@ -10,17 +10,19 @@ import { generateAvatarData, storeUserAvatar } from "../avatarHelpers";
 import ProfilePicture from "./ProfilePicture";
 import { updateUserData } from "../../../api/ComicPageAPI";
 import { USER_URL } from "../../../api/RefKeys";
+import useCaptchaProtectedOperation from "../../../hooks/useCaptchaProtectedOperation";
 
 export default function ProfilePicEditor() {
     const [user] = useAuthState(auth);
     const [avatarUrl, setAvatarUrl] = useState("");
     const [avatarSeed, setAvatarSeed] = useState("");
     const [avatarSaved, setAvatarSaved] = useState(true);
+    const { withCaptchaFallback } = useCaptchaProtectedOperation();
     const mutation = useMutation({
-      mutationFn: async (avatarData) => {
+      mutationFn: withCaptchaFallback(async (avatarData) => {
         const url = await storeUserAvatar(user.uid, avatarData);
         return updateUserData(user.uid, {[USER_URL]: url})
-      },
+      }),
     });
   
     const changeAvatar = () => {

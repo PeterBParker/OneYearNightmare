@@ -8,6 +8,7 @@ import {
   deleteUserCommentId,
   deleteUserWrapper,
 } from "../utils";
+import useCaptchaProtectedOperation from "../../../hooks/useCaptchaProtectedOperation";
 
 export default function DeleteAccountButton() {
   const [showModal, setShowModal] = useState(false);
@@ -20,8 +21,9 @@ export default function DeleteAccountButton() {
   );
   const deleteBtnId = "delete-me-confirmation-btn";
   const [isDisabled, setIsDisabled] = useState(false);
+  const { withCaptchaFallback } = useCaptchaProtectedOperation();
 
-  const deleteAccount = async () => {
+  const deleteAccount = withCaptchaFallback(async () => {
     try {
       await deleteComments();
       await deleteUserCommentId();
@@ -30,7 +32,7 @@ export default function DeleteAccountButton() {
     } catch (error) {
       console.log(error);
     }
-  };
+  });
 
   let modalTitle = (
     <div className="text-left text-xl font-header font-bold my-4 pt-4 pl-4 pr-4">

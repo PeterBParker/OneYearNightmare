@@ -12,11 +12,13 @@ import {
 import { useState } from "react";
 import { PAGE_COMMENTS_TABLE } from "./utils/constants";
 import { SIGNIN_PAGE_PATH } from "../../index";
+import useCaptchaProtectedOperation from "../../hooks/useCaptchaProtectedOperation";
 
 function CreateNewCommentForm(props) {
   const [content, setContent] = useState("");
+  const { withCaptchaFallback } = useCaptchaProtectedOperation();
 
-  const createNewComment = async (e) => {
+  const createNewComment = withCaptchaFallback(async (e) => {
     if (content.trim().length === 0) {
       throw new Error("Cannot create a comment with only whitespace");
     }
@@ -49,7 +51,7 @@ function CreateNewCommentForm(props) {
     }
     setContent("");
     props.callback();
-  };
+  });
   return (
     <>
       {auth.currentUser != null && auth.currentUser.displayName != null ? (
