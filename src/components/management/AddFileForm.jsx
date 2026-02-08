@@ -12,6 +12,7 @@ import { allPagesQuery } from "../../routes/Archive";
 import { iconifyFileIntoBlob, ICON_WIDTH } from "./utils/iconHelpers";
 import SubmitButton from "./utils/SubmitButton";
 import placeholderIcon from "./assets/placeholderIcon.svg"
+import useCaptchaProtectedOperation from "../../hooks/useCaptchaProtectedOperation";
 
 export default function AddFileForm() {
     const {data, isLoading} = useQuery(allPagesQuery());
@@ -26,6 +27,7 @@ export default function AddFileForm() {
     const isDesktop = useMediaQuery({ query: querySizes["lg"] });
     const submitBtnId = "addPageSubmitBtn";
     const ICON_DISPLAY_ID = "iconDisplay";
+    const { withCaptchaFallback } = useCaptchaProtectedOperation();
 
     useEffect(() => {
         if (title !== "" && message !== "" && file !== null && iconBlob !== null) {
@@ -49,7 +51,7 @@ export default function AddFileForm() {
         "season_id": "44bd96b7-acec-4f01-9425-9bb3d59e29e4",
         "title": title
     }
-    const handleSubmit = async (e) => {
+    const handleSubmit = withCaptchaFallback(async (e) => {
         e.preventDefault();
         setIsDisabled(true);
         setIsSaving(true);
@@ -71,7 +73,7 @@ export default function AddFileForm() {
         } finally {
             setIsSaving(false);
         }
-    }
+    })
 
     function uploadCallback(file) {
         setIsDisabled(true);

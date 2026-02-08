@@ -6,6 +6,7 @@ import ImageInput from "./InputFile";
 import { updatePageObj } from "../../api/ComicPageAPI";
 import { iconifyFileIntoBlob } from "./utils/iconHelpers";
 import SubmitButton from "./utils/SubmitButton";
+import useCaptchaProtectedOperation from "../../hooks/useCaptchaProtectedOperation";
 
 /**
  * 
@@ -25,6 +26,7 @@ export default function UpdatePageForm({ pageData, postUpdateHook }) {
     const SUBMIT_BTN_ID = "updatePageButton";
     const ICON_DISPLAY_ID = "iconDisplay";
     const pageID = pageData["uuid"]
+    const { withCaptchaFallback } = useCaptchaProtectedOperation();
     
     useEffect(() => {
         if (title === "" && message === "" && file === null && iconBlob === null) {
@@ -41,7 +43,7 @@ export default function UpdatePageForm({ pageData, postUpdateHook }) {
         iconifyFileIntoBlob(file, setIconBlob, ICON_DISPLAY_ID)
     }
 
-    async function updatePage(e) {
+    const updatePage = withCaptchaFallback(async (e) => {
         e.preventDefault();
         setIsDisabled(true);
         setIsLoading(true);
@@ -55,7 +57,7 @@ export default function UpdatePageForm({ pageData, postUpdateHook }) {
             console.log(error)
         }
         setIsLoading(false);
-    }
+    })
 
     return (
         <form id="updatePageDataForm" onSubmit={updatePage}>

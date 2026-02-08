@@ -17,6 +17,7 @@ import { getAvatarUrl } from "../users/avatarHelpers";
 import { Timestamp } from "firebase/firestore";
 import CommentAvatar from "./CommentAvatar";
 import { USER_DISPLAY_NAME } from "../../api/RefKeys";
+import useCaptchaProtectedOperation from "../../hooks/useCaptchaProtectedOperation";
 
 /**
  * Renders a single comment with basic author information
@@ -32,6 +33,11 @@ export function SingleComment(props) {
   const [avatarUrl, setAvatarUrl] = useState("");
   const accountDeletedDisplay = "Deleted";
   const commentDeletedContent = "This comment has been deleted.";
+  const { withCaptchaFallback } = useCaptchaProtectedOperation();
+
+  const handleDeleteComment = withCaptchaFallback(async (commentId) => {
+    await deleteComment(commentId);
+  });
 
   useEffect(() => {
     if (!isPending && !isError) {
@@ -168,7 +174,7 @@ export function SingleComment(props) {
                     <div className="flex inline">
                       <div
                         className="reply-btn btn text-left text-lg font-medium text-green-dark hover:text-red-bad mr-2"
-                        onClick={() => deleteComment(props.comment.id)}
+                        onClick={() => handleDeleteComment(props.comment.id)}
                       >
                         <FontAwesomeIcon icon={faTrash} />
                       </div>

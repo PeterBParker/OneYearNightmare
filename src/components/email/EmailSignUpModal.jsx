@@ -3,14 +3,16 @@ import { useState, useEffect } from "react";
 import GenericSingleInputForm from "../settings/GenericSingleInputForm";
 import { functions } from "../..";
 import { httpsCallable } from "@firebase/functions";
+import useCaptchaProtectedOperation from "../../hooks/useCaptchaProtectedOperation";
 
 export default function EmailSignUpModal(props) {
   const [showModal, setShowModal] = useState(false);
   const [subscribed, setSubscribed] = useState(false);
+  const { withCaptchaFallback } = useCaptchaProtectedOperation();
 
   const addGuestToEmailList = httpsCallable(functions, "addGuestToEmailList");
 
-  async function callAddGuestToEmailList(input) {
+  const callAddGuestToEmailList = withCaptchaFallback(async (input) => {
     try {
       var result = await addGuestToEmailList({ text: input });
     } catch (error) {
@@ -22,7 +24,7 @@ export default function EmailSignUpModal(props) {
     } else {
       throw new Error(result.data?.error?.message || "An unknown error occurred.");
     }
-  }
+  });
 
   const [callToAction, setCallToAction] = useState(
     <>

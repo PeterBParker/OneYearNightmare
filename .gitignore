@@ -23,6 +23,7 @@
 .vscode
 /.firebase/
 public/rss.xml
+.secret.*
 
 npm-debug.log*
 firestore-debug.log*

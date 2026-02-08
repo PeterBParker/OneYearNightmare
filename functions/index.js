@@ -12,6 +12,7 @@ const { info, debug, warn, error } = require("firebase-functions/logger");
 const { onDocumentWritten } = require("firebase-functions/v2/firestore");
 const Mailgun = require("mailgun.js");
 const FormData = require("form-data");
+const https = require("https");
 
 // Initialize Mailgun for email services
 const mailgun = new Mailgun(FormData);
@@ -141,3 +142,93 @@ exports.generateRSSFeed = onDocumentWritten(
     }
   }
 );
+
+// reCAPTCHA v2 verification endpoint - fallback when App Check fails
+// Session cache duration: 30 minutes
+const VERIFICATION_DURATION_MS = 30 * 60 * 1000;
+
+exports.verifyRecaptchaV2 = onCall(
+  {
+    secrets: ["RECAPTCHA_V2_SECRET_KEY"],
+    region: "us-central1",
+    enforceAppCheck: false, // Critical: this is the fallback for App Check failures
+  },
+  async (request) => {
+    const token = request.data?.token;
+
+    if (!token) {
+      warn("verifyRecaptchaV2 called without token");
+      return { success: false, error: "No token provided" };
+    }
+
+    const secretKey = process.env.RECAPTCHA_V2_SECRET_KEY;
+    if (!secretKey) {
+      error("RECAPTCHA_V2_SECRET_KEY not configured");
+      return { success: false, error: "Server configuration error" };
+    }
+
+    try {
+      // Verify the token with Google's siteverify API
+      const verificationResult = await verifyRecaptchaToken(token, secretKey);
+
+      if (verificationResult.success) {
+        info("reCAPTCHA v2 verification successful");
+        return {
+          success: true,
+          expiresIn: VERIFICATION_DURATION_MS,
+        };
+      } else {
+        warn("reCAPTCHA v2 verification failed", verificationResult["error-codes"]);
+        return {
+          success: false,
+          error: "Verification failed. Please try again.",
+        };
+      }
+    } catch (err) {
+      error("Error verifying reCAPTCHA v2 token:", err);
+      return { success: false, error: "Verification error. Please try again." };
+    }
+  }
+);
+
+// Helper function to verify reCAPTCHA token with Google
+function verifyRecaptchaToken(token, secretKey) {
+  return new Promise((resolve, reject) => {
+    const postData = `secret=${encodeURIComponent(secretKey)}&response=${encodeURIComponent(token)}`;
+
+    const options = {
+      hostname: "www.google.com",
+      port: 443,
+      path: "/recaptcha/api/siteverify",
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+        "Content-Length": Buffer.byteLength(postData),
+      },
+    };
+
+    const req = https.request(options, (res) => {
+      let data = "";
+
+      res.on("data", (chunk) => {
+        data += chunk;
+      });
+
+      res.on("end", () => {
+        try {
+          const result = JSON.parse(data);
+          resolve(result);
+        } catch (parseError) {
+          reject(new Error("Failed to parse verification response"));
+        }
+      });
+    });
+
+    req.on("error", (err) => {
+      reject(err);
+    });
+
+    req.write(postData);
+    req.end();
+  });
+}

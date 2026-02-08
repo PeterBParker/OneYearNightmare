@@ -18,6 +18,8 @@ import {
 import reportWebVitals from "./reportWebVitals";
 import "./styling/tailwind.output.css";
 import GlobalErrorPage from "./components/generic/errors/GlobalErrorPage";
+import { CaptchaFallbackProvider } from "./contexts/CaptchaFallbackContext";
+import CaptchaFallbackModal from "./components/captcha/CaptchaFallbackModal";
 
 // Routes
 import App from "./routes/App";
@@ -159,7 +161,10 @@ const container = document.getElementById("root");
 const root = createRoot(container);
 root.render(
   <QueryClientProvider client={queryClient}>
-    <RouterProvider router={router} />
+    <CaptchaFallbackProvider>
+      <RouterProvider router={router} />
+      <CaptchaFallbackModal />
+    </CaptchaFallbackProvider>
   </QueryClientProvider>
 );
 
