@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState, useId } from "react";
 
+// If no API key is found in the env, use the default key for testing
 const RECAPTCHA_V2_SITE_KEY = process.env.REACT_APP_RECAPTCHA_V2_SITE_KEY || "6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI";
 
 export default function RecaptchaV2Widget({ onSuccess, onExpired, onError }) {
